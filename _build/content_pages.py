@@ -152,6 +152,9 @@ def _team_extended(pack, body_html):
     et = pack.get("extended_team")
     if not et:
         return None
+    # Founder direction Sep 28: hide the Founder block for now. The entry and
+    # avatar stay in the pack/assets; delete this filter to restore.
+    et = [e for e in et if e.get("grouping") != "Founder"]
     groups = []
     for e in et:
         if e["grouping"] not in groups:
