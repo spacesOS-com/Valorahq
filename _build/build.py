@@ -20,6 +20,7 @@ from advisor_pages import build_advisor_pages, ADVISORS
 from directory_pages import build_directory_pages, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
+from content_pages import build_content_pages
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://www.valorahq.com"
@@ -167,10 +168,12 @@ if __name__ == "__main__":
     build_directory_pages(write)
     build_insights_pages(write)
     build_calculator_pages(write)
+    PAGES.extend(build_content_pages(write))
     refresh_index()
     build_robots()
     build_sitemap()
     build_llms()
+    print("content pages:", len(PAGES) - 2 - len(ADVISORS) - len(real_pages()) - len(ARTICLES) - len(CALCULATORS) - len(CATEGORIES))
     total_dir = len(SPECIALTIES) + len(CITIES) + len(NICHES) + len(ASSET_TYPES) + len(real_combos())
     print("built /for-advisors/ (+ /advisors.html redirect) + %d advisor pages + %d directory pages (%d specialty + %d city + %d niche + %d asset-type + %d combo, %d indexed / rest noindex) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
           % (len(ADVISORS), total_dir, len(SPECIALTIES), len(CITIES), len(NICHES), len(ASSET_TYPES), len(real_combos()), len(real_pages()), len(ARTICLES), len(CALCULATORS)))
