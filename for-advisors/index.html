@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=b33b7d95">
+<link rel="stylesheet" href="/styles.css?v=ac427094">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e3b2a'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23efebe0' font-family='Georgia'>V</text></svg>">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Valora", "url": "https://www.valorahq.com", "description": "Valora is an independent platform that matches people with vetted, independent fiduciary financial advisors based on their situation.", "email": "barot@valorahq.com", "areaServed": {"@type": "Country", "name": "United States", "identifier": "US"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does Valora match advisors with prospective clients?", "acceptedAnswer": {"@type": "Answer", "text": "Valora matches consumers based on what they are specifically solving for (e.g. retirement decumulation, tech equity/RSUs, business sale, generational wealth transfer), their investable asset tier, and the advisor's verified niche expertise and geographic preference. Consumers review advisor profiles and actively choose to connect — these are qualified, intentional introductions, not cold leads."}}, {"@type": "Question", "name": "Are client introductions exclusive to my firm?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% exclusive. Unlike lead brokers who auction the same contact information to five or six competing advisors, Valora introduces each prospective client exclusively to one fiduciary advisor at a time based on mutual fit and stated preference."}}, {"@type": "Question", "name": "Who owns the client relationship, data, and Form ADV?", "acceptedAnswer": {"@type": "Answer", "text": "You do, completely. Clients engage your firm directly under your own advisory agreements, your published fee schedule, and your Form ADV Part 2. Valora does not provide investment advice or intermediate your advisory sovereignty. If you ever leave, your clients, data, and book stay entirely yours."}}, {"@type": "Question", "name": "What context do I receive before the first consultation?", "acceptedAnswer": {"@type": "Answer", "text": "Every introduction arrives with verified investable assets, primary financial objectives, timeline urgency, employer stock or business details (if applicable), and any specific questions the prospective client shared during our intake process."}}, {"@type": "Question", "name": "What is the fee or economic model for partner advisors?", "acceptedAnswer": {"@type": "Answer", "text": "Valora operates with transparent, advisor-friendly economics aligned with your growth. We offer flexible plans depending on whether your firm seeks client introductions, our complete back-office operational suite, or both. We discuss specific tiers and territory availability during your 15-minute introductory call."}}]}</script>
@@ -86,18 +86,6 @@
     </div>
   </div>
 
-  <!-- Animated Metrics Ribbon -->
-  <div class="hero__bar">
-    <div class="container hero__bar-grid">
-      <div class="stat">
-        <span class="stat__num" data-count="100" data-suffix="%">100%</span>
-        <span class="stat__label">Exclusive client matches &amp; book ownership</span>
-      </div>
-      <div class="stat stat--note">
-        <span class="stat__label">Fiduciary RIA network.<br>Limited territory availability per market.</span>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ================= WHY ADVISORS PARTNER WITH VALORA ================= -->
@@ -136,15 +124,25 @@
       <h2 class="display display--lg reveal">Every introduction arrives with<br><em>the rich context you need.</em></h2>
       <p class="reveal">Before you ever jump on an introductory conversation, you already understand their liquid asset range, specific timeline urgency, and primary financial goal.</p>
 
-      <ul class="adv-ticks reveal">
-        <li><strong>100% Exclusive Introductions:</strong> Never shared or shopped to other advisors</li>
-        <li><strong>Pre-Qualified Investable Assets:</strong> Minimum thresholds verified before matching</li>
-        <li><strong>High-Intent Urgency:</strong> Prospects have actively requested fiduciary guidance</li>
-        <li><strong>Direct Calendar Booking:</strong> Integrates with Calendly, Google Calendar, and Outlook</li>
-        <li><strong>Full Advisory Discretion:</strong> You review the dossier and decide whether to engage</li>
+      <ul class="adv-ticks">
+        <li class="reveal"><strong>100% Exclusive Introductions:</strong> Never shared or shopped to other advisors</li>
+        <li class="reveal"><strong>Pre-Qualified Investable Assets:</strong> Minimum thresholds verified before matching</li>
+        <li class="reveal"><strong>High-Intent Urgency:</strong> Prospects have actively requested fiduciary guidance</li>
+        <li class="reveal"><strong>Direct Calendar Booking:</strong> Integrates with Calendly, Google Calendar, and Outlook</li>
+        <li class="reveal"><strong>Full Advisory Discretion:</strong> You review the dossier and decide whether to engage</li>
       </ul>
     </div>
 
+    <div class="dossier-mock reveal" aria-hidden="true">
+      <div class="dossier-mock__bar"><span></span><span></span><span></span><em>Prospect Dossier</em></div>
+      <div class="dossier-mock__body">
+        <div class="dossier-mock__field"><span>Liquid assets</span><p>$1M &ndash; $3M</p></div>
+        <div class="dossier-mock__field"><span>Timeline</span><p>Within 6 months</p></div>
+        <div class="dossier-mock__field"><span>Primary goal</span><p>Retirement income planning</p></div>
+        <div class="dossier-mock__field"><span>Requested</span><p>Fiduciary guidance, actively looking</p></div>
+      </div>
+      <div class="dossier-mock__status">Ready to talk &middot; exclusive to you</div>
+    </div>
   </div>
 </section>
 
@@ -199,6 +197,19 @@
       <li>Direct calendar scheduling link with no friction</li>
       <li>Local SEO positioning in your target metropolitan area</li>
     </ul>
+  </div>
+
+  <div class="dir-card-mock reveal" aria-hidden="true">
+    <div class="dir-profile-head">
+      <div class="dir-profile-img" style="display:flex; align-items:center; justify-content:center; background:var(--green); color:var(--cream); font-family:var(--serif); font-size:1.1rem;">JS</div>
+      <div><h4>J. Sample, CFP&reg;</h4><p>Sample Wealth Partners &middot; Austin, TX</p></div>
+    </div>
+    <div class="dir-tags">
+      <span class="dir-tag">Tech RSUs</span>
+      <span class="dir-tag">Retirement Planning</span>
+      <span class="dir-tag">Fee-Only</span>
+    </div>
+    <p class="dir-quote">Illustrative preview &mdash; your real profile shows your own credentials, niche tags, and a direct link to your calendar.</p>
   </div>
 
 </section>
@@ -304,19 +315,19 @@
     </div>
     <div class="adv-blog__grid">
       <article class="blogcard reveal">
-        <h3><a href="https://blog.valorahq.com/what-should-a-financial-advisor-put-on-an-about-page/" target="_blank" rel="noopener">What should a financial advisor put on an About page?</a></h3>
+        <h3><a href="https://insights.spacesos.com/what-should-a-financial-advisor-put-on-an-about-page/" target="_blank" rel="noopener">What should a financial advisor put on an About page?</a></h3>
         <p>A useful advisor About page answers five questions plainly: who works at the firm, whom it helps, what they do, how the firm is paid, and what comes next.</p>
-        <a class="blogcard__link" href="https://blog.valorahq.com/what-should-a-financial-advisor-put-on-an-about-page/" target="_blank" rel="noopener">Read on the blog →</a>
+        <a class="blogcard__link" href="https://insights.spacesos.com/what-should-a-financial-advisor-put-on-an-about-page/" target="_blank" rel="noopener">Read on the blog →</a>
       </article>
       <article class="blogcard reveal">
-        <h3><a href="https://blog.valorahq.com/how-can-an-ria-measure-referral-source-quality/" target="_blank" rel="noopener">How can an RIA measure referral source quality?</a></h3>
+        <h3><a href="https://insights.spacesos.com/how-can-an-ria-measure-referral-source-quality/" target="_blank" rel="noopener">How can an RIA measure referral source quality?</a></h3>
         <p>Judge a referral source by the fit and progress of the people it sends, not raw counts: define a qualified introduction, track each stage, and count your time.</p>
-        <a class="blogcard__link" href="https://blog.valorahq.com/how-can-an-ria-measure-referral-source-quality/" target="_blank" rel="noopener">Read on the blog →</a>
+        <a class="blogcard__link" href="https://insights.spacesos.com/how-can-an-ria-measure-referral-source-quality/" target="_blank" rel="noopener">Read on the blog →</a>
       </article>
       <article class="blogcard reveal">
-        <h3><a href="https://blog.valorahq.com/how-should-a-financial-advisor-choose-a-niche/" target="_blank" rel="noopener">How should a financial adviser choose a niche?</a></h3>
+        <h3><a href="https://insights.spacesos.com/how-should-a-financial-advisor-choose-a-niche/" target="_blank" rel="noopener">How should a financial adviser choose a niche?</a></h3>
         <p>Choose an adviser niche by matching a group to real planning decisions, testing its needs in conversations, and making only claims your firm can support.</p>
-        <a class="blogcard__link" href="https://blog.valorahq.com/how-should-a-financial-advisor-choose-a-niche/" target="_blank" rel="noopener">Read on the blog →</a>
+        <a class="blogcard__link" href="https://insights.spacesos.com/how-should-a-financial-advisor-choose-a-niche/" target="_blank" rel="noopener">Read on the blog →</a>
       </article>
     </div>
     <a class="btn btn--outline adv-blog__more" href="https://blog.valorahq.com/" target="_blank" rel="noopener">View more</a>
@@ -329,18 +340,35 @@
 <section class="section section--cream life adv-faq" id="faq">
   <div class="container life__grid">
     <div class="adv-criteria reveal">
-      <p class="eyebrow">Selective Fiduciary Network</p>
-      <h2 class="display display--md">A high bar,<br><em>on purpose.</em></h2>
-      <p>Investors trust Valora because our network is curated rather than open to anyone with a marketing budget. We partner exclusively with qualified fiduciaries who share our standard for transparent, conflict-free advice.</p>
-      <ul class="adv-ticks" style="margin-top:24px;">
-        <li>Registered Investment Adviser (RIA) or IAR registration</li>
-        <li>Strict Fiduciary Duty to clients at all times</li>
-        <li>Clean regulatory history verified on SEC IAPD / FINRA BrokerCheck</li>
-        <li>Professional designation: CFP®, CFA, CPA/PFS or 10+ years experience</li>
-        <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
-      </ul>
-      <div style="margin-top:28px;">
-        <button type="button" class="btn btn--dark" style="width:100%;" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a demo</button>
+      <div class="adv-criteria__grid">
+        <div class="adv-criteria__copy">
+          <p class="eyebrow">Selective Fiduciary Network</p>
+          <h2 class="display display--md">A high bar,<br><em>on purpose.</em></h2>
+          <p>Investors trust Valora because our network is curated rather than open to anyone with a marketing budget. We partner exclusively with qualified fiduciaries who share our standard for transparent, conflict-free advice.</p>
+          <ul class="adv-ticks" style="margin-top:24px;">
+            <li>Registered Investment Adviser (RIA) or IAR registration</li>
+            <li>Strict Fiduciary Duty to clients at all times</li>
+            <li>Clean regulatory history verified on SEC IAPD / FINRA BrokerCheck</li>
+            <li>Professional designation: CFP®, CFA, CPA/PFS or 10+ years experience</li>
+            <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
+          </ul>
+          <div style="margin-top:28px;">
+            <button type="button" class="btn btn--dark" style="width:100%;" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a demo</button>
+          </div>
+        </div>
+
+        <div class="criteria-mock" aria-hidden="true">
+          <p class="criteria-mock__eyebrow">Fiduciary Standard</p>
+          <div class="criteria-mock__seal">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.4"/><path d="M15 24l6 6 12-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="criteria-mock__title">Every partner advisor clears five checks before joining.</p>
+          <ul class="criteria-mock__list">
+            <li>RIA / IAR registration confirmed</li>
+            <li>SEC IAPD &amp; FINRA BrokerCheck reviewed</li>
+            <li>Fee schedule published, not hidden</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -385,7 +413,7 @@
     <h2 class="display display--md footer__statement reveal">Independent advice.<br><em>Personal fit.</em></h2>
 
     <div class="footer__grid">
-      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul><li><a href="/find-a-financial-advisor/new-york/">New York, NY</a></li><li><a href="/find-a-financial-advisor/los-angeles/">Los Angeles, CA</a></li><li><a href="/find-a-financial-advisor/chicago/">Chicago, IL</a></li><li><a href="/find-a-financial-advisor/dallas/">Dallas, TX</a></li><li><a href="/find-a-financial-advisor/houston/">Houston, TX</a></li><li><a href="/find-a-financial-advisor/washington-dc/">Washington, DC</a></li><li><a href="/find-a-financial-advisor/miami/">Miami, FL</a></li><li><a href="/find-a-financial-advisor/philadelphia/">Philadelphia, PA</a></li><li><a href="/find-a-financial-advisor/atlanta/">Atlanta, GA</a></li><li><a href="/find-a-financial-advisor/phoenix/">Phoenix, AZ</a></li><li><a href="/find-a-financial-advisor/boston/">Boston, MA</a></li><li><a href="/find-a-financial-advisor/san-francisco/">San Francisco, CA</a></li><li><a href="/find-a-financial-advisor/detroit/">Detroit, MI</a></li><li><a href="/find-a-financial-advisor/seattle/">Seattle, WA</a></li><li><a href="/find-a-financial-advisor/minneapolis/">Minneapolis, MN</a></li><li><a href="/find-a-financial-advisor/san-diego/">San Diego, CA</a></li><li><a href="/find-a-financial-advisor/tampa/">Tampa, FL</a></li><li><a href="/find-a-financial-advisor/denver/">Denver, CO</a></li><li><a href="/find-a-financial-advisor/baltimore/">Baltimore, MD</a></li><li><a href="/find-a-financial-advisor/st-louis/">St. Louis, MO</a></li><li><a href="/find-a-financial-advisor/charlotte/">Charlotte, NC</a></li><li><a href="/find-a-financial-advisor/orlando/">Orlando, FL</a></li><li><a href="/find-a-financial-advisor/san-antonio/">San Antonio, TX</a></li><li><a href="/find-a-financial-advisor/portland/">Portland, OR</a></li><li><a href="/find-a-financial-advisor/sacramento/">Sacramento, CA</a></li><li><a href="/find-a-financial-advisor/pittsburgh/">Pittsburgh, PA</a></li><li><a href="/find-a-financial-advisor/austin/">Austin, TX</a></li><li><a href="/find-a-financial-advisor/las-vegas/">Las Vegas, NV</a></li><li><a href="/find-a-financial-advisor/cincinnati/">Cincinnati, OH</a></li><li><a href="/find-a-financial-advisor/columbus/">Columbus, OH</a></li><li><a href="/find-a-financial-advisor/kansas-city/">Kansas City, MO</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul><li><a href="/find-a-financial-advisor/new-york/">New York, NY</a></li><li><a href="/find-a-financial-advisor/los-angeles/">Los Angeles, CA</a></li><li><a href="/find-a-financial-advisor/chicago/">Chicago, IL</a></li><li><a href="/find-a-financial-advisor/dallas/">Dallas, TX</a></li><li><a href="/find-a-financial-advisor/houston/">Houston, TX</a></li><li><a href="/find-a-financial-advisor/washington-dc/">Washington, DC</a></li><li><a href="/find-a-financial-advisor/">More cities &rarr;</a></li></ul></nav>
       <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul><li><a href="/find-a-financial-advisor/managing-investments/">Managing investments</a></li><li><a href="/find-a-financial-advisor/retirement-planning/">Retirement planning</a></li><li><a href="/find-a-financial-advisor/selling-a-business/">Selling a business</a></li><li><a href="/find-a-financial-advisor/business-owner-wealth-planning/">Business owner wealth planning</a></li><li><a href="/find-a-financial-advisor/tax-planning/">Tax planning</a></li><li><a href="/find-a-financial-advisor/estate-planning/">Estate planning</a></li><li><a href="/find-a-financial-advisor/concentrated-stock/">Concentrated stock</a></li><li><a href="/find-a-financial-advisor/inheritance-sudden-wealth/">Inheritance / sudden wealth</a></li><li><a href="/find-a-financial-advisor/cash-liquidity-management/">Cash / liquidity management</a></li></ul></nav>
       <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul><li><a href="/find-a-financial-advisor/business-owner/">Business owner</a></li><li><a href="/find-a-financial-advisor/executive-professional/">Executive / professional</a></li><li><a href="/find-a-financial-advisor/retired/">Retired</a></li><li><a href="/find-a-financial-advisor/recently-sold-a-business/">Recently sold a business</a></li><li><a href="/find-a-financial-advisor/recently-received-an-inheritance/">Recently received an inheritance</a></li><li><a href="/find-a-financial-advisor/entrepreneur-founder/">Entrepreneur / founder</a></li></ul></nav>
       <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul><li><a href="/find-a-financial-advisor/under-250k/">Under $250K</a></li><li><a href="/find-a-financial-advisor/250k-to-500k/">$250K to $500K</a></li><li><a href="/find-a-financial-advisor/500k-to-1m/">$500K to $1M</a></li><li><a href="/find-a-financial-advisor/1m-to-3m/">$1M to $3M</a></li><li><a href="/find-a-financial-advisor/3m-to-10m/">$3M to $10M</a></li><li><a href="/find-a-financial-advisor/10m-plus/">$10M+</a></li></ul></nav>
@@ -417,6 +445,6 @@
 
 <button class="to-top" id="toTop" aria-label="Back to top"><span aria-hidden="true">↑</span></button>
 
-<script src="/script.js?v=8ca55ded"></script>
+<script src="/script.js?v=b0b2f5df"></script>
 </body>
 </html>
