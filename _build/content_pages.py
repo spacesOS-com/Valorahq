@@ -162,7 +162,8 @@ def _team_extended(pack, body_html):
         members = sorted((e for e in et if e["grouping"] == g), key=lambda e: e.get("order", 999))
         for e in members:
             stem = e["avatar"].rsplit(".", 1)[0]
-            bio = f'<p>{escape(e["bio"])}</p>' if e.get("bio") else ""
+            paras = e.get("bio_paragraphs") or ([e["bio"]] if e.get("bio") else [])
+            bio = "".join(f'<p>{escape(p)}</p>' for p in paras)
             out.append(
                 f'<div class="team-member"><img class="team-member__avatar" src="/assets/{escape(stem)}.jpg" '
                 f'alt="Illustrated avatar of {escape(e["name"])}" loading="lazy" width="72" height="72">'
