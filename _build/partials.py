@@ -31,8 +31,8 @@ SCRIPT_VER = _asset_ver("script.js")
 BRAND = "Valora"
 SITE_URL = "https://www.valorahq.com"
 EMAIL = "barot@valorahq.com"
-PHONE_DISPLAY = "+1 (415) 909-4100"
-PHONE_TEL = "+14159094100"
+PHONE_DISPLAY = ""  # removed: unverified number (founder, Sep 28) - do not re-add without a confirmed line
+PHONE_TEL = ""
 
 # the original "What are you solving for?" options
 GOAL_OPTIONS = ["Retirement income", "Equity compensation", "Selling a business",
@@ -151,7 +151,6 @@ def organization_schema():
         "description": "Valora is an independent platform that matches people with vetted, "
                         "independent fiduciary financial advisors based on their situation.",
         "email": EMAIL,
-        "telephone": PHONE_TEL,
         "areaServed": {
             "@type": "Country",
             "name": "United States",
@@ -275,7 +274,6 @@ def footer():
         <p>An independent platform helping people discover financial advisors.</p>
         <ul class="footer__contact">
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-          <li><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
         </ul>
       </div>
 
@@ -317,7 +315,7 @@ def client_fields(kind, uid, with_note=False, with_goal=True):
         </div>
         <div class="{wrap}" data-field>
           <label for="{uid}phone">Phone number</label>
-          <input id="{uid}phone" name="phone" type="tel" required placeholder="+1 (415) 909-4100" autocomplete="tel" inputmode="tel">
+          <input id="{uid}phone" name="phone" type="tel" required placeholder="(415) 555-0100" autocomplete="tel" inputmode="tel">
           <small class="err" data-err="phone"></small>
         </div>"""
     if with_goal:

@@ -83,7 +83,7 @@ def intake_form():
         </div>
         <div class="field" data-field>
           <label for="fyphone">Phone number</label>
-          <input id="fyphone" name="phone" type="tel" required placeholder="+1 (415) 909-4100" autocomplete="tel" inputmode="tel">
+          <input id="fyphone" name="phone" type="tel" required placeholder="(415) 555-0100" autocomplete="tel" inputmode="tel">
           <small class="err" data-err="phone"></small>
         </div>
         <div class="field field--full form__foot">

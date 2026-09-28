@@ -84,7 +84,7 @@ def for_advisors_body():
       </h1>
       <p class="adv-hero__sub reveal">If you're looking for the perfect clients, we'll deliver them straight to your inbox and give you the tools to manage them throughout the sales process. We work exclusively with SEC registered firms.</p>
       <div class="hero__actions reveal">
-        <a class="btn btn--dark" href="#apply">Book a demo</a>
+        <a class="btn btn--dark" href="mailto:{EMAIL}?subject=Book%20a%20demo">Book a demo</a>
       </div>
     </div>
   </div>
@@ -315,7 +315,7 @@ def for_advisors_body():
         <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
       </ul>
       <div style="margin-top:28px;">
-        <a class="btn btn--dark" href="#apply" style="width:100%;">Book a demo</a>
+        <a class="btn btn--dark" href="mailto:{EMAIL}?subject=Book%20a%20demo" style="width:100%;">Book a demo</a>
       </div>
     </div>
 
@@ -333,18 +333,8 @@ def for_advisors_body():
   <div class="container adv-ready__inner">
     <h2 class="display display--lg reveal">Ready to get started?</h2>
     <p class="reveal">Get perfect clients delivered straight to your inbox and the tools to manage them throughout the sales process.</p>
-    <a class="btn btn--cream" href="#apply">Book a demo</a>
+    <a class="btn btn--cream" href="mailto:{EMAIL}?subject=Book%20a%20demo">Book a demo</a>
   </div>
 </section>
 
-<!-- ================= APPLY / BOOK A DEMO ================= -->
-<section class="section section--green cta adv-ready" id="apply">
-  <div class="container adv-ready__inner">
-    <p class="eyebrow eyebrow--light reveal">Advisor Network</p>
-    <h2 class="display display--lg reveal">Spend your week advising.<br><em>We'll handle everything else.</em></h2>
-    <p class="reveal">Book a demo and a partner from our advisor team — not a robot or automated dialer — will walk you through platform access, practice fit, and territory availability.</p>
-    <a class="btn btn--cream" href="mailto:{EMAIL}?subject=Book%20a%20demo">Book a demo</a>
-    <p style="margin-top:20px; font-size:.82rem; color:rgba(239,235,224,.6);">Prefer to call? <a href="tel:{PHONE_TEL}" style="color:inherit; text-decoration:underline;">{PHONE_DISPLAY}</a></p>
-  </div>
-</section>
 """

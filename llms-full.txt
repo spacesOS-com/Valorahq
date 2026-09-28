@@ -118,35 +118,6 @@ Valora — Your money has a purpose
  You don't need another financial product. You need the right person. 
  We'll show you advisors who work with situations like yours, and you decide who you'd like to contact. 
 
- Explore advisors by specialty and situation. 
- Advisor profiles include their specialties, experience and the types of clients they serve. 
-
- All advisors 
- Retirement 
- Families 
-
- James Conole, CFP® Founder · Root Financial · Austin, TX 
-
- Works with people who are within about ten years of retirement and want a clear plan for getting there. 
- Pre-retirement Retirement planning 
-
- Kevin Lum, CFP® Foundry Financial · Los Angeles, CA 
-
- Host of Retirement Made Simple, focused on making retirement decisions clear and straightforward. 
- Retirement planning Retirement income 
-
- Eric, CFP® The PeakFP · Woodland Hills, CA 
-
- A CERTIFIED FINANCIAL PLANNER™ professional specializing in retirement income planning. 
- Retirement income Withdrawal strategy 
-
- Even Better Retirement Bismarck, ND 
-
- "You saved money for a lifetime, now it's time to have fun." 
- Retirement lifestyle Spending plans 
-
- No advisors match that search yet — try a different specialty. 
-
  01 Tell us where you are. A few questions. No account numbers, no credit pull. 
  02 Tell us where you want to go. The goals, the timeline and the parts you are unsure about. 
  03 Browse advisors by specialty and client type. Explore detailed profiles to learn about each advisor's experience, approach, and areas of expertise. 
@@ -154,12 +125,8 @@ Valora — Your money has a purpose
 
  People who know the numbers. And remember the person behind them. 
 
- James Conole · Root Financial 
  Client review, Q2 
- Kevin Lum · Foundry Financial 
- Eric · The PeakFP 
  Where the plan is heading 
- Even Better Retirement 
 
  Services offered by advisors on Valora 
 
@@ -283,7 +250,6 @@ Valora — Your money has a purpose
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -550,12 +516,6 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  Get perfect clients delivered straight to your inbox and the tools to manage them throughout the sales process. 
  Book a demo 
 
- Advisor Network 
- Spend your week advising. We'll handle everything else. 
- Book a demo and a partner from our advisor team — not a robot or automated dialer — will walk you through platform access, practice fit, and territory availability. 
- Book a demo 
- Prefer to call? +1 (415) 909-4100 
-
  Independent advice. Personal fit. 
 
  Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
@@ -569,7 +529,6 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -651,7 +610,6 @@ Find Your Advisor | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -749,7 +707,6 @@ James Conole, CFP® | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -906,7 +863,6 @@ Kevin Lum, CFP® | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -1063,7 +1019,6 @@ Eric, CFP® | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -1220,7 +1175,6 @@ Even Better Retirement | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -1403,7 +1357,6 @@ Retirement planning Advisors | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -1571,7 +1524,6 @@ Financial Advisors in Austin, TX | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -1739,7 +1691,6 @@ Financial Advisors in Los Angeles, CA | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -1907,7 +1858,6 @@ Retirement planning Advisors in Austin, TX | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -2075,7 +2025,6 @@ Retirement planning Advisors in Los Angeles, CA | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -2232,7 +2181,6 @@ What a realistic withdrawal rate looks like now | Valora Insights
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -2389,7 +2337,6 @@ The conversation every family should have before retirement | Valora Insights
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -2546,7 +2493,6 @@ When a Roth conversion is worth the tax bill | Valora Insights
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -2703,7 +2649,6 @@ Your RSUs are a bonus, not a lottery ticket | Valora Insights
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -2861,7 +2806,6 @@ What happens if the market drops right before you retire | Valora Insights
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -3019,7 +2963,6 @@ Beneficiary forms quietly override your will | Valora Insights
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -3184,7 +3127,6 @@ Retirement savings growth calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -3346,7 +3288,6 @@ Withdrawal amount calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -3508,7 +3449,6 @@ Roth conversion tax cost calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -3672,7 +3612,6 @@ How long your savings will last | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -3840,7 +3779,6 @@ PSLF scenario explorer | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -4002,7 +3940,6 @@ RSU withholding shortfall calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -4163,7 +4100,6 @@ Check your 2026 401(k) employee deferral limit by age, and how much contribution
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -4324,7 +4260,6 @@ Required minimum distribution (RMD) calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -4488,7 +4423,6 @@ Capital gains tax estimator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -4651,7 +4585,6 @@ Inflation calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -4816,7 +4749,6 @@ Investment future value calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -4979,7 +4911,6 @@ Savings &amp; CD growth calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -5138,7 +5069,6 @@ Split your take-home pay into needs, wants, and savings using the common 50/30/2
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -5297,7 +5227,6 @@ Social Security claiming age break-even calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -5458,7 +5387,6 @@ Delayed retirement credit calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -5622,7 +5550,6 @@ ISO exercise cost &amp; spread calculator | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -5785,7 +5712,6 @@ Concentrated stock diversification timeline | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -5957,7 +5883,6 @@ Retirement Calculators | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -6125,7 +6050,6 @@ Taxes Calculators | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -6285,7 +6209,6 @@ Social Security Calculators | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -6445,7 +6368,6 @@ Equity Compensation Calculators | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -6605,7 +6527,6 @@ Investing Calculators | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -6769,7 +6690,6 @@ Banking Calculators | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -6997,7 +6917,6 @@ Financial Advisor for Business Owners | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -7226,7 +7145,6 @@ Financial Advisor for Physicians | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -7454,7 +7372,6 @@ Financial Advisor for Tech Employees with RSUs | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -7588,7 +7505,6 @@ Cookie and Analytics Notice | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -7750,7 +7666,6 @@ Privacy Policy | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -7914,7 +7829,6 @@ Terms and Conditions | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
@@ -8040,7 +7954,6 @@ Team | Valora
  An independent platform helping people discover financial advisors. 
 
  barot@valorahq.com 
- +1 (415) 909-4100 
 
  Company Our approach Find an advisor For advisors Team Insights 
  For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
