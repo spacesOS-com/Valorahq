@@ -31,6 +31,7 @@ PACK_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "content-pac
 PAGE_TYPE_LABELS = {
     "niche-profession": "Profession",
     "city": "City",
+    "niche-city": "City",
     "life-event": "Life event",
     "asset-type": "Asset type",
     "employer": "Employer",
@@ -274,6 +275,7 @@ def load_packs():
         for key in ("slug", "meta_title", "meta_description", "h1", "body_html"):
             if key not in pack:
                 raise SystemExit(f"content pack {path} is missing '{key}'")
+        pack["_path"] = path
         pack["_draft"] = pack.get("status", "approved") == "draft"
         # Drafts render with noindex and stay out of sitemap/llms registration.
         packs.append(pack)
@@ -388,8 +390,19 @@ def render(pack):
 
 def build_content_pages(write_fn):
     """Renders every pack. Returns [(path, description)] for sitemap/llms registration."""
+    from city_validate import validate_pack  # fail-closed contract, Lena city-template v2
+    packs = load_packs()
+    city_packs = [p for p in packs if p.get("page_type") == "niche-city"]
+    for pack in city_packs:
+        # Render-time gate: a bad pack can never reach the site. offline=True -
+        # URL liveness ran pre-handoff (city_validate CLI); warns never fail.
+        fails, _ = validate_pack(pack["_path"], pack, other_packs=city_packs, offline=True)
+        if fails:
+            raise SystemExit(
+                f"city pack FAILS validation, refusing to render: {pack['_path']}\n"
+                + "\n".join(f"  - {f}" for f in fails))
     built = []
-    for pack in load_packs():
+    for pack in packs:
         write_fn(f"/{pack['slug']}/", render(pack))
         if not pack.get("_draft", False):
             built.append((f"/{pack['slug']}/", pack["meta_description"]))

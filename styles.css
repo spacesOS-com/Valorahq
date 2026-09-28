@@ -1980,7 +1980,7 @@ body.gate-open{ overflow:hidden; }
 .content-page__toc ul{ display:grid; gap:8px; }
 .content-page__toc a{ font-size:.92rem; color:var(--ink-soft); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; }
 .content-page__toc a:hover{ color:var(--ink); }
-.content-page__cta{ background:var(--cream); border-radius:14px; padding:clamp(24px,3vw,36px); margin:clamp(28px,4vw,44px) 0; }
+.content-page__cta{ background:var(--cream); border-radius:14px; padding:clamp(24px,3vw,36px); margin:clamp(28px,4vw,44px) 0; text-align:center; }
 .content-page__cta h3{ font-family:var(--serif); font-weight:500; font-size:1.35rem; }
 .content-page__cta p{ margin:10px 0 20px; color:var(--ink-soft); font-size:.95rem; }
 
