@@ -7,7 +7,7 @@ this just gives each of the 4 confirmed advisor-partners their own URL.
 """
 from html import escape
 
-from partials import page, head, BRAND, contact_section
+from partials import page, head, BRAND, SITE_URL, contact_section, advisor_schema
 
 ADVISORS = [
     {
@@ -76,10 +76,19 @@ def _advisor_body(a):
 def build_advisor_pages(write_fn):
     """write_fn: build.py's write() helper, so paths land at /advisors/<slug>/index.html."""
     for a in ADVISORS:
+        schema = advisor_schema(
+            name=a["name"],
+            job_title=a["firm"],
+            url=f"{SITE_URL}/advisors/{a['slug']}/",
+            image=f"{SITE_URL}{a['photo']}",
+            description=a["quote"],
+            area_served=a["city"],
+        )
         html = page(
             head(f"{a['name']} | {BRAND}",
                  f"{a['name']}, {a['firm']} in {a['city']}. Specialties: {', '.join(a['tags'])}.",
-                 path=f"/advisors/{a['slug']}/"),
+                 path=f"/advisors/{a['slug']}/",
+                 schema=schema),
             _advisor_body(a),
             with_gate=True,
         )

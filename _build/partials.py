@@ -189,6 +189,40 @@ def organization_schema():
     })
 
 
+def article_schema(headline, description, url, date_published, author_name, image=None):
+    """Article schema for an /insights/ page — same headline/description/date
+    already visible on the page, so this can't say something the page doesn't."""
+    return json_ld({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": headline,
+        "description": description,
+        "url": url,
+        "datePublished": date_published,
+        "author": {"@type": "Person", "name": author_name},
+        "publisher": {"@type": "Organization", "name": BRAND, "url": SITE_URL},
+        "image": image or None,
+    })
+
+
+def advisor_schema(name, job_title, url, image=None, description=None, area_served=None):
+    """Person schema for an /advisors/[slug]/ page. `name` containing a comma
+    (e.g. "James Conole, CFP®") signals a real individual; a firm name without
+    one (e.g. "Even Better Retirement") gets ProfessionalService instead, so
+    this never mislabels a firm as a person."""
+    is_person = "," in name
+    return json_ld({
+        "@context": "https://schema.org",
+        "@type": "Person" if is_person else "ProfessionalService",
+        "name": name,
+        "jobTitle": job_title if is_person else None,
+        "description": description,
+        "url": url,
+        "image": image,
+        "areaServed": {"@type": "City", "name": area_served} if area_served else None,
+    })
+
+
 def faq_schema(faq):
     """faq: list of (question, answer) tuples — pass the exact same pairs the
     visible <details> accordion on the page renders, so the schema can never
@@ -322,9 +356,9 @@ def footer():
     <h2 class="display display--md footer__statement reveal">Independent advice.<br><em>Personal fit.</em></h2>
 
     <div class="footer__grid">
-      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(city)}</a></li>' for slug, city in DIRECTORY_CITIES[:6])}<li><a href="/find-a-financial-advisor/">More cities &rarr;</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES)}</ul></nav>
-      <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES)}</ul></nav>
+      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(city)}</a></li>' for slug, city in DIRECTORY_CITIES[:5])}<li><a href="/cities/">More cities &rarr;</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES[:5])}<li><a href="/specialties/">More &rarr;</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES[:5])}<li><a href="/professions/">More &rarr;</a></li></ul></nav>
       <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
       <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
     </div>

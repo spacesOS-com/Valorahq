@@ -2,12 +2,15 @@
 """/find-a-financial-advisor/[...] pages: specialty, city, niche, asset type,
 and a small number of real city+specialty combos.
 
-Every page lists real advisors from advisor_pages.ADVISORS when their tags
-or city genuinely match — no invented people. Where nothing matches, the
-page shows an honest empty state AND is marked noindex (see partials.head):
-it stays live and useful for a visitor who lands on it, but isn't presented
-to search engines as if it were a real, populated page. Only pages with a
-real match are indexed and listed in the sitemap (see build.py's PAGES).
+Every page lists real advisors from advisor_pages.ADVISORS — no invented
+people, ever. Where a page's tag/city doesn't genuinely match any advisor,
+it falls back to showing the full real roster with an honest note ("we
+don't have a specialist tagged for this yet, but these advisors work with
+clients nationwide") instead of a strict local/specialty claim. That page
+is still marked noindex (see partials.head): it stays live and useful for
+a visitor who lands on it, but isn't presented to search engines as if it
+were a genuine local/specialty match. Only pages with a real match are
+indexed and listed in the sitemap (see build.py's PAGES / real_pages()).
 
 Combo pages (city + specialty together) are built only where a real advisor
 actually matches both — not the full city x specialty cross-product, which
@@ -76,14 +79,17 @@ def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=N
             + faq_block(faq) + '\n'
             '  </div>\n</section>'
         )
+    note = ""
     if advisors:
-        cards = "\n".join(_advisor_card(a) for a in advisors)
-        grid = f'<div class="match__grid">{cards}</div>'
+        shown = advisors
     else:
-        grid = f"""<div class="dir-empty">
-      <p>{escape(empty_note)}</p>
-      <a class="btn btn--dark" href="/#advisors">Explore all advisors</a>
-    </div>"""
+        # No exact local/specialty match — show the real roster anyway rather
+        # than an empty state, framed honestly as nationwide availability
+        # (not a claim of local presence or this specific specialty).
+        shown = ADVISORS
+        note = f'<p class="dir-note">{escape(empty_note)}</p>'
+    cards = "\n".join(_advisor_card(a) for a in shown)
+    grid = f'{note}<div class="match__grid">{cards}</div>'
     return f"""
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
@@ -163,8 +169,8 @@ def build_directory_pages(write_fn):
                         "Specialty", f"{label} advisors",
                         f"Independent advisors on Valora who specialize in {label.lower()}.",
                         matches,
-                        f"We don't have a {label.lower()} specialist listed yet — this page is a "
-                        "preview of how specialty pages will look as our advisor network grows.",
+                        f"We don't have a {label.lower()} specialist listed yet, but the advisors below "
+                        "work with clients nationwide and can tell you if this is something they cover.",
                         calc_categories=[SPECIALTY_TO_CALC[slug]] if slug in SPECIALTY_TO_CALC else None,
                         faq=DIRECTORY_FAQS.get(slug))
 
@@ -176,8 +182,8 @@ def build_directory_pages(write_fn):
                         city, f"Financial advisors in {city}",
                         f"Independent, fiduciary financial advisors based in {city}.",
                         matches,
-                        f"We don't have a {city.split(',')[0]}-based advisor listed yet — this "
-                        "page is a preview of how city pages will look as our advisor network grows.",
+                        f"We don't have a {city.split(',')[0]}-based advisor listed yet, but the "
+                        "advisors below work with clients remotely, wherever they're based.",
                         calc_categories=CALC_CATEGORIES,
                         faq=DIRECTORY_FAQS.get(slug))  # location doesn't imply a topic — show all
 
@@ -189,8 +195,8 @@ def build_directory_pages(write_fn):
                         "Niche", f"Advisors for {label.lower()} clients",
                         f"Independent advisors on Valora who work with {label.lower()} clients.",
                         [],
-                        "We don't have an advisor tagged for this yet — this page is a preview of how "
-                        "niche pages will look as our advisor network grows.",
+                        "We don't have an advisor specifically tagged for this yet, but the advisors "
+                        "below work with clients nationwide and can tell you if this is something they cover.",
                         calc_categories=[NICHE_TO_CALC[slug]] if slug in NICHE_TO_CALC else None,
                         faq=DIRECTORY_FAQS.get(slug))
 
@@ -202,8 +208,8 @@ def build_directory_pages(write_fn):
                         "Asset range", f"Advisors for {label} in investable assets",
                         f"Independent advisors on Valora who work with households in the {label.lower()} range.",
                         [],
-                        "We don't have an advisor tagged for this asset range yet — this page is a "
-                        "preview of how these pages will look as our advisor network grows.")
+                        "We don't have an advisor specifically tagged for this asset range yet, but the "
+                        "advisors below work with clients nationwide and can tell you if this fits.")
 
     for city_slug, city, spec_slug, label in real_combos():
         matches = [a for a in ADVISORS if a["city"] == city]
@@ -224,26 +230,38 @@ def build_directory_pages(write_fn):
         write_fn(f"/find-a-financial-advisor/{combo_slug}/", html)
 
 
-def build_directory_index(write_fn):
-    """/find-a-financial-advisor/ — one hub page listing every city, specialty,
-    niche, and asset-type page, so the footer can link a handful of cities
-    plus "More cities" here instead of listing all ~30 in every page footer."""
-    def _cols(title, items):
-        links = "".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>'
-                         for slug, label in items)
-        return f'<div class="dir-index__col"><h3>{escape(title)}</h3><ul>{links}</ul></div>'
+def _city_mark(city):
+    """A small illustrative skyline mark, not a photo of the real place — we
+    don't have a verified, licensed photo for each of 31 cities on hand, and
+    a wrong or mismatched stock photo is worse than a simple, honest graphic
+    in the site's own brand colors."""
+    import hashlib
+    seed = int(hashlib.sha1(city.encode()).hexdigest(), 16)
+    heights = [24 + (seed >> (i * 4) & 0xF) * 3 for i in range(7)]
+    bars = "".join(
+        f'<rect x="{i * 16}" y="{64 - h}" width="10" height="{h}" rx="1"/>'
+        for i, h in enumerate(heights)
+    )
+    return f'<svg class="city-card__mark" viewBox="0 0 112 64" aria-hidden="true">{bars}</svg>'
 
+
+def build_cities_index(write_fn):
+    """/cities/ — every city page, each with a small illustrative mark (see
+    _city_mark) so the footer can link a handful of cities plus "More
+    cities" here instead of listing all ~30 in every page footer."""
+    cards = "".join(
+        f'<a class="city-card" href="/find-a-financial-advisor/{slug}/">'
+        f'{_city_mark(city)}<span>{escape(city)}</span></a>'
+        for slug, city in CITIES
+    )
     body = f"""
 <section class="section section--paper" id="top">
-  <div class="container" style="max-width:900px;">
+  <div class="container" style="max-width:1000px;">
     <p class="eyebrow reveal">Directory</p>
-    <h1 class="display display--lg reveal">Find a financial advisor</h1>
-    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:60ch;">Browse advisors by city, specialty, profession, or investable-asset range.</p>
-    <div class="dir-index" style="margin-top:40px;">
-      {_cols("Cities", CITIES)}
-      {_cols("Specialties", [(s, l) for s, l, _ in SPECIALTIES])}
-      {_cols("Professions", NICHES)}
-      {_cols("Asset types", ASSET_TYPES)}
+    <h1 class="display display--lg reveal">Find a financial advisor by city</h1>
+    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:60ch;">Browse independent, fiduciary financial advisors on Valora by metro area.</p>
+    <div class="city-grid" style="margin-top:40px;">
+      {cards}
     </div>
   </div>
 </section>
@@ -251,9 +269,59 @@ def build_directory_index(write_fn):
 {contact_section()}
 """
     html = page(
-        head(f"Find a Financial Advisor | {BRAND}",
-             "Browse independent, fiduciary financial advisors on Valora by city, specialty, profession, or asset range.",
-             path="/find-a-financial-advisor/"),
+        head(f"Financial Advisors by City | {BRAND}",
+             "Browse independent, fiduciary financial advisors on Valora by metro area.",
+             path="/cities/"),
         body,
     )
-    write_fn("/find-a-financial-advisor/", html)
+    write_fn("/cities/", html)
+
+
+def _item_placeholder(label):
+    """A placeholder mark for a directory item — an abstract category (a
+    specialty or profession, not a place), so an initial-letter mark is
+    honest here in a way a stock photo wouldn't be (see _city_mark)."""
+    initial = label.strip()[:1].upper() or "?"
+    return f'<span class="item-card__mark" aria-hidden="true">{escape(initial)}</span>'
+
+
+def _single_column_index(write_fn, slug, eyebrow_title, items):
+    cards = "".join(
+        f'<a class="item-card" href="/find-a-financial-advisor/{s}/">{_item_placeholder(l)}<span>{escape(l)}</span></a>'
+        for s, l in items
+    )
+    body = f"""
+<section class="section section--paper" id="top">
+  <div class="container" style="max-width:900px;">
+    <p class="eyebrow reveal">Directory</p>
+    <h1 class="display display--lg reveal">Find a financial advisor by {eyebrow_title.lower()}</h1>
+    <div class="item-grid" style="margin-top:40px;">
+      {cards}
+    </div>
+  </div>
+</section>
+
+{contact_section()}
+"""
+    html = page(
+        head(f"Financial Advisors by {eyebrow_title} | {BRAND}",
+             f"Browse independent, fiduciary financial advisors on Valora by {eyebrow_title.lower()}.",
+             path=f"/{slug}/"),
+        body,
+    )
+    write_fn(f"/{slug}/", html)
+
+
+def build_specialties_index(write_fn):
+    """/specialties/ — specialty pages only."""
+    _single_column_index(write_fn, "specialties", "Specialty", [(s, l) for s, l, _ in SPECIALTIES])
+
+
+def build_professions_index(write_fn):
+    """/professions/ — profession (niche) pages only."""
+    _single_column_index(write_fn, "professions", "Profession", NICHES)
+
+
+def build_asset_types_index(write_fn):
+    """/asset-types/ — asset-range pages only."""
+    _single_column_index(write_fn, "asset-types", "Asset Range", ASSET_TYPES)
