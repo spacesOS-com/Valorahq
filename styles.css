@@ -1919,11 +1919,17 @@ body.gate-open{ overflow:hidden; }
 @media (max-width:900px){ .adv-blog__grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:620px){ .adv-blog__grid{ grid-template-columns:1fr; } }
 
-/* Founder request: Company + For Advisors · Tools link groups pinned to the bottom of the footer */
-.footer__nav-bottom{
-  display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(24px,4vw,72px);
-  padding:0 0 clamp(28px,4vw,48px);
+/* Forms on light sections (calculators, content pages): the shared .field
+   styles are designed for the dark-green contact section, so labels/inputs
+   were near-invisible on paper backgrounds. */
+.section--paper .field label{ color:rgba(30,59,42,.72); }
+.section--paper .field .opt{ color:rgba(30,59,42,.5); }
+.section--paper .field input:not([type="checkbox"]),.section--paper .field select,.section--paper .field textarea{
+  border-bottom:1px solid rgba(30,59,42,.35); color:var(--ink);
 }
-.footer__nav-bottom .footer__brand{ flex:1.4 1 280px; }
-.footer__nav-bottom .footer__col{ flex:1 1 180px; min-width:180px; }
-.footer__nav-bottom .footer__brand p{ margin-top:18px; }
+.section--paper .field input:not([type="checkbox"])::placeholder,.section--paper .field textarea::placeholder{ color:rgba(30,59,42,.32); }
+.section--paper .field input:not([type="checkbox"]):focus,.section--paper .field select:focus,.section--paper .field textarea:focus{ border-bottom-color:var(--green); }
+.section--paper .field select option{ background:#fff; color:var(--ink); }
+@media (max-width:640px){
+  #calcForm{ grid-template-columns:1fr !important; }
+}
