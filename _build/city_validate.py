@@ -139,13 +139,32 @@ def check_substance(pack, other_packs):
             if re.search(r"(verify|Form ADV|SEC|fiduciary|license|registration)", s, re.I):
                 continue  # allowed: advisor-verification how-to
             fails.append(f"sentence reused from {other.get('slug', 'another pack')}: {s[:90]}...")
-    # absolute tax/legal claims need conditional framing
-    hedges = r"\b(may|might|depends|typically|generally|usually|check|current(?:ly)?|as of|consult|confirm|varies|can|often|consider)\b"
-    for s in _sentences(text):
-        if re.search(r"\b(tax|taxes|taxable|deduct|IRS|legal|estate)\b", s, re.I) \
-           and re.search(r"\b(is|are|will|always|never|must)\b", s, re.I) \
-           and not re.search(hedges, s, re.I):
-            fails.append(f"absolute tax/legal framing: {s[:90]}...")
+    # Tax/legal framing, Mira's calibration (Sep 28): dated, accurately
+    # source-cited tax facts PASS unhedged. FAIL only when a claim lacks a
+    # source/current tax year where those matter, overstates scope, or turns
+    # fact into personalized advice / guaranteed outcome. (Whether each
+    # citation actually supports its exact claim stays a manual spot-check.)
+    # A sentence only counts as a tax/legal CLAIM when it asserts something
+    # (tax keyword + assertion verb); prose that merely mentions tax passes.
+    tax_kw = r"\b(tax|taxes|taxable|deduct(?:ion|s)?|IRS|legal|estate)\b"
+    assert_verb = r"\b(is|are|was|were|equals|costs|applies|ranges|exempts?|excludes?|caps?|expires?|owes?|triggers?|deducts?)\b"
+    advice = r"\b(you should|we recommend|your (?:\w+ )?(?:tax|refund|bill|liability) will|elect|guarantee[ds]?)\b"
+    absolute_scope = r"\b(always|never|every(?:one| taxpayer)|all taxpayers|no exceptions)\b"
+    for para in re.findall(r"<p[^>]*>(.*?)</p>", pack.get("body_html", ""), re.S):
+        plain = re.sub(r"<[^>]+>", "", para)
+        if not re.search(tax_kw, plain, re.I):
+            continue
+        has_source = bool(re.search(r"<a [^>]*href=", para))
+        para_has_year = bool(re.search(r"(tax year )?20\d\d", plain))
+        for s in _sentences(plain):
+            if not (re.search(tax_kw, s, re.I) and re.search(assert_verb, s, re.I)):
+                continue  # mention, not a claim
+            if re.search(advice, s, re.I):
+                fails.append(f"personalized advice / guaranteed outcome: {s[:90]}...")
+            elif re.search(absolute_scope, s, re.I):
+                fails.append(f"overstated scope (always/never/every): {s[:90]}...")
+            elif not (has_source or para_has_year):
+                fails.append(f"tax/legal claim without inline source or current tax year: {s[:90]}...")
     return fails
 
 def check_source_notes(pack):
