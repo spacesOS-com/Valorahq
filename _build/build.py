@@ -23,6 +23,7 @@ from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from content_pages import build_content_pages
 from intake_page import build_intake_page
 from concierge_page import build_concierge_page
+from traction_page import build_traction_page
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://www.valorahq.com"
@@ -185,6 +186,7 @@ if __name__ == "__main__":
     PAGES.extend(build_content_pages(write))
     build_intake_page(write)
     build_concierge_page(write)
+    build_traction_page(write)
     refresh_index()
     build_robots()
     build_sitemap()

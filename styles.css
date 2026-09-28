@@ -332,6 +332,10 @@ body:has(.site-banner) .site-header{ top:40px; }
 .stat__num{ font-family:var(--serif); font-size:clamp(1.5rem,2.6vw,2.2rem); line-height:1; }
 .stat__label{ font-size:.76rem; letter-spacing:.06em; color:rgba(239,235,224,.66); text-transform:uppercase; }
 .stat--note .stat__label{ text-transform:none; letter-spacing:.01em; font-size:.8rem; line-height:1.6; }
+.traction-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:clamp(20px,3vw,32px); }
+.traction-stat{ padding:22px; border:1px solid var(--line); border-radius:8px; }
+.traction-stat .stat__num{ color:var(--green); }
+.traction-stat .stat__label{ color:var(--ink-soft); }
 
 /* =========================================================
    STATEMENT
