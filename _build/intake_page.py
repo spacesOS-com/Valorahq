@@ -20,7 +20,7 @@ Pipeline notes:
 """
 from html import escape
 
-from partials import page, head, ASSET_OPTIONS, SITUATION_OPTIONS
+from partials import page, head, faq_block, faq_schema, ASSET_OPTIONS, SITUATION_OPTIONS
 
 PROFESSION_OPTIONS = ["Physician", "Tech employee"] + SITUATION_OPTIONS
 
@@ -110,6 +110,18 @@ def intake_form():
     </form>"""
 
 
+# Marcus's approved final FAQ (published Sep 28 after EA's all-4 end-to-end
+# re-test passed and queue ownership landed: EA + Ethan own the queue, EA's
+# daily 9:30am check escalates at 2 business days). Do not edit the answer
+# copy without Marcus.
+INTAKE_FAQS = [
+    ("What happens after I send my request?",
+     "You will get an immediate email confirming that your request reached us. "
+     "We aim to follow up personally within two business days. "
+     "If we cannot help with your request, we will say so."),
+]
+
+
 def intake_body():
     return f"""
 <section class="section section--paper" id="top">
@@ -130,6 +142,12 @@ def intake_body():
     {intake_form()}
   </div>
 </section>
+
+<section class="section section--paper" id="faq">
+  <div class="container" style="max-width:700px;">
+{faq_block(INTAKE_FAQS)}
+  </div>
+</section>
 """
 
 
@@ -137,7 +155,7 @@ def build_intake_page(write_fn):
     html = page(
         head("Find Your Advisor | Valora",
              "Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step. Free, no obligation.",
-             path="/find-your-advisor/"),
+             path="/find-your-advisor/", schema=faq_schema(INTAKE_FAQS)),
         intake_body(),
     )
     write_fn("/find-your-advisor/", html)
