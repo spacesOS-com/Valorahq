@@ -2,12 +2,15 @@
 """/find-a-financial-advisor/[...] pages: specialty, city, niche, asset type,
 and a small number of real city+specialty combos.
 
-Every page lists real advisors from advisor_pages.ADVISORS when their tags
-or city genuinely match — no invented people. Where nothing matches, the
-page shows an honest empty state AND is marked noindex (see partials.head):
-it stays live and useful for a visitor who lands on it, but isn't presented
-to search engines as if it were a real, populated page. Only pages with a
-real match are indexed and listed in the sitemap (see build.py's PAGES).
+Every page lists real advisors from advisor_pages.ADVISORS — no invented
+people, ever. Where a page's tag/city doesn't genuinely match any advisor,
+it falls back to showing the full real roster with an honest note ("we
+don't have a specialist tagged for this yet, but these advisors work with
+clients nationwide") instead of a strict local/specialty claim. That page
+is still marked noindex (see partials.head): it stays live and useful for
+a visitor who lands on it, but isn't presented to search engines as if it
+were a genuine local/specialty match. Only pages with a real match are
+indexed and listed in the sitemap (see build.py's PAGES / real_pages()).
 
 Combo pages (city + specialty together) are built only where a real advisor
 actually matches both — not the full city x specialty cross-product, which
@@ -76,14 +79,17 @@ def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=N
             + faq_block(faq) + '\n'
             '  </div>\n</section>'
         )
+    note = ""
     if advisors:
-        cards = "\n".join(_advisor_card(a) for a in advisors)
-        grid = f'<div class="match__grid">{cards}</div>'
+        shown = advisors
     else:
-        grid = f"""<div class="dir-empty">
-      <p>{escape(empty_note)}</p>
-      <a class="btn btn--dark" href="/#advisors">Explore all advisors</a>
-    </div>"""
+        # No exact local/specialty match — show the real roster anyway rather
+        # than an empty state, framed honestly as nationwide availability
+        # (not a claim of local presence or this specific specialty).
+        shown = ADVISORS
+        note = f'<p class="dir-note">{escape(empty_note)}</p>'
+    cards = "\n".join(_advisor_card(a) for a in shown)
+    grid = f'{note}<div class="match__grid">{cards}</div>'
     return f"""
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
@@ -163,8 +169,8 @@ def build_directory_pages(write_fn):
                         "Specialty", f"{label} advisors",
                         f"Independent advisors on Valora who specialize in {label.lower()}.",
                         matches,
-                        f"We don't have a {label.lower()} specialist listed yet — this page is a "
-                        "preview of how specialty pages will look as our advisor network grows.",
+                        f"We don't have a {label.lower()} specialist listed yet, but the advisors below "
+                        "work with clients nationwide and can tell you if this is something they cover.",
                         calc_categories=[SPECIALTY_TO_CALC[slug]] if slug in SPECIALTY_TO_CALC else None,
                         faq=DIRECTORY_FAQS.get(slug))
 
@@ -176,8 +182,8 @@ def build_directory_pages(write_fn):
                         city, f"Financial advisors in {city}",
                         f"Independent, fiduciary financial advisors based in {city}.",
                         matches,
-                        f"We don't have a {city.split(',')[0]}-based advisor listed yet — this "
-                        "page is a preview of how city pages will look as our advisor network grows.",
+                        f"We don't have a {city.split(',')[0]}-based advisor listed yet, but the "
+                        "advisors below work with clients remotely, wherever they're based.",
                         calc_categories=CALC_CATEGORIES,
                         faq=DIRECTORY_FAQS.get(slug))  # location doesn't imply a topic — show all
 
@@ -189,8 +195,8 @@ def build_directory_pages(write_fn):
                         "Niche", f"Advisors for {label.lower()} clients",
                         f"Independent advisors on Valora who work with {label.lower()} clients.",
                         [],
-                        "We don't have an advisor tagged for this yet — this page is a preview of how "
-                        "niche pages will look as our advisor network grows.",
+                        "We don't have an advisor specifically tagged for this yet, but the advisors "
+                        "below work with clients nationwide and can tell you if this is something they cover.",
                         calc_categories=[NICHE_TO_CALC[slug]] if slug in NICHE_TO_CALC else None,
                         faq=DIRECTORY_FAQS.get(slug))
 
@@ -202,8 +208,8 @@ def build_directory_pages(write_fn):
                         "Asset range", f"Advisors for {label} in investable assets",
                         f"Independent advisors on Valora who work with households in the {label.lower()} range.",
                         [],
-                        "We don't have an advisor tagged for this asset range yet — this page is a "
-                        "preview of how these pages will look as our advisor network grows.")
+                        "We don't have an advisor specifically tagged for this asset range yet, but the "
+                        "advisors below work with clients nationwide and can tell you if this fits.")
 
     for city_slug, city, spec_slug, label in real_combos():
         matches = [a for a in ADVISORS if a["city"] == city]

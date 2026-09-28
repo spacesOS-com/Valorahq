@@ -1315,6 +1315,10 @@ body.gate-open{ overflow:hidden; }
   padding:48px 24px; text-align:center; border:1px dashed var(--line); border-radius:8px;
 }
 .dir-empty p{ font-size:.95rem; color:var(--ink-soft); margin-bottom:20px; }
+.dir-note{
+  font-size:.86rem; color:var(--ink-soft); padding:14px 18px; margin-bottom:24px;
+  background:var(--paper); border-left:2px solid var(--gold); border-radius:4px;
+}
 .dir-index{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:clamp(24px,4vw,40px); }
 .dir-index__col h3{ font-family:var(--serif); font-size:1.05rem; font-weight:400; margin-bottom:14px; }
 .dir-index__col ul{ display:flex; flex-direction:column; gap:10px; }
