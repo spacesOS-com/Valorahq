@@ -23,6 +23,9 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; ValoraBuild/1.0)"}
 EDITORIAL_WHITELIST = [
     # Mira, Sep 28: rhetorical advisor-quality line, not a tax claim.
     "reads like it was written for a high-tax coastal city",
+    # Mira, Sep 28 ruling #1 option B: her verbatim prescribed strip line for the
+    # NYC homebuying sentence - approved replacement, not an unsourced claim.
+    "Mortgage interest and property taxes can affect the rent-versus-buy comparison; check which costs apply to your situation.",
 ]
 MIN_WORDS = 1400
 
