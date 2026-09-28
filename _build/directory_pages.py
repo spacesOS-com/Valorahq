@@ -21,6 +21,8 @@ from partials import (page, head, BRAND, contact_section,
                        DIRECTORY_SPECIALTIES as SPECIALTIES, DIRECTORY_CITIES as CITIES,
                        DIRECTORY_NICHES as NICHES, DIRECTORY_ASSET_TYPES as ASSET_TYPES)
 from advisor_pages import ADVISORS
+from directory_faqs import DIRECTORY_FAQS
+from partials import faq_schema, faq_block
 
 
 def _advisor_card(a):
@@ -65,7 +67,15 @@ def _calc_cross_link(categories):
     </div>"""
 
 
-def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=None):
+def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=None, faq=None):
+    faq_section = ""
+    if faq:
+        faq_section = (
+            '<section class="section section--paper" id="faq">\n'
+            '  <div class="container" style="max-width:900px;">\n'
+            + faq_block(faq) + '\n'
+            '  </div>\n</section>'
+        )
     if advisors:
         cards = "\n".join(_advisor_card(a) for a in advisors)
         grid = f'<div class="match__grid">{cards}</div>'
@@ -87,6 +97,8 @@ def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=N
   </div>
 </section>
 
+{faq_section}
+
 {contact_section()}
 """
 
@@ -95,10 +107,11 @@ def _specialty_matches(needles):
     return [a for a in ADVISORS if any(n in t.lower() for t in a["tags"] for n in needles)]
 
 
-def _write_listing(write_fn, slug, meta_title, meta_desc, eyebrow, title, intro, matches, empty_note, calc_categories=None):
+def _write_listing(write_fn, slug, meta_title, meta_desc, eyebrow, title, intro, matches, empty_note, calc_categories=None, faq=None):
     html = page(
-        head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=not matches),
-        _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories),
+        head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=not matches,
+             schema=faq_schema(faq) if faq else ""),
+        _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories, faq=faq),
     )
     write_fn(f"/find-a-financial-advisor/{slug}/", html)
     return bool(matches)
@@ -150,7 +163,8 @@ def build_directory_pages(write_fn):
                         matches,
                         f"We don't have a {label.lower()} specialist listed yet — this page is a "
                         "preview of how specialty pages will look as our advisor network grows.",
-                        calc_categories=[SPECIALTY_TO_CALC[slug]] if slug in SPECIALTY_TO_CALC else None)
+                        calc_categories=[SPECIALTY_TO_CALC[slug]] if slug in SPECIALTY_TO_CALC else None,
+                        faq=DIRECTORY_FAQS.get(slug))
 
     for slug, city in CITIES:
         matches = [a for a in ADVISORS if a["city"] == city]
@@ -162,7 +176,8 @@ def build_directory_pages(write_fn):
                         matches,
                         f"We don't have a {city.split(',')[0]}-based advisor listed yet — this "
                         "page is a preview of how city pages will look as our advisor network grows.",
-                        calc_categories=CALC_CATEGORIES)  # location doesn't imply a topic — show all
+                        calc_categories=CALC_CATEGORIES,
+                        faq=DIRECTORY_FAQS.get(slug))  # location doesn't imply a topic — show all
 
     for slug, label in NICHES:
         # no advisor is tagged by client situation today — always the honest empty state, always noindex
@@ -174,7 +189,8 @@ def build_directory_pages(write_fn):
                         [],
                         "We don't have an advisor tagged for this yet — this page is a preview of how "
                         "niche pages will look as our advisor network grows.",
-                        calc_categories=[NICHE_TO_CALC[slug]] if slug in NICHE_TO_CALC else None)
+                        calc_categories=[NICHE_TO_CALC[slug]] if slug in NICHE_TO_CALC else None,
+                        faq=DIRECTORY_FAQS.get(slug))
 
     for slug, label in ASSET_TYPES:
         # same as niches: real option list, no real matches yet
@@ -193,10 +209,12 @@ def build_directory_pages(write_fn):
         html = page(
             head(f"{label} Advisors in {city} | {BRAND}",
                  f"Independent, fiduciary {label.lower()} advisors on Valora based in {city}.",
-                 path=f"/find-a-financial-advisor/{combo_slug}/"),
+                 path=f"/find-a-financial-advisor/{combo_slug}/",
+                 schema=faq_schema(DIRECTORY_FAQS[f"{city_slug}-{spec_slug}"]) if f"{city_slug}-{spec_slug}" in DIRECTORY_FAQS else ""),
             _listing_body(f"{city} · {label}", f"{label} advisors in {city}",
                           f"Independent advisors on Valora who specialize in {label.lower()} and are based in {city}.",
                           matches, "",
-                          calc_categories=[SPECIALTY_TO_CALC[spec_slug]] if spec_slug in SPECIALTY_TO_CALC else None),
+                          calc_categories=[SPECIALTY_TO_CALC[spec_slug]] if spec_slug in SPECIALTY_TO_CALC else None,
+                          faq=DIRECTORY_FAQS.get(f"{city_slug}-{spec_slug}")),
         )
         write_fn(f"/find-a-financial-advisor/{combo_slug}/", html)

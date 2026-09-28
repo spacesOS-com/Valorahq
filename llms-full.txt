@@ -586,16 +586,16 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  We publish the playbook we use to get you clients. 
  Valora's own content on getting advisory firms recommended by ChatGPT, Perplexity, and AI search — the same approach behind how we get your firm in front of prospective clients. 
 
+ Lead generation strategies for financial advisors: what each one really costs 
+ Referrals convert but don&#x27;t scale. Social posting has the worst measured cost per client in the industry; SEO and educational content quietly win. What each lead generation strategy actually costs, per Kitces data. 
+ Read on the blog → 
+
  Viral Coach alternatives: 6 advisor marketing firms compared on what you actually get 
  Six advisor marketing firms, six different products. One sells views, one sells video, one sells a system you run, one sells a marketing department, one sells LinkedIn conversations, one sells strategy. Public pricing, honest limits, and the questions that cut through every deck. 
  Read on the blog → 
 
  How to evaluate a marketing firm for your advisory firm: 5 questions that separate qualified prospects from vanity metrics 
  An advisor evaluating six marketing firms asked the right questions - and most firms can&#x27;t answer them. The five questions that separate qualified prospects from vanity metrics, and what a good answer sounds like. 
- Read on the blog → 
-
- Video Builds the Most Trust in Advisor Marketing. It Also Costs $37,170 a Client. 
- The Kitces 2026 study: video builds the most trust in advisor marketing at $37,170 a client. Here is the cheaper trust channel most RIAs are missing. 
  Read on the blog → 
 
  View more 
@@ -1111,6 +1111,13 @@ Retirement planning Advisors | Valora
  Related tools 
  Retirement calculators 
 
+ Common questions 
+ When should I start working with a retirement planning advisor? The highest-value moments are the five to ten years before retirement and the first few years after: that&#x27;s when withdrawal strategy, Social Security timing, Roth conversions, and healthcare costs get locked in. Earlier is still useful, but the stakes concentrate around the transition. 
+ What does a retirement plan from an advisor include? A projection of spending against income sources, a sustainable withdrawal rate, a Social Security and pension claiming strategy, tax planning across account types (traditional, Roth, taxable), Medicare and healthcare cost estimates, and a plan for the order you draw accounts down. 
+ How much can I safely withdraw in retirement? The 4% rule is a starting point from 1990s research, not a guarantee. Your sustainable rate depends on your asset allocation, flexibility to adjust spending, other income sources, and the returns sequence you actually experience. An advisor stress-tests your specific plan rather than quoting a single number. 
+ What&#x27;s the difference between a Roth conversion and a regular withdrawal? A Roth conversion moves money from a traditional IRA to a Roth IRA: you pay income tax on the converted amount now, and qualified withdrawals later are tax-free. Conversions can make sense in low-income years, especially between retirement and required minimum distributions, but the right amount depends on your tax bracket each year. 
+ Do I need a retirement advisor if I already have a 401(k)? A 401(k) is an account, not a plan. It doesn&#x27;t decide when you can retire, how much you can spend, when to claim Social Security, or how to turn savings into income. An advisor coordinates those decisions, of which the 401(k) is just one input. 
+
  Let's build a financial life that feels like yours. 
  Answer a few questions to find advisors who match your needs. 
 
@@ -1209,6 +1216,13 @@ Financial Advisors in Austin, TX | Valora
 
  Related tools 
  Retirement calculators Taxes calculators Social Security calculators Equity Compensation calculators Investing calculators Banking calculators 
+
+ Common questions 
+ How do I find a good financial advisor in Austin? Start with fiduciary, fee-transparent advisors who work with situations like yours - Austin&#x27;s mix of tech equity, business owners, and relocations means relevant experience varies a lot. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site, interview two or three, and compare full fee quotes in dollars. 
+ What does a financial advisor in Austin typically cost? Common models: a percentage of assets managed, flat annual planning fees, or hourly. Ask each advisor for their total cost at your asset level in dollars per year. Prices in Austin track national norms more than local ones - what varies is the service behind the fee. 
+ Do Austin advisors work with tech employees and equity compensation? Many do - it&#x27;s one of the city&#x27;s defining client profiles. Ask specifically about RSU strategy, option exercise planning, ESPP, and concentrated employer stock, and whether they&#x27;ve worked with employees of your company or similar ones. 
+ Does Texas having no state income tax change the advice I need? It shifts planning emphasis: no state tax means Roth conversions and capital gains decisions are federal-only calculations, and property taxes and federal deduction caps matter more. If you relocated from a high-tax state, timing income across the move year is a real planning item. 
+ Can I work with an advisor who isn&#x27;t based in Austin? Yes - most advisory relationships work fine remotely, and some people prefer a specialist over a local generalist. Local knowledge matters most for Texas-specific items like property tax and homestead rules, which any Texas-savvy advisor handles. 
 
  Let's build a financial life that feels like yours. 
  Answer a few questions to find advisors who match your needs. 
@@ -1309,6 +1323,13 @@ Financial Advisors in Los Angeles, CA | Valora
  Related tools 
  Retirement calculators Taxes calculators Social Security calculators Equity Compensation calculators Investing calculators Banking calculators 
 
+ Common questions 
+ How do I find a good financial advisor in Los Angeles? Define what you need first - LA&#x27;s advisory market spans entertainment, tech, real estate, and business ownership, and relevant experience differs widely. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site, ask for fiduciary status in writing, and interview two or three before deciding. 
+ What does a financial advisor in Los Angeles typically cost? Expect the standard national models: a percentage of assets, flat annual fees, or hourly rates, with LA&#x27;s large advisor market offering every tier. Compare the all-in dollar cost per year at your asset level, including underlying fund fees. 
+ How do California taxes affect financial planning in LA? California&#x27;s top income tax rate is the nation&#x27;s highest and capital gains are taxed as ordinary income - so Roth conversion timing, equity compensation decisions, asset location, and residency planning carry more weight here than in most states. Any multi-state move deserves planning before the moving truck. 
+ Do LA advisors work with entertainment industry finances? A real specialty exists for it: irregular income, residuals, loan-out corporations, and union pensions. If that&#x27;s your world, ask for direct experience with entertainment clients - the structures are specific enough that generalist advice often misses them. 
+ Can I work with an advisor outside California? Yes, and many people do. Just confirm they understand California tax and estate rules as they apply to you - community property, state capital gains treatment, and Proposition 19 property rules are the items out-of-state advisors most often get wrong. 
+
  Let's build a financial life that feels like yours. 
  Answer a few questions to find advisors who match your needs. 
 
@@ -1408,6 +1429,13 @@ Retirement planning Advisors in Austin, TX | Valora
  Related tools 
  Retirement calculators 
 
+ Common questions 
+ How do I find a retirement planning advisor in Austin? Look for fiduciary advisors whose core work is retirement transitions - withdrawal strategy, Social Security timing, Roth conversions - not just investment management. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site and interview two or three with your actual numbers. 
+ Does Texas being tax-free change retirement planning? Yes, helpfully: Texas taxes no retirement income, so withdrawal sequencing and Roth conversion decisions are federal-only math. Retirees relocating from high-tax states should plan the move-year carefully - income recognized before versus after establishing Texas residency is taxed very differently. 
+ When should an Austin retiree start Roth conversions? The window between retirement and required minimum distributions is usually the sweet spot: lower income years let you convert at lower federal brackets with no state tax layer at all. The right amount each year depends on your bracket, IRMAA exposure, and other income. 
+ What does retirement planning cost in Austin? Flat-fee retirement plans, percentage-of-assets relationships, and hourly engagements all exist locally. For a one-time plan, expect a flat project fee; ongoing management is usually asset-based. Get the total in dollars and what&#x27;s included before comparing. 
+ Can I do retirement planning with an advisor who isn&#x27;t in Austin? Yes - the work is numbers, not geography. What matters is fluency in Texas&#x27;s tax picture (simple) and the federal retirement rules (identical everywhere). Choose on expertise and fee, not ZIP code. 
+
  Let's build a financial life that feels like yours. 
  Answer a few questions to find advisors who match your needs. 
 
@@ -1506,6 +1534,13 @@ Retirement planning Advisors in Los Angeles, CA | Valora
 
  Related tools 
  Retirement calculators 
+
+ Common questions 
+ How do I find a retirement planning advisor in Los Angeles? Seek fiduciary advisors whose daily work is retirement transitions - withdrawal sequencing, Social Security, Roth strategy - and who actively plan around California taxes. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site and interview two or three with your real numbers. 
+ How do California taxes affect retirement planning? California taxes most retirement income, including IRA and 401(k) withdrawals and capital gains as ordinary income - though not Social Security benefits. That materially changes Roth conversion math, withdrawal sequencing, and the value of relocating in retirement. Plan conversions with the state layer included. 
+ Is retiring in California worth it financially? For many people the decision isn&#x27;t purely financial - but know the numbers: high income tax on withdrawals, high property costs, partial offsets like Proposition 19&#x27;s property tax portability for those 55+. An advisor can model staying versus relocating against your actual plan before you decide. 
+ What does retirement planning cost in Los Angeles? Flat project fees for a one-time plan, asset-based fees for ongoing management, and hourly options all exist in LA&#x27;s deep market. Compare total annual dollars at your asset level and confirm tax planning is included, not just investments. 
+ Can I work with a retirement advisor outside California? Yes, with one caveat: California tax fluency is non-negotiable. An out-of-state advisor must understand CA&#x27;s treatment of retirement income, capital gains, and residency rules - those are where mistakes get expensive. 
 
  Let's build a financial life that feels like yours. 
  Answer a few questions to find advisors who match your needs. 
