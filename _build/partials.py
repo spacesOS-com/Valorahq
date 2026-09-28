@@ -172,7 +172,7 @@ def faq_schema(faq):
     })
 
 
-def head(title, description, path="/", schema="", noindex=False):
+def head(title, description, path="/", schema="", noindex=False, keywords=None):
     canonical = SITE_URL + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex,follow">\n' if noindex else ""
     return f"""<head>
@@ -180,6 +180,7 @@ def head(title, description, path="/", schema="", noindex=False):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{escape(title)}</title>
 <meta name="description" content="{escape(description)}">
+{f'<meta name="keywords" content="' + escape(", ".join(keywords)) + '">' if keywords else ""}
 {robots}<link rel="canonical" href="{canonical}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
