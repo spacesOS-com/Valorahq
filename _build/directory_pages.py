@@ -222,3 +222,38 @@ def build_directory_pages(write_fn):
             body_class="page-sub has-cta-float",
         )
         write_fn(f"/find-a-financial-advisor/{combo_slug}/", html)
+
+
+def build_directory_index(write_fn):
+    """/find-a-financial-advisor/ — one hub page listing every city, specialty,
+    niche, and asset-type page, so the footer can link a handful of cities
+    plus "More cities" here instead of listing all ~30 in every page footer."""
+    def _cols(title, items):
+        links = "".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>'
+                         for slug, label in items)
+        return f'<div class="dir-index__col"><h3>{escape(title)}</h3><ul>{links}</ul></div>'
+
+    body = f"""
+<section class="section section--paper" id="top">
+  <div class="container" style="max-width:900px;">
+    <p class="eyebrow reveal">Directory</p>
+    <h1 class="display display--lg reveal">Find a financial advisor</h1>
+    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:60ch;">Browse advisors by city, specialty, profession, or investable-asset range.</p>
+    <div class="dir-index" style="margin-top:40px;">
+      {_cols("Cities", CITIES)}
+      {_cols("Specialties", [(s, l) for s, l, _ in SPECIALTIES])}
+      {_cols("Professions", NICHES)}
+      {_cols("Asset types", ASSET_TYPES)}
+    </div>
+  </div>
+</section>
+
+{contact_section()}
+"""
+    html = page(
+        head(f"Find a Financial Advisor | {BRAND}",
+             "Browse independent, fiduciary financial advisors on Valora by city, specialty, profession, or asset range.",
+             path="/find-a-financial-advisor/"),
+        body,
+    )
+    write_fn("/find-a-financial-advisor/", html)

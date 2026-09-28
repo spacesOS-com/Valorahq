@@ -267,7 +267,7 @@ Valora — Your money has a purpose
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -377,11 +377,6 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
 
  Book a demo 
 
- 100% 
- Exclusive client matches &amp; book ownership 
-
- Fiduciary RIA network. Limited territory availability per market. 
-
  Scale your book. Keep your independence. Improve your close rate. 
  Valora gets prospective clients who are actively looking for an advisor in front of you, then gives you the tools to manage them from first message to signed client. 
 
@@ -406,6 +401,15 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  High-Intent Urgency: Prospects have actively requested fiduciary guidance 
  Direct Calendar Booking: Integrates with Calendly, Google Calendar, and Outlook 
  Full Advisory Discretion: You review the dossier and decide whether to engage 
+
+ Prospect Dossier 
+
+ Liquid assets $1M &ndash; $3M 
+ Timeline Within 6 months 
+ Primary goal Retirement income planning 
+ Requested Fiduciary guidance, actively looking 
+
+ Ready to talk &middot; exclusive to you 
 
  Inside the portal 
  Increase your conversion. 
@@ -438,6 +442,15 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  Custom niche tags (Tech RSUs, Physician Planning, Business Exit) 
  Direct calendar scheduling link with no friction 
  Local SEO positioning in your target metropolitan area 
+
+ JS 
+ J. Sample, CFP&reg; Sample Wealth Partners &middot; Austin, TX 
+
+ Tech RSUs 
+ Retirement Planning 
+ Fee-Only 
+
+ Illustrative preview &mdash; your real profile shows your own credentials, niche tags, and a direct link to your calendar. 
 
  Where Valora fits 
  How Valora compares to the other places advisors spend their marketing budget. 
@@ -541,6 +554,14 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
 
  Book a demo 
 
+ Fiduciary Standard 
+
+ Every partner advisor clears five checks before joining. 
+
+ RIA / IAR registration confirmed 
+ SEC IAPD &amp; FINRA BrokerCheck reviewed 
+ Fee schedule published, not hidden 
+
  Frequently Asked Questions 
  How does Valora match advisors with prospective clients? Valora matches consumers based on what they are specifically solving for (e.g. retirement decumulation, tech equity/RSUs, business sale, generational wealth transfer), their investable asset tier, and the advisor's verified niche expertise and geographic preference. Consumers review advisor profiles and actively choose to connect — these are qualified, intentional introductions, not cold leads. 
  Are client introductions exclusive to my firm? Yes, 100% exclusive. Unlike lead brokers who auction the same contact information to five or six competing advisors, Valora introduces each prospective client exclusively to one fiduciary advisor at a time based on mutual fit and stated preference. 
@@ -554,7 +575,7 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -652,7 +673,7 @@ Find Your Advisor | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -782,6 +803,110 @@ Financial advice guides | Valora
 
 ---
 
+# https://www.valorahq.com/find-a-financial-advisor/
+Directory hub — browse advisors by city, specialty, profession, or asset range.
+
+Find a Financial Advisor | Valora 
+
+ V ">
+
+ Skip to content 
+
+ Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
+ For advisors 
+
+ Find an advisor 
+
+ Directory 
+ Find a financial advisor 
+ Browse advisors by city, specialty, profession, or investable-asset range. 
+
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
+ Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
+ Asset types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+
+ Let's build a financial life that feels like yours. 
+ Answer a few questions to find advisors who match your needs. 
+
+ Step 1 of 4 
+ What are you looking for help with? 
+ Select all that apply 
+
+ Managing investments 
+ Retirement planning 
+ Selling a business 
+ Business owner wealth planning 
+ Tax planning 
+ Estate planning 
+ Concentrated stock 
+ Inheritance / sudden wealth 
+ Cash / liquidity management 
+ Other 
+
+ Continue 
+
+ Step 2 of 4 
+ Approximately how much do you have in investable assets? 
+ Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+
+ What best describes your situation? 
+ Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
+
+ Back 
+ Continue 
+
+ Step 3 of 4 — where should advisors reach you? 
+
+ Full name 
+
+ Email 
+
+ Phone number 
+
+ Back 
+ Continue 
+
+ Step 4 of 4 
+ What would you like help with? 
+ Optional 
+
+ Back 
+ Explore advisors 
+
+ Independent advice. Personal fit. 
+
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
+ Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
+ Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
+ Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+ Calculators Retirement Taxes Social Security Equity Compensation Investing Banking 
+
+ Valora 
+
+ An independent platform helping people discover financial advisors. 
+
+ barot@valorahq.com 
+
+ Company Our approach Find an advisor For advisors Team Insights 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
+ Legal Terms Privacy Cookies 
+
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+
+ ↑
+
+---
+
 # https://www.valorahq.com/advisors/james-conole/
 James Conole, CFP® — Founder · Root Financial
 
@@ -865,7 +990,7 @@ James Conole, CFP® | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1029,7 +1154,7 @@ Kevin Lum, CFP® | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1193,7 +1318,7 @@ Eric, CFP® | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1357,7 +1482,7 @@ Even Better Retirement | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1547,7 +1672,7 @@ Retirement planning Advisors | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1722,7 +1847,7 @@ Financial Advisors in Los Angeles, CA | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1897,7 +2022,7 @@ Financial Advisors in Austin, TX | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2072,7 +2197,7 @@ Retirement planning Advisors in Los Angeles, CA | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2247,7 +2372,7 @@ Retirement planning Advisors in Austin, TX | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2411,7 +2536,7 @@ What a realistic withdrawal rate looks like now | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2575,7 +2700,7 @@ The conversation every family should have before retirement | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2739,7 +2864,7 @@ When a Roth conversion is worth the tax bill | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2903,7 +3028,7 @@ Your RSUs are a bonus, not a lottery ticket | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3068,7 +3193,7 @@ What happens if the market drops right before you retire | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3233,7 +3358,7 @@ Beneficiary forms quietly override your will | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3405,7 +3530,7 @@ Retirement savings growth calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3574,7 +3699,7 @@ Withdrawal amount calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3743,7 +3868,7 @@ Roth conversion tax cost calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3914,7 +4039,7 @@ How long your savings will last | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4089,7 +4214,7 @@ PSLF scenario explorer | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4258,7 +4383,7 @@ RSU withholding shortfall calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4426,7 +4551,7 @@ Check your 2026 401(k) employee deferral limit by age, and how much contribution
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4594,7 +4719,7 @@ Required minimum distribution (RMD) calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4765,7 +4890,7 @@ Capital gains tax estimator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4935,7 +5060,7 @@ Inflation calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5107,7 +5232,7 @@ Investment future value calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5277,7 +5402,7 @@ Savings &amp; CD growth calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5443,7 +5568,7 @@ Split your take-home pay into needs, wants, and savings using the common 50/30/2
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5609,7 +5734,7 @@ Social Security claiming age break-even calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5777,7 +5902,7 @@ Delayed retirement credit calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5948,7 +6073,7 @@ ISO exercise cost &amp; spread calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6118,7 +6243,7 @@ Concentrated stock diversification timeline | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6297,7 +6422,7 @@ Retirement Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6472,7 +6597,7 @@ Taxes Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6639,7 +6764,7 @@ Social Security Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6806,7 +6931,7 @@ Equity Compensation Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6973,7 +7098,7 @@ Investing Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7144,7 +7269,7 @@ Banking Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7379,7 +7504,7 @@ Financial Advisor for Business Owners | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7615,7 +7740,7 @@ Financial Advisor for Physicians | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7850,7 +7975,7 @@ Financial Advisor for Tech Employees with RSUs | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7993,7 +8118,7 @@ Cookie and Analytics Notice | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -8164,7 +8289,7 @@ Privacy Policy | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -8335,7 +8460,7 @@ Terms and Conditions | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -8468,7 +8593,7 @@ Team | Valora
 
  Independent advice. Personal fit. 
 
- Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC More cities &rarr; 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 

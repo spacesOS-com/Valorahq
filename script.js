@@ -82,7 +82,7 @@
     var targets = $$('.reveal, .line-reveal, .diagram, .mock');
 
     // stagger siblings inside grids/lists
-    ['.statement__cols', '.steps', '.mosaic', '.blist', '.insights__grid', '.post-list', '.brand__mocks', '.match__grid', '.feat']
+    ['.statement__cols', '.steps', '.mosaic', '.blist', '.insights__grid', '.post-list', '.brand__mocks', '.match__grid', '.feat', '.adv-ticks']
       .forEach(function (sel) {
         $$(sel).forEach(function (group) {
           $$(':scope > *', group).forEach(function (child, i) {

@@ -102,18 +102,6 @@ def for_advisors_body():
     </div>
   </div>
 
-  <!-- Animated Metrics Ribbon -->
-  <div class="hero__bar">
-    <div class="container hero__bar-grid">
-      <div class="stat">
-        <span class="stat__num" data-count="100" data-suffix="%">100%</span>
-        <span class="stat__label">Exclusive client matches &amp; book ownership</span>
-      </div>
-      <div class="stat stat--note">
-        <span class="stat__label">Fiduciary RIA network.<br>Limited territory availability per market.</span>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ================= WHY ADVISORS PARTNER WITH VALORA ================= -->
@@ -152,15 +140,25 @@ def for_advisors_body():
       <h2 class="display display--lg reveal">Every introduction arrives with<br><em>the rich context you need.</em></h2>
       <p class="reveal">Before you ever jump on an introductory conversation, you already understand their liquid asset range, specific timeline urgency, and primary financial goal.</p>
 
-      <ul class="adv-ticks reveal">
-        <li><strong>100% Exclusive Introductions:</strong> Never shared or shopped to other advisors</li>
-        <li><strong>Pre-Qualified Investable Assets:</strong> Minimum thresholds verified before matching</li>
-        <li><strong>High-Intent Urgency:</strong> Prospects have actively requested fiduciary guidance</li>
-        <li><strong>Direct Calendar Booking:</strong> Integrates with Calendly, Google Calendar, and Outlook</li>
-        <li><strong>Full Advisory Discretion:</strong> You review the dossier and decide whether to engage</li>
+      <ul class="adv-ticks">
+        <li class="reveal"><strong>100% Exclusive Introductions:</strong> Never shared or shopped to other advisors</li>
+        <li class="reveal"><strong>Pre-Qualified Investable Assets:</strong> Minimum thresholds verified before matching</li>
+        <li class="reveal"><strong>High-Intent Urgency:</strong> Prospects have actively requested fiduciary guidance</li>
+        <li class="reveal"><strong>Direct Calendar Booking:</strong> Integrates with Calendly, Google Calendar, and Outlook</li>
+        <li class="reveal"><strong>Full Advisory Discretion:</strong> You review the dossier and decide whether to engage</li>
       </ul>
     </div>
 
+    <div class="dossier-mock reveal" aria-hidden="true">
+      <div class="dossier-mock__bar"><span></span><span></span><span></span><em>Prospect Dossier</em></div>
+      <div class="dossier-mock__body">
+        <div class="dossier-mock__field"><span>Liquid assets</span><p>$1M &ndash; $3M</p></div>
+        <div class="dossier-mock__field"><span>Timeline</span><p>Within 6 months</p></div>
+        <div class="dossier-mock__field"><span>Primary goal</span><p>Retirement income planning</p></div>
+        <div class="dossier-mock__field"><span>Requested</span><p>Fiduciary guidance, actively looking</p></div>
+      </div>
+      <div class="dossier-mock__status">Ready to talk &middot; exclusive to you</div>
+    </div>
   </div>
 </section>
 
@@ -215,6 +213,19 @@ def for_advisors_body():
       <li>Direct calendar scheduling link with no friction</li>
       <li>Local SEO positioning in your target metropolitan area</li>
     </ul>
+  </div>
+
+  <div class="dir-card-mock reveal" aria-hidden="true">
+    <div class="dir-profile-head">
+      <div class="dir-profile-img" style="display:flex; align-items:center; justify-content:center; background:var(--green); color:var(--cream); font-family:var(--serif); font-size:1.1rem;">JS</div>
+      <div><h4>J. Sample, CFP&reg;</h4><p>Sample Wealth Partners &middot; Austin, TX</p></div>
+    </div>
+    <div class="dir-tags">
+      <span class="dir-tag">Tech RSUs</span>
+      <span class="dir-tag">Retirement Planning</span>
+      <span class="dir-tag">Fee-Only</span>
+    </div>
+    <p class="dir-quote">Illustrative preview &mdash; your real profile shows your own credentials, niche tags, and a direct link to your calendar.</p>
   </div>
 
 </section>
@@ -317,18 +328,35 @@ def for_advisors_body():
 <section class="section section--cream life adv-faq" id="faq">
   <div class="container life__grid">
     <div class="adv-criteria reveal">
-      <p class="eyebrow">Selective Fiduciary Network</p>
-      <h2 class="display display--md">A high bar,<br><em>on purpose.</em></h2>
-      <p>Investors trust Valora because our network is curated rather than open to anyone with a marketing budget. We partner exclusively with qualified fiduciaries who share our standard for transparent, conflict-free advice.</p>
-      <ul class="adv-ticks" style="margin-top:24px;">
-        <li>Registered Investment Adviser (RIA) or IAR registration</li>
-        <li>Strict Fiduciary Duty to clients at all times</li>
-        <li>Clean regulatory history verified on SEC IAPD / FINRA BrokerCheck</li>
-        <li>Professional designation: CFP®, CFA, CPA/PFS or 10+ years experience</li>
-        <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
-      </ul>
-      <div style="margin-top:28px;">
-        <button type="button" class="btn btn--dark" style="width:100%;" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
+      <div class="adv-criteria__grid">
+        <div class="adv-criteria__copy">
+          <p class="eyebrow">Selective Fiduciary Network</p>
+          <h2 class="display display--md">A high bar,<br><em>on purpose.</em></h2>
+          <p>Investors trust Valora because our network is curated rather than open to anyone with a marketing budget. We partner exclusively with qualified fiduciaries who share our standard for transparent, conflict-free advice.</p>
+          <ul class="adv-ticks" style="margin-top:24px;">
+            <li>Registered Investment Adviser (RIA) or IAR registration</li>
+            <li>Strict Fiduciary Duty to clients at all times</li>
+            <li>Clean regulatory history verified on SEC IAPD / FINRA BrokerCheck</li>
+            <li>Professional designation: CFP®, CFA, CPA/PFS or 10+ years experience</li>
+            <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
+          </ul>
+          <div style="margin-top:28px;">
+            <button type="button" class="btn btn--dark" style="width:100%;" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
+          </div>
+        </div>
+
+        <div class="criteria-mock" aria-hidden="true">
+          <p class="criteria-mock__eyebrow">Fiduciary Standard</p>
+          <div class="criteria-mock__seal">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.4"/><path d="M15 24l6 6 12-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="criteria-mock__title">Every partner advisor clears five checks before joining.</p>
+          <ul class="criteria-mock__list">
+            <li>RIA / IAR registration confirmed</li>
+            <li>SEC IAPD &amp; FINRA BrokerCheck reviewed</li>
+            <li>Fee schedule published, not hidden</li>
+          </ul>
+        </div>
       </div>
     </div>
 
