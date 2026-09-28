@@ -34,6 +34,7 @@ PAGES = [
     ("/for-advisors/", "For advisors — how independent advisors join Valora's network."),
     ("/find-your-advisor/", "Find your advisor — four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
+    ("/calculators/", "Browse financial calculators by topic."),
     ("/find-a-financial-advisor/", "Directory hub — browse advisors by city, specialty, profession, or asset range."),
 ] + [(f"/advisors/{a['slug']}/", f"{a['name']} — {a['firm']}") for a in ADVISORS
 ] + [

@@ -27,14 +27,84 @@ CALCULATORS = [
         ],
         "result_label": "Estimated future value",
         "js": """
-          var cur = parseFloat(f.cur.value) || 0;
-          var mo = parseFloat(f.mo.value) || 0;
-          var yrs = parseFloat(f.yrs.value) || 0;
-          var ret = (parseFloat(f.ret.value) || 0) / 100;
-          var n = yrs * 12, r = ret / 12;
-          var fvLump = cur * Math.pow(1 + r, n);
-          var fvContrib = r > 0 ? mo * ((Math.pow(1 + r, n) - 1) / r) : mo * n;
+          var cur = Number(f.cur.value), mo = Number(f.mo.value);
+          var yrs = Number(f.yrs.value), retPct = Number(f.ret.value);
+          if ([f.cur, f.mo, f.yrs, f.ret].some(function (field) { return field.value.trim() === ''; }) ||
+              ![cur, mo, yrs, retPct].every(Number.isFinite) ||
+              cur < 0 || mo < 0 || yrs < 0 || yrs > 100 || retPct <= -100 || retPct > 100 ||
+              cur > Number.MAX_SAFE_INTEGER || mo > Number.MAX_SAFE_INTEGER) {
+            out.textContent = 'Enter savings and contributions of $0 or more, 0-100 years, and an annual return above -100% and at most 100%.';
+            return;
+          }
+          var n = Math.round(yrs * 12), r = retPct / 1200;
+          var factor = Math.pow(1 + r, n);
+          var fvLump = cur * factor;
+          var fvContrib = r !== 0 ? mo * ((factor - 1) / r) : mo * n;
           var total = fvLump + fvContrib;
+          out.textContent = '$' + Math.round(total).toLocaleString();
+        """,
+    },
+    {
+        "slug": "roth-ira-growth",
+        "category": "Retirement",
+        "title": "Roth IRA growth calculator",
+        "summary": "Model how a Roth IRA balance and a steady annual contribution might grow at an assumed return.",
+        "note": "A mathematical projection, not a contribution-eligibility or tax-savings estimate. Contributions are assumed at each year-end, "
+                "with annual compounding and a constant return. This does not account for market changes, fees, inflation, or withdrawal rules. "
+                "For 2026, total traditional and Roth IRA contributions generally cannot exceed $7,500 ($8,600 at age 50+), or taxable compensation if lower; "
+                "Roth eligibility may phase out based on income and filing status. Other IRA contributions count toward the same limit. "
+                "Sources: https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits "
+                "and https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500. Educational estimate only.",
+        "fields": [
+            {"id": "cur", "label": "Current Roth IRA balance ($)", "placeholder": "10000", "min": 0},
+            {"id": "annual", "label": "Illustrative annual contribution ($)", "placeholder": "5000", "min": 0},
+            {"id": "yrs", "label": "Years invested", "placeholder": "20", "min": 0, "max": 100},
+            {"id": "ret", "label": "Assumed annual return (%)", "placeholder": "6", "min": -99.99, "max": 100},
+        ],
+        "result_label": "Illustrative Roth IRA balance",
+        "js": """
+          var cur = Number(f.cur.value), annual = Number(f.annual.value);
+          var yrs = Number(f.yrs.value), retPct = Number(f.ret.value);
+          if ([f.cur, f.annual, f.yrs, f.ret].some(function (field) { return field.value.trim() === ''; }) ||
+              ![cur, annual, yrs, retPct].every(Number.isFinite) ||
+              cur < 0 || annual < 0 || cur > Number.MAX_SAFE_INTEGER || annual > Number.MAX_SAFE_INTEGER ||
+              !Number.isInteger(yrs) || yrs < 0 || yrs > 100 ||
+              retPct <= -100 || retPct > 100) {
+            out.textContent = 'Enter nonnegative balances and contributions, whole years from 0 to 100, and a return above -100% and at most 100%.';
+            return;
+          }
+          var total = cur, r = retPct / 100;
+          for (var year = 0; year < yrs; year++) total = total * (1 + r) + annual;
+          out.textContent = '$' + Math.round(total).toLocaleString();
+        """,
+    },
+    {
+        "slug": "compound-interest",
+        "category": "Investing",
+        "title": "Compound interest calculator",
+        "summary": "Estimate a starting balance plus monthly additions with a fixed annual rate and monthly compounding.",
+        "note": "Illustrative nominal-rate model: balance compounds monthly at the annual rate divided by 12; contributions arrive at month-end. "
+                "A quoted APY already includes compounding, so do not enter an APY as a nominal rate. "
+                "Actual investment returns are not fixed; this omits fees, taxes and inflation. Educational estimate only.",
+        "fields": [
+            {"id": "cur", "label": "Starting balance ($)", "placeholder": "10000", "min": 0},
+            {"id": "mo", "label": "Monthly addition ($)", "placeholder": "300", "min": 0},
+            {"id": "yrs", "label": "Years", "placeholder": "10", "min": 0, "max": 100},
+            {"id": "ret", "label": "Nominal annual rate (%)", "placeholder": "5", "min": -99.99, "max": 100},
+        ],
+        "result_label": "Estimated ending balance",
+        "js": """
+          var cur = Number(f.cur.value), mo = Number(f.mo.value);
+          var yrs = Number(f.yrs.value), retPct = Number(f.ret.value);
+          if ([f.cur, f.mo, f.yrs, f.ret].some(function (field) { return field.value.trim() === ''; }) ||
+              ![cur, mo, yrs, retPct].every(Number.isFinite) ||
+              cur < 0 || mo < 0 || yrs < 0 || yrs > 100 || retPct <= -100 || retPct > 100 ||
+              cur > Number.MAX_SAFE_INTEGER || mo > Number.MAX_SAFE_INTEGER) {
+            out.textContent = 'Enter nonnegative balances and additions, 0-100 years, and a nominal annual rate above -100% and at most 100%.';
+            return;
+          }
+          var n = Math.round(yrs * 12), r = retPct / 1200, total = cur;
+          for (var month = 0; month < n; month++) total = total * (1 + r) + mo;
           out.textContent = '$' + Math.round(total).toLocaleString();
         """,
     },
@@ -334,7 +404,7 @@ CALCULATORS = [
         "note": "2026 federal long-term capital gains brackets: Single — 0% to $49,450, 15% to $545,500, 20% "
                 "above. Married filing jointly — 0% to $98,900, 15% to $613,700, 20% above. This is federal "
                 "only — it doesn't include state capital gains tax or the 3.8% Net Investment Income Tax that "
-                "can apply at higher incomes. Source: IRS 2026 inflation adjustments.",
+                "can apply at higher incomes. Source: IRS Revenue Procedure 2025-32, published in Internal Revenue Bulletin 2025-45.",
         "fields": [
             {"id": "status", "label": "Filing status", "type": "select",
              "options": ["Single", "Married filing jointly"]},
@@ -347,9 +417,14 @@ CALCULATORS = [
             'Single': [[49450,0],[545500,.15],[Infinity,.20]],
             'Married filing jointly': [[98900,0],[613700,.15],[Infinity,.20]]
           };
-          var status = f.status.value || 'Single';
-          var income = parseFloat(f.income.value) || 0;
-          var gain = parseFloat(f.gain.value) || 0;
+          var status = f.status.value;
+          var income = Number(f.income.value), gain = Number(f.gain.value);
+          if (!brackets[status] || f.income.value.trim() === '' || f.gain.value.trim() === '' ||
+              !Number.isFinite(income) || !Number.isFinite(gain) || income < 0 || gain < 0 ||
+              income + gain > Number.MAX_SAFE_INTEGER) {
+            out.textContent = 'Choose a filing status and enter nonnegative taxable income and long-term gain.';
+            return;
+          }
           var b = brackets[status];
           var start = income, end = income + gain, tax = 0, floor = 0;
           for (var i = 0; i < b.length; i++) {
@@ -359,7 +434,7 @@ CALCULATORS = [
             floor = cap;
           }
           var rate = gain > 0 ? (tax / gain * 100) : 0;
-          out.textContent = '$' + Math.round(tax).toLocaleString() + ' (\\u2248 ' + rate.toFixed(1) + '% blended rate)';
+          out.textContent = '$' + Math.round(tax).toLocaleString() + ' (\u2248 ' + rate.toFixed(1) + '% blended rate)';
         """,
     },
     {
@@ -400,13 +475,19 @@ CALCULATORS = [
         ],
         "result_label": "Estimated future value",
         "js": """
-          var cur = parseFloat(f.cur.value) || 0;
-          var mo = parseFloat(f.mo.value) || 0;
-          var yrs = parseFloat(f.yrs.value) || 0;
-          var ret = (parseFloat(f.ret.value) || 0) / 100;
-          var n = yrs * 12, r = ret / 12;
-          var fvLump = cur * Math.pow(1 + r, n);
-          var fvContrib = r > 0 ? mo * ((Math.pow(1 + r, n) - 1) / r) : mo * n;
+          var cur = Number(f.cur.value), mo = Number(f.mo.value);
+          var yrs = Number(f.yrs.value), retPct = Number(f.ret.value);
+          if ([f.cur, f.mo, f.yrs, f.ret].some(function (field) { return field.value.trim() === ''; }) ||
+              ![cur, mo, yrs, retPct].every(Number.isFinite) ||
+              cur < 0 || mo < 0 || yrs < 0 || yrs > 100 || retPct <= -100 || retPct > 100 ||
+              cur > Number.MAX_SAFE_INTEGER || mo > Number.MAX_SAFE_INTEGER) {
+            out.textContent = 'Enter starting amount and additions of $0 or more, 0-100 years, and an annual return above -100% and at most 100%.';
+            return;
+          }
+          var n = Math.round(yrs * 12), r = retPct / 1200;
+          var factor = Math.pow(1 + r, n);
+          var fvLump = cur * factor;
+          var fvContrib = r !== 0 ? mo * ((factor - 1) / r) : mo * n;
           out.textContent = '$' + Math.round(fvLump + fvContrib).toLocaleString();
         """,
     },
@@ -633,7 +714,36 @@ def _category_body(category, calcs):
 """
 
 
+def _hub_body():
+    sections = "\n".join(
+        f"<section><h2>{escape(category)}</h2><p><a href=\"/calculators/{escape(_category_slug(category))}/\">All {escape(category.lower())} calculators &rarr;</a></p>"
+        + '<div class="adv-blog__grid" style="margin-top:24px;">'
+        + "\n".join(
+            f'<a class="blogcard reveal" href="/calculators/{escape(c["slug"])}/">'
+            f'<h3>{escape(c["title"])}</h3><p>{escape(c["summary"])}</p>'
+            '<span class="blogcard__link">Open calculator &rarr;</span></a>'
+            for c in CALCULATORS if c["category"] == category and not c.get("noindex")
+        ) + "</div></section>" for category in CATEGORIES
+    )
+    return f"""
+<section class="section section--paper" id="top">
+  <div class="container">
+    <p class="eyebrow reveal">Tools</p>
+    <h1 class="display display--lg reveal">Financial calculators</h1>
+    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Explore simple estimates by topic. Results are educational, not personalized advice.</p>
+    {sections}
+  </div>
+</section>
+{contact_section()}
+"""
+
+
 def build_calculator_pages(write_fn):
+    write_fn("/calculators/", page(
+        head(f"Financial Calculators | {BRAND}",
+             "Financial calculators for retirement, taxes, Social Security, equity compensation, investing, and banking.",
+             path="/calculators/"),
+        _hub_body(), with_gate=True))
     for c in CALCULATORS:
         schema = faq_schema([(f"How is the {c['title'].lower()} calculated?", c["note"])])
         html = page(
