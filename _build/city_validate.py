@@ -17,6 +17,13 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; ValoraBuild/1.0)"}
+
+# Editorial whitelist: sentences Mira has RULED are rhetoric, not tax claims.
+# Entries are added only on her explicit ruling (date noted); never self-added.
+EDITORIAL_WHITELIST = [
+    # Mira, Sep 28: rhetorical advisor-quality line, not a tax claim.
+    "reads like it was written for a high-tax coastal city",
+]
 MIN_WORDS = 1400
 
 # --- token / structure ------------------------------------------------------
@@ -157,6 +164,8 @@ def check_substance(pack, other_packs):
         has_source = bool(re.search(r"<a [^>]*href=", para))
         para_has_year = bool(re.search(r"(tax year )?20\d\d", plain))
         for s in _sentences(plain):
+            if any(w in s for w in EDITORIAL_WHITELIST):
+                continue  # ruled editorial rhetoric by Mira (see EDITORIAL_WHITELIST)
             if not (re.search(tax_kw, s, re.I) and re.search(assert_verb, s, re.I)):
                 continue  # mention, not a claim
             if re.search(advice, s, re.I):
