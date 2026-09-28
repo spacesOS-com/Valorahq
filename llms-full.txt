@@ -560,12 +560,15 @@ Find Your Advisor | Valora
  Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step. 
 
  Tell us what you're solving for. 
- A short conversation can show you which decisions deserve attention first. 
+ The right advisor can help you see which decisions deserve attention first. 
 
  Step 1 of 4 
 
  What best describes you? 
  Select one Physician Tech employee Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
+
+ What&#x27;s your primary goal? 
+ Select one Retirement Tax Business sale Equity compensation Estate Investments Other 
 
  Continue 
 
@@ -582,6 +585,9 @@ Find Your Advisor | Valora
  Step 3 of 4 
 
  What's your biggest money question right now? 
+
+ When are you looking to start? (optional) 
+ Select one (optional) Now Next 3 months Later Just exploring 
 
  Back 
  Continue 
@@ -6815,7 +6821,7 @@ Financial Advisor for Business Owners | Valora
  Underneath all of it is one discipline: deciding, in writing, what the business is for. Growth asset to sell? Income engine to hold? Legacy to hand to family? Each answer leads to a different compensation structure, a different reinvestment rate, and a different definition of 'enough.' Owners who skip that question tend to discover their answer at the negotiating table, which is the most expensive place to learn it. 
 
  Business doing well, personal plan behind? 
- That gap is the most common one we see. A short conversation can show you where to start. 
+ That gap is the most common one we see. A conversation with the right advisor can show you where to start. 
  Talk to an advisor 
  Paying yourself: salary, distributions, and what is left 
  Owners decide their own compensation, which sounds like a perk and works like a trap. Pay yourself too little and the household lives lean while the business hoards cash it may never return; pay yourself too much and the business starves and the tax bill grows. The right structure depends on the entity - S-corp salary-plus-distributions, LLC draws, C-corp salary and dividends each carry different rules - and it deserves an annual review with your CPA, not a number set once in year two. The discipline that matters most is separation: a fixed personal draw, business cash in business accounts, and a household budget that does not rise and fall with every good or bad month. Owners who run personal and business money through one account lose the ability to see either one clearly. 
@@ -7042,7 +7048,7 @@ Financial Advisor for Physicians | Valora
  A concrete example of how these threads tie together: a new attending with $280,000 in federal loans at a nonprofit hospital has to decide, in the same year, whether to certify income-driven payments toward PSLF, how much disability coverage to buy before residency discounts lapse, whether the signing bonus goes to loans or retirement, and how much house the new income really supports. Each answer moves the others. Paying the loans down aggressively can shrink the balance that would eventually be forgiven, while PSLF eligibility and which payments count follow their own rules; maxing retirement accounts changes the income-driven payment; the mortgage decision determines whether either is affordable. This is why physician planning fails when it is done one product at a time. 
 
  Not sure where your plan stands? 
- A short conversation can show you which of these decisions deserve attention first. 
+ A conversation with the right advisor can show you which of these decisions deserve attention first. 
  Talk to an advisor 
  The career stages, and what changes at each one 
  Physician planning is really four different plans stitched together. In residency and fellowship, the plan is survival plus positioning: keep debt costs contained, compare income-driven repayment against the alternatives if you have federal loans, based on your loans, employer, and career plans, review disability and life coverage options as your circumstances change, and resist lifestyle commitments built on attending income you do not yet earn. The first attending contract is the inflection point: income often triples overnight, and the decisions made in the first 24 months - how much of the raise becomes saving versus spending, whether to chase PSLF or pay the debt down, getting disability and life coverage in force - set the trajectory for everything after. The peak earning years are about converting income into assets at a high rate while the tax code gives you few breaks: maxing every retirement shelter available, building taxable investments, and revisiting insurance as the family and the mortgage grow. Late career is its own phase: cutting back clinically, partnership or practice exit, and turning a pile of accounts into an income you can live on. An advisor who has walked physicians through each stage will spot the stage-specific mistakes before they cost you. 
@@ -7270,7 +7276,7 @@ Financial Advisor for Tech Employees with RSUs | Valora
  Timing is the thread through all of it. Equity decisions have fixed clocks - vesting dates, ESPP purchase periods, exercise windows, blackout periods, lockup expiries - and almost every mistake in this space is a missed or misunderstood deadline rather than a bad opinion about the stock. A good advisor runs your equity as a calendar first and a portfolio second. 
 
  Equity comp getting complicated? 
- A short conversation can help you see which decisions - vesting, selling, concentration - matter most right now. 
+ A conversation with the right advisor can help you see which decisions - vesting, selling, concentration - matter most right now. 
  Talk to an advisor 
  The equity alphabet, in plain English 
  RSUs are the simplest: shares that vest on a schedule and count as ordinary income when they vest, taxed like a cash bonus. The trap is withholding - companies typically withhold at the flat supplemental rate, which often under-covers high earners, which is why April brings a surprise bill. ISOs (incentive stock options) offer potential capital-gains treatment if you follow the holding rules, but exercising them can trigger the alternative minimum tax, and leaving the company starts a clock set by your grant documents - check the deadline in your plan documents immediately, because some awards allow only a short post-termination window. NSOs are simpler and less favorable: the spread at exercise is ordinary income, period. ESPPs let you buy company stock at a discount through payroll; the discount is real money, but holding the shares adds to the same concentration problem RSUs create. Each vehicle has a different tax clock, a different risk profile, and a different set of deadlines, and most employees hold two or three at once. The planning mistake is treating all of it as one blob called "my equity." 

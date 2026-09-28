@@ -67,7 +67,7 @@
   <div class="container cta__grid">
     <div class="cta__copy">
       <h2 class="display display--lg reveal">Tell us what<br><em>you're solving for.</em></h2>
-      <p class="reveal">A short conversation can show you which decisions deserve attention first.</p>
+      <p class="reveal">The right advisor can help you see which decisions deserve attention first.</p>
     </div>
 
     <form class="form form--steps reveal" id="fyaForm" data-lead="Client" data-success="Thank you, {name} — we review each request by hand and will email you about next steps. Timing may vary." novalidate>
@@ -78,6 +78,11 @@
           <label for="fysituation">What best describes you?</label>
           <select id="fysituation" name="situation" required><option value="">Select one</option><option>Physician</option><option>Tech employee</option><option>Business owner</option><option>Executive / professional</option><option>Retired</option><option>Recently sold a business</option><option>Recently received an inheritance</option><option>Entrepreneur / founder</option><option>Other</option></select>
           <small class="err" data-err="situation"></small>
+        </div>
+        <div class="field field--full" data-field>
+          <label for="fygoal">What&#x27;s your primary goal?</label>
+          <select id="fygoal" name="goal" required><option value="">Select one</option><option>Retirement</option><option>Tax</option><option>Business sale</option><option>Equity compensation</option><option>Estate</option><option>Investments</option><option>Other</option></select>
+          <small class="err" data-err="goal"></small>
         </div>
         <div class="field field--full form__nav">
           <button class="btn btn--cream" type="button" data-step-next>Continue</button>
@@ -106,6 +111,10 @@
           <label for="fyquestion">What's your biggest money question right now?</label>
           <textarea id="fyquestion" name="question" rows="4" required placeholder="A sentence is plenty." data-extra="Biggest question"></textarea>
           <small class="err" data-err="question"></small>
+        </div>
+        <div class="field field--full" data-field>
+          <label for="fytiming">When are you looking to start? (optional)</label>
+          <select id="fytiming" name="timing"><option value="">Select one (optional)</option><option>Now</option><option>Next 3 months</option><option>Later</option><option>Just exploring</option></select>
         </div>
         <div class="field field--full form__nav">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>

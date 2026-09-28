@@ -25,6 +25,18 @@ from partials import page, head, ASSET_OPTIONS, SITUATION_OPTIONS
 PROFESSION_OPTIONS = ["Physician", "Tech employee"] + SITUATION_OPTIONS
 
 
+def _select_opt(uid, name, label, options, wrap="field field--full"):
+    opts = '<option value="">Select one (optional)</option>' + "".join(f"<option>{escape(o)}</option>" for o in options)
+    return f"""<div class="{wrap}" data-field>
+          <label for="{uid}{name}">{escape(label)}</label>
+          <select id="{uid}{name}" name="{name}">{opts}</select>
+        </div>"""
+
+
+INTAKE_GOAL_OPTIONS = ["Retirement", "Tax", "Business sale", "Equity compensation",
+                       "Estate", "Investments", "Other"]
+INTAKE_TIMING_OPTIONS = ["Now", "Next 3 months", "Later", "Just exploring"]
+
 def _select(uid, name, label, options, wrap="field field--full"):
     opts = '<option value="">Select one</option>' + "".join(f"<option>{escape(o)}</option>" for o in options)
     return f"""<div class="{wrap}" data-field>
@@ -40,6 +52,7 @@ def intake_form():
       <div class="form__step" data-step>
         <p class="field field--full form__stepnum">Step 1 of 4</p>
         {_select("fy", "situation", "What best describes you?", PROFESSION_OPTIONS)}
+        {_select("fy", "goal", "What's your primary goal?", INTAKE_GOAL_OPTIONS)}
         <div class="field field--full form__nav">
           <button class="btn btn--cream" type="button" data-step-next>Continue</button>
         </div>
@@ -64,6 +77,7 @@ def intake_form():
           <textarea id="fyquestion" name="question" rows="4" required placeholder="A sentence is plenty." data-extra="Biggest question"></textarea>
           <small class="err" data-err="question"></small>
         </div>
+        {_select_opt("fy", "timing", "When are you looking to start? (optional)", INTAKE_TIMING_OPTIONS)}
         <div class="field field--full form__nav">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
           <button class="btn btn--cream" type="button" data-step-next>Continue</button>
@@ -110,7 +124,7 @@ def intake_body():
   <div class="container cta__grid">
     <div class="cta__copy">
       <h2 class="display display--lg reveal">Tell us what<br><em>you're solving for.</em></h2>
-      <p class="reveal">A short conversation can show you which decisions deserve attention first.</p>
+      <p class="reveal">The right advisor can help you see which decisions deserve attention first.</p>
     </div>
 
     {intake_form()}
