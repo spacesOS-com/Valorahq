@@ -453,7 +453,7 @@
      Any <form data-lead="Client|Advisor"> is handled here;
      field wrappers marked [data-field] get .has-error.
      --------------------------------------------------------- */
-  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx4mCwhZBQS-0W-UAybBeIJm67scGp4cpwAR_19I4g-FSa-XacfhNyOAPT0W0CEd0uc/exec';
+  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx4mCwhZBQS-0W-UAybBeIJm67scGp4cpwAR_19l4g-FSa-XacfhNyOAPT0W0CEd0uc/exec';
   var LEAD_FAIL = 'Sorry — we could not send that. Please email barot@valorahq.com.';
 
   var LEAD_MSGS = {
