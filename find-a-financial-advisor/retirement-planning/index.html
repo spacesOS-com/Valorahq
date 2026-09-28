@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=4cfd8a41">
+<link rel="stylesheet" href="/styles.css?v=b33b7d95">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e3b2a'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23efebe0' font-family='Georgia'>V</text></svg>">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Valora", "url": "https://www.valorahq.com", "description": "Valora is an independent platform that matches people with vetted, independent fiduciary financial advisors based on their situation.", "email": "barot@valorahq.com", "areaServed": {"@type": "Country", "name": "United States", "identifier": "US"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When should I start working with a retirement planning advisor?", "acceptedAnswer": {"@type": "Answer", "text": "The highest-value moments are the five to ten years before retirement and the first few years after: that's when withdrawal strategy, Social Security timing, Roth conversions, and healthcare costs get locked in. Earlier is still useful, but the stakes concentrate around the transition."}}, {"@type": "Question", "name": "What does a retirement plan from an advisor include?", "acceptedAnswer": {"@type": "Answer", "text": "A projection of spending against income sources, a sustainable withdrawal rate, a Social Security and pension claiming strategy, tax planning across account types (traditional, Roth, taxable), Medicare and healthcare cost estimates, and a plan for the order you draw accounts down."}}, {"@type": "Question", "name": "How much can I safely withdraw in retirement?", "acceptedAnswer": {"@type": "Answer", "text": "The 4% rule is a starting point from 1990s research, not a guarantee. Your sustainable rate depends on your asset allocation, flexibility to adjust spending, other income sources, and the returns sequence you actually experience. An advisor stress-tests your specific plan rather than quoting a single number."}}, {"@type": "Question", "name": "What's the difference between a Roth conversion and a regular withdrawal?", "acceptedAnswer": {"@type": "Answer", "text": "A Roth conversion moves money from a traditional IRA to a Roth IRA: you pay income tax on the converted amount now, and qualified withdrawals later are tax-free. Conversions can make sense in low-income years, especially between retirement and required minimum distributions, but the right amount depends on your tax bracket each year."}}, {"@type": "Question", "name": "Do I need a retirement advisor if I already have a 401(k)?", "acceptedAnswer": {"@type": "Answer", "text": "A 401(k) is an account, not a plan. It doesn't decide when you can retire, how much you can spend, when to claim Social Security, or how to turn savings into income. An advisor coordinates those decisions, of which the 401(k) is just one input."}}]}</script>
@@ -41,7 +41,17 @@
 
     <nav class="nav" id="primaryNav" aria-label="Primary">
       <ul class="nav__list">
-        <li><a href="/for-advisors/">For advisors</a></li>
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-0">Financial Advice <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-0" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Get help with</p><ul><li><a href="/financial-advisor-for-tech-employees/">Financial advisors for tech employees</a></li>
+<li><a href="/financial-advisor-for-physicians/">Financial advisors for physicians</a></li>
+<li><a href="/financial-advisor-for-business-owners/">Financial advisors for business owners</a></li><li class="nav-menu__all"><a href="/guides/">All financial advice guides</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">More resources</p><a class="nav-menu__action" href="/find-your-advisor/">Find an advisor</a><ul><li><a href="/find-a-financial-advisor/new-york/">Financial advisors in New York</a></li>
+<li><a href="/find-a-financial-advisor/chicago/">Financial advisors in Chicago</a></li></ul></div>
+      </div>
+    </li>
+<li class="nav__advisors"><a href="/for-advisors/">For advisors</a></li>
       </ul>
       <div class="nav__cta">
         <a class="btn btn--dark" href="/#contact" data-gate-open>Find an advisor</a>
@@ -345,6 +355,6 @@
     </div>
   </div>
 </div>
-<script src="/script.js?v=973bcaad"></script>
+<script src="/script.js?v=8ca55ded"></script>
 </body>
 </html>

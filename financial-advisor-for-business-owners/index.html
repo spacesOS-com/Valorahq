@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=4cfd8a41">
+<link rel="stylesheet" href="/styles.css?v=b33b7d95">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e3b2a'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23efebe0' font-family='Georgia'>V</text></svg>">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Valora", "url": "https://www.valorahq.com", "description": "Valora is an independent platform that matches people with vetted, independent fiduciary financial advisors based on their situation.", "email": "barot@valorahq.com", "areaServed": {"@type": "Country", "name": "United States", "identifier": "US"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When should a business owner start exit planning?", "acceptedAnswer": {"@type": "Answer", "text": "Earlier than feels necessary. The things that move valuation - customer concentration, owner dependence, clean financials, documented processes - take years to fix, which is why exit planners push owners to start preparing several years before a target date. Owners who start late sell the business they have; owners who start early sell the business a buyer wants."}}, {"@type": "Question", "name": "How much is my business actually worth for planning purposes?", "acceptedAnswer": {"@type": "Answer", "text": "Often less than you hope and more than the first offer. Informal rules of thumb mislead because multiples swing with industry, growth, and how replaceable you are. For real planning, get a professional valuation or broker opinion, then stress-test: for illustration only - not a benchmark - stress-test your retirement math at a discount chosen with your valuation professional (for example, 20-30% below the appraised number) and see whether the plan still works."}}, {"@type": "Question", "name": "What is QSBS and does it apply to my sale?", "acceptedAnswer": {"@type": "Answer", "text": "Qualified Small Business Stock rules can exclude much or all federal capital gains on qualifying C-corporation stock. For stock newly issued and otherwise eligible after July 4, 2025, the One Big Beautiful Bill Act created tiered exclusions (50% after three years, 75% after four, 100% after five), raised the per-issuer cap to the greater of $15 million or 10 times your adjusted basis, and raised the company gross-asset ceiling at issuance to $75 million; stock issued earlier keeps the prior $10 million cap and $50 million asset ceiling (details: The Tax Adviser, November 2025 (https://www.thetaxadviser.com/issues/2025/nov/qsbs-gets-a-makeover-what-tax-pros-need-to-know-about-sec-1202s-new-look/)). Qualification depends on the company's structure, business type, and decisions made years before a sale, so review it with your CPA and attorney well before any exit process starts."}}, {"@type": "Question", "name": "Do I need an advisor before I sell, or after?", "acceptedAnswer": {"@type": "Answer", "text": "Before. The biggest levers - entity structure, QSBS qualification, retirement plan funding, cleaning up personal expenses in the business, pre-sale gifting and estate moves - have planning windows that mostly close at or before the sale, though some tax and estate choices and post-sale planning remain available. An advisor engaged after the sale manages proceeds; one engaged before changes what the proceeds are."}}]}</script>
@@ -41,7 +41,17 @@
 
     <nav class="nav" id="primaryNav" aria-label="Primary">
       <ul class="nav__list">
-        <li><a href="/for-advisors/">For advisors</a></li>
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-0">Financial Advice <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-0" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Get help with</p><ul><li><a href="/financial-advisor-for-tech-employees/">Financial advisors for tech employees</a></li>
+<li><a href="/financial-advisor-for-physicians/">Financial advisors for physicians</a></li>
+<li><a href="/financial-advisor-for-business-owners/">Financial advisors for business owners</a></li><li class="nav-menu__all"><a href="/guides/">All financial advice guides</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">More resources</p><a class="nav-menu__action" href="/find-your-advisor/">Find an advisor</a><ul><li><a href="/find-a-financial-advisor/new-york/">Financial advisors in New York</a></li>
+<li><a href="/find-a-financial-advisor/chicago/">Financial advisors in Chicago</a></li></ul></div>
+      </div>
+    </li>
+<li class="nav__advisors"><a href="/for-advisors/">For advisors</a></li>
       </ul>
       <div class="nav__cta">
         <a class="btn btn--dark" href="/#contact" data-gate-open>Find an advisor</a>
@@ -391,6 +401,6 @@
     </div>
   </div>
 </div>
-<script src="/script.js?v=973bcaad"></script>
+<script src="/script.js?v=8ca55ded"></script>
 </body>
 </html>
