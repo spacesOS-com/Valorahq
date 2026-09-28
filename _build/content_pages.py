@@ -351,6 +351,9 @@ def _body(pack):
         middle += _toc(toc_items)
     # takeaways + TOC land after the intro paragraph (first </p>) when there is one
     first_close = body_html.find("</p>")
+    # Keep the effective/last-updated date pair together on legal pages.
+    if is_legal and body_html.startswith("<p><em>Effective date:") and "<p><em>Last updated:" in body_html:
+        first_close = body_html.find("</p>", first_close + len("</p>"))
     if first_close != -1 and middle:
         cut = first_close + len("</p>")
         body_html = body_html[:cut] + middle + body_html[cut:]

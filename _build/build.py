@@ -13,7 +13,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section,
+from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section, RB2B_SNIPPET,
                        faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER)
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
 from advisor_pages import build_advisor_pages, ADVISORS
@@ -69,6 +69,7 @@ def build_for_advisors():
 <meta http-equiv="refresh" content="0; url=/for-advisors/">
 <link rel="canonical" href="{SITE_URL}/for-advisors/">
 <title>Redirecting… | {BRAND}</title>
+{RB2B_SNIPPET}
 </head><body>
 <p>This page has moved to <a href="/for-advisors/">/for-advisors/</a>.</p>
 </body></html>
