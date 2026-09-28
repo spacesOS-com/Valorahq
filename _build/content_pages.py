@@ -34,6 +34,7 @@ PAGE_TYPE_LABELS = {
     "asset-type": "Asset type",
     "employer": "Employer",
     "legal": "Legal",
+    "team": "Company",
 }
 
 
@@ -208,7 +209,7 @@ def _closing(pack, faq_pairs, is_legal):
 def _body(pack):
     label = PAGE_TYPE_LABELS.get(pack.get("page_type", ""), "Guide")
     faq_pairs = [(f["q"], f["a"]) for f in pack["faqs"]]
-    is_legal = pack.get("page_type") == "legal"
+    is_legal = pack.get("page_type") in ("legal", "team")  # plain render, no closing CTA
     body_html, toc_items = _process_body(pack)
     middle = _takeaways(pack.get("key_takeaways"))
     if pack.get("toc", True):

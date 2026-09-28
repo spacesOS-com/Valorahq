@@ -52,3 +52,4 @@
 - [https://www.valorahq.com/cookies/](https://www.valorahq.com/cookies/): The cookies and similar technologies valorahq.com uses: strictly necessary storage, PostHog first-party analytics, Google Forms, and how to opt out.
 - [https://www.valorahq.com/privacy/](https://www.valorahq.com/privacy/): What Valora collects (contact form, Google Forms readiness check, PostHog analytics), how it is used and shared, and your US privacy rights.
 - [https://www.valorahq.com/terms/](https://www.valorahq.com/terms/): The terms that govern your use of valorahq.com: what Valora is, what it is not, advisor directory disclaimers, liability, and governing law.
+- [https://www.valorahq.com/team/](https://www.valorahq.com/team/): The team behind Valora's content, tools, and research.

@@ -1,0 +1,18 @@
+{
+  "page_type": "team",
+  "slug": "team",
+  "suggested_url": "https://www.valorahq.com/team/",
+  "title": "Team",
+  "meta_title": "Team | Valora",
+  "meta_description": "The team behind Valora's content, tools, and research.",
+  "toc": false,
+  "body_html": "<p><strong>Valora is built by a small team with clear ownership.</strong> Each person below owns a distinct part of how Valora's content, tools, and research get made and kept accurate. Questions about the site or the work: <a href=\"mailto:barot@valorahq.com\">barot@valorahq.com</a>.</p>\n<h2>The team</h2>\n<h3>Lena - Content Lead</h3>\n<p>Researches and writes Valora's guides, articles, and niche pages - the content across this site.</p>\n<h3>Mira - QA & Content Verification Lead</h3>\n<p>Reviews every piece of content before it ships: the facts, the sources, and whether the rules it cites are still current.</p>\n<h3>Sam - CTO, Engineering</h3>\n<p>Builds and runs valorahq.com - the pages, the calculators, and everything that keeps them fast and reliable.</p>\n<h3>Owen - Growth & Partnerships</h3>\n<p>Leads Valora's growth and partnership work.</p>\n<h3>Arjun - Head of AI Search (AEO/GEO)</h3>\n<p>Leads Valora's AI search work (AEO/GEO) - how Valora shows up in AI answers and search results.</p>\n<h3>Ethan - Outbound</h3>\n<p>Runs Valora's outbound work, connecting with advisors and partners.</p>\n<h3>Iris - Podcast & Media Outreach</h3>\n<p>Manages Valora's podcast and media outreach.</p>\n<h3>Clara - Operations</h3>\n<p>Keeps the team's operations running day to day.</p>\n<h3>Jordan - Chief of Staff</h3>\n<p>Coordinates work across the team and keeps projects moving.</p>\n<h3>Rina - Consumer Growth</h3>\n<p>Leads consumer growth - how people find Valora and how the product serves them.</p>",
+  "template_notes": "Content-page template family, but toc is false (no TOC on this page). No key_takeaways / feature_image / inline_ctas / tags / FAQ / JSON-LD. Renders plainly. No photos supplied - render name + role + one-liner as text (styled cards if the template supports them). Index normally.",
+  "footer_placement": "Company group alongside About/contact links; not part of the Legal group.",
+  "source_notes": [
+    "Requested by founder 2026-09-28: 'add a team page in the company. List all the names of our agents and their roles in the team'.",
+    "Roster and roles provided verbatim by main; no bios, credentials, or photos invented - one-line functional descriptions only.",
+    "Mira's title reflects the founder-confirmed QA role (founder told 9:40: 'Mira. Everything Lena writes goes through Mira's QA pass before it's called done.').",
+    "2026-09-28 roster correction per main: Arjun's title is Head of AI Search (AEO/GEO), not Research"
+  ]
+}
