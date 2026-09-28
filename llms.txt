@@ -1,0 +1,48 @@
+# Valora
+
+> Valora is an independent platform that matches people with vetted, independent
+> fiduciary financial advisors based on their situation. Valora does not itself
+> provide investment advice; advisors on the platform are independent and are
+> not employees of Valora.
+
+## Pages
+
+- [https://www.valorahq.com/](https://www.valorahq.com/): Home — how Valora matches people with independent, fiduciary financial advisors.
+- [https://www.valorahq.com/for-advisors/](https://www.valorahq.com/for-advisors/): For advisors — how independent advisors join Valora's network.
+- [https://www.valorahq.com/advisors/james-conole/](https://www.valorahq.com/advisors/james-conole/): James Conole, CFP® — Founder · Root Financial
+- [https://www.valorahq.com/advisors/kevin-lum/](https://www.valorahq.com/advisors/kevin-lum/): Kevin Lum, CFP® — Foundry Financial
+- [https://www.valorahq.com/advisors/eric-peakfp/](https://www.valorahq.com/advisors/eric-peakfp/): Eric, CFP® — The PeakFP
+- [https://www.valorahq.com/advisors/even-better-retirement/](https://www.valorahq.com/advisors/even-better-retirement/): Even Better Retirement — Retirement planning
+- [https://www.valorahq.com/find-a-financial-advisor/retirement-planning/](https://www.valorahq.com/find-a-financial-advisor/retirement-planning/): Retirement planning advisors on Valora.
+- [https://www.valorahq.com/find-a-financial-advisor/austin/](https://www.valorahq.com/find-a-financial-advisor/austin/): Financial advisors in Austin, TX on Valora.
+- [https://www.valorahq.com/find-a-financial-advisor/los-angeles/](https://www.valorahq.com/find-a-financial-advisor/los-angeles/): Financial advisors in Los Angeles, CA on Valora.
+- [https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/](https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/): Retirement planning advisors in Austin, TX on Valora.
+- [https://www.valorahq.com/find-a-financial-advisor/los-angeles-retirement-planning/](https://www.valorahq.com/find-a-financial-advisor/los-angeles-retirement-planning/): Retirement planning advisors in Los Angeles, CA on Valora.
+- [https://www.valorahq.com/insights/realistic-withdrawal-rate-today/](https://www.valorahq.com/insights/realistic-withdrawal-rate-today/): The 4% rule is a 1990s starting point, not a guarantee. Here's what actually moves the number for a given retirement.
+- [https://www.valorahq.com/insights/family-conversation-before-retirement/](https://www.valorahq.com/insights/family-conversation-before-retirement/): The hardest part of retirement planning usually isn't the math. It's the conversation nobody's scheduled yet.
+- [https://www.valorahq.com/insights/when-roth-conversion-worth-tax-bill/](https://www.valorahq.com/insights/when-roth-conversion-worth-tax-bill/): A Roth conversion means paying tax now, on purpose, to avoid a possibly larger tax bill later. Whether that trade is worth it depends entirely on the specifics.
+- [https://www.valorahq.com/insights/rsus-bonus-not-lottery-ticket/](https://www.valorahq.com/insights/rsus-bonus-not-lottery-ticket/): Restricted stock units are taxed like a cash bonus, not like a windfall — and treating them that way changes what you do next.
+- [https://www.valorahq.com/insights/market-drop-before-retirement/](https://www.valorahq.com/insights/market-drop-before-retirement/): Two retirees with identical average returns over 30 years can end up in very different places, depending only on the order those returns arrive in.
+- [https://www.valorahq.com/insights/beneficiary-forms-override-will/](https://www.valorahq.com/insights/beneficiary-forms-override-will/): For retirement accounts, life insurance, and many bank accounts, the beneficiary form — not the will — decides who gets the money.
+- [https://www.valorahq.com/calculators/retirement-savings-growth/](https://www.valorahq.com/calculators/retirement-savings-growth/): Estimate how a lump sum plus monthly contributions could grow over time, before inflation and fees.
+- [https://www.valorahq.com/calculators/safe-withdrawal-amount/](https://www.valorahq.com/calculators/safe-withdrawal-amount/): Turn a withdrawal rate and portfolio value into a dollar amount — pair this with our article on what a realistic withdrawal rate looks like today.
+- [https://www.valorahq.com/calculators/roth-conversion-tax-cost/](https://www.valorahq.com/calculators/roth-conversion-tax-cost/): A rough estimate of what converting a given amount would cost at a flat tax rate — pair this with our article on when a Roth conversion is worth it.
+- [https://www.valorahq.com/calculators/how-long-savings-will-last/](https://www.valorahq.com/calculators/how-long-savings-will-last/): Turn a portfolio, a fixed annual withdrawal, and an assumed return into an estimated number of years.
+- [https://www.valorahq.com/calculators/rsu-withholding-shortfall/](https://www.valorahq.com/calculators/rsu-withholding-shortfall/): Estimate the gap between the flat 22% most employers withhold on vested RSUs and what you actually owe at your marginal rate.
+- [https://www.valorahq.com/calculators/401k-contribution-limit/](https://www.valorahq.com/calculators/401k-contribution-limit/): Check your 2026 401(k) employee deferral limit by age, and how much contribution room you have left.
+- [https://www.valorahq.com/calculators/rmd-estimate/](https://www.valorahq.com/calculators/rmd-estimate/): Estimate your required minimum distribution using the IRS Uniform Lifetime Table.
+- [https://www.valorahq.com/calculators/capital-gains-tax-estimate/](https://www.valorahq.com/calculators/capital-gains-tax-estimate/): Estimate federal long-term capital gains tax using the real 2026 income brackets — gains stack on top of your other taxable income.
+- [https://www.valorahq.com/calculators/inflation-calculator/](https://www.valorahq.com/calculators/inflation-calculator/): See what a dollar amount today is worth in the future — or was worth in the past — at a given inflation rate.
+- [https://www.valorahq.com/calculators/investment-future-value/](https://www.valorahq.com/calculators/investment-future-value/): Estimate the future value of a lump-sum investment plus optional monthly additions at a given return.
+- [https://www.valorahq.com/calculators/savings-cd-growth/](https://www.valorahq.com/calculators/savings-cd-growth/): Estimate what a savings account or CD balance grows to at a fixed annual rate.
+- [https://www.valorahq.com/calculators/budget-50-30-20/](https://www.valorahq.com/calculators/budget-50-30-20/): Split your take-home pay into needs, wants, and savings using the common 50/30/20 guideline.
+- [https://www.valorahq.com/calculators/social-security-breakeven/](https://www.valorahq.com/calculators/social-security-breakeven/): See the age at which claiming later (70) overtakes claiming early (62) in total lifetime benefits.
+- [https://www.valorahq.com/calculators/delayed-retirement-credit/](https://www.valorahq.com/calculators/delayed-retirement-credit/): See how much your Social Security benefit grows for each year you delay claiming past full retirement age.
+- [https://www.valorahq.com/calculators/iso-exercise-cost/](https://www.valorahq.com/calculators/iso-exercise-cost/): Estimate the cash cost to exercise incentive stock options and the resulting spread (a common AMT trigger).
+- [https://www.valorahq.com/calculators/concentration-diversification-timeline/](https://www.valorahq.com/calculators/concentration-diversification-timeline/): Estimate how long it would take to diversify out of a concentrated position at a fixed dollar amount sold per year.
+- [https://www.valorahq.com/calculators/retirement/](https://www.valorahq.com/calculators/retirement/): Retirement calculators on Valora.
+- [https://www.valorahq.com/calculators/taxes/](https://www.valorahq.com/calculators/taxes/): Taxes calculators on Valora.
+- [https://www.valorahq.com/calculators/social-security/](https://www.valorahq.com/calculators/social-security/): Social Security calculators on Valora.
+- [https://www.valorahq.com/calculators/equity-compensation/](https://www.valorahq.com/calculators/equity-compensation/): Equity Compensation calculators on Valora.
+- [https://www.valorahq.com/calculators/investing/](https://www.valorahq.com/calculators/investing/): Investing calculators on Valora.
+- [https://www.valorahq.com/calculators/banking/](https://www.valorahq.com/calculators/banking/): Banking calculators on Valora.
