@@ -9,6 +9,7 @@ _shot*.html
 # regenerate these for local preview.
 /advisors/
 /calculators/
+/cities/
 /cookies/
 /financial-advisor-for-business-owners/
 /financial-advisor-for-physicians/
@@ -19,6 +20,7 @@ _shot*.html
 /guides/
 /insights/
 /privacy/
+/specialties/
 /team/
 /terms/
 /advisors.html

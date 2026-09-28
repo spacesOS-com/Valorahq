@@ -224,10 +224,56 @@ def build_directory_pages(write_fn):
         write_fn(f"/find-a-financial-advisor/{combo_slug}/", html)
 
 
-def build_directory_index(write_fn):
-    """/find-a-financial-advisor/ — one hub page listing every city, specialty,
-    niche, and asset-type page, so the footer can link a handful of cities
-    plus "More cities" here instead of listing all ~30 in every page footer."""
+def _city_mark(city):
+    """A small illustrative skyline mark, not a photo of the real place — we
+    don't have a verified, licensed photo for each of 31 cities on hand, and
+    a wrong or mismatched stock photo is worse than a simple, honest graphic
+    in the site's own brand colors."""
+    import hashlib
+    seed = int(hashlib.sha1(city.encode()).hexdigest(), 16)
+    heights = [24 + (seed >> (i * 4) & 0xF) * 3 for i in range(7)]
+    bars = "".join(
+        f'<rect x="{i * 16}" y="{64 - h}" width="10" height="{h}" rx="1"/>'
+        for i, h in enumerate(heights)
+    )
+    return f'<svg class="city-card__mark" viewBox="0 0 112 64" aria-hidden="true">{bars}</svg>'
+
+
+def build_cities_index(write_fn):
+    """/cities/ — every city page, each with a small illustrative mark (see
+    _city_mark) so the footer can link a handful of cities plus "More
+    cities" here instead of listing all ~30 in every page footer."""
+    cards = "".join(
+        f'<a class="city-card" href="/find-a-financial-advisor/{slug}/">'
+        f'{_city_mark(city)}<span>{escape(city)}</span></a>'
+        for slug, city in CITIES
+    )
+    body = f"""
+<section class="section section--paper" id="top">
+  <div class="container" style="max-width:1000px;">
+    <p class="eyebrow reveal">Directory</p>
+    <h1 class="display display--lg reveal">Find a financial advisor by city</h1>
+    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:60ch;">Browse independent, fiduciary financial advisors on Valora by metro area.</p>
+    <div class="city-grid" style="margin-top:40px;">
+      {cards}
+    </div>
+  </div>
+</section>
+
+{contact_section()}
+"""
+    html = page(
+        head(f"Financial Advisors by City | {BRAND}",
+             "Browse independent, fiduciary financial advisors on Valora by metro area.",
+             path="/cities/"),
+        body,
+    )
+    write_fn("/cities/", html)
+
+
+def build_specialties_index(write_fn):
+    """/specialties/ — every specialty, profession, and asset-type page in
+    one place, so the footer can show a handful of each plus "More" here."""
     def _cols(title, items):
         links = "".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>'
                          for slug, label in items)
@@ -237,10 +283,9 @@ def build_directory_index(write_fn):
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
     <p class="eyebrow reveal">Directory</p>
-    <h1 class="display display--lg reveal">Find a financial advisor</h1>
-    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:60ch;">Browse advisors by city, specialty, profession, or investable-asset range.</p>
+    <h1 class="display display--lg reveal">Find a financial advisor by specialty</h1>
+    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:60ch;">Browse advisors by specialty, profession, or investable-asset range.</p>
     <div class="dir-index" style="margin-top:40px;">
-      {_cols("Cities", CITIES)}
       {_cols("Specialties", [(s, l) for s, l, _ in SPECIALTIES])}
       {_cols("Professions", NICHES)}
       {_cols("Asset types", ASSET_TYPES)}
@@ -251,9 +296,9 @@ def build_directory_index(write_fn):
 {contact_section()}
 """
     html = page(
-        head(f"Find a Financial Advisor | {BRAND}",
-             "Browse independent, fiduciary financial advisors on Valora by city, specialty, profession, or asset range.",
-             path="/find-a-financial-advisor/"),
+        head(f"Financial Advisors by Specialty | {BRAND}",
+             "Browse independent, fiduciary financial advisors on Valora by specialty, profession, or asset range.",
+             path="/specialties/"),
         body,
     )
-    write_fn("/find-a-financial-advisor/", html)
+    write_fn("/specialties/", html)
