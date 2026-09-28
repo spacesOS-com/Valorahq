@@ -176,6 +176,7 @@ CALCULATORS = [
     {
         "slug": "qsbs-issue-spotter",
         "category": "Taxes",
+        "eyebrow": "QSBS issue spotter",
         "noindex": True,
         "title": "QSBS issue spotter",
         "summary": "A rules-based screen that lists the qualified small business stock questions worth reviewing with your CPA. Its only output, on every path, is a list of review items - it never decides eligibility and never computes an exclusion.",
@@ -563,7 +564,7 @@ def _calc_body(c):
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:680px;">
     <a href="/#insights" class="btn btn--outline" style="margin-bottom:32px;">&larr; Back</a>
-    <p class="eyebrow reveal">{escape(c['category'])} calculator</p>
+    <p class="eyebrow reveal">{escape(c.get('eyebrow') or (c['category'] + ' calculator'))}</p>
     <h1 class="display display--lg reveal">{escape(c['title'])}</h1>
     <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">{escape(c['summary'])}</p>
 
