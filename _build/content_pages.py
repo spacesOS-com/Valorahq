@@ -33,6 +33,7 @@ PAGE_TYPE_LABELS = {
     "life-event": "Life event",
     "asset-type": "Asset type",
     "employer": "Employer",
+    "legal": "Legal",
 }
 
 
@@ -133,7 +134,10 @@ def load_packs():
     for path in sorted(glob.glob(os.path.join(PACK_DIR, "*.json"))):
         with open(path, encoding="utf-8") as f:
             pack = json.load(f)
-        for key in ("slug", "meta_title", "meta_description", "h1", "body_html", "faqs"):
+        if "h1" not in pack and "title" in pack:
+            pack["h1"] = pack["title"]  # legal packs use 'title'
+        pack.setdefault("faqs", [])     # legal packs carry no FAQs by design
+        for key in ("slug", "meta_title", "meta_description", "h1", "body_html"):
             if key not in pack:
                 raise SystemExit(f"content pack {path} is missing '{key}'")
         pack["_draft"] = pack.get("status", "approved") == "draft"
@@ -150,15 +154,23 @@ def _link_label(url):
 
 
 def _related(links):
-    real = [l for l in (links or []) if isinstance(l, str) and l.startswith("http")]
+    # Founder direction Sep 28: only cross-link client (niche) pages here -
+    # never advisor-facing content (blog, for-advisors pages).
+    real = [l for l in (links or [])
+            if isinstance(l, str) and l.startswith("https://www.valorahq.com/financial-advisor-for-")]
     if not real:
         return ""
-    items = "\n".join(f'      <li><a href="{escape(l)}">{escape(_link_label(l))}</a></li>' for l in real)
+    cards = "\n".join(
+        f'      <a class="content-page__related-card" href="{escape(l)}">'
+        f'<span>{escape(_link_label(l))}</span>'
+        f'<span class="content-page__related-arrow" aria-hidden="true">&rarr;</span></a>'
+        for l in real)
     return f"""
-  <div class="content-page__related" style="margin-top:40px;">
-    <h5 style="font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">Related</h5>
-    <ul style="list-style:none; padding:0;">{items}
-    </ul>
+  <div class="content-page__related">
+    <h5>Related guides</h5>
+    <div class="content-page__related-grid">
+{cards}
+    </div>
   </div>"""
 
 
@@ -177,9 +189,26 @@ def _cta(pack):
 """
 
 
+def _closing(pack, faq_pairs, is_legal):
+    """FAQ section (content pages) + closing CTA (skipped on legal pages)."""
+    out = ""
+    if faq_pairs:
+        out += f"""
+<section class="section section--paper" id="faq">
+  <div class="container" style="max-width:700px;">
+{faq_block(faq_pairs)}
+  </div>
+</section>
+"""
+    if not is_legal:
+        out += _cta(pack)
+    return out
+
+
 def _body(pack):
     label = PAGE_TYPE_LABELS.get(pack.get("page_type", ""), "Guide")
     faq_pairs = [(f["q"], f["a"]) for f in pack["faqs"]]
+    is_legal = pack.get("page_type") == "legal"
     body_html, toc_items = _process_body(pack)
     middle = _takeaways(pack.get("key_takeaways"))
     if pack.get("toc", True):
@@ -205,13 +234,7 @@ def _body(pack):
   </div>
 </section>
 
-<section class="section section--paper" id="faq">
-  <div class="container" style="max-width:700px;">
-{faq_block(faq_pairs)}
-  </div>
-</section>
-
-{_cta(pack)}
+{_closing(pack, faq_pairs, is_legal)}
 """
 
 
@@ -219,7 +242,7 @@ def render(pack):
     faq_pairs = [(f["q"], f["a"]) for f in pack["faqs"]]
     return page(
         head(pack["meta_title"], pack["meta_description"],
-             path=f"/{pack['slug']}/", schema=faq_schema(faq_pairs),
+             path=f"/{pack['slug']}/", schema=faq_schema(faq_pairs) if faq_pairs else "",
              keywords=list(dict.fromkeys((pack.get("keywords") or []) + (pack.get("tags") or []))),
              noindex=pack.get("_draft", False)),
         _body(pack),
