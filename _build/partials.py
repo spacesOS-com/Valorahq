@@ -319,7 +319,6 @@ def _nav_dropdown(menu, index):
 
 def header(active=None, cta=("Find an advisor", "/#contact"), banner=False):
     items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
-    items += '\n<li class="nav__advisors"><a href="/for-advisors/">For advisors</a></li>'
     banner_html = ""
     if banner:
         banner_html = ('<div class="site-banner">Are you a financial advisor? '
