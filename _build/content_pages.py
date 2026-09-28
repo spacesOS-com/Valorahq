@@ -145,6 +145,35 @@ def _calculators(pack):
 </aside>"""
 
 
+def _team_extended(pack, body_html):
+    """Grouped extended-team roster (extended_team array: name, title, grouping,
+    order, avatar). Replaces the flat roster blocks after h2 'The team' with the
+    grouped presentation; each member renders like the core-10 member blocks."""
+    et = pack.get("extended_team")
+    if not et:
+        return None
+    groups = []
+    for e in et:
+        if e["grouping"] not in groups:
+            groups.append(e["grouping"])
+    out = []
+    for g in groups:
+        out.append(f'<h3 class="team-group">{escape(g)}</h3>')
+        members = sorted((e for e in et if e["grouping"] == g), key=lambda e: e.get("order", 999))
+        for e in members:
+            stem = e["avatar"].rsplit(".", 1)[0]
+            out.append(
+                f'<div class="team-member"><img class="team-member__avatar" src="/assets/{escape(stem)}.jpg" '
+                f'alt="Illustrated avatar of {escape(e["name"])}" loading="lazy" width="72" height="72">'
+                f'<div class="team-member__text"><h3>{escape(e["name"])}</h3>'
+                f'<p class="team-member__role">{escape(e["title"])}</p></div></div>')
+    # keep everything through the closing </h2> of "The team", drop the old roster
+    m = re.search(r"<h2[^>]*>\s*The team\s*</h2>", body_html, flags=re.I)
+    if not m:
+        return None
+    return body_html[:m.end()] + "\n" + "\n".join(out)
+
+
 def _team_avatars(pack, body_html):
     """Circular headshots beside each member block (avatars map: name -> filename)."""
     avatars = pack.get("avatars")
@@ -300,7 +329,8 @@ def _body(pack):
     faq_pairs = [(f["q"], f["a"]) for f in pack["faqs"]]
     is_legal = pack.get("page_type") in ("legal", "team")  # plain render, no closing CTA
     body_html, toc_items = _process_body(pack)
-    body_html = _team_avatars(pack, body_html)
+    extended = _team_extended(pack, body_html)
+    body_html = extended if extended is not None else _team_avatars(pack, body_html)
     middle = _takeaways(pack.get("key_takeaways"))
     if pack.get("toc", True):
         middle += _toc(toc_items)

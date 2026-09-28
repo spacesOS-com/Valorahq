@@ -22,11 +22,157 @@
     "Sam": "team-avatar-sam.png",
     "Owen": "team-avatar-owen.png",
     "Arjun": "team-avatar-arjun.png",
-    "Ethan": "team-avatar-ethan.png",
+    "Ethan": "team-avatar-ethan-v2.png",
     "Iris": "team-avatar-iris.png",
     "Clara": "team-avatar-clara.png",
     "Jordan": "team-avatar-jordan.png",
-    "Rina": "team-avatar-rina.png"
+    "Rina": "team-avatar-rina.png",
+    "Elena": "team-avatar-elena.png",
+    "Evelyn": "team-avatar-evelyn.png",
+    "Sofia": "team-avatar-sofia.png",
+    "Miles": "team-avatar-miles.png",
+    "Noah": "team-avatar-noah.png",
+    "Amara": "team-avatar-amara.png",
+    "Ava": "team-avatar-ava.png"
   },
-  "avatars_note": "Illustrated flat-vector avatar set, one coherent style (warm-cream circle, muted terracotta/sage/navy, role-prop motif per member). 1024px PNGs in the Drive drop folder. Not photos; render as circular headshots beside each member block."
+  "avatars_note": "Illustrated flat-vector avatar set, one coherent style (warm-cream circle, muted terracotta/sage/navy, role-prop motif per member). 1024px PNGs in the Drive drop folder. Not photos; render as circular headshots beside each member block.",
+  "extended_team": [
+    {
+      "name": "Sam Nakamura",
+      "title": "Chief Technology Officer",
+      "grouping": "Leadership",
+      "order": 1,
+      "functional_role": "Engineering",
+      "avatar": "team-avatar-sam.png"
+    },
+    {
+      "name": "Clara Nguyen",
+      "title": "Chief Operating Officer",
+      "grouping": "Leadership",
+      "order": 2,
+      "functional_role": "Operations",
+      "avatar": "team-avatar-clara.png"
+    },
+    {
+      "name": "Jordan Blake",
+      "title": "Chief of Staff",
+      "grouping": "Leadership",
+      "order": 3,
+      "functional_role": "Chief of Staff",
+      "avatar": "team-avatar-jordan.png"
+    },
+    {
+      "name": "Elena Voss",
+      "title": "Executive Assistant, Office of the Founder",
+      "grouping": "Leadership",
+      "order": 4,
+      "functional_role": "EA / Office of the Founder",
+      "avatar": "team-avatar-elena.png"
+    },
+    {
+      "name": "Lena Ortiz",
+      "title": "Head of Content",
+      "grouping": "Content",
+      "order": 5,
+      "functional_role": "Content",
+      "avatar": "team-avatar-lena.png"
+    },
+    {
+      "name": "Mira",
+      "title": "Head of Content Quality",
+      "grouping": "Content",
+      "order": 6,
+      "functional_role": "QA & Content Verification",
+      "avatar": "team-avatar-mira.png"
+    },
+    {
+      "name": "Iris Chen",
+      "title": "Head of Newsletter & Media Outreach",
+      "grouping": "Content",
+      "order": 7,
+      "functional_role": "LinkedIn newsletter + podcast/media outreach",
+      "avatar": "team-avatar-iris.png"
+    },
+    {
+      "name": "Owen Price",
+      "title": "Head of Growth & Partnerships",
+      "grouping": "Growth",
+      "order": 8,
+      "functional_role": "Growth & Partnerships",
+      "avatar": "team-avatar-owen.png"
+    },
+    {
+      "name": "Arjun Mehta",
+      "title": "Head of AI Search",
+      "grouping": "Growth",
+      "order": 9,
+      "functional_role": "AI Search (AEO/GEO)",
+      "avatar": "team-avatar-arjun.png"
+    },
+    {
+      "name": "Rina Desai",
+      "title": "Head of Consumer Research",
+      "grouping": "Growth",
+      "order": 10,
+      "functional_role": "Consumer Growth / Research",
+      "avatar": "team-avatar-rina.png"
+    },
+    {
+      "name": "Ethan Brooks",
+      "title": "Head of Outbound",
+      "grouping": "Growth",
+      "order": 11,
+      "functional_role": "Outbound",
+      "avatar": "team-avatar-ethan-v2.png"
+    },
+    {
+      "name": "Evelyn Hart",
+      "title": "Head of PR",
+      "grouping": "Media & Community",
+      "order": 12,
+      "functional_role": "PR",
+      "avatar": "team-avatar-evelyn.png"
+    },
+    {
+      "name": "Sofia Mensah",
+      "title": "Earned Media Lead",
+      "grouping": "Media & Community",
+      "order": 13,
+      "functional_role": "Earned media",
+      "avatar": "team-avatar-sofia.png"
+    },
+    {
+      "name": "Miles Carter",
+      "title": "Podcast Lead",
+      "grouping": "Media & Community",
+      "order": 14,
+      "functional_role": "Podcast booking",
+      "avatar": "team-avatar-miles.png"
+    },
+    {
+      "name": "Noah Kim",
+      "title": "Reddit Community Lead",
+      "grouping": "Media & Community",
+      "order": 15,
+      "functional_role": "Subreddit",
+      "avatar": "team-avatar-noah.png"
+    },
+    {
+      "name": "Amara Okafor",
+      "title": "Quora Lead",
+      "grouping": "Media & Community",
+      "order": 16,
+      "functional_role": "Quora",
+      "avatar": "team-avatar-amara.png"
+    },
+    {
+      "name": "Ava Mercer",
+      "title": "Facebook Community Lead",
+      "grouping": "Media & Community",
+      "order": 17,
+      "functional_role": "Facebook channel",
+      "avatar": "team-avatar-ava.png"
+    }
+  ],
+  "extended_team_note": "Extended-team presentation per founder direction (Sep 28), approved by chief operator. Built from the core 10 plus operational personas from the canonical Valora Agent Roster covering LinkedIn newsletter, Facebook, Quora, subreddit, Office of the Founder, and podcast/media/PR. functional_role preserves working roles for bio grounding. Display title + grouping + order as given. Marcus Reed intentionally not shown (live page is source of truth). Avatars: illustrated flat-vector set, 1024px PNGs in the drop folder; Ethan uses team-avatar-ethan-v2.png (replaces the first Ethan)."
 }
