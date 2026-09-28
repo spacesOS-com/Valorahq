@@ -151,6 +151,7 @@
 
     var last = 0;
     var toTop = $('#toTop');
+    var ctaFloat = $('#ctaFloat');
 
     function onScroll() {
       var y   = window.scrollY || document.documentElement.scrollTop;
@@ -168,10 +169,19 @@
 
       toTop.classList.toggle('is-on', y > 700);
       toTop.style.setProperty('--p', (p * 100).toFixed(1));
+
+      if (ctaFloat) ctaFloat.classList.toggle('is-on', y > 420);
     }
 
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // dock the floating CTA while its own target section is on screen
+    if (ctaFloat && document.getElementById('contact')) {
+      new IntersectionObserver(function (entries) {
+        ctaFloat.classList.toggle('is-docked', entries[0].isIntersecting);
+      }, { rootMargin: '-35% 0px' }).observe(document.getElementById('contact'));
+    }
   }
 
   /* ---------------------------------------------------------
@@ -574,6 +584,21 @@
   }
 
   /* ---------------------------------------------------------
+     12b. /find-your-advisor/ — copy inbound UTM params into the
+     hidden data-extra "Source" field, so collectLead folds the
+     origin campaign/page into the CRM note + email alert.
+     --------------------------------------------------------- */
+  function fyaSource() {
+    var src = $('#fyaSource');
+    if (!src) return;
+    var q = new URLSearchParams(window.location.search);
+    var parts = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content']
+      .map(function (k) { return q.get(k); })
+      .filter(Boolean);
+    if (parts.length) src.value = parts.join(' / ');
+  }
+
+  /* ---------------------------------------------------------
      12a. Multi-step forms (.form--steps, e.g. the full contact form)
      Steps are plain fields in the DOM — required attrs still work with
      JS off, this just shows one .form__step at a time and re-validates
@@ -924,6 +949,7 @@
     services();
     magnetic();
     leadForms();
+    fyaSource();
     rotator();
     gate();
     activeLink();

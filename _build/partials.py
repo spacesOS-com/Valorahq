@@ -574,6 +574,28 @@ def gate():
 </div>"""
 
 
+# ------------------------------------------------------------------ floating CTA
+# Founder directive (Sep 28): a floating "Find your advisor" button on every
+# niche/city page that follows scroll. Destination = the page's existing CTA
+# target for now; the founder's routing decision is still pending, so the
+# target lives in ONE constant - change FLOATING_CTA_HREF and every page
+# picks it up on the next build.
+# Routing decision (Sep 28): consumer CTAs point to the /find-your-advisor/
+# intake, not #contact. One constant still owns the destination - if the
+# founder re-routes again, this line is the only change.
+FLOATING_CTA_HREF = "/find-your-advisor/"
+FLOATING_CTA_UTM = "utm_source=site&utm_medium=cta&utm_campaign=floating-cta"
+FLOATING_CTA_LABEL = "Find your advisor"
+
+def floating_cta(utm_content=None):
+    href = FLOATING_CTA_HREF
+    if utm_content:
+        href = f"{href}?{FLOATING_CTA_UTM}&utm_content={utm_content}"
+    return (f'<a class="cta-float" id="ctaFloat" href="{href}" '
+            f'data-cta="floating-find-advisor" aria-label="{escape(FLOATING_CTA_LABEL)} - answer a few questions">'
+            f'{escape(FLOATING_CTA_LABEL)}<span aria-hidden="true" style="margin-left:8px;">&rarr;</span></a>')
+
+
 def faq_block(faq, heading="Common questions"):
     items = "\n".join(
         f'      <details class="faq__item"><summary>{escape(q)}</summary><p>{escape(a)}</p></details>'

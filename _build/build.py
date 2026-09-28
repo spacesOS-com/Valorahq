@@ -21,6 +21,7 @@ from directory_pages import build_directory_pages, SPECIALTIES, CITIES, NICHES, 
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from content_pages import build_content_pages
+from intake_page import build_intake_page
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://www.valorahq.com"
@@ -31,6 +32,7 @@ PAGES = [
     # (path, one-line description for llms.txt)
     ("/", "Home — how Valora matches people with independent, fiduciary financial advisors."),
     ("/for-advisors/", "For advisors — how independent advisors join Valora's network."),
+    ("/find-your-advisor/", "Find your advisor — four-question intake; Valora matches you with independent, fiduciary advisors."),
 ] + [(f"/advisors/{a['slug']}/", f"{a['name']} — {a['firm']}") for a in ADVISORS
 ] + [
     # only pages with a real advisor match — see directory_pages.real_pages().
@@ -169,6 +171,7 @@ if __name__ == "__main__":
     build_insights_pages(write)
     build_calculator_pages(write)
     PAGES.extend(build_content_pages(write))
+    build_intake_page(write)
     refresh_index()
     build_robots()
     build_sitemap()

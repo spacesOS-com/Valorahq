@@ -750,6 +750,27 @@ h1,h2,h3,h4,h5,p,figure,blockquote{ margin:0; }
 .to-top.is-on{ opacity:1; pointer-events:auto; transform:none; }
 .to-top:hover{ background:var(--green-deep); }
 
+/* ---------- floating advisor CTA (niche/city pages) ---------- */
+.cta-float{
+  position:fixed; right:22px; bottom:22px; z-index:95;
+  display:inline-flex; align-items:center;
+  background:var(--green); color:var(--cream); text-decoration:none;
+  padding:14px 22px; border-radius:999px;
+  font-size:.95rem; font-weight:600; letter-spacing:.01em;
+  border:1px solid rgba(239,235,224,.25);
+  box-shadow:0 12px 32px rgba(21,45,31,.35);
+  opacity:0; pointer-events:none; transform:translateY(10px);
+  transition:opacity .4s var(--ease), transform .4s var(--ease), background .3s;
+}
+.cta-float.is-on{ opacity:1; pointer-events:auto; transform:none; }
+.cta-float.is-docked{ opacity:0; pointer-events:none; transform:translateY(10px); }
+.cta-float:hover{ background:var(--green-deep); }
+body.has-cta-float .to-top{ bottom:88px; }
+@media (max-width:600px){
+  .cta-float{ right:12px; bottom:12px; padding:9px 14px; font-size:.78rem; gap:6px; }
+  body.has-cta-float .to-top{ right:14px; bottom:76px; }
+}
+
 /* ---------- image fallback ---------- */
 .img-fallback{
   background:linear-gradient(135deg, var(--cream-deep), #cfc9b8 60%, #b9b3a1);
