@@ -10,15 +10,16 @@
 - [https://www.valorahq.com/](https://www.valorahq.com/): Home — how Valora matches people with independent, fiduciary financial advisors.
 - [https://www.valorahq.com/for-advisors/](https://www.valorahq.com/for-advisors/): For advisors — how independent advisors join Valora's network.
 - [https://www.valorahq.com/find-your-advisor/](https://www.valorahq.com/find-your-advisor/): Find your advisor — four-question intake; each request is reviewed by hand.
+- [https://www.valorahq.com/guides/](https://www.valorahq.com/guides/): Financial advice guides for tech employees, physicians and business owners.
 - [https://www.valorahq.com/advisors/james-conole/](https://www.valorahq.com/advisors/james-conole/): James Conole, CFP® — Founder · Root Financial
 - [https://www.valorahq.com/advisors/kevin-lum/](https://www.valorahq.com/advisors/kevin-lum/): Kevin Lum, CFP® — Foundry Financial
 - [https://www.valorahq.com/advisors/eric-peakfp/](https://www.valorahq.com/advisors/eric-peakfp/): Eric, CFP® — The PeakFP
 - [https://www.valorahq.com/advisors/even-better-retirement/](https://www.valorahq.com/advisors/even-better-retirement/): Even Better Retirement — Retirement planning
 - [https://www.valorahq.com/find-a-financial-advisor/retirement-planning/](https://www.valorahq.com/find-a-financial-advisor/retirement-planning/): Retirement planning advisors on Valora.
-- [https://www.valorahq.com/find-a-financial-advisor/austin/](https://www.valorahq.com/find-a-financial-advisor/austin/): Financial advisors in Austin, TX on Valora.
 - [https://www.valorahq.com/find-a-financial-advisor/los-angeles/](https://www.valorahq.com/find-a-financial-advisor/los-angeles/): Financial advisors in Los Angeles, CA on Valora.
-- [https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/](https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/): Retirement planning advisors in Austin, TX on Valora.
+- [https://www.valorahq.com/find-a-financial-advisor/austin/](https://www.valorahq.com/find-a-financial-advisor/austin/): Financial advisors in Austin, TX on Valora.
 - [https://www.valorahq.com/find-a-financial-advisor/los-angeles-retirement-planning/](https://www.valorahq.com/find-a-financial-advisor/los-angeles-retirement-planning/): Retirement planning advisors in Los Angeles, CA on Valora.
+- [https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/](https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/): Retirement planning advisors in Austin, TX on Valora.
 - [https://www.valorahq.com/insights/realistic-withdrawal-rate-today/](https://www.valorahq.com/insights/realistic-withdrawal-rate-today/): The 4% rule is a 1990s starting point, not a guarantee. Here's what actually moves the number for a given retirement.
 - [https://www.valorahq.com/insights/family-conversation-before-retirement/](https://www.valorahq.com/insights/family-conversation-before-retirement/): The hardest part of retirement planning usually isn't the math. It's the conversation nobody's scheduled yet.
 - [https://www.valorahq.com/insights/when-roth-conversion-worth-tax-bill/](https://www.valorahq.com/insights/when-roth-conversion-worth-tax-bill/): A Roth conversion means paying tax now, on purpose, to avoid a possibly larger tax bill later. Whether that trade is worth it depends entirely on the specifics.

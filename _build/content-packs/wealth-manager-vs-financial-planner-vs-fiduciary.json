@@ -1,0 +1,17 @@
+{
+  "slug": "wealth-manager-vs-financial-planner-vs-fiduciary",
+  "page_type": "comparison",
+  "status": "draft",
+  "meta_title": "Wealth manager vs. financial planner vs. fiduciary advisor | Valora (DRAFT)",
+  "meta_description": "Placeholder meta description — Lena to write per the physicians/tech-employees pack schema before this goes live.",
+  "h1": "Wealth manager vs. financial planner vs. fiduciary advisor (draft — pending content)",
+  "body_html": "<p><em>Draft placeholder — page scaffolding only, not published content. Body copy, FAQs, source citations, and Mira's compliance review still need to be written by Lena, following the schema and tone used in financial-advisor-for-physicians.json / financial-advisor-for-tech-employees.json.</em></p>",
+  "faqs": [],
+  "keywords": [],
+  "internal_links": [],
+  "source_notes": [
+    "Scaffolded from Advisor AI Prompt Tracking.xlsx, AA-105 — title-meaning decoder page",
+    "Content, FAQs, and compliance review to be written by Lena per the existing niche-profession pack schema.",
+    "status: draft keeps this noindex and out of sitemap/llms.txt until reviewed and flipped to \"approved\"."
+  ]
+}

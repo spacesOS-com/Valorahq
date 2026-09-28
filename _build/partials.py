@@ -61,12 +61,42 @@ DIRECTORY_SPECIALTIES = [
     ("cash-liquidity-management", "Cash / liquidity management", ["liquidity", "cash management"]),
 ]
 
-# (slug, "City, ST")
+# (slug, "City, ST") — the ~30 largest US metro areas. Real advisor matches
+# (currently Austin, Los Angeles) get a populated page; the rest are honest
+# empty-state previews, marked noindex until a real advisor is based there
+# (see directory_pages.real_pages()) — same pattern as niches/asset types.
 DIRECTORY_CITIES = [
-    ("austin", "Austin, TX"),
+    ("new-york", "New York, NY"),
     ("los-angeles", "Los Angeles, CA"),
     ("chicago", "Chicago, IL"),
-    ("new-york", "New York, NY"),
+    ("dallas", "Dallas, TX"),
+    ("houston", "Houston, TX"),
+    ("washington-dc", "Washington, DC"),
+    ("miami", "Miami, FL"),
+    ("philadelphia", "Philadelphia, PA"),
+    ("atlanta", "Atlanta, GA"),
+    ("phoenix", "Phoenix, AZ"),
+    ("boston", "Boston, MA"),
+    ("san-francisco", "San Francisco, CA"),
+    ("detroit", "Detroit, MI"),
+    ("seattle", "Seattle, WA"),
+    ("minneapolis", "Minneapolis, MN"),
+    ("san-diego", "San Diego, CA"),
+    ("tampa", "Tampa, FL"),
+    ("denver", "Denver, CO"),
+    ("baltimore", "Baltimore, MD"),
+    ("st-louis", "St. Louis, MO"),
+    ("charlotte", "Charlotte, NC"),
+    ("orlando", "Orlando, FL"),
+    ("san-antonio", "San Antonio, TX"),
+    ("portland", "Portland, OR"),
+    ("sacramento", "Sacramento, CA"),
+    ("pittsburgh", "Pittsburgh, PA"),
+    ("austin", "Austin, TX"),
+    ("las-vegas", "Las Vegas, NV"),
+    ("cincinnati", "Cincinnati, OH"),
+    ("columbus", "Columbus, OH"),
+    ("kansas-city", "Kansas City, MO"),
 ]
 
 ASSET_OPTIONS = ["Under $250K", "$250K to $500K", "$500K to $1M",

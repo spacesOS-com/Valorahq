@@ -64,6 +64,19 @@ def _blog_embed():
 """
 
 
+_CAL_EMBED_SCRIPT = """
+<!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "demo", {origin:"https://app.cal.com"});
+  Cal.config = Cal.config || {};
+  Cal.config.forwardQueryParams = true;
+  Cal.ns.demo("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal element-click embed code ends -->
+"""
+
+
 def for_advisors_body():
     faq_html = _faq_accordion()
     blog_html = _blog_embed()
@@ -84,7 +97,7 @@ def for_advisors_body():
       </h1>
       <p class="adv-hero__sub reveal">If you're looking for the perfect clients, we'll deliver them straight to your inbox and give you the tools to manage them throughout the sales process. We work exclusively with SEC registered firms.</p>
       <div class="hero__actions reveal">
-        <a class="btn btn--dark" href="mailto:{EMAIL}?subject=Book%20a%20demo">Book a demo</a>
+        <button type="button" class="btn btn--dark" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
       </div>
     </div>
   </div>
@@ -315,7 +328,7 @@ def for_advisors_body():
         <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
       </ul>
       <div style="margin-top:28px;">
-        <a class="btn btn--dark" href="mailto:{EMAIL}?subject=Book%20a%20demo" style="width:100%;">Book a demo</a>
+        <button type="button" class="btn btn--dark" style="width:100%;" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
       </div>
     </div>
 
@@ -333,8 +346,9 @@ def for_advisors_body():
   <div class="container adv-ready__inner">
     <h2 class="display display--lg reveal">Ready to get started?</h2>
     <p class="reveal">Get perfect clients delivered straight to your inbox and the tools to manage them throughout the sales process.</p>
-    <a class="btn btn--cream" href="mailto:{EMAIL}?subject=Book%20a%20demo">Book a demo</a>
+    <button type="button" class="btn btn--cream" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
   </div>
 </section>
 
+{_CAL_EMBED_SCRIPT}
 """
