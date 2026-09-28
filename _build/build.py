@@ -33,6 +33,7 @@ PAGES = [
     ("/", "Home — how Valora matches people with independent, fiduciary financial advisors."),
     ("/for-advisors/", "For advisors — how independent advisors join Valora's network."),
     ("/find-your-advisor/", "Find your advisor — four-question intake; each request is reviewed by hand."),
+    ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
 ] + [(f"/advisors/{a['slug']}/", f"{a['name']} — {a['firm']}") for a in ADVISORS
 ] + [
     # only pages with a real advisor match — see directory_pages.real_pages().

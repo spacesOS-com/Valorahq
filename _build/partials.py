@@ -213,17 +213,49 @@ def head(title, description, path="/", schema="", noindex=False, keywords=None):
 
 
 # ------------------------------------------------------------------ header / footer
-NAV = [
-    ("For advisors", "/for-advisors/", "advisors"),
+# Five categories are staged. Only the first has a complete live guide cohort.
+NAV_MENUS = [
+    {
+        "name": "Financial Advice", "live": True,
+        "guides": [
+            ("Financial advisors for tech employees", "/financial-advisor-for-tech-employees/"),
+            ("Financial advisors for physicians", "/financial-advisor-for-physicians/"),
+            ("Financial advisors for business owners", "/financial-advisor-for-business-owners/"),
+        ],
+        "index": ("All financial advice guides", "/guides/"),
+        "resources": [
+            ("Financial advisors in New York", "/find-a-financial-advisor/new-york/"),
+            ("Financial advisors in Chicago", "/find-a-financial-advisor/chicago/"),
+        ],
+        "cta": ("Find an advisor", "/find-your-advisor/"),
+    },
+    {"name": "Retirement", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
+    {"name": "Investing", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
+    {"name": "Banking", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
+    {"name": "Taxes", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
 ]
 
 
+def _nav_dropdown(menu, index):
+    ident = f"nav-menu-{index}"
+    def links(items):
+        return "\n".join(f'<li><a href="{escape(url)}">{escape(label)}</a></li>' for label, url in items)
+    guide_links = links(menu["guides"])
+    if menu.get("index"):
+        label, url = menu["index"]
+        guide_links += f'<li class="nav-menu__all"><a href="{escape(url)}">{escape(label)}</a></li>'
+    return f'''<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="{ident}">{escape(menu["name"])} <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="{ident}" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Get help with</p><ul>{guide_links}</ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">More resources</p><a class="nav-menu__action" href="{escape(menu["cta"][1])}">{escape(menu["cta"][0])}</a><ul>{links(menu["resources"])}</ul></div>
+      </div>
+    </li>'''
+
+
 def header(active=None, cta=("Find an advisor", "/#contact")):
-    items = []
-    for label, href, key in NAV:
-        cur = ' class="is-current" aria-current="page"' if key and key == active else ""
-        items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
-    items = "\n".join(items)
+    items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
+    items += '\n<li class="nav__advisors"><a href="/for-advisors/">For advisors</a></li>'
     return f"""<header class="site-header" id="siteHeader">
   <div class="container header__inner">
     <a class="logo" href="/" aria-label="{BRAND} home">

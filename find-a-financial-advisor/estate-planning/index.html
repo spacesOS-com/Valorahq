@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=4cfd8a41">
+<link rel="stylesheet" href="/styles.css?v=b33b7d95">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e3b2a'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23efebe0' font-family='Georgia'>V</text></svg>">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Valora", "url": "https://www.valorahq.com", "description": "Valora is an independent platform that matches people with vetted, independent fiduciary financial advisors based on their situation.", "email": "barot@valorahq.com", "areaServed": {"@type": "Country", "name": "United States", "identifier": "US"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What documents make up a basic estate plan?", "acceptedAnswer": {"@type": "Answer", "text": "A will, a revocable living trust (in many states), durable financial power of attorney, healthcare directive, and correct beneficiary designations on retirement accounts and insurance. Beneficiary forms override your will, so they're part of the plan, not an afterthought."}}, {"@type": "Question", "name": "Do I need a trust or is a will enough?", "acceptedAnswer": {"@type": "Answer", "text": "A will goes through probate; a funded revocable trust usually avoids it, keeps affairs private, and handles incapacity better. In states with slow or expensive probate, trusts are common; elsewhere a will may suffice. The answer depends on your state, asset types, and family situation."}}, {"@type": "Question", "name": "How often should an estate plan be updated?", "acceptedAnswer": {"@type": "Answer", "text": "Every three to five years, and immediately after major events: marriage, divorce, a child, a death, a large change in wealth, moving states, or a business sale. Estate tax law changes also trigger reviews - exemption levels have shifted repeatedly."}}, {"@type": "Question", "name": "What does a financial advisor do in estate planning if they don't draft documents?", "acceptedAnswer": {"@type": "Answer", "text": "They keep the balance sheet the plan is built on current: retitling accounts into the trust, aligning beneficiaries with the plan, modeling estate tax exposure, and coordinating between your attorney, CPA, and insurance. Most failed plans fail on funding and coordination, not drafting."}}, {"@type": "Question", "name": "How does estate tax work and should I worry about it?", "acceptedAnswer": {"@type": "Answer", "text": "Federal estate tax applies only above a large exemption, which is scheduled to change with legislation; some states levy their own estate or inheritance tax at much lower thresholds. If your estate could plausibly exceed the exemption, plan early - the most effective strategies take years to execute."}}]}</script>
@@ -42,7 +42,17 @@
 
     <nav class="nav" id="primaryNav" aria-label="Primary">
       <ul class="nav__list">
-        <li><a href="/for-advisors/">For advisors</a></li>
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-0">Financial Advice <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-0" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Get help with</p><ul><li><a href="/financial-advisor-for-tech-employees/">Financial advisors for tech employees</a></li>
+<li><a href="/financial-advisor-for-physicians/">Financial advisors for physicians</a></li>
+<li><a href="/financial-advisor-for-business-owners/">Financial advisors for business owners</a></li><li class="nav-menu__all"><a href="/guides/">All financial advice guides</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">More resources</p><a class="nav-menu__action" href="/find-your-advisor/">Find an advisor</a><ul><li><a href="/find-a-financial-advisor/new-york/">Financial advisors in New York</a></li>
+<li><a href="/find-a-financial-advisor/chicago/">Financial advisors in Chicago</a></li></ul></div>
+      </div>
+    </li>
+<li class="nav__advisors"><a href="/for-advisors/">For advisors</a></li>
       </ul>
       <div class="nav__cta">
         <a class="btn btn--dark" href="/#contact" data-gate-open>Find an advisor</a>
@@ -315,6 +325,6 @@
     </div>
   </div>
 </div>
-<script src="/script.js?v=973bcaad"></script>
+<script src="/script.js?v=8ca55ded"></script>
 </body>
 </html>
