@@ -15,5 +15,18 @@
     "Mira's title reflects the founder-confirmed QA role (founder told 9:40: 'Mira. Everything Lena writes goes through Mira's QA pass before it's called done.').",
     "2026-09-28 roster correction per main: Arjun's title is Head of AI Search (AEO/GEO), not Research",
     "2026-09-28 founder feedback (verbatim iMessage): 'Be more descriptive, add some humor etc' - descriptions expanded to 2-3 sentences each with dry humor drawn from each role's actual function; no credentials, backstories, or facts invented; roster and titles unchanged."
-  ]
+  ],
+  "avatars": {
+    "Lena": "team-avatar-lena.png",
+    "Mira": "team-avatar-mira.png",
+    "Sam": "team-avatar-sam.png",
+    "Owen": "team-avatar-owen.png",
+    "Arjun": "team-avatar-arjun.png",
+    "Ethan": "team-avatar-ethan.png",
+    "Iris": "team-avatar-iris.png",
+    "Clara": "team-avatar-clara.png",
+    "Jordan": "team-avatar-jordan.png",
+    "Rina": "team-avatar-rina.png"
+  },
+  "avatars_note": "Illustrated flat-vector avatar set, one coherent style (warm-cream circle, muted terracotta/sage/navy, role-prop motif per member). 1024px PNGs in the Drive drop folder. Not photos; render as circular headshots beside each member block."
 }

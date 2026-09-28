@@ -1991,3 +1991,9 @@ body.embed-mode .section { padding-top:24px; padding-bottom:24px; }
 .calc-block__links ul{ margin:6px 0 0; padding-left:18px; }
 .calc-block__links li{ margin:2px 0; }
 .calc-block__cta{ margin-top:18px; }
+
+/* team member headshots */
+.team-member{ display:flex; gap:18px; align-items:flex-start; margin:28px 0; }
+.team-member__avatar{ width:72px; height:72px; border-radius:50%; flex:none; object-fit:cover; background:#f3ead9; }
+.team-member__text h3{ margin-top:4px; }
+@media (max-width:620px){ .team-member__avatar{ width:56px; height:56px; } }

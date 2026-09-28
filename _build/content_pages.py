@@ -145,6 +145,40 @@ def _calculators(pack):
 </aside>"""
 
 
+def _team_avatars(pack, body_html):
+    """Circular headshots beside each member block (avatars map: name -> filename)."""
+    avatars = pack.get("avatars")
+    if not avatars:
+        return body_html
+    def repl(m):
+        name, rest = m.group(1), m.group(2)
+        fname = avatars.get(name)
+        if not fname:
+            return m.group(0)
+        src = "/assets/" + fname.rsplit(".", 1)[0] + ".jpg"
+        return (f'<div class="team-member"><img class="team-member__avatar" src="{src}" '
+                f'alt="Illustrated avatar of {escape(name)}" loading="lazy" width="72" height="72">'
+                f'<div class="team-member__text"><h3>{escape(name)}{rest}</h3>')
+    out = re.sub(r"<h3>(\w+)((?:\s|&ndash;|-)[^<]*)</h3>", repl, body_html)
+    # close the wrapper div after each member's paragraph(s): the transform above
+    # opened <div class="team-member__text"> in place of each h3; close before the
+    # next team-member or at the end of the roster (last </p> of each block).
+    parts = out.split('<div class="team-member">')
+    if len(parts) > 1:
+        rebuilt = parts[0]
+        for i, chunk in enumerate(parts[1:]):
+            if i < len(parts) - 2:
+                nxt = chunk  # ends right before the next member's wrapper
+                cut = nxt.rfind("</p>")
+                chunk = nxt[:cut + 4] + "</div></div>" + nxt[cut + 4:]
+            else:
+                cut = chunk.rfind("</p>")
+                chunk = chunk[:cut + 4] + "</div></div>" + chunk[cut + 4:]
+            rebuilt += '<div class="team-member">' + chunk
+        out = rebuilt
+    return out
+
+
 def _process_body(pack):
     """Add h2 anchor ids, inject inline CTAs at the end of their named sections.
     Returns (processed_html, toc_items)."""
@@ -266,6 +300,7 @@ def _body(pack):
     faq_pairs = [(f["q"], f["a"]) for f in pack["faqs"]]
     is_legal = pack.get("page_type") in ("legal", "team")  # plain render, no closing CTA
     body_html, toc_items = _process_body(pack)
+    body_html = _team_avatars(pack, body_html)
     middle = _takeaways(pack.get("key_takeaways"))
     if pack.get("toc", True):
         middle += _toc(toc_items)
