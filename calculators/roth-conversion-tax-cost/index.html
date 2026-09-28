@@ -76,7 +76,7 @@
     </form>
 
     <div class="calc-result">
-      <p class="calc-result__label">Estimated tax cost / net after tax</p>
+      <p class="calc-result__label">Estimated tax cost</p>
       <p class="calc-result__value" id="calcOut">&mdash;</p>
     </div>
 
@@ -94,7 +94,7 @@
           var amt = parseFloat(f.amt.value) || 0;
           var rate = (parseFloat(f.rate.value) || 0) / 100;
           var tax = amt * rate;
-          out.textContent = '$' + Math.round(tax).toLocaleString() + ' tax  (\u2248 $' + Math.round(amt - tax).toLocaleString() + ' net converted)';
+          out.textContent = '$' + Math.round(tax).toLocaleString() + ' estimated tax';
         
   }
   f.addEventListener('input', calc);

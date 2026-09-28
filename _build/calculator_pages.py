@@ -71,12 +71,12 @@ CALCULATORS = [
             {"id": "amt", "label": "Amount to convert ($)", "placeholder": "50000"},
             {"id": "rate", "label": "Assumed marginal tax rate (%)", "placeholder": "24"},
         ],
-        "result_label": "Estimated tax cost / net after tax",
+        "result_label": "Estimated tax cost",
         "js": """
           var amt = parseFloat(f.amt.value) || 0;
           var rate = (parseFloat(f.rate.value) || 0) / 100;
           var tax = amt * rate;
-          out.textContent = '$' + Math.round(tax).toLocaleString() + ' tax  (\\u2248 $' + Math.round(amt - tax).toLocaleString() + ' net converted)';
+          out.textContent = '$' + Math.round(tax).toLocaleString() + ' estimated tax';
         """,
         "related": "/insights/when-roth-conversion-worth-tax-bill/",
     },
