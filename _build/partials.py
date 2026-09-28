@@ -120,7 +120,7 @@ CLIENT_FAQ = [
      "Independent, fiduciary financial advisors — not Valora employees. Valora is an independent platform "
      "that helps you discover them; it isn't an advisory firm itself."),
     ("How soon will I hear back after I submit the form?",
-     "We'll follow up within two business days with advisors who may fit what you're looking for."),
+     "After you submit, we review your request and email you about next steps. Timing may vary."),
 ]
 
 LOGO_SVG = ('<svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" '
@@ -379,7 +379,7 @@ def hero_card():
           {TICK_SVG}
         </span>
         <h3 data-done-title>Thank you.</h3>
-        <p>We'll follow up within two business days with advisors who may fit what you're looking for.</p>
+        <p>After you submit, we review your request and email you about next steps. Timing may vary.</p>
       </div>
     </aside>"""
 
@@ -445,7 +445,7 @@ def page_form(goal=None):
     script.js) just shows/hides them; with JS off, .form__step[hidden] still
     holds via CSS but the browser's own hidden attribute keeps it usable as
     a single long form (nothing here depends on JS to submit)."""
-    return f"""<form class="form form--steps reveal" id="matchForm" data-lead="Client" data-success="Thank you, {{name}} — we'll follow up within two business days with advisors who may fit what you're looking for." novalidate>
+    return f"""<form class="form form--steps reveal" id="matchForm" data-lead="Client" data-success="Thank you, {{name}} — we review each request by hand and will email you about next steps. Timing may vary." novalidate>
       <div class="form__step" data-step>
         <p class="field field--full form__stepnum">Step 1 of 4</p>{help_fields()}
         <div class="field field--full form__nav">
@@ -564,7 +564,7 @@ def gate():
           {TICK_SVG}
         </span>
         <h3 class="display" data-done-title style="font-size:1.5rem">Thank you.</h3>
-        <p>We'll follow up within two business days with advisors who may fit what you're looking for.</p>
+        <p>After you submit, we review your request and email you about next steps. Timing may vary.</p>
         <button class="btn btn--cream" type="button" data-gate-close>Explore the site</button>
       </div>
     </div>

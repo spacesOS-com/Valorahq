@@ -35,7 +35,7 @@ def _select(uid, name, label, options, wrap="field field--full"):
 
 
 def intake_form():
-    return f"""<form class="form form--steps reveal" id="fyaForm" data-lead="Client" data-success="Thank you, {{name}} — we'll follow up within two business days with advisors who may fit what you're looking for." novalidate>
+    return f"""<form class="form form--steps reveal" id="fyaForm" data-lead="Client" data-success="Thank you, {{name}} — we review each request by hand and will email you about next steps. Timing may vary." novalidate>
       <input type="hidden" id="fyaSource" data-extra="Source" value="">
       <div class="form__step" data-step>
         <p class="field field--full form__stepnum">Step 1 of 4</p>
@@ -102,7 +102,7 @@ def intake_body():
   <div class="container" style="max-width:900px;">
     <p class="eyebrow reveal">Free · No obligation</p>
     <h1 class="display display--lg reveal">Find your advisor.</h1>
-    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Answer four quick questions and we'll match you with independent, fiduciary advisors who fit your situation.</p>
+    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step.</p>
   </div>
 </section>
 
@@ -122,7 +122,7 @@ def intake_body():
 def build_intake_page(write_fn):
     html = page(
         head("Find Your Advisor | Valora",
-             "Answer four quick questions and Valora will match you with independent, fiduciary financial advisors who fit your situation. Free, no obligation.",
+             "Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step. Free, no obligation.",
              path="/find-your-advisor/"),
         intake_body(),
     )

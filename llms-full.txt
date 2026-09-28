@@ -19,7 +19,7 @@ Valora — Your money has a purpose
  has a purpose. 
  Let's make sure it serves you. 
 
- Valora is a free platform that matches you with independent, fiduciary financial advisors based on your specific situation — retirement, equity compensation, selling a business, or estate planning. You review advisor profiles yourself and decide who to contact; Valora doesn't charge you or provide investment advice itself. 
+ Tell us what kind of financial advice you need. We review each request by hand and, where we have a suitable advisor available, help you take the next step. You choose whether to contact an advisor. Valora does not provide investment advice. 
 
  Find your advisor 
  I'm an advisor 
@@ -76,7 +76,7 @@ Valora — Your money has a purpose
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
 
  Our approach 
 
@@ -187,7 +187,7 @@ Valora — Your money has a purpose
  Does Valora provide investment advice? No. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice — financial advisory services are provided independently by the advisors you choose to contact. 
  How does Valora match me with an advisor? You answer a few questions about your situation — what you&#x27;re solving for, your assets, and your circumstances. Valora surfaces advisors who may fit, and you review their profiles and decide who, if anyone, to contact. 
  Who are the advisors on Valora? Independent, fiduciary financial advisors — not Valora employees. Valora is an independent platform that helps you discover them; it isn&#x27;t an advisory firm itself. 
- How soon will I hear back after I submit the form? We&#x27;ll follow up within two business days with advisors who may fit what you&#x27;re looking for. 
+ How soon will I hear back after I submit the form? After you submit, we review your request and email you about next steps. Timing may vary. 
 
  Let's build a financial life that feels like yours. 
  Answer a few questions to find advisors who match your needs. 
@@ -315,7 +315,7 @@ Valora — Your money has a purpose
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -541,7 +541,7 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
 ---
 
 # https://www.valorahq.com/find-your-advisor/
-Find your advisor — four-question intake; Valora matches you with independent, fiduciary advisors.
+Find your advisor — four-question intake; each request is reviewed by hand.
 
 Find Your Advisor | Valora 
 
@@ -557,7 +557,7 @@ Find Your Advisor | Valora
 
  Free · No obligation 
  Find your advisor. 
- Answer four quick questions and we'll match you with independent, fiduciary advisors who fit your situation. 
+ Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step. 
 
  Tell us what you're solving for. 
  A short conversation can show you which decisions deserve attention first. 
@@ -772,7 +772,7 @@ James Conole, CFP® | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -928,7 +928,7 @@ Kevin Lum, CFP® | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -1084,7 +1084,7 @@ Eric, CFP® | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -1240,7 +1240,7 @@ Even Better Retirement | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -1422,7 +1422,7 @@ Retirement planning Advisors | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -1589,7 +1589,7 @@ Financial Advisors in Austin, TX | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -1756,7 +1756,7 @@ Financial Advisors in Los Angeles, CA | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -1923,7 +1923,7 @@ Retirement planning Advisors in Austin, TX | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -2090,7 +2090,7 @@ Retirement planning Advisors in Los Angeles, CA | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -2246,7 +2246,7 @@ What a realistic withdrawal rate looks like now | Valora Insights
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -2402,7 +2402,7 @@ The conversation every family should have before retirement | Valora Insights
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -2558,7 +2558,7 @@ When a Roth conversion is worth the tax bill | Valora Insights
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -2714,7 +2714,7 @@ Your RSUs are a bonus, not a lottery ticket | Valora Insights
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -2871,7 +2871,7 @@ What happens if the market drops right before you retire | Valora Insights
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -3028,7 +3028,7 @@ Beneficiary forms quietly override your will | Valora Insights
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -3192,7 +3192,7 @@ Retirement savings growth calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -3353,7 +3353,7 @@ Withdrawal amount calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -3514,7 +3514,7 @@ Roth conversion tax cost calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -3677,7 +3677,7 @@ How long your savings will last | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -3844,7 +3844,7 @@ PSLF scenario explorer | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -4005,7 +4005,7 @@ RSU withholding shortfall calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -4165,7 +4165,7 @@ Check your 2026 401(k) employee deferral limit by age, and how much contribution
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -4325,7 +4325,7 @@ Required minimum distribution (RMD) calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -4488,7 +4488,7 @@ Capital gains tax estimator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -4650,7 +4650,7 @@ Inflation calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -4814,7 +4814,7 @@ Investment future value calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -4976,7 +4976,7 @@ Savings &amp; CD growth calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -5134,7 +5134,7 @@ Split your take-home pay into needs, wants, and savings using the common 50/30/2
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -5292,7 +5292,7 @@ Social Security claiming age break-even calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -5452,7 +5452,7 @@ Delayed retirement credit calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -5615,7 +5615,7 @@ ISO exercise cost &amp; spread calculator | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -5777,7 +5777,7 @@ Concentrated stock diversification timeline | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -5948,7 +5948,7 @@ Retirement Calculators | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -6115,7 +6115,7 @@ Taxes Calculators | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -6274,7 +6274,7 @@ Social Security Calculators | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -6433,7 +6433,7 @@ Equity Compensation Calculators | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -6592,7 +6592,7 @@ Investing Calculators | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -6755,7 +6755,7 @@ Banking Calculators | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -6982,7 +6982,7 @@ Financial Advisor for Business Owners | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -7210,7 +7210,7 @@ Financial Advisor for Physicians | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -7437,7 +7437,7 @@ Financial Advisor for Tech Employees with RSUs | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -7570,7 +7570,7 @@ Cookie and Analytics Notice | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -7731,7 +7731,7 @@ Privacy Policy | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -7894,7 +7894,7 @@ Terms and Conditions | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site
 
 ---
@@ -8019,5 +8019,5 @@ Team | Valora
  Explore advisors 
 
  Thank you. 
- We'll follow up within two business days with advisors who may fit what you're looking for. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
  Explore the site

@@ -32,7 +32,7 @@ PAGES = [
     # (path, one-line description for llms.txt)
     ("/", "Home — how Valora matches people with independent, fiduciary financial advisors."),
     ("/for-advisors/", "For advisors — how independent advisors join Valora's network."),
-    ("/find-your-advisor/", "Find your advisor — four-question intake; Valora matches you with independent, fiduciary advisors."),
+    ("/find-your-advisor/", "Find your advisor — four-question intake; each request is reviewed by hand."),
 ] + [(f"/advisors/{a['slug']}/", f"{a['name']} — {a['firm']}") for a in ADVISORS
 ] + [
     # only pages with a real advisor match — see directory_pages.real_pages().
