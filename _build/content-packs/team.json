@@ -33,10 +33,24 @@
     "Miles": "team-avatar-miles.png",
     "Noah": "team-avatar-noah.png",
     "Amara": "team-avatar-amara.png",
-    "Ava": "team-avatar-ava.png"
+    "Ava": "team-avatar-ava.png",
+    "Bhavya": "team-avatar-bhavya-v2.png"
   },
   "avatars_note": "Illustrated flat-vector avatar set, one coherent style (warm-cream circle, muted terracotta/sage/navy, role-prop motif per member). 1024px PNGs in the Drive drop folder. Not photos; render as circular headshots beside each member block.",
   "extended_team": [
+    {
+      "name": "Bhavya Barot",
+      "title": "Founder & CEO",
+      "grouping": "Founder",
+      "order": 0,
+      "functional_role": "Founder & CEO",
+      "avatar": "team-avatar-bhavya-v2.png",
+      "bio": "Bhavya founded Valora (formerly Spaces) and leads it as CEO: the product, the strategy, and the stubborn belief that good financial advice shouldn't be a luxury good. He grew up in Nairobi, Kenya, earned his BSc at the University of Greenwich in the UK, and has been a founder more than once - which means he's made the expensive mistakes already and built Valora to avoid them. His badass credential: he's building AI agents that deliver exclusive, qualified leads to financial advisors - and he can explain why the whole industry needs it in about ninety seconds, at which point you'll agree.\n\nWhat he loves building most is the part that sounds boring until it works: the systems that connect a person with a real money question to an advisor who can genuinely help, at a price both sides can live with. The mission - making financial advice available, accessible, and affordable - is the filter every Valora decision goes through, and he'll happily tell you about it for longer than the meeting was scheduled for.",
+      "bio_paragraphs": [
+        "Bhavya founded Valora (formerly Spaces) and leads it as CEO: the product, the strategy, and the stubborn belief that good financial advice shouldn't be a luxury good. He grew up in Nairobi, Kenya, earned his BSc at the University of Greenwich in the UK, and has been a founder more than once - which means he's made the expensive mistakes already and built Valora to avoid them. His badass credential: he's building AI agents that deliver exclusive, qualified leads to financial advisors - and he can explain why the whole industry needs it in about ninety seconds, at which point you'll agree.",
+        "What he loves building most is the part that sounds boring until it works: the systems that connect a person with a real money question to an advisor who can genuinely help, at a price both sides can live with. The mission - making financial advice available, accessible, and affordable - is the filter every Valora decision goes through, and he'll happily tell you about it for longer than the meeting was scheduled for."
+      ]
+    },
     {
       "name": "Sam Nakamura",
       "title": "Chief Technology Officer",
@@ -259,5 +273,18 @@
       ]
     }
   ],
-  "extended_team_note": "Extended-team presentation per founder direction (Sep 28), approved by chief operator. Built from the core 10 plus operational personas from the canonical Valora Agent Roster covering LinkedIn newsletter, Facebook, Quora, subreddit, Office of the Founder, and podcast/media/PR. functional_role preserves working roles for bio grounding. Display title + grouping + order as given. Marcus Reed intentionally not shown (live page is source of truth). Avatars: illustrated flat-vector set, 1024px PNGs in the drop folder; Ethan uses team-avatar-ethan-v2.png (replaces the first Ethan). Each entry's bio field is the approved full bio (role + personality + outside-work note), per founder request Sep 28; core 10 extend the previously approved bios."
+  "extended_team_note": "Extended-team presentation per founder direction (Sep 28), approved by chief operator. Built from the core 10 plus operational personas from the canonical Valora Agent Roster covering LinkedIn newsletter, Facebook, Quora, subreddit, Office of the Founder, and podcast/media/PR. functional_role preserves working roles for bio grounding. Display title + grouping + order as given. Marcus Reed intentionally not shown (live page is source of truth). Avatars: illustrated flat-vector set, 1024px PNGs in the drop folder; Ethan uses team-avatar-ethan-v2.png (replaces the first Ethan). Each entry's bio field is the approved full bio (role + personality + outside-work note), per founder request Sep 28; core 10 extend the previously approved bios.",
+  "founder": {
+    "name": "Bhavya Barot",
+    "title": "Founder & CEO",
+    "grouping": "Founder",
+    "order": 0,
+    "functional_role": "Founder & CEO",
+    "avatar": "team-avatar-bhavya-v2.png",
+    "bio": "Bhavya founded Valora (formerly Spaces) and leads it as CEO: the product, the strategy, and the stubborn belief that good financial advice shouldn't be a luxury good. He grew up in Nairobi, Kenya, earned his BSc at the University of Greenwich in the UK, and has been a founder more than once - which means he's made the expensive mistakes already and built Valora to avoid them. His badass credential: he's building AI agents that deliver exclusive, qualified leads to financial advisors - and he can explain why the whole industry needs it in about ninety seconds, at which point you'll agree.\n\nWhat he loves building most is the part that sounds boring until it works: the systems that connect a person with a real money question to an advisor who can genuinely help, at a price both sides can live with. The mission - making financial advice available, accessible, and affordable - is the filter every Valora decision goes through, and he'll happily tell you about it for longer than the meeting was scheduled for.",
+    "bio_paragraphs": [
+      "Bhavya founded Valora (formerly Spaces) and leads it as CEO: the product, the strategy, and the stubborn belief that good financial advice shouldn't be a luxury good. He grew up in Nairobi, Kenya, earned his BSc at the University of Greenwich in the UK, and has been a founder more than once - which means he's made the expensive mistakes already and built Valora to avoid them. His badass credential: he's building AI agents that deliver exclusive, qualified leads to financial advisors - and he can explain why the whole industry needs it in about ninety seconds, at which point you'll agree.",
+      "What he loves building most is the part that sounds boring until it works: the systems that connect a person with a real money question to an advisor who can genuinely help, at a price both sides can live with. The mission - making financial advice available, accessible, and affordable - is the filter every Valora decision goes through, and he'll happily tell you about it for longer than the meeting was scheduled for."
+    ]
+  }
 }
