@@ -1966,6 +1966,9 @@ body.gate-open{ overflow:hidden; }
 }
 @media (max-width:600px){ .convert-mock__body{ grid-template-columns:1fr; } .convert-mock__side{ border-right:0; border-bottom:1px solid rgba(239,235,224,.12); } }
 
+.concierge-mock{ background:var(--green); border-radius:8px; overflow:hidden; box-shadow:0 24px 60px rgba(22,25,15,.18); }
+.concierge-mock__chat{ padding:24px; display:flex; flex-direction:column; gap:12px; }
+
 @media (max-width:620px){
   .match__tools{ align-items:flex-start; }
   .faq__item p{ padding-right:0; }
