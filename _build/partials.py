@@ -317,10 +317,14 @@ def _nav_dropdown(menu, index):
     </li>'''
 
 
-def header(active=None, cta=("Find an advisor", "/#contact")):
+def header(active=None, cta=("Find an advisor", "/#contact"), banner=False):
     items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
     items += '\n<li class="nav__advisors"><a href="/for-advisors/">For advisors</a></li>'
-    return f"""<header class="site-header" id="siteHeader">
+    banner_html = ""
+    if banner:
+        banner_html = ('<div class="site-banner">Are you a financial advisor? '
+                        '<a href="/for-advisors/">Join Valora &rarr;</a></div>')
+    return f"""{banner_html}<header class="site-header" id="siteHeader">
   <div class="container header__inner">
     <a class="logo" href="/" aria-label="{BRAND} home">
       <span class="logo__mark" aria-hidden="true">

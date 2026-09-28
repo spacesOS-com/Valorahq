@@ -92,7 +92,7 @@ def refresh_index():
                      "Explore independent financial advisors. Valora helps you find advisors who work with "
                      "situations like yours — you decide who you'd like to contact.",
                      path="/", schema=faq_schema(CLIENT_FAQ)),
-        "header": header(None),
+        "header": header(None, banner=True),
         "hero-card": hero_card(),
         "faq": client_faq_section(),
         "contact": contact_section(),
