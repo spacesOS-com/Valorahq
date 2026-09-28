@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banking Calculators | Valora</title>
-<meta name="description" content="Free banking calculators from Valora — simple, transparent estimates.">
+<title>PSLF scenario explorer | Valora</title>
+<meta name="description" content="Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate.">
 
-<link rel="canonical" href="https://www.valorahq.com/calculators/banking/">
+<link rel="canonical" href="https://www.valorahq.com/calculators/pslf-scenario-explorer/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css?v=2b370b16">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e3b2a'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23efebe0' font-family='Georgia'>V</text></svg>">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Valora", "url": "https://www.valorahq.com", "description": "Valora is an independent platform that matches people with vetted, independent fiduciary financial advisors based on their situation.", "email": "barot@valorahq.com", "telephone": "+14159094100", "areaServed": {"@type": "Country", "name": "United States", "identifier": "US"}}</script>
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the pslf scenario explorer calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Illustrative single-loan math: run it per loan, or use a weighted-average rate knowing that is itself an approximation. We do not compute income-driven payments - income, family size, plan rules and recertification all move them. Enter the monthly payment and the qualifying-payment count from your servicer. The 120 counted payments cannot be accelerated with extra payments, and qualifying months often do not run continuously (employment changes, non-qualifying plans, forbearance). PSLF eligibility - Direct Loans, full-time qualifying employer, qualifying repayment plan, 120 qualifying payments - is yours to verify with your servicer; annual employment certification is recommended. Sources: studentaid.gov/pslf and studentaid.gov/articles/5-tips-pslf-success/. Not advice."}}]}</script>
 <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="mu yu bu Su init Vu Gu zu Uu Ku il Wu Yu ju rh oh ah uh hh dh capture getExtension Zu pu gh calculateEventProperties ph register register_once register_for_session unregister unregister_for_session Hu mh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync wh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset kh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty yh ih createPersonProfile setInternalOrTestUser bh xu Cu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing th debug nl Os getPageViewId captureTraceFeedback captureTraceMetric Du".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_swhDRhpyNrJXeLkkTpYuH9au4XstiKXqY88XAEmX2Cjk', {
@@ -53,30 +53,103 @@
 <main id="main">
 
 <section class="section section--paper" id="top">
-  <div class="container">
+  <div class="container" style="max-width:680px;">
     <a href="/#insights" class="btn btn--outline" style="margin-bottom:32px;">&larr; Back</a>
-    <p class="eyebrow reveal">Calculators</p>
-    <h1 class="display display--lg reveal">Banking calculators</h1>
-    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Simple, transparent estimates — computed in your browser, nothing sent to a server. Educational, not personalized advice.</p>
-    <div class="adv-blog__grid" style="margin-top:36px;">
-      <a class="blogcard reveal" href="/calculators/pslf-scenario-explorer/">
-        <h3>PSLF scenario explorer</h3>
-        <p>Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate.</p>
-        <span class="blogcard__link">Open calculator &rarr;</span>
-      </a>
-      <a class="blogcard reveal" href="/calculators/savings-cd-growth/">
-        <h3>Savings &amp; CD growth calculator</h3>
-        <p>Estimate what a savings account or CD balance grows to at a fixed annual rate.</p>
-        <span class="blogcard__link">Open calculator &rarr;</span>
-      </a>
-      <a class="blogcard reveal" href="/calculators/budget-50-30-20/">
-        <h3>50/30/20 budget calculator</h3>
-        <p>Split your take-home pay into needs, wants, and savings using the common 50/30/20 guideline.</p>
-        <span class="blogcard__link">Open calculator &rarr;</span>
-      </a>
+    <p class="eyebrow reveal">Banking calculator</p>
+    <h1 class="display display--lg reveal">PSLF scenario explorer</h1>
+    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate.</p>
+
+    <form id="calcForm" class="form" style="margin-top:36px; grid-template-columns:1fr 1fr;" onsubmit="return false;">
+      
+        <div class="field" data-field>
+          <label for="pslf-scenario-explorer-balance">Current federal loan balance ($)</label>
+          <input id="pslf-scenario-explorer-balance" name="balance" type="number" inputmode="decimal" placeholder="200000" value="200000">
+        </div>
+
+        <div class="field" data-field>
+          <label for="pslf-scenario-explorer-rate">Interest rate (%)</label>
+          <input id="pslf-scenario-explorer-rate" name="rate" type="number" inputmode="decimal" placeholder="6.5" value="6.5">
+        </div>
+
+        <div class="field" data-field>
+          <label for="pslf-scenario-explorer-payment">Monthly payment from your servicer ($)</label>
+          <input id="pslf-scenario-explorer-payment" name="payment" type="number" inputmode="decimal" placeholder="800" value="800">
+        </div>
+
+        <div class="field" data-field>
+          <label for="pslf-scenario-explorer-made">Qualifying payments made so far (0-120)</label>
+          <input id="pslf-scenario-explorer-made" name="made" type="number" inputmode="decimal" placeholder="36" value="36">
+        </div>
+
+        <div class="field" data-field>
+          <label for="pslf-scenario-explorer-extra">Optional extra per month for the payoff path ($)</label>
+          <input id="pslf-scenario-explorer-extra" name="extra" type="number" inputmode="decimal" placeholder="0" value="0">
+        </div>
+    </form>
+
+    <div class="calc-result">
+      <p class="calc-result__label">Illustrative scenario comparison</p>
+      <p class="calc-result__value" id="calcOut">&mdash;</p>
     </div>
+
+    <p style="margin-top:24px; font-size:.82rem; color:var(--muted); max-width:60ch;">Illustrative single-loan math: run it per loan, or use a weighted-average rate knowing that is itself an approximation. We do not compute income-driven payments - income, family size, plan rules and recertification all move them. Enter the monthly payment and the qualifying-payment count from your servicer. The 120 counted payments cannot be accelerated with extra payments, and qualifying months often do not run continuously (employment changes, non-qualifying plans, forbearance). PSLF eligibility - Direct Loans, full-time qualifying employer, qualifying repayment plan, 120 qualifying payments - is yours to verify with your servicer; annual employment certification is recommended. Sources: studentaid.gov/pslf and studentaid.gov/articles/5-tips-pslf-success/. Not advice.</p>
+    <p style="margin-top:14px;"><a href="https://studentaid.gov/pslf">Read the related article &rarr;</a></p>
   </div>
 </section>
+
+<script>
+(function () {
+  var f = document.getElementById('calcForm');
+  var out = document.getElementById('calcOut');
+  function calc() {
+    
+          var bal0 = parseFloat(f.balance.value) || 0;
+          var r = (parseFloat(f.rate.value) || 0) / 100 / 12;
+          var pay = parseFloat(f.payment.value) || 0;
+          var made = parseInt(f.made.value, 10) || 0;
+          made = Math.min(120, Math.max(0, made));
+          var extra = parseFloat(f.extra.value) || 0;
+          if (bal0 <= 0 || pay <= 0) { out.textContent = 'Enter a loan balance and monthly payment'; return; }
+          var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+          var rem = 120 - made;
+          /* PSLF path: project the balance over the remaining counted payments */
+          var bal = bal0, m = 0;
+          for (m = 0; m < rem; m++) {
+            var i1 = bal * r;
+            bal = bal + i1 - pay;
+            if (bal <= 0) { bal = 0; break; }
+          }
+          var pslf;
+          if (bal <= 0) {
+            pslf = 'PSLF path: the loan reaches zero within the remaining counted payments at this payment';
+          } else {
+            var grows = pay < bal0 * r;
+            pslf = 'PSLF path: ' + rem + ' counted payments left, projected balance then ~' + money(bal) +
+                   (grows ? ' (growing - payment below monthly interest)' : '');
+          }
+          /* Payoff path: months to zero at payment + extra, exact month-by-month */
+          var p2 = pay + extra, po;
+          if (r > 0 && p2 <= bal0 * r) {
+            po = 'Payoff path: payment does not cover monthly interest - the balance never falls';
+          } else {
+            var bal2 = bal0, tot = 0, m2 = 0;
+            while (bal2 > 0 && m2 < 1200) {
+              var i2 = bal2 * r;
+              var pmt = Math.min(p2, bal2 + i2);
+              tot += pmt;
+              bal2 = bal2 + i2 - pmt;
+              m2++;
+            }
+            po = 'Payoff path: ' + m2 + ' months to zero, ~' + money(tot - bal0) + ' total interest' +
+                 (extra > 0 ? ' at ' + money(p2) + '/mo' : '');
+          }
+          out.textContent = pslf + '. ' + po + '.';
+        
+  }
+  f.addEventListener('input', calc);
+  calc();
+})();
+</script>
 
 <section class="section section--green cta" id="contact">
   <div class="container cta__grid">

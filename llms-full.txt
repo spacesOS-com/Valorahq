@@ -3753,6 +3753,174 @@ How long your savings will last | Valora
 
 ---
 
+# https://www.valorahq.com/calculators/pslf-scenario-explorer/
+Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate.
+
+PSLF scenario explorer | Valora 
+
+ V ">
+
+ Skip to content 
+
+ Valora 
+
+ For advisors 
+
+ Find an advisor 
+
+ &larr; Back 
+ Banking calculator 
+ PSLF scenario explorer 
+ Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate. 
+
+ Current federal loan balance ($) 
+
+ Interest rate (%) 
+
+ Monthly payment from your servicer ($) 
+
+ Qualifying payments made so far (0-120) 
+
+ Optional extra per month for the payoff path ($) 
+
+ Illustrative scenario comparison 
+ &mdash; 
+
+ Illustrative single-loan math: run it per loan, or use a weighted-average rate knowing that is itself an approximation. We do not compute income-driven payments - income, family size, plan rules and recertification all move them. Enter the monthly payment and the qualifying-payment count from your servicer. The 120 counted payments cannot be accelerated with extra payments, and qualifying months often do not run continuously (employment changes, non-qualifying plans, forbearance). PSLF eligibility - Direct Loans, full-time qualifying employer, qualifying repayment plan, 120 qualifying payments - is yours to verify with your servicer; annual employment certification is recommended. Sources: studentaid.gov/pslf and studentaid.gov/articles/5-tips-pslf-success/. Not advice. 
+ Read the related article &rarr; 
+
+ Let's build a financial life that feels like yours. 
+ Answer a few questions to find advisors who match your needs. 
+
+ Step 1 of 4 
+ What are you looking for help with? 
+ Select all that apply 
+
+ Managing investments 
+ Retirement planning 
+ Selling a business 
+ Business owner wealth planning 
+ Tax planning 
+ Estate planning 
+ Concentrated stock 
+ Inheritance / sudden wealth 
+ Cash / liquidity management 
+ Other 
+
+ Continue 
+
+ Step 2 of 4 
+ Approximately how much do you have in investable assets? 
+ Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+
+ What best describes your situation? 
+ Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
+
+ Back 
+ Continue 
+
+ Step 3 of 4 — where should advisors reach you? 
+
+ Full name 
+
+ Email 
+
+ Phone number 
+
+ Back 
+ Continue 
+
+ Step 4 of 4 
+ What would you like help with? 
+ Optional 
+
+ Back 
+ Explore advisors 
+
+ Independent advice. Personal fit. 
+
+ Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
+ Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
+ Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+ Calculators Retirement Taxes Social Security Equity Compensation Investing Banking 
+
+ Valora 
+
+ An independent platform helping people discover financial advisors. 
+
+ barot@valorahq.com 
+ +1 (415) 909-4100 
+
+ Company Our approach Find an advisor For advisors Team Insights 
+ For Advisors &middot; Tools Advisor portal How Valora compares AEO &amp; GEO blog Book a demo 
+ Legal Terms Privacy Cookies 
+
+ © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+
+ ↑ 
+
+ Free · No obligation 
+
+ Explore advisors who may fit your needs. 
+
+ Answer a few questions to find advisors who match your needs.
+
+ Step 1 of 4 
+
+ What are you looking for help with? 
+ Select all that apply 
+
+ Managing investments 
+ Retirement planning 
+ Selling a business 
+ Business owner wealth planning 
+ Tax planning 
+ Estate planning 
+ Concentrated stock 
+ Inheritance / sudden wealth 
+ Cash / liquidity management 
+ Other 
+
+ Continue 
+ I'm just looking 
+
+ Step 2 of 4 
+
+ Approximately how much do you have in investable assets? 
+ Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+
+ What best describes your situation? 
+ Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
+
+ Back 
+ Continue 
+
+ Step 3 of 4 
+
+ Full name 
+
+ Email 
+
+ Phone number 
+
+ Back 
+ Continue 
+
+ Step 4 of 4 
+
+ What would you like help with? 
+ Optional 
+
+ Back 
+ Explore advisors 
+
+ Thank you. 
+ We'll follow up within two business days with advisors who may fit what you're looking for. 
+ Explore the site
+
+---
+
 # https://www.valorahq.com/calculators/rsu-withholding-shortfall/
 Estimate the gap between the flat 22% most employers withhold on vested RSUs and what you actually owe at your marginal rate.
 
@@ -6533,6 +6701,10 @@ Banking Calculators | Valora
  Calculators 
  Banking calculators 
  Simple, transparent estimates — computed in your browser, nothing sent to a server. Educational, not personalized advice. 
+
+ PSLF scenario explorer 
+ Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate. 
+ Open calculator &rarr; 
 
  Savings &amp; CD growth calculator 
  Estimate what a savings account or CD balance grows to at a fixed annual rate. 

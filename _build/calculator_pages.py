@@ -109,6 +109,71 @@ CALCULATORS = [
         "related": "/insights/market-drop-before-retirement/",
     },
     {
+        "slug": "pslf-scenario-explorer",
+        "category": "Banking",
+        "title": "PSLF scenario explorer",
+        "summary": "Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate.",
+        "note": "Illustrative single-loan math: run it per loan, or use a weighted-average rate knowing that is itself an approximation. "
+                "We do not compute income-driven payments - income, family size, plan rules and recertification all move them. "
+                "Enter the monthly payment and the qualifying-payment count from your servicer. The 120 counted payments cannot be "
+                "accelerated with extra payments, and qualifying months often do not run continuously (employment changes, "
+                "non-qualifying plans, forbearance). PSLF eligibility - Direct Loans, full-time qualifying employer, qualifying "
+                "repayment plan, 120 qualifying payments - is yours to verify with your servicer; annual employment certification "
+                "is recommended. Sources: studentaid.gov/pslf and studentaid.gov/articles/5-tips-pslf-success/. Not advice.",
+        "fields": [
+            {"id": "balance", "label": "Current federal loan balance ($)", "placeholder": "200000"},
+            {"id": "rate", "label": "Interest rate (%)", "placeholder": "6.5"},
+            {"id": "payment", "label": "Monthly payment from your servicer ($)", "placeholder": "800"},
+            {"id": "made", "label": "Qualifying payments made so far (0-120)", "placeholder": "36"},
+            {"id": "extra", "label": "Optional extra per month for the payoff path ($)", "placeholder": "0"},
+        ],
+        "result_label": "Illustrative scenario comparison",
+        "js": """
+          var bal0 = parseFloat(f.balance.value) || 0;
+          var r = (parseFloat(f.rate.value) || 0) / 100 / 12;
+          var pay = parseFloat(f.payment.value) || 0;
+          var made = parseInt(f.made.value, 10) || 0;
+          made = Math.min(120, Math.max(0, made));
+          var extra = parseFloat(f.extra.value) || 0;
+          if (bal0 <= 0 || pay <= 0) { out.textContent = 'Enter a loan balance and monthly payment'; return; }
+          var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+          var rem = 120 - made;
+          /* PSLF path: project the balance over the remaining counted payments */
+          var bal = bal0, m = 0;
+          for (m = 0; m < rem; m++) {
+            var i1 = bal * r;
+            bal = bal + i1 - pay;
+            if (bal <= 0) { bal = 0; break; }
+          }
+          var pslf;
+          if (bal <= 0) {
+            pslf = 'PSLF path: the loan reaches zero within the remaining counted payments at this payment';
+          } else {
+            var grows = pay < bal0 * r;
+            pslf = 'PSLF path: ' + rem + ' counted payments left, projected balance then ~' + money(bal) +
+                   (grows ? ' (growing - payment below monthly interest)' : '');
+          }
+          /* Payoff path: months to zero at payment + extra, exact month-by-month */
+          var p2 = pay + extra, po;
+          if (r > 0 && p2 <= bal0 * r) {
+            po = 'Payoff path: payment does not cover monthly interest - the balance never falls';
+          } else {
+            var bal2 = bal0, tot = 0, m2 = 0;
+            while (bal2 > 0 && m2 < 1200) {
+              var i2 = bal2 * r;
+              var pmt = Math.min(p2, bal2 + i2);
+              tot += pmt;
+              bal2 = bal2 + i2 - pmt;
+              m2++;
+            }
+            po = 'Payoff path: ' + m2 + ' months to zero, ~' + money(tot - bal0) + ' total interest' +
+                 (extra > 0 ? ' at ' + money(p2) + '/mo' : '');
+          }
+          out.textContent = pslf + '. ' + po + '.';
+        """,
+        "related": "https://studentaid.gov/pslf",
+    },
+    {
         "slug": "rsu-withholding-shortfall",
         "category": "Taxes",
         "title": "RSU withholding shortfall calculator",
