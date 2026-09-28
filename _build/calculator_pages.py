@@ -174,6 +174,73 @@ CALCULATORS = [
         "related": "https://studentaid.gov/pslf",
     },
     {
+        "slug": "qsbs-issue-spotter",
+        "category": "Taxes",
+        "noindex": True,
+        "title": "QSBS issue spotter",
+        "summary": "A rules-based screen that lists the qualified small business stock questions worth reviewing with your CPA. Its only output, on every path, is a list of review items - it never decides eligibility and never computes an exclusion.",
+        "note": "This screen lists review items only. QSBS qualification is fact-specific across the corporation's history, "
+                "the stock's issuance and transfers, the holder, and the applicable gain limits - including state-tax treatment, "
+                "which differs. It cannot be determined by a questionnaire. Review the full picture with your CPA and tax counsel. "
+                "Rules referenced: IRC Section 1202 as amended; source: thetaxadviser.com Section 1202 coverage. Not tax or legal advice.",
+        "fields": [
+            {"id": "ccorp", "label": "Is the corporation a C corporation?", "type": "select",
+             "options": ["Unknown", "Yes", "No"]},
+            {"id": "holder", "label": "Is the holder an individual (or an owner through a pass-through) rather than a corporation?", "type": "select",
+             "options": ["Unknown", "Yes", "No"]},
+            {"id": "issuance", "label": "Did you acquire the stock at original issuance, directly from the corporation?", "type": "select",
+             "options": ["Unknown", "Yes", "No"]},
+            {"id": "issued", "label": "Was the stock issued after July 4, 2025, and otherwise eligible?", "type": "select",
+             "options": ["Unknown", "Issued after July 4, 2025", "Issued on or before July 4, 2025"]},
+            {"id": "holding", "label": "Has the holding period for the potentially applicable tier been met?", "type": "select",
+             "options": ["Unknown", "Yes", "No"]},
+            {"id": "assets", "label": "Were the corporation's aggregate gross assets not exceeding the applicable ceiling immediately before AND immediately after your issuance?", "type": "select",
+             "options": ["Unknown", "Yes", "No"]},
+            {"id": "active", "label": "Did the corporation use at least 80% of its assets (by value) in the active conduct of a qualified trade or business during substantially all of your holding period?", "type": "select",
+             "options": ["Unknown", "Yes", "No"]},
+            {"id": "redemptions", "label": "Any redemptions by the corporation around your issuance, or prior transfers of the stock?", "type": "select",
+             "options": ["Unknown", "Yes", "No"]},
+        ],
+        "result_label": "Review items for your CPA",
+        "js": """
+          var v = function (id) { return f[id].value; };
+          var items = [];
+          if (v('ccorp') !== 'Yes') {
+            items.push('Entity type is a threshold condition under Sec. 1202 - confirm with your CPA whether the corporation is (and was) a C corporation for the relevant period.');
+          }
+          if (v('holder') !== 'Yes') {
+            items.push('Holder type: Sec. 1202 applies to noncorporate holders. Confirm with your CPA that the holder is an individual (or an owner through a pass-through) rather than a corporation.');
+          }
+          if (v('issuance') !== 'Yes') {
+            items.push('Acquisition history: original issuance directly from the corporation is a threshold condition - transfers, gifts, and rollovers each have their own rules. Review the full chain with your CPA.');
+          }
+          if (v('issued') === 'Issued after July 4, 2025') {
+            items.push('Issuance date places the stock under the amended tiers (50% exclusion at 3 years, 75% at 4, 100% at 5, for stock issued after July 4, 2025 and otherwise eligible, gross-asset ceiling not exceeding $75M) - confirm with your CPA which tier, if any, applies.');
+          } else if (v('issued') === 'Issued on or before July 4, 2025') {
+            items.push('Earlier-issued stock falls under prior law: the exclusion tier depends on the acquisition date, with the gross-asset ceiling not exceeding $50M and per-issuer gain limits - confirm with your CPA which rules apply.');
+          } else {
+            items.push('Issuance date: confirm with your CPA when the stock was issued - the amended tiers (stock issued after July 4, 2025) and prior law carry different exclusion tiers and gross-asset ceilings.');
+          }
+          if (v('holding') !== 'Yes') {
+            items.push('Holding period for the potentially applicable tier - confirm with your CPA.');
+          }
+          if (v('assets') !== 'Yes') {
+            items.push('Aggregate gross assets at issuance (immediately before AND immediately after) relative to the applicable ceiling - this corporate history is usually unknown to the holder; confirm with your CPA and the corporation.');
+          }
+          if (v('active') !== 'Yes') {
+            items.push('Active-business requirement: at least 80% of assets (by value) in the active conduct of a qualified trade or business during substantially all of your holding period - confirm with your CPA.');
+          }
+          if (v('redemptions') !== 'No') {
+            items.push('Redemptions by the corporation around your issuance, or prior transfers of the stock, can taint otherwise qualified stock - review with your CPA.');
+          }
+          items.push('Per-issuer gain limits and state-tax treatment differ and are not screened here - review with your CPA and tax counsel.');
+          var esc = function (s) { return s; };
+          out.innerHTML = '<ul style="text-align:left; margin:0; padding-left:20px; font-size:1rem; line-height:1.55;">' +
+            items.map(function (s) { return '<li style="margin-bottom:10px;">' + esc(s) + '</li>'; }).join('') + '</ul>';
+        """,
+        "related": "https://www.thetaxadviser.com/issues/2025/oct/section-1202-makeover/",
+    },
+    {
         "slug": "rsu-withholding-shortfall",
         "category": "Taxes",
         "title": "RSU withholding shortfall calculator",
@@ -561,7 +628,8 @@ def build_calculator_pages(write_fn):
     for c in CALCULATORS:
         schema = faq_schema([(f"How is the {c['title'].lower()} calculated?", c["note"])])
         html = page(
-            head(f"{c['title']} | {BRAND}", c["summary"], path=f"/calculators/{c['slug']}/", schema=schema),
+            head(f"{c['title']} | {BRAND}", c["summary"], path=f"/calculators/{c['slug']}/", schema=schema,
+                 noindex=c.get("noindex", False)),
             _calc_body(c),
             with_gate=True,
         )

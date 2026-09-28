@@ -6062,6 +6062,10 @@ Taxes Calculators | Valora
  A rough estimate of what converting a given amount would cost at a flat tax rate — pair this with our article on when a Roth conversion is worth it. 
  Open calculator &rarr; 
 
+ QSBS issue spotter 
+ A rules-based screen that lists the qualified small business stock questions worth reviewing with your CPA. Its only output, on every path, is a list of review items - it never decides eligibility and never computes an exclusion. 
+ Open calculator &rarr; 
+
  RSU withholding shortfall calculator 
  Estimate the gap between the flat 22% most employers withhold on vested RSUs and what you actually owe at your marginal rate. 
  Open calculator &rarr; 

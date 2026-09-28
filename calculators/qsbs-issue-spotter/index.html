@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taxes Calculators | Valora</title>
-<meta name="description" content="Free taxes calculators from Valora — simple, transparent estimates.">
+<title>QSBS issue spotter | Valora</title>
+<meta name="description" content="A rules-based screen that lists the qualified small business stock questions worth reviewing with your CPA. Its only output, on every path, is a list of review items - it never decides eligibility and never computes an exclusion.">
 
-<link rel="canonical" href="https://www.valorahq.com/calculators/taxes/">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://www.valorahq.com/calculators/qsbs-issue-spotter/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css?v=2b370b16">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e3b2a'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23efebe0' font-family='Georgia'>V</text></svg>">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Valora", "url": "https://www.valorahq.com", "description": "Valora is an independent platform that matches people with vetted, independent fiduciary financial advisors based on their situation.", "email": "barot@valorahq.com", "telephone": "+14159094100", "areaServed": {"@type": "Country", "name": "United States", "identifier": "US"}}</script>
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the qsbs issue spotter calculated?", "acceptedAnswer": {"@type": "Answer", "text": "This screen lists review items only. QSBS qualification is fact-specific across the corporation's history, the stock's issuance and transfers, the holder, and the applicable gain limits - including state-tax treatment, which differs. It cannot be determined by a questionnaire. Review the full picture with your CPA and tax counsel. Rules referenced: IRC Section 1202 as amended; source: thetaxadviser.com Section 1202 coverage. Not tax or legal advice."}}]}</script>
 <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="mu yu bu Su init Vu Gu zu Uu Ku il Wu Yu ju rh oh ah uh hh dh capture getExtension Zu pu gh calculateEventProperties ph register register_once register_for_session unregister unregister_for_session Hu mh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync wh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset kh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty yh ih createPersonProfile setInternalOrTestUser bh xu Cu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing th debug nl Os getPageViewId captureTraceFeedback captureTraceMetric Du".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_swhDRhpyNrJXeLkkTpYuH9au4XstiKXqY88XAEmX2Cjk', {
@@ -53,35 +54,111 @@
 <main id="main">
 
 <section class="section section--paper" id="top">
-  <div class="container">
+  <div class="container" style="max-width:680px;">
     <a href="/#insights" class="btn btn--outline" style="margin-bottom:32px;">&larr; Back</a>
-    <p class="eyebrow reveal">Calculators</p>
-    <h1 class="display display--lg reveal">Taxes calculators</h1>
-    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Simple, transparent estimates — computed in your browser, nothing sent to a server. Educational, not personalized advice.</p>
-    <div class="adv-blog__grid" style="margin-top:36px;">
-      <a class="blogcard reveal" href="/calculators/roth-conversion-tax-cost/">
-        <h3>Roth conversion tax cost calculator</h3>
-        <p>A rough estimate of what converting a given amount would cost at a flat tax rate — pair this with our article on when a Roth conversion is worth it.</p>
-        <span class="blogcard__link">Open calculator &rarr;</span>
-      </a>
-      <a class="blogcard reveal" href="/calculators/qsbs-issue-spotter/">
-        <h3>QSBS issue spotter</h3>
-        <p>A rules-based screen that lists the qualified small business stock questions worth reviewing with your CPA. Its only output, on every path, is a list of review items - it never decides eligibility and never computes an exclusion.</p>
-        <span class="blogcard__link">Open calculator &rarr;</span>
-      </a>
-      <a class="blogcard reveal" href="/calculators/rsu-withholding-shortfall/">
-        <h3>RSU withholding shortfall calculator</h3>
-        <p>Estimate the gap between the flat 22% most employers withhold on vested RSUs and what you actually owe at your marginal rate.</p>
-        <span class="blogcard__link">Open calculator &rarr;</span>
-      </a>
-      <a class="blogcard reveal" href="/calculators/capital-gains-tax-estimate/">
-        <h3>Capital gains tax estimator</h3>
-        <p>Estimate federal long-term capital gains tax using the real 2026 income brackets — gains stack on top of your other taxable income.</p>
-        <span class="blogcard__link">Open calculator &rarr;</span>
-      </a>
+    <p class="eyebrow reveal">Taxes calculator</p>
+    <h1 class="display display--lg reveal">QSBS issue spotter</h1>
+    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">A rules-based screen that lists the qualified small business stock questions worth reviewing with your CPA. Its only output, on every path, is a list of review items - it never decides eligibility and never computes an exclusion.</p>
+
+    <form id="calcForm" class="form" style="margin-top:36px; grid-template-columns:1fr 1fr;" onsubmit="return false;">
+      
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-ccorp">Is the corporation a C corporation?</label>
+          <select id="qsbs-issue-spotter-ccorp" name="ccorp"><option>Unknown</option><option>Yes</option><option>No</option></select>
+        </div>
+
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-holder">Is the holder an individual (or an owner through a pass-through) rather than a corporation?</label>
+          <select id="qsbs-issue-spotter-holder" name="holder"><option>Unknown</option><option>Yes</option><option>No</option></select>
+        </div>
+
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-issuance">Did you acquire the stock at original issuance, directly from the corporation?</label>
+          <select id="qsbs-issue-spotter-issuance" name="issuance"><option>Unknown</option><option>Yes</option><option>No</option></select>
+        </div>
+
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-issued">Was the stock issued after July 4, 2025, and otherwise eligible?</label>
+          <select id="qsbs-issue-spotter-issued" name="issued"><option>Unknown</option><option>Issued after July 4, 2025</option><option>Issued on or before July 4, 2025</option></select>
+        </div>
+
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-holding">Has the holding period for the potentially applicable tier been met?</label>
+          <select id="qsbs-issue-spotter-holding" name="holding"><option>Unknown</option><option>Yes</option><option>No</option></select>
+        </div>
+
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-assets">Were the corporation&#x27;s aggregate gross assets not exceeding the applicable ceiling immediately before AND immediately after your issuance?</label>
+          <select id="qsbs-issue-spotter-assets" name="assets"><option>Unknown</option><option>Yes</option><option>No</option></select>
+        </div>
+
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-active">Did the corporation use at least 80% of its assets (by value) in the active conduct of a qualified trade or business during substantially all of your holding period?</label>
+          <select id="qsbs-issue-spotter-active" name="active"><option>Unknown</option><option>Yes</option><option>No</option></select>
+        </div>
+
+        <div class="field" data-field>
+          <label for="qsbs-issue-spotter-redemptions">Any redemptions by the corporation around your issuance, or prior transfers of the stock?</label>
+          <select id="qsbs-issue-spotter-redemptions" name="redemptions"><option>Unknown</option><option>Yes</option><option>No</option></select>
+        </div>
+    </form>
+
+    <div class="calc-result">
+      <p class="calc-result__label">Review items for your CPA</p>
+      <p class="calc-result__value" id="calcOut">&mdash;</p>
     </div>
+
+    <p style="margin-top:24px; font-size:.82rem; color:var(--muted); max-width:60ch;">This screen lists review items only. QSBS qualification is fact-specific across the corporation's history, the stock's issuance and transfers, the holder, and the applicable gain limits - including state-tax treatment, which differs. It cannot be determined by a questionnaire. Review the full picture with your CPA and tax counsel. Rules referenced: IRC Section 1202 as amended; source: thetaxadviser.com Section 1202 coverage. Not tax or legal advice.</p>
+    <p style="margin-top:14px;"><a href="https://www.thetaxadviser.com/issues/2025/oct/section-1202-makeover/">Read the related article &rarr;</a></p>
   </div>
 </section>
+
+<script>
+(function () {
+  var f = document.getElementById('calcForm');
+  var out = document.getElementById('calcOut');
+  function calc() {
+    
+          var v = function (id) { return f[id].value; };
+          var items = [];
+          if (v('ccorp') !== 'Yes') {
+            items.push('Entity type is a threshold condition under Sec. 1202 - confirm with your CPA whether the corporation is (and was) a C corporation for the relevant period.');
+          }
+          if (v('holder') !== 'Yes') {
+            items.push('Holder type: Sec. 1202 applies to noncorporate holders. Confirm with your CPA that the holder is an individual (or an owner through a pass-through) rather than a corporation.');
+          }
+          if (v('issuance') !== 'Yes') {
+            items.push('Acquisition history: original issuance directly from the corporation is a threshold condition - transfers, gifts, and rollovers each have their own rules. Review the full chain with your CPA.');
+          }
+          if (v('issued') === 'Issued after July 4, 2025') {
+            items.push('Issuance date places the stock under the amended tiers (50% exclusion at 3 years, 75% at 4, 100% at 5, for stock issued after July 4, 2025 and otherwise eligible, gross-asset ceiling not exceeding $75M) - confirm with your CPA which tier, if any, applies.');
+          } else if (v('issued') === 'Issued on or before July 4, 2025') {
+            items.push('Earlier-issued stock falls under prior law: the exclusion tier depends on the acquisition date, with the gross-asset ceiling not exceeding $50M and per-issuer gain limits - confirm with your CPA which rules apply.');
+          } else {
+            items.push('Issuance date: confirm with your CPA when the stock was issued - the amended tiers (stock issued after July 4, 2025) and prior law carry different exclusion tiers and gross-asset ceilings.');
+          }
+          if (v('holding') !== 'Yes') {
+            items.push('Holding period for the potentially applicable tier - confirm with your CPA.');
+          }
+          if (v('assets') !== 'Yes') {
+            items.push('Aggregate gross assets at issuance (immediately before AND immediately after) relative to the applicable ceiling - this corporate history is usually unknown to the holder; confirm with your CPA and the corporation.');
+          }
+          if (v('active') !== 'Yes') {
+            items.push('Active-business requirement: at least 80% of assets (by value) in the active conduct of a qualified trade or business during substantially all of your holding period - confirm with your CPA.');
+          }
+          if (v('redemptions') !== 'No') {
+            items.push('Redemptions by the corporation around your issuance, or prior transfers of the stock, can taint otherwise qualified stock - review with your CPA.');
+          }
+          items.push('Per-issuer gain limits and state-tax treatment differ and are not screened here - review with your CPA and tax counsel.');
+          var esc = function (s) { return s; };
+          out.innerHTML = '<ul style="text-align:left; margin:0; padding-left:20px; font-size:1rem; line-height:1.55;">' +
+            items.map(function (s) { return '<li style="margin-bottom:10px;">' + esc(s) + '</li>'; }).join('') + '</ul>';
+        
+  }
+  f.addEventListener('input', calc);
+  calc();
+})();
+</script>
 
 <section class="section section--green cta" id="contact">
   <div class="container cta__grid">

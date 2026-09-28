@@ -39,7 +39,7 @@ PAGES = [
     # noindex and left out of the sitemap/llms.txt on purpose.
     (f"/find-a-financial-advisor/{slug}/", desc) for slug, desc in real_pages()
 ] + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
-] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS
+] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS if not c.get("noindex")
 ] + [(f"/calculators/{cat.lower().replace(' ', '-')}/", f"{cat} calculators on Valora.") for cat in CATEGORIES]
 
 
