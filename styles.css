@@ -1021,7 +1021,7 @@ h1,h2,h3,h4,h5,p,figure,blockquote{ margin:0; }
 /* =========================================================
    OPENING MODAL (gate)
    ========================================================= */
-.gate{ position:fixed; inset:0; z-index:150; display:grid; place-items:center; padding:clamp(14px,3vw,40px); }
+.gate{ position:fixed; inset:0; z-index:320; display:grid; place-items:center; padding:clamp(14px,3vw,40px); }
 .gate[hidden]{ display:none; }
 
 .gate__scrim{
@@ -1063,10 +1063,11 @@ h1,h2,h3,h4,h5,p,figure,blockquote{ margin:0; }
 .gate__inner{ position:relative; }
 
 .gate__x{
-  position:absolute; top:10px; right:10px;
-  width:32px; height:32px; display:grid; place-items:center;
-  background:transparent; border:1px solid rgba(239,235,224,.2); border-radius:50%;
-  color:rgba(239,235,224,.7); cursor:pointer; z-index:2;
+  position:absolute; top:8px; right:8px;
+  width:44px; height:44px; display:grid; place-items:center;
+  background:rgba(239,235,224,.08); border:1px solid rgba(239,235,224,.28); border-radius:50%;
+  color:rgba(239,235,224,.85); cursor:pointer; z-index:3;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent;
   transition:all .3s var(--ease);
 }
 .gate__x svg{ width:15px; height:15px; }

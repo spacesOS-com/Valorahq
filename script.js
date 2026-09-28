@@ -753,6 +753,14 @@
 
     $$('[data-gate-close]', g).forEach(function (el) {
       el.addEventListener('click', close);
+      /* iOS Safari can swallow the synthesized click on backdrop-filtered
+         overlays; close on touchend too (close() is idempotent). */
+      el.addEventListener('touchend', function (e) { e.preventDefault(); close(); });
+    });
+
+    /* Tap anywhere outside the panel closes (scrim or container padding). */
+    g.addEventListener('pointerdown', function (e) {
+      if (!e.target.closest('.gate__panel')) close();
     });
 
     /* "Talk to an advisor" / header CTAs open the popup instead of navigating
@@ -765,12 +773,30 @@
       }
     });
 
-    /* Auto-open once per visitor (localStorage), like the blog popup's seen-key. */
+    /* Auto-open once per visitor (localStorage), matching the blog popup:
+       fire when the visitor scrolls halfway, or after 22s, whichever first. */
     var SEEN_KEY = 'vz_gate_seen_v1';
     function hasSeen() { try { return !!localStorage.getItem(SEEN_KEY); } catch (e) { return true; } }
     function markSeen() { try { localStorage.setItem(SEEN_KEY, '1'); } catch (e) {} }
     if (!hasSeen()) {
-      setTimeout(function () { markSeen(); open(); }, reduced ? 350 : 1900);
+      var fired = false;
+      function fire() {
+        if (fired) return;
+        fired = true;
+        markSeen();
+        open();
+      }
+      var timer = setTimeout(fire, reduced ? 4000 : 22000);
+      function onScroll() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        if (max > 0 && h.scrollTop / max >= 0.5) {
+          clearTimeout(timer);
+          window.removeEventListener('scroll', onScroll);
+          fire();
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
     }
   }
 
