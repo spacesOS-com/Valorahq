@@ -63,7 +63,7 @@ def build_for_advisors():
     # keep the old /advisors.html URL alive as a redirect, so existing
     # links/bookmarks to it still land on the real page
     write("/advisors.html", f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
+<html lang="en-US"><head><meta charset="UTF-8">
 <meta http-equiv="refresh" content="0; url=/for-advisors/">
 <link rel="canonical" href="{SITE_URL}/for-advisors/">
 <title>Redirecting… | {BRAND}</title>

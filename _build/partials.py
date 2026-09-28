@@ -152,6 +152,11 @@ def organization_schema():
                         "independent fiduciary financial advisors based on their situation.",
         "email": EMAIL,
         "telephone": PHONE_TEL,
+        "areaServed": {
+            "@type": "Country",
+            "name": "United States",
+            "identifier": "US",
+        },
     })
 
 
@@ -579,7 +584,7 @@ def faq_block(faq, heading="Common questions"):
 
 def page(head_html, body_html, active=None, with_gate=False, body_class="page-sub"):
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 {head_html}
 <body class="{body_class}">
 
