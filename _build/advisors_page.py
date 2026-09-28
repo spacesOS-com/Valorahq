@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """advisors_page.py — The comprehensive "For Advisors" page for Valora."""
+from html import escape
+
 from partials import EMAIL, PHONE_DISPLAY, PHONE_TEL, TICK_SVG
+from blog_feed import latest_posts
 
 ADVISOR_GOALS = [
     "Client introductions & growth",
@@ -16,14 +19,10 @@ FOR_ADVISORS_FAQ = [
      "Yes, 100% exclusive. Unlike lead brokers who auction the same contact information to five or six competing advisors, Valora introduces each prospective client exclusively to one fiduciary advisor at a time based on mutual fit and stated preference."),
     ("Who owns the client relationship, data, and Form ADV?",
      "You do, completely. Clients engage your firm directly under your own advisory agreements, your published fee schedule, and your Form ADV Part 2. Valora does not provide investment advice or intermediate your advisory sovereignty. If you ever leave, your clients, data, and book stay entirely yours."),
-    ("Which custodians and technology partners does Valora support?",
-     "Valora is built to integrate with major institutional custodians including Charles Schwab Institutional, Fidelity Institutional, BNY Mellon Pershing, and Apex Clearing. Our platform also bridges with standard industry planning and CRM tools like eMoney, RightCapital, Orion, Black Diamond, and Wealthbox."),
     ("What context do I receive before the first consultation?",
      "Every introduction arrives with verified investable assets, primary financial objectives, timeline urgency, employer stock or business details (if applicable), and any specific questions the prospective client shared during our intake process."),
     ("What is the fee or economic model for partner advisors?",
      "Valora operates with transparent, advisor-friendly economics aligned with your growth. We offer flexible plans depending on whether your firm seeks client introductions, our complete back-office operational suite, or both. We discuss specific tiers and territory availability during your 15-minute introductory call."),
-    ("How does the onboarding and transition process work for breakaway advisors?",
-     "Our dedicated Breakaway Concierge team handles end-to-end transition logistics: ACATS custodial account transfer tracking, bulk paperless client repapering, compliant client communications, and tech stack configuration — typically completing full book transitions in under 14 business days with zero client interruption."),
 ]
 
 
@@ -38,8 +37,36 @@ def _faq_accordion():
     return "\n".join(items)
 
 
+def _blog_embed():
+    """Real posts pulled from blog.valorahq.com at build time (see blog_feed.py) —
+    proof, for advisors evaluating Valora, that Valora practices the AEO/GEO
+    content playbook it's asking them to trust, not just claims to."""
+    posts = latest_posts(3)
+    cards = "\n".join(f"""      <article class="blogcard reveal">
+        <h3><a href="{escape(p['url'])}" target="_blank" rel="noopener">{escape(p['title'])}</a></h3>
+        <p>{escape(p['excerpt'])}</p>
+        <a class="blogcard__link" href="{escape(p['url'])}" target="_blank" rel="noopener">Read on the blog →</a>
+      </article>""" for p in posts)
+    return f"""<section class="section section--cream adv-blog" id="insights-for-advisors">
+  <div class="container">
+    <div class="adv-blog__head">
+      <p class="eyebrow reveal">From the Valora blog</p>
+      <h2 class="display display--lg reveal">We publish the playbook<br><em>we use to get you clients.</em></h2>
+      <p class="reveal">Valora's own content on getting advisory firms recommended by ChatGPT, Perplexity, and AI search — the same approach behind how we get your firm in front of prospective clients.</p>
+    </div>
+    <div class="adv-blog__grid">
+{cards}
+    </div>
+    <a class="btn btn--outline adv-blog__more" href="https://blog.valorahq.com/" target="_blank" rel="noopener">View more</a>
+  </div>
+</section>
+
+"""
+
+
 def for_advisors_body():
     faq_html = _faq_accordion()
+    blog_html = _blog_embed()
     return f"""
 <!-- ================= HERO ================= -->
 <section class="hero hero--sub" id="top">
@@ -52,16 +79,12 @@ def for_advisors_body():
 
   <div class="container hero__inner">
     <div class="hero__copy">
-      <p class="eyebrow reveal">⭐ Vetted Fiduciary Network · SEC &amp; State Registered Advisors</p>
       <h1 class="hero__title reveal">
-        Scale your practice.<br>
-        Protect your independence.<br>
-        <em>Deliver advice that<br>actually moves lives.</em>
+        Access new clients<br>in minutes with <em>Valora</em>.
       </h1>
-      <p class="adv-hero__sub reveal">Valora connects independent wealth advisors with high-intent individuals and business owners seeking fiduciary guidance — backed by turnkey digital onboarding, tax-intelligent rebalancing, automated billing, and compliance. Your clients, your ADV, your brand on the door.</p>
+      <p class="adv-hero__sub reveal">If you're looking for the perfect clients, we'll deliver them straight to your inbox and give you the tools to manage them throughout the sales process. We work exclusively with SEC registered firms.</p>
       <div class="hero__actions reveal">
-        <a class="btn btn--dark" href="#apply">Apply to join network</a>
-        <a class="btn btn--outline" href="#calculator">Model practice growth</a>
+        <a class="btn btn--dark" href="#apply">Book a demo</a>
       </div>
     </div>
   </div>
@@ -88,72 +111,41 @@ def for_advisors_body():
   </div>
 </section>
 
-<!-- ================= CUSTODIAN & TECH ECOSYSTEM STRIP ================= -->
-<section class="partner-strip" aria-label="Supported custodians and technology partners">
-  <div class="container partner-strip__inner">
-    <p class="partner-strip__label">Engineered to integrate seamlessly with your preferred custodians and wealth tech</p>
-    <div class="partner-strip__list">
-      <span class="partner-pill"><span class="partner-pill__dot"></span>Charles Schwab Institutional</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>Fidelity Institutional</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>BNY Mellon Pershing</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>Apex Clearing</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>Orion Advisor Tech</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>Black Diamond</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>eMoney</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>RightCapital</span>
-      <span class="partner-pill"><span class="partner-pill__dot"></span>Wealthbox</span>
+<!-- ================= WHY ADVISORS PARTNER WITH VALORA ================= -->
+<section class="section section--paper adv-value">
+  <div class="container adv-value__grid">
+    <div class="adv-value__copy">
+      <h2 class="display display--lg reveal">Scale your book.<br>Keep your independence.<br><em>Improve your close rate.</em></h2>
+      <p class="reveal">Valora gets prospective clients who are actively looking for an advisor in front of you, then gives you the tools to manage them from first message to signed client.</p>
     </div>
-  </div>
-</section>
-
-<!-- ================= STRATEGIC STATEMENT / WHY ADVISORS JOIN ================= -->
-<section class="section section--cream statement" id="why">
-  <div class="statement__glow" aria-hidden="true"></div>
-  <div class="container">
-    <p class="eyebrow statement__eyebrow reveal">Why independent advisors choose Valora</p>
-    <span class="statement__mark reveal" aria-hidden="true"></span>
-
-    <div class="statement__head">
-      <h2 class="display display--xl">
-        Too many advisors spend 70% of the week<br>
-        <em>not giving advice.<br>We built Valora to flip that ratio.</em>
-      </h2>
+    <div class="adv-value__cards">
+      <div class="value-card reveal">
+        <h3>Exclusive leads</h3>
+        <p>Unlike lead brokers that sell the same contact to five competing firms, every introduction on Valora goes to one advisor.</p>
+      </div>
+      <div class="value-card reveal">
+        <h3>Choose the clients you want</h3>
+        <p>Set your ideal investable-asset range, specialty, and geography — you only see introductions that fall inside it.</p>
+      </div>
+      <div class="value-card reveal">
+        <h3>Arrive pre-qualified</h3>
+        <p>Every introduction comes with the context you'd otherwise spend a first call gathering: goals, timeline, and what they're solving for.</p>
+      </div>
+      <div class="value-card reveal">
+        <h3>Manage the whole pipeline</h3>
+        <p>Track, message, and follow up with prospective clients in one place instead of a spreadsheet and an inbox.</p>
+      </div>
     </div>
-
-    <div class="statement__cols">
-      <p class="reveal"><span class="statement__lede">The Client Acquisition Dilemma.</span> Traditional referral streams are unpredictable, cold marketing erodes your premium positioning, and legacy lead brokers auction off raw phone numbers to five competing firms at once. Valora delivers 100% exclusive introductions to high-intent individuals and business founders who specifically chose your firm for your credentials and specialty.</p>
-      <p class="reveal"><span class="statement__lede">The Operational Friction.</span> Paperwork, repapering, transfer tracking, manual rebalancing, and billing reconciliations are the silent killers of advisory enterprise value. Valora provides the institutional operating leverage of a mega-RIA while preserving 100% of your independence, branding, and equity.</p>
-    </div>
-
-    <ul class="statement__proof">
-      <li class="reveal">
-        <span class="statement__proof-num">01</span>
-        <h3>High-Intent Client Matches</h3>
-        <p>Pre-screened on liquid investable assets ($500K to $10M+) and immediate financial milestones: business sales, tech equity, retirement, or legacy transfers.</p>
-      </li>
-      <li class="reveal">
-        <span class="statement__proof-num">02</span>
-        <h3>Turnkey Operating Leverage</h3>
-        <p>Paperless onboarding, multi-custodial trading, automated tax-loss harvesting, billing, and compliance vault unified in one login.</p>
-      </li>
-      <li class="reveal">
-        <span class="statement__proof-num">03</span>
-        <h3>Absolute Practice Sovereignty</h3>
-        <p>Clients are 100% yours. Your agreements, your published fee schedules, your Form ADV, and your equity on the cap table.</p>
-      </li>
-    </ul>
-
-    <div class="statement__rule reveal" aria-hidden="true"></div>
   </div>
 </section>
 
 <!-- ================= THE INTRODUCTIONS ENGINE ================= -->
-<section class="section section--paper platform adv-pipe" id="introductions">
+<section class="section section--cream platform adv-pipe" id="introductions">
   <div class="container platform__grid">
     <div class="platform__copy">
       <p class="eyebrow reveal">Client Acquisition Engine</p>
       <h2 class="display display--lg reveal">Every introduction arrives with<br><em>the rich context you need.</em></h2>
-      <p class="reveal">No cold calls. No mystery inquiries. Before you ever jump on an introductory conversation, you already understand their liquid asset range, specific timeline urgency, and primary financial goal.</p>
+      <p class="reveal">Before you ever jump on an introductory conversation, you already understand their liquid asset range, specific timeline urgency, and primary financial goal.</p>
 
       <ul class="adv-ticks reveal">
         <li><strong>100% Exclusive Introductions:</strong> Never shared or shopped to other advisors</li>
@@ -251,172 +243,47 @@ def for_advisors_body():
   </div>
 </section>
 
-<!-- ================= INTERACTIVE PRACTICE GROWTH & ROI CALCULATOR ================= -->
-<section class="section section--green adv-calc" id="calculator">
-  <div class="container">
-    <div class="adv-calc__head">
-      <p class="eyebrow eyebrow--light reveal">Practice Growth Modeling</p>
-      <h2 class="display display--lg reveal">Estimate your firm's revenue potential<br><em>with Valora introductions.</em></h2>
-      <p class="reveal">Use the interactive model below to project your firm's annual AUM expansion, new recurring revenue, and practice equity value based on your conversion profile.</p>
+<!-- ================= INCREASE YOUR CONVERSION ================= -->
+<section class="section section--paper adv-convert">
+  <div class="container adv-convert__grid">
+    <div class="adv-convert__copy">
+      <p class="eyebrow reveal">Inside the portal</p>
+      <h2 class="display display--lg reveal">Increase your<br><em>conversion.</em></h2>
+      <p class="reveal">Chat, set reminders, attach notes, and link your calendar &mdash; everything you need to move a match from first message to booked call, in the same portal.</p>
+      <ul class="adv-convert__list reveal">
+        <li>Message prospects directly</li>
+        <li>Set follow-up reminders</li>
+        <li>Attach private notes per match</li>
+        <li>Link your calendar for booking</li>
+      </ul>
     </div>
 
-    <div class="calc-card reveal" id="advisorCalc">
-      <div class="calc-grid">
-        <!-- Input Sliders -->
-        <div class="calc-inputs">
-          <div class="calc-input-group">
-            <div class="calc-label-row">
-              <span class="calc-label">Monthly Exclusive Introductions</span>
-              <span class="calc-val-badge" id="valMatches">5 / mo</span>
-            </div>
-            <div class="calc-slider-wrap">
-              <input type="range" class="calc-slider" id="calcMatches" min="3" max="15" step="1" value="5" aria-label="Monthly Introductions">
-            </div>
-            <div class="calc-range-marks">
-              <span>3 / mo</span>
-              <span>8 / mo</span>
-              <span>15 / mo</span>
-            </div>
+    <div class="convert-mock reveal" aria-hidden="true">
+      <div class="convert-mock__bar"><span></span><span></span><span></span><em>Valora Advisor Portal · Message</em></div>
+      <div class="convert-mock__body">
+        <div class="convert-mock__side">
+          <div class="convert-mock__who">
+            <span class="convert-mock__av">MC</span>
+            <div><p class="convert-mock__name">Michael Chen</p><p class="convert-mock__stage">Call Booked</p></div>
           </div>
-
-          <div class="calc-input-group">
-            <div class="calc-label-row">
-              <span class="calc-label">Average Investable Assets per Client</span>
-              <span class="calc-val-badge" id="valAum">$1.25M</span>
-            </div>
-            <div class="calc-slider-wrap">
-              <input type="range" class="calc-slider" id="calcAum" min="500000" max="3500000" step="50000" value="1250000" aria-label="Average Investable Assets">
-            </div>
-            <div class="calc-range-marks">
-              <span>$500K</span>
-              <span>$2.0M</span>
-              <span>$3.5M+</span>
-            </div>
-          </div>
-
-          <div class="calc-input-group">
-            <div class="calc-label-row">
-              <span class="calc-label">Discovery-to-Client Close Rate</span>
-              <span class="calc-val-badge" id="valCloseRate">25%</span>
-            </div>
-            <div class="calc-slider-wrap">
-              <input type="range" class="calc-slider" id="calcCloseRate" min="15" max="45" step="5" value="25" aria-label="Close Rate">
-            </div>
-            <div class="calc-range-marks">
-              <span>15%</span>
-              <span>30%</span>
-              <span>45%</span>
-            </div>
-          </div>
-
-          <div class="calc-input-group">
-            <div class="calc-label-row">
-              <span class="calc-label">Average Annual Advisory Fee</span>
-              <span class="calc-val-badge" id="valFee">0.95%</span>
-            </div>
-            <div class="calc-slider-wrap">
-              <input type="range" class="calc-slider" id="calcFee" min="0.65" max="1.25" step="0.05" value="0.95" aria-label="Advisory Fee">
-            </div>
-            <div class="calc-range-marks">
-              <span>0.65%</span>
-              <span>0.95%</span>
-              <span>1.25%</span>
-            </div>
-          </div>
+          <div class="convert-mock__field"><span>Note</span><p>Wants a second opinion on RSU tax withholding before year-end.</p></div>
+          <div class="convert-mock__field"><span>Reminder</span><p>Follow up Thu 10:00 AM</p></div>
+          <div class="convert-mock__field"><span>Calendar</span><p>Linked · Google Calendar</p></div>
         </div>
-
-        <!-- Calculated Live Results -->
-        <div class="calc-results">
-          <div class="calc-res-title">Projected Annual Practice Impact</div>
-
-          <div class="calc-res-box">
-            <div class="calc-res-num" id="resAum">$18.75M</div>
-            <div class="calc-res-label">Estimated New AUM Added per Year</div>
-          </div>
-
-          <div class="calc-res-box">
-            <div class="calc-res-num" id="resRevenue">$178,125 <em>/ yr</em></div>
-            <div class="calc-res-label">New Annual Recurring Revenue (ARR)</div>
-          </div>
-
-          <div class="calc-res-box">
-            <div class="calc-res-num" id="resEquity">$498,750</div>
-            <div class="calc-res-label">Estimated Practice Enterprise Value Created (2.8x ARR multiple)</div>
-          </div>
-
-          <div class="calc-cta-wrap">
-            <a class="btn btn--cream" href="#apply">Apply for territory availability</a>
-            <p class="calc-fine">Calculations are illustrative estimates based on stated inputs and industry standard valuation benchmarks. Outcomes vary based on advisor diligence and market dynamics.</p>
-          </div>
+        <div class="convert-mock__chat">
+          <div class="convert-mock__bubble convert-mock__bubble--them">Hi, I'd like to talk through my options before year-end.</div>
+          <div class="convert-mock__bubble convert-mock__bubble--us">Happy to help &mdash; are mornings or afternoons better this week?</div>
+          <div class="convert-mock__bubble convert-mock__bubble--them">Thursday morning works.</div>
+          <div class="convert-mock__input">Type your message&hellip; <span>➤</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= COMPLETE RIA OPERATING PLATFORM ================= -->
-<section class="section section--cream adv-feat" id="platform">
-  <div class="container">
-    <div class="adv-feat__head">
-      <p class="eyebrow reveal">The Turnkey RIA Platform</p>
-      <h2 class="display display--lg reveal">Behind every great advisor<br><em>is a back office that just works.</em></h2>
-      <p class="reveal">Consolidate five disjointed fintech subscriptions and an ops hire into one unified, elegant workspace engineered for modern wealth practices.</p>
-    </div>
-
-    <ul class="feat">
-      <li class="feat__item reveal">
-        <span class="feat__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-        </span>
-        <h3>Paperless Digital Onboarding</h3>
-        <p>1-click account opening, automated e-signatures, and instant custodial ACATS transfer tracking. 94% reduction in NIGO paperwork errors.</p>
-      </li>
-
-      <li class="feat__item reveal">
-        <span class="feat__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 17l5-5 4 4 7-8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 8h5v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <h3>Tax-Intelligent Rebalancer</h3>
-        <p>Year-round automated tax-loss harvesting, household asset location, and single-stock exclusion rules to honor client executive stock restrictions.</p>
-      </li>
-
-      <li class="feat__item reveal">
-        <span class="feat__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="1.3"/></svg>
-        </span>
-        <h3>Automated Fee Billing &amp; Invoicing</h3>
-        <p>Tiered AUM schedules, flat planning retainers, and subscription billing calculated, audited, and debited directly from custodians.</p>
-      </li>
-
-      <li class="feat__item reveal">
-        <span class="feat__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <h3>Fiduciary Compliance Vault</h3>
-        <p>Automated archiving of email and text communications, Form ADV Part 2 maintenance, and audit-ready inspection logs that take the anxiety out of SEC exams.</p>
-      </li>
-
-      <li class="feat__item reveal">
-        <span class="feat__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-        </span>
-        <h3>Branded Client Portal</h3>
-        <p>A sophisticated mobile and desktop client experience showcasing aggregated net worth, portfolio performance, document vault, and financial planning milestones.</p>
-      </li>
-
-      <li class="feat__item reveal">
-        <span class="feat__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="18" cy="6" r="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="18" cy="18" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 10.8l7.4-3.6M8.3 13.2l7.4 3.6" stroke="currentColor" stroke-width="1.3"/></svg>
-        </span>
-        <h3>Breakaway Concierge Support</h3>
-        <p>Transitioning from a wirehouse or broker-dealer? Our specialized transition team handles client repapering and account migration in under 14 days.</p>
-      </li>
-    </ul>
-  </div>
-</section>
 
 <!-- ================= ADVISOR DIRECTORY ADVANTAGE (SAVVY WEALTH STYLE) ================= -->
-<section class="section section--paper dir-showcase" id="directory">
+<section class="section section--cream dir-showcase" id="directory">
   <div class="dir-showcase__copy reveal">
     <p class="eyebrow">Your Digital Flagship</p>
     <h2 class="display display--lg">Your firm, showcased to thousands<br><em>of investors searching for your specialty.</em></h2>
@@ -451,72 +318,101 @@ def for_advisors_body():
   </div>
 </section>
 
-<!-- ================= DETAILED COMPARISON TABLE ================= -->
-<section class="section section--paper adv-compare">
+<!-- ================= HOW VALORA COMPARES ================= -->
+<section class="section section--paper adv-compare2" id="compare">
   <div class="container">
-    <div class="adv-compare__head">
-      <div>
-        <p class="eyebrow reveal">Clear Economics &amp; Autonomy</p>
-        <h2 class="display display--lg reveal">Independence,<br><em>without doing it alone.</em></h2>
-      </div>
-      <p class="reveal">How partnering with Valora compares against building a DIY solo RIA from scratch or remaining trapped at a traditional wirehouse broker-dealer.</p>
+    <div class="adv-blog__head">
+      <p class="eyebrow reveal">Where Valora fits</p>
+      <h2 class="display display--lg reveal">How Valora compares to the other<br><em>places advisors spend their marketing budget.</em></h2>
+      <p class="reveal">A short, sourced look at how a few well-known platforms actually work — not a claim about which is "best," since they're built for different things.</p>
     </div>
-
-    <div class="ctable reveal" role="table" aria-label="Comparison of advisory practice models">
-      <div class="ctable__row ctable__row--head" role="row">
-        <span role="columnheader">Key Capability</span>
-        <span role="columnheader">On Your Own (DIY RIA)</span>
-        <span role="columnheader">Wirehouse / Broker-Dealer</span>
-        <span role="columnheader" class="is-us">Valora Partner Network</span>
+    <div class="pstack reveal" role="table" aria-label="Cost of piecing together advisor client-acquisition tools vs. Valora" style="margin-top:36px;">
+      <div class="pstack__row pstack__row--head" role="row">
+        <span role="columnheader">Feature</span>
+        <span role="columnheader">Replaces</span>
+        <span role="columnheader">Other tools</span>
+        <span role="columnheader" class="is-us">Valora</span>
       </div>
-      <div class="ctable__row" role="row">
-        <span role="rowheader">You own 100% of client relationships &amp; equity</span>
-        <span role="cell" class="yes">Yes</span>
-        <span role="cell" class="no">Firm owns clients</span>
-        <span role="cell" class="yes is-us">Yes (100% yours)</span>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Shared leads</span>
+        <span role="cell" class="pstack__tool">SmartAsset AMP</span>
+        <span role="cell">~$2,000&ndash;2,300/mo <em>(est., shared with up to 3 advisors)</em></span>
+        <span role="cell" class="is-us">Included</span>
       </div>
-      <div class="ctable__row" role="row">
-        <span role="rowheader">Your brand on the door &amp; your own Form ADV</span>
-        <span role="cell" class="yes">Yes</span>
-        <span role="cell" class="no">Never</span>
-        <span role="cell" class="yes is-us">Yes (Always)</span>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Marketplace inquiries</span>
+        <span role="cell" class="pstack__tool">Unbiased</span>
+        <span role="cell">Pay-per-lead credits, no public flat fee <em>(est. $3&ndash;4K/mo at volume)</em></span>
+        <span role="cell" class="is-us">Included</span>
       </div>
-      <div class="ctable__row" role="row">
-        <span role="rowheader">Exclusive, pre-qualified client introductions</span>
-        <span role="cell" class="no">DIY marketing only</span>
-        <span role="cell" class="no">Shared call center leads</span>
-        <span role="cell" class="yes is-us">100% Exclusive</span>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">AI-matched prospects</span>
+        <span role="cell" class="pstack__tool">Finny</span>
+        <span role="cell">$50/mo + 0.20% of AUM sourced</span>
+        <span role="cell" class="is-us">Included</span>
       </div>
-      <div class="ctable__row" role="row">
-        <span role="rowheader">Paperless onboarding &amp; ACATS custodial transfer tracking</span>
-        <span role="cell" class="no">Stitch 5+ vendors</span>
-        <span role="cell" class="yes">Yes</span>
-        <span role="cell" class="yes is-us">Turnkey Digital</span>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Prospect data</span>
+        <span role="cell" class="pstack__tool">WealthFeed</span>
+        <span role="cell">$1,399/yr <em>(~$117/mo)</em></span>
+        <span role="cell" class="is-us">Included</span>
       </div>
-      <div class="ctable__row" role="row">
-        <span role="rowheader">Automated tax-loss harvesting &amp; rebalancing</span>
-        <span role="cell" class="no">Manual or costly software</span>
-        <span role="cell" class="no">Limited model portfolios</span>
-        <span role="cell" class="yes is-us">Built-in Year Round</span>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Directory profile</span>
+        <span role="cell" class="pstack__tool">AdvisorFinder</span>
+        <span role="cell">$1,000/mo</span>
+        <span role="cell" class="is-us">Included</span>
       </div>
-      <div class="ctable__row" role="row">
-        <span role="rowheader">Compliance monitoring &amp; audit-ready record keeping</span>
-        <span role="cell" class="no">You are the CCO</span>
-        <span role="cell" class="yes">Yes (Restrictive)</span>
-        <span role="cell" class="yes is-us">Automated Vault</span>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Client communication &amp; CRM content</span>
+        <span role="cell" class="pstack__tool">Levitate</span>
+        <span role="cell">~$3,000/yr <em>(~$250/mo)</em></span>
+        <span role="cell" class="is-us">Included</span>
       </div>
-      <div class="ctable__row" role="row">
-        <span role="rowheader">Advisory fee retention &amp; payout economics</span>
-        <span role="cell" class="yes">100% (High tech overhead)</span>
-        <span role="cell" class="no">35% – 50% Haircut</span>
-        <span role="cell" class="yes is-us">100% Fee Control</span>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Website &amp; marketing suite</span>
+        <span role="cell" class="pstack__tool">FMG Suite</span>
+        <span role="cell">From $178/mo + setup fee</span>
+        <span role="cell" class="is-us">Included</span>
+      </div>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Marketing automation campaigns</span>
+        <span role="cell" class="pstack__tool">Snappy Kraken</span>
+        <span role="cell">$199&ndash;750/mo depending on tier</span>
+        <span role="cell" class="is-us">Included</span>
+      </div>
+      <div class="pstack__row" role="row">
+        <span role="rowheader">Cost per client acquired via DIY video</span>
+        <span role="cell" class="pstack__tool">Self-produced content</span>
+        <span role="cell">$37,170/client <em>(Kitces 2026 marketing study)</em></span>
+        <span role="cell is-us">No per-client cost &mdash; flat $1,500/mo</span>
+      </div>
+      <div class="pstack__row pstack__row--total" role="row">
+        <span role="rowheader">Overall price</span>
+        <span role="cell"></span>
+        <span role="cell">$6,500+/mo, pieced together across 8 separate tools</span>
+        <span role="cell is-us">$1,500/mo &mdash; exclusive, month-to-month</span>
       </div>
     </div>
+    <p style="margin-top:22px; font-size:.72rem; color:var(--muted);">
+      Sources: <a href="https://www.advisorappts.com/smartasset-leads" target="_blank" rel="noopener">SmartAsset AMP overview</a> &middot;
+      <a href="https://www.unbiased.com/advice/pro/faqs" target="_blank" rel="noopener">Unbiased pricing FAQ</a> &middot;
+      <a href="https://www.wealthmanagement.com/artificial-intelligence/finny-ai-rolls-out-pay-as-you-grow-pricing-model" target="_blank" rel="noopener">Finny pricing</a> &middot;
+      <a href="https://softwarefinder.com/sales-tools/wealthfeed" target="_blank" rel="noopener">WealthFeed pricing</a> &middot;
+      <a href="https://advisorfinder.com/for-financial-advisors/pricing-plans" target="_blank" rel="noopener">AdvisorFinder pricing</a> &middot;
+      <a href="https://www.levitate.ai/industry/finance" target="_blank" rel="noopener">Levitate for finance</a> &middot;
+      <a href="https://fmgsuite.com/pricing/" target="_blank" rel="noopener">FMG Suite pricing</a> &middot;
+      <a href="https://snappykraken.com/pricing" target="_blank" rel="noopener">Snappy Kraken pricing</a> &middot;
+      <a href="https://www.kitces.com/blog/kitces-advisor-marketing-study-2026" target="_blank" rel="noopener">Kitces 2026 advisor marketing study</a>.
+      Figures found via web search on 2026-09-28 and may have changed &mdash; items marked "est." could not be confirmed from a public source and should be verified before relying on them.
+    </p>
+    <p class="adv-compare2__punch reveal">Everyone else sells you tools, data, or shared leads. <em>Valora sells the phone ringing.</em></p>
   </div>
 </section>
 
+{blog_html}
 <!-- ================= ADVISOR TESTIMONIALS & CASE STUDIES ================= -->
-<section class="section section--cream adv-testimonials" id="testimonials">
+<section class="section section--paper adv-testimonials" id="testimonials">
   <div class="container">
     <div style="max-width:720px;">
       <p class="eyebrow reveal">Partner Case Studies</p>
@@ -583,7 +479,7 @@ def for_advisors_body():
 </section>
 
 <!-- ================= PARTNER CRITERIA + EXTENDED FAQ ================= -->
-<section class="section section--paper life adv-faq" id="faq">
+<section class="section section--cream life adv-faq" id="faq">
   <div class="container life__grid">
     <div class="adv-criteria reveal">
       <p class="eyebrow">Selective Fiduciary Network</p>
@@ -597,7 +493,7 @@ def for_advisors_body():
         <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
       </ul>
       <div style="margin-top:28px;">
-        <a class="btn btn--dark" href="#apply" style="width:100%;">Apply to join network</a>
+        <a class="btn btn--dark" href="#apply" style="width:100%;">Book a demo</a>
       </div>
     </div>
 
@@ -610,74 +506,23 @@ def for_advisors_body():
   </div>
 </section>
 
-<!-- ================= APPLY SECTION (HIGH-CONVERSION FORM) ================= -->
-<section class="section section--green cta" id="apply">
-  <div class="container cta__grid">
-    <div class="cta__copy">
-      <p class="eyebrow eyebrow--light reveal">Advisor Network Application</p>
-      <h2 class="display display--lg reveal">Spend your week advising.<br><em>We'll handle everything else.</em></h2>
-      <p class="reveal">Tell us a little about your firm and advisory focus. A partner from our advisor team — not a robot or automated dialer — will reach out within one business day to discuss platform access, practice fit, and regional territory availability.</p>
+<!-- ================= READY TO GET STARTED CTA ================= -->
+<section class="section section--green adv-ready">
+  <div class="container adv-ready__inner">
+    <h2 class="display display--lg reveal">Ready to get started?</h2>
+    <p class="reveal">Get perfect clients delivered straight to your inbox and the tools to manage them throughout the sales process.</p>
+    <a class="btn btn--cream" href="#apply">Book a demo</a>
+  </div>
+</section>
 
-      <ul class="direct reveal">
-        <li>
-          <span class="direct__label">Advisor Partnerships</span>
-          <a class="direct__link" href="mailto:{EMAIL}">{EMAIL}</a>
-        </li>
-        <li>
-          <span class="direct__label">Direct Advisory Desk</span>
-          <a class="direct__link" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
-        </li>
-      </ul>
-      <p class="direct__note reveal">Prefer a confidential conversation first? Call or email directly — our leadership team reviews every application.</p>
-    </div>
-
-    <form class="form reveal" id="advisorForm" data-lead="Advisor" data-success="Thank you, {{name}} — our advisor partnership team will be in touch within one business day." novalidate>
-      <div class="field" data-field>
-        <label for="aname">Full name</label>
-        <input id="aname" name="name" type="text" required placeholder="Alex Morgan, CFP®" autocomplete="name">
-        <small class="err" data-err="name"></small>
-      </div>
-      <div class="field" data-field>
-        <label for="aemail">Work email</label>
-        <input id="aemail" name="email" type="email" required placeholder="alex@yourfirm.com" autocomplete="email">
-        <small class="err" data-err="email"></small>
-      </div>
-      <div class="field" data-field>
-        <label for="aphone">Phone number</label>
-        <input id="aphone" name="phone" type="tel" required placeholder="+1 (415) 909-4100" autocomplete="tel" inputmode="tel">
-        <small class="err" data-err="phone"></small>
-      </div>
-      <div class="field" data-field>
-        <label for="afirm">Firm name <span class="opt">(or current broker-dealer)</span></label>
-        <input id="afirm" data-extra="Firm" type="text" placeholder="Morgan Wealth Partners" autocomplete="organization">
-      </div>
-      <div class="field" data-field>
-        <label for="aaum">Current Assets Under Management (AUM)</label>
-        <select id="aaum" data-extra="AUM">
-          <option value="">Select current AUM range</option>
-          <option>Under $25M</option>
-          <option>$25M – $75M</option>
-          <option>$75M – $200M</option>
-          <option>$200M – $500M</option>
-          <option>$500M+</option>
-          <option>Breakaway / Transitioning</option>
-        </select>
-      </div>
-      <div class="field" data-field>
-        <label for="agoal">Primary objective</label>
-        <select id="agoal" name="goal" required>{_goal_opts()}</select>
-        <small class="err" data-err="goal"></small>
-      </div>
-      <div class="field field--full" data-field>
-        <label for="anote">Practice details &amp; primary custodian <span class="opt">(optional)</span></label>
-        <textarea id="anote" name="note" rows="3" placeholder="Primary custodian (Schwab, Fidelity, Pershing), target niches, certifications — a couple sentences is plenty."></textarea>
-      </div>
-      <div class="field field--full form__foot">
-        <button class="btn btn--cream" type="submit">Submit application</button>
-        <p class="form__fine">Strictly confidential. Exclusively for registered fiduciaries. We never sell your data.</p>
-      </div>
-      <p class="form__success" role="status" hidden></p>
-    </form>
+<!-- ================= APPLY / BOOK A DEMO ================= -->
+<section class="section section--green cta adv-ready" id="apply">
+  <div class="container adv-ready__inner">
+    <p class="eyebrow eyebrow--light reveal">Advisor Network</p>
+    <h2 class="display display--lg reveal">Spend your week advising.<br><em>We'll handle everything else.</em></h2>
+    <p class="reveal">Book a demo and a partner from our advisor team — not a robot or automated dialer — will walk you through platform access, practice fit, and territory availability.</p>
+    <a class="btn btn--cream" href="mailto:{EMAIL}?subject=Book%20a%20demo">Book a demo</a>
+    <p style="margin-top:20px; font-size:.82rem; color:rgba(239,235,224,.6);">Prefer to call? <a href="tel:{PHONE_TEL}" style="color:inherit; text-decoration:underline;">{PHONE_DISPLAY}</a></p>
   </div>
 </section>
 """

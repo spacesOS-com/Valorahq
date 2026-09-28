@@ -447,16 +447,20 @@
   var LEAD_FAIL = 'Sorry — we could not send that. Please email barot@valorahq.com.';
 
   var LEAD_MSGS = {
-    name:  'Please enter your name.',
-    email: 'Please enter a valid email.',
-    phone: 'Please enter a valid phone number.',
-    goal:  'Pick the closest match.'
+    name:     'Please enter your name.',
+    email:    'Please enter a valid email.',
+    phone:    'Please enter a valid phone number.',
+    goal:     'Pick the closest match.',
+    assets:   'Pick the closest range.',
+    situation: 'Pick the closest match.',
+    location: 'Please enter your city and state.'
   };
 
   function setLeadError(f, name, msg) {
     var slot = $('[data-err="' + name + '"]', f);
     var el   = f.elements[name];
-    var wrap = el ? el.closest('[data-field]') : null;
+    if (el && el.length !== undefined) el = el[0]; // RadioNodeList (grouped checkboxes/radios) -> first
+    var wrap = el && el.closest ? el.closest('[data-field]') : null;
     if (slot) slot.textContent = msg || '';
     if (wrap) wrap.classList.toggle('has-error', !!msg);
   }
@@ -483,6 +487,11 @@
     var v = {};
     Array.prototype.forEach.call(f.elements, function (el) {
       if (!el.name || el.disabled || /^(submit|button)$/.test(el.type)) return;
+      if (el.type === 'checkbox') {
+        if (el.checked) v[el.name] = (v[el.name] ? v[el.name] + ', ' : '') + el.value;
+        return;
+      }
+      if (el.type === 'radio' && !el.checked) return;
       var val = (el.value || '').trim();
       if (val) v[el.name] = val;
     });
@@ -564,8 +573,76 @@
     });
   }
 
+  /* ---------------------------------------------------------
+     12a. Multi-step forms (.form--steps, e.g. the full contact form)
+     Steps are plain fields in the DOM — required attrs still work with
+     JS off, this just shows one .form__step at a time and re-validates
+     the current step's required fields before advancing.
+     --------------------------------------------------------- */
+  function stepForm(f) {
+    var steps = $$('.form__step', f);
+    if (steps.length < 2) return;
+    var idx = 0;
+
+    // Measure the tallest step once at load and lock the form to that
+    // height, so switching steps doesn't resize the card/popup around it.
+    var maxH = 0;
+    steps.forEach(function (s, si) {
+      steps.forEach(function (s2, si2) { s2.hidden = si2 !== si; });
+      maxH = Math.max(maxH, f.getBoundingClientRect().height);
+    });
+    if (maxH) f.style.minHeight = maxH + 'px';
+
+    function show(i, scroll) {
+      idx = Math.max(0, Math.min(i, steps.length - 1));
+      steps.forEach(function (s, si) { s.hidden = si !== idx; });
+      var first = $('input, select, textarea', steps[idx]);
+      if (first) first.focus({ preventScroll: true });
+      if (scroll) f.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+    }
+
+    $$('[data-step-next]', f).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var step = btn.closest('.form__step');
+        var ok = true;
+        $$('input[required], select[required], textarea[required]', step).forEach(function (el) {
+          var bad = fieldError(el);
+          setLeadError(f, el.name, bad ? (LEAD_MSGS[el.name] || 'Required.') : '');
+          if (bad && ok) { el.focus(); ok = false; }
+        });
+        if (ok) show(idx + 1, true);
+      });
+    });
+
+    $$('[data-step-back]', f).forEach(function (btn) {
+      btn.addEventListener('click', function () { show(idx - 1, true); });
+    });
+
+    show(0, false);
+  }
+
   function leadForms() {
     $$('form[data-lead]').forEach(leadForm);
+    $$('form.form--steps').forEach(stepForm);
+    prefillLocation();
+  }
+
+  /* ---------------------------------------------------------
+     12b. Pre-fill "Where are you located?" from the visitor's IP.
+     Pure convenience — best-effort, silent on failure, never blocks
+     the field or the form. The visitor can always overwrite it.
+     --------------------------------------------------------- */
+  function prefillLocation() {
+    var fields = $$('input[name="location"]').filter(function (el) { return !el.value; });
+    if (!fields.length) return;
+    fetch('https://ipapi.co/json/')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.city || d.error) return;
+        var loc = d.region_code ? d.city + ', ' + d.region_code : d.city;
+        fields.forEach(function (el) { if (!el.value) el.value = loc; });
+      })
+      .catch(function () { /* offline, blocked, or rate-limited — field just stays blank */ });
   }
 
   /* ---------------------------------------------------------
