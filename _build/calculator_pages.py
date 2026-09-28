@@ -622,6 +622,303 @@ CALCULATORS = [
           out.textContent = years > 0 ? years.toFixed(1) + ' years' : 'Already at or below target';
         """,
     },
+    {
+        "slug": "paycheck-calculator",
+        "category": "Taxes",
+        "title": "Paycheck calculator",
+        "summary": "Estimate your take-home pay after federal income tax and FICA (Social Security + Medicare).",
+        "note": "Uses the IRS's 2026 federal tax brackets and standard deduction (Rev. Proc. 2025-32, irs.gov), "
+                "and 2026 FICA: 6.2% Social Security up to the $184,500 wage base (SSA, announced Oct 2025) plus "
+                "1.45% Medicare with no cap. Doesn't include state/local tax, pretax health premiums, or other "
+                "withholdings — your actual paycheck will differ.",
+        "fields": [
+            {"id": "salary", "label": "Gross annual salary ($)", "placeholder": "85000"},
+            {"id": "status", "label": "Filing status", "type": "select", "options": ["Single", "Married filing jointly"]},
+            {"id": "pretax", "label": "Pretax 401(k) contribution (% of salary)", "placeholder": "6"},
+        ],
+        "result_label": "Estimated take-home pay",
+        "js": """
+          var salary = parseFloat(f.salary.value) || 0;
+          var mfj = f.status.value.indexOf('Married') === 0;
+          var pretaxPct = (parseFloat(f.pretax.value) || 0) / 100;
+          var pretax = salary * pretaxPct;
+          var stdDed = mfj ? 32200 : 16100;
+          var taxable = Math.max(0, salary - pretax - stdDed);
+          var brackets = mfj
+            ? [[0,0.10],[24800,0.12],[100800,0.22],[211400,0.24],[403550,0.32],[512450,0.35],[768700,0.37]]
+            : [[0,0.10],[12400,0.12],[50400,0.22],[105700,0.24],[201775,0.32],[256225,0.35],[640600,0.37]];
+          var tax = 0;
+          for (var i = 0; i < brackets.length; i++) {
+            var lo = brackets[i][0], rate = brackets[i][1];
+            var hi = (i + 1 < brackets.length) ? brackets[i + 1][0] : Infinity;
+            if (taxable > lo) tax += (Math.min(taxable, hi) - lo) * rate;
+          }
+          var wageBase = 184500;
+          var ss = Math.min(salary - pretax, wageBase) * 0.062;
+          var medicare = (salary - pretax) * 0.0145;
+          var net = salary - pretax - tax - ss - medicare;
+          out.textContent = '$' + Math.round(net).toLocaleString() + '/yr ($' + Math.round(net / 26).toLocaleString() + ' per biweekly paycheck)';
+        """,
+    },
+    {
+        "slug": "income-tax-estimate",
+        "category": "Taxes",
+        "title": "Federal income tax calculator",
+        "summary": "Estimate your federal income tax using the 2026 IRS tax brackets.",
+        "note": "Uses the IRS's 2026 federal tax brackets and standard deduction (Rev. Proc. 2025-32, irs.gov). "
+                "Federal tax only — doesn't include state/local income tax, credits, or above-the-line "
+                "deductions beyond the standard deduction.",
+        "fields": [
+            {"id": "income", "label": "Gross annual income ($)", "placeholder": "95000"},
+            {"id": "status", "label": "Filing status", "type": "select", "options": ["Single", "Married filing jointly"]},
+        ],
+        "result_label": "Estimated federal income tax",
+        "js": """
+          var income = parseFloat(f.income.value) || 0;
+          var mfj = f.status.value.indexOf('Married') === 0;
+          var stdDed = mfj ? 32200 : 16100;
+          var taxable = Math.max(0, income - stdDed);
+          var brackets = mfj
+            ? [[0,0.10],[24800,0.12],[100800,0.22],[211400,0.24],[403550,0.32],[512450,0.35],[768700,0.37]]
+            : [[0,0.10],[12400,0.12],[50400,0.22],[105700,0.24],[201775,0.32],[256225,0.35],[640600,0.37]];
+          var tax = 0;
+          for (var i = 0; i < brackets.length; i++) {
+            var lo = brackets[i][0], rate = brackets[i][1];
+            var hi = (i + 1 < brackets.length) ? brackets[i + 1][0] : Infinity;
+            if (taxable > lo) tax += (Math.min(taxable, hi) - lo) * rate;
+          }
+          var effRate = income > 0 ? (tax / income * 100) : 0;
+          out.textContent = '$' + Math.round(tax).toLocaleString() + ' (' + effRate.toFixed(1) + '% effective rate)';
+        """,
+    },
+    {
+        "slug": "tax-refund-estimate",
+        "category": "Taxes",
+        "title": "Tax refund calculator",
+        "summary": "Compare what you've had withheld against your estimated tax bill to see a rough refund or amount due.",
+        "note": "Uses the IRS's 2026 federal tax brackets and standard deduction (Rev. Proc. 2025-32, irs.gov). "
+                "A rough estimate only — doesn't account for credits (child tax credit, etc.), other income, "
+                "or itemized deductions.",
+        "fields": [
+            {"id": "income", "label": "Gross annual income ($)", "placeholder": "95000"},
+            {"id": "status", "label": "Filing status", "type": "select", "options": ["Single", "Married filing jointly"]},
+            {"id": "withheld", "label": "Federal tax withheld so far this year ($)", "placeholder": "12000"},
+        ],
+        "result_label": "Estimated refund (or amount due)",
+        "js": """
+          var income = parseFloat(f.income.value) || 0;
+          var withheld = parseFloat(f.withheld.value) || 0;
+          var mfj = f.status.value.indexOf('Married') === 0;
+          var stdDed = mfj ? 32200 : 16100;
+          var taxable = Math.max(0, income - stdDed);
+          var brackets = mfj
+            ? [[0,0.10],[24800,0.12],[100800,0.22],[211400,0.24],[403550,0.32],[512450,0.35],[768700,0.37]]
+            : [[0,0.10],[12400,0.12],[50400,0.22],[105700,0.24],[201775,0.32],[256225,0.35],[640600,0.37]];
+          var tax = 0;
+          for (var i = 0; i < brackets.length; i++) {
+            var lo = brackets[i][0], rate = brackets[i][1];
+            var hi = (i + 1 < brackets.length) ? brackets[i + 1][0] : Infinity;
+            if (taxable > lo) tax += (Math.min(taxable, hi) - lo) * rate;
+          }
+          var diff = withheld - tax;
+          out.textContent = (diff >= 0 ? '$' + Math.round(diff).toLocaleString() + ' refund' : '$' + Math.round(-diff).toLocaleString() + ' owed') + ' (est. tax: $' + Math.round(tax).toLocaleString() + ')';
+        """,
+    },
+    {
+        "slug": "property-tax-estimate",
+        "category": "Taxes",
+        "title": "Property tax calculator",
+        "summary": "Estimate your annual property tax bill from your home's value and your local effective tax rate.",
+        "note": "Effective property tax rates vary widely by state and county (roughly 0.3% to over 2% of home "
+                "value annually) — rather than guess at your specific location, enter your county assessor's "
+                "published rate or last year's bill divided by your home's assessed value.",
+        "fields": [
+            {"id": "value", "label": "Home value ($)", "placeholder": "450000"},
+            {"id": "rate", "label": "Your local effective property tax rate (%)", "placeholder": "1.1"},
+        ],
+        "result_label": "Estimated annual property tax",
+        "js": """
+          var value = parseFloat(f.value.value) || 0;
+          var rate = (parseFloat(f.rate.value) || 0) / 100;
+          var annual = value * rate;
+          out.textContent = '$' + Math.round(annual).toLocaleString() + '/yr ($' + Math.round(annual / 12).toLocaleString() + '/mo)';
+        """,
+    },
+    {
+        "slug": "financial-advisor-value",
+        "category": "Retirement",
+        "title": "Financial advisor value calculator",
+        "summary": "See the rough dollar impact of the return difference an advisor's guidance might make over time.",
+        "note": "Research such as Vanguard's “Advisor's Alpha” studies suggests professional guidance "
+                "(rebalancing, tax-aware withdrawals, behavioral coaching) can add measurable value over time, but "
+                "the amount varies enormously by household and isn't guaranteed — so this uses your own "
+                "assumed added-value percentage rather than asserting a specific figure for your situation.",
+        "fields": [
+            {"id": "bal", "label": "Current portfolio value ($)", "placeholder": "500000"},
+            {"id": "yrs", "label": "Years until retirement", "placeholder": "20"},
+            {"id": "base", "label": "Assumed annual return on your own (%)", "placeholder": "6"},
+            {"id": "added", "label": "Assumed added value from guidance (percentage points/yr)", "placeholder": "1.5"},
+        ],
+        "result_label": "Illustrative difference at retirement",
+        "js": """
+          var bal = parseFloat(f.bal.value) || 0;
+          var yrs = parseFloat(f.yrs.value) || 0;
+          var base = (parseFloat(f.base.value) || 0) / 100;
+          var added = (parseFloat(f.added.value) || 0) / 100;
+          var fvBase = bal * Math.pow(1 + base, yrs);
+          var fvGuided = bal * Math.pow(1 + base + added, yrs);
+          out.textContent = '$' + Math.round(fvGuided - fvBase).toLocaleString() + ' more (illustrative: $' + Math.round(fvBase).toLocaleString() + ' vs $' + Math.round(fvGuided).toLocaleString() + ')';
+        """,
+    },
+    {
+        "slug": "401k-growth",
+        "category": "Retirement",
+        "title": "401(k) growth calculator",
+        "summary": "Project your 401(k) balance including your contributions and employer match.",
+        "note": "Compound growth on your contributions plus employer match, at a constant assumed return. Doesn't "
+                "account for the 2026 IRS contribution limit, fees, or changes in salary — see our 401(k) "
+                "contribution limit calculator for this year's cap.",
+        "fields": [
+            {"id": "bal", "label": "Current 401(k) balance ($)", "placeholder": "60000"},
+            {"id": "salary", "label": "Annual salary ($)", "placeholder": "90000"},
+            {"id": "contrib", "label": "Your contribution (% of salary)", "placeholder": "8"},
+            {"id": "match", "label": "Employer match (% of salary)", "placeholder": "4"},
+            {"id": "yrs", "label": "Years until retirement", "placeholder": "25"},
+            {"id": "ret", "label": "Assumed annual return (%)", "placeholder": "7"},
+        ],
+        "result_label": "Estimated balance at retirement",
+        "js": """
+          var bal = parseFloat(f.bal.value) || 0;
+          var salary = parseFloat(f.salary.value) || 0;
+          var contribPct = (parseFloat(f.contrib.value) || 0) / 100;
+          var matchPct = (parseFloat(f.match.value) || 0) / 100;
+          var yrs = parseFloat(f.yrs.value) || 0;
+          var ret = (parseFloat(f.ret.value) || 0) / 100;
+          var monthly = salary * (contribPct + matchPct) / 12;
+          var n = yrs * 12, r = ret / 12;
+          var fvLump = bal * Math.pow(1 + r, n);
+          var fvContrib = r > 0 ? monthly * ((Math.pow(1 + r, n) - 1) / r) : monthly * n;
+          out.textContent = '$' + Math.round(fvLump + fvContrib).toLocaleString();
+        """,
+    },
+    {
+        "slug": "asset-allocation-guide",
+        "category": "Investing",
+        "title": "Asset allocation calculator",
+        "summary": "A common age-based rule of thumb for a starting stock/bond split, adjusted for your risk tolerance.",
+        "note": "Based on the widely-cited “110 minus your age” heuristic for a starting stock allocation, "
+                "adjusted ±10 percentage points for stated risk tolerance. This is a rough starting point, not "
+                "personalized advice — your actual allocation should reflect your full financial picture, time "
+                "horizon, and goals.",
+        "fields": [
+            {"id": "age", "label": "Your age", "placeholder": "40"},
+            {"id": "risk", "label": "Risk tolerance", "type": "select", "options": ["Conservative", "Moderate", "Aggressive"]},
+        ],
+        "result_label": "Illustrative stock / bond split",
+        "js": """
+          var age = parseFloat(f.age.value) || 0;
+          var adj = f.risk.value === 'Conservative' ? -10 : (f.risk.value === 'Aggressive' ? 10 : 0);
+          var stock = Math.max(0, Math.min(100, (110 - age) + adj));
+          out.textContent = Math.round(stock) + '% stocks / ' + Math.round(100 - stock) + '% bonds';
+        """,
+    },
+    {
+        "slug": "mortgage-calculator",
+        "category": "Home & Mortgage",
+        "title": "Mortgage calculator",
+        "summary": "Estimate your monthly mortgage principal & interest payment.",
+        "note": "Standard amortization formula on principal and interest only — doesn't include property tax, "
+                "homeowners insurance, PMI, or HOA dues, which typically add several hundred dollars a month.",
+        "fields": [
+            {"id": "price", "label": "Home price ($)", "placeholder": "450000"},
+            {"id": "down", "label": "Down payment ($)", "placeholder": "90000"},
+            {"id": "rate", "label": "Interest rate (%)", "placeholder": "6.5"},
+            {"id": "term", "label": "Loan term", "type": "select", "options": ["30 years", "15 years"]},
+        ],
+        "result_label": "Estimated monthly payment (P&I)",
+        "js": """
+          var price = parseFloat(f.price.value) || 0;
+          var down = parseFloat(f.down.value) || 0;
+          var principal = Math.max(0, price - down);
+          var rate = (parseFloat(f.rate.value) || 0) / 100 / 12;
+          var years = f.term.value.indexOf('15') === 0 ? 15 : 30;
+          var n = years * 12;
+          var pmt = rate > 0 ? principal * rate * Math.pow(1 + rate, n) / (Math.pow(1 + rate, n) - 1) : principal / n;
+          out.textContent = '$' + Math.round(pmt).toLocaleString() + '/mo';
+        """,
+    },
+    {
+        "slug": "home-affordability",
+        "category": "Home & Mortgage",
+        "title": "Home affordability calculator",
+        "summary": "Estimate how much home you can afford using a standard 36% debt-to-income guideline.",
+        "note": "Uses the common 36% total-debt-to-income guideline lenders often use as a starting point, minus "
+                "your existing monthly debts, to estimate a maximum monthly housing payment — then backs into "
+                "a loan amount. Actual lending limits depend on your credit, the lender, and loan program.",
+        "fields": [
+            {"id": "income", "label": "Annual household income ($)", "placeholder": "120000"},
+            {"id": "debt", "label": "Existing monthly debt payments ($)", "placeholder": "400"},
+            {"id": "down", "label": "Down payment available ($)", "placeholder": "60000"},
+            {"id": "rate", "label": "Interest rate (%)", "placeholder": "6.5"},
+        ],
+        "result_label": "Estimated affordable home price",
+        "js": """
+          var income = parseFloat(f.income.value) || 0;
+          var debt = parseFloat(f.debt.value) || 0;
+          var down = parseFloat(f.down.value) || 0;
+          var rate = (parseFloat(f.rate.value) || 0) / 100 / 12;
+          var maxMonthly = Math.max(0, income / 12 * 0.36 - debt);
+          var n = 30 * 12;
+          var loan = rate > 0 ? maxMonthly * (Math.pow(1 + rate, n) - 1) / (rate * Math.pow(1 + rate, n)) : maxMonthly * n;
+          out.textContent = '$' + Math.round(loan + down).toLocaleString() + ' (loan: $' + Math.round(loan).toLocaleString() + ' + down: $' + Math.round(down).toLocaleString() + ')';
+        """,
+    },
+    {
+        "slug": "closing-costs-estimate",
+        "category": "Home & Mortgage",
+        "title": "Closing costs calculator",
+        "summary": "Estimate total closing costs and cash needed at signing.",
+        "note": "Closing costs typically run about 2–5% of the purchase price (title, lender fees, escrow, "
+                "recording, etc.), varying by state and lender — adjust the rate below to a quote from your "
+                "lender or title company once you have one.",
+        "fields": [
+            {"id": "price", "label": "Home purchase price ($)", "placeholder": "450000"},
+            {"id": "down", "label": "Down payment ($)", "placeholder": "90000"},
+            {"id": "rate", "label": "Estimated closing cost rate (%)", "placeholder": "3"},
+        ],
+        "result_label": "Estimated cash needed at signing",
+        "js": """
+          var price = parseFloat(f.price.value) || 0;
+          var down = parseFloat(f.down.value) || 0;
+          var rate = (parseFloat(f.rate.value) || 0) / 100;
+          var closing = price * rate;
+          out.textContent = '$' + Math.round(closing + down).toLocaleString() + ' (down: $' + Math.round(down).toLocaleString() + ' + closing costs: $' + Math.round(closing).toLocaleString() + ')';
+        """,
+    },
+    {
+        "slug": "refinance-savings",
+        "category": "Home & Mortgage",
+        "title": "Refinance calculator",
+        "summary": "Compare your current mortgage payment to a refinanced one at a new rate and term.",
+        "note": "Compares principal & interest only, using standard amortization — doesn't include refinance "
+                "closing costs, which typically take a few years of monthly savings to recoup.",
+        "fields": [
+            {"id": "bal", "label": "Current loan balance ($)", "placeholder": "350000"},
+            {"id": "curRate", "label": "Current interest rate (%)", "placeholder": "7.2"},
+            {"id": "curTerm", "label": "Current remaining term (years)", "placeholder": "27"},
+            {"id": "newRate", "label": "New interest rate (%)", "placeholder": "6.2"},
+            {"id": "newTerm", "label": "New loan term (years)", "placeholder": "30"},
+        ],
+        "result_label": "Estimated monthly savings",
+        "js": """
+          var bal = parseFloat(f.bal.value) || 0;
+          function pmt(p, r, n) { r = r / 100 / 12; return r > 0 ? p * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1) : p / n; }
+          var curPmt = pmt(bal, parseFloat(f.curRate.value) || 0, (parseFloat(f.curTerm.value) || 0) * 12);
+          var newPmt = pmt(bal, parseFloat(f.newRate.value) || 0, (parseFloat(f.newTerm.value) || 0) * 12);
+          var diff = curPmt - newPmt;
+          out.textContent = (diff >= 0 ? '$' + Math.round(diff).toLocaleString() + '/mo saved' : '$' + Math.round(-diff).toLocaleString() + '/mo more') + ' (new payment: $' + Math.round(newPmt).toLocaleString() + '/mo)';
+        """,
+    },
 ]
 
 CALCULATOR_GUIDES = {
@@ -632,7 +929,7 @@ for calculator in CALCULATORS:
     if calculator["slug"] in CALCULATOR_GUIDES:
         calculator["guide_html"] = CALCULATOR_GUIDES[calculator["slug"]]
 
-CATEGORIES = ["Retirement", "Taxes", "Social Security", "Equity Compensation", "Investing", "Banking"]
+CATEGORIES = ["Retirement", "Taxes", "Social Security", "Equity Compensation", "Investing", "Banking", "Home & Mortgage"]
 
 
 def _field_html(slug, f):
