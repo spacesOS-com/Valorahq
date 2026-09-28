@@ -68,13 +68,20 @@ CALCULATORS = [
                 "See “When a Roth conversion is worth the tax bill” in our insights, and talk to a CPA before "
                 "converting, since bracket effects and Medicare premium thresholds can change the real cost.",
         "fields": [
-            {"id": "amt", "label": "Amount to convert ($)", "placeholder": "50000"},
-            {"id": "rate", "label": "Assumed marginal tax rate (%)", "placeholder": "24"},
+            {"id": "amt", "label": "Amount to convert ($)", "placeholder": "50000", "min": 0},
+            {"id": "rate", "label": "Assumed marginal tax rate (%)", "placeholder": "24", "min": 0, "max": 100},
         ],
         "result_label": "Estimated tax cost",
         "js": """
-          var amt = parseFloat(f.amt.value) || 0;
-          var rate = (parseFloat(f.rate.value) || 0) / 100;
+          var amt = Number(f.amt.value);
+          var ratePct = Number(f.rate.value);
+          if (f.amt.value.trim() === '' || f.rate.value.trim() === '' ||
+              !Number.isFinite(amt) || !Number.isFinite(ratePct) ||
+              amt < 0 || ratePct < 0 || ratePct > 100) {
+            out.textContent = 'Enter an amount of $0 or more and a tax rate from 0% to 100%.';
+            return;
+          }
+          var rate = ratePct / 100;
           var tax = amt * rate;
           out.textContent = '$' + Math.round(tax).toLocaleString() + ' estimated tax';
         """,
@@ -549,10 +556,11 @@ def _field_html(slug, f):
           <select id="{slug}-{f['id']}" name="{f['id']}">{opts}</select>
         </div>"""
     ph = f.get("placeholder", "")
+    bounds = "".join(f' {key}="{escape(str(f[key]))}"' for key in ("min", "max") if key in f)
     return f"""
         <div class="field" data-field>
           <label for="{slug}-{f['id']}">{escape(f['label'])}</label>
-          <input id="{slug}-{f['id']}" name="{f['id']}" type="number" inputmode="decimal" placeholder="{escape(ph)}" value="{escape(ph)}">
+          <input id="{slug}-{f['id']}" name="{f['id']}" type="number" inputmode="decimal"{bounds} placeholder="{escape(ph)}" value="{escape(ph)}">
         </div>"""
 
 

@@ -66,12 +66,12 @@
       
         <div class="field" data-field>
           <label for="roth-conversion-tax-cost-amt">Amount to convert ($)</label>
-          <input id="roth-conversion-tax-cost-amt" name="amt" type="number" inputmode="decimal" placeholder="50000" value="50000">
+          <input id="roth-conversion-tax-cost-amt" name="amt" type="number" inputmode="decimal" min="0" placeholder="50000" value="50000">
         </div>
 
         <div class="field" data-field>
           <label for="roth-conversion-tax-cost-rate">Assumed marginal tax rate (%)</label>
-          <input id="roth-conversion-tax-cost-rate" name="rate" type="number" inputmode="decimal" placeholder="24" value="24">
+          <input id="roth-conversion-tax-cost-rate" name="rate" type="number" inputmode="decimal" min="0" max="100" placeholder="24" value="24">
         </div>
     </form>
 
@@ -91,8 +91,15 @@
   var out = document.getElementById('calcOut');
   function calc() {
     
-          var amt = parseFloat(f.amt.value) || 0;
-          var rate = (parseFloat(f.rate.value) || 0) / 100;
+          var amt = Number(f.amt.value);
+          var ratePct = Number(f.rate.value);
+          if (f.amt.value.trim() === '' || f.rate.value.trim() === '' ||
+              !Number.isFinite(amt) || !Number.isFinite(ratePct) ||
+              amt < 0 || ratePct < 0 || ratePct > 100) {
+            out.textContent = 'Enter an amount of $0 or more and a tax rate from 0% to 100%.';
+            return;
+          }
+          var rate = ratePct / 100;
           var tax = amt * rate;
           out.textContent = '$' + Math.round(tax).toLocaleString() + ' estimated tax';
         
