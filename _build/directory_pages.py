@@ -169,11 +169,11 @@ def build_directory_pages(write_fn):
         _write_listing(write_fn, slug,
                         f"Advisors for {label} | {BRAND}",
                         f"Independent, fiduciary financial advisors on Valora who work with {label.lower()} clients.",
-                        "Niche", f"Advisors for {label.lower()} clients",
+                        "Profession", f"Advisors for {label.lower()} clients",
                         f"Independent advisors on Valora who work with {label.lower()} clients.",
                         [],
                         "We don't have an advisor tagged for this yet — this page is a preview of how "
-                        "niche pages will look as our advisor network grows.",
+                        "profession pages will look as our advisor network grows.",
                         calc_categories=[NICHE_TO_CALC[slug]] if slug in NICHE_TO_CALC else None)
 
     for slug, label in ASSET_TYPES:
