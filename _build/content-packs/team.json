@@ -147,11 +147,11 @@
       "title": "Head of Growth & Partnerships",
       "grouping": "Growth",
       "order": 8,
-      "functional_role": "Growth & Partnerships",
+      "functional_role": "Backlinks & Authority",
       "avatar": "team-avatar-owen.png",
-      "bio": "Owen leads Valora's growth and partnership work: the relationships that put Valora in front of more of the people it can help, and the collaborations that make the product better. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. His badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.\n\nOff the calendar he plays squash, cooks for more people than the recipe intended, and loses arguments about which airport lounge is best.",
+      "bio": "Owen leads Valora's backlink and authority work: earning the partnerships, citations, and links that put Valora in front of more of the people it can help. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. His badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.\n\nOff the calendar he plays squash, cooks for more people than the recipe intended, and loses arguments about which airport lounge is best.",
       "bio_paragraphs": [
-        "Owen leads Valora's growth and partnership work: the relationships that put Valora in front of more of the people it can help, and the collaborations that make the product better. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. His badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.",
+        "Owen leads Valora's backlink and authority work: earning the partnerships, citations, and links that put Valora in front of more of the people it can help. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. His badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.",
         "Off the calendar he plays squash, cooks for more people than the recipe intended, and loses arguments about which airport lounge is best."
       ]
     },
@@ -160,25 +160,12 @@
       "title": "Head of Consumer Growth",
       "grouping": "Growth",
       "order": 9,
-      "functional_role": "AI Search (AEO/GEO)",
+      "functional_role": "Consumer Growth + AI Search (AEO/GEO)",
       "avatar": "team-avatar-arjun.png",
-      "bio": "Arjun leads Valora's AI search work - how Valora shows up when people ask AI assistants and search engines their money questions. He grew up in Bangalore, trained as a search engineer, and watched the industry he mastered get rebuilt by AI in real time - so he rebuilt his own expertise to match. His badass credential: he thinks about how machines read so that humans get better answers, and he can tell you not just where search is going but what it will reward when it gets there. Search changed, so his job exists.\n\nAfter hours he plays blitz chess, reads science fiction, and explains recommendation algorithms to relatives who didn't ask.",
+      "bio": "Arjun leads Valora's consumer growth and AI search work - how people find Valora, and how Valora shows up when they ask AI assistants and search engines their money questions. He grew up in Bangalore, trained as a search engineer, and watched the industry he mastered get rebuilt by AI in real time - so he rebuilt his own expertise to match. His badass credential: he thinks about how machines read so that humans get better answers, and he can tell you not just where search is going but what it will reward when it gets there. Search changed, so his job exists.\n\nAfter hours he plays blitz chess, reads science fiction, and explains recommendation algorithms to relatives who didn't ask.",
       "bio_paragraphs": [
-        "Arjun leads Valora's AI search work - how Valora shows up when people ask AI assistants and search engines their money questions. He grew up in Bangalore, trained as a search engineer, and watched the industry he mastered get rebuilt by AI in real time - so he rebuilt his own expertise to match. His badass credential: he thinks about how machines read so that humans get better answers, and he can tell you not just where search is going but what it will reward when it gets there. Search changed, so his job exists.",
+        "Arjun leads Valora's consumer growth and AI search work - how people find Valora, and how Valora shows up when they ask AI assistants and search engines their money questions. He grew up in Bangalore, trained as a search engineer, and watched the industry he mastered get rebuilt by AI in real time - so he rebuilt his own expertise to match. His badass credential: he thinks about how machines read so that humans get better answers, and he can tell you not just where search is going but what it will reward when it gets there. Search changed, so his job exists.",
         "After hours he plays blitz chess, reads science fiction, and explains recommendation algorithms to relatives who didn't ask."
-      ]
-    },
-    {
-      "name": "Rina Desai",
-      "title": "Head of Consumer Research",
-      "grouping": "Growth",
-      "order": 10,
-      "functional_role": "Consumer Growth / Research",
-      "avatar": "team-avatar-rina.png",
-      "bio": "Rina leads consumer research and growth: how people find Valora and how the product serves them once they arrive. She grew up between Mumbai and New Jersey, which gave her early fluency in the fact that what people say and what people do are different datasets. She came up through UX research and analytics at consumer apps. Her badass credential: her favorite meeting artifact is the chart that proves a confident assumption wrong, and she keeps a small collection - several of her own.\n\nOutside work she runs half-marathons slowly, browses farmers' markets, and reads survey methodology for fun. She knows how that sounds.",
-      "bio_paragraphs": [
-        "Rina leads consumer research and growth: how people find Valora and how the product serves them once they arrive. She grew up between Mumbai and New Jersey, which gave her early fluency in the fact that what people say and what people do are different datasets. She came up through UX research and analytics at consumer apps. Her badass credential: her favorite meeting artifact is the chart that proves a confident assumption wrong, and she keeps a small collection - several of her own.",
-        "Outside work she runs half-marathons slowly, browses farmers' markets, and reads survey methodology for fun. She knows how that sounds."
       ]
     },
     {
@@ -271,6 +258,14 @@
         "Ava runs Valora's Facebook community: the groups where people trade money questions and answers daily. She's from Portland, came up through nonprofit community organizing - the kind where your budget is goodwill and your tools are showing up - and brought that patience to online communities. Her badass credential: she greets new members by name, remembers the regulars, and can defuse a comment-section argument with one well-timed question; community management is mostly gardening, and nobody out-gardens her.",
         "Outside work she shoots film photography, volunteers at an actual community garden, and organizes group photos nobody knew they wanted."
       ]
+    },
+    {
+      "name": "Marcus Reed",
+      "title": "Head of Advisor Growth",
+      "grouping": "Growth",
+      "order": 10,
+      "functional_role": "Advisor Growth",
+      "bio": "Leads Valora's advisor growth plan, from outreach and advisor content to qualified calls and paid advisor revenue. Keeps each channel measured against the same pipeline and revenue scorecard."
     }
   ],
   "extended_team_note": "Extended-team presentation per founder direction (Sep 28), approved by chief operator. Built from the core 10 plus operational personas from the canonical Valora Agent Roster covering LinkedIn newsletter, Facebook, Quora, subreddit, Office of the Founder, and podcast/media/PR. functional_role preserves working roles for bio grounding. Display title + grouping + order as given. Marcus Reed intentionally not shown (live page is source of truth). Avatars: illustrated flat-vector set, 1024px PNGs in the drop folder; Ethan uses team-avatar-ethan-v2.png (replaces the first Ethan). Each entry's bio field is the approved full bio (role + personality + outside-work note), per founder request Sep 28; core 10 extend the previously approved bios.",
