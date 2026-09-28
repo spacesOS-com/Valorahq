@@ -4508,25 +4508,58 @@ Financial Advisor for Business Owners | Valora
 
  Profession 
  Financial advisor for business owners: when your wealth IS the business 
+ business owners 
+ founders 
+ QSBS 
+ business sale 
+ exit planning 
+ concentrated wealth 
+ retirement planning 
+
+ The biggest owner decisions - reinvest, diversify, sell - all arrive at the same crossroads. 
 
  Business owners need planning for a problem most people never face: nearly all of their wealth is one illiquid asset they also work inside. Personal and business finances are entangled, retirement savings compete with reinvestment, and the biggest financial event of their life - selling the business - usually happens once, with no practice runs. Measured US demand is modest but real: "financial advisor for business owners" draws 260 average monthly searches and "financial advisor for small business owners" 140 (Valora keyword ledger, Google Ads Keyword Planner 12-month averages, reviewed September 2026) - and beyond search, owners can meet advisors through the professionals they already work with - a CPA, an attorney, or a peer who sold first. This page covers what makes owner finances different, what a specialist handles, and how to choose one. 
+
+ Key takeaways 
+ When your wealth IS the business, every personal financial decision is also a business decision - and vice versa. 
+ Retirement saving cannot wait for the exit: the sale may come late, low, or not at all. 
+ QSBS and sale-timing rules can be worth millions, but only if the planning happens years before the deal. 
+ Diversifying outside the business feels like betting against yourself - it is actually what lets you take the right risks inside it. 
+
+ On this page 
+ Why business owner finances are different 
+ What an owner-focused advisor actually handles 
+ What to look for when choosing 
+ Questions to ask before you hire 
+ The bottom line 
+
  Why business owner finances are different 
  An owner's balance sheet is upside down by conventional standards: the large majority of net worth in one private asset, thin diversification, and income that swings with the business. Retirement plans do double duty as tax shelters and recruiting tools. Personal guarantees blur the line between business and household risk. And the exit - the event everything depends on - rewards years of preparation and punishes improvisation: valuation gaps, earnout traps, and tax structures like QSBS that only pay off if arranged well before a sale. The planning horizon is also emotional: owners consistently overestimate what their business is worth and underestimate how replaceable they need to become for a buyer to pay that price. 
  What an owner-focused advisor actually handles 
  Expect work on: building wealth outside the business (retirement plan design, taxable investing, so the household is not hostage to one asset); exit and succession planning started years early (readiness, valuation drivers, cleaning up the financials buyers will diligence); sale-tax strategy including QSBS qualification (the rules changed significantly in July 2025 - see the FAQ), installment sales, and entity structure reviewed with your CPA; key-person and buy-sell insurance so a death or departure does not force a fire sale; and post-sale planning, because the liquidity event creates a second problem - deploying concentrated proceeds - that needs a plan before closing day, not after. 
+
+ Business doing well, personal plan behind? 
+ That gap is the most common one we see. A short conversation can show you where to start. 
+ Talk to an advisor 
  What to look for when choosing 
  Three filters. First, real exit experience: ask how many clients they have taken through a sale and what they did two years before closing, not just after. Second, coordination skill: the advisor has to work with your CPA, transaction attorney, and eventually a broker or banker, because no single professional sees the whole board. Third, fiduciary and fee-only, so the advice to diversify out of your business is not competing with a product sale. Be wary of anyone whose plan keeps every dollar inside the business - or who pushes a sale before you are ready. 
  Questions to ask before you hire 
  How many business sales have you guided clients through? What would you do differently if my exit is three years out versus ten? How do you work with my CPA and attorney? How do you charge when most of my net worth is not investable yet? What does a key-person risk review look like? Owners should hear operational specifics, not portfolio theory. 
- Frequently asked questions 1. When should a business owner start exit planning? Earlier than feels necessary. The things that move valuation - customer concentration, owner dependence, clean financials, documented processes - take years to fix, which is why exit planners push owners to start preparing several years before a target date. Owners who start late sell the business they have; owners who start early sell the business a buyer wants. 2. How much is my business actually worth for planning purposes? Often less than you hope and more than the first offer. Informal rules of thumb mislead because multiples swing with industry, growth, and how replaceable you are. For real planning, get a professional valuation or broker opinion, then stress-test: for illustration, run your retirement math at 20-30% below the appraised number and see whether the plan still works. 3. What is QSBS and does it apply to my sale? Qualified Small Business Stock rules can exclude much or all federal capital gains on qualifying C-corporation stock. For stock newly issued and otherwise eligible after July 4, 2025, the One Big Beautiful Bill Act created tiered exclusions (50% after three years, 75% after four, 100% after five), raised the per-issuer cap to the greater of $15 million or 10 times your adjusted basis, and raised the company gross-asset ceiling at issuance to $75 million; stock issued earlier keeps the prior $10 million cap and $50 million asset ceiling (details: The Tax Adviser, November 2025 ). Qualification depends on the company's structure, business type, and decisions made years before a sale, so review it with your CPA and attorney well before any exit process starts. 4. Do I need an advisor before I sell, or after? Before. The biggest levers - entity structure, QSBS qualification, retirement plan funding, cleaning up personal expenses in the business, pre-sale gifting and estate moves - nearly all expire at closing. An advisor engaged after the sale manages proceeds; one engaged before changes what the proceeds are. 
+
+ Your business has a plan. Do you? 
+ Tell us where the business is headed and we will match you with an advisor who knows owner finances. 
+ Find your advisor 
+ The bottom line Owner finances fail in one direction: everything inside the business, nothing outside it, and a retirement that depends entirely on a buyer showing up. The fix is not working less hard on the business - it is building the personal balance sheet with the same discipline: paying yourself deliberately, sheltering what you can, planning the sale years early, and diversifying enough that no single outcome decides your family's future. 
 
  Related 
- https://blog.valorahq.com/lead-generation-strategies-for-financial-advisors/ 
+ Lead generation strategies for financial advisors 
+ Financial advisor for physicians 
+ Financial advisor for tech employees 
 
  Common questions 
  When should a business owner start exit planning? Earlier than feels necessary. The things that move valuation - customer concentration, owner dependence, clean financials, documented processes - take years to fix, which is why exit planners push owners to start preparing several years before a target date. Owners who start late sell the business they have; owners who start early sell the business a buyer wants. 
  How much is my business actually worth for planning purposes? Often less than you hope and more than the first offer. Informal rules of thumb mislead because multiples swing with industry, growth, and how replaceable you are. For real planning, get a professional valuation or broker opinion, then stress-test: for illustration, run your retirement math at 20-30% below the appraised number and see whether the plan still works. 
- What is QSBS and does it apply to my sale? Qualified Small Business Stock rules can exclude much or all federal capital gains on qualifying C-corporation stock. For stock newly issued and otherwise eligible after July 4, 2025, the One Big Beautiful Bill Act created tiered exclusions (50% after three years, 75% after four, 100% after five), raised the per-issuer cap to the greater of $15 million or 10 times your adjusted basis, and raised the company gross-asset ceiling at issuance to $75 million; stock issued earlier keeps the prior $10 million cap and $50 million asset ceiling (details: &lt;a href=&quot;https://www.thetaxadviser.com/issues/2025/nov/qsbs-gets-a-makeover-what-tax-pros-need-to-know-about-sec-1202s-new-look/&quot;&gt;The Tax Adviser, November 2025&lt;/a&gt;). Qualification depends on the company&#x27;s structure, business type, and decisions made years before a sale, so review it with your CPA and attorney well before any exit process starts. 
+ What is QSBS and does it apply to my sale? Qualified Small Business Stock rules can exclude much or all federal capital gains on qualifying C-corporation stock. For stock newly issued and otherwise eligible after July 4, 2025, the One Big Beautiful Bill Act created tiered exclusions (50% after three years, 75% after four, 100% after five), raised the per-issuer cap to the greater of $15 million or 10 times your adjusted basis, and raised the company gross-asset ceiling at issuance to $75 million; stock issued earlier keeps the prior $10 million cap and $50 million asset ceiling (details: The Tax Adviser, November 2025 (https://www.thetaxadviser.com/issues/2025/nov/qsbs-gets-a-makeover-what-tax-pros-need-to-know-about-sec-1202s-new-look/)). Qualification depends on the company&#x27;s structure, business type, and decisions made years before a sale, so review it with your CPA and attorney well before any exit process starts. 
  Do I need an advisor before I sell, or after? Before. The biggest levers - entity structure, QSBS qualification, retirement plan funding, cleaning up personal expenses in the business, pre-sale gifting and estate moves - nearly all expire at closing. An advisor engaged after the sale manages proceeds; one engaged before changes what the proceeds are. 
 
  Let's build a financial life that feels like yours. 
@@ -4619,25 +4652,58 @@ Financial Advisor for Physicians | Valora
 
  Profession 
  Financial advisor for physicians: planning that fits a medical career 
+ physicians 
+ doctors 
+ student loan strategy 
+ disability insurance 
+ PSLF 
+ practice ownership 
+ physician mortgage 
+
+ The right advisor relationship starts with a real conversation about your career, not a product pitch. 
 
  Physicians need financial planning built around a career that starts late, pays well, and carries unusual risks. A decade of training means most doctors begin serious earning in their 30s with six figures of student debt and a compressed window to catch up on retirement saving. The right advisor understands physician loans, disability exposure, and practice ownership - not just generic portfolio advice. This page covers what makes physician finances different, what a physician-focused advisor actually handles, and how to choose one. 
+
+ Key takeaways 
+ A medical career starts earning roughly a decade late with six-figure debt, which compresses every big financial decision into a narrow window. 
+ The debt-versus-invest decision depends on employer type: PSLF can change the entire answer for physicians at qualifying nonprofits. 
+ Own-occupation, specialty-specific disability insurance is the cornerstone, because a physician&#x27;s income IS their ability to practice. 
+ Fiduciary, fee-only advice matters more for physicians than almost anyone - they are the most heavily prospected professionals in financial services. 
+
+ On this page 
+ Why physician finances are different 
+ What a physician-focused advisor actually handles 
+ What to look for when choosing 
+ Questions to ask before you hire 
+ The bottom line 
+
  Why physician finances are different 
  The financial shape of a medical career has few parallels. Earnings start roughly a decade behind other professionals, often with student debt well into six figures (the AAMC publishes annual debt figures for each graduating class - see the AAMC debt and cost fact card for the class of 2025 ). Income then jumps sharply from residency to attending, which creates a narrow window where big decisions - debt payoff versus investing, insurance, home purchase, retirement catch-up - all arrive at once. On top of that, the career itself is the asset: a physician's income depends entirely on their ability to practice, which makes disability risk a planning cornerstone rather than an afterthought. Many physicians also become practice owners, adding business decisions (buy-ins, equipment financing, eventual sale) that generalist advice rarely covers well. And burnout is a financial variable too: a plan that assumes 35 years of full-time clinical work is fragile if the reality is cutting back at 50. 
  What a physician-focused advisor actually handles 
  Beyond investments, expect work on: student loan strategy (PSLF versus aggressive payoff versus refinancing, modeled against your employer type); own-occupation disability insurance sized to your specialty's income; retirement catch-up using 401(k)/403(b), 457(b), and backdoor Roth contributions; physician mortgage and housing decisions without derailing savings; and, for practice owners, buy-in structuring, equipment debt, and eventually practice sale planning. Tax planning runs through all of it - attending-level W-2 income leaves few deductions, so the marginal decisions matter more. 
+
+ Not sure where your plan stands? 
+ A short conversation can show you which of these decisions deserve attention first. 
+ Talk to an advisor 
  What to look for when choosing 
  Three filters separate useful advisors from expensive ones. First, fiduciary and fee-only: physicians are heavily targeted by insurance- and product-driven sales, so an advisor paid only by you, with no commissions, removes the biggest conflict. Second, real physician experience: ask how many physician households they serve and press on specifics - PSLF nuances, 457(b) rules, practice buy-in structures. Third, a planning-first process: if the first meeting is about products rather than your debt, insurance gaps, and career timeline, keep looking. 
  Questions to ask before you hire 
  How do you get paid, and will you sign a fiduciary oath? How many physician clients do you work with, and at what career stages? How would you approach my student debt against investing? What disability coverage do I actually need for my specialty? How do you coordinate with my CPA and attorney? Clear, specific answers here predict a good relationship; vague ones predict a sales pitch. 
- Frequently asked questions 1. Do physicians really need a financial advisor? Not every physician does, but the combination of late-start earnings, large student debt, disability exposure, and practice ownership creates more high-stakes decisions per decade than most careers. If you have the time and temperament to research PSLF rules, insurance underwriting, and tax strategy yourself, you may not need one. Many physicians hire help because their hours are worth more than the fee. 2. How much does a financial advisor for physicians cost? Common models: a percentage of assets managed annually, a flat annual retainer for planning-focused relationships, or hourly and one-time plan fees. For most early-career physicians, flat-fee or hourly planning avoids paying asset-based fees before you have meaningful assets. Whatever the model, ask for the total first-year cost in dollars before you sign. 3. Should I pay off my medical school loans or invest first? It depends on your employer and your loans. Public Service Loan Forgiveness requires eligible Direct Loans, full-time work for a qualifying government or nonprofit employer, a qualifying repayment plan, and 120 qualifying monthly payments (conditions per studentaid.gov/pslf ). On that path, aggressive extra payments can work against you. Outside PSLF, the two main paths are different choices: aggressive payoff trades liquidity for certainty, while refinancing federal loans can cut your rate but gives up federal protections and forgiveness eligibility - weigh the saving against what you surrender. A good advisor models your actual loans rather than giving a blanket answer. 4. What disability insurance do physicians actually need? The commonly recommended structure: own-occupation, specialty-specific coverage that pays if you cannot practice your specialty, sized to replace most of your after-tax income. Buying early matters because health changes can price you out, and employer group coverage is usually a supplement rather than the foundation, since it often is not portable or specialty-specific. Confirm details with a licensed insurance professional. 
+
+ Ready for advice that fits a medical career? 
+ Tell us what you are working toward and we will match you with an advisor who knows physician finances. 
+ Find your advisor 
+ The bottom line Physician finances are not generic finances with a bigger salary. The late start, the debt, the disability exposure, and the practice-ownership questions all interact - and the window to get them right is shorter than it feels. Whether you hire help or not, the decisions in this page deserve deliberate answers in your first attending years, not default ones. If you do hire, hire for fit: fiduciary, fee-only, and fluent in the specifics of a medical career. 
 
  Related 
- https://blog.valorahq.com/lead-generation-strategies-for-financial-advisors/ 
+ Lead generation strategies for financial advisors 
+ Financial advisor for tech employees 
+ Financial advisor for business owners 
 
  Common questions 
  Do physicians really need a financial advisor? Not every physician does, but the combination of late-start earnings, large student debt, disability exposure, and practice ownership creates more high-stakes decisions per decade than most careers. If you have the time and temperament to research PSLF rules, insurance underwriting, and tax strategy yourself, you may not need one. Many physicians hire help because their hours are worth more than the fee. 
  How much does a financial advisor for physicians cost? Common models: a percentage of assets managed annually, a flat annual retainer for planning-focused relationships, or hourly and one-time plan fees. For most early-career physicians, flat-fee or hourly planning avoids paying asset-based fees before you have meaningful assets. Whatever the model, ask for the total first-year cost in dollars before you sign. 
- Should I pay off my medical school loans or invest first? It depends on your employer and your loans. Public Service Loan Forgiveness requires eligible Direct Loans, full-time work for a qualifying government or nonprofit employer, a qualifying repayment plan, and 120 qualifying monthly payments (conditions per &lt;a href=&quot;https://studentaid.gov/pslf/&quot;&gt;studentaid.gov/pslf&lt;/a&gt;). On that path, aggressive extra payments can work against you. Outside PSLF, the two main paths are different choices: aggressive payoff trades liquidity for certainty, while refinancing federal loans can cut your rate but gives up federal protections and forgiveness eligibility - weigh the saving against what you surrender. A good advisor models your actual loans rather than giving a blanket answer. 
+ Should I pay off my medical school loans or invest first? It depends on your employer and your loans. Public Service Loan Forgiveness requires eligible Direct Loans, full-time work for a qualifying government or nonprofit employer, a qualifying repayment plan, and 120 qualifying monthly payments (conditions per studentaid.gov/pslf (https://studentaid.gov/pslf/)). On that path, aggressive extra payments can work against you. Outside PSLF, the two main paths are different choices: aggressive payoff trades liquidity for certainty, while refinancing federal loans can cut your rate but gives up federal protections and forgiveness eligibility - weigh the saving against what you surrender. A good advisor models your actual loans rather than giving a blanket answer. 
  What disability insurance do physicians actually need? The commonly recommended structure: own-occupation, specialty-specific coverage that pays if you cannot practice your specialty, sized to replace most of your after-tax income. Buying early matters because health changes can price you out, and employer group coverage is usually a supplement rather than the foundation, since it often is not portable or specialty-specific. Confirm details with a licensed insurance professional. 
 
  Let's build a financial life that feels like yours. 
@@ -4730,24 +4796,57 @@ Financial Advisor for Tech Employees with RSUs | Valora
 
  Profession 
  Financial advisor for tech employees: making equity compensation actually work 
+ tech employees 
+ RSUs 
+ stock options 
+ ESPP 
+ equity compensation 
+ concentrated stock 
+ tax planning 
+
+ Equity compensation rewards the people who plan the route before the terrain gets steep. 
 
  Tech employees need planning built around equity compensation, because for many of them the equity becomes the center of the financial plan. RSUs, ESPPs, and stock options create tax problems and concentration risks that generic advice handles badly. Measured US search demand exists for this help: "financial advisor for stock options" draws 880 average monthly searches (Valora keyword ledger, Google Ads Keyword Planner 12-month averages, reviewed September 2026). This page covers what makes tech compensation different, what a specialist advisor handles, and how to choose one. 
+
+ Key takeaways 
+ Equity compensation - RSUs, ESPPs, options - is usually the largest and least understood part of a tech employee&#x27;s finances. 
+ Concentration is the default risk: when your income and your wealth ride the same stock, one bad quarter hits twice. 
+ Vest dates are tax events. Planning sales around vesting beats improvising them every quarter. 
+ The best time to build the diversification plan is before the big vest, the IPO, or the tender offer - not after. 
+
+ On this page 
+ Why tech compensation is different 
+ What a tech-focused advisor actually handles 
+ What to look for when choosing 
+ Questions to ask before you hire 
+ The bottom line 
+
  Why tech compensation is different 
  A tech employee's paystub understates their financial complexity. RSUs vest as taxable income at withholding rates that often leave a surprise bill in April. The same company that pays your salary also fills your portfolio, so a bad quarter hits your income and your net worth at once. ESPP discounts, mega backdoor Roth room, 401(k) after-tax options, and deferred comp all interact. Add liquidity events - IPOs, tender offers, acquisitions - and layoffs that arrive with severance decisions and option exercise deadlines set by your plan documents, and you get a planning surface that changes every quarter. 
  What a tech-focused advisor actually handles 
  Expect concrete work on: RSU sell-or-hold decisions at vest (framed as "would you buy this stock with cash today?"); diversification plans for concentrated positions, including 10b5-1 trading plans where needed; withholding gap fixes so April stops being a surprise; ESPP decisions (participating is often worth it when the discount is meaningful and cash flow allows; whether to sell promptly depends on your concentration and tax picture); mega backdoor Roth execution inside your 401(k); ISO/NSO exercise strategy and AMT exposure for startup equity; and layoff planning - severance taxation, COBRA, rollover decisions, and the option exercise deadline that catches people in their worst month. 
+
+ Equity comp getting complicated? 
+ A short conversation can help you see which decisions - vesting, selling, concentration - matter most right now. 
+ Talk to an advisor 
  What to look for when choosing 
  Three filters. First, fluency in equity comp mechanics: ask them to walk through RSU withholding shortfalls, the ESPP qualifying disposition rules, or ISO AMT - vague answers mean keep looking. Second, fiduciary and fee-only, so no one is earning commissions on products pitched to your concentrated position. Third, a fee model that fits: many tech employees have high income but modest current assets, so flat-fee or subscription planning often beats AUM pricing. An advisor who only wants to manage the money you have not vested yet is optimizing for themselves. 
  Questions to ask before you hire 
  How many clients do you have at my company or similar ones? How do you approach RSU sell-or-hold at vest? Can you coordinate with my CPA around vesting and exercise events? How do you charge, and what do I get in year one? Have you handled a layoff or IPO for a client before? Specific, experience-based answers are the signal. 
- Frequently asked questions 1. Should I sell my RSUs when they vest? The cleanest frame: at vest, RSUs are taxed as income, so holding them is identical to taking a cash bonus and buying your employer's stock that day. Many planners therefore frame selling at vest and diversifying as the default, because your salary and career already depend on the company. Exceptions exist (deep conviction, upcoming catalysts), but they should be deliberate decisions sized to your total picture, not the autopilot. 2. What is the mega backdoor Roth and can I use it? It is a strategy that moves after-tax 401(k) contributions into Roth status, beyond the normal contribution limits, when your plan allows after-tax contributions and in-service conversions or distributions (IRS reference: rollovers of after-tax contributions in retirement plans ). Some large tech plans allow it; many plans do not. Check your plan document or ask HR - when available, it is one of the most valuable benefits tech employees leave unused. 3. Do I need an advisor just for equity compensation? If equity is a small slice of your pay, probably not. Once RSUs or options drive most of your wealth - or you face an IPO, tender offer, or layoff with unexercised options - the tax mistakes get expensive enough that specialist advice is often worth the cost. The trigger is complexity, not account size. 4. What should I do first if I get laid off from a tech job? Handle the clock-sensitive items first: stock option exercise deadlines after departure (often around 90 days but set by your plan - check your award documents immediately), ESPP disposition choices, and severance timing across tax years. Then the health insurance decision (COBRA versus marketplace), then the 401(k) rollover. Most expensive mistakes happen in the first weeks, not in the long-term plan. 
+
+ Make the equity actually work 
+ Tell us about your grants and your goals, and we will match you with an advisor who speaks RSU fluently. 
+ Find your advisor 
+ The bottom line Equity compensation is a wealth engine with a tax problem and a concentration problem attached. The employees who come out ahead are not smarter about stock picks - they are earlier with the boring decisions: selling on a plan, diversifying on a schedule, and treating every vest as the taxable event it is. Whether you manage that yourself or hire help, make the rules before the next grant vests, not during it. 
 
  Related 
- https://blog.valorahq.com/lead-generation-strategies-for-financial-advisors/ 
+ Lead generation strategies for financial advisors 
+ Financial advisor for physicians 
+ Financial advisor for business owners 
 
  Common questions 
  Should I sell my RSUs when they vest? The cleanest frame: at vest, RSUs are taxed as income, so holding them is identical to taking a cash bonus and buying your employer&#x27;s stock that day. Many planners therefore frame selling at vest and diversifying as the default, because your salary and career already depend on the company. Exceptions exist (deep conviction, upcoming catalysts), but they should be deliberate decisions sized to your total picture, not the autopilot. 
- What is the mega backdoor Roth and can I use it? It is a strategy that moves after-tax 401(k) contributions into Roth status, beyond the normal contribution limits, when your plan allows after-tax contributions and in-service conversions or distributions (IRS reference: &lt;a href=&quot;https://www.irs.gov/retirement-plans/rollovers-of-after-tax-contributions-in-retirement-plans&quot;&gt;rollovers of after-tax contributions in retirement plans&lt;/a&gt;). Some large tech plans allow it; many plans do not. Check your plan document or ask HR - when available, it is one of the most valuable benefits tech employees leave unused. 
+ What is the mega backdoor Roth and can I use it? It is a strategy that moves after-tax 401(k) contributions into Roth status, beyond the normal contribution limits, when your plan allows after-tax contributions and in-service conversions or distributions (IRS reference: rollovers of after-tax contributions in retirement plans (https://www.irs.gov/retirement-plans/rollovers-of-after-tax-contributions-in-retirement-plans)). Some large tech plans allow it; many plans do not. Check your plan document or ask HR - when available, it is one of the most valuable benefits tech employees leave unused. 
  Do I need an advisor just for equity compensation? If equity is a small slice of your pay, probably not. Once RSUs or options drive most of your wealth - or you face an IPO, tender offer, or layoff with unexercised options - the tax mistakes get expensive enough that specialist advice is often worth the cost. The trigger is complexity, not account size. 
  What should I do first if I get laid off from a tech job? Handle the clock-sensitive items first: stock option exercise deadlines after departure (often around 90 days but set by your plan - check your award documents immediately), ESPP disposition choices, and severance timing across tax years. Then the health insurance decision (COBRA versus marketplace), then the 401(k) rollover. Most expensive mistakes happen in the first weeks, not in the long-term plan. 
 

@@ -3,15 +3,25 @@
 
 One pack = one page at /<slug>/. Pack schema (keys):
   slug, page_type, meta_title (<=60), meta_description (<=155), keywords[],
-  h1, body_html (unique grounded copy), faqs[{q,a}], faq_jsonld (reference
-  only - the build regenerates JSON-LD from the visible faqs so they match
-  by construction), internal_links[], source_notes[], optional cta
-  {heading, body, button_label, href} (href placeholder until the consumer
-  routing decision lands - default CTA is the site contact form).
+  h1, body_html (unique grounded copy), faqs[{q,a}] (plain text - no HTML),
+  faq_jsonld (reference only - the build regenerates JSON-LD from the
+  visible faqs so they match by construction), internal_links[],
+  source_notes[], optional cta {heading, body, button_label, href}
+  (href placeholder until the consumer routing decision lands - default
+  CTA is the site contact form).
+  Foundation-upgrade optional slots:
+  key_takeaways[]   styled box after the intro paragraph
+  feature_image     {src, alt, caption} hero under the H1
+  inline_ctas[]     {after_h2, heading, body, button_label, href} banner
+                    rendered at the end of the named h2 section
+  tags[]            pill row under the H1 + merged into meta keywords
+  toc               auto-generated anchor-linked TOC from body <h2>s;
+                    set "toc": false to opt out
 """
 import glob
 import json
 import os
+import re
 
 from partials import page, head, faq_schema, faq_block, contact_section, escape, BRAND
 
@@ -26,6 +36,98 @@ PAGE_TYPE_LABELS = {
 }
 
 
+def _slugify(text):
+    s = re.sub(r"<[^>]+>", "", text).lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+def _linkify(text):
+    """Plain-text URL -> clickable link (used for escaped FAQ answers)."""
+    return re.sub(r"(https?://[^\s<]+)", r'<a href="\1">\1</a>', text)
+
+
+def _tags(tags):
+    if not tags:
+        return ""
+    pills = "\n".join(f'      <li>{escape(t)}</li>' for t in tags)
+    return f"""  <ul class="content-page__tags">{pills}
+  </ul>"""
+
+
+def _hero(img):
+    if not img or not img.get("src"):
+        return ""
+    cap = f'<figcaption>{escape(img["caption"])}</figcaption>' if img.get("caption") else ""
+    return f"""
+  <figure class="content-page__hero">
+    <img src="{escape(img['src'])}" alt="{escape(img.get('alt', ''))}" loading="lazy">
+{cap}
+  </figure>"""
+
+
+def _takeaways(items):
+    if not items:
+        return ""
+    lis = "\n".join(f'      <li>{escape(t)}</li>' for t in items)
+    return f"""
+  <div class="content-page__takeaways">
+    <h2>Key takeaways</h2>
+    <ul>{lis}
+    </ul>
+  </div>"""
+
+
+def _toc(items):
+    if len(items) < 3:
+        return ""
+    lis = "\n".join(f'      <li><a href="#{a}">{escape(t)}</a></li>' for a, t in items)
+    return f"""
+  <nav class="content-page__toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>{lis}
+    </ul>
+  </nav>"""
+
+
+def _inline_cta(cta):
+    return f"""
+    <div class="content-page__cta">
+      <h3>{escape(cta['heading'])}</h3>
+      <p>{escape(cta.get('body', ''))}</p>
+      <a class="btn btn--dark" href="{escape(cta['href'])}">{escape(cta.get('button_label', 'Get started'))}</a>
+    </div>"""
+
+
+def _process_body(pack):
+    """Add h2 anchor ids, inject inline CTAs at the end of their named sections.
+    Returns (processed_html, toc_items)."""
+    html = pack["body_html"]
+    ctas = {}
+    for c in (pack.get("inline_ctas") or []):
+        ctas[c["after_h2"].strip().lower()] = c
+    parts = re.split(r"(<h2[^>]*>.*?</h2>)", html, flags=re.S | re.I)
+    out = [parts[0]]
+    toc = []
+    matched = set()
+    it = parts[1:]
+    for i in range(0, len(it), 2):
+        h2tag = it[i]
+        section = it[i + 1] if i + 1 < len(it) else ""
+        text = re.sub(r"<[^>]+>", "", h2tag).strip()
+        anchor = _slugify(text)
+        toc.append((anchor, text))
+        out.append(re.sub(r"<h2", f'<h2 id="{anchor}"', h2tag, count=1))
+        out.append(section)
+        cta = ctas.get(text.lower())
+        if cta:
+            out.append(_inline_cta(cta))
+            matched.add(text.lower())
+    for key in ctas:
+        if key not in matched:
+            print(f"WARNING: inline_cta target '{key}' not found in {pack['slug']} body h2s - dropped")
+    return "".join(out), toc
+
+
 def load_packs():
     packs = []
     for path in sorted(glob.glob(os.path.join(PACK_DIR, "*.json"))):
@@ -35,16 +137,23 @@ def load_packs():
             if key not in pack:
                 raise SystemExit(f"content pack {path} is missing '{key}'")
         pack["_draft"] = pack.get("status", "approved") == "draft"
-        # PREVIEW BRANCH ONLY: drafts render with noindex so the founder can review them.
+        # Drafts render with noindex and stay out of sitemap/llms registration.
         packs.append(pack)
     return packs
+
+
+def _link_label(url):
+    """Readable label from a URL slug: 'financial-advisor-for-tech-employees' -> 'Financial advisor for tech employees'."""
+    slug = url.rstrip("/").rsplit("/", 1)[-1] or url
+    words = slug.replace("-", " ").replace("_", " ")
+    return words[:1].upper() + words[1:] if words else url
 
 
 def _related(links):
     real = [l for l in (links or []) if isinstance(l, str) and l.startswith("http")]
     if not real:
         return ""
-    items = "\n".join(f'      <li><a href="{escape(l)}">{escape(l)}</a></li>' for l in real)
+    items = "\n".join(f'      <li><a href="{escape(l)}">{escape(_link_label(l))}</a></li>' for l in real)
     return f"""
   <div class="content-page__related" style="margin-top:40px;">
     <h5 style="font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">Related</h5>
@@ -71,13 +180,26 @@ def _cta(pack):
 def _body(pack):
     label = PAGE_TYPE_LABELS.get(pack.get("page_type", ""), "Guide")
     faq_pairs = [(f["q"], f["a"]) for f in pack["faqs"]]
+    body_html, toc_items = _process_body(pack)
+    middle = _takeaways(pack.get("key_takeaways"))
+    if pack.get("toc", True):
+        middle += _toc(toc_items)
+    # takeaways + TOC land after the intro paragraph (first </p>) when there is one
+    first_close = body_html.find("</p>")
+    if first_close != -1 and middle:
+        cut = first_close + len("</p>")
+        body_html = body_html[:cut] + middle + body_html[cut:]
+    else:
+        body_html = middle + body_html
     return f"""
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:700px;">
     <p class="eyebrow reveal">{escape(label)}</p>
     <h1 class="display display--lg reveal">{escape(pack['h1'])}</h1>
+{_tags(pack.get('tags'))}
+{_hero(pack.get('feature_image'))}
     <div class="insights-article" style="margin-top:32px;">
-{pack['body_html']}
+{body_html}
     </div>
 {_related(pack.get('internal_links'))}
   </div>
@@ -98,7 +220,8 @@ def render(pack):
     return page(
         head(pack["meta_title"], pack["meta_description"],
              path=f"/{pack['slug']}/", schema=faq_schema(faq_pairs),
-             keywords=pack.get("keywords"), noindex=pack.get("_draft", False)),
+             keywords=list(dict.fromkeys((pack.get("keywords") or []) + (pack.get("tags") or []))),
+             noindex=pack.get("_draft", False)),
         _body(pack),
     )
 
