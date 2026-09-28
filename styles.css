@@ -133,8 +133,8 @@ h1,h2,h3,h4,h5,p,figure,blockquote{ margin:0; }
    HEADER
    ========================================================= */
 .site-banner{
-  background:var(--green); color:var(--cream); text-align:center;
-  padding:10px 16px; font-size:.8rem; position:relative; z-index:101;
+  background:var(--green); color:var(--cream); text-align:left;
+  padding:10px var(--pad); font-size:.8rem; position:relative; z-index:101;
 }
 .site-banner a{ color:var(--gold); font-weight:500; text-decoration:underline; margin-left:4px; }
 body:has(.site-banner) .site-header{ top:40px; }
