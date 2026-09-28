@@ -17,7 +17,7 @@ from partials import (BRAND, head, page, header, footer, gate, hero_card, contac
                        faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER)
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
 from advisor_pages import build_advisor_pages, ADVISORS
-from directory_pages import build_directory_pages, build_directory_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
+from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from content_pages import build_content_pages
@@ -35,7 +35,8 @@ PAGES = [
     ("/find-your-advisor/", "Find your advisor — four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
     ("/calculators/", "Browse financial calculators by topic."),
-    ("/find-a-financial-advisor/", "Directory hub — browse advisors by city, specialty, profession, or asset range."),
+    ("/cities/", "Browse financial advisors by city."),
+    ("/specialties/", "Browse financial advisors by specialty, profession, or asset range."),
 ] + [(f"/advisors/{a['slug']}/", f"{a['name']} — {a['firm']}") for a in ADVISORS
 ] + [
     # only pages with a real advisor match — see directory_pages.real_pages().
@@ -172,7 +173,8 @@ if __name__ == "__main__":
     build_for_advisors()
     build_advisor_pages(write)
     build_directory_pages(write)
-    build_directory_index(write)
+    build_cities_index(write)
+    build_specialties_index(write)
     build_insights_pages(write)
     build_calculator_pages(write)
     PAGES.extend(build_content_pages(write))
