@@ -1918,3 +1918,12 @@ body.gate-open{ overflow:hidden; }
 .adv-blog__more{ margin-top:clamp(28px,4vw,40px); }
 @media (max-width:900px){ .adv-blog__grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:620px){ .adv-blog__grid{ grid-template-columns:1fr; } }
+
+/* Founder request: Company + For Advisors · Tools link groups pinned to the bottom of the footer */
+.footer__nav-bottom{
+  display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(24px,4vw,72px);
+  padding:0 0 clamp(28px,4vw,48px);
+}
+.footer__nav-bottom .footer__brand{ flex:1.4 1 280px; }
+.footer__nav-bottom .footer__col{ flex:1 1 180px; min-width:180px; }
+.footer__nav-bottom .footer__brand p{ margin-top:18px; }

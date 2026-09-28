@@ -239,6 +239,15 @@ def footer():
     <h2 class="display display--md footer__statement reveal">Independent advice.<br><em>Personal fit.</em></h2>
 
     <div class="footer__grid">
+
+      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(city)}</a></li>' for slug, city in DIRECTORY_CITIES)}</ul></nav>
+      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES)}</ul></nav>
+      <nav class="footer__col" aria-label="Niches"><h5>Niches</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES)}</ul></nav>
+      <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
+      <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
+    </div>
+
+    <div class="footer__nav-bottom">
       <div class="footer__brand">
         <a class="logo logo--light" href="/">
           <span class="logo__mark" aria-hidden="true">{LOGO_SVG}</span>
@@ -250,14 +259,8 @@ def footer():
           <li><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
         </ul>
       </div>
-
       <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#advisors">Find an advisor</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
       <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/#introductions">Advisor portal</a></li><li><a href="/for-advisors/#compare">How Valora compares</a></li><li><a href="https://blog.valorahq.com/" target="_blank" rel="noopener">AEO &amp; GEO blog</a></li><li><a href="/for-advisors/#apply">Book a demo</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(city)}</a></li>' for slug, city in DIRECTORY_CITIES)}</ul></nav>
-      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES)}</ul></nav>
-      <nav class="footer__col" aria-label="Niches"><h5>Niches</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES)}</ul></nav>
-      <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
-      <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
       <nav class="footer__col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="/#top">Privacy</a></li><li><a href="/#top">Terms</a></li></ul></nav>
     </div>
 
