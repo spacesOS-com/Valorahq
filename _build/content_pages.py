@@ -34,8 +34,8 @@ def load_packs():
         for key in ("slug", "meta_title", "meta_description", "h1", "body_html", "faqs"):
             if key not in pack:
                 raise SystemExit(f"content pack {path} is missing '{key}'")
-        if pack.get("status", "approved") == "draft":
-            continue  # content not through the verification gate yet
+        pack["_draft"] = pack.get("status", "approved") == "draft"
+        # PREVIEW BRANCH ONLY: drafts render with noindex so the founder can review them.
         packs.append(pack)
     return packs
 
@@ -98,7 +98,7 @@ def render(pack):
     return page(
         head(pack["meta_title"], pack["meta_description"],
              path=f"/{pack['slug']}/", schema=faq_schema(faq_pairs),
-             keywords=pack.get("keywords")),
+             keywords=pack.get("keywords"), noindex=pack.get("_draft", False)),
         _body(pack),
     )
 
@@ -108,5 +108,6 @@ def build_content_pages(write_fn):
     built = []
     for pack in load_packs():
         write_fn(f"/{pack['slug']}/", render(pack))
-        built.append((f"/{pack['slug']}/", pack["meta_description"]))
+        if not pack.get("_draft", False):
+            built.append((f"/{pack['slug']}/", pack["meta_description"]))
     return built
