@@ -80,14 +80,6 @@
   <div class="hero__bar">
     <div class="container hero__bar-grid">
       <div class="stat">
-        <span class="stat__num" data-count="1.4" data-prefix="$" data-suffix="M+" data-decimals="1">$1.4M+</span>
-        <span class="stat__label">Average investable assets per match</span>
-      </div>
-      <div class="stat">
-        <span class="stat__num" data-count="3.2" data-suffix="x" data-decimals="1">3.2x</span>
-        <span class="stat__label">Organic AUM growth rate vs. industry avg</span>
-      </div>
-      <div class="stat">
         <span class="stat__num" data-count="100" data-suffix="%">100%</span>
         <span class="stat__label">Exclusive client matches &amp; book ownership</span>
       </div>
@@ -143,90 +135,6 @@
       </ul>
     </div>
 
-    <!-- Interactive Pipeline Simulator -->
-    <div class="adv-mock" id="advisorPipeline">
-      <div class="mock reveal" aria-hidden="true">
-        <div class="mock__bar"><span></span><span></span><span></span><em>Valora Advisor Portal · Active Introductions</em></div>
-        <div class="mock__body">
-          <div class="mock__row">
-            <div>
-              <p class="mock__label">This Month's Inbound</p>
-              <p class="mock__h">4 Verified Matches Ready</p>
-            </div>
-            <div class="mock__pill">Accepting Matches</div>
-          </div>
-
-          <!-- Interactive Category Filter Chips -->
-          <div class="pipe-filter-wrap">
-            <button type="button" class="pipe-chip is-active" data-cat="all">All Specialties</button>
-            <button type="button" class="pipe-chip" data-cat="tech">Tech Equity</button>
-            <button type="button" class="pipe-chip" data-cat="business">Business Sale</button>
-            <button type="button" class="pipe-chip" data-cat="retire">Retirement</button>
-            <button type="button" class="pipe-chip" data-cat="estate">Estate &amp; Trust</button>
-          </div>
-
-          <ul class="pipe">
-            <li class="pipe__row" data-cat="tech">
-              <div class="pipe__who">
-                <span class="pipe__av">01</span>
-                <div>
-                  <p class="pipe__name">Tech Equity &amp; RSUs · $2.4M Liquid</p>
-                  <p class="pipe__need">"VP of Engineering at Snowflake with $2.4M in vested RSUs and ISOs. Seeking tax-minimization strategy and concentrated stock collar."</p>
-                  <div class="pipe__meta-row">
-                    <span class="pipe__meta-tag">San Francisco, CA</span>
-                    <span class="pipe__meta-tag">Goal: Tax &amp; Diversification</span>
-                  </div>
-                </div>
-              </div>
-              <span class="mock__pill mock__pill--good">Call Booked</span>
-            </li>
-            <li class="pipe__row" data-cat="business">
-              <div class="pipe__who">
-                <span class="pipe__av">02</span>
-                <div>
-                  <p class="pipe__name">Business Liquidity Exit · $4.5M Expected</p>
-                  <p class="pipe__need">"Manufacturing founder in LOI stage for $4.5M cash sale within 9 months. Needs pre-liquidity trust structure and QSBS optimization."</p>
-                  <div class="pipe__meta-row">
-                    <span class="pipe__meta-tag">Austin, TX</span>
-                    <span class="pipe__meta-tag">Goal: Exit &amp; Legacy</span>
-                  </div>
-                </div>
-              </div>
-              <span class="mock__pill">Dossier Sent</span>
-            </li>
-            <li class="pipe__row" data-cat="retire">
-              <div class="pipe__who">
-                <span class="pipe__av">03</span>
-                <div>
-                  <p class="pipe__name">Retirement Income &amp; Decumulation · $1.8M Rollover</p>
-                  <p class="pipe__need">"Orthopedic surgeon retiring in 18 months. Wants tax-efficient 401(k) rollover, Social Security timing, and multi-year Roth conversion plan."</p>
-                  <div class="pipe__meta-row">
-                    <span class="pipe__meta-tag">Denver, CO</span>
-                    <span class="pipe__meta-tag">Goal: Retirement Ladder</span>
-                  </div>
-                </div>
-              </div>
-              <span class="mock__pill">Intro Scheduled</span>
-            </li>
-            <li class="pipe__row" data-cat="estate">
-              <div class="pipe__who">
-                <span class="pipe__av">04</span>
-                <div>
-                  <p class="pipe__name">Generational Wealth &amp; Family Trusts · $3.2M AUM</p>
-                  <p class="pipe__need">"Family enterprise principal seeking comprehensive fiduciary review of existing irrevocable trusts and philanthropic foundation strategy."</p>
-                  <div class="pipe__meta-row">
-                    <span class="pipe__meta-tag">Chicago, IL</span>
-                    <span class="pipe__meta-tag">Goal: Dynasty Planning</span>
-                  </div>
-                </div>
-              </div>
-              <span class="mock__pill mock__pill--good">New Match</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <figcaption class="adv-mock__cap">Live illustrative simulation of Valora advisor introduction pipeline.</figcaption>
-    </div>
   </div>
 </section>
 
@@ -273,7 +181,7 @@
 <section class="section section--cream dir-showcase" id="directory">
   <div class="dir-showcase__copy reveal">
     <p class="eyebrow">Your Digital Flagship</p>
-    <h2 class="display display--lg">Your firm, showcased to thousands<br><em>of investors searching for your specialty.</em></h2>
+    <h2 class="display display--lg">Your firm, showcased to investors<br><em>searching for your specialty.</em></h2>
     <p style="margin-top:16px; font-size:.95rem; color:var(--ink-soft); max-width:48ch;">Every approved Valora advisor receives an authoritative, search-optimized directory profile that commands instant credibility. Consumers view your fiduciary credentials, fee philosophy, focus areas, and book an introductory consultation directly onto your calendar.</p>
     <ul class="adv-ticks" style="margin-top:22px;">
       <li>Verified Fiduciary Badge &amp; Clean Regulatory Record Highlight</li>
@@ -283,26 +191,6 @@
     </ul>
   </div>
 
-  <div class="dir-card-mock reveal reveal--right">
-    <div class="dir-profile-head">
-      <img class="dir-profile-img" src="https://images.unsplash.com/photo-1573496358961-3c82861ab8f4?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=80" alt="Elena Rostova, CFP®" loading="lazy">
-      <div>
-        <h4>Elena Rostova, CFP®</h4>
-        <p>Managing Principal · Summit Crest Wealth (Denver, CO)</p>
-      </div>
-    </div>
-    <div class="dir-tags">
-      <span class="dir-tag">Fee-Only Fiduciary</span>
-      <span class="dir-tag">Tech Executive Equity</span>
-      <span class="dir-tag">Retirement Decumulation</span>
-      <span class="dir-tag">14 Yrs Experience</span>
-    </div>
-    <p class="dir-quote">"We believe financial planning should give clients clarity and confidence before any portfolio allocation is ever discussed."</p>
-    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:14px;">
-      <span style="font-size:.78rem; color:var(--muted);">⭐ 5.0 (24 Client Reviews)</span>
-      <span class="btn btn--dark" style="padding:8px 18px; font-size:.78rem; pointer-events:none;">Schedule 20-Min Intro</span>
-    </div>
-  </div>
 </section>
 
 <!-- ================= HOW VALORA COMPARES ================= -->
@@ -426,72 +314,6 @@
 </section>
 
 
-<!-- ================= ADVISOR TESTIMONIALS & CASE STUDIES ================= -->
-<section class="section section--paper adv-testimonials" id="testimonials">
-  <div class="container">
-    <div style="max-width:720px;">
-      <p class="eyebrow reveal">Partner Case Studies</p>
-      <h2 class="display display--lg reveal">Trusted by independent advisors<br><em>building high-conviction practices.</em></h2>
-      <p class="reveal" style="margin-top:16px; font-size:.95rem; color:var(--ink-soft);">Hear how independent RIA owners use Valora to accelerate organic growth, delegate back-office friction, and serve their clients at the highest level.</p>
-    </div>
-
-    <div class="adv-test-grid">
-      <!-- Testimonial 1 -->
-      <article class="tcard reveal">
-        <div>
-          <span class="tcard__badge">+$16.2M AUM Added · 1st Year</span>
-          <p class="tcard__quote">"In our first twelve months on Valora, we onboarded nine new high-net-worth households. The clients arrived with verified liquid assets and an immediate financial milestone. It transformed our growth trajectory without any cold prospecting."</p>
-        </div>
-        <div>
-          <div class="tcard__author">
-            <img class="tcard__av" src="https://images.unsplash.com/photo-1573496358961-3c82861ab8f4?auto=format&amp;fit=crop&amp;crop=faces&amp;w=120&amp;h=120&amp;q=80" alt="Elena Rostova" loading="lazy">
-            <div>
-              <p class="tcard__name">Elena Rostova, CFP®</p>
-              <p class="tcard__role">Founder · Summit Crest Wealth Management</p>
-            </div>
-          </div>
-          <div class="tcard__stat">100% Client Retention Rate · Denver, CO</div>
-        </div>
-      </article>
-
-      <!-- Testimonial 2 -->
-      <article class="tcard reveal">
-        <div>
-          <span class="tcard__badge">15 Hours Saved / Week · Operations</span>
-          <p class="tcard__quote">"The biggest bottleneck for growing RIAs is back-office drag. Valora eliminated 15 hours of weekly paperwork, billing reconciliations, and custodial transfer chasing. That extra time allowed our team to add $22M in net new assets this year."</p>
-        </div>
-        <div>
-          <div class="tcard__author">
-            <img class="tcard__av" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;crop=faces&amp;w=120&amp;h=120&amp;q=80" alt="Marcus Vance" loading="lazy">
-            <div>
-              <p class="tcard__name">Marcus Vance, CFA</p>
-              <p class="tcard__role">Managing Partner · Prairie Capital Partners</p>
-            </div>
-          </div>
-          <div class="tcard__stat">4.8x ROI on Partnership Fees · Chicago, IL</div>
-        </div>
-      </article>
-
-      <!-- Testimonial 3 -->
-      <article class="tcard reveal">
-        <div>
-          <span class="tcard__badge">38% Discovery Conversion Rate</span>
-          <p class="tcard__quote">"Generic lead generation companies sell raw phone numbers to anyone with a checkbook. Valora's introductions are different: the clients have already studied our firm's fee-only philosophy and specifically requested our equity compensation specialty."</p>
-        </div>
-        <div>
-          <div class="tcard__author">
-            <img class="tcard__av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;crop=faces&amp;w=120&amp;h=120&amp;q=80" alt="Sofía Marín" loading="lazy">
-            <div>
-              <p class="tcard__name">Sofía Marín, CPA, PFS</p>
-              <p class="tcard__role">Founder · Beacon Equity Wealth Advisors</p>
-            </div>
-          </div>
-          <div class="tcard__stat">$2.4M Average Household AUM · Seattle, WA</div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
 
 <!-- ================= PARTNER CRITERIA + EXTENDED FAQ ================= -->
 <section class="section section--cream life adv-faq" id="faq">
