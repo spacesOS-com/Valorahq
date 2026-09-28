@@ -11,7 +11,7 @@ the reader to talk with an advisor about their own situation.
 """
 from html import escape
 
-from partials import page, head, BRAND, contact_section, EMAIL
+from partials import page, head, BRAND, SITE_URL, contact_section, EMAIL, article_schema
 
 AUTHOR = "Bhavya Barot"
 PUBLISHED = "2026-09-28"
@@ -250,10 +250,20 @@ def _article_body(a):
 
 def build_insights_pages(write_fn):
     for a in ARTICLES:
+        url = f"{SITE_URL}/insights/{a['slug']}/"
+        schema = article_schema(
+            headline=a["title"],
+            description=a["summary"],
+            url=url,
+            date_published=PUBLISHED,
+            author_name=AUTHOR,
+            image=a["image"],
+        )
         html = page(
             head(f"{a['title']} | {BRAND} Insights",
                  a["summary"],
-                 path=f"/insights/{a['slug']}/"),
+                 path=f"/insights/{a['slug']}/",
+                 schema=schema),
             _article_body(a),
             with_gate=True,
         )
