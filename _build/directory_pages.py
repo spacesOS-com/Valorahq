@@ -271,24 +271,26 @@ def build_cities_index(write_fn):
     write_fn("/cities/", html)
 
 
-def build_specialties_index(write_fn):
-    """/specialties/ — every specialty, profession, and asset-type page in
-    one place, so the footer can show a handful of each plus "More" here."""
-    def _cols(title, items):
-        links = "".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>'
-                         for slug, label in items)
-        return f'<div class="dir-index__col"><h3>{escape(title)}</h3><ul>{links}</ul></div>'
+def _item_placeholder(label):
+    """A placeholder mark for a directory item — an abstract category (a
+    specialty or profession, not a place), so an initial-letter mark is
+    honest here in a way a stock photo wouldn't be (see _city_mark)."""
+    initial = label.strip()[:1].upper() or "?"
+    return f'<span class="item-card__mark" aria-hidden="true">{escape(initial)}</span>'
 
+
+def _single_column_index(write_fn, slug, eyebrow_title, items):
+    cards = "".join(
+        f'<a class="item-card" href="/find-a-financial-advisor/{s}/">{_item_placeholder(l)}<span>{escape(l)}</span></a>'
+        for s, l in items
+    )
     body = f"""
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
     <p class="eyebrow reveal">Directory</p>
-    <h1 class="display display--lg reveal">Find a financial advisor by specialty</h1>
-    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:60ch;">Browse advisors by specialty, profession, or investable-asset range.</p>
-    <div class="dir-index" style="margin-top:40px;">
-      {_cols("Specialties", [(s, l) for s, l, _ in SPECIALTIES])}
-      {_cols("Professions", NICHES)}
-      {_cols("Asset types", ASSET_TYPES)}
+    <h1 class="display display--lg reveal">Find a financial advisor by {eyebrow_title.lower()}</h1>
+    <div class="item-grid" style="margin-top:40px;">
+      {cards}
     </div>
   </div>
 </section>
@@ -296,9 +298,24 @@ def build_specialties_index(write_fn):
 {contact_section()}
 """
     html = page(
-        head(f"Financial Advisors by Specialty | {BRAND}",
-             "Browse independent, fiduciary financial advisors on Valora by specialty, profession, or asset range.",
-             path="/specialties/"),
+        head(f"Financial Advisors by {eyebrow_title} | {BRAND}",
+             f"Browse independent, fiduciary financial advisors on Valora by {eyebrow_title.lower()}.",
+             path=f"/{slug}/"),
         body,
     )
-    write_fn("/specialties/", html)
+    write_fn(f"/{slug}/", html)
+
+
+def build_specialties_index(write_fn):
+    """/specialties/ — specialty pages only."""
+    _single_column_index(write_fn, "specialties", "Specialty", [(s, l) for s, l, _ in SPECIALTIES])
+
+
+def build_professions_index(write_fn):
+    """/professions/ — profession (niche) pages only."""
+    _single_column_index(write_fn, "professions", "Profession", NICHES)
+
+
+def build_asset_types_index(write_fn):
+    """/asset-types/ — asset-range pages only."""
+    _single_column_index(write_fn, "asset-types", "Asset Range", ASSET_TYPES)

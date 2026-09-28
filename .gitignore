@@ -8,6 +8,7 @@ _shot*.html
 # none of it needs to be committed. Run the build script locally to
 # regenerate these for local preview.
 /advisors/
+/asset-types/
 /calculators/
 /cities/
 /cookies/
@@ -20,6 +21,7 @@ _shot*.html
 /guides/
 /insights/
 /privacy/
+/professions/
 /specialties/
 /team/
 /terms/
