@@ -283,7 +283,7 @@ def footer():
     </div>
 
     <div class="footer__base">
-      <p>© <span id="year">2026</span> {BRAND}. {BRAND} is an independent platform that provides financial education and helps consumers discover financial advisors. {BRAND} does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay {BRAND} for access to the platform or for introductions to prospective clients.</p>
+      <p>© <span id="year">2026</span> SpacesOS Inc. Valora is a SpacesOS Inc. product. {BRAND} is an independent platform that provides financial education and helps consumers discover financial advisors. {BRAND} does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay {BRAND} for access to the platform or for introductions to prospective clients.</p>
     </div>
   </div>
 </footer>
