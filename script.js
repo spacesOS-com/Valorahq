@@ -721,6 +721,8 @@
   function gate() {
     var g = $('#gate');
     if (!g) return;
+    /* inside a calculator embed iframe, never auto-open or mark seen */
+    var EMBED = new URLSearchParams(location.search).get('embed') === '1';
 
     var f = $('#gateForm', g);
     var closing;
@@ -778,7 +780,7 @@
     var SEEN_KEY = 'vz_gate_seen_v1';
     function hasSeen() { try { return !!localStorage.getItem(SEEN_KEY); } catch (e) { return true; } }
     function markSeen() { try { localStorage.setItem(SEEN_KEY, '1'); } catch (e) {} }
-    if (!hasSeen()) {
+    if (!EMBED && !hasSeen()) {
       var fired = false;
       function fire() {
         if (fired) return;
@@ -857,6 +859,32 @@
   }
 
   /* ---------------------------------------------------------
+     16b. Calculator embed mode: ?embed=1 strips chrome inside the
+     iframe and posts height to the parent; parent pages resize
+     their calculator iframes on message.
+     --------------------------------------------------------- */
+  function calcEmbed() {
+    if (new URLSearchParams(location.search).get('embed') === '1') {
+      document.body.classList.add('embed-mode');
+      var post = function () {
+        try { parent.postMessage({ vzCalcEmbedHeight: document.documentElement.scrollHeight }, location.origin); } catch (e) {}
+      };
+      window.addEventListener('load', function () { post(); setTimeout(post, 600); });
+      document.addEventListener('input', function () { setTimeout(post, 80); });
+    }
+    window.addEventListener('message', function (e) {
+      if (e.origin !== location.origin) return;
+      var h = e.data && e.data.vzCalcEmbedHeight;
+      if (!h) return;
+      $$('iframe[data-calc-embed]').forEach(function (ifr) {
+        if (ifr.contentWindow === e.source) {
+          ifr.style.height = Math.min(h + 24, 2400) + 'px';
+        }
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
      17. Advisor Pipeline Simulator (advisors.html)
      --------------------------------------------------------- */
   function advisorPipeline() {
@@ -899,6 +927,7 @@
     rotator();
     gate();
     activeLink();
+    calcEmbed();
     misc();
     advisorRoiCalc();
     advisorPipeline();

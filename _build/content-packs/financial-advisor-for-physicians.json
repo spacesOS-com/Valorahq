@@ -84,5 +84,17 @@
     "practice ownership",
     "physician mortgage"
   ],
+  "calculators": {
+    "primary": {
+      "type": "new_build",
+      "name": "PSLF scenario explorer",
+      "spec": "calculator-specs-niche.md",
+      "status": "conditionally QA-approved, in build"
+    },
+    "related_links": [
+      "https://www.valorahq.com/calculators/retirement-savings-growth/",
+      "https://www.valorahq.com/calculators/safe-withdrawal-amount/"
+    ]
+  },
   "status": "approved"
 }

@@ -1970,3 +1970,24 @@ body.gate-open{ overflow:hidden; }
 .content-page__related-card{ display:flex; align-items:center; justify-content:space-between; gap:16px; border:1px solid var(--line); border-radius:12px; padding:16px 20px; font-size:.95rem; color:var(--ink); transition:border-color .2s ease, background .2s ease; }
 .content-page__related-card:hover{ border-color:var(--gold); background:var(--cream); }
 .content-page__related-arrow{ color:var(--gold); font-size:1.05rem; flex:none; }
+
+/* =========================================================
+   CALCULATOR EMBED (niche pages) + embed-mode chrome strip
+   ========================================================= */
+body.embed-mode .site-header,
+body.embed-mode .footer,
+body.embed-mode .gate,
+body.embed-mode .curtain,
+body.embed-mode #contact,
+body.embed-mode .btn--outline { display:none !important; }
+body.embed-mode .section { padding-top:24px; padding-bottom:24px; }
+
+.calc-block{ margin:44px 0; padding:30px 28px; background:var(--paper,#fff); border:1px solid var(--line,#e3e0d8); border-radius:8px; }
+.calc-block__eyebrow{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted,#6b6b60); margin:0 0 6px; }
+.calc-block__title{ font-family:var(--serif,serif); font-size:1.4rem; margin:0 0 6px; }
+.calc-block__sub{ font-size:.92rem; color:var(--ink-soft,#4a4a42); margin:0 0 18px; max-width:60ch; }
+.calc-block iframe{ width:100%; border:0; min-height:560px; display:block; }
+.calc-block__links{ margin:18px 0 0; font-size:.9rem; }
+.calc-block__links ul{ margin:6px 0 0; padding-left:18px; }
+.calc-block__links li{ margin:2px 0; }
+.calc-block__cta{ margin-top:18px; }

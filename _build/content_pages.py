@@ -24,6 +24,7 @@ import os
 import re
 
 from partials import page, head, faq_schema, faq_block, contact_section, escape, BRAND
+from calculator_pages import CALCULATORS
 
 PACK_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "content-packs")
 
@@ -100,6 +101,50 @@ def _inline_cta(cta):
     </div>"""
 
 
+_CALC_TITLES = {c["slug"]: c["title"] for c in CALCULATORS}
+
+
+def _calc_link_label(url):
+    slug = url.rstrip("/").rsplit("/", 1)[-1]
+    return _CALC_TITLES.get(slug, slug.replace("-", " ").capitalize())
+
+
+def _calculators(pack):
+    """Standing founder rule: every profession/specialty page ships its related
+    calculator. Existing calculators embed via iframe (?embed=1); new_build
+    primaries render their related links until the build ships. The block
+    always carries the book-a-call CTA (opens the gate popup)."""
+    calc = pack.get("calculators")
+    if not calc:
+        return ""
+    prim = calc.get("primary") or {}
+    embed_url = ""
+    if prim.get("type") == "existing":
+        embed_url = prim.get("url") or ("/calculators/%s/" % prim["slug"] if prim.get("slug") else "")
+        if embed_url.startswith("/"):
+            embed_url = "https://www.valorahq.com" + embed_url
+    name = prim.get("name") or (_calc_link_label(embed_url) if embed_url else "Calculator")
+    iframe = ""
+    if embed_url:
+        iframe = (f'<iframe src="{escape(embed_url)}?embed=1" loading="lazy" '
+                  f'title="{escape(name)}" data-calc-embed></iframe>')
+    links = "".join(
+        f'<li><a href="{escape(u)}">{escape(_calc_link_label(u))}</a></li>'
+        for u in (calc.get("related_links") or [])
+    )
+    links_html = (f'<div class="calc-block__links">Related calculators:<ul>{links}</ul></div>'
+                  if links else "")
+    return f"""
+<aside class="calc-block" id="calculator">
+  <p class="calc-block__eyebrow">Calculator</p>
+  <h3 class="calc-block__title">Try it: {escape(name)}</h3>
+  <p class="calc-block__sub">Illustrative estimates only - your real numbers depend on your full picture.</p>
+  {iframe}
+  {links_html}
+  <p class="calc-block__cta"><a class="btn btn--dark" href="/#contact" data-gate-open>Book a call with an advisor</a></p>
+</aside>"""
+
+
 def _process_body(pack):
     """Add h2 anchor ids, inject inline CTAs at the end of their named sections.
     Returns (processed_html, toc_items)."""
@@ -127,7 +172,17 @@ def _process_body(pack):
     for key in ctas:
         if key not in matched:
             print(f"WARNING: inline_cta target '{key}' not found in {pack['slug']} body h2s - dropped")
-    return "".join(out), toc
+    body = "".join(out)
+    calc_block = _calculators(pack)
+    if calc_block:
+        # mid-content: insert before the h2 that starts the second half
+        h2_pos = [m.start() for m in re.finditer(r"<h2[ >]", body)]
+        if len(h2_pos) >= 3:
+            at = h2_pos[len(h2_pos) // 2]
+            body = body[:at] + calc_block + body[at:]
+        else:
+            body += calc_block
+    return body, toc
 
 
 def load_packs():

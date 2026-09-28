@@ -83,5 +83,16 @@
     "concentrated stock",
     "tax planning"
   ],
+  "calculators": {
+    "primary": {
+      "type": "existing",
+      "slug": "rsu-withholding-shortfall"
+    },
+    "related_links": [
+      "https://www.valorahq.com/calculators/iso-exercise-cost/",
+      "https://www.valorahq.com/calculators/concentration-diversification-timeline/",
+      "https://www.valorahq.com/calculators/401k-contribution-limit/"
+    ]
+  },
   "status": "approved"
 }

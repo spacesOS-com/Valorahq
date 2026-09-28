@@ -84,5 +84,17 @@
     "concentrated wealth",
     "retirement planning"
   ],
+  "calculators": {
+    "primary": {
+      "type": "new_build",
+      "name": "QSBS issue spotter",
+      "spec": "calculator-specs-niche.md",
+      "status": "spec in QA revision"
+    },
+    "related_links": [
+      "https://www.valorahq.com/calculators/capital-gains-tax-estimate/",
+      "https://www.valorahq.com/calculators/roth-conversion-tax-cost/"
+    ]
+  },
   "status": "approved"
 }
