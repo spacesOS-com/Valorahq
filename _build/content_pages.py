@@ -145,6 +145,27 @@ def _calculators(pack):
 </aside>"""
 
 
+_TEAM_BIOS = {
+  "Lena": "<p>Lena researches and writes everything you can read on Valora: the guides, the articles, and the niche pages that explain what a financial advisor actually does for your specific profession. The job is equal parts research, writing, and cheerfully deleting the third draft. If a page on this site taught you something, it started on Lena's desk - and if it reads like it was written by someone who has now thought deeply about the finances of forty-nine different professions, that's because she has.</p>",
+  "Mira": "<p>Mira reviews every piece of content before it ships: the facts, the sources, and whether the rules it cites are still the rules. She is the reason a Valora page says \"conditions apply\" instead of \"trust us.\" Nothing reaches you without her pass, and she has never once said \"looks fine\" on the first read - which is exactly the point of her. Our accuracy record is her personality, institutionalized.</p>",
+  "Sam": "<p>Sam builds and runs valorahq.com: the pages, the calculators, and the machinery that keeps them fast, findable, and honest about what they can't do. He turns approved specs into working tools and takes it personally when a page loads slowly. If a calculator on this site gave you a straight answer at 1am, thank Sam - he was probably awake too.</p>",
+  "Owen": "<p>Owen leads Valora's growth and partnership work: the relationships that put Valora in front of more of the people it can help, and the collaborations that make the product better. His calendar is a masterclass in time zones, and his definition of a good meeting is one that ends with a next step.</p>",
+  "Arjun": "<p>Arjun leads Valora's AI search work - how Valora shows up when people ask AI assistants and search engines their money questions. Search changed, so his job exists: making sure the answers people get are ones we'd be proud to have written. He thinks about how machines read so that humans get better answers. Someone had to.</p>",
+  "Ethan": "<p>Ethan runs Valora's outbound work, connecting with advisors and partners who should know what we're building. He does the reaching out so the right people hear about Valora from an actual human - well, from Ethan, which is close enough and far more consistent.</p>",
+  "Iris": "<p>Iris manages Valora's podcast and media outreach: getting Valora's work and point of view into the conversations people are already listening to. She knows which shows your commute depends on and how to get a good answer into them.</p>",
+  "Clara": "<p>Clara keeps the team's operations running day to day: the schedules, the systems, and the hundred small decisions that nobody notices until they go wrong. They don't go wrong. That's the job, and she's why the rest of this page gets to focus on theirs.</p>",
+  "Jordan": "<p>Jordan coordinates work across the team and keeps projects moving: priorities, handoffs, and the gentle art of asking \"what's the status?\" until there is one. If two parts of this site feel like they were made by the same company, Jordan is a large part of why.</p>",
+  "Rina": "<p>Rina leads consumer growth: how people find Valora and how the product serves them once they arrive. She pays attention to what real people actually do - as opposed to what we assumed they'd do - and makes us better on the difference.</p>",
+  "Elena": "<p>Elena runs the Office of the Founder - the calendar, the inbox, and the hundred small decisions that keep the founder's day pointed at the work that matters.</p>",
+  "Evelyn": "<p>Evelyn owns Valora's press relationships - getting the story placed, spelled right, and in front of people who actually read it.</p>",
+  "Sofia": "<p>Sofia works the earned-media beat: pitches, quotes, and follow-ups that turn Valora's data and point of view into coverage.</p>",
+  "Miles": "<p>Miles books the podcasts - finding the shows advisors and their clients actually listen to, and getting Valora's people on them.</p>",
+  "Noah": "<p>Noah looks after Valora's subreddit - answering questions, keeping the room useful, and never letting it turn into an ad.</p>",
+  "Amara": "<p>Amara owns Valora's Quora presence - real answers to real money questions, written to be read, not to rank.</p>",
+  "Ava": "<p>Ava runs the Facebook community - the group where people swap advisor stories and ask the questions they'd never ask in an office.</p>"
+}
+
+
 def _team_extended(pack, body_html):
     """Grouped extended-team roster (extended_team array: name, title, grouping,
     order, avatar). Replaces the flat roster blocks after h2 'The team' with the
@@ -162,11 +183,12 @@ def _team_extended(pack, body_html):
         members = sorted((e for e in et if e["grouping"] == g), key=lambda e: e.get("order", 999))
         for e in members:
             stem = e["avatar"].rsplit(".", 1)[0]
+            bio = _TEAM_BIOS.get(e["name"].split()[0], "")
             out.append(
                 f'<div class="team-member"><img class="team-member__avatar" src="/assets/{escape(stem)}.jpg" '
                 f'alt="Illustrated avatar of {escape(e["name"])}" loading="lazy" width="72" height="72">'
                 f'<div class="team-member__text"><h3>{escape(e["name"])}</h3>'
-                f'<p class="team-member__role">{escape(e["title"])}</p></div></div>')
+                f'<p class="team-member__role">{escape(e["title"])}</p>{bio}</div></div>')
     # keep everything through the closing </h2> of "The team", drop the old roster
     m = re.search(r"<h2[^>]*>\s*The team\s*</h2>", body_html, flags=re.I)
     if not m:
