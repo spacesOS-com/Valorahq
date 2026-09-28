@@ -9,6 +9,14 @@ Valora — Your money has a purpose
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -19,7 +27,7 @@ Valora — Your money has a purpose
  has a purpose. 
  Let's make sure it serves you. 
 
- Tell us what kind of financial advice you need. We review each request by hand and, where we have a suitable advisor available, help you take the next step. You choose whether to contact an advisor. Valora does not provide investment advice. 
+ Tell us what kind of financial advice you need. We review each request by hand and, where we have a suitable advisor available, help you take the next step. You choose whether to contact an advisor. 
 
  Find your advisor 
  I'm an advisor 
@@ -122,6 +130,26 @@ Valora — Your money has a purpose
  02 Tell us where you want to go. The goals, the timeline and the parts you are unsure about. 
  03 Browse advisors by specialty and client type. Explore detailed profiles to learn about each advisor's experience, approach, and areas of expertise. 
  04 Explore their profiles. Decide when you're ready. Contact only the advisors you choose — no obligation at any point. 
+
+ James Conole, CFP® Founder · Root Financial 
+
+ Works with people who are within about ten years of retirement and want a clear plan for getting there. 
+ Pre-retirement Retirement planning 
+
+ Kevin Lum, CFP® Foundry Financial 
+
+ Host of Retirement Made Simple, focused on making retirement decisions clear and straightforward. 
+ Retirement planning Retirement income 
+
+ Eric, CFP® The PeakFP 
+
+ A CERTIFIED FINANCIAL PLANNER™ professional specializing in retirement income planning. 
+ Retirement income Withdrawal strategy 
+
+ Even Better Retirement Retirement planning 
+
+ &#8220;You saved money for a lifetime, now it&#8217;s time to have fun.&#8221; 
+ Retirement lifestyle Spending plans 
 
  People who know the numbers. And remember the person behind them. 
 
@@ -239,7 +267,7 @@ Valora — Your money has a purpose
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -252,10 +280,10 @@ Valora — Your money has a purpose
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -330,6 +358,14 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -479,16 +515,16 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  We publish the playbook we use to get you clients. 
  Valora's own content on getting advisory firms recommended by ChatGPT, Perplexity, and AI search — the same approach behind how we get your firm in front of prospective clients. 
 
- Lead generation strategies for financial advisors: what each one really costs 
- Referrals convert but don&#x27;t scale. Social posting has the worst measured cost per client in the industry; SEO and educational content quietly win. What each lead generation strategy actually costs, per Kitces data. 
+ What should a financial advisor put on an About page? 
+ A useful advisor About page answers five questions plainly: who works at the firm, whom it helps, what they do, how the firm is paid, and what comes next. 
  Read on the blog → 
 
- Viral Coach alternatives: 6 advisor marketing firms compared on what you actually get 
- Six advisor marketing firms, six different products. One sells views, one sells video, one sells a system you run, one sells a marketing department, one sells LinkedIn conversations, one sells strategy. Public pricing, honest limits, and the questions that cut through every deck. 
+ How can an RIA measure referral source quality? 
+ Judge a referral source by the fit and progress of the people it sends, not raw counts: define a qualified introduction, track each stage, and count your time. 
  Read on the blog → 
 
- How to evaluate a marketing firm for your advisory firm: 5 questions that separate qualified prospects from vanity metrics 
- An advisor evaluating six marketing firms asked the right questions - and most firms can&#x27;t answer them. The five questions that separate qualified prospects from vanity metrics, and what a good answer sounds like. 
+ How should a financial adviser choose a niche? 
+ Choose an adviser niche by matching a group to real planning decisions, testing its needs in conversations, and making only claims your firm can support. 
  Read on the blog → 
 
  View more 
@@ -518,7 +554,7 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -531,10 +567,10 @@ For Advisors | Valora — Practice Growth &amp; Infrastructure Platform
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑
 
@@ -550,6 +586,14 @@ Find Your Advisor | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -608,6 +652,55 @@ Find Your Advisor | Valora
 
  Independent advice. Personal fit. 
 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
+ Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
+ Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+ Calculators Retirement Taxes Social Security Equity Compensation Investing Banking 
+
+ Valora 
+
+ An independent platform helping people discover financial advisors. 
+
+ barot@valorahq.com 
+
+ Company Our approach Find an advisor For advisors Team Insights 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
+ Legal Terms Privacy Cookies 
+
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+
+ ↑
+
+---
+
+# https://www.valorahq.com/guides/
+Financial advice guides for tech employees, physicians and business owners.
+
+Financial advice guides | Valora 
+
+ V ">
+
+ Skip to content 
+
+ Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
+ For advisors 
+
+ Find an advisor 
+
+ Financial advice Guides to finding financial advice Explore guides for different careers and financial questions. Read the guide that fits, then decide whether to contact an advisor. Financial advisors for tech employees Read guide &rarr; Financial advisors for physicians Read guide &rarr; Financial advisors for business owners Read guide &rarr; Find an advisor 
+
+ Independent advice. Personal fit. 
+
  Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
@@ -621,12 +714,71 @@ Find Your Advisor | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
- ↑
+ ↑ 
+
+ Free · No obligation 
+
+ Explore advisors who may fit your needs. 
+
+ Answer a few questions to find advisors who match your needs.
+
+ Step 1 of 4 
+
+ What are you looking for help with? 
+ Select all that apply 
+
+ Managing investments 
+ Retirement planning 
+ Selling a business 
+ Business owner wealth planning 
+ Tax planning 
+ Estate planning 
+ Concentrated stock 
+ Inheritance / sudden wealth 
+ Cash / liquidity management 
+ Other 
+
+ Continue 
+ I'm just looking 
+
+ Step 2 of 4 
+
+ Approximately how much do you have in investable assets? 
+ Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+
+ What best describes your situation? 
+ Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
+
+ Back 
+ Continue 
+
+ Step 3 of 4 
+
+ Full name 
+
+ Email 
+
+ Phone number 
+
+ Back 
+ Continue 
+
+ Step 4 of 4 
+
+ What would you like help with? 
+ Optional 
+
+ Back 
+ Explore advisors 
+
+ Thank you. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
+ Explore the site
 
 ---
 
@@ -640,6 +792,14 @@ James Conole, CFP® | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -705,7 +865,7 @@ James Conole, CFP® | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -718,10 +878,10 @@ James Conole, CFP® | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -797,6 +957,14 @@ Kevin Lum, CFP® | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -861,7 +1029,7 @@ Kevin Lum, CFP® | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -874,10 +1042,10 @@ Kevin Lum, CFP® | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -953,6 +1121,14 @@ Eric, CFP® | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -1017,7 +1193,7 @@ Eric, CFP® | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1030,10 +1206,10 @@ Eric, CFP® | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -1109,6 +1285,14 @@ Even Better Retirement | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -1173,7 +1357,7 @@ Even Better Retirement | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1186,10 +1370,10 @@ Even Better Retirement | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -1264,6 +1448,14 @@ Retirement planning Advisors | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -1355,7 +1547,7 @@ Retirement planning Advisors | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1368,177 +1560,10 @@ Retirement planning Advisors | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
-
- ↑ 
-
- Free · No obligation 
-
- Explore advisors who may fit your needs. 
-
- Answer a few questions to find advisors who match your needs.
-
- Step 1 of 4 
-
- What are you looking for help with? 
- Select all that apply 
-
- Managing investments 
- Retirement planning 
- Selling a business 
- Business owner wealth planning 
- Tax planning 
- Estate planning 
- Concentrated stock 
- Inheritance / sudden wealth 
- Cash / liquidity management 
- Other 
-
- Continue 
- I'm just looking 
-
- Step 2 of 4 
-
- Approximately how much do you have in investable assets? 
- Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
-
- What best describes your situation? 
- Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
-
- Back 
- Continue 
-
- Step 3 of 4 
-
- Full name 
-
- Email 
-
- Phone number 
-
- Back 
- Continue 
-
- Step 4 of 4 
-
- What would you like help with? 
- Optional 
-
- Back 
- Explore advisors 
-
- Thank you. 
- After you submit, we review your request and email you about next steps. Timing may vary. 
- Explore the site
-
----
-
-# https://www.valorahq.com/find-a-financial-advisor/austin/
-Financial advisors in Austin, TX on Valora.
-
-Financial Advisors in Austin, TX | Valora 
-
- V ">
-
- Skip to content 
-
- Valora 
-
- For advisors 
-
- Find an advisor 
-
- Austin, TX 
- Financial advisors in Austin, TX 
- Independent, fiduciary financial advisors based in Austin, TX. 
-
- James Conole, CFP® Founder · Root Financial 
-
- Works with people who are within about ten years of retirement and want a clear plan for getting there. 
- Pre-retirement Retirement planning 
-
- Related tools 
- Retirement calculators Taxes calculators Social Security calculators Equity Compensation calculators Investing calculators Banking calculators 
-
- Common questions 
- How do I find a good financial advisor in Austin? Start with fiduciary, fee-transparent advisors who work with situations like yours - Austin&#x27;s mix of tech equity, business owners, and relocations means relevant experience varies a lot. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site, interview two or three, and compare full fee quotes in dollars. 
- What does a financial advisor in Austin typically cost? Common models: a percentage of assets managed, flat annual planning fees, or hourly. Ask each advisor for their total cost at your asset level in dollars per year. Prices in Austin track national norms more than local ones - what varies is the service behind the fee. 
- Do Austin advisors work with tech employees and equity compensation? Many do - it&#x27;s one of the city&#x27;s defining client profiles. Ask specifically about RSU strategy, option exercise planning, ESPP, and concentrated employer stock, and whether they&#x27;ve worked with employees of your company or similar ones. 
- Does Texas having no state income tax change the advice I need? It shifts planning emphasis: no state tax means Roth conversions and capital gains decisions are federal-only calculations, and property taxes and federal deduction caps matter more. If you relocated from a high-tax state, timing income across the move year is a real planning item. 
- Can I work with an advisor who isn&#x27;t based in Austin? Yes - most advisory relationships work fine remotely, and some people prefer a specialist over a local generalist. Local knowledge matters most for Texas-specific items like property tax and homestead rules, which any Texas-savvy advisor handles. 
-
- Let's build a financial life that feels like yours. 
- Answer a few questions to find advisors who match your needs. 
-
- Step 1 of 4 
- What are you looking for help with? 
- Select all that apply 
-
- Managing investments 
- Retirement planning 
- Selling a business 
- Business owner wealth planning 
- Tax planning 
- Estate planning 
- Concentrated stock 
- Inheritance / sudden wealth 
- Cash / liquidity management 
- Other 
-
- Continue 
-
- Step 2 of 4 
- Approximately how much do you have in investable assets? 
- Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
-
- What best describes your situation? 
- Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
-
- Back 
- Continue 
-
- Step 3 of 4 — where should advisors reach you? 
-
- Full name 
-
- Email 
-
- Phone number 
-
- Back 
- Continue 
-
- Step 4 of 4 
- What would you like help with? 
- Optional 
-
- Back 
- Explore advisors 
-
- Find your advisor &rarr; 
-
- Independent advice. Personal fit. 
-
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
- Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
- Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
- Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
- Calculators Retirement Taxes Social Security Equity Compensation Investing Banking 
-
- Valora 
-
- An independent platform helping people discover financial advisors. 
-
- barot@valorahq.com 
-
- Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
- Legal Terms Privacy Cookies 
-
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -1613,6 +1638,14 @@ Financial Advisors in Los Angeles, CA | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -1689,7 +1722,7 @@ Financial Advisors in Los Angeles, CA | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1702,10 +1735,10 @@ Financial Advisors in Los Angeles, CA | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -1770,10 +1803,10 @@ Financial Advisors in Los Angeles, CA | Valora
 
 ---
 
-# https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/
-Retirement planning advisors in Austin, TX on Valora.
+# https://www.valorahq.com/find-a-financial-advisor/austin/
+Financial advisors in Austin, TX on Valora.
 
-Retirement planning Advisors in Austin, TX | Valora 
+Financial Advisors in Austin, TX | Valora 
 
  V ">
 
@@ -1781,13 +1814,21 @@ Retirement planning Advisors in Austin, TX | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
 
- Austin, TX · Retirement planning 
- Retirement planning advisors in Austin, TX 
- Independent advisors on Valora who specialize in retirement planning and are based in Austin, TX. 
+ Austin, TX 
+ Financial advisors in Austin, TX 
+ Independent, fiduciary financial advisors based in Austin, TX. 
 
  James Conole, CFP® Founder · Root Financial 
 
@@ -1795,14 +1836,14 @@ Retirement planning Advisors in Austin, TX | Valora
  Pre-retirement Retirement planning 
 
  Related tools 
- Retirement calculators 
+ Retirement calculators Taxes calculators Social Security calculators Equity Compensation calculators Investing calculators Banking calculators 
 
  Common questions 
- How do I find a retirement planning advisor in Austin? Look for fiduciary advisors whose core work is retirement transitions - withdrawal strategy, Social Security timing, Roth conversions - not just investment management. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site and interview two or three with your actual numbers. 
- Does Texas being tax-free change retirement planning? Yes, helpfully: Texas taxes no retirement income, so withdrawal sequencing and Roth conversion decisions are federal-only math. Retirees relocating from high-tax states should plan the move-year carefully - income recognized before versus after establishing Texas residency is taxed very differently. 
- When should an Austin retiree start Roth conversions? The window between retirement and required minimum distributions is usually the sweet spot: lower income years let you convert at lower federal brackets with no state tax layer at all. The right amount each year depends on your bracket, IRMAA exposure, and other income. 
- What does retirement planning cost in Austin? Flat-fee retirement plans, percentage-of-assets relationships, and hourly engagements all exist locally. For a one-time plan, expect a flat project fee; ongoing management is usually asset-based. Get the total in dollars and what&#x27;s included before comparing. 
- Can I do retirement planning with an advisor who isn&#x27;t in Austin? Yes - the work is numbers, not geography. What matters is fluency in Texas&#x27;s tax picture (simple) and the federal retirement rules (identical everywhere). Choose on expertise and fee, not ZIP code. 
+ How do I find a good financial advisor in Austin? Start with fiduciary, fee-transparent advisors who work with situations like yours - Austin&#x27;s mix of tech equity, business owners, and relocations means relevant experience varies a lot. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site, interview two or three, and compare full fee quotes in dollars. 
+ What does a financial advisor in Austin typically cost? Common models: a percentage of assets managed, flat annual planning fees, or hourly. Ask each advisor for their total cost at your asset level in dollars per year. Prices in Austin track national norms more than local ones - what varies is the service behind the fee. 
+ Do Austin advisors work with tech employees and equity compensation? Many do - it&#x27;s one of the city&#x27;s defining client profiles. Ask specifically about RSU strategy, option exercise planning, ESPP, and concentrated employer stock, and whether they&#x27;ve worked with employees of your company or similar ones. 
+ Does Texas having no state income tax change the advice I need? It shifts planning emphasis: no state tax means Roth conversions and capital gains decisions are federal-only calculations, and property taxes and federal deduction caps matter more. If you relocated from a high-tax state, timing income across the move year is a real planning item. 
+ Can I work with an advisor who isn&#x27;t based in Austin? Yes - most advisory relationships work fine remotely, and some people prefer a specialist over a local generalist. Local knowledge matters most for Texas-specific items like property tax and homestead rules, which any Texas-savvy advisor handles. 
 
  Let's build a financial life that feels like yours. 
  Answer a few questions to find advisors who match your needs. 
@@ -1856,7 +1897,7 @@ Retirement planning Advisors in Austin, TX | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -1869,10 +1910,10 @@ Retirement planning Advisors in Austin, TX | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -1947,6 +1988,14 @@ Retirement planning Advisors in Los Angeles, CA | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -2023,7 +2072,7 @@ Retirement planning Advisors in Los Angeles, CA | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2036,10 +2085,185 @@ Retirement planning Advisors in Los Angeles, CA | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+
+ ↑ 
+
+ Free · No obligation 
+
+ Explore advisors who may fit your needs. 
+
+ Answer a few questions to find advisors who match your needs.
+
+ Step 1 of 4 
+
+ What are you looking for help with? 
+ Select all that apply 
+
+ Managing investments 
+ Retirement planning 
+ Selling a business 
+ Business owner wealth planning 
+ Tax planning 
+ Estate planning 
+ Concentrated stock 
+ Inheritance / sudden wealth 
+ Cash / liquidity management 
+ Other 
+
+ Continue 
+ I'm just looking 
+
+ Step 2 of 4 
+
+ Approximately how much do you have in investable assets? 
+ Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+
+ What best describes your situation? 
+ Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
+
+ Back 
+ Continue 
+
+ Step 3 of 4 
+
+ Full name 
+
+ Email 
+
+ Phone number 
+
+ Back 
+ Continue 
+
+ Step 4 of 4 
+
+ What would you like help with? 
+ Optional 
+
+ Back 
+ Explore advisors 
+
+ Thank you. 
+ After you submit, we review your request and email you about next steps. Timing may vary. 
+ Explore the site
+
+---
+
+# https://www.valorahq.com/find-a-financial-advisor/austin-retirement-planning/
+Retirement planning advisors in Austin, TX on Valora.
+
+Retirement planning Advisors in Austin, TX | Valora 
+
+ V ">
+
+ Skip to content 
+
+ Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
+ For advisors 
+
+ Find an advisor 
+
+ Austin, TX · Retirement planning 
+ Retirement planning advisors in Austin, TX 
+ Independent advisors on Valora who specialize in retirement planning and are based in Austin, TX. 
+
+ James Conole, CFP® Founder · Root Financial 
+
+ Works with people who are within about ten years of retirement and want a clear plan for getting there. 
+ Pre-retirement Retirement planning 
+
+ Related tools 
+ Retirement calculators 
+
+ Common questions 
+ How do I find a retirement planning advisor in Austin? Look for fiduciary advisors whose core work is retirement transitions - withdrawal strategy, Social Security timing, Roth conversions - not just investment management. Verify registration on the SEC&#x27;s Investment Adviser Public Disclosure site and interview two or three with your actual numbers. 
+ Does Texas being tax-free change retirement planning? Yes, helpfully: Texas taxes no retirement income, so withdrawal sequencing and Roth conversion decisions are federal-only math. Retirees relocating from high-tax states should plan the move-year carefully - income recognized before versus after establishing Texas residency is taxed very differently. 
+ When should an Austin retiree start Roth conversions? The window between retirement and required minimum distributions is usually the sweet spot: lower income years let you convert at lower federal brackets with no state tax layer at all. The right amount each year depends on your bracket, IRMAA exposure, and other income. 
+ What does retirement planning cost in Austin? Flat-fee retirement plans, percentage-of-assets relationships, and hourly engagements all exist locally. For a one-time plan, expect a flat project fee; ongoing management is usually asset-based. Get the total in dollars and what&#x27;s included before comparing. 
+ Can I do retirement planning with an advisor who isn&#x27;t in Austin? Yes - the work is numbers, not geography. What matters is fluency in Texas&#x27;s tax picture (simple) and the federal retirement rules (identical everywhere). Choose on expertise and fee, not ZIP code. 
+
+ Let's build a financial life that feels like yours. 
+ Answer a few questions to find advisors who match your needs. 
+
+ Step 1 of 4 
+ What are you looking for help with? 
+ Select all that apply 
+
+ Managing investments 
+ Retirement planning 
+ Selling a business 
+ Business owner wealth planning 
+ Tax planning 
+ Estate planning 
+ Concentrated stock 
+ Inheritance / sudden wealth 
+ Cash / liquidity management 
+ Other 
+
+ Continue 
+
+ Step 2 of 4 
+ Approximately how much do you have in investable assets? 
+ Select one Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+
+ What best describes your situation? 
+ Select one Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder Other 
+
+ Back 
+ Continue 
+
+ Step 3 of 4 — where should advisors reach you? 
+
+ Full name 
+
+ Email 
+
+ Phone number 
+
+ Back 
+ Continue 
+
+ Step 4 of 4 
+ What would you like help with? 
+ Optional 
+
+ Back 
+ Explore advisors 
+
+ Find your advisor &rarr; 
+
+ Independent advice. Personal fit. 
+
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
+ Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
+ Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
+ Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
+ Calculators Retirement Taxes Social Security Equity Compensation Investing Banking 
+
+ Valora 
+
+ An independent platform helping people discover financial advisors. 
+
+ barot@valorahq.com 
+
+ Company Our approach Find an advisor For advisors Team Insights 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
+ Legal Terms Privacy Cookies 
+
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -2115,6 +2339,14 @@ What a realistic withdrawal rate looks like now | Valora Insights
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -2179,7 +2411,7 @@ What a realistic withdrawal rate looks like now | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2192,10 +2424,10 @@ What a realistic withdrawal rate looks like now | Valora Insights
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -2271,6 +2503,14 @@ The conversation every family should have before retirement | Valora Insights
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -2335,7 +2575,7 @@ The conversation every family should have before retirement | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2348,10 +2588,10 @@ The conversation every family should have before retirement | Valora Insights
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -2427,6 +2667,14 @@ When a Roth conversion is worth the tax bill | Valora Insights
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -2491,7 +2739,7 @@ When a Roth conversion is worth the tax bill | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2504,10 +2752,10 @@ When a Roth conversion is worth the tax bill | Valora Insights
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -2583,6 +2831,14 @@ Your RSUs are a bonus, not a lottery ticket | Valora Insights
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -2647,7 +2903,7 @@ Your RSUs are a bonus, not a lottery ticket | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2660,10 +2916,10 @@ Your RSUs are a bonus, not a lottery ticket | Valora Insights
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -2739,6 +2995,14 @@ What happens if the market drops right before you retire | Valora Insights
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -2804,7 +3068,7 @@ What happens if the market drops right before you retire | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2817,10 +3081,10 @@ What happens if the market drops right before you retire | Valora Insights
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -2896,6 +3160,14 @@ Beneficiary forms quietly override your will | Valora Insights
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -2961,7 +3233,7 @@ Beneficiary forms quietly override your will | Valora Insights
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -2974,10 +3246,10 @@ Beneficiary forms quietly override your will | Valora Insights
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -3053,6 +3325,14 @@ Retirement savings growth calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -3125,7 +3405,7 @@ Retirement savings growth calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3138,10 +3418,10 @@ Retirement savings growth calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -3217,6 +3497,14 @@ Withdrawal amount calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -3286,7 +3574,7 @@ Withdrawal amount calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3299,10 +3587,10 @@ Withdrawal amount calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -3378,6 +3666,14 @@ Roth conversion tax cost calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -3391,7 +3687,7 @@ Roth conversion tax cost calculator | Valora
 
  Assumed marginal tax rate (%) 
 
- Estimated tax cost / net after tax 
+ Estimated tax cost 
  &mdash; 
 
  Real U.S. tax brackets are progressive, not flat — this uses one flat rate as a simplification. See “When a Roth conversion is worth the tax bill” in our insights, and talk to a CPA before converting, since bracket effects and Medicare premium thresholds can change the real cost. 
@@ -3447,7 +3743,7 @@ Roth conversion tax cost calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3460,10 +3756,10 @@ Roth conversion tax cost calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -3539,6 +3835,14 @@ How long your savings will last | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -3610,7 +3914,7 @@ How long your savings will last | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3623,10 +3927,10 @@ How long your savings will last | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -3701,6 +4005,14 @@ PSLF scenario explorer | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -3777,7 +4089,7 @@ PSLF scenario explorer | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3790,10 +4102,10 @@ PSLF scenario explorer | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -3869,6 +4181,14 @@ RSU withholding shortfall calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -3938,7 +4258,7 @@ RSU withholding shortfall calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -3951,10 +4271,10 @@ RSU withholding shortfall calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -4030,6 +4350,14 @@ Check your 2026 401(k) employee deferral limit by age, and how much contribution
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -4098,7 +4426,7 @@ Check your 2026 401(k) employee deferral limit by age, and how much contribution
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4111,10 +4439,10 @@ Check your 2026 401(k) employee deferral limit by age, and how much contribution
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -4190,6 +4518,14 @@ Required minimum distribution (RMD) calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -4258,7 +4594,7 @@ Required minimum distribution (RMD) calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4271,10 +4607,10 @@ Required minimum distribution (RMD) calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -4350,6 +4686,14 @@ Capital gains tax estimator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -4421,7 +4765,7 @@ Capital gains tax estimator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4434,10 +4778,10 @@ Capital gains tax estimator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -4513,6 +4857,14 @@ Inflation calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -4583,7 +4935,7 @@ Inflation calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4596,10 +4948,10 @@ Inflation calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -4675,6 +5027,14 @@ Investment future value calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -4747,7 +5107,7 @@ Investment future value calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4760,10 +5120,10 @@ Investment future value calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -4839,6 +5199,14 @@ Savings &amp; CD growth calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -4909,7 +5277,7 @@ Savings &amp; CD growth calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -4922,10 +5290,10 @@ Savings &amp; CD growth calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -5001,6 +5369,14 @@ Split your take-home pay into needs, wants, and savings using the common 50/30/2
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -5067,7 +5443,7 @@ Split your take-home pay into needs, wants, and savings using the common 50/30/2
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5080,10 +5456,10 @@ Split your take-home pay into needs, wants, and savings using the common 50/30/2
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -5159,6 +5535,14 @@ Social Security claiming age break-even calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -5225,7 +5609,7 @@ Social Security claiming age break-even calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5238,10 +5622,10 @@ Social Security claiming age break-even calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -5317,6 +5701,14 @@ Delayed retirement credit calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -5385,7 +5777,7 @@ Delayed retirement credit calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5398,10 +5790,10 @@ Delayed retirement credit calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -5477,6 +5869,14 @@ ISO exercise cost &amp; spread calculator | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -5548,7 +5948,7 @@ ISO exercise cost &amp; spread calculator | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5561,10 +5961,10 @@ ISO exercise cost &amp; spread calculator | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -5640,6 +6040,14 @@ Concentrated stock diversification timeline | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -5710,7 +6118,7 @@ Concentrated stock diversification timeline | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5723,10 +6131,10 @@ Concentrated stock diversification timeline | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -5801,6 +6209,14 @@ Retirement Calculators | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -5881,7 +6297,7 @@ Retirement Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -5894,10 +6310,10 @@ Retirement Calculators | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -5972,6 +6388,14 @@ Taxes Calculators | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -6048,7 +6472,7 @@ Taxes Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6061,10 +6485,10 @@ Taxes Calculators | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -6140,6 +6564,14 @@ Social Security Calculators | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -6207,7 +6639,7 @@ Social Security Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6220,10 +6652,10 @@ Social Security Calculators | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -6299,6 +6731,14 @@ Equity Compensation Calculators | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -6366,7 +6806,7 @@ Equity Compensation Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6379,10 +6819,10 @@ Equity Compensation Calculators | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -6458,6 +6898,14 @@ Investing Calculators | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -6525,7 +6973,7 @@ Investing Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6538,10 +6986,10 @@ Investing Calculators | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -6617,6 +7065,14 @@ Banking Calculators | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -6688,7 +7144,7 @@ Banking Calculators | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6701,10 +7157,10 @@ Banking Calculators | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -6779,6 +7235,14 @@ Financial Advisor for Business Owners | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -6915,7 +7379,7 @@ Financial Advisor for Business Owners | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -6928,10 +7392,10 @@ Financial Advisor for Business Owners | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -7006,6 +7470,14 @@ Financial Advisor for Physicians | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -7143,7 +7615,7 @@ Financial Advisor for Physicians | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7156,10 +7628,10 @@ Financial Advisor for Physicians | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -7234,6 +7706,14 @@ Financial Advisor for Tech Employees with RSUs | Valora
  Skip to content 
 
  Valora 
+
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
 
  For advisors 
 
@@ -7370,7 +7850,7 @@ Financial Advisor for Tech Employees with RSUs | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7383,10 +7863,10 @@ Financial Advisor for Tech Employees with RSUs | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -7462,6 +7942,14 @@ Cookie and Analytics Notice | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -7470,6 +7958,7 @@ Cookie and Analytics Notice | Valora
  Cookie and Analytics Notice 
 
  Effective date: September 28, 2026 
+ Last updated: September 28, 2026. 
 
  On this page 
  What cookies are 
@@ -7487,9 +7976,10 @@ Cookie and Analytics Notice | Valora
  Strictly necessary storage. Required for the Site to load and function securely. You cannot opt out of these without breaking the Site. 
  Analytics (PostHog). We use PostHog to understand how the Site is used: which pages are viewed, how visitors move through the Site, and what content is useful. PostHog stores a first-party identifier (a cookie and/or local storage entry whose name begins with "ph_") so it can recognize a returning device. This identifier is tied to browsing activity on this Site only; we do not use it to track you elsewhere. 
  Third-party forms (Google Forms). The readiness check is powered by Google Forms. When you open the form, Google may set its own cookies under its own privacy policy. We do not control those cookies. 
+ Visitor identification (RB2B). We use RB2B to learn which companies visit the Site. RB2B may set a third-party identifier on your device, may infer the company behind a visit, and may process data capable of identifying individual people; what is shown to us depends on our plan. 
 
  What the Site does not use 
- We do not use advertising cookies, retargeting pixels, social-media trackers, or any third-party ad network. Nothing on this Site profiles you for advertising. 
+ We do not use advertising cookies, retargeting pixels, or social-media trackers. The RB2B service described above is used for business outreach identification, not to show you advertising. 
  Your choices 
 
  Browser controls. Most browsers let you block or delete cookies. Blocking the analytics identifier does not affect how the Site works for you. 
@@ -7503,7 +7993,7 @@ Cookie and Analytics Notice | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7516,10 +8006,10 @@ Cookie and Analytics Notice | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -7595,6 +8085,14 @@ Privacy Policy | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -7603,6 +8101,7 @@ Privacy Policy | Valora
  Privacy Policy 
 
  Effective date: September 28, 2026 
+ Last updated: September 28, 2026. 
 
  On this page 
  Information you give us 
@@ -7628,8 +8127,9 @@ Privacy Policy | Valora
  Please do not send us highly sensitive information such as Social Security numbers, account numbers, or passwords. The Site is not designed to receive them. 
  Information collected automatically 
  We use PostHog, an analytics product, on every page of the Site. PostHog collects standard usage data: pages viewed, interactions (such as clicks and form starts), referring pages, approximate geographic location derived from your IP address, and device and browser characteristics. PostHog identifies returning visitors using a first-party cookie and/or your browser's local storage. Our Cookie and Analytics Notice has the details, including how to opt out. 
+ Visitor identification (RB2B). We use RB2B, a business-to-business visitor identification service, on the Site. RB2B may infer the company behind a visit and may process data capable of identifying individual people; what is shown to us depends on our plan. RB2B identifies business contacts using its own contributor database and sets its own third-party identifier. Its handling of that data, including how to opt out of its database, is described in RB2B's privacy policy . 
  What we do not collect 
- The Site has no user accounts and no passwords, processes no payments, and carries no advertising. We do not collect payment card data, we do not run advertising or retargeting trackers, and we do not buy data about you from data brokers. 
+ The Site has no user accounts and no passwords, processes no payments, and carries no advertising. We do not collect payment card data, and we do not run advertising or retargeting trackers. We do not buy lists of personal information about individual visitors. For business visitor identification we use RB2B, which identifies business contacts using its own contributor database, as described in RB2B's privacy policy . We receive only the identification results RB2B provides to us under our plan. 
  How we use information 
 
  To respond to your inquiries and operate the matching and introduction process you ask for. 
@@ -7640,7 +8140,7 @@ Privacy Policy | Valora
  We do not sell your personal information, and we do not share it for cross-context behavioral advertising. 
  How information is shared 
 
- Service providers. We share information with the vendors that run the Site: PostHog (analytics), Google (forms and internal documents), and our hosting provider. They process information on our behalf under their own terms. 
+ Service providers. We share information with the vendors that run the Site: PostHog (analytics), RB2B (visitor identification), Google (forms and internal documents), and our hosting provider. They process information on our behalf under their own terms. 
  Advisors, at your request. If you ask to be introduced or matched, we share the information you provided for that purpose with the advisor or advisors involved, so they can respond to you. 
  Legal and safety. We may disclose information where required by law, regulation, or legal process, or to protect the rights, property, or safety of Valora, our users, or others. 
  Business transfers. If Valora is involved in a merger, acquisition, or sale of assets, information may be transferred as part of that transaction, subject to this Policy. 
@@ -7664,7 +8164,7 @@ Privacy Policy | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7677,10 +8177,10 @@ Privacy Policy | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -7756,6 +8256,14 @@ Terms and Conditions | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -7827,7 +8335,7 @@ Terms and Conditions | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7840,10 +8348,10 @@ Terms and Conditions | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
@@ -7919,6 +8427,14 @@ Team | Valora
 
  Valora 
 
+ Financial Advice 
+
+ Get help with Financial advisors for tech employees 
+ Financial advisors for physicians 
+ Financial advisors for business owners All financial advice guides 
+ More resources Find an advisor Financial advisors in New York 
+ Financial advisors in Chicago 
+
  For advisors 
 
  Find an advisor 
@@ -7952,7 +8468,7 @@ Team | Valora
 
  Independent advice. Personal fit. 
 
- Cities Austin, TX Los Angeles, CA Chicago, IL New York, NY 
+ Cities New York, NY Los Angeles, CA Chicago, IL Dallas, TX Houston, TX Washington, DC Miami, FL Philadelphia, PA Atlanta, GA Phoenix, AZ Boston, MA San Francisco, CA Detroit, MI Seattle, WA Minneapolis, MN San Diego, CA Tampa, FL Denver, CO Baltimore, MD St. Louis, MO Charlotte, NC Orlando, FL San Antonio, TX Portland, OR Sacramento, CA Pittsburgh, PA Austin, TX Las Vegas, NV Cincinnati, OH Columbus, OH Kansas City, MO 
  Specialties Managing investments Retirement planning Selling a business Business owner wealth planning Tax planning Estate planning Concentrated stock Inheritance / sudden wealth Cash / liquidity management 
  Professions Business owner Executive / professional Retired Recently sold a business Recently received an inheritance Entrepreneur / founder 
  Asset Types Under $250K $250K to $500K $500K to $1M $1M to $3M $3M to $10M $10M+ 
@@ -7965,10 +8481,10 @@ Team | Valora
  barot@valorahq.com 
 
  Company Our approach Find an advisor For advisors Team Insights 
- For Advisors &middot; Tools Advisor portal How Valora compares Blog Book a demo 
+ For Advisors &middot; Tools For advisers How Valora compares Blog Book a demo 
  Legal Terms Privacy Cookies 
 
- © 2026 Valora. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
+ © 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora is an independent platform that provides financial education and helps consumers discover financial advisors. Valora does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay Valora for access to the platform or for introductions to prospective clients. 
 
  ↑ 
 
