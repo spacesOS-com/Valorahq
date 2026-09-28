@@ -41,7 +41,7 @@
         <li><a href="/for-advisors/">For advisors</a></li>
       </ul>
       <div class="nav__cta">
-        <a class="btn btn--dark" href="/#contact">Find an advisor</a>
+        <a class="btn btn--dark" href="/#contact" data-gate-open>Find an advisor</a>
       </div>
     </nav>
 
@@ -203,7 +203,115 @@
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Back to top"><span aria-hidden="true">↑</span></button>
+<div class="gate" id="gate" hidden>
+  <div class="gate__scrim" data-gate-close></div>
 
-<script src="/script.js?v=f12b6a79"></script>
+  <div class="gate__panel" role="dialog" aria-modal="true" aria-labelledby="gateTitle" aria-describedby="gateSub">
+    <span class="gate__glow" aria-hidden="true"></span>
+
+    <button class="gate__x" type="button" aria-label="Close" data-gate-close>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="gate__inner">
+      <p class="gate__eyebrow gate__i" style="--i:1">Free · No obligation</p>
+      <h2 class="gate__title display gate__i" id="gateTitle" style="--i:2">
+        Explore advisors<br><em>who may fit your needs.</em>
+      </h2>
+      <p class="gate__sub gate__i" id="gateSub" style="--i:3">
+        Answer a few questions to find advisors who match your needs.
+      </p>
+
+      <form class="gate__form gate__i form--steps" id="gateForm" data-lead="Client" data-done="#gateDone" style="--i:4" novalidate>
+        <div class="form__step" data-step>
+          <p class="form__stepnum">Step 1 of 4</p>
+          <div class="gate__field" data-field>
+          <label>What are you looking for help with?</label>
+          <span class="opt">Select all that apply</span>
+          <div class="check-group" role="group" aria-label="What are you looking for help with?">
+          <label class="check"><input type="checkbox" name="help" value="Managing investments"><span>Managing investments</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Retirement planning"><span>Retirement planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Selling a business"><span>Selling a business</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Business owner wealth planning"><span>Business owner wealth planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Tax planning"><span>Tax planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Estate planning"><span>Estate planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Concentrated stock"><span>Concentrated stock</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Inheritance / sudden wealth"><span>Inheritance / sudden wealth</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Cash / liquidity management"><span>Cash / liquidity management</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+          <div class="gate__foot">
+            <button class="btn btn--cream gate__submit" type="button" data-step-next>Continue</button>
+            <button class="gate__skip" type="button" data-gate-close>I'm just looking</button>
+          </div>
+        </div>
+        <div class="form__step" data-step hidden>
+          <p class="form__stepnum">Step 2 of 4</p>
+          <div class="gate__field" data-field>
+          <label for="gassets">Approximately how much do you have in investable assets?</label>
+          <select id="gassets" name="assets" required><option value="">Select one</option><option>Under $250K</option><option>$250K to $500K</option><option>$500K to $1M</option><option>$1M to $3M</option><option>$3M to $10M</option><option>$10M+</option></select>
+          <small class="err" data-err="assets"></small>
+        </div>
+          <div class="gate__field" data-field>
+          <label for="gsituation">What best describes your situation?</label>
+          <select id="gsituation" name="situation" required><option value="">Select one</option><option>Business owner</option><option>Executive / professional</option><option>Retired</option><option>Recently sold a business</option><option>Recently received an inheritance</option><option>Entrepreneur / founder</option><option>Other</option></select>
+          <small class="err" data-err="situation"></small>
+        </div>
+          <div class="gate__foot">
+            <button class="gate__skip" type="button" data-step-back>Back</button>
+            <button class="btn btn--cream gate__submit" type="button" data-step-next>Continue</button>
+          </div>
+        </div>
+        <div class="form__step" data-step hidden>
+          <p class="form__stepnum">Step 3 of 4</p>
+          
+        <div class="gate__field" data-field>
+          <label for="gname">Full name</label>
+          <input id="gname" name="name" type="text" required placeholder="Jordan Reyes" autocomplete="name">
+          <small class="err" data-err="name"></small>
+        </div>
+        <div class="gate__field" data-field>
+          <label for="gemail">Email</label>
+          <input id="gemail" name="email" type="email" required placeholder="jordan@email.com" autocomplete="email">
+          <small class="err" data-err="email"></small>
+        </div>
+        <div class="gate__field" data-field>
+          <label for="gphone">Phone number</label>
+          <input id="gphone" name="phone" type="tel" required placeholder="+1 (415) 909-4100" autocomplete="tel" inputmode="tel">
+          <small class="err" data-err="phone"></small>
+        </div>
+          <div class="gate__foot">
+            <button class="gate__skip" type="button" data-step-back>Back</button>
+            <button class="btn btn--cream gate__submit" type="button" data-step-next>Continue</button>
+          </div>
+        </div>
+        <div class="form__step" data-step hidden>
+          <p class="form__stepnum">Step 4 of 4</p>
+          <div class="gate__field" data-field>
+          <label for="gmessage">What would you like help with?</label>
+          <span class="opt">Optional</span>
+          <textarea id="gmessage" name="message" rows="3" placeholder="A sentence is plenty."></textarea>
+        </div>
+          <div class="gate__foot">
+            <button class="gate__skip" type="button" data-step-back>Back</button>
+            <button class="btn btn--cream gate__submit" type="submit">Explore advisors</button>
+          </div>
+        </div>
+        <p class="gate__fine"></p>
+      </form>
+
+      <div class="gate__done" id="gateDone" hidden>
+        <span class="gate__tick" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M8 17l5.5 5.5L24 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3 class="display" data-done-title style="font-size:1.5rem">Thank you.</h3>
+        <p>We'll follow up within two business days with advisors who may fit what you're looking for.</p>
+        <button class="btn btn--cream" type="button" data-gate-close>Explore the site</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/script.js?v=2da0dfb6"></script>
 </body>
 </html>

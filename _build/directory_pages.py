@@ -112,6 +112,7 @@ def _write_listing(write_fn, slug, meta_title, meta_desc, eyebrow, title, intro,
         head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=not matches,
              schema=faq_schema(faq) if faq else ""),
         _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories, faq=faq),
+        with_gate=True,
     )
     write_fn(f"/find-a-financial-advisor/{slug}/", html)
     return bool(matches)
@@ -216,5 +217,6 @@ def build_directory_pages(write_fn):
                           matches, "",
                           calc_categories=[SPECIALTY_TO_CALC[spec_slug]] if spec_slug in SPECIALTY_TO_CALC else None,
                           faq=DIRECTORY_FAQS.get(f"{city_slug}-{spec_slug}")),
+            with_gate=True,
         )
         write_fn(f"/find-a-financial-advisor/{combo_slug}/", html)

@@ -755,7 +755,23 @@
       el.addEventListener('click', close);
     });
 
-    setTimeout(open, reduced ? 350 : 1900);
+    /* "Talk to an advisor" / header CTAs open the popup instead of navigating
+       (blog popup behavior: a[href="#advisor-contact"] interception). */
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('[data-gate-open]');
+      if (t) {
+        e.preventDefault();
+        open();
+      }
+    });
+
+    /* Auto-open once per visitor (localStorage), like the blog popup's seen-key. */
+    var SEEN_KEY = 'vz_gate_seen_v1';
+    function hasSeen() { try { return !!localStorage.getItem(SEEN_KEY); } catch (e) { return true; } }
+    function markSeen() { try { localStorage.setItem(SEEN_KEY, '1'); } catch (e) {} }
+    if (!hasSeen()) {
+      setTimeout(function () { markSeen(); open(); }, reduced ? 350 : 1900);
+    }
   }
 
   /* ---------------------------------------------------------

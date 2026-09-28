@@ -95,7 +95,7 @@ def _inline_cta(cta):
     <div class="content-page__cta">
       <h3>{escape(cta['heading'])}</h3>
       <p>{escape(cta.get('body', ''))}</p>
-      <a class="btn btn--dark" href="{escape(cta['href'])}">{escape(cta.get('button_label', 'Get started'))}</a>
+      <a class="btn btn--dark" href="{escape(cta['href'])}" data-gate-open>{escape(cta.get('button_label', 'Get started'))}</a>
     </div>"""
 
 
@@ -246,6 +246,7 @@ def render(pack):
              keywords=list(dict.fromkeys((pack.get("keywords") or []) + (pack.get("tags") or []))),
              noindex=pack.get("_draft", False)),
         _body(pack),
+        with_gate=True,
     )
 
 

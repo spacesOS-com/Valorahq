@@ -255,5 +255,6 @@ def build_insights_pages(write_fn):
                  a["summary"],
                  path=f"/insights/{a['slug']}/"),
             _article_body(a),
+            with_gate=True,
         )
         write_fn(f"/insights/{a['slug']}/", html)

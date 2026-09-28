@@ -234,7 +234,7 @@ def header(active=None, cta=("Find an advisor", "/#contact")):
 {items}
       </ul>
       <div class="nav__cta">
-        <a class="btn btn--dark" href="{cta[1]}">{cta[0]}</a>
+        <a class="btn btn--dark" href="{cta[1]}" data-gate-open>{cta[0]}</a>
       </div>
     </nav>
 

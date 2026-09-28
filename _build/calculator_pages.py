@@ -498,6 +498,7 @@ def build_calculator_pages(write_fn):
         html = page(
             head(f"{c['title']} | {BRAND}", c["summary"], path=f"/calculators/{c['slug']}/", schema=schema),
             _calc_body(c),
+            with_gate=True,
         )
         write_fn(f"/calculators/{c['slug']}/", html)
 
@@ -509,5 +510,6 @@ def build_calculator_pages(write_fn):
                  f"Free {category.lower()} calculators from Valora — simple, transparent estimates.",
                  path=f"/calculators/{slug}/"),
             _category_body(category, calcs),
+            with_gate=True,
         )
         write_fn(f"/calculators/{slug}/", html)

@@ -81,5 +81,6 @@ def build_advisor_pages(write_fn):
                  f"{a['name']}, {a['firm']} in {a['city']}. Specialties: {', '.join(a['tags'])}.",
                  path=f"/advisors/{a['slug']}/"),
             _advisor_body(a),
+            with_gate=True,
         )
         write_fn(f"/advisors/{a['slug']}/", html)
