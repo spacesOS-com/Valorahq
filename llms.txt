@@ -46,3 +46,6 @@
 - [https://www.valorahq.com/calculators/equity-compensation/](https://www.valorahq.com/calculators/equity-compensation/): Equity Compensation calculators on Valora.
 - [https://www.valorahq.com/calculators/investing/](https://www.valorahq.com/calculators/investing/): Investing calculators on Valora.
 - [https://www.valorahq.com/calculators/banking/](https://www.valorahq.com/calculators/banking/): Banking calculators on Valora.
+- [https://www.valorahq.com/financial-advisor-for-business-owners/](https://www.valorahq.com/financial-advisor-for-business-owners/): Financial planning for business owners: exit planning, valuation, key-person risk, and building retirement wealth outside the business.
+- [https://www.valorahq.com/financial-advisor-for-physicians/](https://www.valorahq.com/financial-advisor-for-physicians/): Financial planning built for physicians: late-start retirement catch-up, student debt strategy, disability insurance, and practice ownership decisions.
+- [https://www.valorahq.com/financial-advisor-for-tech-employees/](https://www.valorahq.com/financial-advisor-for-tech-employees/): Financial planning for tech employees: RSU taxes, concentrated stock, ESPP, mega backdoor Roth, IPO planning, and layoff-proofing your finances.
