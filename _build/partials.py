@@ -172,6 +172,17 @@ def faq_schema(faq):
     })
 
 
+
+POSTHOG_SNIPPET = r"""<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="mu yu bu Su init Vu Gu zu Uu Ku il Wu Yu ju rh oh ah uh hh dh capture getExtension Zu pu gh calculateEventProperties ph register register_once register_for_session unregister unregister_for_session Hu mh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync wh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset kh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty yh ih createPersonProfile setInternalOrTestUser bh xu Cu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing th debug nl Os getPageViewId captureTraceFeedback captureTraceMetric Du".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_swhDRhpyNrJXeLkkTpYuH9au4XstiKXqY88XAEmX2Cjk', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+</script>"""
+
+
 def head(title, description, path="/", schema="", noindex=False, keywords=None):
     canonical = SITE_URL + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex,follow">\n' if noindex else ""
@@ -189,7 +200,7 @@ def head(title, description, path="/", schema="", noindex=False, keywords=None):
 <link rel="icon" href="{FAVICON}">
 {organization_schema()}
 {schema}
-</head>"""
+""" + POSTHOG_SNIPPET + f"""</head>"""
 
 
 # ------------------------------------------------------------------ header / footer
@@ -240,6 +251,14 @@ def footer():
     <h2 class="display display--md footer__statement reveal">Independent advice.<br><em>Personal fit.</em></h2>
 
     <div class="footer__grid">
+      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(city)}</a></li>' for slug, city in DIRECTORY_CITIES)}</ul></nav>
+      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES)}</ul></nav>
+      <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES)}</ul></nav>
+      <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
+      <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
+    </div>
+
+    <div class="footer__nav-bottom">
       <div class="footer__brand">
         <a class="logo logo--light" href="/">
           <span class="logo__mark" aria-hidden="true">{LOGO_SVG}</span>
@@ -254,11 +273,6 @@ def footer():
 
       <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#advisors">Find an advisor</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
       <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/#introductions">Advisor portal</a></li><li><a href="/for-advisors/#compare">How Valora compares</a></li><li><a href="https://blog.valorahq.com/" target="_blank" rel="noopener">AEO &amp; GEO blog</a></li><li><a href="/for-advisors/#apply">Book a demo</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(city)}</a></li>' for slug, city in DIRECTORY_CITIES)}</ul></nav>
-      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES)}</ul></nav>
-      <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES)}</ul></nav>
-      <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
-      <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
       <nav class="footer__col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="/#top">Privacy</a></li><li><a href="/#top">Terms</a></li></ul></nav>
     </div>
 
