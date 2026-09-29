@@ -194,7 +194,7 @@ ARTICLES = [
         "read": "4 min read",
         "image": None,
         "title": "Beneficiary forms quietly override your will",
-        "summary": "For retirement accounts, life insurance, and many bank accounts, the beneficiary form — not the will — decides who gets the money.",
+        "summary": "For many retirement accounts, life insurance, and bank accounts, the beneficiary form usually decides who gets the money, not the will. Spouse-consent rules, community-property laws, and plan terms can override the form.",
         "body": [
             "A will governs the distribution of assets that go through probate. Many common assets, "
             "though, pass directly to whoever is named on a beneficiary designation form, regardless of "

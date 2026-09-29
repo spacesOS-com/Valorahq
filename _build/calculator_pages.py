@@ -321,7 +321,7 @@ CALCULATORS = [
         "slug": "rsu-withholding-shortfall",
         "category": "Taxes",
         "title": "RSU withholding shortfall calculator",
-        "summary": "Estimate the gap between the flat 22% most employers withhold on vested RSUs and what you actually owe at your marginal rate.",
+        "summary": "Illustrative comparison of RSU vesting withheld at a flat supplemental-wage rate versus a higher marginal rate. A rough illustration only, not an estimate of your actual tax liability.",
         "note": "Most U.S. employers withhold RSU vesting income at the flat 22% federal supplemental-wage rate, "
                 "regardless of your actual bracket. This compares that to your marginal rate as a rough estimate — "
                 "your real liability depends on your full tax picture. See “Your RSUs are a bonus, not a lottery "
@@ -748,7 +748,7 @@ CALCULATORS = [
         "slug": "financial-advisor-value",
         "category": "Retirement",
         "title": "Financial advisor value calculator",
-        "summary": "See the rough dollar impact of the return difference an advisor's guidance might make over time.",
+        "summary": "Explore a purely hypothetical return uplift and what that kind of difference could mean in dollars over time. An illustration only, not proof or a promise of advisor value.",
         "note": "Research such as Vanguard's “Advisor's Alpha” studies suggests professional guidance "
                 "(rebalancing, tax-aware withdrawals, behavioral coaching) can add measurable value over time, but "
                 "the amount varies enormously by household and isn't guaranteed — so this uses your own "
