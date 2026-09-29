@@ -10,14 +10,12 @@
   "template_notes": "Same content-page template family. Auto-TOC from h2s works as-is. No key_takeaways, feature_image, inline_ctas, or tags fields intentionally - legal pages should render plainly. No FAQ/JSON-LD. noindex NOT recommended - legal pages should be indexed normally.",
   "footer_placement": "Footer Legal group: Terms (/terms/), Privacy (/privacy/), Cookies (/cookies/). Current footer Legal links point to /#top placeholders - rewire all three.",
   "source_notes": [
-    "Drafted 2026-09-28 at founder request ('create terms and conditions, privacy policy and any other important information legally we need'; 'make sure we are fully covered'; 'act like a lawyer'; 'US market only').",
-    "CHOICE FLAGGED - governing law: Delaware, chosen as the standard US default. Founder should confirm or swap for the state where the business is organized.",
-    "CHOICE FLAGGED - entity name: written as 'Valora' throughout. If a registered entity exists (LLC/Inc., any state), replace 'Valora' with the full legal name.",
-    "CHOICE FLAGGED - contact point: barot@valorahq.com (the only email currently published on the site). Recommend dedicated legal@valorahq.com / privacy@valorahq.com aliases.",
-    "CHOICE FLAGGED - effective date set to September 28, 2026 (expected publication date). Update if publication slips.",
-    "Grounded in the live site as of 2026-09-28: PostHog analytics on every page (posthog-js, person_profiles 'identified_only'), contact form (mailto barot@valorahq.com), readiness check via Google Forms feeding an internal sheet, advisor directory built from public sources, calculators, no user accounts, no payments, no advertising. Positioning per llms.txt: independent platform, not investment advice, advisors are independent.",
-    "US-only orientation per founder 9:34: intended-for-US-users lines, CCPA-style rights, US regulatory references only.",
-    "Recommended but not a substitute for review by licensed US counsel.",
-    "Covers: collection (form, Google Forms readiness check, PostHog), no accounts/payments/ads, use, sharing (vendors, advisors at user request), retention, security, universal + state privacy rights (CCPA-style access/delete/correct, no sale/no sharing), DNT honest statement, children under 13, international visitors, changes, contact."
+    "Body replaced 2026-09-30 with Mira-reviewed Valora Privacy v4 (source SHA-256 f71ad8e3eb0f8c57728f2a2eca22254ed73325521f0fc402a878544f8f6cedd6, effective September 29, 2026). Rendered-text fidelity to the reviewed markdown verified by automated check. Any further byte change re-hashes and returns to Mira.",
+    "Entity: body names SpacesOS Inc. as operator per the reviewed v4 text; this supersedes the 2026-09-28 note flagging the registered entity as unknown.",
+    "Implementation evidence as of 2026-09-30: embedded Site request forms post through Google Apps Script to internal Sheet 'Valora Leads (Organic)'; submission alerts go to barot@valorahq.com and external agency inbox brands@grow.surgeaio.com (verified in ops/apps-script.gs NOTIFY_TO); PostHog analytics on all pages; RB2B snippet sitewide (VAL-34; classification and settings under counsel review); analytics/visitor-identification load pre-consent (no verified opt-in control); no Google Forms; no live advisor directory, matching, or introductions (directory excluded from build 2026-09-30); no user accounts; no payments.",
+    "Meta description authored 2026-09-30 from the reviewed body's first paragraph (reviewed file carried no meta fields); passed Mira re-gate 2026-09-30.",
+    "CHOICE FLAGGED - contact point remains barot@valorahq.com (the only email currently published on the site). Recommend dedicated legal@valorahq.com / privacy@valorahq.com aliases.",
+    "US-only orientation per founder 9/28.",
+    "Not a substitute for review by licensed US counsel."
   ]
 }

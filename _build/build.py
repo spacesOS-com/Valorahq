@@ -42,7 +42,7 @@ DIRECTORY_ENABLED = False
 PAGES = [
     # (path, one-line description for llms.txt)
     ("/", "Educational financial-planning content and an inquiry route; no advisor matches or introductions currently."),
-    ("/for-advisors/", "For advisors — how independent advisors join Valora's network."),
+    ("/for-advisors/", "For advisors — information for independent advisors interested in Valora; no live advisor directory or matching at this time."),
     ("/find-your-advisor/", "Tell us what you need: four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
     ("/calculators/", "Browse financial calculators by topic."),
