@@ -77,22 +77,54 @@ def _concierge_body():
       </div>
 
       <p class="eyebrow reveal" style="margin-top:36px;">A calculator that fits</p>
-      <a class="concierge-inline-card reveal" href="/calculators/{calc['slug']}/" style="margin-top:16px;">
+      <div class="concierge-inline-card reveal" style="margin-top:16px;">
         <h4>{escape(calc['title'])}</h4>
         <p>{escape(calc['summary'])}</p>
-      </a>
+        <div style="margin-top:12px; display:flex; gap:10px;">
+          <button type="button" class="btn btn--outline concierge-calc-trigger">Try it here</button>
+          <a class="btn btn--outline" href="/calculators/{calc['slug']}/">Open full page</a>
+        </div>
+      </div>
+      <div id="concierge-calc-embed" class="concierge-embed" hidden>
+        <iframe src="/calculators/{calc['slug']}/" title="{escape(calc['title'])}" loading="lazy"></iframe>
+        <p class="concierge-embed__note">This is the real, working calculator &mdash; pulled up inline instead of sending you to a separate page.</p>
+      </div>
 
       <p class="eyebrow reveal" style="margin-top:36px;">Worth reading</p>
       <a class="concierge-inline-card reveal" href="/insights/{article['slug']}/" style="margin-top:16px;">
         <h4>{escape(article['title'])}</h4>
         <p>{escape(article['summary'])}</p>
       </a>
+
+      <p class="eyebrow reveal" style="margin-top:36px;">Or talk to one of them directly</p>
+      <button type="button" class="btn btn--dark reveal concierge-talk-trigger" style="margin-top:16px;">Talk to an advisor</button>
+      <div id="concierge-calendar" class="concierge-calendar" hidden>
+        <p class="eyebrow">Sample availability &mdash; not a real booking</p>
+        <h4>Book a call with James Conole, CFP&reg;</h4>
+        <div class="concierge-calendar__grid">
+          <div class="concierge-calendar__day"><span>Tue, Oct 6</span>
+            <button type="button" class="concierge-calendar__slot">10:00 AM</button>
+            <button type="button" class="concierge-calendar__slot">2:30 PM</button>
+          </div>
+          <div class="concierge-calendar__day"><span>Wed, Oct 7</span>
+            <button type="button" class="concierge-calendar__slot">9:15 AM</button>
+            <button type="button" class="concierge-calendar__slot">4:00 PM</button>
+          </div>
+          <div class="concierge-calendar__day"><span>Thu, Oct 8</span>
+            <button type="button" class="concierge-calendar__slot">11:00 AM</button>
+            <button type="button" class="concierge-calendar__slot">1:00 PM</button>
+          </div>
+        </div>
+        <p class="concierge-calendar__confirm" id="concierge-calendar-confirm" hidden></p>
+      </div>
     </div>
 
     <p class="eyebrow reveal" style="margin-top:48px;">The same bar, aware of wherever you are</p>
     <p class="reveal" style="margin-top:12px; color:var(--ink-soft); max-width:56ch;">
-      The floating bar isn't one generic box &mdash; its topic tag and placeholder would change to
-      match whatever page it's on, so the question you ask is already in context.
+      The floating bar isn't one generic box &mdash; whatever page it's on would load that page's own
+      content into the conversation as context (this calculator's fields and result, this
+      article's actual claims, this advisor's real profile), so it can answer specifically about
+      what's already on screen, not generic advice.
     </p>
     <div class="concierge-variants reveal" style="margin-top:20px;">
       <div class="concierge-variant">
@@ -124,15 +156,9 @@ def _concierge_body():
   </div>
   <div class="concierge-float__panel" id="concierge-panel-bottom" hidden></div>
   <div class="concierge-float__bar">
-    <span class="concierge-float__avatar" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </span>
+    <button type="button" class="concierge-float__minimize" id="concierge-minimize-bottom" aria-label="Minimize" hidden>&minus;</button>
     <input type="text" id="concierge-input-bottom" placeholder="Chat with Valora&hellip;">
-    <button type="button" class="concierge-float__chip" data-fill="Show me advisors who fit my situation">See my matches</button>
-    <button type="button" class="concierge-float__chip" data-fill="I'd rather talk to a person directly">Talk to an advisor</button>
-    <button type="button" class="concierge-float__mic" id="concierge-voice-toggle" aria-label="Voice input (concept only, not functional)" title="Concept only &mdash; not functional">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" stroke="currentColor" stroke-width="1.5"/><path d="M6 11a6 6 0 0 0 12 0M12 19v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="concierge-float__chip concierge-talk-trigger">Talk to an advisor</button>
     <button type="button" class="btn btn--dark concierge-float__submit" id="concierge-send-bottom">Ask</button>
   </div>
 </div>
@@ -141,12 +167,12 @@ def _concierge_body():
 <div class="concierge-side-panel" id="concierge-side-panel">
   <div class="concierge-side-panel__head">
     <div class="concierge-side-panel__who">
-      <span class="concierge-side-panel__mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
       <div><strong>Valora Concierge</strong><span>Concept preview &mdash; not live AI</span></div>
     </div>
-    <button type="button" class="concierge-side-panel__close" id="concierge-side-close" aria-label="Close">&times;</button>
+    <div class="concierge-side-panel__head-actions">
+      <button type="button" class="concierge-side-panel__minimize" id="concierge-side-minimize" aria-label="Minimize">&minus;</button>
+      <button type="button" class="concierge-side-panel__close" id="concierge-side-close" aria-label="Close">&times;</button>
+    </div>
   </div>
 
   <div class="concierge-side-panel__chat" id="concierge-panel-side">
@@ -161,8 +187,7 @@ def _concierge_body():
   </div>
 
   <div class="concierge-side-panel__actions">
-    <a class="btn btn--outline" href="/find-your-advisor/">See my matches</a>
-    <a class="btn btn--outline" href="/#contact" data-gate-open>Talk to a person</a>
+    <button type="button" class="btn btn--outline concierge-talk-trigger">Talk to an advisor</button>
   </div>
 
   <div class="concierge-side-panel__field">
@@ -251,10 +276,12 @@ def _concierge_body():
   }}
 
   var greeting = document.getElementById('concierge-greeting');
+  var minimizeBottom = document.getElementById('concierge-minimize-bottom');
   var bottomExchanges = 0;
   var askBottom = wire('bottom', function () {{
     bottomWidget.classList.add('is-expanded');
     if (greeting) greeting.hidden = true;
+    if (minimizeBottom) minimizeBottom.hidden = false;
   }}, function () {{
     bottomExchanges++;
     if (bottomExchanges === 2) setTimeout(migrateToSide, 900);
@@ -263,6 +290,12 @@ def _concierge_body():
   document.querySelectorAll('#concierge-float-bottom .concierge-float__chip').forEach(function (chip) {{
     chip.addEventListener('click', function () {{ askBottom(chip.getAttribute('data-fill')); }});
   }});
+  if (minimizeBottom) {{
+    minimizeBottom.addEventListener('click', function () {{
+      bottomWidget.classList.remove('is-expanded');
+      minimizeBottom.hidden = true;
+    }});
+  }}
 
   var askSide = wire('side', null, function () {{ if (suggestions) suggestions.hidden = true; }});
   document.querySelectorAll('.concierge-side-panel__chip').forEach(function (chip) {{
@@ -286,8 +319,43 @@ def _concierge_body():
     }});
   }});
 
+  function collapseSide() {{
+    sidePanel.classList.remove('is-open');
+    launcher.hidden = false;
+  }}
   launcher.addEventListener('click', function () {{ sidePanel.classList.add('is-open'); }});
-  closeBtn.addEventListener('click', function () {{ sidePanel.classList.remove('is-open'); }});
+  closeBtn.addEventListener('click', collapseSide);
+  var minimizeSide = document.getElementById('concierge-side-minimize');
+  if (minimizeSide) minimizeSide.addEventListener('click', collapseSide);
+
+  // "try it here" — pull the real, working calculator inline instead of linking out
+  var calcEmbed = document.getElementById('concierge-calc-embed');
+  document.querySelectorAll('.concierge-calc-trigger').forEach(function (btn) {{
+    btn.addEventListener('click', function () {{
+      calcEmbed.hidden = false;
+      calcEmbed.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+    }});
+  }});
+
+  // "talk to an advisor" — sample calendar inline, not a real booking
+  var calendar = document.getElementById('concierge-calendar');
+  var confirmMsg = document.getElementById('concierge-calendar-confirm');
+  document.querySelectorAll('.concierge-talk-trigger').forEach(function (btn) {{
+    btn.addEventListener('click', function () {{
+      results.hidden = false;
+      calendar.hidden = false;
+      calendar.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+    }});
+  }});
+  document.querySelectorAll('.concierge-calendar__slot').forEach(function (slot) {{
+    slot.addEventListener('click', function () {{
+      document.querySelectorAll('.concierge-calendar__slot').forEach(function (s) {{ s.classList.remove('is-selected'); }});
+      slot.classList.add('is-selected');
+      var day = slot.closest('.concierge-calendar__day').querySelector('span').textContent;
+      confirmMsg.hidden = false;
+      confirmMsg.textContent = 'Selected ' + day + ' at ' + slot.textContent + ' \\u2014 sample only, nothing is actually booked in this preview.';
+    }});
+  }});
 }})();
 </script>
 
