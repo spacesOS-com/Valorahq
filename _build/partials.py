@@ -577,7 +577,7 @@ def page_form(goal=None):
         <p class="field field--full form__stepnum">Step 4 of 4</p>{optional_field("f")}
         <div class="field field--full form__foot">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
-          <button class="btn btn--cream" type="submit">Explore advisors</button>
+          <button class="btn btn--cream" type="submit">Send my request</button>
           <p class="form__fine"></p>
         </div>
       </div>
@@ -593,7 +593,7 @@ def contact_section(goal=None, title='Let\'s build a<br>financial life<br><em>th
   <div class="container cta__grid">
     <div class="cta__copy">
       <h2 class="display display--lg reveal">{title}</h2>
-      <p class="reveal">Answer a few questions to find advisors who match your needs.</p>
+      <p class="reveal">Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.</p>
     </div>
 
     {form}
@@ -623,10 +623,10 @@ def gate():
     <div class="gate__inner">
       <p class="gate__eyebrow gate__i" style="--i:1">Free · No obligation</p>
       <h2 class="gate__title display gate__i" id="gateTitle" style="--i:2">
-        Explore advisors<br><em>who may fit your needs.</em>
+        Tell us what you need
       </h2>
       <p class="gate__sub gate__i" id="gateSub" style="--i:3">
-        Answer a few questions to find advisors who match your needs.
+        Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.
       </p>
 
       <form class="gate__form gate__i form--steps" id="gateForm" data-lead="Client" data-done="#gateDone" style="--i:4" novalidate>
@@ -660,7 +660,7 @@ def gate():
           {optional_field("g", wrap="gate__field")}
           <div class="gate__foot">
             <button class="gate__skip" type="button" data-step-back>Back</button>
-            <button class="btn btn--cream gate__submit" type="submit">Explore advisors</button>
+            <button class="btn btn--cream gate__submit" type="submit">Send my request</button>
           </div>
         </div>
         <p class="gate__fine"></p>
