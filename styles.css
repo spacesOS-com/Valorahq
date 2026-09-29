@@ -2034,8 +2034,22 @@ body.gate-open{ overflow:hidden; }
 .concierge-float__avatar{
   flex:none; width:34px; height:34px; border-radius:50%; background:var(--green);
   color:var(--cream); display:flex; align-items:center; justify-content:center;
+  animation:concierge-avatar-pulse 2.4s ease-in-out infinite;
 }
 .concierge-float__avatar svg{ width:18px; height:18px; }
+@keyframes concierge-avatar-pulse{
+  0%, 100%{ box-shadow:0 0 0 0 rgba(30,59,42,.35); }
+  50%{ box-shadow:0 0 0 6px rgba(30,59,42,0); }
+}
+@media (prefers-reduced-motion: reduce){
+  .concierge-float__avatar{ animation:none; }
+}
+.concierge-variant__preview{
+  display:flex; align-items:center; gap:10px; margin-top:12px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:999px; background:#fff;
+}
+.concierge-variant__preview img{ width:34px; height:34px; border-radius:50%; object-fit:cover; flex:none; }
+.concierge-variant__preview span{ font-size:.82rem; color:var(--ink-soft); }
 .concierge-float__bar input{
   flex:1 1 140px; min-width:0; border:none; outline:none; font-size:.86rem; color:var(--ink);
   font-family:inherit; background:transparent;
@@ -2103,10 +2117,10 @@ body.gate-open{ overflow:hidden; }
 .concierge-float__minimize:not([hidden]){ display:flex; }
 .concierge-side-panel__chat{
   flex:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column;
-  gap:10px; background:var(--paper);
+  gap:10px; background:#fff;
 }
 .concierge-side-panel__chat .convert-mock__bubble{ max-width:92%; }
-.concierge-side-panel__chat .convert-mock__bubble--them{ background:#fff; color:var(--ink); align-self:flex-start; border:1px solid var(--line); border-bottom-left-radius:4px; }
+.concierge-side-panel__chat .convert-mock__bubble--them{ background:var(--paper); color:var(--ink); align-self:flex-start; border:1px solid var(--line); border-bottom-left-radius:4px; }
 .concierge-side-panel__chat .convert-mock__bubble--us{ background:var(--green); color:var(--cream); align-self:flex-end; border-bottom-right-radius:4px; }
 .concierge-side-panel__field{ display:flex; gap:8px; padding:16px; border-top:1px solid var(--line); }
 .concierge-side-panel__field input{

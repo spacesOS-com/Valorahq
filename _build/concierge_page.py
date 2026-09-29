@@ -119,6 +119,10 @@ def _concierge_body():
       <div class="concierge-variant">
         <span class="concierge-variant__tag">On an advisor's profile</span>
         <p>&ldquo;Ask James Conole a question&rdquo; &mdash; e.g. <em>&ldquo;Do you work with clients outside Texas?&rdquo;</em></p>
+        <div class="concierge-variant__preview">
+          <img src="/images/advisors/advisor-1.jpg" alt="James Conole, CFP&reg;" width="34" height="34">
+          <span>Chat with James Conole&hellip;</span>
+        </div>
       </div>
     </div>
 
@@ -133,11 +137,13 @@ def _concierge_body():
 
 <div class="concierge-float" id="concierge-float-bottom">
   <div class="concierge-float__greeting" id="concierge-greeting">
-    Looks like you're exploring retirement planning &mdash; want me to point you to a fitting advisor?
+    Looks like you're exploring retirement planning &mdash; feel free to ask me any questions.
   </div>
   <div class="concierge-float__panel" id="concierge-panel-bottom" hidden></div>
   <div class="concierge-float__bar">
-    <button type="button" class="concierge-float__minimize" id="concierge-minimize-bottom" aria-label="Minimize" hidden>&minus;</button>
+    <span class="concierge-float__avatar" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/><path d="M6 20.5c4-9 6.5-9 10 0s6 9 10 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </span>
     <input type="text" id="concierge-input-bottom" placeholder="Chat with Valora&hellip;">
     <button type="button" class="concierge-float__chip concierge-talk-trigger">Talk to an advisor</button>
     <button type="button" class="btn btn--dark concierge-float__submit" id="concierge-send-bottom">Ask</button>
@@ -175,7 +181,6 @@ def _concierge_body():
     <input type="text" id="concierge-input-side" placeholder="Ask Valora a question">
     <button type="button" class="concierge-side-panel__send" id="concierge-send-side" aria-label="Send">&rarr;</button>
   </div>
-  <p class="concierge-side-panel__fine">A design concept &mdash; nothing you type here is sent anywhere or recorded.</p>
 </div>
 
 <script>
@@ -257,12 +262,10 @@ def _concierge_body():
   }}
 
   var greeting = document.getElementById('concierge-greeting');
-  var minimizeBottom = document.getElementById('concierge-minimize-bottom');
   var bottomExchanges = 0;
   var askBottom = wire('bottom', function () {{
     bottomWidget.classList.add('is-expanded');
     if (greeting) greeting.hidden = true;
-    if (minimizeBottom) minimizeBottom.hidden = false;
   }}, function () {{
     bottomExchanges++;
     if (bottomExchanges === 2) setTimeout(migrateToSide, 900);
@@ -271,12 +274,6 @@ def _concierge_body():
   document.querySelectorAll('#concierge-float-bottom .concierge-float__chip').forEach(function (chip) {{
     chip.addEventListener('click', function () {{ askBottom(chip.getAttribute('data-fill')); }});
   }});
-  if (minimizeBottom) {{
-    minimizeBottom.addEventListener('click', function () {{
-      bottomWidget.classList.remove('is-expanded');
-      minimizeBottom.hidden = true;
-    }});
-  }}
 
   var askSide = wire('side', null, function () {{ if (suggestions) suggestions.hidden = true; }});
   document.querySelectorAll('.concierge-side-panel__chip').forEach(function (chip) {{
