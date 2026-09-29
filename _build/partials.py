@@ -14,12 +14,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def _asset_ver(filename):
-    """Short content hash for cache-busting /styles.css and /script.js. Without
+    """Short content hash for cache-busting /assets/styles.css and /assets/script.js. Without
     this, a returning visitor's browser can keep serving a JS/CSS file cached
     from before the last deploy against the newly-deployed HTML — exactly the
     stale-script bug that made the two-step contact form look broken in dev."""
     try:
-        with open(os.path.join(ROOT, filename), "rb") as f:
+        with open(os.path.join(ROOT, "assets", filename), "rb") as f:
             return hashlib.sha1(f.read()).hexdigest()[:8]
     except FileNotFoundError:
         return "0"
@@ -269,7 +269,7 @@ def head(title, description, path="/", schema="", noindex=False, keywords=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v={STYLES_VER}">
+<link rel="stylesheet" href="/assets/styles.css?v={STYLES_VER}">
 <link rel="icon" href="{FAVICON}">
 {organization_schema()}
 {schema}
@@ -728,7 +728,7 @@ def page(head_html, body_html, active=None, with_gate=False, body_class="page-su
 
 {footer()}
 {gate() if with_gate else ''}
-<script src="/script.js?v={SCRIPT_VER}"></script>
+<script src="/assets/script.js?v={SCRIPT_VER}"></script>
 </body>
 </html>
 """

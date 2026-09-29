@@ -111,8 +111,8 @@ def refresh_index():
         if not pat.search(html):
             raise SystemExit(f"index.html is missing the @build:{name} markers")
         html = pat.sub(lambda m: m.group(1) + "\n" + content + "\n" + m.group(3), html)
-    html = re.sub(r'<script src="/script\.js(?:\?v=[a-f0-9]+)?"></script>',
-                  f'<script src="/script.js?v={SCRIPT_VER}"></script>', html)
+    html = re.sub(r'<script src="/(?:assets/)?script\.js(?:\?v=[a-f0-9]+)?"></script>',
+                  f'<script src="/assets/script.js?v={SCRIPT_VER}"></script>', html)
     with open(p, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
 

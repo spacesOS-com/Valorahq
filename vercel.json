@@ -1,4 +1,16 @@
 {
   "buildCommand": "python3 _build/build.py",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/script.js",
+      "destination": "/assets/script.js",
+      "permanent": true
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/assets/styles.css",
+      "permanent": true
+    }
+  ]
 }
