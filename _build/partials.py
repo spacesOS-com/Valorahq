@@ -536,6 +536,12 @@ def details_fields(uid, wrap="field", wrap_full="field field--full"):
     return _select_field(uid, "assets", "Approximately how much do you have in investable assets?", ASSET_OPTIONS, wrap=wrap)
 
 
+# Mira ruling (Sep 30): agency-disclosure fine print shown before submit on every
+# client intake form. Exact wording per her gate; do not edit without her. Privacy
+# Policy link must point at the current corrected /privacy/.
+INTAKE_FINE = ("We’ll use your answers and contact details to review your request and email next steps. A submission alert also goes to our external agency inbox, brands@grow.surgeaio.com. We are not arranging advisor introductions or sharing your details with an advisor at this time. Read our <a href=\"/privacy/\">Privacy Policy</a> before sending.")
+
+
 def page_form(goal=None):
     """Four steps, lowest-commitment first: what you need help with, then the
     qualifying details, then situation + contact info, then the one optional
@@ -569,14 +575,14 @@ def page_form(goal=None):
         <div class="field field--full form__foot">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
           <button class="btn btn--cream" type="submit">Send my request</button>
-          <p class="form__fine"></p>
+          <p class="form__fine">{INTAKE_FINE}</p>
         </div>
       </div>
       <p class="form__success" role="status" hidden></p>
     </form>"""
 
 
-def contact_section(goal=None, title='Let\'s build a<br>financial life<br><em>that feels like yours.</em>'):
+def contact_section(goal=None, title='Tell us what you’re trying to figure out.'):
     form = page_form()
     if goal:  # preselect the matching "solving for" option on specialty pages
         form = form.replace(f"<option>{escape(goal)}</option>", f"<option selected>{escape(goal)}</option>", 1)
@@ -654,7 +660,7 @@ def gate():
             <button class="btn btn--cream gate__submit" type="submit">Send my request</button>
           </div>
         </div>
-        <p class="gate__fine"></p>
+        <p class="gate__fine">{INTAKE_FINE}</p>
       </form>
 
       <div class="gate__done" id="gateDone" hidden>

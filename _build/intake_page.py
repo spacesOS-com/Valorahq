@@ -20,7 +20,7 @@ Pipeline notes:
 """
 from html import escape
 
-from partials import page, head, faq_block, faq_schema, ASSET_OPTIONS, SITUATION_OPTIONS
+from partials import page, head, faq_block, faq_schema, ASSET_OPTIONS, SITUATION_OPTIONS, INTAKE_FINE
 
 PROFESSION_OPTIONS = ["Physician", "Tech employee"] + SITUATION_OPTIONS
 
@@ -103,7 +103,7 @@ def intake_form():
         <div class="field field--full form__foot">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
           <button class="btn btn--cream" type="submit">Send my request</button>
-          <p class="form__fine"></p>
+          <p class="form__fine">{INTAKE_FINE}</p>
         </div>
       </div>
       <p class="form__success" role="status" hidden></p>
