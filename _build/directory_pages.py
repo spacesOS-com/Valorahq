@@ -18,6 +18,7 @@ pages, exactly the kind of thin/duplicate content that hurts SEO instead of
 helping it.
 """
 from html import escape
+import re
 
 from partials import (page, head, BRAND, contact_section, floating_cta,
                        DIRECTORY_SPECIALTIES as SPECIALTIES, DIRECTORY_CITIES as CITIES,
@@ -75,6 +76,30 @@ def _calc_cross_link(categories):
       <p class="eyebrow reveal" style="margin-bottom:14px;">Related tools</p>
       {links}
     </div>"""
+
+
+def _illustrated_guide(slug, guide):
+    """Add three topic-specific figures after early, middle and late sections."""
+    if not guide:
+        return guide
+    from guide_figures import FIGURES
+    figures = FIGURES.get(slug)
+    if not figures:
+        return guide
+    lead, *sections = re.split(r"(?=<h2>)", guide)
+    if len(sections) < 5:
+        raise ValueError(f"Cannot spread three figures through {slug}: only {len(sections)} sections")
+    positions = [0, (len(sections) - 1) // 2, len(sections) - 2]
+    for index, (src, alt, caption) in zip(positions, figures):
+        mobile_src = src[:-4] + "-mobile.svg"
+        sections[index] += (
+            '<figure class="guide-figure"><picture>'
+            f'<source media="(max-width: 600px)" srcset="{escape(mobile_src)}">'
+            f'<img src="{escape(src)}" alt="{escape(alt)}" width="800" height="336" loading="lazy">'
+            f'</picture><figcaption>{escape(caption)}</figcaption>'
+            '</figure>'
+        )
+    return lead + ''.join(sections)
 
 
 def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=None, faq=None, guide=""):
@@ -135,7 +160,7 @@ def _write_listing(write_fn, slug, meta_title, meta_desc, eyebrow, title, intro,
     html = page(
         head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=(slug in {n[0] for n in NICHES} or not matches),
              schema=faq_schema(faq) if faq else ""),
-        _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories, faq=faq, guide=PROFESSION_GUIDES.get(slug, SPECIALTY_GUIDES.get(slug, HELD_GUIDES.get(slug, "")))) + floating_cta(slug),
+        _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories, faq=faq, guide=_illustrated_guide(slug, PROFESSION_GUIDES.get(slug, SPECIALTY_GUIDES.get(slug, HELD_GUIDES.get(slug, ""))))) + floating_cta(slug),
         with_gate=True,
         body_class="page-sub has-cta-float",
     )
