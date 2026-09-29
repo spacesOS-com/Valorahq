@@ -4,9 +4,8 @@ and a small number of real city+specialty combos.
 
 Every page lists real advisors from advisor_pages.ADVISORS — no invented
 people, ever. Where a page's tag/city doesn't genuinely match any advisor,
-it falls back to showing the full real roster with an honest note ("we
-don't have a specialist tagged for this yet, but these advisors work with
-clients nationwide") instead of a strict local/specialty claim. That page
+it falls back to showing the full roster with an honest note: these are
+general profiles, not a verified location or specialty match. That page
 is still marked noindex (see partials.head): it stays live and useful for
 a visitor who lands on it, but isn't presented to search engines as if it
 were a genuine local/specialty match. Only pages with a real match are
@@ -25,6 +24,9 @@ from partials import (page, head, BRAND, contact_section, floating_cta,
                        DIRECTORY_NICHES as NICHES, DIRECTORY_ASSET_TYPES as ASSET_TYPES)
 from advisor_pages import ADVISORS
 from directory_faqs import DIRECTORY_FAQS
+from directory_profession_guides import PROFESSION_GUIDES
+from directory_specialty_guides import SPECIALTY_GUIDES
+from directory_held_guides import HELD_GUIDES
 from partials import faq_schema, faq_block
 
 
@@ -53,6 +55,11 @@ SPECIALTY_TO_CALC = {
 }
 NICHE_TO_CALC = {
     "retired": "Retirement",
+    "business-owner": "Investing",
+    "executive-professional": "Equity Compensation",
+    "entrepreneur-founder": "Equity Compensation",
+    "recently-sold-a-business": "Investing",
+    "recently-received-an-inheritance": "Investing",
 }
 
 
@@ -70,7 +77,7 @@ def _calc_cross_link(categories):
     </div>"""
 
 
-def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=None, faq=None):
+def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=None, faq=None, guide=""):
     faq_section = ""
     if faq:
         faq_section = (
@@ -79,35 +86,46 @@ def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=N
             + faq_block(faq) + '\n'
             '  </div>\n</section>'
         )
-    note = ""
     if advisors:
         shown = advisors
+        note = ""
     else:
-        # No exact local/specialty match — show the real roster anyway rather
-        # than an empty state, framed honestly as nationwide availability
-        # (not a claim of local presence or this specific specialty).
         shown = ADVISORS
         note = f'<p class="dir-note">{escape(empty_note)}</p>'
     cards = "\n".join(_advisor_card(a) for a in shown)
     grid = f'{note}<div class="match__grid">{cards}</div>'
-    return f"""
+    if guide:
+        guide_section = f'''
+<section class="section section--paper dir-guide" id="guide" style="padding-top:64px">
+  <div class="container" style="max-width:900px;">
+    <div class="dir-guide__prose" style="font-size:1.06rem; line-height:1.75; max-width:74ch;">{guide}</div>
+  </div>
+</section>
+<section class="section section--paper" id="advisor-profiles">
+  <div class="container" style="max-width:900px;">
+    <h2>Review advisor profiles</h2>
+    <div style="margin-top:24px;">{grid}</div>
+    {_calc_cross_link(calc_categories)}
+  </div>
+</section>
+'''
+        first_section = f'<p style="margin-top:24px;"><a class="btn btn--dark" href="#guide">Read the planning guide</a> <a class="btn btn--outline" href="#advisor-profiles">Review advisor profiles</a></p>'
+    else:
+        guide_section = ""
+        first_section = f'<div style="margin-top:40px;">{grid}</div>{_calc_cross_link(calc_categories)}'
+    return f'''
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
     <p class="eyebrow reveal">{escape(eyebrow)}</p>
     <h1 class="display display--lg reveal">{title}</h1>
     <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">{escape(intro)}</p>
-    <div style="margin-top:40px;">
-      {grid}
-    </div>
-    {_calc_cross_link(calc_categories)}
+    {first_section}
   </div>
 </section>
-
+{guide_section}
 {faq_section}
-
 {contact_section()}
-"""
-
+'''
 
 def _specialty_matches(needles):
     return [a for a in ADVISORS if any(n in t.lower() for t in a["tags"] for n in needles)]
@@ -115,9 +133,9 @@ def _specialty_matches(needles):
 
 def _write_listing(write_fn, slug, meta_title, meta_desc, eyebrow, title, intro, matches, empty_note, calc_categories=None, faq=None):
     html = page(
-        head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=not matches,
+        head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=(slug in {n[0] for n in NICHES} or not matches),
              schema=faq_schema(faq) if faq else ""),
-        _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories, faq=faq) + floating_cta(slug),
+        _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories, faq=faq, guide=PROFESSION_GUIDES.get(slug, SPECIALTY_GUIDES.get(slug, HELD_GUIDES.get(slug, "")))) + floating_cta(slug),
         with_gate=True,
         body_class="page-sub has-cta-float",
     )
@@ -133,11 +151,13 @@ def real_pages():
     out = []
     for slug, label, needles in SPECIALTIES:
         if _specialty_matches(needles):
-            out.append((slug, f"{label} advisors on Valora."))
+            out.append((slug, f"Explore {label.lower()} questions and topic-tagged advisor profiles on Valora; tags do not verify expertise."))
     for slug, city in CITIES:
         if [a for a in ADVISORS if a["city"] == city]:
             out.append((slug, f"Financial advisors in {city} on Valora."))
-    # niches and asset types: no advisor is tagged this way yet, so none are real pages today
+    # Niches remain excluded from the sitemap even if a future fallback roster
+    # is populated. A roster card alone does not establish niche-specific fit.
+    # Asset types have no tagged matches today either.
     for city_slug, city, spec_slug, label in real_combos():
         out.append((f"{city_slug}-{spec_slug}", f"{label} advisors in {city} on Valora."))
     return out
@@ -164,13 +184,19 @@ def build_directory_pages(write_fn):
     for slug, label, needles in SPECIALTIES:
         matches = _specialty_matches(needles)
         _write_listing(write_fn, slug,
-                        f"{label} Advisors | {BRAND}",
-                        f"Independent, fiduciary financial advisors on Valora who specialize in {label.lower()}.",
-                        "Specialty", f"{label} advisors",
-                        f"Independent advisors on Valora who specialize in {label.lower()}.",
+                        f"{label} - questions to ask an advisor | {BRAND}",
+                        (f"Explore {label.lower()} and compare advisor questions. "
+                         f"No advisor is currently tagged for this topic." if not matches else
+                         f"Explore {label.lower()} and questions to ask an advisor. "
+                         f"A topic tag does not verify expertise or fiduciary status."),
+                        "Specialty", f"{label}: questions for an advisor",
+                        (f"Learn what to ask about {label.lower()} and review general advisor profiles. "
+                         f"No advisor is currently tagged for this topic." if not matches else
+                         f"Learn what to ask about {label.lower()} and review topic-tagged advisor profiles. "
+                         f"Verify each advisor's experience, registration, fees and fit."),
                         matches,
-                        f"We don't have a {label.lower()} specialist listed yet, but the advisors below "
-                        "work with clients nationwide and can tell you if this is something they cover.",
+                        f"We don't have a {label.lower()} specialist tagged here yet. The profiles below "
+                        "are a general roster; ask each advisor whether they cover this topic.",
                         calc_categories=[SPECIALTY_TO_CALC[slug]] if slug in SPECIALTY_TO_CALC else None,
                         faq=DIRECTORY_FAQS.get(slug))
 
@@ -183,7 +209,7 @@ def build_directory_pages(write_fn):
                         f"Independent, fiduciary financial advisors based in {city}.",
                         matches,
                         f"We don't have a {city.split(',')[0]}-based advisor listed yet, but the "
-                        "advisors below work with clients remotely, wherever they're based.",
+                        "profiles below are a general roster; ask each advisor about location and fit.",
                         calc_categories=CALC_CATEGORIES,
                         faq=DIRECTORY_FAQS.get(slug))  # location doesn't imply a topic — show all
 
@@ -191,12 +217,12 @@ def build_directory_pages(write_fn):
         # no advisor is tagged by client situation today — always the honest empty state, always noindex
         _write_listing(write_fn, slug,
                         f"Advisors for {label} | {BRAND}",
-                        f"Independent, fiduciary financial advisors on Valora who work with {label.lower()} clients.",
+                        f"Explore planning for {label.lower()} clients and questions to ask a financial advisor. No advisor is currently tagged for this situation.",
                         "Niche", f"Advisors for {label.lower()} clients",
-                        f"Independent advisors on Valora who work with {label.lower()} clients.",
+                        f"Explore what {label.lower()} clients should ask a financial advisor. The profiles below are a general roster, not verified specialists for this situation.",
                         [],
-                        "We don't have an advisor specifically tagged for this yet, but the advisors "
-                        "below work with clients nationwide and can tell you if this is something they cover.",
+                        "We don't have an advisor specifically tagged for this yet. The profiles "
+                        "below are a general roster; ask each advisor whether they cover your situation.",
                         calc_categories=[NICHE_TO_CALC[slug]] if slug in NICHE_TO_CALC else None,
                         faq=DIRECTORY_FAQS.get(slug))
 
@@ -209,7 +235,7 @@ def build_directory_pages(write_fn):
                         f"Independent advisors on Valora who work with households in the {label.lower()} range.",
                         [],
                         "We don't have an advisor specifically tagged for this asset range yet, but the "
-                        "advisors below work with clients nationwide and can tell you if this fits.")
+                        "profiles below are a general roster; ask each advisor about location and fit.")
 
     for city_slug, city, spec_slug, label in real_combos():
         matches = [a for a in ADVISORS if a["city"] == city]
