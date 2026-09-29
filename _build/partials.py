@@ -358,11 +358,8 @@ def footer():
     <h2 class="display display--md footer__statement reveal">Independent advice.<br><em>Personal fit.</em></h2>
 
     <div class="footer__grid">
-      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(city)}</a></li>' for slug, city in DIRECTORY_CITIES[:5])}<li><a href="/cities/">More &rarr;</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES[:5])}<li><a href="/specialties/">More &rarr;</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES[:5])}<li><a href="/professions/">More &rarr;</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
-      <nav class="footer__col" aria-label="Top financial advisors"><h5>Top Advisors</h5><ul>{state_links}<li><a href="/top-financial-advisors/">More &rarr;</a></li></ul></nav>
+      <!-- Directory footer columns (Cities/Specialties/Professions/Asset types/Top Advisors) removed:
+           directory pages parked pending founder/counsel - Mira v8 ruling 4, no global footer/nav links. -->
       <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
     </div>
 
