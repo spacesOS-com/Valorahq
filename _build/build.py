@@ -33,9 +33,9 @@ SITE_URL = "https://www.valorahq.com"
 # sitemap, llms.txt and llms-full.txt all pick it up on the next build.
 PAGES = [
     # (path, one-line description for llms.txt)
-    ("/", "Home — how Valora matches people with independent, fiduciary financial advisors."),
+    ("/", "Educational financial-planning content and an inquiry route; no advisor matches or introductions currently."),
     ("/for-advisors/", "For advisors — how independent advisors join Valora's network."),
-    ("/find-your-advisor/", "Find your advisor — four-question intake; each request is reviewed by hand."),
+    ("/find-your-advisor/", "Tell us what you need: four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
     ("/calculators/", "Browse financial calculators by topic."),
     ("/cities/", "Browse financial advisors by city."),
@@ -96,8 +96,8 @@ def refresh_index():
         html = f.read()
     regions = {
         "head": head(f"{BRAND} — Your money has a purpose",
-                     "Explore independent financial advisors. Valora helps you find advisors who work with "
-                     "situations like yours — you decide who you'd like to contact.",
+                     "Valora publishes educational information about financial planning and accepts questions. "
+                     "We aren't arranging advisor matches or introductions at this time.",
                      path="/", schema=faq_schema(CLIENT_FAQ)),
         "header": header(None, banner=True),
         "hero-card": hero_card(),

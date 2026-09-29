@@ -137,17 +137,13 @@ DIRECTORY_ASSET_TYPES = [
 # out of sync with what the rest of the page actually says.
 CLIENT_FAQ = [
     ("Is Valora free to use?",
-     "Yes. Exploring advisors on Valora is free, with no obligation, and we never sell your information."),
+     "Yes. Valora publishes educational information about financial planning and accepts questions, with no obligation, and we never sell your information."),
     ("Does Valora provide investment advice?",
-     "No. Valora is an independent platform that provides financial education and helps consumers discover "
-     "financial advisors. Valora does not provide investment, tax, legal, or financial advice — financial "
-     "advisory services are provided independently by the advisors you choose to contact."),
+     "No. Valora is an independent platform that publishes educational information about financial "
+     "planning and accepts questions. Valora does not provide investment, tax, legal, or financial advice."),
     ("What happens after I send a question?",
      "We'll review your request and email next steps. Valora is not arranging advisor matches or "
      "introductions at this time, and your inquiry does not authorize sharing your details with an advisor."),
-    ("Who are the advisors on Valora?",
-     "Independent, fiduciary financial advisors — not Valora employees. Valora is an independent platform "
-     "that helps you discover them; it isn't an advisory firm itself."),
     ("How soon will I hear back after I submit the form?",
      "After you submit, we review your request and email you about next steps. Timing may vary."),
 ]
@@ -377,7 +373,7 @@ def footer():
           <span class="logo__mark" aria-hidden="true">{LOGO_SVG}</span>
           <span class="logo__word">{BRAND}</span>
         </a>
-        <p>An independent platform helping people discover financial advisors.</p>
+        <p>Valora publishes educational information about financial planning and accepts questions.</p>
         <ul class="footer__contact">
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
         </ul>
@@ -389,7 +385,7 @@ def footer():
     </div>
 
     <div class="footer__base">
-      <p>© <span id="year">2026</span> SpacesOS Inc. Valora is a SpacesOS Inc. product. {BRAND} is an independent platform that provides financial education and helps consumers discover financial advisors. {BRAND} does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay {BRAND} for access to the platform or for introductions to prospective clients.</p>
+      <p>© <span id="year">2026</span> SpacesOS Inc. Valora is a SpacesOS Inc. product. {BRAND} is an independent platform that publishes educational information about financial planning and accepts questions. {BRAND} does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay {BRAND} for access to the platform.</p>
     </div>
   </div>
 </footer>
@@ -444,7 +440,7 @@ def hero_card():
     return f"""<aside class="hcard reveal reveal--right">
       <span class="hcard__edge" aria-hidden="true"></span>
       <p class="hcard__eyebrow">Free · No obligation</p>
-      <h2 class="hcard__title">Explore financial advisors<br><em>who may fit your needs.</em></h2>
+      <h2 class="hcard__title">Have a financial question?</h2>
 
       <form class="hcard__form form--steps" id="heroForm" data-lead="Client" data-done="#heroDone" novalidate>
         <div class="form__step" data-step>

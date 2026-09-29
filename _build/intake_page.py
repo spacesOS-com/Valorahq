@@ -102,7 +102,7 @@ def intake_form():
         </div>
         <div class="field field--full form__foot">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
-          <button class="btn btn--cream" type="submit">Find my advisor</button>
+          <button class="btn btn--cream" type="submit">Send my request</button>
           <p class="form__fine"></p>
         </div>
       </div>
@@ -127,8 +127,8 @@ def intake_body():
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
     <p class="eyebrow reveal">Free · No obligation</p>
-    <h1 class="display display--lg reveal">Find your advisor.</h1>
-    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step.</p>
+    <h1 class="display display--lg reveal">Tell us what you need</h1>
+    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Answer four quick questions. We review each request by hand and email you about next steps.</p>
   </div>
 </section>
 
@@ -153,8 +153,8 @@ def intake_body():
 
 def build_intake_page(write_fn):
     html = page(
-        head("Find Your Advisor | Valora",
-             "Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step. Free, no obligation.",
+        head("Tell Us What You Need | Valora",
+             "Answer four quick questions. We review each request by hand and email you about next steps. Free, no obligation.",
              path="/find-your-advisor/", schema=faq_schema(INTAKE_FAQS)),
         intake_body(),
     )

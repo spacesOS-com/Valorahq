@@ -81,7 +81,7 @@
   "calculators": {
     "primary": {
       "type": "existing",
-      "url": "https://www.valorahq.com/calculators/retirement-savings-growth/"
+      "url": "/calculators/retirement-savings-growth/"
     },
     "related_links": [
       "https://www.valorahq.com/calculators/capital-gains-tax-estimate/",
