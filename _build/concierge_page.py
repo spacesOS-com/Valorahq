@@ -58,7 +58,17 @@ def _concierge_body():
       preview, not live.
     </p>
 
-    <p class="reveal" style="margin-top:32px; font-size:.86rem; color:var(--gold);" id="concierge-hint">&darr; Try it &mdash; hit "Ask Valora" in the bar at the bottom of the screen.</p>
+    <p class="reveal" style="margin-top:32px; color:var(--ink-soft); font-size:.82rem; max-width:56ch;">
+      It starts as the compact floating bar. Ask a second question and it moves itself into the
+      side panel, which has room to keep scrolling &mdash; a bottom bar doesn't. You can also force
+      either layout below, to compare them directly.
+    </p>
+    <div class="concierge-layout-toggle reveal" style="margin-top:14px;">
+      <button type="button" class="btn btn--outline is-active" data-layout-btn="bottom">Floating bar</button>
+      <button type="button" class="btn btn--outline" data-layout-btn="side">Side panel</button>
+    </div>
+
+    <p class="reveal" style="margin-top:20px; font-size:.86rem; color:var(--gold);" id="concierge-hint">&darr; Try it &mdash; hit "Ask" twice to see it move to the side panel on its own.</p>
 
     <div id="concierge-results" hidden>
       <p class="eyebrow reveal" style="margin-top:12px;">Advisors who focus on this</p>
@@ -108,56 +118,176 @@ def _concierge_body():
   </div>
 </section>
 
-<div class="concierge-float" id="concierge-float">
-  <span class="concierge-float__tag">Retirement planning</span>
-  <div class="concierge-float__panel" id="concierge-panel" hidden></div>
-  <div class="concierge-float__field">
-    <input type="text" id="concierge-input" value="I'm 58, planning to retire in about 7 years, and I want a clear income plan for when I stop working.">
-    <button type="button" class="btn btn--dark concierge-float__submit" id="concierge-send">Ask Valora</button>
+<div class="concierge-float" id="concierge-float-bottom">
+  <div class="concierge-float__greeting" id="concierge-greeting">
+    Looks like you're exploring retirement planning &mdash; want me to point you to a fitting advisor?
   </div>
+  <div class="concierge-float__panel" id="concierge-panel-bottom" hidden></div>
+  <div class="concierge-float__bar">
+    <span class="concierge-float__avatar" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+    <input type="text" id="concierge-input-bottom" placeholder="Chat with Valora&hellip;">
+    <button type="button" class="concierge-float__chip" data-fill="Show me advisors who fit my situation">See my matches</button>
+    <button type="button" class="concierge-float__chip" data-fill="I'd rather talk to a person directly">Talk to an advisor</button>
+    <button type="button" class="concierge-float__mic" id="concierge-voice-toggle" aria-label="Voice input (concept only, not functional)" title="Concept only &mdash; not functional">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" stroke="currentColor" stroke-width="1.5"/><path d="M6 11a6 6 0 0 0 12 0M12 19v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <button type="button" class="btn btn--dark concierge-float__submit" id="concierge-send-bottom">Ask</button>
+  </div>
+</div>
+
+<button type="button" class="concierge-side-launcher" id="concierge-side-launcher" hidden>Ask Valora</button>
+<div class="concierge-side-panel" id="concierge-side-panel">
+  <div class="concierge-side-panel__head">
+    <div class="concierge-side-panel__who">
+      <span class="concierge-side-panel__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <div><strong>Valora Concierge</strong><span>Concept preview &mdash; not live AI</span></div>
+    </div>
+    <button type="button" class="concierge-side-panel__close" id="concierge-side-close" aria-label="Close">&times;</button>
+  </div>
+
+  <div class="concierge-side-panel__chat" id="concierge-panel-side">
+    <div class="convert-mock__bubble convert-mock__bubble--us">Hi &mdash; tell me what's going on financially, and I'll point you to advisors and tools that fit.</div>
+  </div>
+
+  <div class="concierge-side-panel__suggestions" id="concierge-side-suggestions">
+    <p>Ask me things like:</p>
+    <button type="button" class="concierge-side-panel__chip">How do I find the right advisor for a business sale?</button>
+    <button type="button" class="concierge-side-panel__chip">I have RSUs vesting this year &mdash; who handles that?</button>
+    <button type="button" class="concierge-side-panel__chip">I'm 58, planning to retire in about 7 years, and I want a clear income plan for when I stop working.</button>
+  </div>
+
+  <div class="concierge-side-panel__actions">
+    <a class="btn btn--outline" href="/find-your-advisor/">See my matches</a>
+    <a class="btn btn--outline" href="/#contact" data-gate-open>Talk to a person</a>
+  </div>
+
+  <div class="concierge-side-panel__field">
+    <input type="text" id="concierge-input-side" placeholder="Ask Valora a question">
+    <button type="button" class="concierge-side-panel__send" id="concierge-send-side" aria-label="Send">&rarr;</button>
+  </div>
+  <p class="concierge-side-panel__fine">A design concept &mdash; nothing you type here is sent anywhere or recorded.</p>
 </div>
 
 <script>
 (function () {{
-  var sent = false;
-  var input = document.getElementById('concierge-input');
-  var send = document.getElementById('concierge-send');
-  var panel = document.getElementById('concierge-panel');
   var results = document.getElementById('concierge-results');
   var hint = document.getElementById('concierge-hint');
-  var wrap = document.getElementById('concierge-float');
+  var sent = false;
 
-  function bubble(text, who) {{
-    var d = document.createElement('div');
-    d.className = 'convert-mock__bubble convert-mock__bubble--' + who;
-    d.textContent = text;
-    panel.appendChild(d);
+  function reveal() {{
+    if (sent) return;
+    sent = true;
+    results.hidden = false;
+    if (hint) hint.hidden = true;
+    results.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
   }}
 
-  function ask() {{
-    var val = (input.value || '').trim();
-    if (!val) return;
-    panel.hidden = false;
-    wrap.classList.add('is-expanded');
-    panel.innerHTML = '';
-    bubble(val, 'them');
-    input.disabled = true;
-    send.textContent = 'Thinking\\u2026';
-    setTimeout(function () {{
-      bubble("Got it \\u2014 retirement income planning, roughly a 7-year runway. Here's what's relevant:", 'us');
-      send.textContent = 'Ask again';
-      input.disabled = false;
-      if (!sent) {{
-        sent = true;
-        results.hidden = false;
-        if (hint) hint.hidden = true;
-        results.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+  function wire(suffix, onExpand, onAsk) {{
+    var input = document.getElementById('concierge-input-' + suffix);
+    var send = document.getElementById('concierge-send-' + suffix);
+    var panel = document.getElementById('concierge-panel-' + suffix);
+    var sendLabel = send.textContent;
+
+    function bubble(text, who) {{
+      var d = document.createElement('div');
+      d.className = 'convert-mock__bubble convert-mock__bubble--' + who;
+      d.textContent = text;
+      panel.appendChild(d);
+      panel.scrollTop = panel.scrollHeight;
+    }}
+
+    function ask(text) {{
+      var val = (text || input.value || '').trim();
+      if (!val) return;
+      panel.hidden = false;
+      if (onExpand) onExpand();
+      input.value = val;
+      bubble(val, 'them');
+      input.disabled = true;
+      send.textContent = '\\u2026';
+      if (onAsk) onAsk();
+      setTimeout(function () {{
+        bubble("Got it \\u2014 retirement income planning, roughly a 7-year runway. Here's what's relevant:", 'us');
+        send.textContent = sendLabel;
+        input.disabled = false;
+        input.value = '';
+        reveal();
+      }}, 700);
+    }}
+
+    send.addEventListener('click', function () {{ ask(); }});
+    input.addEventListener('keydown', function (e) {{ if (e.key === 'Enter') ask(); }});
+    return ask;
+  }}
+
+  // layout elements (declared first so the auto-migration below can use them)
+  var bottomWidget = document.getElementById('concierge-float-bottom');
+  var bottomPanel = document.getElementById('concierge-panel-bottom');
+  var launcher = document.getElementById('concierge-side-launcher');
+  var sidePanel = document.getElementById('concierge-side-panel');
+  var sideChat = document.getElementById('concierge-panel-side');
+  var closeBtn = document.getElementById('concierge-side-close');
+  var buttons = document.querySelectorAll('[data-layout-btn]');
+  var suggestions = document.getElementById('concierge-side-suggestions');
+  var autoMode = true; // true until the visitor manually picks a layout
+
+  function setActiveButton(mode) {{
+    buttons.forEach(function (b) {{ b.classList.toggle('is-active', b.getAttribute('data-layout-btn') === mode); }});
+  }}
+
+  function migrateToSide() {{
+    // conversation got longer than one exchange — move it into the side panel,
+    // which has more room to keep scrolling than a bottom bar does
+    while (bottomPanel.firstChild) {{ sideChat.appendChild(bottomPanel.firstChild); }}
+    bottomWidget.style.display = 'none';
+    launcher.hidden = true;
+    sidePanel.classList.add('is-open');
+    if (suggestions) suggestions.hidden = true;
+    if (autoMode) setActiveButton('side');
+  }}
+
+  var greeting = document.getElementById('concierge-greeting');
+  var bottomExchanges = 0;
+  var askBottom = wire('bottom', function () {{
+    bottomWidget.classList.add('is-expanded');
+    if (greeting) greeting.hidden = true;
+  }}, function () {{
+    bottomExchanges++;
+    if (bottomExchanges === 2) setTimeout(migrateToSide, 900);
+  }});
+  document.getElementById('concierge-input-bottom').addEventListener('focus', function () {{ if (greeting) greeting.hidden = true; }});
+  document.querySelectorAll('#concierge-float-bottom .concierge-float__chip').forEach(function (chip) {{
+    chip.addEventListener('click', function () {{ askBottom(chip.getAttribute('data-fill')); }});
+  }});
+
+  var askSide = wire('side', null, function () {{ if (suggestions) suggestions.hidden = true; }});
+  document.querySelectorAll('.concierge-side-panel__chip').forEach(function (chip) {{
+    chip.addEventListener('click', function () {{ askSide(chip.textContent); }});
+  }});
+
+  // manual layout toggle
+  buttons.forEach(function (btn) {{
+    btn.addEventListener('click', function () {{
+      autoMode = false;
+      setActiveButton(btn.getAttribute('data-layout-btn'));
+      var mode = btn.getAttribute('data-layout-btn');
+      sidePanel.classList.remove('is-open');
+      if (mode === 'side') {{
+        bottomWidget.style.display = 'none';
+        launcher.hidden = false;
+      }} else {{
+        bottomWidget.style.display = '';
+        launcher.hidden = true;
       }}
-    }}, 700);
-  }}
+    }});
+  }});
 
-  send.addEventListener('click', ask);
-  input.addEventListener('keydown', function (e) {{ if (e.key === 'Enter') ask(); }});
+  launcher.addEventListener('click', function () {{ sidePanel.classList.add('is-open'); }});
+  closeBtn.addEventListener('click', function () {{ sidePanel.classList.remove('is-open'); }});
 }})();
 </script>
 
