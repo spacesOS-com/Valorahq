@@ -24,8 +24,8 @@ from insights_pages import ARTICLES
 _CALC_SLUG = "retirement-savings-growth"
 _ARTICLE_SLUG = "realistic-withdrawal-rate-today"
 
-# Illustrative match: the 3 of the 4 real advisors tagged for retirement income
-_MATCH_SLUGS = ["james-conole", "kevin-lum", "even-better-retirement"]
+# No advisor identities are approved for display.
+_MATCH_SLUGS = []
 
 
 def _match_card(a):
@@ -71,11 +71,6 @@ def _concierge_body():
     <p class="reveal" style="margin-top:20px; font-size:.86rem; color:var(--gold);" id="concierge-hint">&darr; Try it &mdash; hit "Ask" twice to see it move to the side panel on its own.</p>
 
     <div id="concierge-results" hidden>
-      <p class="eyebrow reveal" style="margin-top:12px;">Advisors who focus on this</p>
-      <div class="match__grid reveal" style="margin-top:16px;">
-        {cards}
-      </div>
-
       <p class="eyebrow reveal" style="margin-top:36px;">A calculator that fits</p>
       <div class="concierge-inline-card reveal" style="margin-top:16px;">
         <h4>{escape(calc['title'])}</h4>
@@ -96,15 +91,13 @@ def _concierge_body():
         <p>{escape(article['summary'])}</p>
       </a>
 
-      <p class="eyebrow reveal" style="margin-top:36px;">Or talk to one of them directly</p>
-      <button type="button" class="btn btn--dark reveal concierge-talk-trigger" style="margin-top:16px;">Talk to an advisor</button>
     </div>
 
     <p class="eyebrow reveal" style="margin-top:48px;">The same bar, aware of wherever you are</p>
     <p class="reveal" style="margin-top:12px; color:var(--ink-soft); max-width:56ch;">
       The floating bar isn't one generic box &mdash; whatever page it's on would load that page's own
       content into the conversation as context (this calculator's fields and result, this
-      article's actual claims, this advisor's real profile), so it can answer specifically about
+      article's actual claims, this page), so it can answer specifically about
       what's already on screen, not generic advice.
     </p>
     <div class="concierge-variants reveal" style="margin-top:20px;">
@@ -115,14 +108,6 @@ def _concierge_body():
       <div class="concierge-variant">
         <span class="concierge-variant__tag">On an insight article</span>
         <p>&ldquo;Ask about this article&rdquo; &mdash; e.g. <em>&ldquo;Does this apply if I have a pension too?&rdquo;</em></p>
-      </div>
-      <div class="concierge-variant">
-        <span class="concierge-variant__tag">On an advisor's profile</span>
-        <p>&ldquo;Ask James Conole a question&rdquo; &mdash; e.g. <em>&ldquo;Do you work with clients outside Texas?&rdquo;</em></p>
-        <div class="concierge-variant__preview">
-          <img src="/images/advisors/advisor-1.jpg" alt="James Conole, CFP&reg;" width="34" height="34">
-          <span>Chat with James Conole&hellip;</span>
-        </div>
       </div>
     </div>
 
@@ -322,7 +307,7 @@ def _concierge_body():
     d.className = 'convert-mock__bubble convert-mock__bubble--us concierge-calendar';
     d.innerHTML =
       '<p class="eyebrow">Sample availability &mdash; not a real booking</p>' +
-      '<h4>Book a call with James Conole, CFP&reg;</h4>' +
+      '<h4>Illustrative availability</h4>' +
       '<div class="concierge-calendar__grid">' +
         '<div class="concierge-calendar__day"><span>Tue, Oct 6</span>' +
           '<button type="button" class="concierge-calendar__slot">10:00 AM</button>' +

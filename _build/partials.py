@@ -207,8 +207,8 @@ def article_schema(headline, description, url, date_published, author_name, imag
 
 def advisor_schema(name, job_title, url, image=None, description=None, area_served=None):
     """Person schema for an /advisors/[slug]/ page. `name` containing a comma
-    (e.g. "James Conole, CFP®") signals a real individual; a firm name without
-    one (e.g. "Even Better Retirement") gets ProfessionalService instead, so
+    A full personal name signals an individual; a firm name without one
+    gets ProfessionalService instead, so
     this never mislabels a firm as a person."""
     is_person = "," in name
     return json_ld({

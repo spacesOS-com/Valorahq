@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section, RB2B_SNIPPET,
                        faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER)
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
-from advisor_pages import build_advisor_pages, ADVISORS
+from advisor_pages import ADVISORS
 from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
 from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
 from insights_pages import build_insights_pages, ARTICLES
@@ -43,7 +43,6 @@ PAGES = [
     ("/asset-types/", "Browse financial advisors by investable-asset range."),
     ("/top-financial-advisors/", "Top financial advisors in the U.S., by state and city."),
 ] + [(f"/top-financial-advisors/{slug}/", f"Top financial advisors in {name}.") for slug, name in us_all_states()
-] + [(f"/advisors/{a['slug']}/", f"{a['name']} — {a['firm']}") for a in ADVISORS
 ] + [
     # only pages with a real advisor match — see directory_pages.real_pages().
     # Empty-state specialty/city/niche/asset-type pages still get built (as
@@ -180,7 +179,6 @@ def build_llms():
 
 if __name__ == "__main__":
     build_for_advisors()
-    build_advisor_pages(write)
     build_directory_pages(write)
     build_cities_index(write)
     build_specialties_index(write)
@@ -196,7 +194,7 @@ if __name__ == "__main__":
     build_robots()
     build_sitemap()
     build_llms()
-    print("content pages:", len(PAGES) - 2 - len(ADVISORS) - len(real_pages()) - len(ARTICLES) - len(CALCULATORS) - len(CATEGORIES))
+    print("content pages:", len(PAGES) - 2 - len(real_pages()) - len(ARTICLES) - len(CALCULATORS) - len(CATEGORIES))
     total_dir = len(SPECIALTIES) + len(CITIES) + len(NICHES) + len(ASSET_TYPES) + len(real_combos())
-    print("built /for-advisors/ (+ /advisors.html redirect) + %d advisor pages + %d directory pages (%d specialty + %d city + %d niche + %d asset-type + %d combo, %d indexed / rest noindex) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
-          % (len(ADVISORS), total_dir, len(SPECIALTIES), len(CITIES), len(NICHES), len(ASSET_TYPES), len(real_combos()), len(real_pages()), len(ARTICLES), len(CALCULATORS)))
+    print("built /for-advisors/ (+ /advisors.html redirect) + %d directory pages (%d specialty + %d city + %d niche + %d asset-type + %d combo, %d indexed / rest noindex) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
+          % (total_dir, len(SPECIALTIES), len(CITIES), len(NICHES), len(ASSET_TYPES), len(real_combos()), len(real_pages()), len(ARTICLES), len(CALCULATORS)))
