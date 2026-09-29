@@ -121,8 +121,9 @@ def _calculators(pack):
     embed_url = ""
     if prim.get("type") == "existing":
         embed_url = prim.get("url") or ("/calculators/%s/" % prim["slug"] if prim.get("slug") else "")
-        if embed_url.startswith("/"):
-            embed_url = "https://www.valorahq.com" + embed_url
+        # Origin-relative stays origin-relative: the embed must resolve against
+        # whatever origin serves the page (preview gate or prod), never hard-coded
+        # to prod (Maya's dentist-v6 blocker: absolute prod URL 404'd inside the frame).
     name = prim.get("name") or (_calc_link_label(embed_url) if embed_url else "Calculator")
     iframe = ""
     if embed_url:
