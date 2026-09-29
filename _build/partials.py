@@ -142,10 +142,9 @@ CLIENT_FAQ = [
      "No. Valora is an independent platform that provides financial education and helps consumers discover "
      "financial advisors. Valora does not provide investment, tax, legal, or financial advice — financial "
      "advisory services are provided independently by the advisors you choose to contact."),
-    ("How does Valora match me with an advisor?",
-     "You answer a few questions about your situation — what you're solving for, your assets, and your "
-     "circumstances. Valora surfaces advisors who may fit, and you review their profiles and decide who, "
-     "if anyone, to contact."),
+    ("What happens after I send a question?",
+     "We'll review your request and email next steps. Valora is not arranging advisor matches or "
+     "introductions at this time, and your inquiry does not authorize sharing your details with an advisor."),
     ("Who are the advisors on Valora?",
      "Independent, fiduciary financial advisors — not Valora employees. Valora is an independent platform "
      "that helps you discover them; it isn't an advisory firm itself."),
@@ -291,12 +290,12 @@ NAV_MENUS = [
             ("Financial advisors in New York", "/find-a-financial-advisor/new-york/"),
             ("Financial advisors in Chicago", "/find-a-financial-advisor/chicago/"),
         ],
-        "cta": ("Find an advisor", "/find-your-advisor/"),
+        "cta": ("Ask a question", "/find-your-advisor/"),
     },
-    {"name": "Retirement", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
-    {"name": "Investing", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
-    {"name": "Banking", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
-    {"name": "Taxes", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
+    {"name": "Retirement", "live": False, "guides": [], "resources": [], "cta": ("Ask a question", "/find-your-advisor/")},
+    {"name": "Investing", "live": False, "guides": [], "resources": [], "cta": ("Ask a question", "/find-your-advisor/")},
+    {"name": "Banking", "live": False, "guides": [], "resources": [], "cta": ("Ask a question", "/find-your-advisor/")},
+    {"name": "Taxes", "live": False, "guides": [], "resources": [], "cta": ("Ask a question", "/find-your-advisor/")},
 ]
 
 
@@ -317,7 +316,7 @@ def _nav_dropdown(menu, index):
     </li>'''
 
 
-def header(active=None, cta=("Find an advisor", "/#contact"), banner=False):
+def header(active=None, cta=("Ask a question", "/#contact"), banner=False):
     items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
     banner_html = ""
     if banner:
@@ -384,7 +383,7 @@ def footer():
         </ul>
       </div>
 
-      <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#advisors">Find an advisor</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/team/">Team</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#contact" data-gate-open>Ask a question</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/team/">Team</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
       <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/">For advisers</a></li><li><a href="/for-advisors/#compare">How Valora compares</a></li><li><a href="/#insights">Insights</a></li><li><a href="/for-advisors/#apply">Book a demo</a></li></ul></nav>
       <nav class="footer__col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookies/">Cookies</a></li></ul></nav>
     </div>
@@ -475,7 +474,7 @@ def hero_card():
           {optional_field("h", wrap="hfield")}
           <div class="hcard__stepnav">
             <button class="hcard__back" type="button" data-step-back>Back</button>
-            <button class="btn btn--cream hcard__submit" type="submit">Explore advisors</button>
+            <button class="btn btn--cream hcard__submit" type="submit">Send a question</button>
           </div>
         </div>
         <p class="hcard__fine"></p>
@@ -690,7 +689,7 @@ def gate():
 # founder re-routes again, this line is the only change.
 FLOATING_CTA_HREF = "/find-your-advisor/"
 FLOATING_CTA_UTM = "utm_source=site&utm_medium=cta&utm_campaign=floating-cta"
-FLOATING_CTA_LABEL = "Find your advisor"
+FLOATING_CTA_LABEL = "Ask a question"
 
 def floating_cta(utm_content=None):
     href = FLOATING_CTA_HREF

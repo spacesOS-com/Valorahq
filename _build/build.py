@@ -71,7 +71,7 @@ def build_for_advisors():
                      "turnkey digital onboarding, tax-intelligent rebalancing, and a practice that stays 100% yours.",
                      path="/for-advisors/", schema=faq_schema(FOR_ADVISORS_FAQ)),
                 for_advisors_body(), active="advisors")
-    html = html.replace('<a class="btn btn--dark" href="/#contact">Find an advisor</a>',
+    html = html.replace('<a class="btn btn--dark" href="/#contact" data-gate-open>Ask a question</a>',
                         '<a class="btn btn--dark" href="#apply">Apply to join</a>', 1)
     write("/for-advisors/", html)
 

@@ -141,7 +141,7 @@ def _calculators(pack):
   <p class="calc-block__sub">Illustrative estimates only - your real numbers depend on your full picture.</p>
   {iframe}
   {links_html}
-  <p class="calc-block__cta"><a class="btn btn--dark" href="/#contact" data-gate-open>Book a call with an advisor</a></p>
+  <p class="calc-block__cta"><a class="btn btn--dark" href="/#contact" data-gate-open>Ask a question</a></p>
 </aside>"""
 
 
