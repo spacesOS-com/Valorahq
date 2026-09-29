@@ -282,10 +282,9 @@ NAV_MENUS = [
             ("Financial advisors for business owners", "/financial-advisor-for-business-owners/"),
         ],
         "index": ("All financial advice guides", "/guides/"),
-        "resources": [
-            ("Financial advisors in New York", "/find-a-financial-advisor/new-york/"),
-            ("Financial advisors in Chicago", "/find-a-financial-advisor/chicago/"),
-        ],
+        # Directory pages parked pending founder/counsel (Mira v8 ruling 4):
+        # no global-nav links to /find-a-financial-advisor/* in the meantime.
+        "resources": [],
         "cta": ("Ask a question", "/find-your-advisor/"),
     },
     {"name": "Retirement", "live": False, "guides": [], "resources": [], "cta": ("Ask a question", "/find-your-advisor/")},

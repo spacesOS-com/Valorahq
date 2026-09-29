@@ -136,7 +136,7 @@ def intake_body():
   <div class="container cta__grid">
     <div class="cta__copy">
       <h2 class="display display--lg reveal">Tell us what<br><em>you're solving for.</em></h2>
-      <p class="reveal">The right advisor can help you see which decisions deserve attention first.</p>
+      <p class="reveal">Tell us what you're trying to figure out. We'll review your request and email next steps.</p>
     </div>
 
     {intake_form()}

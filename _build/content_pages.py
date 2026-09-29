@@ -97,7 +97,7 @@ def _inline_cta(cta):
     <div class="content-page__cta">
       <h3>{escape(cta['heading'])}</h3>
       <p>{escape(cta.get('body', ''))}</p>
-      <a class="btn btn--dark" href="{escape(cta['href'])}" data-gate-open>{escape(cta.get('button_label', 'Get started'))}</a>
+      <a class="btn btn--dark" href="{escape(_rel(cta['href']))}" data-gate-open>{escape(cta.get('button_label', 'Get started'))}</a>
     </div>"""
 
 
@@ -107,6 +107,14 @@ _CALC_TITLES = {c["slug"]: c["title"] for c in CALCULATORS}
 def _calc_link_label(url):
     slug = url.rstrip("/").rsplit("/", 1)[-1]
     return _CALC_TITLES.get(slug, slug.replace("-", " ").capitalize())
+
+
+def _rel(u):
+    # Same-origin pack links/embeds stay origin-relative so preview and prod both
+    # resolve against the serving origin (Maya v7b blocker class: absolute prod
+    # URLs 404 inside previews and leak stale prod into held packs).
+    prefix = "https://www.valorahq.com"
+    return u[len(prefix):] if isinstance(u, str) and u.startswith(prefix) else u
 
 
 def _calculators(pack):
@@ -130,7 +138,7 @@ def _calculators(pack):
         iframe = (f'<iframe src="{escape(embed_url)}?embed=1" loading="lazy" '
                   f'title="{escape(name)}" data-calc-embed></iframe>')
     links = "".join(
-        f'<li><a href="{escape(u)}">{escape(_calc_link_label(u))}</a></li>'
+        f'<li><a href="{escape(_rel(u))}">{escape(_calc_link_label(u))}</a></li>'
         for u in (calc.get("related_links") or [])
     )
     links_html = (f'<div class="calc-block__links">Related calculators:<ul>{links}</ul></div>'
@@ -296,7 +304,7 @@ def _related(links):
     if not real:
         return ""
     cards = "\n".join(
-        f'      <a class="content-page__related-card" href="{escape(l)}">'
+        f'      <a class="content-page__related-card" href="{escape(_rel(l))}">'
         f'<span>{escape(_link_label(l))}</span>'
         f'<span class="content-page__related-arrow" aria-hidden="true">&rarr;</span></a>'
         for l in real)
@@ -318,7 +326,7 @@ def _cta(pack):
   <div class="container" style="max-width:680px; text-align:center;">
     <h2 class="display display--md">{escape(cta.get('heading', 'Ready to take the next step?'))}</h2>
     <p style="margin:16px 0 28px;">{escape(cta.get('body', ''))}</p>
-    <a class="btn btn--light" href="{escape(cta['href'])}">{escape(cta.get('button_label', 'Get started'))}</a>
+    <a class="btn btn--light" href="{escape(_rel(cta['href']))}">{escape(cta.get('button_label', 'Get started'))}</a>
   </div>
 </section>
 """
