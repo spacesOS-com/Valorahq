@@ -173,8 +173,8 @@ def organization_schema():
         "@type": "Organization",
         "name": BRAND,
         "url": SITE_URL,
-        "description": "Valora is an independent platform that matches people with vetted, "
-                        "independent fiduciary financial advisors based on their situation.",
+        "description": "Valora publishes educational information about financial planning and accepts "
+                        "questions. We are not arranging advisor matches or introductions at this time.",
         "email": EMAIL,
         "areaServed": {
             "@type": "Country",

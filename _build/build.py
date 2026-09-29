@@ -146,10 +146,9 @@ def build_llms():
     lines = "\n".join(f"- [{SITE_URL}{path}]({SITE_URL}{path}): {desc}" for path, desc in PAGES)
     write("/llms.txt", f"""# {BRAND}
 
-> Valora is an independent platform that matches people with vetted, independent
-> fiduciary financial advisors based on their situation. Valora does not itself
-> provide investment advice; advisors on the platform are independent and are
-> not employees of Valora.
+> Valora publishes educational information about financial planning and accepts
+> questions. We are not arranging advisor matches or introductions at this time.
+> Valora does not provide investment advice.
 
 ## Pages
 
