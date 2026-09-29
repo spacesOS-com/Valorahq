@@ -18,6 +18,7 @@ from partials import (BRAND, head, page, header, footer, gate, hero_card, contac
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
 from advisor_pages import build_advisor_pages, ADVISORS
 from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
+from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from content_pages import build_content_pages
@@ -40,6 +41,8 @@ PAGES = [
     ("/specialties/", "Browse financial advisors by specialty."),
     ("/professions/", "Browse financial advisors by profession."),
     ("/asset-types/", "Browse financial advisors by investable-asset range."),
+    ("/top-financial-advisors/", "Top financial advisors in the U.S., by state and city."),
+] + [(f"/top-financial-advisors/{slug}/", f"Top financial advisors in {name}.") for slug, name in us_all_states()
 ] + [(f"/advisors/{a['slug']}/", f"{a['name']} — {a['firm']}") for a in ADVISORS
 ] + [
     # only pages with a real advisor match — see directory_pages.real_pages().
@@ -47,6 +50,9 @@ PAGES = [
     # useful scaffolding for a visitor who lands on them) but are marked
     # noindex and left out of the sitemap/llms.txt on purpose.
     (f"/find-a-financial-advisor/{slug}/", desc) for slug, desc in real_pages()
+] + [
+    # /top-financial-advisors/[state]/[city]/ — only real matches (same rule)
+    (path, desc) for path, desc in us_real_pages()
 ] + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
 ] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS if not c.get("noindex")
 ] + [(f"/calculators/{cat.lower().replace(' ', '-')}/", f"{cat} calculators on Valora.") for cat in CATEGORIES]
@@ -180,6 +186,7 @@ if __name__ == "__main__":
     build_specialties_index(write)
     build_professions_index(write)
     build_asset_types_index(write)
+    build_us_directory(write)
     build_insights_pages(write)
     build_calculator_pages(write)
     PAGES.extend(build_content_pages(write))
