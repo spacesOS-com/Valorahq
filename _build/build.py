@@ -11,6 +11,7 @@ and refreshes the <!-- @build:... --> regions in index.html
 import os
 import re
 import sys
+from xml.sax.saxutils import escape as xml_escape
 
 sys.path.insert(0, os.path.dirname(__file__))
 from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section, RB2B_SNIPPET,
@@ -130,7 +131,7 @@ def build_sitemap():
     today = datetime.date.today().isoformat()
     urls = "\n".join(
         f"""  <url>
-    <loc>{SITE_URL}{path}</loc>
+    <loc>{xml_escape(SITE_URL + path)}</loc>
     <lastmod>{today}</lastmod>
   </url>""" for path, _ in PAGES
     )
