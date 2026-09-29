@@ -141,7 +141,6 @@ def _concierge_body():
   </div>
   <div class="concierge-float__panel" id="concierge-panel-bottom" hidden></div>
   <div class="concierge-float__bar">
-    <button type="button" class="concierge-float__minimize" id="concierge-minimize-bottom" aria-label="Minimize" hidden>&minus;</button>
     <span class="concierge-float__avatar" aria-hidden="true">
       <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/><path d="M6 20.5c4-9 6.5-9 10 0s6 9 10 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
     </span>
@@ -263,12 +262,10 @@ def _concierge_body():
   }}
 
   var greeting = document.getElementById('concierge-greeting');
-  var minimizeBottom = document.getElementById('concierge-minimize-bottom');
   var bottomExchanges = 0;
   var askBottom = wire('bottom', function () {{
     bottomWidget.classList.add('is-expanded');
     if (greeting) greeting.hidden = true;
-    if (minimizeBottom) minimizeBottom.hidden = false;
   }}, function () {{
     bottomExchanges++;
     if (bottomExchanges === 2) setTimeout(migrateToSide, 900);
@@ -277,12 +274,6 @@ def _concierge_body():
   document.querySelectorAll('#concierge-float-bottom .concierge-float__chip').forEach(function (chip) {{
     chip.addEventListener('click', function () {{ askBottom(chip.getAttribute('data-fill')); }});
   }});
-  if (minimizeBottom) {{
-    minimizeBottom.addEventListener('click', function () {{
-      bottomWidget.classList.remove('is-expanded');
-      minimizeBottom.hidden = true;
-    }});
-  }}
 
   var askSide = wire('side', null, function () {{ if (suggestions) suggestions.hidden = true; }});
   document.querySelectorAll('.concierge-side-panel__chip').forEach(function (chip) {{

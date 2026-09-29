@@ -354,6 +354,11 @@ def footer():
         f'<li><a href="/calculators/{_category_slug(cat)}/">{escape(cat)}</a></li>'
         for cat in CATEGORIES
     )
+    from us_directory_pages import all_states  # lazy import: avoids a circular import (that module imports this one)
+    state_links = "".join(
+        f'<li><a href="/top-financial-advisors/{slug}/">{escape(name)}</a></li>'
+        for slug, name in all_states()[:5]
+    )
     return f"""<footer class="footer">
   <div class="container">
     <h2 class="display display--md footer__statement reveal">Independent advice.<br><em>Personal fit.</em></h2>
@@ -363,6 +368,7 @@ def footer():
       <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES[:5])}<li><a href="/specialties/">More &rarr;</a></li></ul></nav>
       <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES[:5])}<li><a href="/professions/">More &rarr;</a></li></ul></nav>
       <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
+      <nav class="footer__col" aria-label="Top financial advisors"><h5>Top Advisors</h5><ul>{state_links}<li><a href="/top-financial-advisors/">More &rarr;</a></li></ul></nav>
       <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
     </div>
 
