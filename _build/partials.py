@@ -469,7 +469,7 @@ def hero_card():
             <button class="btn btn--cream hcard__submit" type="submit">Send a question</button>
           </div>
         </div>
-        <p class="hcard__fine"></p>
+        <p class="hcard__fine">{INTAKE_FINE}</p>
       </form>
 
       <div class="hcard__done" id="heroDone" hidden>
