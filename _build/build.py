@@ -22,6 +22,7 @@ from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from content_pages import build_content_pages
 from intake_page import build_intake_page
+from concierge_page import build_concierge_page
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://www.valorahq.com"
@@ -92,7 +93,7 @@ def refresh_index():
                      "Explore independent financial advisors. Valora helps you find advisors who work with "
                      "situations like yours — you decide who you'd like to contact.",
                      path="/", schema=faq_schema(CLIENT_FAQ)),
-        "header": header(None),
+        "header": header(None, banner=True),
         "hero-card": hero_card(),
         "faq": client_faq_section(),
         "contact": contact_section(),
@@ -183,6 +184,7 @@ if __name__ == "__main__":
     build_calculator_pages(write)
     PAGES.extend(build_content_pages(write))
     build_intake_page(write)
+    build_concierge_page(write)
     refresh_index()
     build_robots()
     build_sitemap()

@@ -317,10 +317,13 @@ def _nav_dropdown(menu, index):
     </li>'''
 
 
-def header(active=None, cta=("Find an advisor", "/#contact")):
+def header(active=None, cta=("Find an advisor", "/#contact"), banner=False):
     items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
-    items += '\n<li class="nav__advisors"><a href="/for-advisors/">For advisors</a></li>'
-    return f"""<header class="site-header" id="siteHeader">
+    banner_html = ""
+    if banner:
+        banner_html = ('<div class="site-banner">Are you a financial advisor? '
+                        '<a href="/for-advisors/">Join Valora &rarr;</a></div>')
+    return f"""{banner_html}<header class="site-header" id="siteHeader">
   <div class="container header__inner">
     <a class="logo" href="/" aria-label="{BRAND} home">
       <span class="logo__mark" aria-hidden="true">
@@ -376,7 +379,7 @@ def footer():
       </div>
 
       <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#advisors">Find an advisor</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/team/">Team</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
-      <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/">For advisers</a></li><li><a href="/for-advisors/#compare">How Valora compares</a></li><li><a href="https://blog.valorahq.com/" target="_blank" rel="noopener">Blog</a></li><li><a href="/for-advisors/#apply">Book a demo</a></li></ul></nav>
+      <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/">For advisers</a></li><li><a href="/for-advisors/#compare">How Valora compares</a></li><li><a href="/#insights">Insights</a></li><li><a href="/for-advisors/#apply">Book a demo</a></li></ul></nav>
       <nav class="footer__col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookies/">Cookies</a></li></ul></nav>
     </div>
 
