@@ -196,5 +196,21 @@ if __name__ == "__main__":
     build_llms()
     print("content pages:", len(PAGES) - 2 - len(real_pages()) - len(ARTICLES) - len(CALCULATORS) - len(CATEGORIES))
     total_dir = len(SPECIALTIES) + len(CITIES) + len(NICHES) + len(ASSET_TYPES) + len(real_combos())
-    print("built /for-advisors/ (+ /advisors.html redirect) + %d directory pages (%d specialty + %d city + %d niche + %d asset-type + %d combo, %d indexed / rest noindex) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
-          % (total_dir, len(SPECIALTIES), len(CITIES), len(NICHES), len(ASSET_TYPES), len(real_combos()), len(real_pages()), len(ARTICLES), len(CALCULATORS)))
+    # Honest robots accounting: count generated directory pages that LACK a
+    # noindex meta (previously mislabeled "%d indexed / rest noindex" while
+    # 25 roster pages shipped indexable). Directory generators live under
+    # these roots only.
+    dir_roots = ["top-financial-advisors", "find-a-financial-advisor", "cities",
+                 "specialties", "professions", "asset-types"]
+    noindex_missing = 0
+    dir_html = 0
+    for dr in dir_roots:
+        for _r, _d, files in os.walk(os.path.join(ROOT, dr)):
+            for fn in files:
+                if fn.endswith(".html"):
+                    dir_html += 1
+                    with open(os.path.join(_r, fn), encoding="utf-8") as fh:
+                        if "noindex" not in fh.read():
+                            noindex_missing += 1
+    print("built /for-advisors/ (+ /advisors.html redirect) + %d directory pages (%d specialty + %d city + %d niche + %d asset-type + %d combo, %d without noindex of %d html) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
+          % (total_dir, len(SPECIALTIES), len(CITIES), len(NICHES), len(ASSET_TYPES), len(real_combos()), noindex_missing, dir_html, len(ARTICLES), len(CALCULATORS)))
