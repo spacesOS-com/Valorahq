@@ -61,14 +61,14 @@
       "heading": "Have a question about your next step?",
       "body": "Tell us about your situation. We’ll review your request and email next steps.",
       "button_label": "Send a question",
-      "href": "https://www.valorahq.com/find-your-advisor?utm_source=site&utm_medium=cta&utm_campaign=niche-pages&utm_content=dentists-mid"
+      "href": "/find-your-advisor?utm_source=site&utm_medium=cta&utm_campaign=niche-pages&utm_content=dentists-mid"
     },
     {
       "after_h2": "Questions to ask before you hire",
       "heading": "Want to ask about your next step?",
       "body": "Share a few details about your situation and goals, then your name, phone and email. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.",
       "button_label": "Send a question",
-      "href": "https://www.valorahq.com/find-your-advisor?utm_source=site&utm_medium=cta&utm_campaign=niche-pages&utm_content=dentists-close"
+      "href": "/find-your-advisor?utm_source=site&utm_medium=cta&utm_campaign=niche-pages&utm_content=dentists-close"
     }
   ],
   "tags": [
