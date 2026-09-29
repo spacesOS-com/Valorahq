@@ -2301,3 +2301,9 @@ body.embed-mode .section { padding-top:24px; padding-bottom:24px; }
   .nav-menu__col{ padding:20px; }
   .nav-menu__panel a{ padding:0; border:0; font-size:.9rem; }
 }
+
+/* Educational diagrams on directory guides. The SVGs carry labels as text and
+   the figcaptions repeat the meaning for accessibility and small screens. */
+.guide-figure{margin:30px 0 42px;}
+.guide-figure img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);}
+.guide-figure figcaption{margin-top:9px;color:var(--ink-soft);font-size:.8rem;line-height:1.5;}
