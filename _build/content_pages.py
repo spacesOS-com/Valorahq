@@ -168,7 +168,7 @@ def _team_extended(pack, body_html):
             if avatar_file:
                 stem = avatar_file.rsplit(".", 1)[0]
                 img = (f'<img class="team-member__avatar" src="/assets/{escape(stem)}.jpg" '
-                       f'alt="Illustrated avatar of {escape(e["name"])}" loading="lazy" width="72" height="72">')
+                       f'alt="{escape(e.get("avatar_alt", "Illustrated avatar of " + e["name"]))}" loading="lazy" width="72" height="72">')
             else:
                 # role-card style (founder direction Sep 28): no headshot, initials tile
                 initials = "".join(w[0] for w in e["name"].split()[:2]).upper()

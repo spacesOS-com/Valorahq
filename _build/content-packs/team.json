@@ -34,7 +34,8 @@
     "Noah": "team-avatar-noah.png",
     "Amara": "team-avatar-amara.png",
     "Ava": "team-avatar-ava.png",
-    "Bhavya": "team-avatar-bhavya-v2.png"
+    "Bhavya": "team-avatar-bhavya-v2.png",
+    "Nina": "team-avatar-nina-site-writer-288-7f4f6560.jpg"
   },
   "avatars_note": "Illustrated flat-vector avatar set, one coherent style (warm-cream circle, muted terracotta/sage/navy, role-prop motif per member). 1024px PNGs in the Drive drop folder. Not photos; render as circular headshots beside each member block.",
   "extended_team": [
@@ -141,6 +142,20 @@
         "Iris runs Valora's newsletter and media outreach: getting Valora's work and point of view into the inboxes and conversations people are already paying attention to. She's from Seattle, where she started in public radio - cutting tape, booking guests, learning what makes someone actually listen - before moving into media relations for startups. Her badass credential: she pitches less like a publicist and more like a listener who knows what each show needs next, which is why the bookings keep coming. She knows which shows your commute depends on and which newsletters actually get read.",
         "Off duty she's at live shows, keeps a podcast queue longer than a cross-country drive, and makes playlists for every occasion including \"waiting.\""
       ]
+    },
+    {
+      "name": "Nina",
+      "title": "Site Content Writer",
+      "grouping": "Content",
+      "order": 7,
+      "functional_role": "Site content writing",
+      "avatar": "team-avatar-nina-site-writer-288-7f4f6560.jpg",
+      "bio_paragraphs": [
+        "Nina writes Valora's profession, specialty and city pages, turning source material into useful answers for each reader. She works with Camille on page priorities and sends exact drafts and sources through Mira's content check before Rohan puts them on the site.",
+        "She focuses on distinct, checked pages that readers can use, not page count alone."
+      ],
+      "bio": "Nina writes Valora's profession, specialty and city pages, turning source material into useful answers for each reader. She works with Camille on page priorities and sends exact drafts and sources through Mira's content check before Rohan puts them on the site.\n\nShe focuses on distinct, checked pages that readers can use, not page count alone.",
+      "avatar_alt": "Illustrated portrait of Nina, Site Content Writer."
     },
     {
       "name": "Owen Price",
