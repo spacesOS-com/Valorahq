@@ -479,7 +479,7 @@
      field wrappers marked [data-field] get .has-error.
      --------------------------------------------------------- */
   var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx4mCwhZBQS-0W-UAybBeIJm67scGp4cpwAR_19l4g-FSa-XacfhNyOAPT0W0CEd0uc/exec';
-  var LEAD_FAIL = 'Sorry — we could not send that. Please email barot@valorahq.com.';
+  var LEAD_FAIL = 'We could not confirm that request. Please email barot@valorahq.com and mention that you tried the form. Do not submit it again yet.';
 
   var LEAD_MSGS = {
     name:     'Please enter your name.',
@@ -542,10 +542,17 @@
 
   function sendLead(v) {
     if (!/^https:\/\//.test(SHEET_ENDPOINT)) {
-      return Promise.resolve({ status: 'success', skipped: true });
+      return Promise.reject(new Error('Lead endpoint is not HTTPS'));
     }
     return fetch(SHEET_ENDPOINT, { method: 'POST', body: new URLSearchParams(v) })
-      .then(function (r) { return r.json().catch(function () { return { status: 'success' }; }); });
+      .then(function (r) {
+        if (!r.ok) throw new Error('Lead request failed (HTTP ' + r.status + ')');
+        return r.json(); // A non-JSON reply is not proof that the lead was stored.
+      })
+      .then(function (res) {
+        if (!res || res.status !== 'success') throw new Error('Lead receipt not confirmed');
+        return res;
+      });
   }
 
   function leadForm(f) {
@@ -564,7 +571,14 @@
       if (submit) { submit.disabled = false; submit.textContent = label; }
       if (fine) { fine.textContent = LEAD_FAIL; fine.classList.add('is-error'); return; }
       var ok = $('.form__success', f);
-      if (ok) { ok.hidden = false; ok.textContent = LEAD_FAIL; }
+      if (!ok) {
+        ok = document.createElement('p');
+        ok.className = 'form__success is-error';
+        ok.setAttribute('role', 'alert');
+        f.appendChild(ok);
+      }
+      ok.hidden = false;
+      ok.textContent = LEAD_FAIL;
     }
 
     function showDone(v) {
@@ -600,8 +614,7 @@
       if (fine) { fine.textContent = fineText; fine.classList.remove('is-error'); }
 
       sendLead(v)
-        .then(function (res) {
-          if (res && res.status === 'error') { showFail(); return; }
+        .then(function () {
           showDone(v);
         })
         .catch(showFail);
