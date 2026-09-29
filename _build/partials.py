@@ -728,6 +728,8 @@ def page(head_html, body_html, active=None, with_gate=False, body_class="page-su
 
 {footer()}
 {gate() if with_gate else ''}
+<div id="valora-concierge" hidden></div>
+<script src="/assets/concierge.js?v={_asset_ver('concierge.js')}"></script>
 <script src="/assets/script.js?v={SCRIPT_VER}"></script>
 </body>
 </html>

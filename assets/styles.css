@@ -2307,3 +2307,33 @@ body.embed-mode .section { padding-top:24px; padding-bottom:24px; }
 .guide-figure{margin:30px 0 42px;}
 .guide-figure img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);}
 .guide-figure figcaption{margin-top:9px;color:var(--ink-soft);font-size:.8rem;line-height:1.5;}
+
+/* Gated AI concierge shell; never appears until an approved endpoint is configured. */
+.concierge-home{max-width:760px}.concierge-home>p{max-width:62ch;margin:16px 0;line-height:1.65}
+.valora-concierge{position:fixed;right:20px;bottom:72px;z-index:90;width:min(390px,calc(100vw - 32px));max-height:min(640px,calc(100vh - 112px));display:none;flex-direction:column;gap:12px;padding:20px;background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 16px 45px #0002;border-radius:14px}
+.valora-concierge.is-open,.concierge-results .valora-concierge{display:flex}
+.concierge-results .valora-concierge{position:static;width:100%;max-height:none;box-shadow:none;margin:32px 0}
+.valora-concierge__toggle{position:fixed;right:20px;bottom:18px;z-index:90;background:var(--green);color:#fff;border:0;border-radius:999px;padding:12px 20px;cursor:pointer}
+.valora-concierge h2{font-size:1.25rem}.valora-concierge__note{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+.valora-concierge__chat{overflow-y:auto;min-height:100px;max-height:320px;display:flex;flex-direction:column;gap:12px;font-size:.9rem;line-height:1.5}
+.valora-concierge__question{align-self:flex-end;background:var(--paper);padding:9px 12px;border-radius:12px;max-width:85%}
+.valora-concierge__answer{align-self:flex-start;background:var(--green);color:#fff;padding:9px 12px;border-radius:12px;max-width:90%}
+.valora-concierge__form{display:flex;gap:8px}.valora-concierge__form input{min-width:0;flex:1;padding:10px;border:1px solid var(--line);border-radius:8px}.valora-concierge__form button{border:0;border-radius:8px;padding:10px 16px;background:var(--green);color:#fff;cursor:pointer}
+.valora-concierge__status{font-size:.8rem;color:var(--ink-soft)}.valora-concierge__chat ul{padding-left:20px}.valora-concierge__chat a{text-decoration:underline}
+@media(max-width:620px){.valora-concierge{right:8px;bottom:64px;width:calc(100vw - 16px);max-height:calc(100dvh - 100px)}.valora-concierge__toggle{right:12px;bottom:10px}}
+
+/* The first exchange opens as a compact bottom bar; longer chats move into a side panel. */
+.valora-concierge:not(.is-side):not(.concierge-results .valora-concierge){width:min(620px,calc(100vw - 32px));right:50%;transform:translateX(50%);bottom:70px}
+.valora-concierge.is-side{right:0;bottom:0;top:70px;width:min(400px,96vw);max-height:calc(100dvh - 70px);border-radius:14px 0 0 0}
+.valora-concierge.is-side .valora-concierge__chat{flex:1;max-height:none}
+@media(max-width:620px){.valora-concierge.is-side{top:60px;max-height:calc(100dvh - 60px)}.valora-concierge:not(.is-side):not(.concierge-results .valora-concierge){bottom:60px;width:calc(100vw - 16px)}}
+
+.valora-concierge__home-bar{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:91;display:flex;gap:8px;width:min(680px,calc(100vw - 24px));padding:9px;background:#fff;border:1px solid var(--line);border-radius:999px;box-shadow:0 10px 35px #0002}
+.valora-concierge__home-bar[hidden]{display:none}.valora-concierge__home-bar input{flex:1;min-width:0;padding:10px 14px;border:0;background:transparent}.valora-concierge__home-bar button{background:var(--green);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer}
+@media(max-width:620px){.valora-concierge__home-bar{bottom:10px}}
+
+.concierge-results .valora-concierge.is-waiting{display:none}
+
+/* Keep the home-page advisor intake action clear of the concierge launcher. */
+.valora-concierge__toggle.on-root{left:20px;right:auto}
+@media(max-width:620px){.valora-concierge__toggle.on-root{left:12px;right:auto}}
