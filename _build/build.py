@@ -29,6 +29,14 @@ from concierge_page import build_concierge_page
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://www.valorahq.com"
 
+# Mira pre-flip ruling (2026-09-30, via Sam): the 56 directory roster URLs
+# (/top-financial-advisors/*, /find-a-financial-advisor/*, /cities/,
+# /specialties/, /professions/, /asset-types/) are HELD pending the founder's
+# directory decision + counsel. DIRECTORY_ENABLED=False excludes them from the
+# build, sitemap.xml, llms.txt and llms-full.txt. Flip back to True (with her
+# re-gate) to restore.
+DIRECTORY_ENABLED = False
+
 # Every live page, one line each. Add a page here when it goes live and the
 # sitemap, llms.txt and llms-full.txt all pick it up on the next build.
 PAGES = [
@@ -38,6 +46,7 @@ PAGES = [
     ("/find-your-advisor/", "Tell us what you need: four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
     ("/calculators/", "Browse financial calculators by topic."),
+] + ([
     ("/cities/", "Browse financial advisors by city."),
     ("/specialties/", "Browse financial advisors by specialty."),
     ("/professions/", "Browse financial advisors by profession."),
@@ -45,15 +54,10 @@ PAGES = [
     ("/top-financial-advisors/", "Top financial advisors in the U.S., by state and city."),
 ] + [(f"/top-financial-advisors/{slug}/", f"Top financial advisors in {name}.") for slug, name in us_all_states()
 ] + [
-    # only pages with a real advisor match — see directory_pages.real_pages().
-    # Empty-state specialty/city/niche/asset-type pages still get built (as
-    # useful scaffolding for a visitor who lands on them) but are marked
-    # noindex and left out of the sitemap/llms.txt on purpose.
     (f"/find-a-financial-advisor/{slug}/", desc) for slug, desc in real_pages()
 ] + [
-    # /top-financial-advisors/[state]/[city]/ — only real matches (same rule)
     (path, desc) for path, desc in us_real_pages()
-] + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
+] if DIRECTORY_ENABLED else []) + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
 ] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS if not c.get("noindex")
 ] + [(f"/calculators/{cat.lower().replace(' ', '-')}/", f"{cat} calculators on Valora.") for cat in CATEGORIES]
 
@@ -179,23 +183,27 @@ def build_llms():
 
 if __name__ == "__main__":
     build_for_advisors()
-    build_directory_pages(write)
-    build_cities_index(write)
-    build_specialties_index(write)
-    build_professions_index(write)
-    build_asset_types_index(write)
-    build_us_directory(write)
+    if DIRECTORY_ENABLED:
+        build_directory_pages(write)
+        build_cities_index(write)
+        build_specialties_index(write)
+        build_professions_index(write)
+        build_asset_types_index(write)
+        build_us_directory(write)
     build_insights_pages(write)
     build_calculator_pages(write)
-    PAGES.extend(build_content_pages(write))
+    _content_pages = build_content_pages(write)
+    PAGES.extend(_content_pages)
     build_intake_page(write)
     build_concierge_page(write)
     refresh_index()
     build_robots()
     build_sitemap()
     build_llms()
-    print("content pages:", len(PAGES) - 2 - len(real_pages()) - len(ARTICLES) - len(CALCULATORS) - len(CATEGORIES))
+    print("content pages:", len(_content_pages))
     total_dir = len(SPECIALTIES) + len(CITIES) + len(NICHES) + len(ASSET_TYPES) + len(real_combos())
+    if not DIRECTORY_ENABLED:
+        print("directory roster pages EXCLUDED from build (Mira pre-flip HOLD, DIRECTORY_ENABLED=False); skipped %d configured directory pages" % total_dir)
     # Honest robots accounting: count generated directory pages that LACK a
     # noindex meta (previously mislabeled "%d indexed / rest noindex" while
     # 25 roster pages shipped indexable). Directory generators live under
@@ -212,5 +220,9 @@ if __name__ == "__main__":
                     with open(os.path.join(_r, fn), encoding="utf-8") as fh:
                         if "noindex" not in fh.read():
                             noindex_missing += 1
-    print("built /for-advisors/ (+ /advisors.html redirect) + %d directory pages (%d specialty + %d city + %d niche + %d asset-type + %d combo, %d without noindex of %d html) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
-          % (total_dir, len(SPECIALTIES), len(CITIES), len(NICHES), len(ASSET_TYPES), len(real_combos()), noindex_missing, dir_html, len(ARTICLES), len(CALCULATORS)))
+    if DIRECTORY_ENABLED:
+        print("built /for-advisors/ (+ /advisors.html redirect) + %d directory pages (%d specialty + %d city + %d niche + %d asset-type + %d combo, %d without noindex of %d html) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
+              % (total_dir, len(SPECIALTIES), len(CITIES), len(NICHES), len(ASSET_TYPES), len(real_combos()), noindex_missing, dir_html, len(ARTICLES), len(CALCULATORS)))
+    else:
+        print("built /for-advisors/ (+ /advisors.html redirect) + %d insights articles + %d calculators + refreshed index.html regions + robots.txt + sitemap.xml + llms.txt + llms-full.txt"
+              % (len(ARTICLES), len(CALCULATORS)))
