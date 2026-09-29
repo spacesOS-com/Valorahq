@@ -98,25 +98,6 @@ def _concierge_body():
 
       <p class="eyebrow reveal" style="margin-top:36px;">Or talk to one of them directly</p>
       <button type="button" class="btn btn--dark reveal concierge-talk-trigger" style="margin-top:16px;">Talk to an advisor</button>
-      <div id="concierge-calendar" class="concierge-calendar" hidden>
-        <p class="eyebrow">Sample availability &mdash; not a real booking</p>
-        <h4>Book a call with James Conole, CFP&reg;</h4>
-        <div class="concierge-calendar__grid">
-          <div class="concierge-calendar__day"><span>Tue, Oct 6</span>
-            <button type="button" class="concierge-calendar__slot">10:00 AM</button>
-            <button type="button" class="concierge-calendar__slot">2:30 PM</button>
-          </div>
-          <div class="concierge-calendar__day"><span>Wed, Oct 7</span>
-            <button type="button" class="concierge-calendar__slot">9:15 AM</button>
-            <button type="button" class="concierge-calendar__slot">4:00 PM</button>
-          </div>
-          <div class="concierge-calendar__day"><span>Thu, Oct 8</span>
-            <button type="button" class="concierge-calendar__slot">11:00 AM</button>
-            <button type="button" class="concierge-calendar__slot">1:00 PM</button>
-          </div>
-        </div>
-        <p class="concierge-calendar__confirm" id="concierge-calendar-confirm" hidden></p>
-      </div>
     </div>
 
     <p class="eyebrow reveal" style="margin-top:48px;">The same bar, aware of wherever you are</p>
@@ -337,24 +318,60 @@ def _concierge_body():
     }});
   }});
 
-  // "talk to an advisor" — sample calendar inline, not a real booking
-  var calendar = document.getElementById('concierge-calendar');
-  var confirmMsg = document.getElementById('concierge-calendar-confirm');
+  // "talk to an advisor" — sample calendar appears as a message in whichever
+  // chat panel is currently active, not as a separate block on the page
+  function calendarBubble() {{
+    var d = document.createElement('div');
+    d.className = 'convert-mock__bubble convert-mock__bubble--us concierge-calendar';
+    d.innerHTML =
+      '<p class="eyebrow">Sample availability &mdash; not a real booking</p>' +
+      '<h4>Book a call with James Conole, CFP&reg;</h4>' +
+      '<div class="concierge-calendar__grid">' +
+        '<div class="concierge-calendar__day"><span>Tue, Oct 6</span>' +
+          '<button type="button" class="concierge-calendar__slot">10:00 AM</button>' +
+          '<button type="button" class="concierge-calendar__slot">2:30 PM</button></div>' +
+        '<div class="concierge-calendar__day"><span>Wed, Oct 7</span>' +
+          '<button type="button" class="concierge-calendar__slot">9:15 AM</button>' +
+          '<button type="button" class="concierge-calendar__slot">4:00 PM</button></div>' +
+        '<div class="concierge-calendar__day"><span>Thu, Oct 8</span>' +
+          '<button type="button" class="concierge-calendar__slot">11:00 AM</button>' +
+          '<button type="button" class="concierge-calendar__slot">1:00 PM</button></div>' +
+      '</div>' +
+      '<p class="concierge-calendar__confirm" hidden></p>';
+    return d;
+  }}
+
+  function activeChatPanel() {{
+    if (sidePanel.classList.contains('is-open')) return sideChat;
+    bottomWidget.classList.add('is-expanded');
+    if (greeting) greeting.hidden = true;
+    if (minimizeBottom) minimizeBottom.hidden = false;
+    bottomPanel.hidden = false;
+    return bottomPanel;
+  }}
+
   document.querySelectorAll('.concierge-talk-trigger').forEach(function (btn) {{
     btn.addEventListener('click', function () {{
       results.hidden = false;
-      calendar.hidden = false;
-      calendar.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+      var panel = activeChatPanel();
+      var card = calendarBubble();
+      panel.appendChild(card);
+      panel.scrollTop = panel.scrollHeight;
+      card.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
     }});
   }});
-  document.querySelectorAll('.concierge-calendar__slot').forEach(function (slot) {{
-    slot.addEventListener('click', function () {{
-      document.querySelectorAll('.concierge-calendar__slot').forEach(function (s) {{ s.classList.remove('is-selected'); }});
-      slot.classList.add('is-selected');
-      var day = slot.closest('.concierge-calendar__day').querySelector('span').textContent;
-      confirmMsg.hidden = false;
-      confirmMsg.textContent = 'Selected ' + day + ' at ' + slot.textContent + ' \\u2014 sample only, nothing is actually booked in this preview.';
-    }});
+
+  // event delegation — calendar slots are added dynamically, so listen on body
+  document.body.addEventListener('click', function (e) {{
+    var slot = e.target.closest('.concierge-calendar__slot');
+    if (!slot) return;
+    var card = slot.closest('.concierge-calendar');
+    card.querySelectorAll('.concierge-calendar__slot').forEach(function (s) {{ s.classList.remove('is-selected'); }});
+    slot.classList.add('is-selected');
+    var day = slot.closest('.concierge-calendar__day').querySelector('span').textContent;
+    var confirmMsg = card.querySelector('.concierge-calendar__confirm');
+    confirmMsg.hidden = false;
+    confirmMsg.textContent = 'Selected ' + day + ' at ' + slot.textContent + ' \\u2014 sample only, nothing is actually booked in this preview.';
   }});
 }})();
 </script>

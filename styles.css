@@ -2079,10 +2079,13 @@ body.gate-open{ overflow:hidden; }
   z-index:90; border:none; box-shadow:-8px 0 24px rgba(22,25,15,.14);
 }
 .concierge-side-panel{
-  position:fixed; right:0; top:0; height:100vh; width:min(360px, 92vw);
+  position:fixed; right:0; top:74px; height:calc(100vh - 74px); width:min(360px, 92vw);
   background:#fff; box-shadow:-16px 0 40px rgba(22,25,15,.14); z-index:95;
   display:flex; flex-direction:column; transform:translateX(100%);
   transition:transform .4s var(--ease);
+}
+@media (max-width:620px){
+  .concierge-side-panel{ top:66px; height:calc(100vh - 66px); }
 }
 .concierge-side-panel.is-open{ transform:translateX(0); }
 .concierge-side-panel__head{
