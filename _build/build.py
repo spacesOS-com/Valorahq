@@ -25,6 +25,7 @@ from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from content_pages import build_content_pages
 from intake_page import build_intake_page
 from concierge_page import build_concierge_page
+from conversation_assets import prepare_conversation_surfaces
 from developers_page import build_developers_page
 from navigation_placeholders import build_navigation_placeholders
 from business_owner_page import build_business_owner_page, BUSINESS_OWNER_INDEXABLE, BUSINESS_OWNER_PATH
@@ -268,6 +269,7 @@ if __name__ == "__main__":
     build_robots()
     build_sitemap()
     build_llms()
+    prepare_conversation_surfaces(ROOT)
     print("content pages:", len(_content_pages))
     total_dir = len(SPECIALTIES) + len(CITIES) + len(NICHES) + len(ASSET_TYPES) + len(real_combos())
     if not DIRECTORY_ENABLED:
