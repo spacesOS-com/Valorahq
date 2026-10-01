@@ -1,0 +1,13 @@
+Consumer managed-deployment preparation, review only.
+
+Repository identity verified live: https://github.com/spacesOS-com/Valorahq . This is distinct from spacesOS-com/valora (existing Next service). Connected GitHub identity spacesOS-com. No remote write performed.
+
+consumer/ holds all 271 files of manifest SHA256 2537503600f6de3549e8f6fad5bdc2df8febf34dd5ea89f4412be2ff679d741d, exported archive SHA256 f651b9fcae3dfba8c979a81e9951ee3bb9c5d65147d244cf612885a04c030ba8. Every file byte checked locally. No build regeneration, content delta, v6 widget or Root form inserted. These are preserved release inputs/output, not deterministic rebuild or upstream source parity.
+
+Local review branch only: review/consumer-manifest-25375036-no-deploy. It has no remote and cannot auto-deploy. It is an independent snapshot, not a merge-ready branch based on current remote HEAD. A remote non-auto-deploy branch requires verification of watched branch/webhook scope before push through an authorized repository write route. Available GitHub integration lacks branch/file write action; no guessed shell credential route used.
+
+Dockerfile and nginx config are proposals for Maya review, NOT reviewed artifacts. Full current sanitized nginx/Traefik receipt is still requested from Sam. Do not assume redirect, cache, MIME, slash, rewrite, gate or route equivalence from this config. Two legacy asset redirects match current live GitHub vercel.json; current host's complete redirects still need comparison. No SPA fallback. Proposed server returns 404 for internal build/ops/metadata/dot paths while preserving these bytes inside image. Review this serving allow/deny behavior against current host. No host mount. Port 8080 is a proposed isolated staging port, not an actual service setting. No domain/TLS/routing/app change.
+
+nginx image is version-tagged only, not digest-pinned; Maya/Sam must select and verify approved image digest before staging. Docker/nginx unavailable locally: image build, nginx syntax/runtime and HTTP checks are UNTESTED, not PASS. RUN nginx -t is a future build check, not evidence it ran.
+
+Remaining gates: full serving config parity; frozen router artifact/hash mapping; dark widget config and actual HTTP probes; isolated managed staging app/domain; image/deployment identity and all 271 disk byte parity plus all publicly served paths/status/final URLs/redirects; private paths blocked; frontend router/concierge/form behavior; prior managed rollback image/domain-map with verified parity; explicit migration-impact/rollback approval before www/apex routing. Keep app.valorahq.com untouched. No main push, host-tree publication, new-page release or collection enable.

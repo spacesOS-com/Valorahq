@@ -1,0 +1,57 @@
+
+<section class="container" style="padding-block:96px 64px;min-height:45vh;max-width:860px">
+<p class="eyebrow">Developers</p>
+<h1>Valora MCP server</h1>
+<p>Valora's public MCP (Model Context Protocol) server gives AI applications read-only access to our educational financial-planning content: guides for tech employees, physicians and business owners, insights articles, and the documentation for 30 financial calculators. Content is educational only - Valora does not provide investment advice and is not arranging advisor matches or introductions at this time.</p>
+
+<h2>Endpoint</h2>
+<p><code>https://api.valorahq.com/mcp</code></p>
+<p>MCP Streamable HTTP transport. POST JSON-RPC requests to this URL. Stateless - no authentication and no session required. A health check is available at <code>GET /mcp/health</code>.</p>
+
+<h2>Tools</h2>
+<p>All tools are read-only and free to call.</p>
+<h3>search_content</h3>
+<p>Full-text search across the indexed public content library. Returns ranked matches with URL, description and excerpt.</p>
+<ul><li><code>query</code> (string, required) - search terms, e.g. "roth conversion tax"</li>
+<li><code>limit</code> (integer, optional, 1-20, default 5) - maximum results</li></ul>
+<h3>list_pages</h3>
+<p>List indexed pages with URLs and one-line descriptions.</p>
+<ul><li><code>section</code> (string, optional) - one of <code>guides</code>, <code>calculators</code>, <code>insights</code>, <code>legal</code></li></ul>
+<h3>get_page</h3>
+<p>Get the full text content of a page by URL, using a URL from <code>list_pages</code> or <code>search_content</code>.</p>
+<ul><li><code>url</code> (string, required) - full page URL on www.valorahq.com</li></ul>
+
+<h2>Example calls</h2>
+<p>Initialize the MCP connection:</p>
+<pre style="background:#f5f2ea;border:1px solid #e2dccd;border-radius:8px;padding:14px;overflow-x:auto;font-size:13px"><code>curl -X POST https://api.valorahq.com/mcp \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize",
+       "params":{"protocolVersion":"2025-03-26","capabilities":{},
+       "clientInfo":{"name":"my-client","version":"0.1"}}}'</code></pre>
+<p>Search the content library:</p>
+<pre style="background:#f5f2ea;border:1px solid #e2dccd;border-radius:8px;padding:14px;overflow-x:auto;font-size:13px"><code>curl -X POST https://api.valorahq.com/mcp \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call",
+       "params":{"name":"search_content",
+       "arguments":{"query":"401k contribution limit","limit":3}}}'</code></pre>
+
+<h2>Connect from an MCP client</h2>
+<p><strong>Claude</strong> (claude.ai): go to Customize &gt; Connectors &gt; Add custom connector, then paste <code>https://api.valorahq.com/mcp</code>. No authentication is needed. On Claude Team and Enterprise plans, a workspace owner adds the connector for the organization first. Setup guide: <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp">Anthropic - get started with custom connectors using remote MCP</a>.</p>
+<p><strong>ChatGPT</strong>: enable developer mode, then create an app with the MCP server URL set to <code>https://api.valorahq.com/mcp</code>. Requires a supported ChatGPT account; workspace permissions may apply. Guides: <a href="https://developers.openai.com/api/docs/guides/developer-mode">OpenAI - developer mode</a> and <a href="https://help.openai.com/en/articles/12584461">OpenAI help - connectors and MCP</a>.</p>
+<p><strong>Other MCP clients</strong>: use your client's remote MCP/Streamable HTTP configuration instructions with the endpoint above.</p>
+
+<h2>Content and refresh cadence</h2>
+<p>The server mirrors the published valorahq.com content library (the same corpus the site exposes as <a href="/llms.txt">llms.txt</a> and <a href="/llms-full.txt">llms-full.txt</a>): educational guides for tech employees, physicians and business owners, insights articles, the documentation for 30 financial calculators, and the site's core and legal pages. The current indexed-page count is available at <code>GET /mcp/health</code>.</p>
+<p>Content refreshes automatically: a scheduled job on the server syncs the library from the current published site build every 15 minutes, and the server reloads changed content in place. New guides, articles and calculators appear in the MCP tools after the next successful sync.</p>
+
+<h2>Notes</h2>
+<ul>
+<li>All tools are read-only. The server is stateless: no accounts, no sessions, no cookies and no database. It returns only content already published on valorahq.com.</li>
+<li>Do not include private client information, credentials or account details in requests.</li>
+<li>Logging: the server keeps no request log. Its container log holds only startup and content-reload lines, and no access log is configured on the proxy in front of it.</li>
+<li>Content is educational information about financial planning, not investment advice.</li>
+<li>See our <a href="/privacy/">privacy policy</a> and <a href="/terms/">terms</a>. Questions about the content: <a href="/find-your-advisor/">send us a request</a>.</li>
+</ul>
+</section>
