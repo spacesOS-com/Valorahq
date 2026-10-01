@@ -1,0 +1,14 @@
+{
+  "slug": "concierge-floating-v9-host-cssfix-opaque",
+  "result": "applied",
+  "patch_sha256": "d1e74b9165beaab5c45fda96c724f661a7fb4a2a72ff8057de2a580041eff002",
+  "target_branch": "patched/concierge-floating-v9-host-cssfix-opaque",
+  "commit": "db38a58a766d047888dd437c77f90a178f845935",
+  "base": "main",
+  "base_sha": "1de232d98fb1027672faef414af22e48b83e9799",
+  "files_changed": 2,
+  "force_added": 0,
+  "drop_branch": "patch-drop/concierge-floating-v9-host-cssfix-opaque",
+  "run": "https://github.com/spacesOS-com/Valorahq/actions/runs/36892717384",
+  "time": "2026-10-01T16:32:17Z"
+}
