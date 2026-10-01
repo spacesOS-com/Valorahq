@@ -127,7 +127,6 @@ def intake_body():
     return f"""
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
-    <p class="eyebrow reveal">Free · No obligation</p>
     <h1 class="display display--lg reveal">Tell us what you need</h1>
     <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Answer four quick questions. We review each request by hand and email you about next steps.</p>
   </div>
@@ -155,7 +154,7 @@ def intake_body():
 def build_intake_page(write_fn):
     html = page(
         head("Tell Us What You Need | Valora",
-             "Answer four quick questions. We review each request by hand and email you about next steps. Free, no obligation.",
+             "Answer four quick questions. We review each request by hand and email you about next steps.",
              path="/find-your-advisor/", schema=faq_schema(INTAKE_FAQS)),
         intake_body(),
     )
