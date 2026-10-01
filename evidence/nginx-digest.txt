@@ -1,0 +1,5 @@
+[status=Success]
+UTC=2026-10-01T03:14:51Z
+Image=sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2 RepoDigests=["nginx@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2"] OS=linux Architecture=amd64
+HOST=x86_64
+	
