@@ -137,7 +137,7 @@ DIRECTORY_ASSET_TYPES = [
 # out of sync with what the rest of the page actually says.
 CLIENT_FAQ = [
     ("Is Valora free to use?",
-     "Yes. Valora publishes educational information about financial planning and accepts questions, with no obligation, and we never sell your information."),
+     "Reading Valora's educational guides and sending a request costs nothing, and sending a request does not obligate you to anything. We use your details to review your request and email next steps. See our Privacy Policy for how your information is handled and who processes it."),
     ("Does Valora provide investment advice?",
      "No. Valora is an independent platform that publishes educational information about financial "
      "planning and accepts questions. Valora does not provide investment, tax, legal, or financial advice."),
