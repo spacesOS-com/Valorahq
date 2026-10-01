@@ -1,0 +1,87 @@
+name: patch-apply
+# Applies patches/incoming/*.patch from a patch-drop/** branch onto a NEW branch patched/<slug>.
+# Never targets main. Never edits .github/. Receipts land in receipts/ on the drop branch.
+on:
+  push:
+    branches: ['patch-drop/**']
+    paths: ['patches/incoming/**']
+permissions:
+  contents: write
+concurrency:
+  group: patch-apply-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply patches
+        env:
+          DROP_BRANCH: ${{ github.ref_name }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          #!/usr/bin/env bash
+          # patch-drop apply rail. Never targets main. Never edits .github/.
+          set -uo pipefail
+          DROP="${DROP_BRANCH}"
+          git config user.name "patch-drop[bot]"
+          git config user.email "patch-drop-bot@users.noreply.github.com"
+          HEAD_SHA="$(git rev-parse HEAD)"
+          mkdir -p /tmp/pd receipts
+          shopt -s nullglob
+          fail() { # slug msg
+            jq -n --arg s "$1" --arg m "$2" --arg d "$DROP" --arg run "${RUN_URL:-}" --arg t "$(date -u +%FT%TZ)" \
+              '{slug:$s,result:"failed",error:$m,drop_branch:$d,run:$run,time:$t}' > "receipts/$1.failed.json"
+            echo "FAILED $1: $2"
+          }
+          for p in patches/incoming/*.patch; do
+            slug="$(basename "$p" .patch)"
+            [ -e "receipts/$slug.json" ] || [ -e "receipts/$slug.failed.json" ] && continue
+            [[ "$slug" =~ ^[A-Za-z0-9._-]{1,80}$ ]] || { fail "bad-slug" "slug rejected"; continue; }
+            cp "$p" "/tmp/pd/$slug.patch"
+            [ -f "patches/incoming/$slug.base" ] && cp "patches/incoming/$slug.base" "/tmp/pd/$slug.base"
+            [ -f "patches/incoming/$slug.paths" ] && cp "patches/incoming/$slug.paths" "/tmp/pd/$slug.paths"
+            psha="$(sha256sum "/tmp/pd/$slug.patch" | cut -d' ' -f1)"
+            [ "$(stat -c %s "/tmp/pd/$slug.patch")" -le 3000000 ] || { fail "$slug" "patch over 3MB"; continue; }
+            if grep -E '^(diff --git|\+\+\+ |--- )' "/tmp/pd/$slug.patch" | grep -Eq '(^|[ /])(\.github/|\.git/)|\.env|id_rsa|\.pem|\.\./'; then
+              fail "$slug" "patch touches a denied path (.github/, .git/, .env, keys, ..)"; continue
+            fi
+            base="main"; [ -f "/tmp/pd/$slug.base" ] && base="$(head -n1 "/tmp/pd/$slug.base" | tr -d '\r ')"
+            [[ "$base" =~ ^[A-Za-z0-9._/-]{1,100}$ ]] || { fail "$slug" "bad base ref"; continue; }
+            target="patched/$slug"
+            git fetch -q origin "$base" || { fail "$slug" "base $base not found"; continue; }
+            if git ls-remote --exit-code --heads origin "$target" >/dev/null 2>&1; then fail "$slug" "target $target already exists"; continue; fi
+            git checkout -q -B work FETCH_HEAD
+            base_sha="$(git rev-parse HEAD)"
+            if ! out="$(git apply --index --whitespace=nowarn "/tmp/pd/$slug.patch" 2>&1)"; then fail "$slug" "git apply: $out"; git reset -q --hard; continue; fi
+            forced=0
+            if [ -f "/tmp/pd/$slug.paths" ]; then
+              while IFS= read -r f; do
+                f="${f%$'\r'}"; [ -z "$f" ] && continue
+                [[ "$f" != /* && "$f" != *..* && "$f" != .github/* && "$f" != .git/* ]] || { fail "$slug" "bad force-add path $f"; continue 2; }
+                [ -e "$f" ] && git add -f -- "$f" && forced=$((forced+1))
+              done < "/tmp/pd/$slug.paths"
+            fi
+            if git diff --cached --quiet; then fail "$slug" "patch produced no changes"; git reset -q --hard; continue; fi
+            nfiles="$(git diff --cached --name-only | wc -l)"
+            git commit -q -m "patch-drop: $slug" -m "Patch-SHA256: $psha" -m "Base: $base $base_sha" -m "Drop-branch: $DROP @ $HEAD_SHA"
+            new="$(git rev-parse HEAD)"
+            git push -q origin "work:refs/heads/$target" || { fail "$slug" "push to $target failed"; continue; }
+            jq -n --arg s "$slug" --arg ps "$psha" --arg t "$target" --arg c "$new" --arg b "$base" --arg bs "$base_sha" \
+               --argjson n "$nfiles" --argjson f "$forced" --arg d "$DROP" --arg run "${RUN_URL:-}" --arg tm "$(date -u +%FT%TZ)" \
+               '{slug:$s,result:"applied",patch_sha256:$ps,target_branch:$t,commit:$c,base:$b,base_sha:$bs,files_changed:$n,force_added:$f,drop_branch:$d,run:$run,time:$tm}' > "receipts/$slug.json"
+            echo "APPLIED $slug -> $target $new"
+          done
+          git checkout -q -B drop "$HEAD_SHA"
+          git add receipts
+          if ! git diff --cached --quiet; then
+            git commit -q -m "patch-drop: receipts"
+            git push -q origin "drop:refs/heads/$DROP" || echo "receipt push failed"
+          fi
+      - name: Receipts
+        if: always()
+        run: |
+          ls receipts 2>/dev/null && cat receipts/*.json >> "$GITHUB_STEP_SUMMARY" || true
