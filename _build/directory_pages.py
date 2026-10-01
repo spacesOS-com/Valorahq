@@ -23,7 +23,7 @@ import re
 from partials import (page, head, BRAND, contact_section, floating_cta,
                        DIRECTORY_SPECIALTIES as SPECIALTIES, DIRECTORY_CITIES as CITIES,
                        DIRECTORY_NICHES as NICHES, DIRECTORY_ASSET_TYPES as ASSET_TYPES)
-from advisor_pages import ADVISORS
+from advisor_pages import REAL_ADVISORS
 from directory_faqs import DIRECTORY_FAQS
 from directory_profession_guides import PROFESSION_GUIDES
 from directory_specialty_guides import SPECIALTY_GUIDES
@@ -115,7 +115,7 @@ def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=N
         shown = advisors
         note = ""
     else:
-        shown = ADVISORS
+        shown = REAL_ADVISORS
         note = f'<p class="dir-note">{escape(empty_note)}</p>'
     cards = "\n".join(_advisor_card(a) for a in shown)
     grid = f'{note}<div class="match__grid">{cards}</div>'
@@ -153,7 +153,7 @@ def _listing_body(eyebrow, title, intro, advisors, empty_note, calc_categories=N
 '''
 
 def _specialty_matches(needles):
-    return [a for a in ADVISORS if any(n in t.lower() for t in a["tags"] for n in needles)]
+    return [a for a in REAL_ADVISORS if any(n in t.lower() for t in a["tags"] for n in needles)]
 
 
 def _write_listing(write_fn, slug, meta_title, meta_desc, eyebrow, title, intro, matches, empty_note, calc_categories=None, faq=None):
@@ -178,7 +178,7 @@ def real_pages():
         if _specialty_matches(needles):
             out.append((slug, f"Explore {label.lower()} questions and topic-tagged advisor profiles on Valora; tags do not verify expertise."))
     for slug, city in CITIES:
-        if [a for a in ADVISORS if a["city"] == city]:
+        if [a for a in REAL_ADVISORS if a["city"] == city]:
             out.append((slug, f"Financial advisors in {city} on Valora."))
     # Niches remain excluded from the sitemap even if a future fallback roster
     # is populated. A roster card alone does not establish niche-specific fit.
@@ -193,7 +193,7 @@ def real_combos():
     advisor matches both — the only city+specialty combos worth a page."""
     combos = []
     for city_slug, city in CITIES:
-        in_city = [a for a in ADVISORS if a["city"] == city]
+        in_city = [a for a in REAL_ADVISORS if a["city"] == city]
         if not in_city:
             continue
         for spec_slug, label, needles in SPECIALTIES:
@@ -226,7 +226,7 @@ def build_directory_pages(write_fn):
                         faq=DIRECTORY_FAQS.get(slug))
 
     for slug, city in CITIES:
-        matches = [a for a in ADVISORS if a["city"] == city]
+        matches = [a for a in REAL_ADVISORS if a["city"] == city]
         _write_listing(write_fn, slug,
                         f"Financial Advisors in {city} | {BRAND}",
                         f"Find independent, fiduciary financial advisors in {city} on Valora.",
@@ -263,7 +263,7 @@ def build_directory_pages(write_fn):
                         "profiles below are a general roster; ask each advisor about location and fit.")
 
     for city_slug, city, spec_slug, label in real_combos():
-        matches = [a for a in ADVISORS if a["city"] == city]
+        matches = [a for a in REAL_ADVISORS if a["city"] == city]
         combo_slug = f"{city_slug}-{spec_slug}"
         html = page(
             head(f"{label} Advisors in {city} | {BRAND}",

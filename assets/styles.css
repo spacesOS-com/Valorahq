@@ -2412,3 +2412,10 @@ body.embed-mode .section { padding-top:24px; padding-bottom:24px; }
   .advisor-profile__hero{ grid-template-columns:1fr; }
   .advisor-profile__photo{ max-width:260px; order:-1; }
 }
+.advisor-profile__sample-banner{
+  background:#fff4d6; border-bottom:1px solid #e8c877; color:#5c4a12;
+  font-size:.85rem; line-height:1.5; padding:14px 0;
+  margin-top:76px; /* clears the fixed .site-header (75px tall) */
+}
+body:has(.site-banner) .advisor-profile__sample-banner{ margin-top:116px; }
+.advisor-profile__sample-banner strong{ font-weight:700; }

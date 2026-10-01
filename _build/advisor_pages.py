@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 """Individual /advisors/[slug]/ profile pages.
 
-No advisor profiles are approved for publication (see Mira's directory
-pre-flip HOLD alongside DIRECTORY_ENABLED in build.py). ADVISORS stays
-empty — this module is ready-built infrastructure, not a decision to
-publish anyone. Never add a placeholder/sample person to this list; add
-only real, reviewed profiles once compliance approves them.
+No REAL advisor profiles are approved for publication (see Mira's directory
+pre-flip HOLD alongside DIRECTORY_ENABLED in build.py). The two entries
+below are explicitly-labeled sample/placeholder records (sample=True) added
+at the founder's direction to show what a populated profile looks like —
+each is unmistakably marked as a placeholder (banner, eyebrow, card quote)
+and excluded from the sitemap/indexing via noindex. Never add a record that
+could be mistaken for a real person; a sample record's name, firm and bio
+must stay obviously synthetic.
 
 Expected record shape (all keys except slug/name/firm/photo/quote/tags
 are optional):
@@ -17,12 +20,65 @@ are optional):
   bio                                    -- list[str], one paragraph per item
   articles                               -- list[{title, url, excerpt}], this advisor's own writing
   videos                                 -- list[{title, url, thumbnail}], this advisor's own videos
+  sample                                 -- True for a labeled placeholder record (see module docstring)
 """
 from html import escape
 
 from partials import page, head, BRAND, contact_section
 
-ADVISORS = []
+PLACEHOLDER_AVATAR = (
+    "data:image/svg+xml,"
+    "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E"
+    "%3Crect width='200' height='200' fill='%23e3e0d6'/%3E"
+    "%3Ccircle cx='100' cy='78' r='34' fill='%23b9b4a3'/%3E"
+    "%3Cpath d='M30 190c0-42 31-70 70-70s70 28 70 70' fill='%23b9b4a3'/%3E"
+    "%3Ctext x='100' y='196' font-family='Arial' font-size='11' text-anchor='middle' fill='%23756f5c'%3ESAMPLE%3C/text%3E"
+    "%3C/svg%3E"
+)
+
+ADVISORS = [
+    {
+        "slug": "sample-advisor-a",
+        "name": "Sample Advisor A",
+        "firm": "Sample Firm (Placeholder)",
+        "photo": PLACEHOLDER_AVATAR,
+        "quote": "Sample placeholder profile — not a real person or advisor.",
+        "tags": ["Retirement planning", "Business owners"],
+        "city": "Austin, TX",
+        "status": "Placeholder — not a real advisor",
+        "location": "Sample City, ST",
+        "credentials": "Sample credential text",
+        "bio": [
+            "This is a placeholder profile used to preview the advisor-page layout. It does not describe a real person.",
+            "Once real, compliance-approved advisor profiles are ready, records like this one will be replaced with genuine data.",
+        ],
+        "sample": True,
+    },
+    {
+        "slug": "sample-advisor-b",
+        "name": "Sample Advisor B",
+        "firm": "Sample Firm (Placeholder)",
+        "photo": PLACEHOLDER_AVATAR,
+        "quote": "Sample placeholder profile — not a real person or advisor.",
+        "tags": ["Tax planning"],
+        "city": "Austin, TX",
+        "status": "Placeholder — not a real advisor",
+        "location": "Sample City, ST",
+        "credentials": "Sample credential text",
+        "bio": [
+            "This is a placeholder profile used to preview the advisor-page layout. It does not describe a real person.",
+        ],
+        "sample": True,
+    },
+]
+
+# Everything that matches/indexes advisors against specialties, cities and
+# combos (directory_pages.py, us_directory_pages.py) must use this, not
+# ADVISORS directly — a sample/placeholder record must never surface as a
+# "real match" on an indexed directory page. Only the dedicated profile
+# builder below and the homepage roster section use the full ADVISORS list,
+# where the sample banner/eyebrow/card-quote make it unmistakable.
+REAL_ADVISORS = [a for a in ADVISORS if not a.get("sample")]
 
 
 def _fact(label, value):
@@ -73,7 +129,12 @@ def _advisor_body(a):
     ])
     articles = a.get("articles")
     videos = a.get("videos")
+    sample_banner = ("""<div class="advisor-profile__sample-banner" role="note">
+  <div class="container"><strong>Sample placeholder profile.</strong> This page previews the advisor-page layout. """
+  """It does not describe a real person, and Valora does not currently have an approved advisor directory.</div>
+</div>""") if a.get("sample") else ""
     return f"""
+{sample_banner}
 <section class="section section--paper advisor-profile" id="top">
   <div class="container advisor-profile__hero">
     <div class="advisor-profile__intro">
@@ -106,7 +167,8 @@ def build_advisor_pages(write_fn):
             head(f"{a['name']} | {BRAND}",
                  a.get("quote") or f"{a['name']} at {a['firm']}.",
                  path=f"/advisors/{a['slug']}/",
-                 social_image=a.get("photo")),
+                 social_image=a.get("photo"),
+                 noindex=bool(a.get("sample"))),
             _advisor_body(a),
             active="advisors",
         )

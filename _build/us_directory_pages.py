@@ -17,7 +17,7 @@ indexed/listed in the sitemap.
 from html import escape
 
 from partials import page, head, BRAND, contact_section, DIRECTORY_CITIES
-from advisor_pages import ADVISORS
+from advisor_pages import REAL_ADVISORS
 from directory_pages import _advisor_card
 
 STATE_NAMES = {
@@ -104,11 +104,11 @@ def build_us_directory(write_fn):
         # tier 3: per-city
         for city_slug, label in cities:
             city_name = label.rsplit(", ", 1)[0]
-            matches = [a for a in ADVISORS if a["city"] == label]
+            matches = [a for a in REAL_ADVISORS if a["city"] == label]
             note = ""
             shown = matches
             if not matches:
-                shown = ADVISORS
+                shown = REAL_ADVISORS
                 note = (f'<p class="dir-note">We don&rsquo;t have a {escape(city_name)}-based advisor listed yet, '
                         "but the advisors below work with clients remotely, wherever they're based.</p>")
             cards = "\n".join(_advisor_card(a) for a in shown)
@@ -146,7 +146,7 @@ def real_pages():
     out = []
     for abbr, state_name, state_slug, cities in _by_state():
         for city_slug, label in cities:
-            if [a for a in ADVISORS if a["city"] == label]:
+            if [a for a in REAL_ADVISORS if a["city"] == label]:
                 out.append((f"/top-financial-advisors/{state_slug}/{city_slug}/",
                              f"Top financial advisors in {label} on Valora."))
     return out
