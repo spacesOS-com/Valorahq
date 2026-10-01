@@ -1,0 +1,23 @@
+diff --git a/_build/partials.py b/_build/partials.py
+index e61e873..a3abd4e 100644
+--- a/_build/partials.py
++++ b/_build/partials.py
+@@ -483,7 +483,6 @@ def client_fields(kind, uid, with_note=False, with_goal=True):
+ def hero_card():
+     return f"""<aside class="hcard reveal reveal--right">
+       <span class="hcard__edge" aria-hidden="true"></span>
+-      <p class="hcard__eyebrow">Free · No obligation</p>
+       <h2 class="hcard__title">Have a financial question?</h2>
+ 
+       <form class="hcard__form form--steps" id="heroForm" data-lead="Client" data-done="#heroDone" novalidate>
+@@ -666,9 +665,8 @@ def gate():
+     </button>
+ 
+     <div class="gate__inner">
+-      <p class="gate__eyebrow gate__i" style="--i:1">Free · No obligation</p>
+       <h2 class="gate__title display gate__i" id="gateTitle" style="--i:2">
+-        Tell us what you need
++        Tell us what you’re trying to figure out.
+       </h2>
+       <p class="gate__sub gate__i" id="gateSub" style="--i:3">
+         Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.
