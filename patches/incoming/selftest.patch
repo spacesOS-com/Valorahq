@@ -1,0 +1,6 @@
+diff --git a/patch-drop-selftest.txt b/patch-drop-selftest.txt
+new file mode 100644
+--- /dev/null
++++ b/patch-drop-selftest.txt
+@@ -0,0 +1 @@
++patch-drop selftest 1
