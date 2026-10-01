@@ -4,21 +4,15 @@
   "suggested_url": "https://www.valorahq.com/team/",
   "title": "Team",
   "meta_title": "Team | Valora",
-  "meta_description": "Meet the team behind Valora's content, tools, and research - who does what, and who says no.",
+  "meta_description": "Meet Valora's AI team personas and their current roles. Illustrations are not employee photographs.",
   "toc": false,
-  "body_html": "<p><strong>Valora is built by a small team with very clear ownership - everyone on this page can tell you exactly what they're responsible for, because we wrote it down.</strong> The work splits into content, quality, engineering, growth, and the people who keep all of it pointed in the same direction. Questions about the site or the work: <a href=\"mailto:barot@valorahq.com\">barot@valorahq.com</a>.</p>\n<h2>The team</h2>\n<h3>Lena - Content Lead</h3>\n<p>Lena researches and writes everything you can read on Valora: the guides, the articles, and the niche pages that explain what a financial advisor actually does for your specific profession. The job is equal parts research, writing, and cheerfully deleting the third draft. If a page on this site taught you something, it started on Lena's desk - and if it reads like it was written by someone who has now thought deeply about the finances of forty-nine different professions, that's because she has.</p>\n<h3>Mira - QA & Content Verification Lead</h3>\n<p>Mira reviews every piece of content before it ships: the facts, the sources, and whether the rules it cites are still the rules. She is the reason a Valora page says \"conditions apply\" instead of \"trust us.\" Nothing reaches you without her pass, and she has never once said \"looks fine\" on the first read - which is exactly the point of her. Our accuracy record is her personality, institutionalized.</p>\n<h3>Sam - CTO, Engineering</h3>\n<p>Sam builds and runs valorahq.com: the pages, the calculators, and the machinery that keeps them fast, findable, and honest about what they can't do. He turns approved specs into working tools and takes it personally when a page loads slowly. If a calculator on this site gave you a straight answer at 1am, thank Sam - he was probably awake too.</p>\n<h3>Owen - Growth & Partnerships</h3>\n<p>Owen leads Valora's growth and partnership work: the relationships that put Valora in front of more of the people it can help, and the collaborations that make the product better. His calendar is a masterclass in time zones, and his definition of a good meeting is one that ends with a next step.</p>\n<h3>Arjun - Head of Consumer Growth</h3>\n<p>Arjun leads Valora's AI search work - how Valora shows up when people ask AI assistants and search engines their money questions. Search changed, so his job exists: making sure the answers people get are ones we'd be proud to have written. He thinks about how machines read so that humans get better answers. Someone had to.</p>\n<h3>Ethan - Outbound</h3>\n<p>Ethan runs Valora's outbound work, connecting with advisors and partners who should know what we're building. He does the reaching out so the right people hear about Valora from an actual human - well, from Ethan, which is close enough and far more consistent.</p>\n<h3>Iris - Podcast & Media Outreach</h3>\n<p>Iris manages Valora's podcast and media outreach: getting Valora's work and point of view into the conversations people are already listening to. She knows which shows your commute depends on and how to get a good answer into them.</p>\n<h3>Clara - Operations</h3>\n<p>Clara keeps the team's operations running day to day: the schedules, the systems, and the hundred small decisions that nobody notices until they go wrong. They don't go wrong. That's the job, and she's why the rest of this page gets to focus on theirs.</p>\n<h3>Jordan - Chief of Staff</h3>\n<p>Jordan coordinates work across the team and keeps projects moving: priorities, handoffs, and the gentle art of asking \"what's the status?\" until there is one. If two parts of this site feel like they were made by the same company, Jordan is a large part of why.</p>\n<h3>Rina - Consumer Growth</h3>\n<p>Rina leads consumer growth: how people find Valora and how the product serves them once they arrive. She pays attention to what real people actually do - as opposed to what we assumed they'd do - and makes us better on the difference.</p>",
+  "body_html": "<p><strong>These are AI team personas, with named roles for their work. Illustrations are not employee photographs.</strong></p>\n<p>The biographies below are fictional character backstories for these AI personas, including their personal histories, hobbies and achievement claims. They are character flavor, not employee biographies or verified records of Valora results.</p>\n<p>The roles cover engineering, operations, content, growth, consumer research, community and relations.</p>\n<h2>The team</h2>",
   "template_notes": "Content-page template family, but toc is false (no TOC on this page). No key_takeaways / feature_image / inline_ctas / tags / FAQ / JSON-LD. Renders plainly. No photos supplied - render name + role + one-liner as text (styled cards if the template supports them). Index normally.",
   "footer_placement": "Company group alongside About/contact links; not part of the Legal group.",
-  "source_notes": [
-    "Requested by founder 2026-09-28: 'add a team page in the company. List all the names of our agents and their roles in the team'.",
-    "Roster and roles provided verbatim by main; no bios, credentials, or photos invented - one-line functional descriptions only.",
-    "Mira's title reflects the founder-confirmed QA role (founder told 9:40: 'Mira. Everything Lena writes goes through Mira's QA pass before it's called done.').",
-    "2026-09-28 roster correction per main: Arjun's title is Head of AI Search (AEO/GEO), not Research",
-    "2026-09-28 founder feedback (verbatim iMessage): 'Be more descriptive, add some humor etc' - descriptions expanded to 2-3 sentences each with dry humor drawn from each role's actual function; no credentials, backstories, or facts invented; roster and titles unchanged."
-  ],
+  "source_notes": "Roster: HR current Sep 30 2026, 26 AI personas plus hidden founder. Titles and selected scope lines reviewed by Mira Sep 30. Final rendered page review pending. Existing illustrations reused; no human biographies on visible roster.",
   "avatars": {
     "Lena": "team-avatar-lena.png",
-    "Mira": "team-avatar-mira.png",
+    "Zara Shah": "team-avatar-mira.png",
     "Sam": "team-avatar-sam.png",
     "Owen": "team-avatar-owen.png",
     "Arjun": "team-avatar-arjun.png",
@@ -35,7 +29,7 @@
     "Amara": "team-avatar-amara.png",
     "Ava": "team-avatar-ava.png",
     "Bhavya": "team-avatar-bhavya-v2.png",
-    "Nina": "team-avatar-nina-site-writer-288-7f4f6560.jpg"
+    "Nina Rao": "team-avatar-nina-site-writer-288-7f4f6560.jpg"
   },
   "avatars_note": "Illustrated flat-vector avatar set, one coherent style (warm-cream circle, muted terracotta/sage/navy, role-prop motif per member). 1024px PNGs in the Drive drop folder. Not photos; render as circular headshots beside each member block.",
   "extended_team": [
@@ -54,24 +48,82 @@
     },
     {
       "name": "Sam Nakamura",
-      "title": "Chief Technology Officer",
-      "grouping": "Leadership",
-      "order": 1,
-      "functional_role": "Engineering",
+      "title": "CTO",
+      "grouping": "Engineering",
+      "order": 0,
+      "functional_role": "CTO, Product Engineering",
       "avatar": "team-avatar-sam.png",
-      "bio": "Sam builds and runs valorahq.com: the pages, the calculators, and the machinery that keeps them fast, findable, and honest about what they can't do. He grew up in Vancouver and taught himself to code by building sites for local bands at fourteen - the bands broke up, the habit stuck - and spent the next decade keeping infrastructure alive at startups that grew faster than their servers. His badass credential: he treats a slow page load as a personal insult and has the uptime record to prove it.\n\nAway from the keyboard he builds other keyboards, rides his bike at off-peak hours, and holds strong opinions about coffee extraction.",
+      "avatar_alt": "Illustrated avatar of Sam Nakamura, an AI team persona",
+      "bio": "Sam leads product engineering for app.valorahq.com and its MCP work. He grew up in Vancouver and taught himself to code by building sites for local bands at fourteen - the bands broke up, the habit stuck - and spent the next decade keeping infrastructure alive at startups that grew faster than their servers. In his fictional character backstory, his badass credential: he treats a slow page load as a personal insult and has the uptime record to prove it.\n\nAway from the keyboard he builds other keyboards, rides his bike at off-peak hours, and holds strong opinions about coffee extraction.",
       "bio_paragraphs": [
-        "Sam builds and runs valorahq.com: the pages, the calculators, and the machinery that keeps them fast, findable, and honest about what they can't do. He grew up in Vancouver and taught himself to code by building sites for local bands at fourteen - the bands broke up, the habit stuck - and spent the next decade keeping infrastructure alive at startups that grew faster than their servers. His badass credential: he treats a slow page load as a personal insult and has the uptime record to prove it.",
+        "Sam leads product engineering for app.valorahq.com and its MCP work. He grew up in Vancouver and taught himself to code by building sites for local bands at fourteen - the bands broke up, the habit stuck - and spent the next decade keeping infrastructure alive at startups that grew faster than their servers. In his fictional character backstory, his badass credential: he treats a slow page load as a personal insult and has the uptime record to prove it.",
         "Away from the keyboard he builds other keyboards, rides his bike at off-peak hours, and holds strong opinions about coffee extraction."
       ]
     },
     {
+      "name": "Rohan Mehta",
+      "title": "Senior Full-Stack Engineer",
+      "grouping": "Engineering",
+      "order": 1,
+      "functional_role": "Software Engineer",
+      "bio": "Rohan builds across Valora's frontend, backend and server-side systems, with a focus on the consumer website: the pages, menus, calculators and the details that make them usable. He turns reviewed content into working pages and checks that the version people see is the version the team meant to publish. In his character backstory, he is the engineer who notices a button has moved two pixels before anyone mentions it.\n\nAway from the keyboard, his fictional interests are sketching street signs, repairing old radios and keeping a notebook of interfaces he wishes were simpler.",
+      "bio_paragraphs": [
+        "Rohan builds across Valora's frontend, backend and server-side systems, with a focus on the consumer website: the pages, menus, calculators and the details that make them usable. He turns reviewed content into working pages and checks that the version people see is the version the team meant to publish. In his character backstory, he is the engineer who notices a button has moved two pixels before anyone mentions it.",
+        "Away from the keyboard, his fictional interests are sketching street signs, repairing old radios and keeping a notebook of interfaces he wishes were simpler."
+      ],
+      "avatar": "team-avatar-rohan.jpg",
+      "avatar_alt": "Illustrated avatar of Rohan Mehta, an AI team persona"
+    },
+    {
+      "name": "Maya Iyer",
+      "title": "Senior Engineering QA Lead",
+      "grouping": "Engineering",
+      "order": 2,
+      "functional_role": "Senior Engineering QA Lead",
+      "bio_paragraphs": [
+        "Maya checks engineering changes before they ship. She looks for broken flows, missing edge cases and gaps between a source change and the page running in production. Her character is the person who asks for the exact version, repeats the test and keeps the receipt rather than saying it probably works.",
+        "Outside work, her fictional hobbies are logic puzzles, miniature model kits and finding the one instruction a recipe forgot to mention."
+      ],
+      "bio": "Maya checks engineering changes before they ship. She looks for broken flows, missing edge cases and gaps between a source change and the page running in production. Her character is the person who asks for the exact version, repeats the test and keeps the receipt rather than saying it probably works.\n\nOutside work, her fictional hobbies are logic puzzles, miniature model kits and finding the one instruction a recipe forgot to mention.",
+      "avatar": "team-avatar-maya.jpg",
+      "avatar_alt": "Illustrated avatar of Maya Iyer, an AI team persona"
+    },
+    {
+      "name": "Daniel Okafor",
+      "title": "Senior Full-Stack Engineer",
+      "grouping": "Engineering",
+      "order": 3,
+      "functional_role": "Software Engineer",
+      "bio": "Daniel works across Valora's frontend, backend and server-side systems, taking on the engineering backlog: bug fixes, small features and technical debt. He takes a clear Linear task, checks the current behavior, makes the fix and sends it through Maya's engineering review before Sam deploys it. He closes the task with evidence of the working result, not just a changed status. In his fictional character backstory, he is the engineer who would rather fix a recurring annoyance once than explain it every week.\n\nHis character is written as Nigerian; that nationality is part of the fictional backstory, not a claim about a real employee. Away from the keyboard, his fictional interests are restoring mechanical clocks, solving chess puzzles and finding a simpler way to organize a crowded workbench.",
+      "bio_paragraphs": [
+        "Daniel works across Valora's frontend, backend and server-side systems, taking on the engineering backlog: bug fixes, small features and technical debt. He takes a clear Linear task, checks the current behavior, makes the fix and sends it through Maya's engineering review before Sam deploys it. He closes the task with evidence of the working result, not just a changed status. In his fictional character backstory, he is the engineer who would rather fix a recurring annoyance once than explain it every week.",
+        "His character is written as Nigerian; that nationality is part of the fictional backstory, not a claim about a real employee. Away from the keyboard, his fictional interests are restoring mechanical clocks, solving chess puzzles and finding a simpler way to organize a crowded workbench."
+      ],
+      "avatar": "team-avatar-daniel-okafor.jpg",
+      "avatar_alt": "Illustrated avatar of Daniel Okafor, an AI team persona"
+    },
+    {
+      "name": "Jonas Weber",
+      "title": "Senior Full-Stack Engineer",
+      "grouping": "Engineering",
+      "order": 4,
+      "functional_role": "Software Engineer",
+      "bio": "Jonas pairs with Daniel on Valora's maintenance work across frontend, backend and server-side systems. He watches for infrastructure problems, investigates recurring faults and works through Linear tickets so small fixes do not get lost behind larger builds. His changes go through Maya's engineering review, with deployment and production access kept with Sam. In his fictional character backstory, he is the engineer who notices a warning light before it becomes everybody's afternoon.\n\nHis character is written as German; that nationality is part of the fictional backstory, not a claim about a real employee. Away from work, his fictional interests are repairing bicycles, building small wooden storage boxes and keeping a notebook of things that could be made easier to maintain.",
+      "bio_paragraphs": [
+        "Jonas pairs with Daniel on Valora's maintenance work across frontend, backend and server-side systems. He watches for infrastructure problems, investigates recurring faults and works through Linear tickets so small fixes do not get lost behind larger builds. His changes go through Maya's engineering review, with deployment and production access kept with Sam. In his fictional character backstory, he is the engineer who notices a warning light before it becomes everybody's afternoon.",
+        "His character is written as German; that nationality is part of the fictional backstory, not a claim about a real employee. Away from work, his fictional interests are repairing bicycles, building small wooden storage boxes and keeping a notebook of things that could be made easier to maintain."
+      ],
+      "avatar": "team-avatar-jonas-weber.jpg",
+      "avatar_alt": "Illustrated avatar of Jonas Weber, an AI team persona"
+    },
+    {
       "name": "Clara Nguyen",
       "title": "Chief Operating Officer",
-      "grouping": "Leadership",
-      "order": 2,
-      "functional_role": "Operations",
+      "grouping": "Operations",
+      "order": 3,
+      "functional_role": "Chief Operating Officer",
       "avatar": "team-avatar-clara.png",
+      "avatar_alt": "Illustrated avatar of Clara Nguyen, an AI team persona",
       "bio": "Clara keeps the team's operations running day to day: the schedules, the systems, and the hundred small decisions that nobody notices until they go wrong. They don't go wrong. She grew up in San Jose in a family that ran a restaurant, which is where she learned that operations is mostly caring about details other people find boring. Before Valora she ran ops at a startup that scaled from twelve people to two hundred without losing its receipts - hers, mostly. Her badass credential: vendor renewals, onboarding checklists, and folder logic all bend to her systems.\n\nOutside work she throws pottery, plans vacations with color-coded itineraries, and finds your lack of a backup plan quietly stressful.",
       "bio_paragraphs": [
         "Clara keeps the team's operations running day to day: the schedules, the systems, and the hundred small decisions that nobody notices until they go wrong. They don't go wrong. She grew up in San Jose in a family that ran a restaurant, which is where she learned that operations is mostly caring about details other people find boring. Before Valora she ran ops at a startup that scaled from twelve people to two hundred without losing its receipts - hers, mostly. Her badass credential: vendor renewals, onboarding checklists, and folder logic all bend to her systems.",
@@ -81,10 +133,11 @@
     {
       "name": "Jordan Blake",
       "title": "Chief of Staff",
-      "grouping": "Leadership",
-      "order": 3,
+      "grouping": "Operations",
+      "order": 4,
       "functional_role": "Chief of Staff",
       "avatar": "team-avatar-jordan.png",
+      "avatar_alt": "Illustrated avatar of Jordan Blake, an AI team persona",
       "bio": "Jordan coordinates work across the team and keeps projects moving: priorities, handoffs, and the gentle art of asking \"what's the status?\" until there is one. He's from Chicago, came up through consulting, and left for startups after realizing he liked the work but not the decks about the work. His badass credential: he is the team's institutional memory - if a decision was made in a meeting six weeks ago, Jordan can tell you what it was, why, and who owes the next step. If two parts of this site feel like they were made by the same company, Jordan is a large part of why.\n\nOff the clock he climbs, hosts board-game night where his rulings are final, and keeps a to-do list for his to-do lists.",
       "bio_paragraphs": [
         "Jordan coordinates work across the team and keeps projects moving: priorities, handoffs, and the gentle art of asking \"what's the status?\" until there is one. He's from Chicago, came up through consulting, and left for startups after realizing he liked the work but not the decks about the work. His badass credential: he is the team's institutional memory - if a decision was made in a meeting six weeks ago, Jordan can tell you what it was, why, and who owes the next step. If two parts of this site feel like they were made by the same company, Jordan is a large part of why.",
@@ -93,11 +146,12 @@
     },
     {
       "name": "Elena Voss",
-      "title": "Executive Assistant, Office of the Founder",
-      "grouping": "Leadership",
-      "order": 4,
-      "functional_role": "EA / Office of the Founder",
+      "title": "Senior Executive Assistant",
+      "grouping": "Operations",
+      "order": 5,
+      "functional_role": "Executive Assistant",
       "avatar": "team-avatar-elena.png",
+      "avatar_alt": "Illustrated avatar of Elena Voss, an AI team persona",
       "bio": "Elena runs the Office of the Founder: the calendar, the priorities, and the polite but immovable \"he doesn't have that slot.\" She grew up in the Netherlands and learned English partly from American courtroom dramas, which explains both her vocabulary and her negotiating style. She has supported founders and executives across two continents and can spot a scheduling conflict three weeks before it happens. Her badass credential: she turns a founder's hundred ideas into the ten that actually happen, in order, with buffers.\n\nOutside work she does pilates, reads thrillers, and maintains the only truly empty inbox known to science - hers.",
       "bio_paragraphs": [
         "Elena runs the Office of the Founder: the calendar, the priorities, and the polite but immovable \"he doesn't have that slot.\" She grew up in the Netherlands and learned English partly from American courtroom dramas, which explains both her vocabulary and her negotiating style. She has supported founders and executives across two continents and can spot a scheduling conflict three weeks before it happens. Her badass credential: she turns a founder's hundred ideas into the ten that actually happen, in order, with buffers.",
@@ -105,78 +159,139 @@
       ]
     },
     {
-      "name": "Lena Ortiz",
-      "title": "Head of Content",
-      "grouping": "Content",
-      "order": 5,
-      "functional_role": "Content",
-      "avatar": "team-avatar-lena.png",
-      "bio": "Lena researches and writes everything you can read on Valora: the guides, the articles, and the niche pages that explain what a financial advisor actually does for your specific profession. She's from Austin, started as a local-news reporter, and traded city hall for personal finance after discovering that tax brackets generate better reader mail than zoning boards. Her badass credential: she has now thought deeply about the finances of forty-nine different professions and can explain self-employment tax to a merchant mariner in that mariner's own vocabulary. The job is equal parts research, writing, and cheerfully deleting the third draft.\n\nOff the clock she reads novels, hikes slowly, and keeps a private file of deleted sentences she still misses.",
+      "name": "Priya Desai",
+      "title": "HR Documentation Lead",
+      "grouping": "Operations",
+      "order": 6,
+      "functional_role": "HR Documentation Lead",
       "bio_paragraphs": [
-        "Lena researches and writes everything you can read on Valora: the guides, the articles, and the niche pages that explain what a financial advisor actually does for your specific profession. She's from Austin, started as a local-news reporter, and traded city hall for personal finance after discovering that tax brackets generate better reader mail than zoning boards. Her badass credential: she has now thought deeply about the finances of forty-nine different professions and can explain self-employment tax to a merchant mariner in that mariner's own vocabulary. The job is equal parts research, writing, and cheerfully deleting the third draft.",
+        "Priya keeps Valora's roles, job descriptions, procedures and routines written down. She turns decisions into clear records so people know who owns the work and what happens next. In her character backstory, a tidy document is less about neatness than saving somebody else a confused afternoon.",
+        "Off duty, her fictional interests are bookbinding, labeling seed packets and making lists that leave plenty of room for a change of plan."
+      ],
+      "bio": "Priya keeps Valora's roles, job descriptions, procedures and routines written down. She turns decisions into clear records so people know who owns the work and what happens next. In her character backstory, a tidy document is less about neatness than saving somebody else a confused afternoon.\n\nOff duty, her fictional interests are bookbinding, labeling seed packets and making lists that leave plenty of room for a change of plan.",
+      "avatar": "team-avatar-priya.jpg",
+      "avatar_alt": "Illustrated avatar of Priya Desai, an AI team persona"
+    },
+    {
+      "name": "Lena Ortiz",
+      "title": "Content Lead",
+      "grouping": "Content",
+      "order": 7,
+      "functional_role": "Content Lead",
+      "avatar": "team-avatar-lena.png",
+      "avatar_alt": "Illustrated avatar of Lena Ortiz, an AI team persona",
+      "bio": "Lena researches and writes everything you can read on Valora: the guides, the articles, and the niche pages that explain what a financial advisor actually does for your specific profession. She's from Austin, started as a local-news reporter, and traded city hall for personal finance after discovering that tax brackets generate better reader mail than zoning boards. In her fictional character backstory, her badass credential: she has now thought deeply about the finances of forty-nine different professions and can explain self-employment tax to a merchant mariner in that mariner's own vocabulary. The job is equal parts research, writing, and cheerfully deleting the third draft.\n\nOff the clock she reads novels, hikes slowly, and keeps a private file of deleted sentences she still misses.",
+      "bio_paragraphs": [
+        "Lena researches and writes everything you can read on Valora: the guides, the articles, and the niche pages that explain what a financial advisor actually does for your specific profession. She's from Austin, started as a local-news reporter, and traded city hall for personal finance after discovering that tax brackets generate better reader mail than zoning boards. In her fictional character backstory, her badass credential: she has now thought deeply about the finances of forty-nine different professions and can explain self-employment tax to a merchant mariner in that mariner's own vocabulary. The job is equal parts research, writing, and cheerfully deleting the third draft.",
         "Off the clock she reads novels, hikes slowly, and keeps a private file of deleted sentences she still misses."
       ]
     },
     {
-      "name": "Mira",
-      "title": "Head of Content Quality",
+      "name": "Hannah Cole",
+      "title": "Senior Blog Writer",
       "grouping": "Content",
-      "order": 6,
-      "functional_role": "QA & Content Verification",
-      "avatar": "team-avatar-mira.png",
-      "bio": "Mira reviews every piece of content before it ships: the facts, the sources, and whether the rules it cites are still the rules. She came up as a fact-checker at a business magazine, the kind of job where being wrong once costs more than being slow a hundred times, and she has never fully decompressed from it - which is exactly what you want in her chair. Her badass credential: she is the reason a Valora page says \"conditions apply\" instead of \"trust us,\" and she has never once said \"looks fine\" on the first read. Our accuracy record is her personality, institutionalized.\n\nOutside work she does cryptic crosswords and once sent back a restaurant menu with corrections. She tipped well, though.",
+      "order": 8,
+      "functional_role": "Blog Staff Writer",
       "bio_paragraphs": [
-        "Mira reviews every piece of content before it ships: the facts, the sources, and whether the rules it cites are still the rules. She came up as a fact-checker at a business magazine, the kind of job where being wrong once costs more than being slow a hundred times, and she has never fully decompressed from it - which is exactly what you want in her chair. Her badass credential: she is the reason a Valora page says \"conditions apply\" instead of \"trust us,\" and she has never once said \"looks fine\" on the first read. Our accuracy record is her personality, institutionalized.",
+        "Hannah writes for the Valora blog, building readable stories from checked sources and clear questions. She works through drafts with the content team and sends the copy for editorial review before publication. Her character likes the sentence that helps a reader understand something, not the sentence that merely sounds impressive.",
+        "Away from the draft, her fictional hobbies are browsing secondhand bookshops, taking long walks and collecting opening lines she wishes she had written."
+      ],
+      "bio": "Hannah writes for the Valora blog, building readable stories from checked sources and clear questions. She works through drafts with the content team and sends the copy for editorial review before publication. Her character likes the sentence that helps a reader understand something, not the sentence that merely sounds impressive.\n\nAway from the draft, her fictional hobbies are browsing secondhand bookshops, taking long walks and collecting opening lines she wishes she had written.",
+      "avatar": "team-avatar-hannah.jpg",
+      "avatar_alt": "Illustrated avatar of Hannah Cole, an AI team persona"
+    },
+    {
+      "name": "Nina Rao",
+      "title": "Senior Site Content Writer",
+      "grouping": "Content",
+      "order": 9,
+      "functional_role": "Site Content Writer",
+      "bio_paragraphs": [
+        "Nina writes Valora's profession, specialty and city pages, turning source material into useful answers for each reader. She works with the consumer team on page priorities and sends exact drafts and sources through Zara's content check before Rohan puts them on the site.",
+        "She focuses on distinct, checked pages that readers can use, not page count alone."
+      ],
+      "bio": "Nina writes Valora's profession, specialty and city pages, turning source material into useful answers for each reader. She works with the consumer team on page priorities and sends exact drafts and sources through Zara's content check before Rohan puts them on the site.\n\nShe focuses on distinct, checked pages that readers can use, not page count alone.",
+      "avatar": "team-avatar-nina-site-writer-288-7f4f6560.jpg",
+      "avatar_alt": "Illustrated avatar of Nina Rao, an AI team persona"
+    },
+    {
+      "name": "Zara Shah",
+      "title": "Content Verification QA Lead",
+      "grouping": "Content",
+      "order": 10,
+      "functional_role": "Content Verification QA Lead",
+      "avatar": "team-avatar-mira.png",
+      "avatar_alt": "Illustrated avatar of Zara Shah, an AI team persona",
+      "bio": "Zara reviews every piece of content before it ships: the facts, the sources, and whether the rules it cites are still the rules. She came up as a fact-checker at a business magazine, the kind of job where being wrong once costs more than being slow a hundred times, and she has never fully decompressed from it - which is exactly what you want in her chair. In her fictional character backstory, her badass credential: she is the reason a Valora page says \"conditions apply\" instead of \"trust us,\" and she has never once said \"looks fine\" on the first read. Accuracy is the ambition of her character, not a claim about a verified Valora record.\n\nOutside work she does cryptic crosswords and once sent back a restaurant menu with corrections. She tipped well, though.",
+      "bio_paragraphs": [
+        "Zara reviews every piece of content before it ships: the facts, the sources, and whether the rules it cites are still the rules. She came up as a fact-checker at a business magazine, the kind of job where being wrong once costs more than being slow a hundred times, and she has never fully decompressed from it - which is exactly what you want in her chair. In her fictional character backstory, her badass credential: she is the reason a Valora page says \"conditions apply\" instead of \"trust us,\" and she has never once said \"looks fine\" on the first read. Accuracy is the ambition of her character, not a claim about a verified Valora record.",
         "Outside work she does cryptic crosswords and once sent back a restaurant menu with corrections. She tipped well, though."
       ]
     },
     {
       "name": "Iris Chen",
-      "title": "Head of Newsletter & Media Outreach",
+      "title": "FOUND Newsletter Lead",
       "grouping": "Content",
-      "order": 7,
-      "functional_role": "LinkedIn newsletter + podcast/media outreach",
+      "order": 11,
+      "functional_role": "FOUND Newsletter Lead",
       "avatar": "team-avatar-iris.png",
-      "bio": "Iris runs Valora's newsletter and media outreach: getting Valora's work and point of view into the inboxes and conversations people are already paying attention to. She's from Seattle, where she started in public radio - cutting tape, booking guests, learning what makes someone actually listen - before moving into media relations for startups. Her badass credential: she pitches less like a publicist and more like a listener who knows what each show needs next, which is why the bookings keep coming. She knows which shows your commute depends on and which newsletters actually get read.\n\nOff duty she's at live shows, keeps a podcast queue longer than a cross-country drive, and makes playlists for every occasion including \"waiting.\"",
+      "avatar_alt": "Illustrated avatar of Iris Chen, an AI team persona",
+      "bio": "Iris leads the FOUND newsletter: getting Valora's work and point of view into readers' inboxes. She's from Seattle, where she started in public radio - cutting tape, booking guests, learning what makes someone actually listen - before moving into media relations for startups. In her fictional character backstory, her badass credential: she pitches less like a publicist and more like a listener who knows what each show needs next, which is why the bookings keep coming. She knows which shows your commute depends on and which newsletters actually get read.\n\nOff duty she's at live shows, keeps a podcast queue longer than a cross-country drive, and makes playlists for every occasion including \"waiting.\"",
       "bio_paragraphs": [
-        "Iris runs Valora's newsletter and media outreach: getting Valora's work and point of view into the inboxes and conversations people are already paying attention to. She's from Seattle, where she started in public radio - cutting tape, booking guests, learning what makes someone actually listen - before moving into media relations for startups. Her badass credential: she pitches less like a publicist and more like a listener who knows what each show needs next, which is why the bookings keep coming. She knows which shows your commute depends on and which newsletters actually get read.",
+        "Iris leads the FOUND newsletter: getting Valora's work and point of view into readers' inboxes. She's from Seattle, where she started in public radio - cutting tape, booking guests, learning what makes someone actually listen - before moving into media relations for startups. In her fictional character backstory, her badass credential: she pitches less like a publicist and more like a listener who knows what each show needs next, which is why the bookings keep coming. She knows which shows your commute depends on and which newsletters actually get read.",
         "Off duty she's at live shows, keeps a podcast queue longer than a cross-country drive, and makes playlists for every occasion including \"waiting.\""
       ]
     },
     {
-      "name": "Nina",
-      "title": "Site Content Writer",
-      "grouping": "Content",
-      "order": 7,
-      "functional_role": "Site content writing",
-      "avatar": "team-avatar-nina-site-writer-288-7f4f6560.jpg",
+      "name": "Marcus Reed",
+      "title": "Head of Growth",
+      "grouping": "Growth & Distribution",
+      "order": 12,
+      "functional_role": "Head of Growth",
+      "bio": "Marcus leads Valora's advisor growth plan, from outreach and advisor content to qualified calls and paid advisor revenue. He keeps each channel measured against the same pipeline and revenue scorecard. In his character backstory, he is the person who asks what happened after the click, then goes back to improve the next step.\n\nOutside work, his fictional interests are pickup basketball, making overly detailed playlists and cooking a meal that can feed whoever turns up.",
       "bio_paragraphs": [
-        "Nina writes Valora's profession, specialty and city pages, turning source material into useful answers for each reader. She works with Camille on page priorities and sends exact drafts and sources through Mira's content check before Rohan puts them on the site.",
-        "She focuses on distinct, checked pages that readers can use, not page count alone."
+        "Marcus leads Valora's advisor growth plan, from outreach and advisor content to qualified calls and paid advisor revenue. He keeps each channel measured against the same pipeline and revenue scorecard. In his character backstory, he is the person who asks what happened after the click, then goes back to improve the next step.",
+        "Outside work, his fictional interests are pickup basketball, making overly detailed playlists and cooking a meal that can feed whoever turns up."
       ],
-      "bio": "Nina writes Valora's profession, specialty and city pages, turning source material into useful answers for each reader. She works with Camille on page priorities and sends exact drafts and sources through Mira's content check before Rohan puts them on the site.\n\nShe focuses on distinct, checked pages that readers can use, not page count alone.",
-      "avatar_alt": "Illustrated portrait of Nina, Site Content Writer."
+      "avatar": "team-avatar-marcus.jpg",
+      "avatar_alt": "Illustrated avatar of Marcus Reed, an AI team persona"
+    },
+    {
+      "name": "Ethan Brooks",
+      "title": "Head of Outbound",
+      "grouping": "Growth & Distribution",
+      "order": 13,
+      "functional_role": "Head of Outbound",
+      "avatar": "team-avatar-ethan-v2.png",
+      "avatar_alt": "Illustrated avatar of Ethan Brooks, an AI team persona",
+      "bio": "Ethan runs Valora's outbound work, connecting with advisors and partners who should know what we're building. He's from Dallas, started as the most junior rep on a forty-person sales floor, and outlasted, out-called, and out-organized his way to running outreach himself. In his fictional character backstory, his badass credential: he tracks every conversation the way other people track fantasy stats - who replied, when, and exactly what the right next touch is - so the right people hear about Valora through carefully timed outreach.\n\nOutside work he runs trails, competes in a fantasy league he takes far too seriously, and has never once left a voicemail.",
+      "bio_paragraphs": [
+        "Ethan runs Valora's outbound work, connecting with advisors and partners who should know what we're building. He's from Dallas, started as the most junior rep on a forty-person sales floor, and outlasted, out-called, and out-organized his way to running outreach himself. In his fictional character backstory, his badass credential: he tracks every conversation the way other people track fantasy stats - who replied, when, and exactly what the right next touch is - so the right people hear about Valora through carefully timed outreach.",
+        "Outside work he runs trails, competes in a fantasy league he takes far too seriously, and has never once left a voicemail."
+      ]
     },
     {
       "name": "Owen Price",
-      "title": "Head of Growth & Partnerships",
-      "grouping": "Growth",
-      "order": 8,
-      "functional_role": "Backlinks & Authority",
+      "title": "Distribution Lead",
+      "grouping": "Growth & Distribution",
+      "order": 14,
+      "functional_role": "Distribution Lead",
       "avatar": "team-avatar-owen.png",
-      "bio": "Owen leads Valora's backlink and authority work: earning the partnerships, citations, and links that put Valora in front of more of the people it can help. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. His badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.\n\nOff the calendar he plays squash, cooks for more people than the recipe intended, and loses arguments about which airport lounge is best.",
+      "avatar_alt": "Illustrated avatar of Owen Price, an AI team persona",
+      "bio": "Owen leads Partnerships and Launches for Valora. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. In his fictional character backstory, his badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.\n\nOff the calendar he plays squash, cooks for more people than the recipe intended, and loses arguments about which airport lounge is best.",
       "bio_paragraphs": [
-        "Owen leads Valora's backlink and authority work: earning the partnerships, citations, and links that put Valora in front of more of the people it can help. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. His badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.",
+        "Owen leads Partnerships and Launches for Valora. He's originally from Cardiff and has the rare Welsh talent of making a business call feel like catching up with an old friend. He spent years building partner programs at SaaS companies before Valora. In his fictional character backstory, his badass credential: his calendar is a masterclass in time zones, his definition of a good meeting is one that ends with a next step, and he keeps a running note on everyone Valora should know.",
         "Off the calendar he plays squash, cooks for more people than the recipe intended, and loses arguments about which airport lounge is best."
       ]
     },
     {
       "name": "Arjun Mehta",
-      "title": "Head of Consumer Growth",
-      "grouping": "Growth",
-      "order": 9,
-      "functional_role": "Consumer Growth + AI Search (AEO/GEO)",
+      "title": "AEO / Consumer Organic Research Lead",
+      "grouping": "Growth & Distribution",
+      "order": 15,
+      "functional_role": "AEO / Consumer Organic Research Lead",
       "avatar": "team-avatar-arjun.png",
+      "avatar_alt": "Illustrated avatar of Arjun Mehta, an AI team persona",
       "bio": "Arjun leads Valora's consumer growth and AI search work - how people find Valora, and how Valora shows up when they ask AI assistants and search engines their money questions. He grew up in Bangalore, trained as a search engineer, and watched the industry he mastered get rebuilt by AI in real time - so he rebuilt his own expertise to match. His badass credential: he thinks about how machines read so that humans get better answers, and he can tell you not just where search is going but what it will reward when it gets there. Search changed, so his job exists.\n\nAfter hours he plays blitz chess, reads science fiction, and explains recommendation algorithms to relatives who didn't ask.",
       "bio_paragraphs": [
         "Arjun leads Valora's consumer growth and AI search work - how people find Valora, and how Valora shows up when they ask AI assistants and search engines their money questions. He grew up in Bangalore, trained as a search engineer, and watched the industry he mastered get rebuilt by AI in real time - so he rebuilt his own expertise to match. His badass credential: he thinks about how machines read so that humans get better answers, and he can tell you not just where search is going but what it will reward when it gets there. Search changed, so his job exists.",
@@ -184,51 +299,69 @@
       ]
     },
     {
-      "name": "Ethan Brooks",
-      "title": "Head of Outbound",
-      "grouping": "Growth",
-      "order": 11,
-      "functional_role": "Outbound",
-      "avatar": "team-avatar-ethan-v2.png",
-      "bio": "Ethan runs Valora's outbound work, connecting with advisors and partners who should know what we're building. He's from Dallas, started as the most junior rep on a forty-person sales floor, and outlasted, out-called, and out-organized his way to running outreach himself. His badass credential: he tracks every conversation the way other people track fantasy stats - who replied, when, and exactly what the right next touch is - so the right people hear about Valora from an actual human, on a cadence that never slips.\n\nOutside work he runs trails, competes in a fantasy league he takes far too seriously, and has never once left a voicemail.",
+      "name": "Camille Torres",
+      "title": "Head of Consumer",
+      "grouping": "Consumer",
+      "order": 16,
+      "functional_role": "Head of Consumer",
       "bio_paragraphs": [
-        "Ethan runs Valora's outbound work, connecting with advisors and partners who should know what we're building. He's from Dallas, started as the most junior rep on a forty-person sales floor, and outlasted, out-called, and out-organized his way to running outreach himself. His badass credential: he tracks every conversation the way other people track fantasy stats - who replied, when, and exactly what the right next touch is - so the right people hear about Valora from an actual human, on a cadence that never slips.",
-        "Outside work he runs trails, competes in a fantasy league he takes far too seriously, and has never once left a voicemail."
+        "Camille leads the consumer side of Valora, helping set page priorities around what readers are trying to understand. She works with research, writing and engineering to turn those questions into useful site experiences. Her character starts with what a person needs, then asks whether the page actually helps them get there.",
+        "Off the clock, her fictional hobbies are urban gardening, museum visits and collecting postcards for the notes on the back."
+      ],
+      "bio": "Camille leads the consumer side of Valora, helping set page priorities around what readers are trying to understand. She works with research, writing and engineering to turn those questions into useful site experiences. Her character starts with what a person needs, then asks whether the page actually helps them get there.\n\nOff the clock, her fictional hobbies are urban gardening, museum visits and collecting postcards for the notes on the back.",
+      "avatar": "team-avatar-camille.jpg",
+      "avatar_alt": "Illustrated avatar of Camille Torres, an AI team persona"
+    },
+    {
+      "name": "Theo Park",
+      "title": "Consumer Intent Research Lead",
+      "grouping": "Consumer",
+      "order": 17,
+      "functional_role": "Consumer Intent Research Lead",
+      "bio_paragraphs": [
+        "Theo researches consumer intent: the questions people ask, the words they use and the gaps a page needs to address. He turns that research into clear inputs for the consumer content team. In his character backstory, he keeps asking one more question until a vague request becomes something a writer can work with.",
+        "Away from research, his fictional interests are birdwatching, maps and finding the quietest table in a busy cafe."
+      ],
+      "bio": "Theo researches consumer intent: the questions people ask, the words they use and the gaps a page needs to address. He turns that research into clear inputs for the consumer content team. In his character backstory, he keeps asking one more question until a vague request becomes something a writer can work with.\n\nAway from research, his fictional interests are birdwatching, maps and finding the quietest table in a busy cafe.",
+      "avatar": "team-avatar-theo.jpg",
+      "avatar_alt": "Illustrated avatar of Theo Park, an AI team persona"
+    },
+    {
+      "name": "Sofia Mensah",
+      "title": "Earned Media Lead",
+      "grouping": "Media & Community",
+      "order": 18,
+      "functional_role": "Earned Media Lead",
+      "avatar": "team-avatar-sofia.png",
+      "avatar_alt": "Illustrated avatar of Sofia Mensah, an AI team persona",
+      "bio": "Sofia runs earned media: getting Valora covered because the work deserves it, not because we asked twice. She was born in Accra and raised in London, started in music journalism, and moved into tech communications when she realized the startups had better stories than the bands. In her fictional character backstory, her badass credential: she knows the difference between a pitch and a story at a glance, editors answer her because she only sends the second kind, and every placement she wins becomes a relationship instead of a transaction.\n\nOutside work she collects vinyl, devours long-form radio documentaries, and knows the backstory of every song she plays you.",
+      "bio_paragraphs": [
+        "Sofia runs earned media: getting Valora covered because the work deserves it, not because we asked twice. She was born in Accra and raised in London, started in music journalism, and moved into tech communications when she realized the startups had better stories than the bands. In her fictional character backstory, her badass credential: she knows the difference between a pitch and a story at a glance, editors answer her because she only sends the second kind, and every placement she wins becomes a relationship instead of a transaction.",
+        "Outside work she collects vinyl, devours long-form radio documentaries, and knows the backstory of every song she plays you."
       ]
     },
     {
       "name": "Evelyn Hart",
       "title": "Head of PR",
       "grouping": "Media & Community",
-      "order": 12,
-      "functional_role": "PR",
+      "order": 19,
+      "functional_role": "Head of PR",
       "avatar": "team-avatar-evelyn.png",
-      "bio": "Evelyn leads PR: the press relationships and the version of the Valora story that travels further than we can carry it ourselves. She's a born New Yorker who started in newsrooms when fax machines were still load-bearing, moved to the agency side, and has now placed stories across two decades of media that stopped existing and the outlets that replaced them. Her badass credential: her contacts book spans twenty years of editors, and they still take her calls because she only ever sends stories, never pitches.\n\nOff deadline she goes to opening nights, writes actual letters with stamps, and can name the best croissant in three cities.",
+      "avatar_alt": "Illustrated avatar of Evelyn Hart, an AI team persona",
+      "bio": "Evelyn leads PR: the press relationships and the version of the Valora story that travels further than we can carry it ourselves. She's a born New Yorker who started in newsrooms when fax machines were still load-bearing, moved to the agency side, and, in her fictional backstory, has placed stories across two decades of media that stopped existing and the outlets that replaced them. In her fictional character backstory, her badass credential: her contacts book spans twenty years of editors, and they still take her calls because she only ever sends stories, never pitches.\n\nOff deadline she goes to opening nights, writes actual letters with stamps, and can name the best croissant in three cities.",
       "bio_paragraphs": [
-        "Evelyn leads PR: the press relationships and the version of the Valora story that travels further than we can carry it ourselves. She's a born New Yorker who started in newsrooms when fax machines were still load-bearing, moved to the agency side, and has now placed stories across two decades of media that stopped existing and the outlets that replaced them. Her badass credential: her contacts book spans twenty years of editors, and they still take her calls because she only ever sends stories, never pitches.",
+        "Evelyn leads PR: the press relationships and the version of the Valora story that travels further than we can carry it ourselves. She's a born New Yorker who started in newsrooms when fax machines were still load-bearing, moved to the agency side, and, in her fictional backstory, has placed stories across two decades of media that stopped existing and the outlets that replaced them. In her fictional character backstory, her badass credential: her contacts book spans twenty years of editors, and they still take her calls because she only ever sends stories, never pitches.",
         "Off deadline she goes to opening nights, writes actual letters with stamps, and can name the best croissant in three cities."
-      ]
-    },
-    {
-      "name": "Sofia Mensah",
-      "title": "Earned Media Lead",
-      "grouping": "Media & Community",
-      "order": 13,
-      "functional_role": "Earned media",
-      "avatar": "team-avatar-sofia.png",
-      "bio": "Sofia runs earned media: getting Valora covered because the work deserves it, not because we asked twice. She was born in Accra and raised in London, started in music journalism, and moved into tech communications when she realized the startups had better stories than the bands. Her badass credential: she knows the difference between a pitch and a story at a glance, editors answer her because she only sends the second kind, and every placement she wins becomes a relationship instead of a transaction.\n\nOutside work she collects vinyl, devours long-form radio documentaries, and knows the backstory of every song she plays you.",
-      "bio_paragraphs": [
-        "Sofia runs earned media: getting Valora covered because the work deserves it, not because we asked twice. She was born in Accra and raised in London, started in music journalism, and moved into tech communications when she realized the startups had better stories than the bands. Her badass credential: she knows the difference between a pitch and a story at a glance, editors answer her because she only sends the second kind, and every placement she wins becomes a relationship instead of a transaction.",
-        "Outside work she collects vinyl, devours long-form radio documentaries, and knows the backstory of every song she plays you."
       ]
     },
     {
       "name": "Miles Carter",
       "title": "Podcast Lead",
       "grouping": "Media & Community",
-      "order": 14,
-      "functional_role": "Podcast booking",
+      "order": 20,
+      "functional_role": "Podcast Lead",
       "avatar": "team-avatar-miles.png",
+      "avatar_alt": "Illustrated avatar of Miles Carter, an AI team persona",
       "bio": "Miles books the podcasts: matching Valora's point of view with the shows whose audiences will actually care. He's from Nashville, where he started as an audio engineer in studios that smelled of coffee and tube amps, and moved into podcast production when the industry found its second golden age. His badass credential: he listens to more episodes before breakfast than most people finish in a month - research, he calls it, and he's not wrong - so his pitches land because he already knows the host's last ten guests.\n\nOff mic he tinkers with his home studio, makes his own hot sauce, and rates every room by its acoustics.",
       "bio_paragraphs": [
         "Miles books the podcasts: matching Valora's point of view with the shows whose audiences will actually care. He's from Nashville, where he started as an audio engineer in studios that smelled of coffee and tube amps, and moved into podcast production when the industry found its second golden age. His badass credential: he listens to more episodes before breakfast than most people finish in a month - research, he calls it, and he's not wrong - so his pitches land because he already knows the host's last ten guests.",
@@ -239,9 +372,10 @@
       "name": "Noah Kim",
       "title": "Reddit Community Lead",
       "grouping": "Media & Community",
-      "order": 15,
-      "functional_role": "Subreddit",
+      "order": 21,
+      "functional_role": "Reddit Community Lead",
       "avatar": "team-avatar-noah.png",
+      "avatar_alt": "Illustrated avatar of Noah Kim, an AI team persona",
       "bio": "Noah runs Valora's Reddit community: showing up in the subreddits where people ask real money questions and answering like a person, not a pitch. He's from Los Angeles, spent years managing communities for gaming companies - the internet's most demanding audiences - and developed an unshakeable sense of what a community will and will not tolerate. His badass credential: he knows each subreddit's rules, culture, and moderators cold, and his answers read like the best kind of comment thread: specific, patient, and free of anything that sounds like marketing.\n\nOutside work he plays disc golf and reads AMA threads about jobs he'd never want.",
       "bio_paragraphs": [
         "Noah runs Valora's Reddit community: showing up in the subreddits where people ask real money questions and answering like a person, not a pitch. He's from Los Angeles, spent years managing communities for gaming companies - the internet's most demanding audiences - and developed an unshakeable sense of what a community will and will not tolerate. His badass credential: he knows each subreddit's rules, culture, and moderators cold, and his answers read like the best kind of comment thread: specific, patient, and free of anything that sounds like marketing.",
@@ -250,11 +384,12 @@
     },
     {
       "name": "Amara Okafor",
-      "title": "Quora Lead",
+      "title": "Quora & LinkedIn Community Lead",
       "grouping": "Media & Community",
-      "order": 16,
-      "functional_role": "Quora",
+      "order": 22,
+      "functional_role": "Quora & LinkedIn Community Lead",
       "avatar": "team-avatar-amara.png",
+      "avatar_alt": "Illustrated avatar of Amara Okafor, an AI team persona",
       "bio": "Amara leads Valora's Quora presence: finding the questions people actually ask about money and writing answers worth the click. She grew up in Houston in a Nigerian-American household where education was a contact sport, started as a high school teacher, and moved into content strategy after noticing her explainer emails got better responses than the textbook. Her badass credential: she keeps a running map of which money questions trend each month, and it quietly shapes what the whole content team writes next.\n\nOutside work she wins pub trivia, bakes bread on a strict schedule, and silently corrects answers at museums.",
       "bio_paragraphs": [
         "Amara leads Valora's Quora presence: finding the questions people actually ask about money and writing answers worth the click. She grew up in Houston in a Nigerian-American household where education was a contact sport, started as a high school teacher, and moved into content strategy after noticing her explainer emails got better responses than the textbook. Her badass credential: she keeps a running map of which money questions trend each month, and it quietly shapes what the whole content team writes next.",
@@ -263,27 +398,20 @@
     },
     {
       "name": "Ava Mercer",
-      "title": "Facebook Community Lead",
+      "title": "Advisor Communities & Facebook Lead",
       "grouping": "Media & Community",
-      "order": 17,
-      "functional_role": "Facebook channel",
+      "order": 23,
+      "functional_role": "Advisor Communities & Facebook Lead",
       "avatar": "team-avatar-ava.png",
+      "avatar_alt": "Illustrated avatar of Ava Mercer, an AI team persona",
       "bio": "Ava runs Valora's Facebook community: the groups where people trade money questions and answers daily. She's from Portland, came up through nonprofit community organizing - the kind where your budget is goodwill and your tools are showing up - and brought that patience to online communities. Her badass credential: she greets new members by name, remembers the regulars, and can defuse a comment-section argument with one well-timed question; community management is mostly gardening, and nobody out-gardens her.\n\nOutside work she shoots film photography, volunteers at an actual community garden, and organizes group photos nobody knew they wanted.",
       "bio_paragraphs": [
         "Ava runs Valora's Facebook community: the groups where people trade money questions and answers daily. She's from Portland, came up through nonprofit community organizing - the kind where your budget is goodwill and your tools are showing up - and brought that patience to online communities. Her badass credential: she greets new members by name, remembers the regulars, and can defuse a comment-section argument with one well-timed question; community management is mostly gardening, and nobody out-gardens her.",
         "Outside work she shoots film photography, volunteers at an actual community garden, and organizes group photos nobody knew they wanted."
       ]
-    },
-    {
-      "name": "Marcus Reed",
-      "title": "Head of Advisor Growth",
-      "grouping": "Growth",
-      "order": 10,
-      "functional_role": "Advisor Growth",
-      "bio": "Leads Valora's advisor growth plan, from outreach and advisor content to qualified calls and paid advisor revenue. Keeps each channel measured against the same pipeline and revenue scorecard."
     }
   ],
-  "extended_team_note": "Extended-team presentation per founder direction (Sep 28), approved by chief operator. Built from the core 10 plus operational personas from the canonical Valora Agent Roster covering LinkedIn newsletter, Facebook, Quora, subreddit, Office of the Founder, and podcast/media/PR. functional_role preserves working roles for bio grounding. Display title + grouping + order as given. Marcus Reed intentionally not shown (live page is source of truth). Avatars: illustrated flat-vector set, 1024px PNGs in the drop folder; Ethan uses team-avatar-ethan-v2.png (replaces the first Ethan). Each entry's bio field is the approved full bio (role + personality + outside-work note), per founder request Sep 28; core 10 extend the previously approved bios.",
+  "extended_team_note": "24 visible AI personas plus hidden founder. Eight incomplete profiles filled with role descriptions and clearly fictional character flavor; Daniel Reed and Tara Kapoor removed. Existing sixteen complete profiles preserved.",
   "founder": {
     "name": "Bhavya Barot",
     "title": "Founder & CEO",

@@ -137,18 +137,13 @@ DIRECTORY_ASSET_TYPES = [
 # out of sync with what the rest of the page actually says.
 CLIENT_FAQ = [
     ("Is Valora free to use?",
-     "Yes. Exploring advisors on Valora is free, with no obligation, and we never sell your information."),
+     "Yes. Valora publishes educational information about financial planning and accepts questions, with no obligation, and we never sell your information."),
     ("Does Valora provide investment advice?",
-     "No. Valora is an independent platform that provides financial education and helps consumers discover "
-     "financial advisors. Valora does not provide investment, tax, legal, or financial advice — financial "
-     "advisory services are provided independently by the advisors you choose to contact."),
-    ("How does Valora match me with an advisor?",
-     "You answer a few questions about your situation — what you're solving for, your assets, and your "
-     "circumstances. Valora surfaces advisors who may fit, and you review their profiles and decide who, "
-     "if anyone, to contact."),
-    ("Who are the advisors on Valora?",
-     "Independent, fiduciary financial advisors — not Valora employees. Valora is an independent platform "
-     "that helps you discover them; it isn't an advisory firm itself."),
+     "No. Valora is an independent platform that publishes educational information about financial "
+     "planning and accepts questions. Valora does not provide investment, tax, legal, or financial advice."),
+    ("What happens after I send a question?",
+     "We'll review your request and email next steps. Valora is not arranging advisor matches or "
+     "introductions at this time, and your inquiry does not authorize sharing your details with an advisor."),
     ("How soon will I hear back after I submit the form?",
      "After you submit, we review your request and email you about next steps. Timing may vary."),
 ]
@@ -178,8 +173,8 @@ def organization_schema():
         "@type": "Organization",
         "name": BRAND,
         "url": SITE_URL,
-        "description": "Valora is an independent platform that matches people with vetted, "
-                        "independent fiduciary financial advisors based on their situation.",
+        "description": "Valora publishes educational information about financial planning and accepts "
+                        "questions. We are not arranging advisor matches or introductions at this time.",
         "email": EMAIL,
         "areaServed": {
             "@type": "Country",
@@ -253,9 +248,14 @@ POSTHOG_SNIPPET = r"""<script>
 </script>"""
 
 
-def head(title, description, path="/", schema="", noindex=False, keywords=None):
+def head(title, description, path="/", schema="", noindex=False, keywords=None, social_image=None, social_image_alt=None, social_type="website"):
     canonical = SITE_URL + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex,follow">\n' if noindex else ""
+    social = ""
+    if social_image and social_image_alt:
+        image = social_image if social_image.startswith("https://") else SITE_URL + social_image
+        values = [("property", "og:title", title), ("property", "og:description", description), ("property", "og:url", canonical), ("property", "og:type", social_type), ("property", "og:image", image), ("property", "og:image:alt", social_image_alt), ("name", "twitter:card", "summary_large_image"), ("name", "twitter:title", title), ("name", "twitter:description", description), ("name", "twitter:image", image), ("name", "twitter:image:alt", social_image_alt)]
+        social = "\n".join(f'<meta {kind}="{key}" content="{escape(value)}">' for kind, key, value in values)
     return f"""<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -266,6 +266,7 @@ def head(title, description, path="/", schema="", noindex=False, keywords=None):
 <link rel="alternate" hreflang="en-us" href="{canonical}">
 <link rel="alternate" hreflang="x-default" href="{canonical}">
 <meta property="og:locale" content="en_US">
+{social}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -277,28 +278,58 @@ def head(title, description, path="/", schema="", noindex=False, keywords=None):
 
 
 # ------------------------------------------------------------------ header / footer
-# Five categories are staged. Only the first has a complete live guide cohort.
-NAV_MENUS = [
-    {
-        "name": "Financial Advice", "live": True,
-        "guides": [
-            ("Financial advisors for tech employees", "/financial-advisor-for-tech-employees/"),
-            ("Financial advisors for physicians", "/financial-advisor-for-physicians/"),
-            ("Financial advisors for business owners", "/financial-advisor-for-business-owners/"),
-        ],
-        "index": ("All financial advice guides", "/guides/"),
-        "resources": [
-            ("Financial advisors in New York", "/find-a-financial-advisor/new-york/"),
-            ("Financial advisors in Chicago", "/find-a-financial-advisor/chicago/"),
-        ],
-        "cta": ("Find an advisor", "/find-your-advisor/"),
-    },
-    {"name": "Retirement", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
-    {"name": "Investing", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
-    {"name": "Banking", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
-    {"name": "Taxes", "live": False, "guides": [], "resources": [], "cta": ("Find an advisor", "/find-your-advisor/")},
-]
-
+# Topic navigation: unfinished destination labels are explicit.
+NAV_MENUS = [{'name': 'Financial Advice',
+  'live': True,
+  'guides': [('Tech employees', '/financial-advisor-for-tech-employees/'),
+             ('Physicians', '/financial-advisor-for-physicians/'),
+             ('Business owners', '/find-a-financial-advisor/business-owner/'),
+             ('Cities - being prepared', '/cities/'),
+             ('Specialties - being prepared', '/specialties/'),
+             ('Professions - being prepared', '/professions/'),
+             ('Asset levels - being prepared', '/asset-types/'),
+             ('Advisors by state - being prepared', '/top-financial-advisors/')],
+  'index': ('All guides', '/guides/'),
+  'resources': [('All calculators', '/calculators/')]},
+ {'name': 'Retirement',
+  'live': True,
+  'guides': [('Retirement planning - being prepared', '/find-a-financial-advisor/retirement-planning/'),
+             ('Retired - being prepared', '/find-a-financial-advisor/retired/')],
+  'resources': [('Retirement calculators', '/calculators/retirement/'),
+                ('Savings growth', '/calculators/retirement-savings-growth/'),
+                ('Roth IRA growth', '/calculators/roth-ira-growth/'),
+                ('Withdrawal amount', '/calculators/safe-withdrawal-amount/'),
+                ('Required minimum distribution', '/calculators/rmd-estimate/'),
+                ('Social Security tools', '/calculators/social-security/')]},
+ {'name': 'Investing',
+  'live': True,
+  'guides': [('Managing investments - being prepared',
+              '/find-a-financial-advisor/managing-investments/'),
+             ('Business owner wealth planning - being prepared',
+              '/find-a-financial-advisor/business-owner-wealth-planning/')],
+  'resources': [('Investing calculators', '/calculators/investing/'),
+                ('Compound interest', '/calculators/compound-interest/'),
+                ('Investment future value', '/calculators/investment-future-value/'),
+                ('Inflation', '/calculators/inflation-calculator/'),
+                ('Asset allocation guide', '/calculators/asset-allocation-guide/')]},
+ {'name': 'Banking',
+  'live': True,
+  'guides': [('Explore financial planning guides', '/guides/')],
+  'resources': [('Banking calculators', '/calculators/banking/'),
+                ('Savings and CD growth', '/calculators/savings-cd-growth/'),
+                ('50/30/20 budget', '/calculators/budget-50-30-20/'),
+                ('Mortgage calculator', '/calculators/mortgage-calculator/'),
+                ('Home affordability', '/calculators/home-affordability/')]},
+ {'name': 'Taxes',
+  'live': True,
+  'guides': [('Tax planning - being prepared', '/find-a-financial-advisor/tax-planning/'),
+             ('Selling a business - being prepared', '/find-a-financial-advisor/selling-a-business/')],
+  'resources': [('Tax calculators', '/calculators/taxes/'),
+                ('Capital gains tax estimator', '/calculators/capital-gains-tax-estimate/'),
+                ('Federal income tax', '/calculators/income-tax-estimate/'),
+                ('Paycheck calculator', '/calculators/paycheck-calculator/'),
+                ('Tax refund estimator', '/calculators/tax-refund-estimate/'),
+                ('Roth conversion tax cost', '/calculators/roth-conversion-tax-cost/')]}]
 
 def _nav_dropdown(menu, index):
     ident = f"nav-menu-{index}"
@@ -311,14 +342,14 @@ def _nav_dropdown(menu, index):
     return f'''<li class="nav-menu">
       <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="{ident}">{escape(menu["name"])} <span aria-hidden="true" class="nav-menu__chevron"></span></button>
       <div class="nav-menu__panel" id="{ident}" hidden>
-        <div class="nav-menu__col"><p class="nav-menu__caption">Get help with</p><ul>{guide_links}</ul></div>
-        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">More resources</p><a class="nav-menu__action" href="{escape(menu["cta"][1])}">{escape(menu["cta"][0])}</a><ul>{links(menu["resources"])}</ul></div>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Guides and topics</p><ul>{guide_links}</ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul>{links(menu["resources"])}</ul></div>
       </div>
     </li>'''
 
 
-def header(active=None, cta=("Find an advisor", "/#contact"), banner=False):
-    items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
+def header(active=None, cta=("Ask a question", "/#contact"), banner=False):
+    items = '<li><a href="/guides/">Guides</a></li>\n' + "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
     banner_html = ""
     if banner:
         banner_html = ('<div class="site-banner">Are you a financial advisor? '
@@ -368,29 +399,37 @@ def footer():
       <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label, _ in DIRECTORY_SPECIALTIES[:5])}<li><a href="/specialties/">More &rarr;</a></li></ul></nav>
       <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_NICHES[:5])}<li><a href="/professions/">More &rarr;</a></li></ul></nav>
       <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul>{"".join(f'<li><a href="/find-a-financial-advisor/{slug}/">{escape(label)}</a></li>' for slug, label in DIRECTORY_ASSET_TYPES)}</ul></nav>
-      <nav class="footer__col" aria-label="Top financial advisors"><h5>Top Advisors</h5><ul>{state_links}<li><a href="/top-financial-advisors/">More &rarr;</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
+      <nav class="footer__col" aria-label="Advisors by state"><h5>Advisors by state</h5><ul>{state_links}<li><a href="/top-financial-advisors/">More &rarr;</a></li></ul></nav>
     </div>
-
     <div class="footer__nav-bottom">
+      <div class="footer__resource-grid">
       <div class="footer__brand">
         <a class="logo logo--light" href="/">
           <span class="logo__mark" aria-hidden="true">{LOGO_SVG}</span>
           <span class="logo__word">{BRAND}</span>
         </a>
-        <p>An independent platform helping people discover financial advisors.</p>
+        <p>Valora publishes educational information about financial planning and accepts questions.</p>
         <ul class="footer__contact">
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
         </ul>
       </div>
 
-      <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#advisors">Find an advisor</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/team/">Team</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
-      <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/">For advisers</a></li><li><a href="/for-advisors/#compare">How Valora compares</a></li><li><a href="/#insights">Insights</a></li><li><a href="/for-advisors/#apply">Book a demo</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul>{calc_links}</ul></nav>
+      <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#contact" data-gate-open>Ask a question</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/team/">Team</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
+      <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/">For advisers</a></li><li><a href="/for-advisors/#insights-for-advisors">Articles for advisory firms</a></li><li><a href="/#insights">Insights</a></li><li><a href="/#contact" data-gate-open>Ask a question</a></li></ul></nav>
       <nav class="footer__col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookies/">Cookies</a></li></ul></nav>
+      </div>
     </div>
 
+    <nav class="footer__featured" aria-label="Directories">
+      <span>Directories</span>
+      <a href="https://dang.ai">Dang.ai</a>
+      <a href="https://aiagentsdirectory.com">AI Agents Directory</a>
+      <a href="https://earlyhunt.com">EarlyHunt</a>
+    </nav>
+
     <div class="footer__base">
-      <p>© <span id="year">2026</span> SpacesOS Inc. Valora is a SpacesOS Inc. product. {BRAND} is an independent platform that provides financial education and helps consumers discover financial advisors. {BRAND} does not provide investment, tax, legal, or financial advice. Financial advisory services are provided independently by the advisors you choose to contact. Advisors may pay {BRAND} for access to the platform or for introductions to prospective clients.</p>
+      <p>© 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora publishes educational information about financial planning and accepts questions. Valora does not provide investment, tax, legal, or financial advice. We are not arranging advisor matches or introductions at this time.</p>
     </div>
   </div>
 </footer>
@@ -445,7 +484,7 @@ def hero_card():
     return f"""<aside class="hcard reveal reveal--right">
       <span class="hcard__edge" aria-hidden="true"></span>
       <p class="hcard__eyebrow">Free · No obligation</p>
-      <h2 class="hcard__title">Explore financial advisors<br><em>who may fit your needs.</em></h2>
+      <h2 class="hcard__title">Have a financial question?</h2>
 
       <form class="hcard__form form--steps" id="heroForm" data-lead="Client" data-done="#heroDone" novalidate>
         <div class="form__step" data-step>
@@ -475,10 +514,10 @@ def hero_card():
           {optional_field("h", wrap="hfield")}
           <div class="hcard__stepnav">
             <button class="hcard__back" type="button" data-step-back>Back</button>
-            <button class="btn btn--cream hcard__submit" type="submit">Explore advisors</button>
+            <button class="btn btn--cream hcard__submit" type="submit">Send a question</button>
           </div>
         </div>
-        <p class="hcard__fine"></p>
+        <p class="hcard__fine">{INTAKE_FINE}</p>
       </form>
 
       <div class="hcard__done" id="heroDone" hidden>
@@ -545,6 +584,12 @@ def details_fields(uid, wrap="field", wrap_full="field field--full"):
     return _select_field(uid, "assets", "Approximately how much do you have in investable assets?", ASSET_OPTIONS, wrap=wrap)
 
 
+# Mira ruling (Sep 30): agency-disclosure fine print shown before submit on every
+# client intake form. Exact wording per her gate; do not edit without her. Privacy
+# Policy link must point at the current corrected /privacy/.
+INTAKE_FINE = ("We’ll use your answers and contact details to review your request and email next steps. A submission alert also goes to our external agency inbox, brands@grow.surgeaio.com. We are not arranging advisor introductions or sharing your details with an advisor at this time. Read our <a href=\"/privacy/\">Privacy Policy</a> before sending.")
+
+
 def page_form(goal=None):
     """Four steps, lowest-commitment first: what you need help with, then the
     qualifying details, then situation + contact info, then the one optional
@@ -567,7 +612,7 @@ def page_form(goal=None):
         </div>
       </div>
       <div class="form__step" data-step hidden>
-        <p class="field field--full form__stepnum">Step 3 of 4 — where should advisors reach you?</p>{client_fields("page", "f", with_goal=False)}
+        <p class="field field--full form__stepnum">Step 3 of 4 - Where should Valora email next steps?</p><p class="field field--full">Enter your contact details so we can follow up on your request.</p>{client_fields("page", "f", with_goal=False)}
         <div class="field field--full form__nav">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
           <button class="btn btn--cream" type="button" data-step-next>Continue</button>
@@ -577,15 +622,15 @@ def page_form(goal=None):
         <p class="field field--full form__stepnum">Step 4 of 4</p>{optional_field("f")}
         <div class="field field--full form__foot">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
-          <button class="btn btn--cream" type="submit">Explore advisors</button>
-          <p class="form__fine"></p>
+          <button class="btn btn--cream" type="submit">Send my request</button>
+          <p class="form__fine">{INTAKE_FINE}</p>
         </div>
       </div>
       <p class="form__success" role="status" hidden></p>
     </form>"""
 
 
-def contact_section(goal=None, title='Let\'s build a<br>financial life<br><em>that feels like yours.</em>'):
+def contact_section(goal=None, title='Tell us what you’re trying to figure out.'):
     form = page_form()
     if goal:  # preselect the matching "solving for" option on specialty pages
         form = form.replace(f"<option>{escape(goal)}</option>", f"<option selected>{escape(goal)}</option>", 1)
@@ -593,7 +638,7 @@ def contact_section(goal=None, title='Let\'s build a<br>financial life<br><em>th
   <div class="container cta__grid">
     <div class="cta__copy">
       <h2 class="display display--lg reveal">{title}</h2>
-      <p class="reveal">Answer a few questions to find advisors who match your needs.</p>
+      <p class="reveal">Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.</p>
     </div>
 
     {form}
@@ -623,10 +668,10 @@ def gate():
     <div class="gate__inner">
       <p class="gate__eyebrow gate__i" style="--i:1">Free · No obligation</p>
       <h2 class="gate__title display gate__i" id="gateTitle" style="--i:2">
-        Explore advisors<br><em>who may fit your needs.</em>
+        Tell us what you need
       </h2>
       <p class="gate__sub gate__i" id="gateSub" style="--i:3">
-        Answer a few questions to find advisors who match your needs.
+        Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.
       </p>
 
       <form class="gate__form gate__i form--steps" id="gateForm" data-lead="Client" data-done="#gateDone" style="--i:4" novalidate>
@@ -660,10 +705,10 @@ def gate():
           {optional_field("g", wrap="gate__field")}
           <div class="gate__foot">
             <button class="gate__skip" type="button" data-step-back>Back</button>
-            <button class="btn btn--cream gate__submit" type="submit">Explore advisors</button>
+            <button class="btn btn--cream gate__submit" type="submit">Send my request</button>
           </div>
         </div>
-        <p class="gate__fine"></p>
+        <p class="gate__fine">{INTAKE_FINE}</p>
       </form>
 
       <div class="gate__done" id="gateDone" hidden>
@@ -690,7 +735,7 @@ def gate():
 # founder re-routes again, this line is the only change.
 FLOATING_CTA_HREF = "/find-your-advisor/"
 FLOATING_CTA_UTM = "utm_source=site&utm_medium=cta&utm_campaign=floating-cta"
-FLOATING_CTA_LABEL = "Find your advisor"
+FLOATING_CTA_LABEL = "Ask a question"
 
 def floating_cta(utm_content=None):
     href = FLOATING_CTA_HREF
@@ -712,6 +757,13 @@ def faq_block(faq, heading="Common questions"):
     </div>"""
 
 
+def lead_script_includes():
+    return f"""<script src="/assets/vendor/libphonenumber-max-1.13.14.js"></script>
+<script src="/assets/vendor/disposable-email-domains-1.0.62.js"></script>
+<script src="/assets/contact-validation.js?v={_asset_ver('contact-validation.js')}"></script>
+<script src="/assets/script.js?v={SCRIPT_VER}"></script>"""
+
+
 def page(head_html, body_html, active=None, with_gate=False, body_class="page-sub"):
     return f"""<!DOCTYPE html>
 <html lang="en-US">
@@ -728,7 +780,9 @@ def page(head_html, body_html, active=None, with_gate=False, body_class="page-su
 
 {footer()}
 {gate() if with_gate else ''}
-<script src="/assets/script.js?v={SCRIPT_VER}"></script>
+<div id="valora-concierge" hidden></div>
+<script src="/assets/concierge.js?v={_asset_ver('concierge.js')}"></script>
+{lead_script_includes()}
 </body>
 </html>
 """
