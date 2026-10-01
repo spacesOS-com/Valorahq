@@ -1,0 +1,90 @@
+[status=Success]
+UTC=2026-10-01T03:06:47Z
+NGINX
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html/current;
+    index index.html;
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1024;
+    location ^~ /_build/ { return 404; }
+    location ~ /\.git { return 404; }
+    # Static assets: force revalidation so deploys reach returning visitors
+    # immediately (etags keep it cheap). Without this, heuristic caching holds
+    # stale JS/CSS for hours after a flip.
+    location ~* \.(js|css)$ {
+        add_header Cache-Control "no-cache";
+        try_files $uri $uri/ =404;
+    }
+    location / { try_files $uri $uri/ =404; }
+}
+TRAEFIK_CONSUMER
+http:
+  routers:
+    valorahq-fwi84c-router-3:
+      rule: Host(`valorahq.com`)
+      service: valorahq-fwi84c-service-3
+      middlewares:
+        - redirect-to-https
+      entryPoints:
+        - web
+    valorahq-fwi84c-router-websecure-3:
+      rule: Host(`valorahq.com`)
+      service: valorahq-fwi84c-service-3
+      middlewares: []
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: letsencrypt
+    valorahq-fwi84c-router-7:
+      rule: Host(`www.valorahq.com`)
+      service: valorahq-fwi84c-service-7
+      middlewares:
+        - redirect-to-https
+      entryPoints:
+        - web
+    valorahq-fwi84c-router-websecure-7:
+      rule: Host(`www.valorahq.com`)
+      service: valorahq-fwi84c-service-7
+      middlewares: []
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: letsencrypt
+  services:
+    valorahq-fwi84c-service-3:
+      loadBalancer:
+        servers:
+          - url: http://valora-consumer-www:80
+        passHostHeader: true
+    valorahq-fwi84c-service-7:
+      loadBalancer:
+        servers:
+          - url: http://valora-consumer-www:80
+        passHostHeader: true
+STATIC_GATE_FILES
+1cd9cb436495b33140296685a011def3bb6fc71c175e74b1409b72e2189acaae  /usr/share/nginx/html/current/assets/concierge.js
+MANAGED_CONSUMER_HEAD
+da4abde035b275a067c12ba474f1a2c2f6c15f05
+https://[redacted]@github.com/spacesOS-com/valora.git
+DARK_HTTP
+/api/concierge/chat 401
+{"message":"unauthorised"}
+/api/concierge/public/chat 401
+{"message":"unauthorised"}
+/api/public/concierge/chat 401
+{"message":"unauthorised"}
+BROWSER_IMAGE_CAPABILITY
+/usr/src/app/node_modules/playwright/index.js
+	
+[status=Success]
+UTC=2026-10-01T03:07:28Z
+CORRECT_CHAT_POST 503
+{"error":{"code":"UNAVAILABLE","message":"The guide is unavailable right now."}}
+CONCIERGE_ENABLED=not-true
+1cd9cb436495b33140296685a011def3bb6fc71c175e74b1409b72e2189acaae  /usr/share/nginx/html/current/assets/concierge.js
+e30dead06c4a4601db1596de2d20845ec6907ee21dde8bee12f9ab306bcf9962  /usr/share/nginx/html/current/assets/contact-validation.js
+471c0c62014ac8021bbff3040885d75c78af48b1bb7583b69f1cf8848f9af439  /usr/share/nginx/html/current/assets/script.js
+	
