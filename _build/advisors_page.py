@@ -1,382 +1,46 @@
-# -*- coding: utf-8 -*-
-"""advisors_page.py — The comprehensive "For Advisors" page for Valora."""
+"""For Advisors: educational content and inquiry route, no matching offering."""
 from html import escape
-
-from partials import EMAIL, PHONE_DISPLAY, PHONE_TEL, TICK_SVG
 from blog_feed import latest_posts
-
-ADVISOR_GOALS = [
-    "Client introductions & growth",
-    "Turnkey platform & back office",
-    "Breakaway transition from broker-dealer",
-    "Full RIA infrastructure partnership",
-]
-
-FOR_ADVISORS_FAQ = [
-    ("How does Valora match advisors with prospective clients?",
-     "Valora matches consumers based on what they are specifically solving for (e.g. retirement decumulation, tech equity/RSUs, business sale, generational wealth transfer), their investable asset tier, and the advisor's verified niche expertise and geographic preference. Consumers review advisor profiles and actively choose to connect — these are qualified, intentional introductions, not cold leads."),
-    ("Are client introductions exclusive to my firm?",
-     "Yes, 100% exclusive. Unlike lead brokers who auction the same contact information to five or six competing advisors, Valora introduces each prospective client exclusively to one fiduciary advisor at a time based on mutual fit and stated preference."),
-    ("Who owns the client relationship, data, and Form ADV?",
-     "You do, completely. Clients engage your firm directly under your own advisory agreements, your published fee schedule, and your Form ADV Part 2. Valora does not provide investment advice or intermediate your advisory sovereignty. If you ever leave, your clients, data, and book stay entirely yours."),
-    ("What context do I receive before the first consultation?",
-     "Every introduction arrives with verified investable assets, primary financial objectives, timeline urgency, employer stock or business details (if applicable), and any specific questions the prospective client shared during our intake process."),
-    ("What is the fee or economic model for partner advisors?",
-     "Valora operates with transparent, advisor-friendly economics aligned with your growth. We offer flexible plans depending on whether your firm seeks client introductions, our complete back-office operational suite, or both. We discuss specific tiers and territory availability during your 15-minute introductory call."),
-]
-
-
-def _goal_opts():
-    return '<option value="">Select your primary goal</option>' + "".join(f"<option>{g}</option>" for g in ADVISOR_GOALS)
-
+FOR_ADVISORS_FAQ = [('Does Valora match advisors with prospective clients?', 'No. Valora publishes educational information and accepts questions. Valora is not arranging advisor matches or introductions at this time.'), ('Does Valora offer exclusive client introductions?', 'No. There is no current client-introduction offering or exclusivity promise. Asking a question does not reserve a prospective client or territory.'), ('Does Valora manage my client relationships or data?', 'This educational page does not establish an advisory agreement, data-ownership terms or a client-management service. Any future service would need its own stated terms. Valora does not provide investment advice.'), ('What can I ask Valora about?', "You can ask about the educational articles or Valora's current work. We review questions and respond by email. An inquiry is not a client introduction, an advisor recommendation or a request to send client records."), ('Does this page offer a paid advisor plan?', "No paid advisor plan, pricing tier or territory is offered on this page. You can ask about Valora's current work without assuming that a proposed service is available.")]
 
 def _faq_accordion():
-    items = []
-    for q, a in FOR_ADVISORS_FAQ:
-        items.append(f'<details class="faq__item"><summary>{q}</summary><p>{a}</p></details>')
-    return "\n".join(items)
+    return "\n".join(f'<details class="faq__item"><summary>{escape(q)}</summary><p>{escape(a)}</p></details>' for q,a in FOR_ADVISORS_FAQ)
 
-
-def _blog_embed():
-    """Real posts pulled from blog.valorahq.com at build time (see blog_feed.py) —
-    proof, for advisors evaluating Valora, that Valora practices the AEO/GEO
-    content playbook it's asking them to trust, not just claims to."""
-    posts = latest_posts(3)
-    cards = "\n".join(f"""      <article class="blogcard reveal">
-        <h3><a href="{escape(p['url'])}" target="_blank" rel="noopener">{escape(p['title'])}</a></h3>
-        <p>{escape(p['excerpt'])}</p>
-        <a class="blogcard__link" href="{escape(p['url'])}" target="_blank" rel="noopener">Read on the blog →</a>
-      </article>""" for p in posts)
-    return f"""<section class="section section--cream adv-blog" id="insights-for-advisors">
-  <div class="container">
-    <div class="adv-blog__head">
-      <p class="eyebrow reveal">From the Valora blog</p>
-      <h2 class="display display--lg reveal">We publish the playbook<br><em>we use to get you clients.</em></h2>
-      <p class="reveal">Valora's own content on getting advisory firms recommended by ChatGPT, Perplexity, and AI search — the same approach behind how we get your firm in front of prospective clients.</p>
-    </div>
-    <div class="adv-blog__grid">
-{cards}
-    </div>
-    <a class="btn btn--outline adv-blog__more" href="https://blog.valorahq.com/" target="_blank" rel="noopener">View more</a>
-  </div>
-</section>
-
-"""
-
-
-_CAL_EMBED_SCRIPT = """
-<!-- Cal element-click embed code begins -->
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "demo", {origin:"https://app.cal.com"});
-  Cal.config = Cal.config || {};
-  Cal.config.forwardQueryParams = true;
-  Cal.ns.demo("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-</script>
-<!-- Cal element-click embed code ends -->
-"""
-
+def _blog_cards():
+    return '<div class="adv-blog__grid">'+"\n".join(f'<article class="blogcard reveal"><h3><a href="{escape(p["url"])}" target="_blank" rel="noopener">{escape(p["title"])}</a></h3><p>{escape(p["excerpt"])}</p><a class="blogcard__link" href="{escape(p["url"])}" target="_blank" rel="noopener">Read on the blog →</a></article>' for p in latest_posts(3))+'</div>'
 
 def for_advisors_body():
-    faq_html = _faq_accordion()
-    blog_html = _blog_embed()
-    return f"""
-<!-- ================= HERO ================= -->
-<section class="hero hero--sub" id="top">
-  <div class="hero__grid" aria-hidden="true">
-    <span class="hero__cell hero__cell--gold"></span>
-    <span class="hero__cell hero__cell--wide"></span>
-    <span class="hero__cell hero__cell--ring"></span>
-    <span class="hero__cell hero__cell--green"></span>
-  </div>
-
-  <div class="container hero__inner">
-    <div class="hero__copy">
-      <h1 class="hero__title reveal">
-        Access new clients<br>in minutes with <em>Valora</em>.
-      </h1>
-      <p class="adv-hero__sub reveal">If you're looking for the perfect clients, we'll deliver them straight to your inbox and give you the tools to manage them throughout the sales process. We work exclusively with SEC registered firms.</p>
-      <div class="hero__actions reveal">
-        <button type="button" class="btn btn--dark" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
-      </div>
-    </div>
-  </div>
-
+    return f"""<section class="hero hero--sub" id="top">
+  <div class="hero__grid" aria-hidden="true"><span class="hero__cell hero__cell--gold"></span><span class="hero__cell hero__cell--wide"></span><span class="hero__cell hero__cell--ring"></span><span class="hero__cell hero__cell--green"></span></div>
+  <div class="container hero__inner"><div class="hero__copy">
+    <p class="eyebrow reveal">For advisory firms</p>
+    <h1 class="hero__title reveal">Educational resources.<br><em>Clear expectations.</em></h1>
+    <p class="adv-hero__sub reveal">Read educational articles for advisory firms and ask about Valora's current work. Valora is not arranging advisor matches or introductions at this time.</p>
+    <div class="hero__actions reveal"><a class="btn btn--dark" href="/#contact" data-gate-open>Ask a question</a><a class="btn btn--outline" href="#insights-for-advisors">Read articles</a></div>
+  </div></div>
 </section>
-
-<!-- ================= WHY ADVISORS PARTNER WITH VALORA ================= -->
-<section class="section section--paper adv-value">
-  <div class="container adv-value__grid">
-    <div class="adv-value__copy">
-      <h2 class="display display--lg reveal">Scale your book.<br>Keep your independence.<br><em>Improve your close rate.</em></h2>
-      <p class="reveal">Valora gets prospective clients who are actively looking for an advisor in front of you, then gives you the tools to manage them from first message to signed client.</p>
-    </div>
-    <div class="adv-value__cards">
-      <div class="value-card reveal">
-        <h3>Exclusive leads</h3>
-        <p>Unlike lead brokers that sell the same contact to five competing firms, every introduction on Valora goes to one advisor.</p>
-      </div>
-      <div class="value-card reveal">
-        <h3>Choose the clients you want</h3>
-        <p>Set your ideal investable-asset range, specialty, and geography — you only see introductions that fall inside it.</p>
-      </div>
-      <div class="value-card reveal">
-        <h3>Arrive pre-qualified</h3>
-        <p>Every introduction comes with the context you'd otherwise spend a first call gathering: goals, timeline, and what they're solving for.</p>
-      </div>
-      <div class="value-card reveal">
-        <h3>Manage the whole pipeline</h3>
-        <p>Track, message, and follow up with prospective clients in one place instead of a spreadsheet and an inbox.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= THE INTRODUCTIONS ENGINE ================= -->
-<section class="section section--cream platform adv-pipe" id="introductions">
-  <div class="container platform__grid">
-    <div class="platform__copy">
-      <p class="eyebrow reveal">Client Acquisition Engine</p>
-      <h2 class="display display--lg reveal">Every introduction arrives with<br><em>the rich context you need.</em></h2>
-      <p class="reveal">Before you ever jump on an introductory conversation, you already understand their liquid asset range, specific timeline urgency, and primary financial goal.</p>
-
-      <ul class="adv-ticks">
-        <li class="reveal"><strong>100% Exclusive Introductions:</strong> Never shared or shopped to other advisors</li>
-        <li class="reveal"><strong>Pre-Qualified Investable Assets:</strong> Minimum thresholds verified before matching</li>
-        <li class="reveal"><strong>High-Intent Urgency:</strong> Prospects have actively requested fiduciary guidance</li>
-        <li class="reveal"><strong>Direct Calendar Booking:</strong> Integrates with Calendly, Google Calendar, and Outlook</li>
-        <li class="reveal"><strong>Full Advisory Discretion:</strong> You review the dossier and decide whether to engage</li>
-      </ul>
-    </div>
-
-    <div class="dossier-mock reveal" aria-hidden="true">
-      <div class="dossier-mock__bar"><span></span><span></span><span></span><em>Prospect Dossier</em></div>
-      <div class="dossier-mock__body">
-        <div class="dossier-mock__field"><span>Liquid assets</span><p>$1M &ndash; $3M</p></div>
-        <div class="dossier-mock__field"><span>Timeline</span><p>Within 6 months</p></div>
-        <div class="dossier-mock__field"><span>Primary goal</span><p>Retirement income planning</p></div>
-        <div class="dossier-mock__field"><span>Requested</span><p>Fiduciary guidance, actively looking</p></div>
-      </div>
-      <div class="dossier-mock__status">Ready to talk &middot; exclusive to you</div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= INCREASE YOUR CONVERSION ================= -->
-<section class="section section--paper adv-convert">
-  <div class="container adv-convert__grid">
-    <div class="adv-convert__copy">
-      <p class="eyebrow reveal">Inside the portal</p>
-      <h2 class="display display--lg reveal">Increase your<br><em>conversion.</em></h2>
-      <p class="reveal">Chat, set reminders, attach notes, and link your calendar &mdash; everything you need to move a match from first message to booked call, in the same portal.</p>
-      <ul class="adv-convert__list reveal">
-        <li>Message prospects directly</li>
-        <li>Set follow-up reminders</li>
-        <li>Attach private notes per match</li>
-        <li>Link your calendar for booking</li>
-      </ul>
-    </div>
-
-    <div class="convert-mock reveal" aria-hidden="true">
-      <div class="convert-mock__bar"><span></span><span></span><span></span><em>Valora Advisor Portal · Message</em></div>
-      <div class="convert-mock__body">
-        <div class="convert-mock__side">
-          <div class="convert-mock__who">
-            <span class="convert-mock__av">MC</span>
-            <div><p class="convert-mock__name">Michael Chen</p><p class="convert-mock__stage">Call Booked</p></div>
-          </div>
-          <div class="convert-mock__field"><span>Note</span><p>Wants a second opinion on RSU tax withholding before year-end.</p></div>
-          <div class="convert-mock__field"><span>Reminder</span><p>Follow up Thu 10:00 AM</p></div>
-          <div class="convert-mock__field"><span>Calendar</span><p>Linked · Google Calendar</p></div>
-        </div>
-        <div class="convert-mock__chat">
-          <div class="convert-mock__bubble convert-mock__bubble--them">Hi, I'd like to talk through my options before year-end.</div>
-          <div class="convert-mock__bubble convert-mock__bubble--us">Happy to help &mdash; are mornings or afternoons better this week?</div>
-          <div class="convert-mock__bubble convert-mock__bubble--them">Thursday morning works.</div>
-          <div class="convert-mock__input">Type your message&hellip; <span>➤</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= ADVISOR DIRECTORY ADVANTAGE (SAVVY WEALTH STYLE) ================= -->
-<section class="section section--cream dir-showcase" id="directory">
-  <div class="dir-showcase__copy reveal">
-    <p class="eyebrow">Your Digital Flagship</p>
-    <h2 class="display display--lg">Your firm, showcased to investors<br><em>searching for your specialty.</em></h2>
-    <p style="margin-top:16px; font-size:.95rem; color:var(--ink-soft); max-width:48ch;">Every approved Valora advisor receives an authoritative, search-optimized directory profile that commands instant credibility. Consumers view your fiduciary credentials, fee philosophy, focus areas, and book an introductory consultation directly onto your calendar.</p>
-    <ul class="adv-ticks" style="margin-top:22px;">
-      <li>Verified Fiduciary Badge &amp; Clean Regulatory Record Highlight</li>
-      <li>Custom niche tags (Tech RSUs, Physician Planning, Business Exit)</li>
-      <li>Direct calendar scheduling link with no friction</li>
-      <li>Local SEO positioning in your target metropolitan area</li>
-    </ul>
-  </div>
-
-  <div class="dir-card-mock reveal" aria-hidden="true">
-    <div class="dir-profile-head">
-      <div class="dir-profile-img" style="display:flex; align-items:center; justify-content:center; background:var(--green); color:var(--cream); font-family:var(--serif); font-size:1.1rem;">JS</div>
-      <div><h4>J. Sample, CFP&reg;</h4><p>Sample Wealth Partners &middot; Austin, TX</p></div>
-    </div>
-    <div class="dir-tags">
-      <span class="dir-tag">Tech RSUs</span>
-      <span class="dir-tag">Retirement Planning</span>
-      <span class="dir-tag">Fee-Only</span>
-    </div>
-    <p class="dir-quote">Illustrative preview &mdash; your real profile shows your own credentials, niche tags, and a direct link to your calendar.</p>
-  </div>
-
-</section>
-
-<!-- ================= HOW VALORA COMPARES ================= -->
-<section class="section section--paper adv-compare2" id="compare">
-  <div class="container">
-    <div class="adv-blog__head">
-      <p class="eyebrow reveal">Where Valora fits</p>
-      <h2 class="display display--lg reveal">How Valora compares to the other<br><em>places advisors spend their marketing budget.</em></h2>
-      <p class="reveal">A short, sourced look at how a few well-known platforms actually work — not a claim about which is "best," since they're built for different things.</p>
-    </div>
-    <div class="pstack reveal" role="table" aria-label="Cost of piecing together advisor client-acquisition tools vs. Valora" style="margin-top:36px;">
-      <div class="pstack__row pstack__row--head" role="row">
-        <span role="columnheader">Feature</span>
-        <span role="columnheader">Replaces</span>
-        <span role="columnheader">Other tools</span>
-        <span role="columnheader" class="is-us">Valora</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Shared leads</span>
-        <span role="cell" class="pstack__tool">SmartAsset AMP</span>
-        <span role="cell">~$2,000&ndash;2,300/mo <em>(est., shared with up to 3 advisors)</em></span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Marketplace inquiries</span>
-        <span role="cell" class="pstack__tool">Unbiased</span>
-        <span role="cell">Pay-per-lead credits, no public flat fee <em>(est. $3&ndash;4K/mo at volume)</em></span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">AI-matched prospects</span>
-        <span role="cell" class="pstack__tool">Finny</span>
-        <span role="cell">$50/mo + 0.20% of AUM sourced</span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Prospect data</span>
-        <span role="cell" class="pstack__tool">WealthFeed</span>
-        <span role="cell">$1,399/yr <em>(~$117/mo)</em></span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Directory profile</span>
-        <span role="cell" class="pstack__tool">AdvisorFinder</span>
-        <span role="cell">$1,000/mo</span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Client communication &amp; CRM content</span>
-        <span role="cell" class="pstack__tool">Levitate</span>
-        <span role="cell">~$3,000/yr <em>(~$250/mo)</em></span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Website &amp; marketing suite</span>
-        <span role="cell" class="pstack__tool">FMG Suite</span>
-        <span role="cell">From $178/mo + setup fee</span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Marketing automation campaigns</span>
-        <span role="cell" class="pstack__tool">Snappy Kraken</span>
-        <span role="cell">$199&ndash;750/mo depending on tier</span>
-        <span role="cell" class="is-us">Included</span>
-      </div>
-      <div class="pstack__row" role="row">
-        <span role="rowheader">Cost per client acquired via DIY video</span>
-        <span role="cell" class="pstack__tool">Self-produced content</span>
-        <span role="cell">$37,170/client <em>(Kitces 2026 marketing study)</em></span>
-        <span role="cell is-us">No per-client cost &mdash; flat $1,500/mo</span>
-      </div>
-      <div class="pstack__row pstack__row--total" role="row">
-        <span role="rowheader">Overall price</span>
-        <span role="cell"></span>
-        <span role="cell">$6,500+/mo, pieced together across 8 separate tools</span>
-        <span role="cell is-us">$1,500/mo &mdash; exclusive, month-to-month</span>
-      </div>
-    </div>
-    <p style="margin-top:22px; font-size:.72rem; color:var(--muted);">
-      Sources: <a href="https://www.advisorappts.com/smartasset-leads" target="_blank" rel="noopener">SmartAsset AMP overview</a> &middot;
-      <a href="https://www.unbiased.com/advice/pro/faqs" target="_blank" rel="noopener">Unbiased pricing FAQ</a> &middot;
-      <a href="https://www.wealthmanagement.com/artificial-intelligence/finny-ai-rolls-out-pay-as-you-grow-pricing-model" target="_blank" rel="noopener">Finny pricing</a> &middot;
-      <a href="https://softwarefinder.com/sales-tools/wealthfeed" target="_blank" rel="noopener">WealthFeed pricing</a> &middot;
-      <a href="https://advisorfinder.com/for-financial-advisors/pricing-plans" target="_blank" rel="noopener">AdvisorFinder pricing</a> &middot;
-      <a href="https://www.levitate.ai/industry/finance" target="_blank" rel="noopener">Levitate for finance</a> &middot;
-      <a href="https://fmgsuite.com/pricing/" target="_blank" rel="noopener">FMG Suite pricing</a> &middot;
-      <a href="https://snappykraken.com/pricing" target="_blank" rel="noopener">Snappy Kraken pricing</a> &middot;
-      <a href="https://www.kitces.com/blog/kitces-advisor-marketing-study-2026" target="_blank" rel="noopener">Kitces 2026 advisor marketing study</a>.
-      Figures found via web search on 2026-09-28 and may have changed &mdash; items marked "est." could not be confirmed from a public source and should be verified before relying on them.
-    </p>
-    <p class="adv-compare2__punch reveal">Everyone else sells you tools, data, or shared leads. <em>Valora sells the phone ringing.</em></p>
-  </div>
-</section>
-
-{blog_html}
-
-<!-- ================= PARTNER CRITERIA + EXTENDED FAQ ================= -->
-<section class="section section--cream life adv-faq" id="faq">
-  <div class="container life__grid">
-    <div class="adv-criteria reveal">
-      <div class="adv-criteria__grid">
-        <div class="adv-criteria__copy">
-          <p class="eyebrow">Selective Fiduciary Network</p>
-          <h2 class="display display--md">A high bar,<br><em>on purpose.</em></h2>
-          <p>Investors trust Valora because our network is curated rather than open to anyone with a marketing budget. We partner exclusively with qualified fiduciaries who share our standard for transparent, conflict-free advice.</p>
-          <ul class="adv-ticks" style="margin-top:24px;">
-            <li>Registered Investment Adviser (RIA) or IAR registration</li>
-            <li>Strict Fiduciary Duty to clients at all times</li>
-            <li>Clean regulatory history verified on SEC IAPD / FINRA BrokerCheck</li>
-            <li>Professional designation: CFP®, CFA, CPA/PFS or 10+ years experience</li>
-            <li>Transparent, published fee schedule (fee-only or fee-transparent)</li>
-          </ul>
-          <div style="margin-top:28px;">
-            <button type="button" class="btn btn--dark" style="width:100%;" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
-          </div>
-        </div>
-
-        <div class="criteria-mock" aria-hidden="true">
-          <p class="criteria-mock__eyebrow">Fiduciary Standard</p>
-          <div class="criteria-mock__seal">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.4"/><path d="M15 24l6 6 12-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p class="criteria-mock__title">Every partner advisor clears five checks before joining.</p>
-          <ul class="criteria-mock__list">
-            <li>RIA / IAR registration confirmed</li>
-            <li>SEC IAPD &amp; FINRA BrokerCheck reviewed</li>
-            <li>Fee schedule published, not hidden</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="life__body">
-      <div class="faq" style="margin-top:0;">
-        <h2 class="faq__title" style="padding-top:0;">Frequently Asked Questions</h2>
-        {faq_html}
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= READY TO GET STARTED CTA ================= -->
-<section class="section section--green adv-ready">
-  <div class="container adv-ready__inner">
-    <h2 class="display display--lg reveal">Ready to get started?</h2>
-    <p class="reveal">Get perfect clients delivered straight to your inbox and the tools to manage them throughout the sales process.</p>
-    <button type="button" class="btn btn--cream" data-cal-namespace="demo" data-cal-link="bhavyabarot/demo" data-cal-config='{{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}'>Book a demo</button>
-  </div>
-</section>
-
-{_CAL_EMBED_SCRIPT}
-"""
+<section class="section section--paper adv-value" id="introductions"><div class="container">
+  <p class="eyebrow reveal">Current scope</p><h2 class="display display--lg reveal">Education and inquiries,<br><em>not a client-acquisition service.</em></h2>
+  <p class="reveal">Valora publishes educational information about financial planning and advisory-firm work. You can send a question; we review inquiries and respond by email. We do not offer exclusive leads, qualify prospective clients, match investors with advisors or book introductions.</p>
+  <p class="reveal">A question does not create a partnership, reserve a territory or establish an advisory relationship.</p>
+</div></section>
+<section class="section section--cream" id="portal"><div class="container">
+  <p class="eyebrow reveal">Product expectations</p><h2 class="display display--lg reveal">No portal service<br><em>is offered on this page.</em></h2>
+  <p class="reveal">This page is not an offer of prospect messaging, follow-up reminders, client notes, calendar integrations or digital onboarding. Any future capabilities would need their own description, availability and terms before you could rely on them.</p>
+</div></section>
+<section class="section section--paper" id="directory"><div class="container">
+  <p class="eyebrow reveal">Directory expectations</p><h2 class="display display--lg reveal">No verified listing<br><em>or visibility promise.</em></h2>
+  <p class="reveal">Valora is not offering an approved-advisor directory listing, verification badge, search placement or consultation-booking service here. Educational content is not evidence that a professional has been vetted or is available.</p>
+</div></section>
+<section class="section section--cream adv-blog" id="insights-for-advisors"><div class="container">
+  <div class="adv-blog__head"><p class="eyebrow reveal">From the Valora blog</p><h2 class="display display--lg reveal">Educational articles<br><em>for advisory firms.</em></h2><p class="reveal">Read practical discussions of advisory-firm operations and communication. These articles are educational, not a promise of clients, search rankings or business results.</p></div>
+  {_blog_cards()}
+  <a class="btn btn--outline adv-blog__more" href="https://blog.valorahq.com/" target="_blank" rel="noopener">View more articles</a>
+</div></section>
+<section class="section section--paper" id="professional-guidance"><div class="container">
+  <p class="eyebrow reveal">Assessing professional help</p><h2 class="display display--lg reveal">Ask about scope,<br><em>fees and conflicts.</em></h2>
+  <p class="reveal">When assessing an advisory service, ask what work is included, who is responsible, how fees are charged and what conflicts may exist. Check a professional's registration and disclosures with the relevant regulator. A designation or a registration alone is not a guarantee of fit or results.</p>
+  <p class="reveal">This is general educational guidance, not a claim that Valora has screened a network or endorsed an advisor.</p>
+</div></section>
+<section class="section section--cream adv-faq" id="faq"><div class="container"><h2 class="display display--lg reveal">Frequently asked questions</h2><div class="faq">{_faq_accordion()}</div></div></section>
+<section class="section section--green adv-ready"><div class="container"><h2 class="display display--lg reveal">Have a question?</h2><p class="reveal">Ask about the educational content or Valora's current work. We review inquiries and respond by email. Valora is not arranging advisor matches or introductions at this time.</p><a class="btn btn--cream" href="/#contact" data-gate-open>Ask a question</a></div></section>"""

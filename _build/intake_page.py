@@ -20,7 +20,7 @@ Pipeline notes:
 """
 from html import escape
 
-from partials import page, head, faq_block, faq_schema, ASSET_OPTIONS, SITUATION_OPTIONS
+from partials import page, head, faq_block, faq_schema, ASSET_OPTIONS, SITUATION_OPTIONS, INTAKE_FINE
 
 PROFESSION_OPTIONS = ["Physician", "Tech employee"] + SITUATION_OPTIONS
 
@@ -84,7 +84,8 @@ def intake_form():
         </div>
       </div>
       <div class="form__step" data-step hidden>
-        <p class="field field--full form__stepnum">Step 4 of 4 — where should advisors reach you?</p>
+        <p class="field field--full form__stepnum">Step 4 of 4 - Where should Valora email next steps?</p>
+        <p class="field field--full">Enter your contact details so we can follow up on your request.</p>
         <div class="field" data-field>
           <label for="fyname">Full name</label>
           <input id="fyname" name="name" type="text" required placeholder="Jordan Reyes" autocomplete="name">
@@ -102,8 +103,8 @@ def intake_form():
         </div>
         <div class="field field--full form__foot">
           <button class="btn btn--outline" type="button" data-step-back>Back</button>
-          <button class="btn btn--cream" type="submit">Find my advisor</button>
-          <p class="form__fine"></p>
+          <button class="btn btn--cream" type="submit">Send my request</button>
+          <p class="form__fine">{INTAKE_FINE}</p>
         </div>
       </div>
       <p class="form__success" role="status" hidden></p>
@@ -127,8 +128,8 @@ def intake_body():
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:900px;">
     <p class="eyebrow reveal">Free · No obligation</p>
-    <h1 class="display display--lg reveal">Find your advisor.</h1>
-    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step.</p>
+    <h1 class="display display--lg reveal">Tell us what you need</h1>
+    <p class="reveal" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Answer four quick questions. We review each request by hand and email you about next steps.</p>
   </div>
 </section>
 
@@ -136,7 +137,7 @@ def intake_body():
   <div class="container cta__grid">
     <div class="cta__copy">
       <h2 class="display display--lg reveal">Tell us what<br><em>you're solving for.</em></h2>
-      <p class="reveal">The right advisor can help you see which decisions deserve attention first.</p>
+      <p class="reveal">Tell us what you're trying to figure out. We'll review your request and email next steps.</p>
     </div>
 
     {intake_form()}
@@ -153,8 +154,8 @@ def intake_body():
 
 def build_intake_page(write_fn):
     html = page(
-        head("Find Your Advisor | Valora",
-             "Answer four quick questions. We review each request by hand and, where we have a suitable advisor available, help you take the next step. Free, no obligation.",
+        head("Tell Us What You Need | Valora",
+             "Answer four quick questions. We review each request by hand and email you about next steps. Free, no obligation.",
              path="/find-your-advisor/", schema=faq_schema(INTAKE_FAQS)),
         intake_body(),
     )

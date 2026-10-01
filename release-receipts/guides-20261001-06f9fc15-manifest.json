@@ -1,0 +1,1904 @@
+{
+  "base": "consumer-form-only-20261001-1619-4adfcc9b",
+  "base_manifest_sha256": "4adfcc9bad435b9ac695607f335e3f64c24b9cab86049ada852d4f8845a9f93f",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 810,
+      "sha256": "35d0dbbc4072521859fa32721933a99b9d3ea252d5527c1c6816299d6786b587"
+    },
+    {
+      "path": "_build/advisor_pages.py",
+      "size": 222,
+      "sha256": "2633e389010a36df5fa0542c02e03a9c032cafe5d0b31e827f3b9865081c8007"
+    },
+    {
+      "path": "_build/advisors_page.py",
+      "size": 6487,
+      "sha256": "17a1aad039d838de2b644d58559ceb14a02a0a395c5633f620f8f9cf13f38cf5"
+    },
+    {
+      "path": "_build/blog_feed.py",
+      "size": 2709,
+      "sha256": "b56c4d9d5ec260da3d217afc4f56f6981b3482747a643deeae2feeb384e7a7e4"
+    },
+    {
+      "path": "_build/build.py",
+      "size": 15448,
+      "sha256": "a814447f4e39e9837afb356caef92ce103e470242cfb57fa86830963bb07a552"
+    },
+    {
+      "path": "_build/business-owner-indexing-eligibility.json",
+      "size": 1716,
+      "sha256": "c1f541e7ad3d374ac40603e25f0186848269e52336bd6bdefdc7c591d9bfeebc"
+    },
+    {
+      "path": "_build/business_owner_page.py",
+      "size": 1520,
+      "sha256": "2ee66a789b91a018e430e750573be2a86696da09d118ca0889507e29529473ef"
+    },
+    {
+      "path": "_build/calculator_pages.py",
+      "size": 70282,
+      "sha256": "6929c9941e93e1ebee03c7f574843185c0974992e8ea2b456e2818db10a05715"
+    },
+    {
+      "path": "_build/city_validate.py",
+      "size": 10117,
+      "sha256": "ebcdf3f794b3ffeb4d4e0b062bd2b9f0df25802d5403457de2f00ecf0d6027dc"
+    },
+    {
+      "path": "_build/concierge_page.py",
+      "size": 1068,
+      "sha256": "61fa67b047105eff41aa73419e9af239c34fa6a78dcc4df20333be76a26e2ef6"
+    },
+    {
+      "path": "_build/content-packs/business-owner-advisor-fit.pagepack",
+      "size": 20368,
+      "sha256": "a2b525c3ebdd2b91d70e234975f2e572cdd932518ea0da04a3b6ead4cc42e629"
+    },
+    {
+      "path": "_build/content-packs/business-owner-wealth-planning.pagepack",
+      "size": 28007,
+      "sha256": "e1b3e3368249d59db0b00ea3403a04dd4298a329c8cf4f1c35e5e546e8bb21de"
+    },
+    {
+      "path": "_build/content-packs/financial-advisor-for-business-owners.json",
+      "size": 20413,
+      "sha256": "543b98d9e43fede660e8f6e109b9f969a9b26dc1c43757411d6252bd85351a6a"
+    },
+    {
+      "path": "_build/content-packs/financial-advisor-for-dentists.json",
+      "size": 20440,
+      "sha256": "e6187e0c48fbb4c796939fbbd38143064721a9f9c0afd6218493f7d2e58543e1"
+    },
+    {
+      "path": "_build/content-packs/financial-advisor-for-physicians.json",
+      "size": 22172,
+      "sha256": "8f70011a951e893a13cb645612b6a66ca4ae9dbfa327a0414aed7eb8c5ea3a23"
+    },
+    {
+      "path": "_build/content-packs/financial-advisor-for-tech-employees.json",
+      "size": 19227,
+      "sha256": "2745824243d9887b884dba6911f1741ff0e0884e9a34cb1934bfe0f2a8c3131a"
+    },
+    {
+      "path": "_build/content-packs/legal-cookies.json",
+      "size": 4899,
+      "sha256": "a44f963cb554a83a0f88847ed4e402f0dba9f568ecc1024f738c8af35e75792d"
+    },
+    {
+      "path": "_build/content-packs/legal-privacy.json",
+      "size": 9579,
+      "sha256": "d15da2840f47ed31218f65f81c2d7211d88a5f9ad713395d3fb571b3f449ab1e"
+    },
+    {
+      "path": "_build/content-packs/legal-terms.json",
+      "size": 10661,
+      "sha256": "633f1cc20ccd2cf2693f931ce25442856867b15bba41272dbf8ea0cdea9d71c3"
+    },
+    {
+      "path": "_build/content-packs/selling-a-business.pagepack",
+      "size": 24147,
+      "sha256": "9050a33759d1e4018c138204425be6b01e68e53af8300adf0d991a4b57f755fa"
+    },
+    {
+      "path": "_build/content-packs/team.json",
+      "size": 49279,
+      "sha256": "a33ce74dccb52bc58290489cbaf37ee1735761cc581c73a7f773fea08d342934"
+    },
+    {
+      "path": "_build/content_pages.py",
+      "size": 16278,
+      "sha256": "960d3331aba4e3fb719949f6a79edf32c23374e9aba2bc1f7012307f3daa6943"
+    },
+    {
+      "path": "_build/developers_body.html",
+      "size": 5274,
+      "sha256": "828b0b947b747362e528dc5b93aa9e730f1d8ac12eecd0747412b6fa538a30c1"
+    },
+    {
+      "path": "_build/developers_page.py",
+      "size": 532,
+      "sha256": "73a2fbab924d35474dc1d4943dbb0cc098f0037cec0b76ab09afdc3d1368f4ac"
+    },
+    {
+      "path": "_build/directory_faqs.py",
+      "size": 38783,
+      "sha256": "b9f7448c192ce8d4fa1af0c20d90acf8efb308a0f6db675189c47259e9106f68"
+    },
+    {
+      "path": "_build/directory_held_guides.py",
+      "size": 21550,
+      "sha256": "05d4ff5b7bff8444d1aa2bd54224f6f9b2c9d3f80ea50ae6daf99ad128c0abcc"
+    },
+    {
+      "path": "_build/directory_pages.py",
+      "size": 18048,
+      "sha256": "5a2be6323384fca52e5d7f0dc6a99f96eaebe9a9ffe431be44a3988d5c7cd3cf"
+    },
+    {
+      "path": "_build/directory_profession_guides.py",
+      "size": 28185,
+      "sha256": "a90ad030dfd27eef4b94fbfff4b04f7cf0e7f18894905f026a9135104bbe5769"
+    },
+    {
+      "path": "_build/directory_specialty_guides.py",
+      "size": 36691,
+      "sha256": "1373befcf0e625d9fcb56fd8d8d99e7bc079eecef152d222ca3b249cb78df00e"
+    },
+    {
+      "path": "_build/guide_figures.py",
+      "size": 12867,
+      "sha256": "99825cffb417db0ead6b380009d90ead212b25ad7d50618f8d372a7a7ede347d"
+    },
+    {
+      "path": "_build/insights_pages.py",
+      "size": 18420,
+      "sha256": "fd52e2c93734f215e177a2c8b9077d085bdd89aabe2156175bf0bb90d3c164cb"
+    },
+    {
+      "path": "_build/intake_page.py",
+      "size": 7957,
+      "sha256": "02e76b315cb81fadcad621c41e3e029434c0680337e3e2d175b99af7b46ae8e2"
+    },
+    {
+      "path": "_build/navigation_placeholders.py",
+      "size": 2619,
+      "sha256": "e0399b8bf53632ade77784356e4dee49104f0e61c3a02d77682487c190742365"
+    },
+    {
+      "path": "_build/owner_wealth_release.py",
+      "size": 3012,
+      "sha256": "9a8f9d2169dd75ecf8e79f5309903465c792433db8afafce1a90a32059146326"
+    },
+    {
+      "path": "_build/partials.py",
+      "size": 42168,
+      "sha256": "f370419a5ca997978200a134eb5c017117a2db11b14e201f059d01819da4f26f"
+    },
+    {
+      "path": "_build/selling_business_release.py",
+      "size": 2423,
+      "sha256": "25ca8364aae1380fdf0d7a09907c186976e54992941eecdfdd7cae100afc0f82"
+    },
+    {
+      "path": "_build/us_directory_pages.py",
+      "size": 6768,
+      "sha256": "279e62f4611729168c3a53fd6db4387a742a68a1fa1b03cee2aafbff1da9ddcb"
+    },
+    {
+      "path": "admin/leads/index.html",
+      "size": 9428,
+      "sha256": "f70db132dcf304ca33a231d14fc3b493ff5d8d55fedecc84aef49ceb8c1fa063"
+    },
+    {
+      "path": "advisor-profile/Advisor 1.png",
+      "size": 1474430,
+      "sha256": "f1ae923334abb9f79adc82e1a869b56caa6df2a9f41a2f3e6983c456ae101fac"
+    },
+    {
+      "path": "advisor-profile/Advisor 2.png",
+      "size": 1775288,
+      "sha256": "b86246f9859356ec9407e948412792243bddac1dc5bedd3176f4ccf6e1106477"
+    },
+    {
+      "path": "advisor-profile/Advisor 3.png",
+      "size": 2161925,
+      "sha256": "48e26cab8375dd24efd30fe958a6f5d17b9b1ec69b2339abf8df602afd1c6f60"
+    },
+    {
+      "path": "advisor-profile/Advisor 4.png",
+      "size": 1922303,
+      "sha256": "26e7a0990a1f03d04cc3b0d8df2c79da408a7c8a1d088bb042a2e3d45ce8cfb8"
+    },
+    {
+      "path": "advisors.html",
+      "size": 692,
+      "sha256": "17e2eeda238fbe53478dfabc40407852abf41a1c66fc0c79f3e444009bbb2915"
+    },
+    {
+      "path": "asset-types/index.html",
+      "size": 17943,
+      "sha256": "6e5652d96391f0eeda709329146a29a6f0904e18fae242b87ee66a16bbce9017"
+    },
+    {
+      "path": "assets/concierge.js",
+      "size": 9927,
+      "sha256": "1cd9cb436495b33140296685a011def3bb6fc71c175e74b1409b72e2189acaae"
+    },
+    {
+      "path": "assets/contact-validation.js",
+      "size": 2581,
+      "sha256": "e30dead06c4a4601db1596de2d20845ec6907ee21dde8bee12f9ab306bcf9962"
+    },
+    {
+      "path": "assets/content-click-dispatch.js",
+      "size": 1032,
+      "sha256": "d261dd53a682f102ff762b44f2b0623dcd8974e5f7d207f9b6f00210d6acb2d1"
+    },
+    {
+      "path": "assets/for-advisors-education-social.png",
+      "size": 34406,
+      "sha256": "aea917ee10510b0a869fae84e05aaf2277bb0720724770c2d009ab423bae3124"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-1-mobile.svg",
+      "size": 1732,
+      "sha256": "5e35e63ee8f9c34a4cb5e1cfeba3641ce78f60fb20d3b854b679145d3c651f12"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-1.svg",
+      "size": 1825,
+      "sha256": "2fc248707c093602709b4cc6266b002a3422109d8b5d196cb4bf60f76c26e83d"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-2-mobile.svg",
+      "size": 1766,
+      "sha256": "a4698401b49d31eab15f1c908503a1d46217e125f0c5b20f50878d3306ee5158"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-2.svg",
+      "size": 1859,
+      "sha256": "71c931ce25a16a74ccffe0a914dd91f8784ece2d7c8f655714fb9aafc70c227d"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-3-mobile.svg",
+      "size": 1710,
+      "sha256": "d9d3d0c1b06a740da8475daab515a21d742443f6a6f13f88e2edb788805dd9f5"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-3.svg",
+      "size": 1803,
+      "sha256": "8efb094ecb32be6418349fadf5b1faf05d5a6d4fdbfb9f58f1dabe58d875c49a"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-wealth-planning-1-mobile.svg",
+      "size": 1740,
+      "sha256": "5b1d5f98bd89daa3e20444e867fcf49cf1273a409a04be940b88dd6c66c6f3d8"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-wealth-planning-1.svg",
+      "size": 1833,
+      "sha256": "759502e26023373e2805085a0c4679444f685aea012bf2f50b2ad97a0b6fc149"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-wealth-planning-2-mobile.svg",
+      "size": 1720,
+      "sha256": "a565f4ca7a289cac7e329e989f1b20aeb9313754af5aa46a3b9459957ac3468b"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-wealth-planning-2.svg",
+      "size": 1813,
+      "sha256": "09001813048d9e94d1d9dadbb186064cf4ac25a0bd48b857f1c41b29602cdce0"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-wealth-planning-3-mobile.svg",
+      "size": 1698,
+      "sha256": "c45e5d4cc728dfc3ad8e81ede9f14b2eccc160cf6ce7e593c043fc7bbb857902"
+    },
+    {
+      "path": "assets/guide-figures/business-owner-wealth-planning-3.svg",
+      "size": 1791,
+      "sha256": "6fe875e46c9085bee74f96aaec92c0d2af33a6494826a3ddeb74583414ddc504"
+    },
+    {
+      "path": "assets/guide-figures/cash-liquidity-management-1-mobile.svg",
+      "size": 1720,
+      "sha256": "6195d0499ac5f0b28e3b7c9a214c2458d4ce03c3ad5d1dd007c8681a9c44a9b8"
+    },
+    {
+      "path": "assets/guide-figures/cash-liquidity-management-1.svg",
+      "size": 1813,
+      "sha256": "0cb87073ef31ba912e7f716f550fde9a2d6cdd34be91b8e657afdaa19ce163f2"
+    },
+    {
+      "path": "assets/guide-figures/cash-liquidity-management-2-mobile.svg",
+      "size": 1744,
+      "sha256": "04aa33ef94371ed54a149292c65442b9f22c8feea0c4b1788fcc749ba02a860c"
+    },
+    {
+      "path": "assets/guide-figures/cash-liquidity-management-2.svg",
+      "size": 1837,
+      "sha256": "8c55a4c810a21a9d5eb383649454568078ce4585b3920540c35cead7ae15f3d2"
+    },
+    {
+      "path": "assets/guide-figures/cash-liquidity-management-3-mobile.svg",
+      "size": 1686,
+      "sha256": "bcddc45f4b9f6f5a0993c853e24f73d195fc317069b419f85189c700135aa20b"
+    },
+    {
+      "path": "assets/guide-figures/cash-liquidity-management-3.svg",
+      "size": 1779,
+      "sha256": "52b2770813d1eaab1291b75a3edaa42bb32f83a5c10eeef3cd5865c67724eb12"
+    },
+    {
+      "path": "assets/guide-figures/concentrated-stock-1-mobile.svg",
+      "size": 1726,
+      "sha256": "282e633dcc44b640a0e2486d4e7e32474d82851a55ce943b915ef1b8ef60afb1"
+    },
+    {
+      "path": "assets/guide-figures/concentrated-stock-1.svg",
+      "size": 1819,
+      "sha256": "a746fe060a5ba65a5c781a1e7e0ca401af169b39b6a6b0098d430417fc7de3ce"
+    },
+    {
+      "path": "assets/guide-figures/concentrated-stock-2-mobile.svg",
+      "size": 1700,
+      "sha256": "4940b1673971d9c748c1ebef270390b6426c3cb5c9dc44c9e9b16fc7bdae22d6"
+    },
+    {
+      "path": "assets/guide-figures/concentrated-stock-2.svg",
+      "size": 1793,
+      "sha256": "5453cdbf8444b3a7a8eaada8122ca50721c572803f9f623e8063bb7ac2e90369"
+    },
+    {
+      "path": "assets/guide-figures/concentrated-stock-3-mobile.svg",
+      "size": 1698,
+      "sha256": "cd161dcc642d6d2b212a8a8d5466601490a54ba6cb3e1149864f346060b907ed"
+    },
+    {
+      "path": "assets/guide-figures/concentrated-stock-3.svg",
+      "size": 1791,
+      "sha256": "8569dad961fe0276891b32ff349b749a225e22e459315cf40790571020db2696"
+    },
+    {
+      "path": "assets/guide-figures/entrepreneur-founder-1-mobile.svg",
+      "size": 1734,
+      "sha256": "6452eac9bb2c2459c4957945f6141277d4172eb2c93570caf94cb586d75ed570"
+    },
+    {
+      "path": "assets/guide-figures/entrepreneur-founder-1.svg",
+      "size": 1827,
+      "sha256": "db1cf159b239173f4349bd4b9873e022b1b4980087210c15c16e7f719e9fefd1"
+    },
+    {
+      "path": "assets/guide-figures/entrepreneur-founder-2-mobile.svg",
+      "size": 1724,
+      "sha256": "869c726e89d8f97c6880f5dcef73c393c6e7c8c6fd79ada86c2bc4ba3b8cf125"
+    },
+    {
+      "path": "assets/guide-figures/entrepreneur-founder-2.svg",
+      "size": 1817,
+      "sha256": "56e04d1b2f6b01040afde52ddf0daa1095e24d35bddcb9595847a7c0bd193060"
+    },
+    {
+      "path": "assets/guide-figures/entrepreneur-founder-3-mobile.svg",
+      "size": 1702,
+      "sha256": "e02e5fb4332a7bd4d7f9232ca860479016179e5ba3461a44057ae88fb4340109"
+    },
+    {
+      "path": "assets/guide-figures/entrepreneur-founder-3.svg",
+      "size": 1795,
+      "sha256": "19f00b9202240e649fd20e7f4f947b84cc6139ed67c5bff3422b70cb3d4f33ce"
+    },
+    {
+      "path": "assets/guide-figures/estate-planning-1-mobile.svg",
+      "size": 1708,
+      "sha256": "ff96aded98e070840fdf4f6175c2ba181a16ad8494eb9ec4059d7bd19468f1a1"
+    },
+    {
+      "path": "assets/guide-figures/estate-planning-1.svg",
+      "size": 1801,
+      "sha256": "51b9bcf138feab2d2195b06c92d7bcc4028b9dc4e91c4627b8f69e2bb0dc036c"
+    },
+    {
+      "path": "assets/guide-figures/estate-planning-2-mobile.svg",
+      "size": 1726,
+      "sha256": "1b8fff985a1a3a5f87a89a8f1b0887e9589a69c05efb5409897c94a77063a8c8"
+    },
+    {
+      "path": "assets/guide-figures/estate-planning-2.svg",
+      "size": 1819,
+      "sha256": "cc9b7f65a109da22882ba64f82d9d30fa3534af2e51f68903b1335ede70c1e48"
+    },
+    {
+      "path": "assets/guide-figures/estate-planning-3-mobile.svg",
+      "size": 1680,
+      "sha256": "e7e24acf8c6ae0ff111c56817b72a9bab83ff4322420663fd362b4b5e2b95412"
+    },
+    {
+      "path": "assets/guide-figures/estate-planning-3.svg",
+      "size": 1773,
+      "sha256": "c1c88028af3b981bd65d87a5cc37e197648e95dcc3e065dde95f3f281df6a922"
+    },
+    {
+      "path": "assets/guide-figures/executive-professional-1-mobile.svg",
+      "size": 1728,
+      "sha256": "946fd62b678ac2ce575fd63503e270d0ac9206a7c9d1ffeca6b081f3cf8fe72c"
+    },
+    {
+      "path": "assets/guide-figures/executive-professional-1.svg",
+      "size": 1821,
+      "sha256": "dea575daae04c64be6642b005b6a991dfc250a5da71a06c32c6f3822ec69c60e"
+    },
+    {
+      "path": "assets/guide-figures/executive-professional-2-mobile.svg",
+      "size": 1746,
+      "sha256": "78825e0f0c9b7fc77d9c3cb3fadc239025cbec48486ad69bc7ad52322ccf90b6"
+    },
+    {
+      "path": "assets/guide-figures/executive-professional-2.svg",
+      "size": 1839,
+      "sha256": "6b0c18a62ffb59eea59c14c4ed8f29d6849a025aa530cec90f1079d585f28029"
+    },
+    {
+      "path": "assets/guide-figures/executive-professional-3-mobile.svg",
+      "size": 1720,
+      "sha256": "6e3a10125b55608de66144970f38042e91d00f41a8abd6c54d990ebeaadd3881"
+    },
+    {
+      "path": "assets/guide-figures/executive-professional-3.svg",
+      "size": 1813,
+      "sha256": "f93aa4415d9abeb78f9ebf1d22b4ce3eb28026e9f3cd13cf8ce1becfb1692175"
+    },
+    {
+      "path": "assets/guide-figures/inheritance-sudden-wealth-1-mobile.svg",
+      "size": 1748,
+      "sha256": "0f6d6b96f6e90d2251a965ea7293b8fea9ceec5ad9cea0a94089b4be219bd022"
+    },
+    {
+      "path": "assets/guide-figures/inheritance-sudden-wealth-1.svg",
+      "size": 1841,
+      "sha256": "8a6b826fcdfcb14e1b086155589f0c075d5b8a44edc29d5fc304446264a2434d"
+    },
+    {
+      "path": "assets/guide-figures/inheritance-sudden-wealth-2-mobile.svg",
+      "size": 1696,
+      "sha256": "b09a695d88e8f18ede10595bb061c862da84ed7daeae9b7b9bcf8f60c7d2aa45"
+    },
+    {
+      "path": "assets/guide-figures/inheritance-sudden-wealth-2.svg",
+      "size": 1789,
+      "sha256": "606c53f33ba5b1d80e6b8e44a92d85bd3cf5cbee8d532824549cf0482c7cff53"
+    },
+    {
+      "path": "assets/guide-figures/inheritance-sudden-wealth-3-mobile.svg",
+      "size": 1720,
+      "sha256": "ba7c610acb39fecd799f9809ec15c26c6dc46d89d3fc767ef6c43bfebe898af9"
+    },
+    {
+      "path": "assets/guide-figures/inheritance-sudden-wealth-3.svg",
+      "size": 1813,
+      "sha256": "988a1169de264737e6a5d5b8d2746d35d6bfddb65e7d9b77b067af159a52868c"
+    },
+    {
+      "path": "assets/guide-figures/managing-investments-1-mobile.svg",
+      "size": 1676,
+      "sha256": "5f5e96b792d4602612d07151b5d8d2a0483ae936fa55a5682c410e979d2249c2"
+    },
+    {
+      "path": "assets/guide-figures/managing-investments-1.svg",
+      "size": 1769,
+      "sha256": "7f56887d7bf5843cae981837bd680baca65f1067c89b84ebef990c5cefffbf36"
+    },
+    {
+      "path": "assets/guide-figures/managing-investments-2-mobile.svg",
+      "size": 1734,
+      "sha256": "f3ff8c6dfdf28d00522dea9127769bf5f6e33a22f86890bf1c52570dc4de9f6e"
+    },
+    {
+      "path": "assets/guide-figures/managing-investments-2.svg",
+      "size": 1827,
+      "sha256": "99f6e1c4fb2146c467bdf9e3f85c302e38fa16d9607796a09df5887f731d8398"
+    },
+    {
+      "path": "assets/guide-figures/managing-investments-3-mobile.svg",
+      "size": 1680,
+      "sha256": "887ba173effb06eb22f6832c108bcc8297e71e4aec617359c002b52ebc1f1827"
+    },
+    {
+      "path": "assets/guide-figures/managing-investments-3.svg",
+      "size": 1773,
+      "sha256": "761dc1f3063586b77320257c3bd9a48335980a2510f493ed2a41494a108dd116"
+    },
+    {
+      "path": "assets/guide-figures/recently-received-an-inheritance-1-mobile.svg",
+      "size": 1734,
+      "sha256": "c053dae619ef18f599659c929450d9d285265697d7ad655845210678705bec05"
+    },
+    {
+      "path": "assets/guide-figures/recently-received-an-inheritance-1.svg",
+      "size": 1827,
+      "sha256": "67bf6ec7781ac540f13f484ceca7bfab709ccf1e66174ba3ddcffda6983be047"
+    },
+    {
+      "path": "assets/guide-figures/recently-received-an-inheritance-2-mobile.svg",
+      "size": 1778,
+      "sha256": "808ae9f0e2548e0d3efccfbdd46868d31978961eff64ae5be8ec1b0f0f5ff213"
+    },
+    {
+      "path": "assets/guide-figures/recently-received-an-inheritance-2.svg",
+      "size": 1871,
+      "sha256": "2ca59a1be6ec456c04739ef5b76289e372cd7f01c6d1c41545709226c644feac"
+    },
+    {
+      "path": "assets/guide-figures/recently-received-an-inheritance-3-mobile.svg",
+      "size": 1748,
+      "sha256": "4128db05050c815d299af9ab9492cdaea7a53c39856cb71156e8daad0cf37fe6"
+    },
+    {
+      "path": "assets/guide-figures/recently-received-an-inheritance-3.svg",
+      "size": 1841,
+      "sha256": "8f3be3ec1b50da4b73e127ec35e4584d2fa2bb96678f089b42136781655a1777"
+    },
+    {
+      "path": "assets/guide-figures/recently-sold-a-business-1-mobile.svg",
+      "size": 1732,
+      "sha256": "cae6fa8e8b7779bcf192189523c170edb88b001150583a651cee7511dd709319"
+    },
+    {
+      "path": "assets/guide-figures/recently-sold-a-business-1.svg",
+      "size": 1825,
+      "sha256": "4e5b1580e8a9cd3953354cee514a217658b211d5d8bebaa7fb6e68660161edd5"
+    },
+    {
+      "path": "assets/guide-figures/recently-sold-a-business-2-mobile.svg",
+      "size": 1716,
+      "sha256": "50f396f3b940521a0ba0bb0dc93a550136ecffd2791192919ac87e8133106abf"
+    },
+    {
+      "path": "assets/guide-figures/recently-sold-a-business-2.svg",
+      "size": 1809,
+      "sha256": "d693a44f392acc0c0d398884462f3d0565193ff001b7857e7dfec794b2fcfe57"
+    },
+    {
+      "path": "assets/guide-figures/recently-sold-a-business-3-mobile.svg",
+      "size": 1724,
+      "sha256": "df7c8595cf6dbd3d1b09f6085dd1af02ccf76d4222dfc2c0ee4826533dc03019"
+    },
+    {
+      "path": "assets/guide-figures/recently-sold-a-business-3.svg",
+      "size": 1817,
+      "sha256": "9573a33c1da533a1b25f4b62b0ca6960c48582e4383960c8c3b6ae54693e57cb"
+    },
+    {
+      "path": "assets/guide-figures/retired-1-mobile.svg",
+      "size": 1748,
+      "sha256": "f65dab4ab4f94d2a9d761a1adcde803b5d30eec4feff46173bafcd9e69d520d7"
+    },
+    {
+      "path": "assets/guide-figures/retired-1.svg",
+      "size": 1841,
+      "sha256": "4f2cd53cb30c9747e4e236551f9d476b74a9281c1a05c4378d4308cf18e33180"
+    },
+    {
+      "path": "assets/guide-figures/retired-2-mobile.svg",
+      "size": 1716,
+      "sha256": "99126ec6520782c26aef6379c8d59bd1445667856267b62c9759923b0d52fe56"
+    },
+    {
+      "path": "assets/guide-figures/retired-2.svg",
+      "size": 1809,
+      "sha256": "58536c4fab1ace68c89aa4c2a89f3d080ed3fd78c63b9b22c49a92090b700c25"
+    },
+    {
+      "path": "assets/guide-figures/retired-3-mobile.svg",
+      "size": 1726,
+      "sha256": "fa7770af45952616c5198b5c770f9381a7e4346ca95f0cd35e74f7526f842719"
+    },
+    {
+      "path": "assets/guide-figures/retired-3.svg",
+      "size": 1819,
+      "sha256": "9d0a89e82bd950d7c59f6747eb7bc330d2c5da38963d8e83c3875c46bb47a180"
+    },
+    {
+      "path": "assets/guide-figures/retirement-planning-1-mobile.svg",
+      "size": 1769,
+      "sha256": "fc8d17cd62503a39ee7dcf3e439167e0249ab8b43b16fd0fed206d583de6ceba"
+    },
+    {
+      "path": "assets/guide-figures/retirement-planning-1.svg",
+      "size": 1863,
+      "sha256": "3b6321739e4a3e63cf1f941bc6210f59e457402c393573359875ac69e4ea50ae"
+    },
+    {
+      "path": "assets/guide-figures/retirement-planning-2-mobile.svg",
+      "size": 1710,
+      "sha256": "540f7f5be4842f4fa59af50db162c0977ec98b66ba8d1056e5c2641ccb69b262"
+    },
+    {
+      "path": "assets/guide-figures/retirement-planning-2.svg",
+      "size": 1803,
+      "sha256": "15efc7fd57c041a3c36a6e11e57fc148cd0de111d6e8e801f1cbed261f111973"
+    },
+    {
+      "path": "assets/guide-figures/retirement-planning-3-mobile.svg",
+      "size": 1684,
+      "sha256": "84110c328a4f077e12ed06d2992d380d371b7660543e6cbb25e3b6442cd8e81e"
+    },
+    {
+      "path": "assets/guide-figures/retirement-planning-3.svg",
+      "size": 1777,
+      "sha256": "6855e1e240e6dc859d2863db04d03d418330c736d05afb08035ebd8c9d10141e"
+    },
+    {
+      "path": "assets/guide-figures/selling-a-business-1-mobile.svg",
+      "size": 1730,
+      "sha256": "bdb3f1f6d308f37d6a4de7b02d2d85a6e62daa140da5bea333db3ba05f574045"
+    },
+    {
+      "path": "assets/guide-figures/selling-a-business-1.svg",
+      "size": 1823,
+      "sha256": "a9862b2d0619de38e78a3b5116475f51a91413d27d583be97e3fbff4de9cf079"
+    },
+    {
+      "path": "assets/guide-figures/selling-a-business-2-mobile.svg",
+      "size": 1732,
+      "sha256": "f4446a0ee3861823bfcb3524f62b1e3393b7f554d32d3f58978b19c4ea2d37fe"
+    },
+    {
+      "path": "assets/guide-figures/selling-a-business-2.svg",
+      "size": 1825,
+      "sha256": "395b7e3f5d9d03393738742ec17d09486b4a64fe4d33014d16763e402c423cb3"
+    },
+    {
+      "path": "assets/guide-figures/selling-a-business-3-mobile.svg",
+      "size": 1712,
+      "sha256": "bcc130f3a6b1bf4cdf8cd2ef55c431169c2d93a5de2dc454fd4c9efd4509c7f8"
+    },
+    {
+      "path": "assets/guide-figures/selling-a-business-3.svg",
+      "size": 1805,
+      "sha256": "80db7231e570a96839a46603f57bbaa01f14d33ed89f3864abbd910c5d6aeeb8"
+    },
+    {
+      "path": "assets/guide-figures/tax-planning-1-mobile.svg",
+      "size": 1750,
+      "sha256": "75f329b68350c5ab945dcdf760baab2d11447393516029819b72b145f0feee68"
+    },
+    {
+      "path": "assets/guide-figures/tax-planning-1.svg",
+      "size": 1843,
+      "sha256": "2c90ef8db22e2bc03938a4f49ae0d5fdca47174a145f35e4c98bab645d46516e"
+    },
+    {
+      "path": "assets/guide-figures/tax-planning-2-mobile.svg",
+      "size": 1732,
+      "sha256": "e4bbcbed97f09fa8a13a2f2496c799c2ffe40d4e63a455fe813250511750bf0f"
+    },
+    {
+      "path": "assets/guide-figures/tax-planning-2.svg",
+      "size": 1825,
+      "sha256": "43d1c61581f7ce28f709206360a7838ac779b3e86ee23497c62c4c648d777957"
+    },
+    {
+      "path": "assets/guide-figures/tax-planning-3-mobile.svg",
+      "size": 1726,
+      "sha256": "06636e4200b80c4336a6c6604b00428c12c490f5e1842fee28b39d2764658e91"
+    },
+    {
+      "path": "assets/guide-figures/tax-planning-3.svg",
+      "size": 1819,
+      "sha256": "77d749c2c0e6a4b7ef609b740e7a3433b55ff08dd086fce73435b95750b40614"
+    },
+    {
+      "path": "assets/niche-business-owners-hero.jpg",
+      "size": 138359,
+      "sha256": "f35a36592101c6f7126cf24b92b03bdcc73dde3cf0ede73a76f9655e0fc5b89b"
+    },
+    {
+      "path": "assets/niche-physicians-hero.jpg",
+      "size": 56020,
+      "sha256": "0f72510ddfec3809ef1cadcf107631fa40a06fab5536474faa3db60897e0f0f6"
+    },
+    {
+      "path": "assets/niche-tech-employees-hero.jpg",
+      "size": 312038,
+      "sha256": "7102d6b46fe3e8f660211735a111f5c56cd76170f601b96a380707ad1e107fd7"
+    },
+    {
+      "path": "assets/owner-fit/hero.jpg",
+      "size": 428202,
+      "sha256": "db01f4adb4f4053d7aa510ef187a3b9d2193034daa21e4710e3c48eaa2b41068"
+    },
+    {
+      "path": "assets/owner-fit/map-1-mobile.svg",
+      "size": 1732,
+      "sha256": "5e35e63ee8f9c34a4cb5e1cfeba3641ce78f60fb20d3b854b679145d3c651f12"
+    },
+    {
+      "path": "assets/owner-fit/map-1.svg",
+      "size": 1825,
+      "sha256": "2fc248707c093602709b4cc6266b002a3422109d8b5d196cb4bf60f76c26e83d"
+    },
+    {
+      "path": "assets/owner-fit/map-2-mobile.svg",
+      "size": 1766,
+      "sha256": "a4698401b49d31eab15f1c908503a1d46217e125f0c5b20f50878d3306ee5158"
+    },
+    {
+      "path": "assets/owner-fit/map-2.svg",
+      "size": 1859,
+      "sha256": "71c931ce25a16a74ccffe0a914dd91f8784ece2d7c8f655714fb9aafc70c227d"
+    },
+    {
+      "path": "assets/script.js",
+      "size": 37466,
+      "sha256": "471c0c62014ac8021bbff3040885d75c78af48b1bb7583b69f1cf8848f9af439"
+    },
+    {
+      "path": "assets/selling-a-business/diagram-1-mobile.svg",
+      "size": 1154,
+      "sha256": "16e358b6d1990f09f1b1c8cc4d7ac20d69d733816ec813ffb52cef4d67a0e458"
+    },
+    {
+      "path": "assets/selling-a-business/diagram-1.svg",
+      "size": 1277,
+      "sha256": "c9d9046466c98aa3de44f174cf1781311e90706f8f761c532da4ee421c705f53"
+    },
+    {
+      "path": "assets/selling-a-business/diagram-2-mobile.svg",
+      "size": 985,
+      "sha256": "131ffacd78a3c4e87ad8ce5f1e8629d22ea10c84d1faa972d618d9f5ece625d1"
+    },
+    {
+      "path": "assets/selling-a-business/diagram-2.svg",
+      "size": 1306,
+      "sha256": "70586a127ae96b4810ff7e0850d6146ceb0218b253c180185d148588720a3ba8"
+    },
+    {
+      "path": "assets/selling-a-business/hero-mobile.svg",
+      "size": 1124,
+      "sha256": "6dff6ed949a9b9c3ec078b5f5ffa53308658c0b17b7c6e364b1237522692b9be"
+    },
+    {
+      "path": "assets/selling-a-business/hero.svg",
+      "size": 1266,
+      "sha256": "a776b7ee8a5481da2f96ff4f5ab3d21c863d5298ed14b96ac54e88dc047aab67"
+    },
+    {
+      "path": "assets/styles.css",
+      "size": 111112,
+      "sha256": "00b17a9ce98cd6b68e1aff8bc9c45304a04b7d755e62c11547f1a86778b13104"
+    },
+    {
+      "path": "assets/team-avatar-amara.jpg",
+      "size": 13419,
+      "sha256": "493f55c37ff25b4d72a8f2ab4292827eb59441059e05f80a8fc658346e706bbb"
+    },
+    {
+      "path": "assets/team-avatar-arjun.jpg",
+      "size": 15425,
+      "sha256": "18736357895bec7b10b36a44b736da2d480fa16ba6ea7a9791edd1ac3e63065c"
+    },
+    {
+      "path": "assets/team-avatar-ava.jpg",
+      "size": 14656,
+      "sha256": "626e314e53dba2de0187e196c981cd2ce24eebd0058ab1fa516417cb72bdc8c5"
+    },
+    {
+      "path": "assets/team-avatar-bhavya-v2.jpg",
+      "size": 14517,
+      "sha256": "4944b01753472e1c87f7b5b5bee310b5a578f3df9a436a7059ae8bde434c62c1"
+    },
+    {
+      "path": "assets/team-avatar-camille.jpg",
+      "size": 22258,
+      "sha256": "3441e1e29798b84d11820b4b93b6eb9ab207704a39f06d181ac087bafba27bd5"
+    },
+    {
+      "path": "assets/team-avatar-clara.jpg",
+      "size": 14842,
+      "sha256": "b9f003657b0eac04230ef4986a0ad02f62bb3d147bc11bb01a0d3a8939091f7d"
+    },
+    {
+      "path": "assets/team-avatar-daniel-okafor.jpg",
+      "size": 17119,
+      "sha256": "ea8b621a59a78ddc68de79de6b6f16def90546ad8619c1fd7db9c542fbd09223"
+    },
+    {
+      "path": "assets/team-avatar-elena.jpg",
+      "size": 15429,
+      "sha256": "573e8f613a7247d738753c11a5b56c3a4194ce74bc66d336acedcd590187d244"
+    },
+    {
+      "path": "assets/team-avatar-ethan-v2.jpg",
+      "size": 11850,
+      "sha256": "ba0942a035e2e7b7f5d5e1464064c305f505b7691df741e06698406193895bb5"
+    },
+    {
+      "path": "assets/team-avatar-evelyn.jpg",
+      "size": 17510,
+      "sha256": "c4b57f51ad0c5eb99e310751b622f6917eca91ea00fc3da9fc4e00601c0dc480"
+    },
+    {
+      "path": "assets/team-avatar-hannah.jpg",
+      "size": 22631,
+      "sha256": "c089e02ed47090ffaeae24d192a50f7aa2ef00ac1a77de73f0bddf849d98f258"
+    },
+    {
+      "path": "assets/team-avatar-iris.jpg",
+      "size": 14652,
+      "sha256": "6f58638fb9fda69b6497e0b321e02d206af5e9d4acad840f60ba59d117673138"
+    },
+    {
+      "path": "assets/team-avatar-jonas-weber.jpg",
+      "size": 19075,
+      "sha256": "166ad6c93c960bf3dabfddef629182df3468222c6c050d6ebab3775fb23374a8"
+    },
+    {
+      "path": "assets/team-avatar-jordan.jpg",
+      "size": 13152,
+      "sha256": "b48aa4524dc7d1e566cd9d795111e5ce5f595873183ef37826693c08e11f189b"
+    },
+    {
+      "path": "assets/team-avatar-lena.jpg",
+      "size": 14718,
+      "sha256": "8414b2f4fef10d2f0ab07fb00a432a4098781b44a1369f4c10e45e26dc3e3cff"
+    },
+    {
+      "path": "assets/team-avatar-marcus.jpg",
+      "size": 19425,
+      "sha256": "d464e85626c7dfb09685dc009173101c788601821394e78bd171de4b0a2fa0ec"
+    },
+    {
+      "path": "assets/team-avatar-maya.jpg",
+      "size": 20590,
+      "sha256": "dd45ce355f0254ec08e38e48d1fd0a6f031530a5f31691d4cc71ddc91ee05e73"
+    },
+    {
+      "path": "assets/team-avatar-miles.jpg",
+      "size": 12706,
+      "sha256": "f8e826d06c8a43816826df6b414f5992cd588a45e994181d13e831c67fd6e361"
+    },
+    {
+      "path": "assets/team-avatar-mira.jpg",
+      "size": 15144,
+      "sha256": "eab68421a0d34f344fac97bede7ebc1ac93558432156aa592422eac6fbb5dee1"
+    },
+    {
+      "path": "assets/team-avatar-nina-site-writer-288-7f4f6560.jpg",
+      "size": 20633,
+      "sha256": "0f3a8cb3462557c28f3e62251d9a35e0a8cedd4785851f0aa0ed69d645b0952d"
+    },
+    {
+      "path": "assets/team-avatar-noah.jpg",
+      "size": 13018,
+      "sha256": "8ca9ac0289944dcc0ef251c41b863ed288fbf00e30cd779dc7ebc0ca1ab31848"
+    },
+    {
+      "path": "assets/team-avatar-owen.jpg",
+      "size": 14794,
+      "sha256": "efebaa4f25a5930e8faba53ba7e85c78a714c03de64a1f5d4d31ec8246c3fc99"
+    },
+    {
+      "path": "assets/team-avatar-priya.jpg",
+      "size": 21029,
+      "sha256": "807ee8de1a1bc97f889882cd5a1390e670b7abeae2f837500c77e703bce52bc7"
+    },
+    {
+      "path": "assets/team-avatar-rina.jpg",
+      "size": 14064,
+      "sha256": "218c5d12ac9913b7abff1456639aec281e5426b9941b53fb2cab631851822e41"
+    },
+    {
+      "path": "assets/team-avatar-rohan.jpg",
+      "size": 19572,
+      "sha256": "bf010e9db3f28d70feba201554161f826dc74871e08f64a975c22eb7d74750c4"
+    },
+    {
+      "path": "assets/team-avatar-sam.jpg",
+      "size": 14483,
+      "sha256": "f9c9602179f9e2793af75c8019bf706ed9f41248781407590a0c57e83b7a5437"
+    },
+    {
+      "path": "assets/team-avatar-sofia.jpg",
+      "size": 13681,
+      "sha256": "f60f38c278869d2aa621f0ae325c494bad77baca78643cc1516276e67f041185"
+    },
+    {
+      "path": "assets/team-avatar-theo.jpg",
+      "size": 20785,
+      "sha256": "6d34fd99b313af03f11825875b391eca8ead87ecccfb27b53b330bf690204cc5"
+    },
+    {
+      "path": "assets/vendor/disposable-email-domains-1.0.62.js",
+      "size": 2100913,
+      "sha256": "20f211a0f0d789f2389f1e2deefed54a6ffb9340d1175812424878b3d9dedc2a"
+    },
+    {
+      "path": "assets/vendor/libphonenumber-LICENSE.txt",
+      "size": 1108,
+      "sha256": "ea6fc5fe0f905c5fdedd8f160f1dd73ce739004fc5f35656b35258aea126dbde"
+    },
+    {
+      "path": "assets/vendor/libphonenumber-max-1.13.14.js",
+      "size": 252255,
+      "sha256": "6c58e399bf59e4d55f7adc56cf0e4b2643be7538eb3ab028fad5d820bc29853a"
+    },
+    {
+      "path": "calculators/401k-contribution-limit/index.html",
+      "size": 34486,
+      "sha256": "e725e623fa13cc5a563a7f3131dcb52fc15b22979326934d0c5f9fe98d8de468"
+    },
+    {
+      "path": "calculators/401k-growth/index.html",
+      "size": 35289,
+      "sha256": "50e0bb62d1f441574d83a84d060ed5d14dc9fe2401305e05baddd2d2bbf833d2"
+    },
+    {
+      "path": "calculators/asset-allocation-guide/index.html",
+      "size": 34201,
+      "sha256": "f4739659c1484f9096e25ddfe5923dd279283e25215cd3851043c25c715dabd6"
+    },
+    {
+      "path": "calculators/banking/index.html",
+      "size": 32810,
+      "sha256": "763bf6a3e7636a4db7e368edd3281dab810636739e0cd3bca57bb1dbbb5c1762"
+    },
+    {
+      "path": "calculators/budget-50-30-20/index.html",
+      "size": 33666,
+      "sha256": "304d8a71c9a55bd7c0833c0378148d797d21605c4b1db2a1ed1d61c9ffeffd9a"
+    },
+    {
+      "path": "calculators/capital-gains-tax-estimate/index.html",
+      "size": 35683,
+      "sha256": "914b051b49e42deb8049f178a77bd428578c98ef3901cca856a0c21f081f3d3d"
+    },
+    {
+      "path": "calculators/closing-costs-estimate/index.html",
+      "size": 34320,
+      "sha256": "862efe46800623390df57676a87eb497e32b17300a7dd3b71a86f5db869a3283"
+    },
+    {
+      "path": "calculators/compound-interest/index.html",
+      "size": 38086,
+      "sha256": "28683c3755e598445ded4973f60c08cf003602b385ecbcce458dc8ec6f98afd6"
+    },
+    {
+      "path": "calculators/concentration-diversification-timeline/index.html",
+      "size": 34684,
+      "sha256": "e58a5b07be01194555092196c1c776a966e0b918d61f8bb3759cf3863bd9fe59"
+    },
+    {
+      "path": "calculators/delayed-retirement-credit/index.html",
+      "size": 34067,
+      "sha256": "c38760a12d5eef6f41fcaed4e0fcb1e8d08288441cba41f078902edc8d2bb5c1"
+    },
+    {
+      "path": "calculators/equity-compensation/index.html",
+      "size": 32596,
+      "sha256": "430d22e72d572b37fc5f7f8465d8f0f0ed67defeaa2ec1fa7dcb0ce557c710d6"
+    },
+    {
+      "path": "calculators/financial-advisor-value/index.html",
+      "size": 35325,
+      "sha256": "9f0198eb723a09df5138420cd100b183d52d6888cfdaf392c4609600857fb739"
+    },
+    {
+      "path": "calculators/home-&-mortgage/index.html",
+      "size": 33012,
+      "sha256": "68ee3504614f08898e8b59a934606ad647b55878014886461f5940b17b0bf61f"
+    },
+    {
+      "path": "calculators/home-affordability/index.html",
+      "size": 34959,
+      "sha256": "dca2fc5bb6a87d318a8a63fbe3297f9a5b08a6dd363f68b8822e644c02506e4f"
+    },
+    {
+      "path": "calculators/how-long-savings-will-last/index.html",
+      "size": 34813,
+      "sha256": "d465e64eff9a75507637292bea281a715ad10db21e474dfe365ed6f9cbf9ca7f"
+    },
+    {
+      "path": "calculators/income-tax-estimate/index.html",
+      "size": 34599,
+      "sha256": "4be62f9cc78e03687a6ee8a6c28b68e2432740fcfcac8159c234b44038fff69c"
+    },
+    {
+      "path": "calculators/index.html",
+      "size": 41450,
+      "sha256": "9e0c60c655c42c957eb521fc1e3647dd4ae92d49e73d8a4b095b0e5d4841cb63"
+    },
+    {
+      "path": "calculators/inflation-calculator/index.html",
+      "size": 34319,
+      "sha256": "83a398ed79395a6f56e385af8088edde051d3758d54b98ebf8bcdbed63ebfa43"
+    },
+    {
+      "path": "calculators/investing/index.html",
+      "size": 33115,
+      "sha256": "0212fe088b1912dd03605005bbabe0394c159f9405957a4fbb621ae0de195a5e"
+    },
+    {
+      "path": "calculators/investment-future-value/index.html",
+      "size": 35151,
+      "sha256": "8ddcd495ea3260215ca2de20b75e0707411b8cdf93d8a121b053de8a6d8f9f07"
+    },
+    {
+      "path": "calculators/iso-exercise-cost/index.html",
+      "size": 34717,
+      "sha256": "923ce5f67cbbac5df6244c3ac829c53da2f5abae08dc957d30906859b4015415"
+    },
+    {
+      "path": "calculators/mortgage-calculator/index.html",
+      "size": 34557,
+      "sha256": "0b8b6f999c4407e7a1597d0b602d46d2b0a14432bf9bbc2ccf775d8566315d03"
+    },
+    {
+      "path": "calculators/paycheck-calculator/index.html",
+      "size": 35410,
+      "sha256": "0a51b1c7145dee9ab1de1861606a35a972d7c09cfae85bbc8ad93da5e552f0f1"
+    },
+    {
+      "path": "calculators/property-tax-estimate/index.html",
+      "size": 34093,
+      "sha256": "a817f27a4265c4f5f7ebb0c235f959cc5259fb950339098fe81b6854cf1c2aee"
+    },
+    {
+      "path": "calculators/pslf-scenario-explorer/index.html",
+      "size": 37981,
+      "sha256": "ad99feb97c6ff22a73cd07ed5fca6e08b5d4bbd2c675c1939261efb17d25b15b"
+    },
+    {
+      "path": "calculators/qsbs-issue-spotter/index.html",
+      "size": 39992,
+      "sha256": "d887778099b39d37f99de0b7fbcc6d033273ebec6e34c69ef5208ec6fddbf08a"
+    },
+    {
+      "path": "calculators/refinance-savings/index.html",
+      "size": 34999,
+      "sha256": "7681c307a0e4bafb6656c5fd68f37cb927f10c14e4829d05f43220badd00d903"
+    },
+    {
+      "path": "calculators/retirement/index.html",
+      "size": 34478,
+      "sha256": "99783c6db77bc083a51134de56a5ce2152a8846cf8053d8e5a0d900be794f9aa"
+    },
+    {
+      "path": "calculators/retirement-savings-growth/index.html",
+      "size": 35227,
+      "sha256": "d1d1dc94dfa69fa6f2a7341a5f2cf6344305ed21c84f9490cd28627e669d27f3"
+    },
+    {
+      "path": "calculators/rmd-estimate/index.html",
+      "size": 34784,
+      "sha256": "2dfaa6a2515936f0106c3d07d320eefdfc760614350449990b861aba1d69ba66"
+    },
+    {
+      "path": "calculators/roth-conversion-tax-cost/index.html",
+      "size": 34688,
+      "sha256": "cdd5a7d176782fe74e5aeb23bd6e541bca46af7bd9f82ba2d9e167a2e768eb2f"
+    },
+    {
+      "path": "calculators/roth-ira-growth/index.html",
+      "size": 39457,
+      "sha256": "b67d934af174b14139d3d46f13dd561c9923e2b9032acffdf3ed98b0c8d670b9"
+    },
+    {
+      "path": "calculators/rsu-withholding-shortfall/index.html",
+      "size": 34716,
+      "sha256": "930f55494a31178009b6394ff3035cdfd28afcbad6617f80abfd77bbe80e89ab"
+    },
+    {
+      "path": "calculators/safe-withdrawal-amount/index.html",
+      "size": 34199,
+      "sha256": "b0d5409c8f4ab07a9ff843bebd0b2a9f7ba88fa20da2f60ac8978453e804ea4a"
+    },
+    {
+      "path": "calculators/savings-cd-growth/index.html",
+      "size": 34218,
+      "sha256": "309fc787db04f5b6ac41f8e7d62b9e4c3adcdbb45e3c8b4e5fa009186af962b2"
+    },
+    {
+      "path": "calculators/social-security/index.html",
+      "size": 32551,
+      "sha256": "eee3d9e7ffb1eea2f81ad59f250d76caa9f891ae20330a9578dc41b739be2351"
+    },
+    {
+      "path": "calculators/social-security-breakeven/index.html",
+      "size": 34395,
+      "sha256": "4b276930fb9dada0a7421b003923bf86c7b1a0f6af4ca025e49990238ec811b8"
+    },
+    {
+      "path": "calculators/tax-refund-estimate/index.html",
+      "size": 35053,
+      "sha256": "f2d0b0b27d9d0d4d65468840b8c99e598ed5a95f66ce847245b848dbd6d658af"
+    },
+    {
+      "path": "calculators/taxes/index.html",
+      "size": 34597,
+      "sha256": "27dccfeedc3bb6087e681f395249d3b15b104730d193c129ced3211c86b7d91e"
+    },
+    {
+      "path": "candidate-build-sha256.json",
+      "size": 30836,
+      "sha256": "120733b4bb142ca06393827c226b4332459f275a561c4d1a34927b104689069a"
+    },
+    {
+      "path": "candidate-build.log",
+      "size": 318,
+      "sha256": "acf474613112e7a4db2836d363961137df1b1ab0684582a55466e32ffe668ffe"
+    },
+    {
+      "path": "cities/index.html",
+      "size": 17918,
+      "sha256": "5bdf21cb14ed75d223303dbb895b35f61d4c95a65dca37cf7461ef351734664e"
+    },
+    {
+      "path": "concierge/index.html",
+      "size": 18253,
+      "sha256": "70852c74b2520005eadbecf1fbba99b86eee08a59728056bd18a304a01167e3f"
+    },
+    {
+      "path": "cookies/index.html",
+      "size": 28028,
+      "sha256": "9d29440e8bd4a36e25b0a506300af622912645e55d0d200028046249e584d479"
+    },
+    {
+      "path": "developers/index.html",
+      "size": 22913,
+      "sha256": "827aa3fc36c5f1dfa5fa668da75ccde98c720fba1873e898c9e57deda5f7ef49"
+    },
+    {
+      "path": "financial-advisor-for-business-owners/index.html",
+      "size": 52437,
+      "sha256": "2df1ec097b0797b2b50fbf483d503781d4d76e8d39703cbf9bf692498fa4dcef"
+    },
+    {
+      "path": "financial-advisor-for-dentists/index.html",
+      "size": 53270,
+      "sha256": "be3e1001d8b60f07a694d9a8486c793a86d4cc8fd7db34bd36adacee699ce84f"
+    },
+    {
+      "path": "financial-advisor-for-physicians/index.html",
+      "size": 54746,
+      "sha256": "0d5b3b71b874cfb6409f53df219108e62d9f025d8736a110fe2d0c39eb33267d"
+    },
+    {
+      "path": "financial-advisor-for-tech-employees/index.html",
+      "size": 51533,
+      "sha256": "d8031ce732fb4bf724c6ddcf9054547960853056f264449eb76ff5f14a229f88"
+    },
+    {
+      "path": "find-a-financial-advisor/10m-plus/index.html",
+      "size": 17791,
+      "sha256": "9cc2a7d8ad52bef6b7c5cdb650494a7f7c972212b4bc8ae4c1562856bfecdfda"
+    },
+    {
+      "path": "find-a-financial-advisor/1m-to-3m/index.html",
+      "size": 17801,
+      "sha256": "8ed360acd64a663056001cce8ff0ac8f52df83989de0e8a29569075f5391af50"
+    },
+    {
+      "path": "find-a-financial-advisor/250k-to-500k/index.html",
+      "size": 17821,
+      "sha256": "591c018615b78710c2dd7222be974d69869c1a94b9bf1bbdfab0a80e61270837"
+    },
+    {
+      "path": "find-a-financial-advisor/3m-to-10m/index.html",
+      "size": 17806,
+      "sha256": "83dfe53534663e5974b65801ecc9d802e4b6212ab90f6c1f300cbaec72eaaf76"
+    },
+    {
+      "path": "find-a-financial-advisor/500k-to-1m/index.html",
+      "size": 17811,
+      "sha256": "80f1bfc58c3409d3eb3189cae3748651bc130c7db8f2c9b0ffcab84ebb2022a1"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner/index.html",
+      "size": 44817,
+      "sha256": "902c3b74e78d45c9e8f16f1700212fd8c7efbcfd65df2aee6c9a15e256d3328f"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/assets/distribution-gate-mobile.svg",
+      "size": 1151,
+      "sha256": "ce62877d7e3a2977d8925286fda5b699792bbb10cbe114a4752c8c42bce417dc"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/assets/distribution-gate.svg",
+      "size": 1930,
+      "sha256": "738ea41cede57a91da464fff3f76b54d3bd44bec913370ead29a481a7a4e1766"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/assets/exposure-map-mobile.svg",
+      "size": 1207,
+      "sha256": "ddf04f52603a7bd1b5e03d378547006eea203931b9c8e264074c55d74a08b86d"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/assets/exposure-map.svg",
+      "size": 1484,
+      "sha256": "709a42b16e1a01258be265a5fd85be06f123328e12baccb73276f3a620a006fd"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/assets/hero-mobile.jpg",
+      "size": 58055,
+      "sha256": "fc2f4d056f3b6f8b7c146bcf5d5bc053360e0c39a154145e52b6bf268d39e509"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/assets/hero.jpg",
+      "size": 191654,
+      "sha256": "329eae8920644bf4f507d79aab9a880cad8b053d9cf652a413013f22a5655076"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/index.html",
+      "size": 49426,
+      "sha256": "72d76972ef4798cf88e21f63a728015ffc11bb0999a46622ed9ac4f1997abd59"
+    },
+    {
+      "path": "find-a-financial-advisor/chicago/index.html",
+      "size": 17800,
+      "sha256": "5421b9822a01f9c7592933a4965f70939085fe625d060da15497c624a5946211"
+    },
+    {
+      "path": "find-a-financial-advisor/dallas/index.html",
+      "size": 17795,
+      "sha256": "2d34c7ded1f1fb966323554bd7e189d880fd0620424f81f25f166d6cacf43d2e"
+    },
+    {
+      "path": "find-a-financial-advisor/executive-professional/index.html",
+      "size": 17871,
+      "sha256": "3bd51b75f6016bf62b4926e27853ff1cecad747a7a51c3aed2806b6e3ef132b1"
+    },
+    {
+      "path": "find-a-financial-advisor/houston/index.html",
+      "size": 17800,
+      "sha256": "2a2b33dc7e1880f27cba4d1c3bc27b14c412895f996f001a8d72b974a58b2b00"
+    },
+    {
+      "path": "find-a-financial-advisor/los-angeles/index.html",
+      "size": 17820,
+      "sha256": "bb37c7257dd25bd908a8a4e794ad1ac597b524f0120b0d48e332b7fd06c01bb6"
+    },
+    {
+      "path": "find-a-financial-advisor/managing-investments/index.html",
+      "size": 17857,
+      "sha256": "461f015a3144a2fb74b7e71cf68b96b7cbc42f434ba08d9444fe8e4bfab61486"
+    },
+    {
+      "path": "find-a-financial-advisor/new-york/index.html",
+      "size": 17805,
+      "sha256": "709651856858d1b187252f02e9b1aa4179fca755b5709c09aacc6035306fcf54"
+    },
+    {
+      "path": "find-a-financial-advisor/recently-received-an-inheritance/index.html",
+      "size": 17917,
+      "sha256": "0dba3835981f64b2015f69965a99531ca116643a0af6b1088588ff7809cead76"
+    },
+    {
+      "path": "find-a-financial-advisor/recently-sold-a-business/index.html",
+      "size": 17877,
+      "sha256": "2f32307d1af5b56bcf2da2feafbe694fa057fdfe4e81933ff189f7809f25ed85"
+    },
+    {
+      "path": "find-a-financial-advisor/retired/index.html",
+      "size": 17792,
+      "sha256": "5ad005e6aa9925003879ec77eeeb0921d994f879e789b7124c41eb1f99c62182"
+    },
+    {
+      "path": "find-a-financial-advisor/retirement-planning/index.html",
+      "size": 17852,
+      "sha256": "3f363c76e95abb87f15571c1948679f5ba707e38afae8e3d3fa606475296d469"
+    },
+    {
+      "path": "find-a-financial-advisor/selling-a-business/index.html",
+      "size": 49833,
+      "sha256": "75fe0836a5a0ec0288dd609f719b075fbd7418f97003b3e32b9a26845d0d9888"
+    },
+    {
+      "path": "find-a-financial-advisor/tax-planning/index.html",
+      "size": 17817,
+      "sha256": "7aa702ec39c3f07a3e4b8d73935b64b8e4659e81e53da946dd78a2bc9e690ee8"
+    },
+    {
+      "path": "find-a-financial-advisor/under-250k/index.html",
+      "size": 17809,
+      "sha256": "10af6def1162f9bcc74fd0881a38b3b35624e5b24b112041ba8875569c7f9bb4"
+    },
+    {
+      "path": "find-your-advisor/index.html",
+      "size": 24965,
+      "sha256": "699ce2a0a5feb0bfb1c6b8e8b0a53dcd3f674aba68b9ba63cdfd6e8e13feea11"
+    },
+    {
+      "path": "for-advisors/index.html",
+      "size": 28023,
+      "sha256": "191ed425f088b72b487a37e9c5453cac6bb0ed85a2d021fb819f055e53780b25"
+    },
+    {
+      "path": "guides/index.html",
+      "size": 27039,
+      "sha256": "0c1adf6eff68d44c0f293ef2a0e04b5e34d8bdfba14ee2286c5968d918ac61d1"
+    },
+    {
+      "path": "index.html",
+      "size": 56368,
+      "sha256": "591a7d98d21de6cf55a6f9943afdf3716d9c18d1b96ac7a8d4e3463faee14222"
+    },
+    {
+      "path": "insights/beneficiary-forms-override-will/index.html",
+      "size": 34724,
+      "sha256": "5125e486048652f754a01ebdcc45bbf0ff4053af328edd070dbfd2581cd55bc1"
+    },
+    {
+      "path": "insights/family-conversation-before-retirement/index.html",
+      "size": 34546,
+      "sha256": "f549b505215ba8b370d4d64015ef3d5a381222ec7d8c396962515349cac23388"
+    },
+    {
+      "path": "insights/market-drop-before-retirement/index.html",
+      "size": 34585,
+      "sha256": "1a886919d75bb67ac21fa2ae82d1223dc19cc03135707547e4299e16c5d7e4be"
+    },
+    {
+      "path": "insights/realistic-withdrawal-rate-today/index.html",
+      "size": 34877,
+      "sha256": "0487f53121343d4723339498e5d43ea2de5327bfc9a672ad77cdd96b3a6bb8b0"
+    },
+    {
+      "path": "insights/rsus-bonus-not-lottery-ticket/index.html",
+      "size": 34266,
+      "sha256": "730406d1dc488270ad3e99c41db8baa811f00720d3659d746be76b524d3a8f91"
+    },
+    {
+      "path": "insights/when-roth-conversion-worth-tax-bill/index.html",
+      "size": 34620,
+      "sha256": "4938903f991333d6fecb1a203f6fcf1b3e17f7702ad39146e6a128cc28f9124d"
+    },
+    {
+      "path": "llms-full.txt",
+      "size": 446672,
+      "sha256": "f6414f093fd09d419a18ee7a633194e14e36deb5561f23dad6408db72570c2fe"
+    },
+    {
+      "path": "llms.txt",
+      "size": 12295,
+      "sha256": "fa9a750e7a9f87b943f09465c48428f594ab22718a51b5fcc56420c24bf99917"
+    },
+    {
+      "path": "ops/apps-script.gs",
+      "size": 6282,
+      "sha256": "ddce66884a9aa2ce94c5250db8ada1911e09d961ac681e76ecce81a2ee7b85f2"
+    },
+    {
+      "path": "privacy/index.html",
+      "size": 33500,
+      "sha256": "b0ea273b4e374e6f625dc72acedbc99284a7c066bfbbe7031e54cce796984472"
+    },
+    {
+      "path": "professions/index.html",
+      "size": 17943,
+      "sha256": "e2020e85a94e76b9e1312a349152b5a63b2b800ee74ac77415b67ff8f76cfd1d"
+    },
+    {
+      "path": "robots.txt",
+      "size": 70,
+      "sha256": "9037bb1de25323c7bb0fd3a9f325e43ab48405b15121957b67e8211e5c94cb51"
+    },
+    {
+      "path": "sitemap.xml",
+      "size": 6931,
+      "sha256": "7266443debf32ee55f26ee947c07d946c53efef1369562e7cebda86ff9ee7e61"
+    },
+    {
+      "path": "specialties/index.html",
+      "size": 17943,
+      "sha256": "0cb7fac1ea81679418bcac9aa5338aa342a9d06b5be9aeaf80b769bfa5bc773d"
+    },
+    {
+      "path": "team/index.html",
+      "size": 50132,
+      "sha256": "0285c93252f228ae2a44c2d02089ad24de1308079c4fb589d80ac2cb53e3993e"
+    },
+    {
+      "path": "terms/index.html",
+      "size": 35270,
+      "sha256": "0fd936393f3ac4d9219e62b54f25cc459da3873b50a7edcf2f83260fb451c626"
+    },
+    {
+      "path": "top-financial-advisors/arizona/index.html",
+      "size": 17786,
+      "sha256": "b9ae6fe58a50294c76b3bab8fbcff1ce920c0c8bd75e6b94b784578e07fa4b3d"
+    },
+    {
+      "path": "top-financial-advisors/california/index.html",
+      "size": 17801,
+      "sha256": "863f49c8d3194f869a607e03e339ede413656558cd9815cdd7a87b4360d74334"
+    },
+    {
+      "path": "top-financial-advisors/colorado/index.html",
+      "size": 17791,
+      "sha256": "c343783e386cf42fbea1e1a1106487ff20a925cecae86d20c63374ad6e45eaf4"
+    },
+    {
+      "path": "top-financial-advisors/district-of-columbia/index.html",
+      "size": 17851,
+      "sha256": "7175f656a7dbccd7c1ba8dd7c7ce045603dce75f7c4355534d20b002dd695989"
+    },
+    {
+      "path": "top-financial-advisors/florida/index.html",
+      "size": 17786,
+      "sha256": "9506e53ba5494010ee1ab77a270224c07970a796f454218854a66186bbd54e50"
+    },
+    {
+      "path": "top-financial-advisors/index.html",
+      "size": 17782,
+      "sha256": "c6042a7c17c1291f474d8239783dcf8c5b54d87f59ebadccd09ba14e294933fd"
+    },
+    {
+      "path": "vercel.json",
+      "size": 315,
+      "sha256": "4b791ba86ef87ee6ae9b25baec3e5e392f9c8ebb9b63f934fe42ce2d00b0de23"
+    }
+  ],
+  "deltas": [
+    {
+      "path": "_build/partials.py",
+      "before_sha256": "57f6567346476c4503587abf50561d729b8c358a69e1ef0538a0d00f70efceff",
+      "after_sha256": "f370419a5ca997978200a134eb5c017117a2db11b14e201f059d01819da4f26f"
+    },
+    {
+      "path": "asset-types/index.html",
+      "before_sha256": "78364e138f6483ae9945c593425ecea2289bb9d0f06f7b9b043d7e043e1ae8d8",
+      "after_sha256": "6e5652d96391f0eeda709329146a29a6f0904e18fae242b87ee66a16bbce9017"
+    },
+    {
+      "path": "calculators/401k-contribution-limit/index.html",
+      "before_sha256": "b043c615298ce3e64c759752cab2c9c72828c620f01639fd7fb1ce18cde55209",
+      "after_sha256": "e725e623fa13cc5a563a7f3131dcb52fc15b22979326934d0c5f9fe98d8de468"
+    },
+    {
+      "path": "calculators/401k-growth/index.html",
+      "before_sha256": "7680352d534e76ee1111198a4c5d5d8b2b888e97253c9936afde385b97164127",
+      "after_sha256": "50e0bb62d1f441574d83a84d060ed5d14dc9fe2401305e05baddd2d2bbf833d2"
+    },
+    {
+      "path": "calculators/asset-allocation-guide/index.html",
+      "before_sha256": "6e6e1df5512579c6e2616de5310cc9ce8e10bb6b3009dbcd700c8d52b6c416dc",
+      "after_sha256": "f4739659c1484f9096e25ddfe5923dd279283e25215cd3851043c25c715dabd6"
+    },
+    {
+      "path": "calculators/banking/index.html",
+      "before_sha256": "d5bffc84d074c92c56e1529d6a29311d681c4629932d21e8965ca01a8958e286",
+      "after_sha256": "763bf6a3e7636a4db7e368edd3281dab810636739e0cd3bca57bb1dbbb5c1762"
+    },
+    {
+      "path": "calculators/budget-50-30-20/index.html",
+      "before_sha256": "bf65455fa4ace63e5b8b764b945bb66d130776c0dca9fc3cb2ddd755f0ddfd30",
+      "after_sha256": "304d8a71c9a55bd7c0833c0378148d797d21605c4b1db2a1ed1d61c9ffeffd9a"
+    },
+    {
+      "path": "calculators/capital-gains-tax-estimate/index.html",
+      "before_sha256": "55222a8a48f03cc14331adcd86a316276348190a55a07f1216362a05c9314135",
+      "after_sha256": "914b051b49e42deb8049f178a77bd428578c98ef3901cca856a0c21f081f3d3d"
+    },
+    {
+      "path": "calculators/closing-costs-estimate/index.html",
+      "before_sha256": "a3bc5c9a83b0c0d353334e29fd76eaf4aba81b8bce6db14dccbff133ede845aa",
+      "after_sha256": "862efe46800623390df57676a87eb497e32b17300a7dd3b71a86f5db869a3283"
+    },
+    {
+      "path": "calculators/compound-interest/index.html",
+      "before_sha256": "6e89d2508c612e7075dba76c17a92bf3a09080e0cda3e9af9dea0d57318513ed",
+      "after_sha256": "28683c3755e598445ded4973f60c08cf003602b385ecbcce458dc8ec6f98afd6"
+    },
+    {
+      "path": "calculators/concentration-diversification-timeline/index.html",
+      "before_sha256": "21f96e55d7eae024029baf4b190886a8e956ea24695d547ce5dad1370ba4393f",
+      "after_sha256": "e58a5b07be01194555092196c1c776a966e0b918d61f8bb3759cf3863bd9fe59"
+    },
+    {
+      "path": "calculators/delayed-retirement-credit/index.html",
+      "before_sha256": "2e8565fef636080bbb6f26cdd08bb59677908b8e4adde29556644ed7ef8b54b8",
+      "after_sha256": "c38760a12d5eef6f41fcaed4e0fcb1e8d08288441cba41f078902edc8d2bb5c1"
+    },
+    {
+      "path": "calculators/equity-compensation/index.html",
+      "before_sha256": "61b5c3db6f235c56d785a4bb6d67202030ca659e795f510b6bca9ee8bcb19160",
+      "after_sha256": "430d22e72d572b37fc5f7f8465d8f0f0ed67defeaa2ec1fa7dcb0ce557c710d6"
+    },
+    {
+      "path": "calculators/financial-advisor-value/index.html",
+      "before_sha256": "34c821aeffeb25e5ee61413c04ca7697c59f0762ef471d76d32f9899f0870584",
+      "after_sha256": "9f0198eb723a09df5138420cd100b183d52d6888cfdaf392c4609600857fb739"
+    },
+    {
+      "path": "calculators/home-&-mortgage/index.html",
+      "before_sha256": "6e609b81228d578d53f72c11b09aa49cd719ce3d832c513e45b07bbb2e3e06fc",
+      "after_sha256": "68ee3504614f08898e8b59a934606ad647b55878014886461f5940b17b0bf61f"
+    },
+    {
+      "path": "calculators/home-affordability/index.html",
+      "before_sha256": "aa536840dee81924b769943fc83a1878c41e8831c3ec1d414c425e15ea6a7de6",
+      "after_sha256": "dca2fc5bb6a87d318a8a63fbe3297f9a5b08a6dd363f68b8822e644c02506e4f"
+    },
+    {
+      "path": "calculators/how-long-savings-will-last/index.html",
+      "before_sha256": "0f9677623c104b37c2cc3634d1d2a9a486d29898a2961f15f84a8cad88d080bf",
+      "after_sha256": "d465e64eff9a75507637292bea281a715ad10db21e474dfe365ed6f9cbf9ca7f"
+    },
+    {
+      "path": "calculators/income-tax-estimate/index.html",
+      "before_sha256": "665dafb7071394cc4cb1b02ccf0a0e31f38a688e76a533729ad9e71d6e2c649e",
+      "after_sha256": "4be62f9cc78e03687a6ee8a6c28b68e2432740fcfcac8159c234b44038fff69c"
+    },
+    {
+      "path": "calculators/index.html",
+      "before_sha256": "5e750cfd4e8ce823ffc207547c2c9ce92ceada43f30ce46c0b4ae5555d351b6d",
+      "after_sha256": "9e0c60c655c42c957eb521fc1e3647dd4ae92d49e73d8a4b095b0e5d4841cb63"
+    },
+    {
+      "path": "calculators/inflation-calculator/index.html",
+      "before_sha256": "c65fd4d0190e9a60549352bef944783e294922774bc485d2e5b5975a6cd90049",
+      "after_sha256": "83a398ed79395a6f56e385af8088edde051d3758d54b98ebf8bcdbed63ebfa43"
+    },
+    {
+      "path": "calculators/investing/index.html",
+      "before_sha256": "578f696accf04f0c1a3df793058e1e3b2058e837b5680bcdfec83eedae756d33",
+      "after_sha256": "0212fe088b1912dd03605005bbabe0394c159f9405957a4fbb621ae0de195a5e"
+    },
+    {
+      "path": "calculators/investment-future-value/index.html",
+      "before_sha256": "66b4aaae3e08dc17cd4770cec1435804c35ccc07985edd1b93a77880394508dc",
+      "after_sha256": "8ddcd495ea3260215ca2de20b75e0707411b8cdf93d8a121b053de8a6d8f9f07"
+    },
+    {
+      "path": "calculators/iso-exercise-cost/index.html",
+      "before_sha256": "74f172cb174a6695e4ddb0dcd178198353ffc3c23b20c0cf2cd461305f90cd18",
+      "after_sha256": "923ce5f67cbbac5df6244c3ac829c53da2f5abae08dc957d30906859b4015415"
+    },
+    {
+      "path": "calculators/mortgage-calculator/index.html",
+      "before_sha256": "e9bf3c816d326667d40e5e2e693bde8ab46b90289bd9115a65d2ee8736b86a9e",
+      "after_sha256": "0b8b6f999c4407e7a1597d0b602d46d2b0a14432bf9bbc2ccf775d8566315d03"
+    },
+    {
+      "path": "calculators/paycheck-calculator/index.html",
+      "before_sha256": "687fdf885e262c9df9bd4b0b97539d5b7188a530464214be11f1ad2870e1cfb3",
+      "after_sha256": "0a51b1c7145dee9ab1de1861606a35a972d7c09cfae85bbc8ad93da5e552f0f1"
+    },
+    {
+      "path": "calculators/property-tax-estimate/index.html",
+      "before_sha256": "8721a7b3ee52892d0ae6779a1ba7bec80a874ec0e4cf68330ad5619603508f18",
+      "after_sha256": "a817f27a4265c4f5f7ebb0c235f959cc5259fb950339098fe81b6854cf1c2aee"
+    },
+    {
+      "path": "calculators/pslf-scenario-explorer/index.html",
+      "before_sha256": "1b6f05a4f10545db25cd41e576cb40c31d8ae0e0221bd654e249139cca4fc570",
+      "after_sha256": "ad99feb97c6ff22a73cd07ed5fca6e08b5d4bbd2c675c1939261efb17d25b15b"
+    },
+    {
+      "path": "calculators/qsbs-issue-spotter/index.html",
+      "before_sha256": "ebb95686ecb13c1c6504d5d815a61cad303498e4b03855e41fd49b7ed6223e2e",
+      "after_sha256": "d887778099b39d37f99de0b7fbcc6d033273ebec6e34c69ef5208ec6fddbf08a"
+    },
+    {
+      "path": "calculators/refinance-savings/index.html",
+      "before_sha256": "ecea3f7361ee7a0e05da85e8ed05461424ea6571f9a04d2b39f3aaec06f5c71f",
+      "after_sha256": "7681c307a0e4bafb6656c5fd68f37cb927f10c14e4829d05f43220badd00d903"
+    },
+    {
+      "path": "calculators/retirement/index.html",
+      "before_sha256": "c10612013a428a8342766b5765696fe712b254c2de294ba0f83526fb2a3afb3d",
+      "after_sha256": "99783c6db77bc083a51134de56a5ce2152a8846cf8053d8e5a0d900be794f9aa"
+    },
+    {
+      "path": "calculators/retirement-savings-growth/index.html",
+      "before_sha256": "387958653c650d64969de11f653eee5d5d5d87d215a8e276595e7b00d024cf3c",
+      "after_sha256": "d1d1dc94dfa69fa6f2a7341a5f2cf6344305ed21c84f9490cd28627e669d27f3"
+    },
+    {
+      "path": "calculators/rmd-estimate/index.html",
+      "before_sha256": "8c061ff8a0a3418b7fcff0b40d986b9430a9c710777245d8c55f184e01e324b7",
+      "after_sha256": "2dfaa6a2515936f0106c3d07d320eefdfc760614350449990b861aba1d69ba66"
+    },
+    {
+      "path": "calculators/roth-conversion-tax-cost/index.html",
+      "before_sha256": "ff73ea36b7a22b08ef15a9eaf69b84082d0f2b4ae7ccc4f087665b6de316aeb9",
+      "after_sha256": "cdd5a7d176782fe74e5aeb23bd6e541bca46af7bd9f82ba2d9e167a2e768eb2f"
+    },
+    {
+      "path": "calculators/roth-ira-growth/index.html",
+      "before_sha256": "5ee8d8cbec3829a742ad9124d43e8dd6294aab119cd5548f9eef564e7e6eba14",
+      "after_sha256": "b67d934af174b14139d3d46f13dd561c9923e2b9032acffdf3ed98b0c8d670b9"
+    },
+    {
+      "path": "calculators/rsu-withholding-shortfall/index.html",
+      "before_sha256": "afbeb2960b6476a6dae2f8ec58a5132bd9db025ba1f129e5774a7f35d221793f",
+      "after_sha256": "930f55494a31178009b6394ff3035cdfd28afcbad6617f80abfd77bbe80e89ab"
+    },
+    {
+      "path": "calculators/safe-withdrawal-amount/index.html",
+      "before_sha256": "a46c82c6785a3a00066121eafb17c2f0bdcf139c2c99befb2eb5c9460d7c11bc",
+      "after_sha256": "b0d5409c8f4ab07a9ff843bebd0b2a9f7ba88fa20da2f60ac8978453e804ea4a"
+    },
+    {
+      "path": "calculators/savings-cd-growth/index.html",
+      "before_sha256": "39f55c7bb622ab118ab60ba3b63b91ffd00f0eb76964db0d8c987c4f0c500314",
+      "after_sha256": "309fc787db04f5b6ac41f8e7d62b9e4c3adcdbb45e3c8b4e5fa009186af962b2"
+    },
+    {
+      "path": "calculators/social-security/index.html",
+      "before_sha256": "2f9cf5e3fcccc4203012e1ef9f7d676f38c6391ed5abc60dea4ac06acb176473",
+      "after_sha256": "eee3d9e7ffb1eea2f81ad59f250d76caa9f891ae20330a9578dc41b739be2351"
+    },
+    {
+      "path": "calculators/social-security-breakeven/index.html",
+      "before_sha256": "4e62999f143c4e13a81d9777fff65946b905333d0a1554bc4a14b563f775fa65",
+      "after_sha256": "4b276930fb9dada0a7421b003923bf86c7b1a0f6af4ca025e49990238ec811b8"
+    },
+    {
+      "path": "calculators/tax-refund-estimate/index.html",
+      "before_sha256": "bb699c8698aa303329c6e613f624f82811ab5003f214eed662c370bc0ccf3d31",
+      "after_sha256": "f2d0b0b27d9d0d4d65468840b8c99e598ed5a95f66ce847245b848dbd6d658af"
+    },
+    {
+      "path": "calculators/taxes/index.html",
+      "before_sha256": "8aefaa578697e9c1b75dca279d3ceae65eb13f9b732a331a6b3f99e81d931c6d",
+      "after_sha256": "27dccfeedc3bb6087e681f395249d3b15b104730d193c129ced3211c86b7d91e"
+    },
+    {
+      "path": "cities/index.html",
+      "before_sha256": "ef32d18b385dbc3354775b362e4f625fb011a4cf518f7725588cdeaae6361e6e",
+      "after_sha256": "5bdf21cb14ed75d223303dbb895b35f61d4c95a65dca37cf7461ef351734664e"
+    },
+    {
+      "path": "concierge/index.html",
+      "before_sha256": "ad7e9960816ceb693489ba3318b237050e9945d82d6d35abb6d30c9e6ca9d08c",
+      "after_sha256": "70852c74b2520005eadbecf1fbba99b86eee08a59728056bd18a304a01167e3f"
+    },
+    {
+      "path": "cookies/index.html",
+      "before_sha256": "3fc3b7e6c66ea86d80192e192e670c7a020a24114452e036358ab83e93b24557",
+      "after_sha256": "9d29440e8bd4a36e25b0a506300af622912645e55d0d200028046249e584d479"
+    },
+    {
+      "path": "developers/index.html",
+      "before_sha256": "eb5adb24d84c0ac96724cf474f4ca171df5f25853fa0a30ecccb513c26e97d87",
+      "after_sha256": "827aa3fc36c5f1dfa5fa668da75ccde98c720fba1873e898c9e57deda5f7ef49"
+    },
+    {
+      "path": "financial-advisor-for-business-owners/index.html",
+      "before_sha256": "8d3d6cb0f649dcc63ea4d46ed125dc64fda080c13a2f7cc1b2bd16237e9ca430",
+      "after_sha256": "2df1ec097b0797b2b50fbf483d503781d4d76e8d39703cbf9bf692498fa4dcef"
+    },
+    {
+      "path": "financial-advisor-for-dentists/index.html",
+      "before_sha256": "fb16047d409648b55b251d4c9c3ee6580d5d40e64b0942338fc653e3ff89301a",
+      "after_sha256": "be3e1001d8b60f07a694d9a8486c793a86d4cc8fd7db34bd36adacee699ce84f"
+    },
+    {
+      "path": "financial-advisor-for-physicians/index.html",
+      "before_sha256": "9726613fe7da22d7f233b7f5b04244e5222a92c6248dfab5a0163db3e98bf78e",
+      "after_sha256": "0d5b3b71b874cfb6409f53df219108e62d9f025d8736a110fe2d0c39eb33267d"
+    },
+    {
+      "path": "financial-advisor-for-tech-employees/index.html",
+      "before_sha256": "43487cc281845436cae8bd3218c03ae06c92c4c964e05b825c3e939c4b4484bc",
+      "after_sha256": "d8031ce732fb4bf724c6ddcf9054547960853056f264449eb76ff5f14a229f88"
+    },
+    {
+      "path": "find-a-financial-advisor/10m-plus/index.html",
+      "before_sha256": "dd15be9b68248169e15e9c48633d8143bdedae7644a0724be2883b3edc44e6a4",
+      "after_sha256": "9cc2a7d8ad52bef6b7c5cdb650494a7f7c972212b4bc8ae4c1562856bfecdfda"
+    },
+    {
+      "path": "find-a-financial-advisor/1m-to-3m/index.html",
+      "before_sha256": "fe6af80787f93f40c0d4058627f198c2e910df870cc748e08ae00b5708955e77",
+      "after_sha256": "8ed360acd64a663056001cce8ff0ac8f52df83989de0e8a29569075f5391af50"
+    },
+    {
+      "path": "find-a-financial-advisor/250k-to-500k/index.html",
+      "before_sha256": "0fcc2076d282812c3f6a744cf042f956308cbb2a744199592373a4ede7a291d3",
+      "after_sha256": "591c018615b78710c2dd7222be974d69869c1a94b9bf1bbdfab0a80e61270837"
+    },
+    {
+      "path": "find-a-financial-advisor/3m-to-10m/index.html",
+      "before_sha256": "d48cd0f8521a92ce420513cf5a07fdb415e10a4437cdd864825dbc4e38c4f682",
+      "after_sha256": "83dfe53534663e5974b65801ecc9d802e4b6212ab90f6c1f300cbaec72eaaf76"
+    },
+    {
+      "path": "find-a-financial-advisor/500k-to-1m/index.html",
+      "before_sha256": "0a2dba24f7ef04c116f8078726229a428f0d7434504f1dd4537a369479432d7b",
+      "after_sha256": "80f1bfc58c3409d3eb3189cae3748651bc130c7db8f2c9b0ffcab84ebb2022a1"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner/index.html",
+      "before_sha256": "c43346c818ed05c26969f17e9cc9d8acb8797ac926021d6290842b3f3ea4f641",
+      "after_sha256": "902c3b74e78d45c9e8f16f1700212fd8c7efbcfd65df2aee6c9a15e256d3328f"
+    },
+    {
+      "path": "find-a-financial-advisor/business-owner-wealth-planning/index.html",
+      "before_sha256": "7998e836d4a6c383c6d6777a32f8e67b4e61139a6299318135067ddb4102d5d3",
+      "after_sha256": "72d76972ef4798cf88e21f63a728015ffc11bb0999a46622ed9ac4f1997abd59"
+    },
+    {
+      "path": "find-a-financial-advisor/chicago/index.html",
+      "before_sha256": "13b6793b5f179a6a0df2747fd462b40118f464dea79018c31e5d4bf75233a8ed",
+      "after_sha256": "5421b9822a01f9c7592933a4965f70939085fe625d060da15497c624a5946211"
+    },
+    {
+      "path": "find-a-financial-advisor/dallas/index.html",
+      "before_sha256": "ad44c6c377167386af6d92c4fba4bba16cbde8557954b543e7d66d341c4adbdd",
+      "after_sha256": "2d34c7ded1f1fb966323554bd7e189d880fd0620424f81f25f166d6cacf43d2e"
+    },
+    {
+      "path": "find-a-financial-advisor/executive-professional/index.html",
+      "before_sha256": "978379b17a5d47180f02e1459843eb199f5f72eb12fc0b75257d55e149ffdb0e",
+      "after_sha256": "3bd51b75f6016bf62b4926e27853ff1cecad747a7a51c3aed2806b6e3ef132b1"
+    },
+    {
+      "path": "find-a-financial-advisor/houston/index.html",
+      "before_sha256": "df96ad9b126e1a0c4f6497e67eb677c718ab116e857fa8b52a422805feac982c",
+      "after_sha256": "2a2b33dc7e1880f27cba4d1c3bc27b14c412895f996f001a8d72b974a58b2b00"
+    },
+    {
+      "path": "find-a-financial-advisor/los-angeles/index.html",
+      "before_sha256": "c468255f7dbc076d4a2bf687976194ac25195091dc1e716cdd5f685b2bbcdbca",
+      "after_sha256": "bb37c7257dd25bd908a8a4e794ad1ac597b524f0120b0d48e332b7fd06c01bb6"
+    },
+    {
+      "path": "find-a-financial-advisor/managing-investments/index.html",
+      "before_sha256": "d0a050c4764ef31483ff8c446750b77a14869794cae80f14ac28d432a3f5df0b",
+      "after_sha256": "461f015a3144a2fb74b7e71cf68b96b7cbc42f434ba08d9444fe8e4bfab61486"
+    },
+    {
+      "path": "find-a-financial-advisor/new-york/index.html",
+      "before_sha256": "995fff5d2db95f5f4b38b315b4e8192fc481c4c1932e6ac60d9eb4921e9169b0",
+      "after_sha256": "709651856858d1b187252f02e9b1aa4179fca755b5709c09aacc6035306fcf54"
+    },
+    {
+      "path": "find-a-financial-advisor/recently-received-an-inheritance/index.html",
+      "before_sha256": "9283af11c8408f5f160cc9ab1eb35f99496f605cd7072e6aefdf341c82e0aa52",
+      "after_sha256": "0dba3835981f64b2015f69965a99531ca116643a0af6b1088588ff7809cead76"
+    },
+    {
+      "path": "find-a-financial-advisor/recently-sold-a-business/index.html",
+      "before_sha256": "62e88bfc1fa971b5a9f8646584c672e47755c3bce937a2bd054e5c8da08bb61d",
+      "after_sha256": "2f32307d1af5b56bcf2da2feafbe694fa057fdfe4e81933ff189f7809f25ed85"
+    },
+    {
+      "path": "find-a-financial-advisor/retired/index.html",
+      "before_sha256": "2b92cbcb9ed26814e158a137084ae44a9363b3a35ecdfb701b7b44a358ee7801",
+      "after_sha256": "5ad005e6aa9925003879ec77eeeb0921d994f879e789b7124c41eb1f99c62182"
+    },
+    {
+      "path": "find-a-financial-advisor/retirement-planning/index.html",
+      "before_sha256": "0d14f5d43a32abaea4e393fa91ae3c65ad10cd52b1d7f36d47b5af835e6f1523",
+      "after_sha256": "3f363c76e95abb87f15571c1948679f5ba707e38afae8e3d3fa606475296d469"
+    },
+    {
+      "path": "find-a-financial-advisor/selling-a-business/index.html",
+      "before_sha256": "fc083091ac953e1a48ad73f2eea20f625dafd867c29d43ec57defed1be3fa587",
+      "after_sha256": "75fe0836a5a0ec0288dd609f719b075fbd7418f97003b3e32b9a26845d0d9888"
+    },
+    {
+      "path": "find-a-financial-advisor/tax-planning/index.html",
+      "before_sha256": "7fc70d6718ce4e3f24af951b710095aae46d002294dd04b46ff818cc6a3c438b",
+      "after_sha256": "7aa702ec39c3f07a3e4b8d73935b64b8e4659e81e53da946dd78a2bc9e690ee8"
+    },
+    {
+      "path": "find-a-financial-advisor/under-250k/index.html",
+      "before_sha256": "a3fc33111cab63d99907ccb9bd3a33d6af7ae5c6bc2bb20f22b90e7bf76df28e",
+      "after_sha256": "10af6def1162f9bcc74fd0881a38b3b35624e5b24b112041ba8875569c7f9bb4"
+    },
+    {
+      "path": "find-your-advisor/index.html",
+      "before_sha256": "e217fed12d5e2b265576bdc511bb4e0e0ed47ea8f4addf80ce3ae33a94c8dd55",
+      "after_sha256": "699ce2a0a5feb0bfb1c6b8e8b0a53dcd3f674aba68b9ba63cdfd6e8e13feea11"
+    },
+    {
+      "path": "for-advisors/index.html",
+      "before_sha256": "72595e13d5c6af9d666d4373733d6d6c8327ec136d72d07a6aacde90691affc1",
+      "after_sha256": "191ed425f088b72b487a37e9c5453cac6bb0ed85a2d021fb819f055e53780b25"
+    },
+    {
+      "path": "guides/index.html",
+      "before_sha256": "8d2ceac1d06f5ac927ea1d228c13b771ca21fffbe5714a1f03e0c1f2ffe781e4",
+      "after_sha256": "0c1adf6eff68d44c0f293ef2a0e04b5e34d8bdfba14ee2286c5968d918ac61d1"
+    },
+    {
+      "path": "index.html",
+      "before_sha256": "f1f59055a580712b12695643a7c13d2efa4c2512e0bdfe31e47b040fb4e598a9",
+      "after_sha256": "591a7d98d21de6cf55a6f9943afdf3716d9c18d1b96ac7a8d4e3463faee14222"
+    },
+    {
+      "path": "insights/beneficiary-forms-override-will/index.html",
+      "before_sha256": "53a3ac6a4b2f9cc89c064b36377aa074d86370e0ac73575a9572e917dd62f9e9",
+      "after_sha256": "5125e486048652f754a01ebdcc45bbf0ff4053af328edd070dbfd2581cd55bc1"
+    },
+    {
+      "path": "insights/family-conversation-before-retirement/index.html",
+      "before_sha256": "6b702a9a2567702c4bed2c8f3d00535b71aa5dfef2719c343047bc9466bb9db6",
+      "after_sha256": "f549b505215ba8b370d4d64015ef3d5a381222ec7d8c396962515349cac23388"
+    },
+    {
+      "path": "insights/market-drop-before-retirement/index.html",
+      "before_sha256": "36f291695a777a64a82e16c36ecbe4ac4d315988aeaa481e78946c08e8cd1fb0",
+      "after_sha256": "1a886919d75bb67ac21fa2ae82d1223dc19cc03135707547e4299e16c5d7e4be"
+    },
+    {
+      "path": "insights/realistic-withdrawal-rate-today/index.html",
+      "before_sha256": "0adf3141653f76385e2398c54d1dd4402ee52df6659768753a1ce6e79227cc50",
+      "after_sha256": "0487f53121343d4723339498e5d43ea2de5327bfc9a672ad77cdd96b3a6bb8b0"
+    },
+    {
+      "path": "insights/rsus-bonus-not-lottery-ticket/index.html",
+      "before_sha256": "cdcb52dbf484ccef421210666ed5da83823ae4e9bec23b86ed23f09885bd4db7",
+      "after_sha256": "730406d1dc488270ad3e99c41db8baa811f00720d3659d746be76b524d3a8f91"
+    },
+    {
+      "path": "insights/when-roth-conversion-worth-tax-bill/index.html",
+      "before_sha256": "771ae3cd9df6f22c9f1a538fd8ec34ca0a001ac0407093b89a73d22b2ad94e15",
+      "after_sha256": "4938903f991333d6fecb1a203f6fcf1b3e17f7702ad39146e6a128cc28f9124d"
+    },
+    {
+      "path": "privacy/index.html",
+      "before_sha256": "82e855b9a5c27ee48304b021461b309efb9b394362a87c055749fb8a6c1421b6",
+      "after_sha256": "b0ea273b4e374e6f625dc72acedbc99284a7c066bfbbe7031e54cce796984472"
+    },
+    {
+      "path": "professions/index.html",
+      "before_sha256": "3985d9a8d0d0f677dc26387468581dc9813293b883b3325b6358c4ac671127af",
+      "after_sha256": "e2020e85a94e76b9e1312a349152b5a63b2b800ee74ac77415b67ff8f76cfd1d"
+    },
+    {
+      "path": "specialties/index.html",
+      "before_sha256": "0426d5776155c8fa58183be14fc8910dc50eade9a92f9f9dea4c9664a6c0d6fc",
+      "after_sha256": "0cb7fac1ea81679418bcac9aa5338aa342a9d06b5be9aeaf80b769bfa5bc773d"
+    },
+    {
+      "path": "team/index.html",
+      "before_sha256": "9f12353e1c0decbb2f38e6237d512f18f87464e223243a306670a918a09a2bb7",
+      "after_sha256": "0285c93252f228ae2a44c2d02089ad24de1308079c4fb589d80ac2cb53e3993e"
+    },
+    {
+      "path": "terms/index.html",
+      "before_sha256": "6500cffd413cd481ba99ceaa879196496c61cba793d78b6d95b0031f0200b9f6",
+      "after_sha256": "0fd936393f3ac4d9219e62b54f25cc459da3873b50a7edcf2f83260fb451c626"
+    },
+    {
+      "path": "top-financial-advisors/arizona/index.html",
+      "before_sha256": "20cf2ff14f21a7284dac88211d0b9752c25cbd49fe3939dfcbe43858275bb978",
+      "after_sha256": "b9ae6fe58a50294c76b3bab8fbcff1ce920c0c8bd75e6b94b784578e07fa4b3d"
+    },
+    {
+      "path": "top-financial-advisors/california/index.html",
+      "before_sha256": "c210547a7a2543689acd9c055c665c14a073f41ce8b7443e2036a2911b06861f",
+      "after_sha256": "863f49c8d3194f869a607e03e339ede413656558cd9815cdd7a87b4360d74334"
+    },
+    {
+      "path": "top-financial-advisors/colorado/index.html",
+      "before_sha256": "fa0e1f89f176d8f619ce43f3c82fdfd3050fbbb6ffdb8d8ad83c787f9cc51deb",
+      "after_sha256": "c343783e386cf42fbea1e1a1106487ff20a925cecae86d20c63374ad6e45eaf4"
+    },
+    {
+      "path": "top-financial-advisors/district-of-columbia/index.html",
+      "before_sha256": "737e2ccd49082d54634817c6f9a1b7cab8cae38746d73087df957c0a4e177463",
+      "after_sha256": "7175f656a7dbccd7c1ba8dd7c7ce045603dce75f7c4355534d20b002dd695989"
+    },
+    {
+      "path": "top-financial-advisors/florida/index.html",
+      "before_sha256": "75ea35698e066151402a3d340ea18934497090e9aa9fe448fb109f7bbd181c0b",
+      "after_sha256": "9506e53ba5494010ee1ab77a270224c07970a796f454218854a66186bbd54e50"
+    },
+    {
+      "path": "top-financial-advisors/index.html",
+      "before_sha256": "6b9de69684eafb954e745710c87575683c233a549052713e38968a28a6e40a09",
+      "after_sha256": "c6042a7c17c1291f474d8239783dcf8c5b54d87f59ebadccd09ba14e294933fd"
+    }
+  ],
+  "removed": []
+}

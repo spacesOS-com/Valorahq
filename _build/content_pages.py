@@ -97,7 +97,7 @@ def _inline_cta(cta):
     <div class="content-page__cta">
       <h3>{escape(cta['heading'])}</h3>
       <p>{escape(cta.get('body', ''))}</p>
-      <a class="btn btn--dark" href="{escape(cta['href'])}" data-gate-open>{escape(cta.get('button_label', 'Get started'))}</a>
+      <a class="btn btn--dark" href="{escape(_rel(cta['href']))}" data-gate-open>{escape(cta.get('button_label', 'Get started'))}</a>
     </div>"""
 
 
@@ -107,6 +107,14 @@ _CALC_TITLES = {c["slug"]: c["title"] for c in CALCULATORS}
 def _calc_link_label(url):
     slug = url.rstrip("/").rsplit("/", 1)[-1]
     return _CALC_TITLES.get(slug, slug.replace("-", " ").capitalize())
+
+
+def _rel(u):
+    # Same-origin pack links/embeds stay origin-relative so preview and prod both
+    # resolve against the serving origin (Maya v7b blocker class: absolute prod
+    # URLs 404 inside previews and leak stale prod into held packs).
+    prefix = "https://www.valorahq.com"
+    return u[len(prefix):] if isinstance(u, str) and u.startswith(prefix) else u
 
 
 def _calculators(pack):
@@ -121,15 +129,16 @@ def _calculators(pack):
     embed_url = ""
     if prim.get("type") == "existing":
         embed_url = prim.get("url") or ("/calculators/%s/" % prim["slug"] if prim.get("slug") else "")
-        if embed_url.startswith("/"):
-            embed_url = "https://www.valorahq.com" + embed_url
+        # Origin-relative stays origin-relative: the embed must resolve against
+        # whatever origin serves the page (preview gate or prod), never hard-coded
+        # to prod (Maya's dentist-v6 blocker: absolute prod URL 404'd inside the frame).
     name = prim.get("name") or (_calc_link_label(embed_url) if embed_url else "Calculator")
     iframe = ""
     if embed_url:
         iframe = (f'<iframe src="{escape(embed_url)}?embed=1" loading="lazy" '
                   f'title="{escape(name)}" data-calc-embed></iframe>')
     links = "".join(
-        f'<li><a href="{escape(u)}">{escape(_calc_link_label(u))}</a></li>'
+        f'<li><a href="{escape(_rel(u))}">{escape(_calc_link_label(u))}</a></li>'
         for u in (calc.get("related_links") or [])
     )
     links_html = (f'<div class="calc-block__links">Related calculators:<ul>{links}</ul></div>'
@@ -141,7 +150,7 @@ def _calculators(pack):
   <p class="calc-block__sub">Illustrative estimates only - your real numbers depend on your full picture.</p>
   {iframe}
   {links_html}
-  <p class="calc-block__cta"><a class="btn btn--dark" href="/#contact" data-gate-open>Book a call with an advisor</a></p>
+  <p class="calc-block__cta"><a class="btn btn--dark" href="/#contact" data-gate-open>Ask a question</a></p>
 </aside>"""
 
 
@@ -168,7 +177,7 @@ def _team_extended(pack, body_html):
             if avatar_file:
                 stem = avatar_file.rsplit(".", 1)[0]
                 img = (f'<img class="team-member__avatar" src="/assets/{escape(stem)}.jpg" '
-                       f'alt="{escape(e.get("avatar_alt", "Illustrated avatar of " + e["name"]))}" loading="lazy" width="72" height="72">')
+                       f'alt="Illustrated avatar of {escape(e["name"])}" loading="lazy" width="72" height="72">')
             else:
                 # role-card style (founder direction Sep 28): no headshot, initials tile
                 initials = "".join(w[0] for w in e["name"].split()[:2]).upper()
@@ -295,7 +304,7 @@ def _related(links):
     if not real:
         return ""
     cards = "\n".join(
-        f'      <a class="content-page__related-card" href="{escape(l)}">'
+        f'      <a class="content-page__related-card" href="{escape(_rel(l))}">'
         f'<span>{escape(_link_label(l))}</span>'
         f'<span class="content-page__related-arrow" aria-hidden="true">&rarr;</span></a>'
         for l in real)
@@ -317,7 +326,7 @@ def _cta(pack):
   <div class="container" style="max-width:680px; text-align:center;">
     <h2 class="display display--md">{escape(cta.get('heading', 'Ready to take the next step?'))}</h2>
     <p style="margin:16px 0 28px;">{escape(cta.get('body', ''))}</p>
-    <a class="btn btn--light" href="{escape(cta['href'])}">{escape(cta.get('button_label', 'Get started'))}</a>
+    <a class="btn btn--light" href="{escape(_rel(cta['href']))}">{escape(cta.get('button_label', 'Get started'))}</a>
   </div>
 </section>
 """

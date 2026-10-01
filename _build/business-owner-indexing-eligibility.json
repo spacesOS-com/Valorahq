@@ -1,0 +1,30 @@
+{
+  "path": "/find-a-financial-advisor/business-owner/",
+  "decision": "Owner-only indexing approved; not proof of Google indexing",
+  "reviewed_noindex_artifact_sha256": "b7bdb33afdfd9df1a982b80698d29e16d33083a874f40cee823e6395a2a5f494",
+  "reviewed_release": "www-v29-autoheight-a2cc6ce6",
+  "base_archive_sha256": "013022d54aea1073f23337547187375222aea01e562f2dcd5f8572e05309f5ae",
+  "owner_approval": {
+    "question_message_id": "phonemsg-01M3RY347E69D2ZXCZJSXC4HVF",
+    "reply_message_id": "phonemsg-01M3RY5K1QWMKY9HPAWWA12MCD",
+    "reply": "Sure",
+    "timestamp": "2026-09-30T16:06:07+05:30",
+    "scope": "Flip approved consumer pages to index once they pass their gates",
+    "source": "Authenticated iMessage history independently recovered"
+  },
+  "content_review": {
+    "reviewer": "Zara",
+    "timestamp": "2026-09-30T16:52:00+05:30",
+    "status": "changed-byte content carry-forward PASS",
+    "reference": "Parent supplied bound gate report on same artifact"
+  },
+  "engineering_review": {
+    "reviewer": "Maya",
+    "timestamp": "2026-09-30T17:00:49+05:30",
+    "status": "live integrated functionality and desktop/mobile scoped PASS",
+    "reference": "Parent history report, independent served byte tie and live mobile evidence"
+  },
+  "rollback": "Set BUSINESS_OWNER_INDEXABLE=False and rebuild. Restores noindex, removes only this path from sitemap. Keep prior v29 release for symlink rollback.",
+  "remaining": "Directive-only candidate re-gate; staged/live status/canonical/header/sitemap verification; Google indexed state not claimed",
+  "restriction": "No blanket indexing, no blog changes, held placeholders remain noindex; future content changes require new final review evidence."
+}

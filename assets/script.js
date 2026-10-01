@@ -233,7 +233,12 @@
       if (!e.relatedTarget || !menu.contains(e.relatedTarget)) closeDropdowns();
     });
     $$('#primaryNav a').forEach(function (a) { a.addEventListener('click', close); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var expanded = dropdowns.find(function (toggle) { return toggle.getAttribute('aria-expanded') === 'true'; });
+      if (expanded) { closeDropdowns(); expanded.focus(); }
+      else if (menu.classList.contains('is-open')) { close(); btn.focus(); }
+    });
     window.addEventListener('resize', function () { if (window.innerWidth > 900) close(); });
   }
 
@@ -496,14 +501,22 @@
     var el   = f.elements[name];
     if (el && el.length !== undefined) el = el[0]; // RadioNodeList (grouped checkboxes/radios) -> first
     var wrap = el && el.closest ? el.closest('[data-field]') : null;
+    if (msg && el && window.ValoraContactValidation) {
+      if (el.type === 'email') msg = window.ValoraContactValidation.emailError(el.value) || msg;
+      if (el.type === 'tel') msg = window.ValoraContactValidation.phoneError(el.value) || msg;
+    }
+    if (!msg && el && el.type === 'email' && window.ValoraContactValidation) {
+      var suggestion = window.ValoraContactValidation.emailSuggestion(el.value);
+      if (suggestion) msg = 'Check your email domain. Did you mean ' + suggestion + '? Your address has not been changed.';
+    }
     if (slot) slot.textContent = msg || '';
     if (wrap) wrap.classList.toggle('has-error', !!msg);
   }
 
   function fieldError(el) {
     var v = (el.value || '').trim();
-    if (el.type === 'email') return !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v);
-    if (el.type === 'tel')   return v.replace(/\D/g, '').length < 7;
+    if (el.type === 'email') return !window.ValoraContactValidation || !!window.ValoraContactValidation.emailError(v);
+    if (el.type === 'tel') return !window.ValoraContactValidation || !!window.ValoraContactValidation.phoneError(v);
     return v.length < (el.name === 'name' ? 2 : 1);
   }
 
@@ -930,15 +943,17 @@
     if (new URLSearchParams(location.search).get('embed') === '1') {
       document.body.classList.add('embed-mode');
       var post = function () {
-        try { parent.postMessage({ vzCalcEmbedHeight: document.documentElement.scrollHeight }, location.origin); } catch (e) {}
+        try { parent.postMessage({ vzCalcEmbedHeight: Math.ceil(document.body.getBoundingClientRect().height) }, location.origin); } catch (e) {}
       };
       window.addEventListener('load', function () { post(); setTimeout(post, 600); });
       document.addEventListener('input', function () { setTimeout(post, 80); });
+      if (window.ResizeObserver) new ResizeObserver(post).observe(document.body);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(post);
     }
     window.addEventListener('message', function (e) {
       if (e.origin !== location.origin) return;
       var h = e.data && e.data.vzCalcEmbedHeight;
-      if (!h) return;
+      if (typeof h !== 'number' || !Number.isFinite(h) || h < 1 || h > 10000) return;
       $$('iframe[data-calc-embed]').forEach(function (ifr) {
         if (ifr.contentWindow === e.source) {
           ifr.style.height = Math.min(h + 24, 2400) + 'px';

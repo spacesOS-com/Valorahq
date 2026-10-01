@@ -403,7 +403,7 @@ CALCULATORS = [
         "note": "2026 federal long-term capital gains brackets: Single — 0% to $49,450, 15% to $545,500, 20% "
                 "above. Married filing jointly — 0% to $98,900, 15% to $613,700, 20% above. This is federal "
                 "only — it doesn't include state capital gains tax or the 3.8% Net Investment Income Tax that "
-                "can apply at higher incomes. Source: IRS Revenue Procedure 2025-32, published in Internal Revenue Bulletin 2025-45.",
+                "can apply at higher incomes. Source: IRS Revenue Procedure 2025-32, published in Internal Revenue Bulletin 2025-44.",
         "fields": [
             {"id": "status", "label": "Filing status", "type": "select",
              "options": ["Single", "Married filing jointly"]},
