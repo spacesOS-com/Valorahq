@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section, RB2B_SNIPPET,
                        faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER, lead_script_includes)
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
-from advisor_pages import ADVISORS
+from advisor_pages import ADVISORS, build_advisor_pages
 from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
 from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
 from insights_pages import build_insights_pages, ARTICLES
@@ -251,6 +251,7 @@ if __name__ == "__main__":
         build_professions_index(write)
         build_asset_types_index(write)
         build_us_directory(write)
+        build_advisor_pages(write)
     else:
         build_directory_placeholders()
         PAGES[:] = [p for p in PAGES if p[0] not in {"/cities/", "/specialties/", "/professions/", "/asset-types/"}]
