@@ -19,6 +19,7 @@ from partials import (BRAND, head, page, header, footer, gate, hero_card, contac
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
 from advisor_pages import ADVISORS
 from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
+from niche_guide_pages import build_niche_guide_pages, build_niche_indexes, niche_pages, index_pages as niche_index_pages
 from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
@@ -35,11 +36,11 @@ SITE_URL = "https://www.valorahq.com"
 
 # Mira pre-flip ruling (2026-09-30, via Sam): the 56 directory roster URLs
 # (/top-financial-advisors/*, /find-a-financial-advisor/*, /cities/,
-# /specialties/, /professions/, /asset-types/) are HELD pending the founder's
-# directory decision + counsel. DIRECTORY_ENABLED=False excludes them from the
-# build, sitemap.xml, llms.txt and llms-full.txt. Flip back to True (with her
-# re-gate) to restore.
-DIRECTORY_ENABLED = False
+# /specialties/, /professions/, /asset-types/) were HELD pending the founder's
+# directory decision + counsel. Founder confirmed counsel sign-off (2026-10-02)
+# and directed the flip. DIRECTORY_ENABLED=True restores them to the build,
+# sitemap.xml, llms.txt and llms-full.txt.
+DIRECTORY_ENABLED = True
 
 # Every live page, one line each. Add a page here when it goes live and the
 # sitemap, llms.txt and llms-full.txt all pick it up on the next build.
@@ -61,7 +62,7 @@ PAGES = [
     (f"/find-a-financial-advisor/{slug}/", desc) for slug, desc in real_pages()
 ] + [
     (path, desc) for path, desc in us_real_pages()
-] if DIRECTORY_ENABLED else []) + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
+] + niche_pages() + niche_index_pages() if DIRECTORY_ENABLED else []) + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
 ] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS if not c.get("noindex")
 ] + [(f"/calculators/{cat.lower().replace(' ', '-')}/", f"{cat} calculators on Valora.") for cat in CATEGORIES]
 
@@ -251,6 +252,8 @@ if __name__ == "__main__":
         build_professions_index(write)
         build_asset_types_index(write)
         build_us_directory(write)
+        build_niche_guide_pages(write)
+        build_niche_indexes(write)
     else:
         build_directory_placeholders()
         PAGES[:] = [p for p in PAGES if p[0] not in {"/cities/", "/specialties/", "/professions/", "/asset-types/"}]

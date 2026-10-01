@@ -5,7 +5,7 @@
   /top-financial-advisors/[state]/             (every city in that state)
   /top-financial-advisors/[state]/[city]/      ("Top Financial Advisors in [City], [ST]")
 
-Reuses the same 31 metros already in partials.DIRECTORY_CITIES — this is a
+Reuses the same ~50 metros already in partials.DIRECTORY_CITIES — this is a
 second URL/page format over the same real data, not a new, bigger list of
 cities. Same honesty rules as the rest of the directory: a city gets a real
 advisor grid when one actually matches (today: Austin, Los Angeles); every
@@ -26,7 +26,10 @@ STATE_NAMES = {
     "GA": "Georgia", "AZ": "Arizona", "MA": "Massachusetts", "MI": "Michigan",
     "WA": "Washington", "MN": "Minnesota", "CO": "Colorado", "MD": "Maryland",
     "MO": "Missouri", "NC": "North Carolina", "OR": "Oregon", "NV": "Nevada",
-    "OH": "Ohio",
+    "OH": "Ohio", "IN": "Indiana", "TN": "Tennessee", "WI": "Wisconsin",
+    "OK": "Oklahoma", "VA": "Virginia", "KY": "Kentucky", "LA": "Louisiana",
+    "UT": "Utah", "CT": "Connecticut", "AL": "Alabama", "NM": "New Mexico",
+    "NE": "Nebraska",
 }
 
 
