@@ -33,6 +33,7 @@
   var exchanges = 0;
   var failedLine = null;
   var wrap = document.createElement('section');
+  wrap.id = 'valora-floating-conversation';
   wrap.className = 'valora-concierge valora-conversation-dock';
   if (path === '/') wrap.classList.add('on-root');
   wrap.setAttribute('aria-label', 'Valora conversation');
