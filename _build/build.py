@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section, RB2B_SNIPPET,
                        faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER, lead_script_includes)
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
-from advisor_pages import ADVISORS
-from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
+from advisor_pages import ADVISORS, build_advisor_pages
+from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos, _advisor_card
 from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
@@ -96,6 +96,28 @@ def build_for_advisors():
 """)
 
 
+def advisors_section():
+    """Homepage roster: real approved advisors only. Honest empty state —
+    see advisor_pages.ADVISORS — never a placeholder/sample person."""
+    if ADVISORS:
+        cards = "\n".join(_advisor_card(a) for a in ADVISORS[:6])
+        body = f'<div class="match__grid" style="margin-top:40px;">{cards}</div>'
+        if len(ADVISORS) > 6:
+            body += '<p style="margin-top:32px;"><a class="btn btn--outline" href="/find-a-financial-advisor/">See all advisors &rarr;</a></p>'
+    else:
+        body = ('<p class="reveal" style="margin-top:24px; color:var(--ink-soft); max-width:56ch;">'
+                'We don’t have approved advisor profiles published yet. '
+                '<a href="/#contact" data-gate-open>Tell us what you’re trying to figure out</a> '
+                'and we’ll follow up directly by email.</p>')
+    return f"""<section class="section section--paper advisors-section" id="advisor-roster">
+  <div class="container" style="max-width:900px;">
+    <p class="eyebrow reveal">Meet the advisors</p>
+    <h2 class="display display--lg reveal">Browse real profiles.<br><em>Decide who to contact.</em></h2>
+    {body}
+  </div>
+</section>"""
+
+
 # ====================================================================== index.html regions
 def refresh_index():
     p = os.path.join(ROOT, "index.html")
@@ -108,6 +130,7 @@ def refresh_index():
                      path="/", schema=faq_schema(CLIENT_FAQ)),
         "header": header(None, banner=True),
         "hero-card": hero_card(),
+        "advisors": advisors_section(),
         "faq": client_faq_section(),
         "contact": contact_section(),
         "footer": footer(),
@@ -251,6 +274,7 @@ if __name__ == "__main__":
         build_professions_index(write)
         build_asset_types_index(write)
         build_us_directory(write)
+        build_advisor_pages(write)
     else:
         build_directory_placeholders()
         PAGES[:] = [p for p in PAGES if p[0] not in {"/cities/", "/specialties/", "/professions/", "/asset-types/"}]

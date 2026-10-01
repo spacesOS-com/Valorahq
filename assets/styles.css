@@ -2374,3 +2374,41 @@ body.embed-mode .section { padding-top:24px; padding-bottom:24px; }
 .footer__featured a{color:var(--paper);text-decoration:underline;text-underline-offset:3px;}
 .footer__featured a:focus-visible{outline:2px solid var(--paper);outline-offset:4px;}
 .footer__featured img{display:block;max-width:160px;max-height:46px;width:auto;height:auto;}
+
+/* =========================================================
+   ADVISOR PROFILE (/advisors/[slug]/)
+   ========================================================= */
+.advisor-profile__hero{
+  display:grid; grid-template-columns:minmax(0,1fr) clamp(220px,27vw,320px);
+  gap:clamp(28px,4vw,56px); align-items:center;
+}
+.advisor-profile__status{ margin-bottom:14px; }
+.advisor-profile__firm{ margin-top:14px; font-size:1.02rem; color:var(--ink-soft); }
+.advisor-profile__photo{
+  width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px;
+  background:var(--green-soft);
+}
+.advisor-profile__facts{
+  display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,56px);
+  margin-top:clamp(36px,5vw,56px); padding-top:clamp(24px,3vw,32px);
+  border-top:1px solid var(--line);
+}
+.advisor-profile__fact-label{ font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.advisor-profile__fact-value{ margin-top:6px; font-size:.95rem; color:var(--ink); }
+.advisor-profile__bio{
+  margin-top:clamp(32px,4vw,48px); max-width:68ch;
+  display:flex; flex-direction:column; gap:18px;
+}
+.advisor-profile__bio p{ font-size:.98rem; line-height:1.75; color:var(--ink-soft); }
+.advisor-profile__tags{ margin-top:clamp(28px,3.5vw,36px); }
+.advisor-profile__articles .adv-blog__grid,
+.advisor-profile__videos .adv-blog__grid{ grid-template-columns:repeat(3, 1fr); }
+.advisor-profile__video a{ color:inherit; text-decoration:none; display:flex; flex-direction:column; gap:14px; }
+.advisor-profile__video img{ width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:4px; background:var(--green-soft); }
+.advisor-profile__video h3{ font-family:var(--serif); font-weight:400; font-size:1.02rem; line-height:1.35; }
+@media (max-width:900px){ .advisor-profile__articles .adv-blog__grid,.advisor-profile__videos .adv-blog__grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:620px){ .advisor-profile__articles .adv-blog__grid,.advisor-profile__videos .adv-blog__grid{ grid-template-columns:1fr; } }
+@media (max-width:760px){
+  .advisor-profile__hero{ grid-template-columns:1fr; }
+  .advisor-profile__photo{ max-width:260px; order:-1; }
+}
