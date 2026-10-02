@@ -2253,6 +2253,13 @@ body.embed-mode .curtain,
 body.embed-mode #contact,
 body.embed-mode .btn--outline { display:none !important; }
 body.embed-mode .section { padding-top:24px; padding-bottom:24px; }
+/* Embedded in an article's calculator box: the box already has its own
+   padding, so drop the page gutters, and keep the inquiry band/dialog out. */
+body.embed-mode .container{ padding-inline:0; max-width:none !important; }
+body.embed-mode .section{ padding-top:4px; padding-bottom:8px; }
+body.embed-mode #inquiry-page-cta,
+body.embed-mode #rootInquiryDialog,
+body.embed-mode .to-top{ display:none !important; }
 
 .calc-block{ margin:44px 0; padding:30px 28px; background:var(--paper,#fff); border:1px solid var(--line,#e3e0d8); border-radius:8px; }
 .calc-block__eyebrow{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted,#6b6b60); margin:0 0 6px; }
