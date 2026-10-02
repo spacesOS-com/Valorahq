@@ -40,9 +40,6 @@
   wrap.classList.add('ph-no-capture'); wrap.setAttribute('data-ph-no-capture', 'true');
   var title = document.createElement('h2');
   title.textContent = 'Valora conversation'; title.tabIndex = -1;
-  var note = document.createElement('p');
-  note.className = 'valora-concierge__note';
-  note.textContent = config.scope;
   var chat = document.createElement('div');
   chat.className = 'valora-concierge__chat';
   chat.tabIndex = 0; chat.setAttribute('aria-label', 'Guide finder conversation, scroll to read resources');
@@ -57,9 +54,6 @@
   input.placeholder = 'Chat with Valora...';
   var send = document.createElement('button');
   send.type = 'submit'; send.textContent = 'Ask';
-  var intake = document.createElement('a');
-  intake.href = host.getAttribute('data-intake-route') || '#'; intake.textContent = host.getAttribute('data-intake-label') || 'Send an inquiry';
-  if (!host.getAttribute('data-intake-route')) { intake.setAttribute('aria-disabled','true'); intake.addEventListener('click',function(e){e.preventDefault();status.textContent='The inquiry form is not connected in this private preview.';}); }
   var status = document.createElement('p');
   status.className = 'valora-concierge__status'; status.setAttribute('role', 'status');
   function valoraIcon() {
@@ -70,22 +64,13 @@
   function sendIcon(button) { button.replaceChildren(); button.setAttribute('aria-label', 'Send question'); var arrow = document.createElement('span'); arrow.textContent = '↑'; arrow.setAttribute('aria-hidden', 'true'); button.appendChild(arrow); }
   send.textContent = 'Ask'; send.setAttribute('aria-label','Ask Valora');
   var brandMark = document.createElement('span'); brandMark.className = 'valora-conversation__avatar'; brandMark.appendChild(valoraIcon()); brandMark.setAttribute('aria-hidden', 'true');
-  var composer = document.createElement('div'); composer.className = 'valora-conversation__composer'; composer.appendChild(input); composer.appendChild(intake); composer.appendChild(send); composer.prepend(brandMark); form.appendChild(composer);
+  var composer = document.createElement('div'); composer.className = 'valora-conversation__composer'; composer.appendChild(input); composer.appendChild(send); composer.prepend(brandMark); form.appendChild(composer);
   title.hidden = false; wrap.appendChild(title);  wrap.appendChild(chat);
   var greeting = document.createElement('p');
   greeting.className = 'valora-concierge__greeting';
   greeting.textContent = 'Looks like you are exploring ' + (pageContext.title || 'Valora') + '. Ask a question about this page.';
   chat.appendChild(greeting);
-  var privacyNotice = document.createElement('p');
-  privacyNotice.className = 'valora-concierge__note';
-  privacyNotice.textContent = config.privacyWarning + ' ';
-  var privacyLink = document.createElement('a'); privacyLink.href = '/privacy/'; privacyLink.textContent = 'Privacy Policy';
-  privacyNotice.appendChild(privacyLink);
-  var notices = document.createElement('div'); notices.className = 'valora-conversation__notices';
-  note.id = 'valora-conversation-scope'; privacyNotice.id = 'valora-conversation-privacy';
-  notices.appendChild(note); notices.appendChild(privacyNotice);
-  input.setAttribute('aria-describedby', note.id + ' ' + privacyNotice.id);
-  wrap.appendChild(notices); wrap.appendChild(form); wrap.appendChild(status);
+  wrap.appendChild(form); wrap.appendChild(status);
   var faqPopup = document.createElement('div'); faqPopup.className = 'valora-conversation__faq valora-concierge__choices'; faqPopup.hidden = true;
   faqPopup.setAttribute('aria-label', 'Reviewed questions about this page');
   function refreshFAQs() { faqPopup.replaceChildren(); activePageContext.questions.slice(0, 3).forEach(function(label) { var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.addEventListener('click', function() { faqPopup.hidden = true; submitQuestion(label); }); faqPopup.appendChild(b); }); }
