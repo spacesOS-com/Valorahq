@@ -19,4 +19,10 @@
 #valora-floating-conversation .valora-conversation__composer button{font-size:13px;min-height:35px;padding:9px 16px;border-radius:40px}
 #valora-floating-conversation>.valora-concierge__greeting{padding:11px 14px;font-size:12px;border-radius:16px;box-shadow:0 6px 20px #0001}
 #valora-floating-conversation .valora-concierge__chat{max-height:min(200px,30dvh);background:#f8f6f1;border:1px solid var(--line);box-shadow:0 8px 24px #0002;font-size:13px}
-@media(max-width:620px){#valora-floating-conversation{width:calc(100vw - 20px);gap:7px}#valora-floating-conversation input{font-size:16px;padding:6px 0}#valora-floating-conversation .valora-conversation__composer button{font-size:14px;min-height:40px}#valora-floating-conversation>.valora-concierge__greeting{font-size:13px}#valora-floating-conversation .valora-concierge__chat{max-height:min(180px,25dvh)}}
+/* Suggested questions: bubbles between the greeting and the composer. */
+#valora-floating-conversation .valora-conversation__faq{order:1;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+#valora-floating-conversation .valora-conversation__faq button{margin:0;min-height:0;padding:8px 14px;border-radius:18px;font:inherit;font-size:12px;line-height:1.35;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 4px 14px #0001}
+#valora-floating-conversation .valora-conversation__faq button:hover{border-color:var(--green)}
+#valora-floating-conversation .valora-concierge__form{order:2}
+#valora-floating-conversation .valora-concierge__status{order:3}
+@media(max-width:620px){#valora-floating-conversation{width:calc(100vw - 20px);gap:7px}#valora-floating-conversation .valora-conversation__faq button{font-size:13px;padding:10px 14px}#valora-floating-conversation input{font-size:16px;padding:6px 0}#valora-floating-conversation .valora-conversation__composer button{font-size:14px;min-height:40px}#valora-floating-conversation>.valora-concierge__greeting{font-size:13px}#valora-floating-conversation .valora-concierge__chat{max-height:min(180px,25dvh)}}

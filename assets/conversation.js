@@ -91,8 +91,13 @@
   function refreshFAQs() { faqPopup.replaceChildren(); activePageContext.questions.slice(0, 3).forEach(function(label) { var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.addEventListener('click', function() { faqPopup.hidden = true; submitQuestion(label); }); faqPopup.appendChild(b); }); }
   refreshFAQs();
   form.before(faqPopup);
-  input.addEventListener('focus', function() { if (chat.hidden) greeting.hidden = false; faqPopup.hidden = true; chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
-  input.addEventListener('input', function() { faqPopup.hidden = input.value.trim().length > 0; });
+  // Suggestions: the page's three reviewed questions appear as bubbles above
+  // the composer when the empty textbox is focused or clicked.
+  function showSuggestions() { faqPopup.hidden = busy || input.value.trim().length > 0 || !faqPopup.childElementCount; }
+  input.addEventListener('focus', function() { if (chat.hidden) greeting.hidden = false; showSuggestions(); chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
+  input.addEventListener('click', showSuggestions);
+  document.addEventListener('pointerdown', function(e) { if (!wrap.contains(e.target)) faqPopup.hidden = true; });
+  input.addEventListener('input', showSuggestions);
   function showInitialChoices() {
     if (!pageContext || !Array.isArray(pageContext.questions)) return;
     var group = document.createElement('div'); group.className = 'valora-concierge__choices valora-conversation__initial-choices ph-no-capture'; group.hidden = true;
