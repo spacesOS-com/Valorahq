@@ -1,14 +1,14 @@
 """For Advisors: landing page. Promise is reaching people who are seeking
-the firm's services; AEO, GEO and outbound are the means, not the pitch."""
+the firm's services; AEO & GEO, outbound and YouTube are the means, not the pitch."""
 from html import escape
 from blog_feed import latest_posts, BLOG_URL
 from root_inquiry import inquiry_form_section
 from partials import _asset_ver
 import re
 FOR_ADVISORS_FAQ = [
-    ('How does Valora help my firm reach new clients?', 'Valora works to put your firm in front of people who are already looking for the kind of advice you give. We do that in two ways: by making your firm easier to find when people ask AI tools and search engines about financial advice, and by reaching out directly to people who fit the clients you serve.'),
-    ('What are AEO and GEO?', 'Answer engine optimization (AEO) and generative engine optimization (GEO) are the work of making a firm\'s expertise easy for AI assistants and AI-powered search to find, read and cite. They are tools we use, alongside outbound outreach, to connect your firm with people seeking its services.'),
-    ('Does Valora guarantee new clients?', 'No. Results depend on your firm, your market and your competition, and visibility builds over time. Valora does not guarantee clients, search rankings or AI citations.'),
+    ('How does Valora help my firm reach new clients?', 'Valora works to put your firm in front of people who are already looking for the kind of advice you give. We do that in three ways: by making your firm easier to find when people ask AI tools and search engines about financial advice, by reaching out directly to people who fit the clients you serve, and by putting your firm\'s expertise on YouTube.'),
+    ('What are AEO and GEO?', 'Answer engine optimization (AEO) and generative engine optimization (GEO) are the work of making a firm\'s expertise easy for AI assistants and AI-powered search to find, read and cite. They are tools we use, alongside outbound outreach and YouTube, to connect your firm with people seeking its services.'),
+    ('Does Valora guarantee new clients?', 'No. Results depend on your firm, your market and your competition, and visibility builds over time. Valora does not guarantee clients, search rankings, AI citations or video views.'),
     ('Who approves what is published or sent for my firm?', 'Your firm does. Advisory firms are responsible for their own advertising and communications, so nothing should go out under your firm\'s name without your review.'),
     ('What does it cost?', 'It depends on the scope of work for your firm. Tell us about your firm and we will reply by email.'),
     ('Is Valora an investment adviser?', 'No. Valora is not a registered investment adviser and does not provide investment advice. Valora provides marketing services to advisory firms.'),
@@ -76,6 +76,7 @@ def for_advisors_body():
     <ul class="advx-ticks reveal">
       <li>Be found when people ask AI tools and search for financial advice</li>
       <li>Reach the people your firm serves best, directly</li>
+      <li>Be seen on YouTube, where people go to learn</li>
       <li>Built only for advisory firms</li>
     </ul>
     <p class="advx-hero__note reveal">Results vary by firm, market and competition. Valora does not guarantee clients.</p>
@@ -99,7 +100,7 @@ def for_advisors_body():
   <h2 class="advx-h2 reveal">As easy as 1, 2, 3</h2>
   <ol class="advx-steps">
     <li class="reveal"><span class="advx-steps__n">01</span><div><h3>Tell us about your firm</h3><p>Who you serve, where you work and the clients you want more of.</p></div></li>
-    <li class="reveal"><span class="advx-steps__n">02</span><div><h3>We get your firm in front of them</h3><p>We make your firm easier to find in AI answers and search, and reach out directly to people who fit.</p></div></li>
+    <li class="reveal"><span class="advx-steps__n">02</span><div><h3>We get your firm in front of them</h3><p>We make your firm easier to find in AI answers, search and on YouTube, and reach out directly to people who fit.</p></div></li>
     <li class="reveal"><span class="advx-steps__n">03</span><div><h3>You have the conversations</h3><p>People who want to talk come to your firm. You take it from there.</p></div></li>
   </ol>
   <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="#top">Get started</a></div>
@@ -108,11 +109,10 @@ def for_advisors_body():
   <h2 class="advx-h2 reveal">How we get you there</h2>
   <p class="advx-lead reveal">These are the tools. The goal is the same: more conversations with people who need your firm.</p>
   <div class="advx-cards advx-cards--left">
-    <div class="advx-card reveal"><p class="advx-card__tag">AEO</p><h3>Answer engine optimization</h3><p>People now ask AI assistants who to trust with their money. We work to make your firm an answer they can give.</p></div>
-    <div class="advx-card reveal"><p class="advx-card__tag">GEO</p><h3>Generative engine optimization</h3><p>We publish your firm's expertise in a form AI-powered search can find, read and cite.</p></div>
+    <div class="advx-card reveal"><p class="advx-card__tag">AEO &amp; GEO</p><h3>Be the answer AI gives</h3><p>People now ask AI assistants and AI-powered search who to trust with their money. Answer engine optimization and generative engine optimization make your firm's expertise easy for them to find, read and cite.</p></div>
     <div class="advx-card reveal"><p class="advx-card__tag">Outbound</p><h3>Direct outreach</h3><p>We reach out to people who fit the clients you serve, so you are not relying only on being found.</p></div>
-  </div>
-</div></section>
+    <div class="advx-card reveal"><p class="advx-card__tag">YouTube</p><h3>Be seen before the first call</h3><p>People watch before they choose an advisor. We put your firm's expertise on YouTube, where they go to learn.</p></div>
+  </div></section>
 <section class="section section--cream advx-blog" id="insights-for-advisors"><div class="container">
   <h2 class="advx-h2 reveal">Timely articles for your firm</h2>
   <p class="advx-lead reveal">Practical articles on advisory-firm growth, operations and communication. These articles are educational, not a promise of clients, search rankings or business results.</p>
@@ -127,9 +127,10 @@ def for_advisors_body():
       <li>Work aimed at people already looking for the advice your firm gives</li>
       <li>Your firm made easier to find in AI answers and search</li>
       <li>Direct outreach to people who fit the clients you serve</li>
+      <li>Your firm's expertise on YouTube</li>
     </ul></div>
     <div class="advx-fit__col advx-fit__col--no reveal" id="directory"><h3>What we do not promise</h3><ul>
-      <li>Guaranteed clients, search rankings or AI citations</li>
+      <li>Guaranteed clients, search rankings, AI citations or video views</li>
       <li>Overnight results. Visibility builds over time</li>
       <li>Investment advice. Valora is not a registered investment adviser</li>
     </ul></div>
