@@ -47,7 +47,7 @@ DIRECTORY_ENABLED = False
 PAGES = [
     # (path, one-line description for llms.txt)
     ("/", "Educational financial-planning content and an inquiry route; no advisor matches or introductions currently."),
-    ("/for-advisors/", "For advisors — information for independent advisors interested in Valora; no live advisor directory or matching at this time."),
+    ("/for-advisors/", "For advisors — how Valora helps advisory firms reach people seeking their services, using AEO, GEO and outbound."),
     ("/find-your-advisor/", "Tell us what you need: four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
     ("/calculators/", "Browse financial calculators by topic."),
@@ -75,8 +75,8 @@ def write(path, html):
 
 
 def build_for_advisors():
-    html = page(head("For Advisors | Valora - Educational Resources",
-                     "Read educational articles for advisory firms and ask about Valora's current work. Valora is not arranging advisor introductions at this time.",
+    html = page(head("For Advisors | Valora - Reach People Seeking Your Firm's Services",
+                     "Valora helps advisory firms connect with people seeking their services, using AEO, GEO and outbound. Results vary; no guarantee of clients.",
                      path="/for-advisors/", schema=faq_schema(FOR_ADVISORS_FAQ),
                      social_image="/assets/for-advisors-education-social.png",
                      social_image_alt="Valora educational resources for advisory firms. No advisor matches or introductions at this time."),

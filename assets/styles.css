@@ -2406,10 +2406,13 @@ body.embed-mode .to-top{ display:none !important; }
 .advx-card{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:clamp(24px,3vw,36px); text-align:center; }
 .advx-card h3{ font-family:var(--sans); font-weight:600; font-size:1.2rem; letter-spacing:-.01em; margin-top:16px; }
 .advx-card p{ margin-top:10px; font-size:.95rem; line-height:1.6; color:var(--ink-soft); }
+.advx-cards--left .advx-card{ text-align:left; }
+.advx-cards--left .advx-card h3{ margin-top:10px; }
+.advx-card__tag{ display:inline-block; margin:0; padding:5px 12px; border-radius:999px; background:#dceceb; color:var(--green); font-size:.72rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
 .advx-icon{ display:inline-grid; place-items:center; width:56px; height:56px; border-radius:50%; background:#dceceb; color:var(--green); }
 
 .advx-steps{ list-style:none; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.4vw,28px); margin-top:clamp(36px,5vw,56px); }
-.advx-steps li{ background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:clamp(24px,3vw,34px); }
+.advx-steps li{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:clamp(24px,3vw,34px); }
 .advx-steps__n{ display:block; font-family:var(--sans); font-weight:600; font-size:2rem; letter-spacing:-.03em; color:var(--gold); }
 .advx-steps h3{ font-family:var(--sans); font-weight:600; font-size:1.15rem; margin-top:14px; }
 .advx-steps p{ margin-top:10px; font-size:.93rem; line-height:1.6; color:var(--ink-soft); }
