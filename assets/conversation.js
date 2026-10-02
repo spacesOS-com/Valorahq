@@ -54,9 +54,6 @@
   input.placeholder = 'Chat with Valora...';
   var send = document.createElement('button');
   send.type = 'submit'; send.textContent = 'Ask';
-  var intake = document.createElement('a');
-  intake.href = host.getAttribute('data-intake-route') || '#'; intake.textContent = host.getAttribute('data-intake-label') || 'Talk to an advisor';
-  if (!host.getAttribute('data-intake-route')) { intake.setAttribute('aria-disabled','true'); intake.addEventListener('click',function(e){e.preventDefault();status.textContent='The inquiry form is not connected in this private preview.';}); }
   var status = document.createElement('p');
   status.className = 'valora-concierge__status'; status.setAttribute('role', 'status');
   function valoraIcon() {
@@ -67,7 +64,7 @@
   function sendIcon(button) { button.replaceChildren(); button.setAttribute('aria-label', 'Send question'); var arrow = document.createElement('span'); arrow.textContent = '↑'; arrow.setAttribute('aria-hidden', 'true'); button.appendChild(arrow); }
   send.textContent = 'Ask'; send.setAttribute('aria-label','Ask Valora');
   var brandMark = document.createElement('span'); brandMark.className = 'valora-conversation__avatar'; brandMark.appendChild(valoraIcon()); brandMark.setAttribute('aria-hidden', 'true');
-  var composer = document.createElement('div'); composer.className = 'valora-conversation__composer'; composer.appendChild(input); composer.appendChild(intake); composer.appendChild(send); composer.prepend(brandMark); form.appendChild(composer);
+  var composer = document.createElement('div'); composer.className = 'valora-conversation__composer'; composer.appendChild(input); composer.appendChild(send); composer.prepend(brandMark); form.appendChild(composer);
   wrap.appendChild(title);  wrap.appendChild(chat);
   var greeting = document.createElement('p');
   greeting.className = 'valora-concierge__greeting';
