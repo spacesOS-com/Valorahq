@@ -10,7 +10,8 @@ FOR_ADVISORS_FAQ = [
     ('What are AEO and GEO?', 'Answer engine optimization (AEO) and generative engine optimization (GEO) are the work of making a firm\'s expertise easy for AI assistants and AI-powered search to find, read and cite. They are tools we use, alongside outbound outreach and YouTube, to connect your firm with people seeking its services.'),
     ('Does Valora guarantee new clients?', 'No. Results depend on your firm, your market and your competition, and visibility builds over time. Valora does not guarantee clients, search rankings, AI citations or video views.'),
     ('Who approves what is published or sent for my firm?', 'Your firm does. Advisory firms are responsible for their own advertising and communications, so nothing should go out under your firm\'s name without your review.'),
-    ('What does it cost?', 'Plans start at $900 per month. The price depends on the scope of work for your firm. Tell us about your firm and we will reply by email.'),
+    ('What does it cost?', 'Plans start at $900 per month. It is month to month, with no long contract. If you prefer to pay annually, you get 12 months for the price of 10. The price depends on the scope of work for your firm.'),
+    ('Is there a contract?', 'No long contract. The service runs month to month, so you can stop at the end of any month. An annual option is available at 12 months for the price of 10.'),
     ('Is Valora an investment adviser?', 'No. Valora is not a registered investment adviser and does not provide investment advice. Valora provides marketing services to advisory firms.'),
 ]
 
@@ -79,7 +80,7 @@ def for_advisors_body():
       <li>Be seen on YouTube, where people go to learn</li>
       <li>Built only for advisory firms</li>
     </ul>
-    <p class="advx-price reveal">Starts at <strong>$900</strong> per month</p>
+    <p class="advx-price reveal">Starts at <strong>$900</strong> per month<span>Month to month, no long contract</span></p>
     <p class="advx-hero__note reveal">Results vary by firm, market and competition. Valora does not guarantee clients.</p>
   </div>
   {_intro_form()}
@@ -152,7 +153,7 @@ def for_advisors_body():
 </div></section>
 <section class="section section--green advx-band"><div class="container">
   <div><h2 class="reveal">Ready to get started?</h2><p class="reveal">Tell us about your firm. We review every inquiry and reply by email.</p></div>
-  <div class="advx-band__cta"><a class="btn btn--cream advx-btn reveal" href="#top">Get started</a><p class="advx-band__price reveal">Starts at $900 per month</p></div>
+  <div class="advx-band__cta"><a class="btn btn--cream advx-btn reveal" href="#top">Get started</a><p class="advx-band__price reveal">Starts at $900 per month<br>Month to month, no long contract</p></div>
 </div></section>
 <section class="section section--paper adv-faq advx-faq" id="faq"><div class="container"><h2 class="advx-h2 reveal">Frequently asked questions</h2><div class="faq">{_faq_accordion()}</div></div></section>
 <section class="advx-cross"><div class="container"><div><h2>Looking for advice?</h2><p>Read Valora's educational guides on financial planning.</p></div><a class="btn btn--outline advx-btn" href="/guides/">Browse the guides</a></div></section>

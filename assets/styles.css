@@ -2395,6 +2395,7 @@ body.embed-mode .to-top{ display:none !important; }
 .advx-ticks li::after{ content:""; position:absolute; left:7px; top:6px; width:5px; height:9px; border:solid var(--cream); border-width:0 1.6px 1.6px 0; transform:rotate(45deg); }
 .advx-price{ margin-top:26px; font-size:1.05rem; color:var(--ink); }
 .advx-price strong{ font-weight:600; font-size:1.5rem; letter-spacing:-.02em; color:var(--green); }
+.advx-price span{ display:block; margin-top:4px; font-size:.9rem; color:var(--ink-soft); }
 .advx-price + .advx-hero__note{ margin-top:12px; }
 .advx-band__cta{ flex:none; text-align:center; }
 .advx-band .advx-band__price{ margin-top:12px; font-size:.84rem; max-width:none; }
