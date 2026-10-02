@@ -40,3 +40,22 @@
 #valora-floating-conversation .valora-concierge__form{order:2}
 #valora-floating-conversation .valora-concierge__status{order:3}
 @media(max-width:620px){#valora-floating-conversation{width:calc(100vw - 20px);gap:13px}#valora-floating-conversation .valora-conversation__faq button{font-size:13px;padding:10px 14px}#valora-floating-conversation input{font-size:16px;padding:6px 0}#valora-floating-conversation .valora-conversation__composer button{font-size:14px;min-height:40px}#valora-floating-conversation>.valora-concierge__greeting{font-size:13px}#valora-floating-conversation .valora-concierge__chat{max-height:min(180px,25dvh)}}
+
+/* Side panel: after the third question the dock becomes a full-height
+   panel on the right (header + close, conversation, suggestions, composer). */
+#valora-floating-conversation.is-side{left:auto;right:0;top:0;bottom:0;transform:none;width:min(400px,100vw);height:100dvh;max-height:none;padding:16px 18px;gap:12px;z-index:130;background:#fff;border-left:1px solid var(--line);box-shadow:-16px 0 48px #0002;animation:valora-side-in .34s cubic-bezier(.2,.8,.2,1) both}
+@keyframes valora-side-in{from{transform:translateX(100%)}to{transform:none}}
+#valora-floating-conversation .valora-conversation__sidehead{order:-2;display:flex;align-items:baseline;gap:8px;font-size:15px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+#valora-floating-conversation .valora-conversation__sidehead span{color:#777;font-size:13px}
+#valora-floating-conversation .valora-conversation__sidehead button{margin-left:auto;align-self:center;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:24px;line-height:1;cursor:pointer}
+#valora-floating-conversation .valora-conversation__sidehead button:hover{background:#f3f2ee}
+#valora-floating-conversation.is-side .valora-concierge__chat{order:-1;flex:1;max-height:none;padding:2px 0;background:transparent;border:0;box-shadow:none;border-radius:0;font-size:14px;display:flex;flex-direction:column;gap:10px}
+#valora-floating-conversation.is-side .valora-concierge__chat>*{margin:0}
+#valora-floating-conversation.is-side .valora-concierge__question{align-self:flex-end;max-width:85%;background:#edf2ee;border-color:transparent}
+#valora-floating-conversation.is-side .valora-concierge__answer{align-self:flex-start;max-width:92%}
+#valora-floating-conversation.is-side .valora-conversation__faq{gap:0}
+#valora-floating-conversation.is-side .valora-conversation__faq::before{content:"Ask me things like:";font-size:12px;font-weight:700;color:#5f645b;margin-bottom:4px}
+#valora-floating-conversation.is-side .valora-conversation__faq button{animation:none;background:none;border:0;border-radius:0;box-shadow:none;padding:5px 0;font-size:13px;color:#5f645b}
+#valora-floating-conversation.is-side .valora-conversation__faq button:hover{transform:none;box-shadow:none;color:var(--green);text-decoration:underline}
+#valora-floating-conversation.is-side .valora-conversation__composer{border-radius:16px;box-shadow:none;padding:8px 10px}
+@media(prefers-reduced-motion:reduce){#valora-floating-conversation.is-side{animation:none}}

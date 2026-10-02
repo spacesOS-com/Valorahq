@@ -31,6 +31,7 @@
   var isHome = path === '/concierge/';
   var busy = false;
   var exchanges = 0;
+  var asked = 0; // questions sent this session; the dock becomes a side panel at 3
   var failedLine = null;
   var wrap = document.createElement('section');
   wrap.id = 'valora-floating-conversation';
@@ -40,6 +41,18 @@
   wrap.classList.add('ph-no-capture'); wrap.setAttribute('data-ph-no-capture', 'true');
   var title = document.createElement('h2');
   title.textContent = 'Valora conversation'; title.tabIndex = -1;
+  var sideHead = document.createElement('div'); sideHead.className = 'valora-conversation__sidehead'; sideHead.hidden = true;
+  var sideName = document.createElement('strong'); sideName.textContent = 'Valora';
+  var sideRole = document.createElement('span'); sideRole.textContent = 'AI guide';
+  var sideClose = document.createElement('button'); sideClose.type = 'button'; sideClose.setAttribute('aria-label', 'Close conversation'); sideClose.textContent = '\u00d7';
+  sideClose.addEventListener('click', function () { closeConversation(); });
+  sideHead.appendChild(sideName); sideHead.appendChild(sideRole); sideHead.appendChild(sideClose);
+  function enterSide() {
+    if (wrap.classList.contains('is-side')) return;
+    wrap.classList.add('is-side'); sideHead.hidden = false; chat.hidden = false;
+    document.body.setAttribute('data-valora-conversation-side', 'true');
+    syncSpacer();
+  }
   var chat = document.createElement('div');
   chat.className = 'valora-concierge__chat';
   chat.tabIndex = 0; chat.setAttribute('aria-label', 'Guide finder conversation, scroll to read resources');
@@ -65,7 +78,7 @@
   send.textContent = 'Ask'; send.setAttribute('aria-label','Ask Valora');
   var brandMark = document.createElement('span'); brandMark.className = 'valora-conversation__avatar'; brandMark.appendChild(valoraIcon()); brandMark.setAttribute('aria-hidden', 'true');
   var composer = document.createElement('div'); composer.className = 'valora-conversation__composer'; composer.appendChild(input); composer.appendChild(send); composer.prepend(brandMark); form.appendChild(composer);
-  wrap.appendChild(title);  wrap.appendChild(chat);
+  wrap.appendChild(sideHead); wrap.appendChild(title);  wrap.appendChild(chat);
   var greeting = document.createElement('p');
   greeting.className = 'valora-concierge__greeting';
   // Short topic names for the greeting; falls back to the page title.
@@ -95,13 +108,14 @@
   // the composer once three characters are typed, replacing the greeting.
   function showSuggestions() {
     var typing = input.value.trim().length >= 3;
-    faqPopup.hidden = busy || !typing || !faqPopup.childElementCount;
+    var side = wrap.classList.contains('is-side');
+    faqPopup.hidden = busy || (!side && !typing) || !faqPopup.childElementCount;
     if (chat.hidden) greeting.hidden = typing || (typeof hint !== 'undefined' && hint && !hint.hidden);
   }
   input.addEventListener('focus', function() { showSuggestions(); chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
   // Clicking away swaps the suggestions back for the greeting (unless a
   // conversation is open); the suggestions return on the next keystroke.
-  document.addEventListener('pointerdown', function(e) { if (wrap.contains(e.target)) return; faqPopup.hidden = true; if (typeof hint !== 'undefined' && hint) { clearTimeout(hintTimer); hint.hidden = true; } if (chat.hidden) greeting.hidden = false; });
+  document.addEventListener('pointerdown', function(e) { if (wrap.contains(e.target)) return; if (!wrap.classList.contains('is-side')) faqPopup.hidden = true; if (typeof hint !== 'undefined' && hint) { clearTimeout(hintTimer); hint.hidden = true; } if (chat.hidden) greeting.hidden = false; });
   input.addEventListener('input', showSuggestions);
   function showInitialChoices() {
     if (!pageContext || !Array.isArray(pageContext.questions)) return;
@@ -114,7 +128,7 @@
   function clearSession() {
     document.body.removeAttribute('data-valora-conversation-open');
     generation++; if (activeController) activeController.abort(); activeController = null;
-    greeting.hidden = false; stateToken = null; exchanges = 0; failedLine = null; busy = false; activePageContext = pageContext; refreshFAQs(); faqPopup.hidden = true;
+    greeting.hidden = false; stateToken = null; exchanges = 0; asked = 0; sideHead.hidden = true; document.body.removeAttribute('data-valora-conversation-side'); failedLine = null; busy = false; activePageContext = pageContext; refreshFAQs(); faqPopup.hidden = true;
     wrap.classList.remove('is-side'); title.textContent = pageContext ? pageContext.title : 'Valora'; chat.replaceChildren(greeting); showInitialChoices();
     if (typeof dockInput !== 'undefined' && dockInput) dockInput.value = '';
     input.value = ''; input.disabled = false; send.disabled = false; status.textContent = '';
@@ -130,7 +144,7 @@
   spacer.className = 'valora-floating-v9-spacer';
   spacer.setAttribute('aria-hidden', 'true');
   document.body.appendChild(spacer);
-  function syncSpacer() { spacer.style.height = Math.ceil(wrap.getBoundingClientRect().height + 24) + 'px'; }
+  function syncSpacer() { spacer.style.height = wrap.classList.contains('is-side') ? '0px' : Math.ceil(wrap.getBoundingClientRect().height + 24) + 'px'; }
   if (typeof ResizeObserver === 'function') new ResizeObserver(syncSpacer).observe(wrap);
   window.addEventListener('resize', syncSpacer);
   syncSpacer();
@@ -213,6 +227,7 @@
   function submitQuestion(value) { var question = value.trim(); if (question) return submitTurn({question: question}, question); }
   async function submitTurn(selection, label) {
     if (busy) return;
+    asked++; if (asked >= 3) enterSide();
     greeting.hidden = true; faqPopup.hidden = true; busy = true; send.disabled = true; input.disabled = true;
     var originalInput = input.value, currentGeneration = generation;
     status.textContent = 'Finding resources...';
@@ -240,7 +255,7 @@
       if (status.textContent === 'Finding resources...') status.textContent = '';
     } finally {
       clearTimeout(timeout);
-      if (generation === currentGeneration) { activeController = null; busy = false; send.disabled = false; input.disabled = false; input.focus(); faqPopup.hidden = true; }
+      if (generation === currentGeneration) { activeController = null; busy = false; send.disabled = false; input.disabled = false; input.focus(); faqPopup.hidden = true; if (wrap.classList.contains('is-side')) showSuggestions(); }
     }
   }
   // The browser's native "Please fill out this field" tooltip can't be styled,
