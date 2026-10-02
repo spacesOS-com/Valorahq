@@ -8,6 +8,7 @@ Writes:
 and refreshes the <!-- @build:... --> regions in index.html
 (head, header, hero card, contact form, footer, opening modal).
 """
+import json
 import os
 import re
 import sys
@@ -16,7 +17,7 @@ from xml.sax.saxutils import escape as xml_escape
 sys.path.insert(0, os.path.dirname(__file__))
 from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section, RB2B_SNIPPET,
                        faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER, lead_script_includes, _asset_ver)
-from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
+from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ, FOR_ADVISORS
 from advisor_pages import ADVISORS
 from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
 from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
@@ -24,6 +25,7 @@ from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from root_inquiry import root_contact_section, root_hero_card, ROOT_INQUIRY_STYLE
 from content_pages import build_content_pages
+from insights_site import build_insights_site
 from intake_page import build_intake_page
 from concierge_page import build_concierge_page
 from conversation_assets import prepare_conversation_surfaces
@@ -75,8 +77,8 @@ def write(path, html):
 
 
 def build_for_advisors():
-    html = page(head("For Advisors | Valora - Reach People Seeking Your Firm's Services",
-                     "Valora helps advisory firms connect with people seeking their services, using AEO and GEO, outbound and YouTube. Results vary; no guarantee of clients.",
+    html = page(head(FOR_ADVISORS["meta_title"],
+                     FOR_ADVISORS["meta_description"],
                      path="/for-advisors/", schema=faq_schema(FOR_ADVISORS_FAQ),
                      social_image="/assets/for-advisors-education-social.png",
                      social_image_alt="Valora educational resources for advisory firms. No advisor matches or introductions at this time."),
@@ -186,9 +188,46 @@ def refresh_guides_gate():
 
 
 # ====================================================================== robots.txt / sitemap.xml / llms.txt
+def build_redirects():
+    """Redirects managed in the CMS (_build/data/redirects.json). Each becomes a small page at the
+    old address that forwards browsers and tells search engines the new address, which works on any
+    static host. A matching nginx map is written to _build/generated/ for true 301s."""
+    src = os.path.join(ROOT, "_build", "data", "redirects.json")
+    if not os.path.exists(src):
+        return
+    with open(src, encoding="utf-8") as f:
+        rows = json.load(f)
+    lines = []
+    for row in rows:
+        old, new = row["from_path"], row["to_path"]
+        if not re.fullmatch(r"/(?:[a-z0-9._-]+/)*[a-z0-9._-]*", old) or old == "/":
+            raise SystemExit(f"bad redirect source: {old}")
+        target = new if new.startswith("https://") else SITE_URL + new
+        out = os.path.join(ROOT, old.strip("/"), "index.html") if old.endswith("/") else os.path.join(ROOT, old.strip("/"))
+        html = f"""<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={xml_escape(target)}">
+<link rel="canonical" href="{xml_escape(target)}">
+<meta name="robots" content="noindex,follow">
+<title>Redirecting… | {BRAND}</title></head>
+<body><p>This page has moved to <a href="{xml_escape(target)}">{xml_escape(target)}</a>.</p></body></html>
+"""
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        with open(out, "w", encoding="utf-8", newline="\n") as f:
+            f.write(html)
+        lines.append(f"rewrite ^{re.escape(old)}$ {target} {'permanent' if int(row.get('status_code', 301)) == 301 else 'redirect'};")
+    gen = os.path.join(ROOT, "_build", "generated")
+    os.makedirs(gen, exist_ok=True)
+    with open(os.path.join(gen, "redirects.nginx.conf"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+
 def build_robots():
     write("/robots.txt", f"""User-agent: *
 Allow: /
+Disallow: /cms/
+Disallow: /api/
+Disallow: /_insights-site/
 
 Sitemap: {SITE_URL}/sitemap.xml
 """)
@@ -290,6 +329,8 @@ if __name__ == "__main__":
         with open(os.path.join(ROOT, "_build", "live-reviewed", template), encoding="utf-8") as source:
             write("/" + route.removesuffix("index.html"), source.read())
     prepare_conversation_surfaces(ROOT)
+    build_redirects()
+    print("insights articles:", build_insights_site())
     print("content pages:", len(_content_pages))
     total_dir = len(SPECIALTIES) + len(CITIES) + len(NICHES) + len(ASSET_TYPES) + len(real_combos())
     if not DIRECTORY_ENABLED:
