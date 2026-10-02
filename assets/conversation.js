@@ -43,10 +43,9 @@
   title.textContent = 'Valora conversation'; title.tabIndex = -1;
   var sideHead = document.createElement('div'); sideHead.className = 'valora-conversation__sidehead'; sideHead.hidden = true;
   var sideName = document.createElement('strong'); sideName.textContent = 'Valora';
-  var sideRole = document.createElement('span'); sideRole.textContent = 'AI guide';
   var sideClose = document.createElement('button'); sideClose.type = 'button'; sideClose.setAttribute('aria-label', 'Close conversation'); sideClose.textContent = '\u00d7';
   sideClose.addEventListener('click', function () { closeConversation(); });
-  sideHead.appendChild(sideName); sideHead.appendChild(sideRole); sideHead.appendChild(sideClose);
+  sideHead.appendChild(sideName); sideHead.appendChild(sideClose);
   function enterSide() {
     if (wrap.classList.contains('is-side')) return;
     wrap.classList.add('is-side'); sideHead.hidden = false; chat.hidden = false;

@@ -46,7 +46,6 @@
 #valora-floating-conversation.is-side{left:auto;right:0;top:0;bottom:0;transform:none;width:min(400px,100vw);height:100dvh;max-height:none;padding:16px 18px;gap:12px;z-index:130;background:#fff;border-left:1px solid var(--line);box-shadow:-16px 0 48px #0002;animation:valora-side-in .34s cubic-bezier(.2,.8,.2,1) both}
 @keyframes valora-side-in{from{transform:translateX(100%)}to{transform:none}}
 #valora-floating-conversation .valora-conversation__sidehead{order:-2;display:flex;align-items:baseline;gap:8px;font-size:15px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-#valora-floating-conversation .valora-conversation__sidehead span{color:#777;font-size:13px}
 #valora-floating-conversation .valora-conversation__sidehead button{margin-left:auto;align-self:center;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:24px;line-height:1;cursor:pointer}
 #valora-floating-conversation .valora-conversation__sidehead button:hover{background:#f3f2ee}
 #valora-floating-conversation.is-side .valora-concierge__chat{order:-1;flex:1;max-height:none;padding:2px 0;background:transparent;border:0;box-shadow:none;border-radius:0;font-size:14px;display:flex;flex-direction:column;gap:10px}
