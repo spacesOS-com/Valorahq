@@ -68,10 +68,14 @@
 #contact .phone-row select,#contact .phone-row input,
 .hcard [data-inquiry-host] #contact .phone-row select,.hcard [data-inquiry-host] #contact .phone-row input{box-sizing:border-box;margin:0;height:auto;align-self:stretch}
 #contact .phone-row select,.hcard [data-inquiry-host] #contact .phone-row select{padding-block:0}
-/* Error message: a tinted box that only takes space when there is one,
-   and a matching highlight on the field that needs attention. */
-#contact .err{min-height:0;margin-top:14px;padding:11px 14px 11px 12px;border-left:4px solid #c8402f;border-radius:10px;background:#fbe9e6;color:#8f2218;font-size:14px;font-weight:600;line-height:1.4}
+/* Errors. Field problems are written under the field itself; the box is
+   only for form-level problems (for example a failed send). */
+#contact .field-err{display:block;margin-top:6px;font-size:12.5px;line-height:1.35;font-weight:500;color:#b3261e}
+#contact .field-err::before{content:"!";display:inline-grid;place-items:center;width:14px;height:14px;margin-right:6px;border-radius:50%;background:#b3261e;color:#fff;font-size:10px;font-weight:700;vertical-align:1px}
+#contact input[aria-invalid="true"],#contact textarea[aria-invalid="true"]{border-color:#b3261e;box-shadow:0 0 0 2px rgba(179,38,30,.18)}
+#contact .err{min-height:0;margin-top:14px;padding:10px 14px;border:1px solid #e6b4ad;border-radius:12px;background:#fdf1ef;color:#8f2218;font-size:13px;font-weight:500;line-height:1.4}
 #contact .err:empty{display:none}
-#contact input[aria-invalid="true"],#contact textarea[aria-invalid="true"]{border-color:#c8402f;box-shadow:0 0 0 3px rgba(200,64,47,.28)}
-[data-inquiry-host] #contact .err{background:#fff1ee;color:#8f2218;border-left-color:#e2523f;box-shadow:0 6px 18px rgba(0,0,0,.22)}
-[data-inquiry-host] #contact input[aria-invalid="true"],[data-inquiry-host] #contact textarea[aria-invalid="true"]{border-color:#ff8f7d;box-shadow:0 0 0 3px rgba(255,143,125,.55)}
+[data-inquiry-host] #contact .field-err{color:#ffb9ab}
+[data-inquiry-host] #contact .field-err::before{background:#ffb9ab;color:#1e3b2a}
+[data-inquiry-host] #contact input[aria-invalid="true"],[data-inquiry-host] #contact textarea[aria-invalid="true"]{border-color:#ff9c8a;box-shadow:0 0 0 2px rgba(255,156,138,.45)}
+[data-inquiry-host] #contact .err{background:rgba(255,185,171,.14);border-color:rgba(255,185,171,.5);color:#ffd3ca}
