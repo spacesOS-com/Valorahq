@@ -23,6 +23,13 @@
 #valora-floating-conversation .valora-conversation__faq{order:1;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 #valora-floating-conversation .valora-conversation__faq button{margin:0;min-height:0;padding:8px 14px;border-radius:18px;font:inherit;font-size:12px;line-height:1.35;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 4px 14px #0001}
 #valora-floating-conversation .valora-conversation__faq button:hover{border-color:var(--green)}
+#valora-floating-conversation .valora-conversation__faq button{animation:valora-suggest-in .34s cubic-bezier(.2,.8,.2,1) both;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+#valora-floating-conversation .valora-conversation__faq button:nth-child(1){animation-delay:.14s}
+#valora-floating-conversation .valora-conversation__faq button:nth-child(2){animation-delay:.07s}
+#valora-floating-conversation .valora-conversation__faq button:nth-child(3){animation-delay:0s}
+#valora-floating-conversation .valora-conversation__faq button:hover{transform:translateY(-2px);box-shadow:0 8px 20px #0002}
+@keyframes valora-suggest-in{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#valora-floating-conversation .valora-conversation__faq button{animation:none;transition:none}}
 #valora-floating-conversation .valora-concierge__form{order:2}
 #valora-floating-conversation .valora-concierge__status{order:3}
 @media(max-width:620px){#valora-floating-conversation{width:calc(100vw - 20px);gap:7px}#valora-floating-conversation .valora-conversation__faq button{font-size:13px;padding:10px 14px}#valora-floating-conversation input{font-size:16px;padding:6px 0}#valora-floating-conversation .valora-conversation__composer button{font-size:14px;min-height:40px}#valora-floating-conversation>.valora-concierge__greeting{font-size:13px}#valora-floating-conversation .valora-concierge__chat{max-height:min(180px,25dvh)}}
