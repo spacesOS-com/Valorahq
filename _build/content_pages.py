@@ -388,11 +388,20 @@ def _body(pack):
 """
 
 
+def cms_version_meta(doc):
+    """The version tag the CMS reads back to confirm which version is live."""
+    version = str((doc.get("cms") or {}).get("version_hash") or "")
+    return f'<meta name="valora-cms-version" content="{version}">' if re.fullmatch(r"[a-f0-9]{64}", version) else ""
+
+
 def _cms_schema(pack):
-    """Article JSON-LD for pages published from the CMS (they carry a "cms" block)."""
+    """Head additions for pages managed in the CMS (they carry a "cms" block): the version tag,
+    and Article JSON-LD for guides (not for legal or team pages)."""
     cms = pack.get("cms") or {}
     if not cms:
         return ""
+    if pack.get("page_type") in ("legal", "team"):
+        return cms_version_meta(pack)
     from partials import json_ld, SITE_URL
     data = {"@context": "https://schema.org", "@type": "Article", "headline": pack["h1"],
             "description": pack["meta_description"], "mainEntityOfPage": f"{SITE_URL}/{pack['slug']}/",
@@ -404,7 +413,7 @@ def _cms_schema(pack):
     out = json_ld(data)
     if isinstance(cms.get("structured_data"), dict) and cms["structured_data"].get("@type"):
         out += "\n" + json_ld(cms["structured_data"])
-    return out
+    return out + ("\n" + cms_version_meta(pack) if cms_version_meta(pack) else "")
 
 
 def render(pack):

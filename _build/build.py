@@ -24,7 +24,7 @@ from us_directory_pages import build_us_directory, real_pages as us_real_pages, 
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
 from root_inquiry import root_contact_section, root_hero_card, ROOT_INQUIRY_STYLE
-from content_pages import build_content_pages
+from content_pages import build_content_pages, cms_version_meta
 from insights_site import build_insights_site
 from intake_page import build_intake_page
 from concierge_page import build_concierge_page
@@ -79,7 +79,7 @@ def write(path, html):
 def build_for_advisors():
     html = page(head(FOR_ADVISORS["meta_title"],
                      FOR_ADVISORS["meta_description"],
-                     path="/for-advisors/", schema=faq_schema(FOR_ADVISORS_FAQ),
+                     path="/for-advisors/", schema=faq_schema(FOR_ADVISORS_FAQ) + cms_version_meta(FOR_ADVISORS),
                      social_image="/assets/for-advisors-education-social.png",
                      social_image_alt="Valora educational resources for advisory firms. No advisor matches or introductions at this time."),
                      for_advisors_body(), active="advisors")
