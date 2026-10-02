@@ -747,10 +747,9 @@ body:has(.site-banner) .site-header{ top:40px; }
 .footer__statement{ max-width:20ch; padding-bottom:clamp(40px,6vw,72px); border-bottom:1px solid var(--line-light); }
 .footer__statement em{ color:rgba(239,235,224,.72); }
 .footer__grid{
-  display:grid; grid-template-columns:1.1fr repeat(4,1fr); gap:clamp(16px,2vw,28px) clamp(16px,2vw,28px);
+  display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:clamp(16px,2vw,28px) clamp(16px,2vw,28px);
   padding-block:clamp(38px,5vw,64px);
 }
-@media (min-width:1300px){ .footer__grid{ grid-template-columns:1.2fr repeat(8,1fr); } }
 .footer__brand p{ margin-top:18px; font-size:.84rem; color:rgba(239,235,224,.6); max-width:34ch; }
 .footer__col h5{ font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,235,224,.5); margin-bottom:18px; font-weight:500; }
 .footer__col li + li{ margin-top:11px; }
