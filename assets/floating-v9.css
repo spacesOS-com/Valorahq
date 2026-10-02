@@ -13,3 +13,14 @@
 
 /* Opaque backing prevents host-page text bleeding between chat sections. */
 #valora-floating-conversation{background:#fff;border-radius:24px;box-shadow:0 8px 28px #0002}
+/* Mockup restyle: keep reviewed behavior and disclosures unchanged. */
+#valora-floating-conversation{background:transparent;border-radius:0;box-shadow:none;gap:14px;width:min(1180px,calc(100vw - 48px))}
+#valora-floating-conversation .valora-conversation__composer{border-radius:80px;padding:14px 22px;gap:22px;box-shadow:0 12px 36px #0002}
+#valora-floating-conversation .valora-conversation__avatar{flex-basis:58px;height:58px;box-shadow:0 0 0 8px #edf2ee}
+#valora-floating-conversation input{font-size:20px;padding:16px 0}
+#valora-floating-conversation .valora-conversation__composer a{font-size:18px;padding:16px 24px;border-radius:50px}
+#valora-floating-conversation .valora-conversation__composer button{font-size:20px;min-height:62px;padding:16px 30px;border-radius:50px}
+#valora-floating-conversation>.valora-concierge__greeting{padding:22px 30px;font-size:20px;border-radius:28px;box-shadow:0 6px 24px #0001}
+#valora-floating-conversation .valora-conversation__notices{padding:10px 16px;border:1px solid var(--line);background:#f8f6f1;box-shadow:0 3px 14px #0001}
+#valora-floating-conversation .valora-concierge__chat{max-height:min(260px,30dvh);background:#f8f6f1;border:1px solid var(--line);box-shadow:0 8px 28px #0002}
+@media(max-width:620px){#valora-floating-conversation{width:calc(100vw - 20px);gap:9px}#valora-floating-conversation .valora-conversation__composer{padding:12px 15px;gap:10px;border-radius:34px}#valora-floating-conversation .valora-conversation__avatar{width:38px;height:38px;box-shadow:0 0 0 5px #edf2ee}#valora-floating-conversation input{font-size:16px;padding:8px 0}#valora-floating-conversation .valora-conversation__composer a{font-size:14px;padding:11px 14px;min-height:44px}#valora-floating-conversation .valora-conversation__composer button{font-size:16px;padding:11px 22px;min-height:44px}#valora-floating-conversation>.valora-concierge__greeting{font-size:15px;padding:16px 20px;border-radius:23px}#valora-floating-conversation .valora-conversation__notices{padding:8px 12px}#valora-floating-conversation .valora-concierge__chat{max-height:min(190px,25dvh)}}

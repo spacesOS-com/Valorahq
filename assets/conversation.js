@@ -58,7 +58,7 @@
   var send = document.createElement('button');
   send.type = 'submit'; send.textContent = 'Ask';
   var intake = document.createElement('a');
-  intake.href = host.getAttribute('data-intake-route') || '#'; intake.textContent = host.getAttribute('data-intake-label') || 'Send an inquiry';
+  intake.href = host.getAttribute('data-intake-route') || '#'; intake.textContent = 'Talk it through';
   if (!host.getAttribute('data-intake-route')) { intake.setAttribute('aria-disabled','true'); intake.addEventListener('click',function(e){e.preventDefault();status.textContent='The inquiry form is not connected in this private preview.';}); }
   var status = document.createElement('p');
   status.className = 'valora-concierge__status'; status.setAttribute('role', 'status');
@@ -74,7 +74,7 @@
   title.hidden = false; wrap.appendChild(title);  wrap.appendChild(chat);
   var greeting = document.createElement('p');
   greeting.className = 'valora-concierge__greeting';
-  greeting.textContent = 'Looks like you are exploring ' + (pageContext.title || 'Valora') + '. Ask a question about this page.';
+  greeting.textContent = "Looks like you're exploring " + (pageContext.title || 'Valora') + '. Ask a general question about this page.';
   chat.appendChild(greeting);
   var privacyNotice = document.createElement('p');
   privacyNotice.className = 'valora-concierge__note';

@@ -30,7 +30,7 @@ def prepare_conversation_surfaces(root):
             html = f.read()
         # Preserve existing vendor loaders exactly. Replay disclosure and
         # project masking settings are separate reviewed enable gates.
-        html = html.replace('<div id="valora-concierge" hidden></div>', '<div id="valora-conversation" data-endpoint="https://api.valorahq.com/api/valora/conversation" data-intake-route="/#contact" data-intake-label="Send an inquiry" hidden></div>')
+        html = html.replace('<div id="valora-concierge" hidden></div>', '<div id="valora-conversation" data-endpoint="https://api.valorahq.com/api/valora/conversation" data-intake-route="/#contact" data-intake-label="Talk it through" hidden></div>')
         # No endpoint is inserted here. Reviewed deployment config must supply it separately.
         inline = json.dumps(config, separators=(',', ':')).replace('<', '\\u003c')
         scripts = '<script>window.ValoraConversationConfig=' + inline + ';</script><script src="/assets/conversation.js?v=' + version + '"></script>'
@@ -39,5 +39,10 @@ def prepare_conversation_surfaces(root):
             raise ValueError('Ambiguous guide-finder script on ' + path)
         html = html.replace('width=device-width, initial-scale=1.0', 'width=device-width, initial-scale=1.0, interactive-widget=resizes-content')
         html = html.replace('</head>', '<link rel="stylesheet" href="/assets/floating-v9.css?v=' + css_version + '"></head>')
+        # Carry the same reviewed five-step inquiry into each exact guide route.
+        from root_inquiry import root_contact_section, ROOT_INQUIRY_STYLE
+        html = html.replace('id="contact"', 'id="inquiry-page-cta"')
+        html = html.replace('</head>', ROOT_INQUIRY_STYLE + '<link rel="stylesheet" href="/assets/root-inquiry-polish.css"><link rel="stylesheet" href="/assets/root-inquiry-modal.css"></head>')
+        html = html.replace('</body>', root_contact_section() + '<script src="/assets/inquiry-contract-adapter.js"></script><script src="/assets/root-inquiry-five.js"></script><script src="/assets/root-inquiry-modal.js"></script></body>')
         with open(file, 'w', encoding='utf-8') as f:
             f.write(html)
