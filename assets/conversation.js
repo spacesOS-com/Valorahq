@@ -122,11 +122,8 @@
     window.visualViewport.addEventListener('scroll', syncKeyboard);
   }
   title.hidden = true; chat.hidden = true; faqPopup.hidden = true;
-  var minimize = document.createElement('button'); minimize.type='button'; minimize.className='valora-conversation__minimize'; minimize.textContent='Close conversation'; minimize.hidden=true;
-  wrap.insertBefore(minimize,chat);
-  function closeConversation(){clearSession();wrap.insertBefore(greeting,form);chat.hidden=true;minimize.hidden=true;title.hidden=true;syncSpacer();input.focus({preventScroll:true});}
-  minimize.addEventListener('click',closeConversation);
-  form.addEventListener('submit',function(){if(input.value.trim()){greeting.hidden=true;chat.hidden=false;minimize.hidden=false;title.hidden=false;syncSpacer();}});
+  function closeConversation(){clearSession();wrap.insertBefore(greeting,form);chat.hidden=true;title.hidden=true;syncSpacer();input.focus({preventScroll:true});}
+  form.addEventListener('submit',function(){if(input.value.trim()){greeting.hidden=true;chat.hidden=false;syncSpacer();}});
   document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!chat.hidden)closeConversation();});
   host.hidden = false;
 
