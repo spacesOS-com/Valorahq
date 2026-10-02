@@ -68,7 +68,7 @@
   wrap.appendChild(title);  wrap.appendChild(chat);
   var greeting = document.createElement('p');
   greeting.className = 'valora-concierge__greeting';
-  greeting.textContent = "Looks like you're exploring " + (pageContext.title || 'Valora') + '. Ask a general question about this page.';
+  greeting.textContent = "Looks like you're exploring " + (pageContext.title || 'Valora') + '.';
   chat.appendChild(greeting);
   wrap.appendChild(form); wrap.appendChild(status);
   var faqPopup = document.createElement('div'); faqPopup.className = 'valora-conversation__faq valora-concierge__choices'; faqPopup.hidden = true;
