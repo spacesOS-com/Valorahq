@@ -30,7 +30,7 @@ def prepare_conversation_surfaces(root):
             html = f.read()
         # Preserve existing vendor loaders exactly. Replay disclosure and
         # project masking settings are separate reviewed enable gates.
-        html = html.replace('<div id="valora-concierge" hidden></div>', '<div id="valora-conversation" data-endpoint="https://api.valorahq.com/api/valora/conversation" data-intake-route="/#contact" data-intake-label="Send an inquiry" hidden></div>')
+        html = html.replace('<div id="valora-concierge" hidden></div>', '<div id="valora-conversation" data-endpoint="https://api.valorahq.com/api/valora/conversation" data-intake-route="/#contact" data-intake-label="Talk to an advisor" hidden></div>')
         # No endpoint is inserted here. Reviewed deployment config must supply it separately.
         inline = json.dumps(config, separators=(',', ':')).replace('<', '\\u003c')
         scripts = '<script>window.ValoraConversationConfig=' + inline + ';</script><script src="/assets/conversation.js?v=' + version + '"></script>'
