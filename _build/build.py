@@ -124,6 +124,7 @@ def refresh_index():
         html = pat.sub(lambda m: m.group(1) + "\n" + content + "\n" + m.group(3), html)
     # Remove generated dependency tags before reinserting the shared ordered block.
     html = re.sub(r'<script src="/assets/(?:vendor/(?:libphonenumber-max-[^"/]+|disposable-email-domains-[^"/]+)\.js|contact-validation\.js)(?:\?v=[a-f0-9]+)?"></script>\s*', '', html)
+    html = re.sub(r'<script src="/assets/lead-capture\.js[^>]*></script>\s*', '', html)  # re-added below only when a lead key is configured
     html = re.sub(r'<script src="/(?:assets/)?script\.js(?:\?v=[a-f0-9]+)?"></script>',
                   lambda _m: lead_script_includes(), html)
     # Version the inquiry scripts: the markup and scripts change together, so a
@@ -179,6 +180,7 @@ def refresh_guides_gate():
     if count != 1:
         raise SystemExit("guides/index.html is missing its inquiry gate")
     html = re.sub(r'<script src="/assets/(?:vendor/(?:libphonenumber-max-[^"/]+|disposable-email-domains-[^"/]+)\.js|contact-validation\.js)(?:\?v=[a-f0-9]+)?"></script>\s*', '', html)
+    html = re.sub(r'<script src="/assets/lead-capture\.js[^>]*></script>\s*', '', html)  # re-added below only when a lead key is configured
     html, count = re.subn(r'<script src="/assets/script\.js(?:\?v=[a-f0-9]+)?"></script>',
                          lambda _m: lead_script_includes(), html, count=1)
     if count != 1:

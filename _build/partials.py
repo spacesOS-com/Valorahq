@@ -8,6 +8,7 @@ rewritten from here, so every page stays identical.
 import hashlib
 import json
 import os
+import re
 from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -753,11 +754,22 @@ def faq_block(faq, heading="Common questions"):
     </div>"""
 
 
+def lead_capture_include():
+    """Sends each successful inquiry to the CMS leads inbox, with the pages viewed in that tab.
+    Off unless the build is given the brand's lead key (VALORA_CMS_LEAD_KEY), so nothing changes
+    until the CMS is deployed and someone switches it on deliberately."""
+    key = os.environ.get("VALORA_CMS_LEAD_KEY", "")
+    if not re.fullmatch(r"vlead_[A-Za-z0-9_-]{20,}", key):
+        return ""
+    endpoint = os.environ.get("VALORA_CMS_LEAD_ENDPOINT", "/api/cms/public/leads")
+    return f'\n<script src="/assets/lead-capture.js?v={_asset_ver("lead-capture.js")}" data-endpoint="{escape(endpoint)}" data-lead-key="{key}"></script>'
+
+
 def lead_script_includes():
     return f"""<script src="/assets/vendor/libphonenumber-max-1.13.14.js"></script>
 <script src="/assets/vendor/disposable-email-domains-1.0.62.js"></script>
 <script src="/assets/contact-validation.js?v={_asset_ver('contact-validation.js')}"></script>
-<script src="/assets/script.js?v={SCRIPT_VER}"></script>"""
+<script src="/assets/script.js?v={SCRIPT_VER}"></script>{lead_capture_include()}"""
 
 
 def page(head_html, body_html, active=None, with_gate=False, body_class="page-sub"):

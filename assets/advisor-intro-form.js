@@ -39,7 +39,9 @@
     adapter.submit({firstName:v.first,lastName:v.last,email:v.email,phone:phoneIntl||v.phone,
       motivation:'[Advisor inquiry from /for-advisors/]\nFirm: '+v.firm+(v.website?'\nWebsite: '+v.website:''),
       reviewedNoticeAccepted:true}).then(function(result){
-      if(result.kind==='inquiryAccepted'){form.hidden=true;done.hidden=false;done.focus();return}
+      if(result.kind==='inquiryAccepted'){
+        if(window.ValoraLeads)window.ValoraLeads.send({name:v.first+' '+v.last,email:v.email,phone:phoneIntl||v.phone,company:v.firm,action:'advisor inquiry',details:{'Firm website':v.website}});
+        form.hidden=true;done.hidden=false;done.focus();return}
       button.disabled=false;button.textContent=form.dataset.buttonLabel||'Get started';
       error.textContent=result.kind==='retryLater'?'Please wait before trying again.':result.kind==='invalid'?'Please check your details before sending.':'We could not confirm this request. Do not submit it again yet.';
     });
