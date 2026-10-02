@@ -40,9 +40,6 @@
   wrap.classList.add('ph-no-capture'); wrap.setAttribute('data-ph-no-capture', 'true');
   var title = document.createElement('h2');
   title.textContent = 'Valora conversation'; title.tabIndex = -1;
-  var note = document.createElement('p');
-  note.className = 'valora-concierge__note';
-  note.textContent = config.scope;
   var chat = document.createElement('div');
   chat.className = 'valora-concierge__chat';
   chat.tabIndex = 0; chat.setAttribute('aria-label', 'Guide finder conversation, scroll to read resources');
@@ -57,9 +54,6 @@
   input.placeholder = 'Chat with Valora...';
   var send = document.createElement('button');
   send.type = 'submit'; send.textContent = 'Ask';
-  var intake = document.createElement('a');
-  intake.href = host.getAttribute('data-intake-route') || '#'; intake.textContent = 'Talk it through';
-  if (!host.getAttribute('data-intake-route')) { intake.setAttribute('aria-disabled','true'); intake.addEventListener('click',function(e){e.preventDefault();status.textContent='The inquiry form is not connected in this private preview.';}); }
   var status = document.createElement('p');
   status.className = 'valora-concierge__status'; status.setAttribute('role', 'status');
   function valoraIcon() {
@@ -70,28 +64,19 @@
   function sendIcon(button) { button.replaceChildren(); button.setAttribute('aria-label', 'Send question'); var arrow = document.createElement('span'); arrow.textContent = '↑'; arrow.setAttribute('aria-hidden', 'true'); button.appendChild(arrow); }
   send.textContent = 'Ask'; send.setAttribute('aria-label','Ask Valora');
   var brandMark = document.createElement('span'); brandMark.className = 'valora-conversation__avatar'; brandMark.appendChild(valoraIcon()); brandMark.setAttribute('aria-hidden', 'true');
-  var composer = document.createElement('div'); composer.className = 'valora-conversation__composer'; composer.appendChild(input); composer.appendChild(intake); composer.appendChild(send); composer.prepend(brandMark); form.appendChild(composer);
-  title.hidden = false; wrap.appendChild(title);  wrap.appendChild(chat);
+  var composer = document.createElement('div'); composer.className = 'valora-conversation__composer'; composer.appendChild(input); composer.appendChild(send); composer.prepend(brandMark); form.appendChild(composer);
+  wrap.appendChild(title);  wrap.appendChild(chat);
   var greeting = document.createElement('p');
   greeting.className = 'valora-concierge__greeting';
   greeting.textContent = "Looks like you're exploring " + (pageContext.title || 'Valora') + '. Ask a general question about this page.';
   chat.appendChild(greeting);
-  var privacyNotice = document.createElement('p');
-  privacyNotice.className = 'valora-concierge__note';
-  privacyNotice.textContent = config.privacyWarning + ' ';
-  var privacyLink = document.createElement('a'); privacyLink.href = '/privacy/'; privacyLink.textContent = 'Privacy Policy';
-  privacyNotice.appendChild(privacyLink);
-  var notices = document.createElement('div'); notices.className = 'valora-conversation__notices';
-  note.id = 'valora-conversation-scope'; privacyNotice.id = 'valora-conversation-privacy';
-  notices.appendChild(note); notices.appendChild(privacyNotice);
-  input.setAttribute('aria-describedby', note.id + ' ' + privacyNotice.id);
-  wrap.appendChild(notices); wrap.appendChild(form); wrap.appendChild(status);
+  wrap.appendChild(form); wrap.appendChild(status);
   var faqPopup = document.createElement('div'); faqPopup.className = 'valora-conversation__faq valora-concierge__choices'; faqPopup.hidden = true;
   faqPopup.setAttribute('aria-label', 'Reviewed questions about this page');
   function refreshFAQs() { faqPopup.replaceChildren(); activePageContext.questions.slice(0, 3).forEach(function(label) { var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.addEventListener('click', function() { faqPopup.hidden = true; submitQuestion(label); }); faqPopup.appendChild(b); }); }
   refreshFAQs();
   form.before(faqPopup);
-  input.addEventListener('focus', function() { greeting.hidden = false; faqPopup.hidden = true; chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
+  input.addEventListener('focus', function() { if (chat.hidden) greeting.hidden = false; faqPopup.hidden = true; chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
   input.addEventListener('input', function() { faqPopup.hidden = input.value.trim().length > 0; });
   function showInitialChoices() {
     if (!pageContext || !Array.isArray(pageContext.questions)) return;
@@ -137,11 +122,8 @@
     window.visualViewport.addEventListener('scroll', syncKeyboard);
   }
   title.hidden = true; chat.hidden = true; faqPopup.hidden = true;
-  var minimize = document.createElement('button'); minimize.type='button'; minimize.className='valora-conversation__minimize'; minimize.textContent='Close conversation'; minimize.hidden=true;
-  wrap.insertBefore(minimize,chat);
-  function closeConversation(){clearSession();wrap.insertBefore(greeting,form);chat.hidden=true;minimize.hidden=true;title.hidden=true;syncSpacer();input.focus({preventScroll:true});}
-  minimize.addEventListener('click',closeConversation);
-  form.addEventListener('submit',function(){if(input.value.trim()){chat.hidden=false;minimize.hidden=false;title.hidden=false;syncSpacer();}});
+  function closeConversation(){clearSession();wrap.insertBefore(greeting,form);chat.hidden=true;title.hidden=true;syncSpacer();input.focus({preventScroll:true});}
+  form.addEventListener('submit',function(){if(input.value.trim()){greeting.hidden=true;chat.hidden=false;syncSpacer();}});
   document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!chat.hidden)closeConversation();});
   host.hidden = false;
 
@@ -206,7 +188,7 @@
   function submitQuestion(value) { var question = value.trim(); if (question) return submitTurn({question: question}, question); }
   async function submitTurn(selection, label) {
     if (busy) return;
-    faqPopup.hidden = true; busy = true; send.disabled = true; input.disabled = true;
+    greeting.hidden = true; faqPopup.hidden = true; busy = true; send.disabled = true; input.disabled = true;
     var originalInput = input.value, currentGeneration = generation;
     status.textContent = 'Finding resources...';
     var turnLine = line(label, 'valora-concierge__question');
