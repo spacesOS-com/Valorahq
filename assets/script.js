@@ -841,7 +841,7 @@
       if (!e.target.closest('.gate__panel')) close();
     });
 
-    /* "Talk to an advisor" / header CTAs open the popup instead of navigating
+    /* Inquiry / header CTAs open the popup instead of navigating
        (blog popup behavior: a[href="#advisor-contact"] interception). */
     document.addEventListener('click', function (e) {
       var t = e.target.closest && e.target.closest('[data-gate-open]');

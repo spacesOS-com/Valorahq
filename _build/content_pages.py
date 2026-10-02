@@ -238,6 +238,8 @@ def _process_body(pack):
     html = pack["body_html"]
     ctas = {}
     for c in (pack.get("inline_ctas") or []):
+        if c.get("rendered_in_body"):
+            continue
         ctas[c["after_h2"].strip().lower()] = c
     parts = re.split(r"(<h2[^>]*>.*?</h2>)", html, flags=re.S | re.I)
     out = [parts[0]]

@@ -22,6 +22,7 @@ from directory_pages import build_directory_pages, build_cities_index, build_spe
 from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
 from insights_pages import build_insights_pages, ARTICLES
 from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
+from root_inquiry import root_contact_section, root_hero_card, ROOT_INQUIRY_STYLE
 from content_pages import build_content_pages
 from intake_page import build_intake_page
 from concierge_page import build_concierge_page
@@ -106,13 +107,14 @@ def refresh_index():
                      "Valora publishes educational information about financial planning and accepts questions. "
                      "We aren't arranging advisor matches or introductions at this time.",
                      path="/", schema=faq_schema(CLIENT_FAQ)),
-        "header": header(None, banner=True),
-        "hero-card": hero_card(),
+        "header": header(None, banner=True).replace(" data-gate-open", ""),
+        "hero-card": root_hero_card(),
         "faq": client_faq_section(),
-        "contact": contact_section(),
-        "footer": footer(),
-        "gate": gate(),
+        "contact": root_contact_section(),
+        "footer": footer().replace(" data-gate-open", ""),
+        
     }
+    regions["head"] = regions["head"].replace("</head>", ROOT_INQUIRY_STYLE + '<link rel="stylesheet" href="/assets/root-inquiry-polish.css"></head>')
     for name, content in regions.items():
         pat = re.compile(r"(<!-- @build:%s -->)(.*?)(<!-- /@build:%s -->)" % (re.escape(name), re.escape(name)), re.S)
         if not pat.search(html):
@@ -157,7 +159,7 @@ def refresh_guides_gate():
     p = os.path.join(ROOT, "guides", "index.html")
     with open(p, encoding="utf-8") as f:
         html = f.read()
-    current_gate = gate().replace("Tell us what you need", "Ask Valora a question").replace(
+    current_gate = gate().replace("Tell us what you’re trying to figure out.", "Ask Valora a question").replace("Tell us what you need", "Ask Valora a question").replace(
         "Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.",
         "Tell us what you're trying to figure out. We'll review your request and email next steps. We are not arranging advisor matches or introductions at this time.")
     # Put the reviewed disclosure before navigation on every collecting step.
@@ -258,6 +260,12 @@ if __name__ == "__main__":
     build_calculator_pages(write)
     _content_pages = build_content_pages(write)
     PAGES.extend(_content_pages)
+    # Preserve the reviewed custom tax shell and its image variants exactly.
+    import shutil
+    tax_source = os.path.join(ROOT, "_build", "live-reviewed", "tax-planning.html")
+    with open(tax_source, encoding="utf-8") as tax_file:
+        write("/find-a-financial-advisor/tax-planning/", tax_file.read())
+    shutil.copytree(os.path.join(ROOT, "_build", "live-reviewed", "tax-assets"), os.path.join(ROOT, "find-a-financial-advisor", "tax-planning", "assets"), dirs_exist_ok=True)
     build_intake_page(write)
     build_concierge_page(write)
     build_developers_page(write)
@@ -269,6 +277,11 @@ if __name__ == "__main__":
     build_robots()
     build_sitemap()
     build_llms()
+    # Freeze already-reviewed custom shells. Source reconciliation must not
+    # introduce dynamic-feed or tracker changes into these surfaces.
+    for route, template in {'for-advisors/index.html': 'for-advisors.html', 'find-a-financial-advisor/selling-a-business/index.html': 'selling-a-business.html', 'find-a-financial-advisor/business-owner-wealth-planning/index.html': 'business-owner-wealth-planning.html'}.items():
+        with open(os.path.join(ROOT, "_build", "live-reviewed", template), encoding="utf-8") as source:
+            write("/" + route.removesuffix("index.html"), source.read())
     prepare_conversation_surfaces(ROOT)
     print("content pages:", len(_content_pages))
     total_dir = len(SPECIALTIES) + len(CITIES) + len(NICHES) + len(ASSET_TYPES) + len(real_combos())

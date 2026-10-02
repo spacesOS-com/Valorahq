@@ -1,7 +1,7 @@
 """Conversation release preparation. Default-off, independent of guide finder.
 
-Only the exact reviewed 12 page contexts can receive chat. Third-party analytics
-loaders are removed before chat is added, not merely masked after collection.
+Only the exact reviewed 12 page contexts can receive chat. Existing PostHog and RB2B loaders are preserved on these pages.
+Widget elements use ph-no-capture; project settings are reviewed separately.
 Enabling this build switch is a separate reviewed deployment decision.
 """
 import hashlib
@@ -28,14 +28,8 @@ def prepare_conversation_surfaces(root):
         file = os.path.join(root, path.strip('/'), 'index.html')
         with open(file, encoding='utf-8') as f:
             html = f.read()
-        def analytics_filter(match):
-            script = match.group(0)
-            if any(marker in script for marker in ('posthog.init(', 'window.reb2b', 'ddwl4m2hdecbv.cloudfront.net')):
-                return ''
-            return script
-        html = re.sub(r'<script\b[^>]*>.*?</script>', analytics_filter, html, flags=re.S|re.I)
-        if any(marker in html for marker in ('posthog', 'window.reb2b', 'ddwl4m2hdecbv.cloudfront.net')):
-            raise ValueError('Analytics remains on conversation surface: ' + path)
+        # Preserve existing vendor loaders exactly. Replay disclosure and
+        # project masking settings are separate reviewed enable gates.
         html = html.replace('<div id="valora-concierge" hidden></div>', '<div id="valora-conversation" data-endpoint="https://api.valorahq.com/api/valora/conversation" data-intake-route="/#contact" data-intake-label="Send an inquiry" hidden></div>')
         # No endpoint is inserted here. Reviewed deployment config must supply it separately.
         inline = json.dumps(config, separators=(',', ':')).replace('<', '\\u003c')
