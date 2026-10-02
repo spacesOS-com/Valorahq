@@ -113,17 +113,7 @@ def for_advisors_body():
     <div class="advx-card reveal"><p class="advx-card__tag">Outbound</p><h3>Direct outreach</h3><p>We reach out to people who fit the clients you serve, so you are not relying only on being found.</p></div>
     <div class="advx-card reveal"><p class="advx-card__tag">YouTube</p><h3>Be seen before the first call</h3><p>People watch before they choose an advisor. We put your firm's expertise on YouTube, where they go to learn.</p></div>
   </div></section>
-<section class="section section--cream advx-incl" id="whats-included"><div class="container">
-  <h2 class="advx-h2 reveal">What your firm gets each month</h2>
-  <p class="advx-lead reveal">The work behind AEO and GEO, done for you. Volumes depend on your plan.</p>
-  <div class="advx-stats">
-    <div class="advx-stat reveal"><p class="advx-stat__n">20&ndash;30</p><h3>New pages published</h3><p>Service pages, guides, Q&amp;A and FAQ pages built around the questions your future clients ask, with structured data so AI tools can read them.</p></div>
-    <div class="advx-stat reveal"><p class="advx-stat__n">10&ndash;20</p><h3>Quality backlinks</h3><p>Guest posts and features on authoritative sites, so search and AI engines see your firm as a source worth citing.</p></div>
-    <div class="advx-stat reveal"><p class="advx-stat__n">25&ndash;100</p><h3>AI prompts tracked</h3><p>We track the prompts that matter to your firm and benchmark you against competitors across ChatGPT, Google AI Overviews, AI Mode and Gemini.</p></div>
-    <div class="advx-stat reveal"><p class="advx-stat__n">Every 2 weeks</p><h3>Performance reports</h3><p>Bi-weekly reporting on visibility and results, plus a technical audit of your site every month.</p></div>
-  </div>
-</div></section>
-<section class="section section--paper advx-proj" id="projection"><div class="container">
+<section class="section section--cream advx-proj" id="projection"><div class="container">
   <h2 class="advx-h2 reveal">Know what to expect before you start</h2>
   <p class="advx-lead reveal">Before any work begins, we build a projection for your firm, so you can see the numbers we are working toward.</p>
   <div class="advx-proj__flow reveal">
@@ -136,13 +126,13 @@ def for_advisors_body():
   <p class="advx-fine reveal">A projection is an estimate built on stated assumptions, not a result. Every firm's projection is different, and Valora does not guarantee visitors, leads or clients.</p>
   <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="#top">Get your projection</a></div>
 </div></section>
-<section class="section section--cream advx-blog" id="insights-for-advisors"><div class="container">
+<section class="section section--paper advx-blog" id="insights-for-advisors"><div class="container">
   <h2 class="advx-h2 reveal">Timely articles for your firm</h2>
   <p class="advx-lead reveal">Practical articles on advisory-firm growth, operations and communication. These articles are educational, not a promise of clients, search rankings or business results.</p>
   {_blog_cards()}
   <div class="advx-center reveal"><a class="btn btn--outline advx-btn" href="{BLOG_URL}" target="_blank" rel="noopener">View more articles</a></div>
 </div></section>
-<section class="section section--paper advx-scope" id="portal"><div class="container">
+<section class="section section--cream advx-scope" id="portal"><div class="container">
   <h2 class="advx-h2 reveal">Clear expectations</h2>
   <p class="advx-lead reveal">We would rather tell you now than waste your time.</p>
   <div class="advx-fit">
