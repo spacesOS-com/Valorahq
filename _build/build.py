@@ -283,7 +283,10 @@ if __name__ == "__main__":
     build_llms()
     # Freeze already-reviewed custom shells. Source reconciliation must not
     # introduce dynamic-feed or tracker changes into these surfaces.
-    for route, template in {'for-advisors/index.html': 'for-advisors.html', 'find-a-financial-advisor/selling-a-business/index.html': 'selling-a-business.html', 'find-a-financial-advisor/business-owner-wealth-planning/index.html': 'business-owner-wealth-planning.html'}.items():
+    # /for-advisors/ left this list when its landing page was redesigned
+    # (advisors_page.py); _build/live-reviewed/for-advisors.html is the last
+    # reviewed copy, kept for reference.
+    for route, template in {'find-a-financial-advisor/selling-a-business/index.html': 'selling-a-business.html', 'find-a-financial-advisor/business-owner-wealth-planning/index.html': 'business-owner-wealth-planning.html'}.items():
         with open(os.path.join(ROOT, "_build", "live-reviewed", template), encoding="utf-8") as source:
             write("/" + route.removesuffix("index.html"), source.read())
     prepare_conversation_surfaces(ROOT)

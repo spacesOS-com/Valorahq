@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Pulls the latest posts from blog.valorahq.com (a real, live Ghost blog
+"""Pulls the latest posts from insights.spacesos.com (blog.valorahq.com
+redirects there; a real, live Ghost blog
 under Bhavya Barot's byline) at build time, for the "advisor acquisition"
 proof section on advisors.html: Valora's own AEO/GEO content marketing is
 part of the pitch to advisors, so this embeds real posts, not placeholders.
@@ -7,25 +8,24 @@ part of the pitch to advisors, so this embeds real posts, not placeholders.
 Network access is a nice-to-have at build time, not a hard dependency —
 if the feed can't be reached (offline, blog down), FALLBACK below is used
 so `python3 _build/build.py` never breaks. FALLBACK is a snapshot taken
-2026-09-27; refresh it occasionally by re-running with network access and
+2026-10-02; refresh it occasionally by re-running with network access and
 copying the printed result.
 """
 import html
 import re
 import urllib.request
+from email.utils import parsedate_to_datetime
 
-FEED_URL = "https://blog.valorahq.com/rss/"
+FEED_URL = "https://insights.spacesos.com/rss/"
+BLOG_URL = "https://insights.spacesos.com/"
 
 FALLBACK = [
-    {"title": "Video Builds the Most Trust in Advisor Marketing. It Also Costs $37,170 a Client.",
-     "url": "https://blog.valorahq.com/advisor-video-marketing-cost-37170-trust/",
-     "excerpt": "The Kitces 2026 study says video builds the most trust in advisor marketing at a $37,170 client acquisition cost. Here is the cheaper trust channel most RIAs are missing."},
-    {"title": "GEO vs SEO: What Actually Changes for an Advisory Firm's Website",
-     "url": "https://blog.valorahq.com/geo-vs-seo-advisory-firm-website/",
-     "excerpt": "What actually changes when you optimize an advisory firm's site for AI answer engines instead of, or alongside, traditional search."},
-    {"title": "How to Get Your Firm Recommended by ChatGPT and Perplexity",
-     "url": "https://blog.valorahq.com/how-to-get-your-firm-recommended-by-chatgpt-and-perplexity/",
-     "excerpt": "A practical look at what makes an advisory firm citable by AI search and chat assistants."},
+    {"title": "How should an RIA turn a client service model into a written service calendar?", "url": "https://insights.spacesos.com/how-should-an-ria-turn-a-client-service-model-into-a-written-service-calendar/", "excerpt": "Turn an RIA service model into deliverables, triggers and responsibilities. Use a written calendar without treating meeting frequency as the whole engagement.", "image": "https://insights.spacesos.com/content/images/2026/10/14-hero.jpg", "date": "Oct 2, 2026"},
+    {"title": "What should a solo RIA include in a business-continuity handoff?", "url": "https://insights.spacesos.com/what-should-a-solo-ria-include-in-a-business-continuity-handoff/", "excerpt": "Prepare a solo RIA continuity handoff with scenarios, authorized backups and alternate contact paths. Test permissions and records before a disruption.", "image": "https://insights.spacesos.com/content/images/2026/10/13-hero.jpg", "date": "Oct 2, 2026"},
+    {"title": "What should an RIA request before a first prospect call?", "url": "https://insights.spacesos.com/what-should-an-ria-request-before-a-first-prospect-call/", "excerpt": "Stage prospect information requests around purpose, handling and the next decision. Use a request worksheet without treating it as a compliance certificate.", "image": "https://insights.spacesos.com/content/images/2026/10/what-should-an-ria-request-before-a-first-prospect-call/hero.jpg", "date": "Oct 1, 2026"},
+    {"title": "How should an RIA build a website claim-review ledger?", "url": "https://insights.spacesos.com/how-should-an-ria-build-a-website-claim-review-ledger/", "excerpt": "Connect website claims to evidence, limitations and exact reviewed versions. Use a claim ledger to check what readers infer, not only whether citations exist.", "image": "https://insights.spacesos.com/content/images/2026/10/how-should-an-ria-build-a-website-claim-review-ledger/hero.jpg", "date": "Oct 1, 2026"},
+    {"title": "When should an RIA update, merge or retire an old article?", "url": "https://insights.spacesos.com/when-should-an-ria-update-merge-or-retire-an-old-article/", "excerpt": "Choose which RIA articles to keep, update, merge or retire using a reader-first worksheet, current sources and truthful revision dates.", "image": "https://insights.spacesos.com/content/images/2026/09/sep30-maintenance-header-1600x840.jpg", "date": "Sep 30, 2026"},
+    {"title": "What should an RIA check before using a client testimonial?", "url": "https://insights.spacesos.com/what-should-an-ria-check-before-using-a-client-testimonial/", "excerpt": "Review the quote, permission, compensation, disclosures, oversight and records before using a client testimonial in RIA marketing.", "image": "https://insights.spacesos.com/content/images/2026/09/sep30-testimonials-header-1600x840.jpg", "date": "Sep 30, 2026"},
 ]
 
 
@@ -50,9 +50,23 @@ def latest_posts(n=3):
         title = _text(r"<title><!\[CDATA\[(.*?)\]\]></title>", it)
         link = _text(r"<link>(.*?)</link>", it)
         excerpt = _text(r"<description><!\[CDATA\[(.*?)\]\]></description>", it)
-        if title and link:
-            posts.append({"title": title, "url": link, "excerpt": excerpt})
+        image = _text(r'<media:content url="([^"]+)"', it)
+        date = _date(_text(r"<pubDate>(.*?)</pubDate>", it))
+        # Only ever link/hotlink the blog's own https origin.
+        if not link.startswith(BLOG_URL):
+            continue
+        if not image.startswith(BLOG_URL):
+            image = ""
+        if title:
+            posts.append({"title": title, "url": link, "excerpt": excerpt, "image": image, "date": date})
     return posts or FALLBACK[:n]
+
+
+def _date(rfc822):
+    try:
+        return parsedate_to_datetime(rfc822).strftime("%b %-d, %Y")
+    except Exception:
+        return ""
 
 
 if __name__ == "__main__":
