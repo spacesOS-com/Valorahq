@@ -15,7 +15,7 @@ from xml.sax.saxutils import escape as xml_escape
 
 sys.path.insert(0, os.path.dirname(__file__))
 from partials import (BRAND, head, page, header, footer, gate, hero_card, contact_section, RB2B_SNIPPET,
-                       faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER, lead_script_includes)
+                       faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER, lead_script_includes, _asset_ver)
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
 from advisor_pages import ADVISORS
 from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
@@ -110,11 +110,11 @@ def refresh_index():
         "header": header(None, banner=True).replace(" data-gate-open", ""),
         "hero-card": root_hero_card(),
         "faq": client_faq_section(),
-        "contact": root_contact_section(),
+        "contact": root_contact_section(with_form=False),
         "footer": footer().replace(" data-gate-open", ""),
         
     }
-    regions["head"] = regions["head"].replace("</head>", ROOT_INQUIRY_STYLE + '<link rel="stylesheet" href="/assets/root-inquiry-polish.css"><link rel="stylesheet" href="/assets/root-inquiry-modal.css"></head>')
+    regions["head"] = regions["head"].replace("</head>", ROOT_INQUIRY_STYLE + f'<link rel="stylesheet" href="/assets/root-inquiry-polish.css?v={_asset_ver("root-inquiry-polish.css")}"><link rel="stylesheet" href="/assets/root-inquiry-modal.css?v={_asset_ver("root-inquiry-modal.css")}"></head>')
     for name, content in regions.items():
         pat = re.compile(r"(<!-- @build:%s -->)(.*?)(<!-- /@build:%s -->)" % (re.escape(name), re.escape(name)), re.S)
         if not pat.search(html):
@@ -124,6 +124,10 @@ def refresh_index():
     html = re.sub(r'<script src="/assets/(?:vendor/(?:libphonenumber-max-[^"/]+|disposable-email-domains-[^"/]+)\.js|contact-validation\.js)(?:\?v=[a-f0-9]+)?"></script>\s*', '', html)
     html = re.sub(r'<script src="/(?:assets/)?script\.js(?:\?v=[a-f0-9]+)?"></script>',
                   lambda _m: lead_script_includes(), html)
+    # Version the inquiry scripts: the markup and scripts change together, so a
+    # cached older script against newer markup would leave the form empty.
+    html = re.sub(r'<script src="/assets/(inquiry-contract-adapter|root-inquiry-five|root-inquiry-modal)\.js(?:\?v=[a-f0-9]+)?"></script>',
+                  lambda m: f'<script src="/assets/{m.group(1)}.js?v={_asset_ver(m.group(1) + ".js")}"></script>', html)
     with open(p, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
 

@@ -1,3 +1,81 @@
 /* Root inquiry spacing and mobile overlap only. */
 #contact .choices{margin-bottom:24px}
 @media(max-width:650px){body.root-inquiry-visible .to-top{visibility:hidden;pointer-events:none}}
+
+/* Inline host (hero card, green CTA band): the same form on a dark surface.
+   None of this applies while the dialog has borrowed the form. */
+[data-inquiry-host] #contact{padding:0;background:transparent;color:#efebe0;scroll-margin-top:110px}
+[data-inquiry-host] #contact .root-inquiry{max-width:none;padding:0;margin:0}
+[data-inquiry-host] #contact .screen{grid-template-columns:1fr;gap:16px;min-height:0}
+[data-inquiry-host] #contact h1{font-size:1.7rem;color:inherit;margin-bottom:8px}
+[data-inquiry-host] #contact .progress{color:rgba(239,235,224,.6);margin-bottom:14px}
+[data-inquiry-host] #contact p{color:rgba(239,235,224,.75);font-size:.9rem;margin-bottom:8px}
+[data-inquiry-host] #contact p:empty{display:none}
+[data-inquiry-host] #contact label{color:rgba(239,235,224,.85)}
+[data-inquiry-host] #contact .fields{gap:12px}
+[data-inquiry-host] #contact .choices{gap:8px;margin-bottom:8px}
+[data-inquiry-host] #contact .choice{padding:12px 14px;border-radius:14px}
+[data-inquiry-host] #contact .inquiry-nav{margin-top:18px}
+[data-inquiry-host] #contact .btn{background:#efebe0;color:#1e3b2a}
+[data-inquiry-host] #contact .back{background:transparent;color:#efebe0;border-color:rgba(239,235,224,.4)}
+[data-inquiry-host] #contact .err{color:#e3a493;min-height:0}
+[data-inquiry-host] #contact a{color:inherit;text-decoration:underline}
+[data-inquiry-host] #contact button:focus-visible,[data-inquiry-host] #contact input:focus-visible,[data-inquiry-host] #contact textarea:focus-visible{outline-color:#efebe0}
+.hcard [data-inquiry-host] #contact h1{font-size:1.3rem}
+.hcard [data-inquiry-host] #contact .progress{font-size:11px;margin-bottom:10px}
+.hcard [data-inquiry-host] #contact label{font-size:12px}
+.hcard [data-inquiry-host] #contact input,.hcard [data-inquiry-host] #contact textarea{padding:10px 12px;border-radius:10px;font-size:15px;margin-top:5px}
+.hcard [data-inquiry-host] #contact textarea{height:110px}
+.hcard [data-inquiry-host] #contact .fields{gap:9px}
+.hcard [data-inquiry-host] #contact .choice{padding:9px 12px;font-size:14px;gap:12px}
+/* Fields stay white on the dark surface, so their typed text must stay dark. */
+[data-inquiry-host] #contact input,[data-inquiry-host] #contact textarea{color:#242920;caret-color:#242920}
+/* No outline ring on the text fields (inline or in the dialog); the field
+   border darkens instead. Buttons and choices keep their focus outline. */
+#contact input:focus,#contact input:focus-visible,#contact textarea:focus,#contact textarea:focus-visible,
+[data-inquiry-host] #contact input:focus-visible,[data-inquiry-host] #contact textarea:focus-visible{outline:none;border-color:#1e3b2a}
+/* Constant-size inline form: every step fills the same box, with the
+   Back/Continue row pinned to the bottom. Heights are the tallest step
+   (asset range) measured at the narrowest layout. */
+[data-inquiry-host] #contact #flow{display:flex;flex-direction:column}
+[data-inquiry-host] #contact #flow .inquiry-nav{margin-top:auto;padding-top:18px}
+.hcard [data-inquiry-host] #contact .choices{gap:6px}
+.hcard [data-inquiry-host] #contact .choice{padding:7px 10px;font-size:13.5px;border-radius:12px}
+.hcard [data-inquiry-host] #contact .choice b{font-size:11px;padding:3px 7px}
+/* No step counter on the first form; later steps carry an "Optional" label. */
+#contact .progress:empty{display:none}
+.hcard [data-inquiry-host] #contact textarea{height:90px}
+[data-inquiry-host] #contact .root-inquiry{display:flex;flex-direction:column}
+[data-inquiry-host] #contact #flow{flex:1}
+.hcard [data-inquiry-host] #contact .root-inquiry{min-height:580px}
+[data-inquiry-host] #contact .root-inquiry{min-height:690px}
+/* Form buttons match the site's standard .btn (52px tall pill), and every
+   button in the form is the same width as the others. */
+#contact .inquiry-nav .btn{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:170px;min-height:52px;padding:14px 20px;border:1px solid transparent;border-radius:999px;font:inherit;font-size:.83rem;font-weight:500;letter-spacing:.04em}
+#contact .inquiry-nav .back{border-color:#babfb4}
+[data-inquiry-host] #contact .inquiry-nav .back{border-color:rgba(239,235,224,.4)}
+.hcard [data-inquiry-host] #contact .inquiry-nav{gap:12px}
+.hcard [data-inquiry-host] #contact .inquiry-nav .btn{width:calc(50% - 6px);padding-inline:10px}
+/* Phone: country-code select beside the number. */
+#contact .phone-row{display:flex;gap:8px;margin-top:7px}
+#contact .phone-row input{margin-top:0;flex:1;min-width:0}
+#contact .phone-row select{flex:0 0 auto;font:16px Arial,sans-serif;color:#242920;background:#fff;border:1px solid #cbc8bd;border-radius:16px;padding:16px 10px;cursor:pointer}
+#contact .phone-row select:focus,#contact .phone-row select:focus-visible{outline:none;border-color:#1e3b2a}
+.hcard [data-inquiry-host] #contact .phone-row{margin-top:5px;gap:6px}
+.hcard [data-inquiry-host] #contact .phone-row select{font-size:15px;padding:10px 6px;border-radius:10px}
+/* Country-code select and number field share one height. */
+#contact .phone-row{align-items:stretch}
+#contact .phone-row select,#contact .phone-row input,
+.hcard [data-inquiry-host] #contact .phone-row select,.hcard [data-inquiry-host] #contact .phone-row input{box-sizing:border-box;margin:0;height:auto;align-self:stretch}
+#contact .phone-row select,.hcard [data-inquiry-host] #contact .phone-row select{padding-block:0}
+/* Errors. Field problems are written under the field itself; the box is
+   only for form-level problems (for example a failed send). */
+#contact .field-err{display:block;margin-top:6px;font-size:12.5px;line-height:1.35;font-weight:500;color:#b3261e}
+#contact .field-err::before{content:"!";display:inline-grid;place-items:center;width:14px;height:14px;margin-right:6px;border-radius:50%;background:#b3261e;color:#fff;font-size:10px;font-weight:700;vertical-align:1px}
+#contact input[aria-invalid="true"],#contact textarea[aria-invalid="true"]{border-color:#b3261e;box-shadow:0 0 0 2px rgba(179,38,30,.18)}
+#contact .err{min-height:0;margin-top:14px;padding:10px 14px;border:1px solid #e6b4ad;border-radius:12px;background:#fdf1ef;color:#8f2218;font-size:13px;font-weight:500;line-height:1.4}
+#contact .err:empty{display:none}
+[data-inquiry-host] #contact .field-err{color:#ffb9ab}
+[data-inquiry-host] #contact .field-err::before{background:#ffb9ab;color:#1e3b2a}
+[data-inquiry-host] #contact input[aria-invalid="true"],[data-inquiry-host] #contact textarea[aria-invalid="true"]{border-color:#ff9c8a;box-shadow:0 0 0 2px rgba(255,156,138,.45)}
+[data-inquiry-host] #contact .err{background:rgba(255,185,171,.14);border-color:rgba(255,185,171,.5);color:#ffd3ca}

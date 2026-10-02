@@ -349,7 +349,7 @@ def _nav_dropdown(menu, index):
 
 
 def header(active=None, cta=("Ask a question", "/#contact"), banner=False):
-    items = '<li><a href="/guides/">Guides</a></li>\n' + "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
+    items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
     banner_html = ""
     if banner:
         banner_html = ('<div class="site-banner">Are you a financial advisor? '
@@ -630,17 +630,15 @@ def page_form(goal=None):
 
 
 def contact_section(goal=None, title='Tell us what you’re trying to figure out.'):
-    form = page_form()
-    if goal:  # preselect the matching "solving for" option on specialty pages
-        form = form.replace(f"<option>{escape(goal)}</option>", f"<option selected>{escape(goal)}</option>", 1)
-    return f"""<section class="section section--green cta" id="contact">
+    from root_inquiry import inquiry_host  # lazy import: avoids a circular import
+    return f"""<section class="section section--green cta" id="inquiry-page-cta">
   <div class="container cta__grid">
     <div class="cta__copy">
       <h2 class="display display--lg reveal">{title}</h2>
       <p class="reveal">Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.</p>
     </div>
 
-    {form}
+    {inquiry_host()}
   </div>
 </section>"""
 
@@ -763,6 +761,19 @@ def lead_script_includes():
 
 
 def page(head_html, body_html, active=None, with_gate=False, body_class="page-sub"):
+    from root_inquiry import (root_contact_section, inquiry_form_section, INQUIRY_HOST_TOKEN,
+                              ROOT_INQUIRY_STYLE)  # lazy import: avoids a circular import
+    head_html = head_html.replace(
+        "</head>",
+        ROOT_INQUIRY_STYLE + f'<link rel="stylesheet" href="/assets/root-inquiry-polish.css?v={_asset_ver("root-inquiry-polish.css")}">'
+        f'<link rel="stylesheet" href="/assets/root-inquiry-modal.css?v={_asset_ver("root-inquiry-modal.css")}"></head>')
+    # The form itself lives at id="contact" (see inquiry_form_section). Rename
+    # any other id="contact" a page body carries so the two can't collide.
+    body_html = body_html.replace('id="contact"', 'id="inquiry-page-cta"')
+    # A body with an inline host (contact_section) gets the form there and an
+    # empty dialog that borrows it; otherwise the form lives in the dialog.
+    has_host = INQUIRY_HOST_TOKEN in body_html
+    body_html = body_html.replace(INQUIRY_HOST_TOKEN, inquiry_form_section(), 1).replace(INQUIRY_HOST_TOKEN, '')
     return f"""<!DOCTYPE html>
 <html lang="en-US">
 {head_html}
@@ -781,6 +792,10 @@ def page(head_html, body_html, active=None, with_gate=False, body_class="page-su
 <div id="valora-concierge" hidden></div>
 <script src="/assets/concierge.js?v={_asset_ver('concierge.js')}"></script>
 {lead_script_includes()}
+{root_contact_section(with_form=not has_host)}
+<script src="/assets/inquiry-contract-adapter.js?v={_asset_ver('inquiry-contract-adapter.js')}"></script>
+<script src="/assets/root-inquiry-five.js?v={_asset_ver('root-inquiry-five.js')}"></script>
+<script src="/assets/root-inquiry-modal.js?v={_asset_ver('root-inquiry-modal.js')}"></script>
 </body>
 </html>
 """
