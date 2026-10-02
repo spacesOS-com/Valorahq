@@ -22,6 +22,10 @@
 /* No outline box around the textbox; the composer lifts slightly instead. */
 #valora-floating-conversation input:focus,#valora-floating-conversation input:focus-visible{outline:none}
 #valora-floating-conversation .valora-conversation__composer:focus-within{box-shadow:0 10px 30px #0003}
+/* Empty-submit hint: replaces the browser's native validation tooltip. */
+#valora-floating-conversation .valora-conversation__hint{order:1;align-self:flex-start;position:relative;margin:0 0 0 46px;padding:8px 14px;border-radius:14px;background:var(--green);color:#fff;font-size:12px;line-height:1.35;box-shadow:0 6px 18px #0003;animation:valora-suggest-in .26s cubic-bezier(.2,.8,.2,1) both}
+#valora-floating-conversation .valora-conversation__hint:after{content:"";position:absolute;left:18px;bottom:-5px;width:10px;height:10px;background:var(--green);transform:rotate(45deg)}
+@media(prefers-reduced-motion:reduce){#valora-floating-conversation .valora-conversation__hint{animation:none}}
 /* Suggested questions: bubbles between the greeting and the composer. */
 #valora-floating-conversation .valora-conversation__faq{order:1;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 #valora-floating-conversation .valora-conversation__faq button{margin:0;min-height:0;padding:8px 14px;border-radius:18px;font:inherit;font-size:12px;line-height:1.35;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 4px 14px #0001}

@@ -96,12 +96,12 @@
   function showSuggestions() {
     var typing = input.value.trim().length >= 3;
     faqPopup.hidden = busy || !typing || !faqPopup.childElementCount;
-    if (chat.hidden) greeting.hidden = typing;
+    if (chat.hidden) greeting.hidden = typing || (typeof hint !== 'undefined' && hint && !hint.hidden);
   }
   input.addEventListener('focus', function() { showSuggestions(); chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
   // Clicking away swaps the suggestions back for the greeting (unless a
   // conversation is open); the suggestions return on the next keystroke.
-  document.addEventListener('pointerdown', function(e) { if (wrap.contains(e.target)) return; faqPopup.hidden = true; if (chat.hidden) greeting.hidden = false; });
+  document.addEventListener('pointerdown', function(e) { if (wrap.contains(e.target)) return; faqPopup.hidden = true; if (typeof hint !== 'undefined' && hint) { clearTimeout(hintTimer); hint.hidden = true; } if (chat.hidden) greeting.hidden = false; });
   input.addEventListener('input', showSuggestions);
   function showInitialChoices() {
     if (!pageContext || !Array.isArray(pageContext.questions)) return;
@@ -243,6 +243,17 @@
       if (generation === currentGeneration) { activeController = null; busy = false; send.disabled = false; input.disabled = false; input.focus(); faqPopup.hidden = true; }
     }
   }
-  form.addEventListener('submit', function (event) { event.preventDefault(); submitQuestion(input.value); });
+  // The browser's native "Please fill out this field" tooltip can't be styled,
+  // so validation is handled here with the widget's own hint bubble.
+  form.noValidate = true;
+  var hint = document.createElement('p'); hint.className = 'valora-conversation__hint'; hint.setAttribute('role', 'alert'); hint.hidden = true;
+  hint.textContent = 'Type a question to get started.';
+  form.before(hint);
+  var hintTimer = null;
+  // The hint shows alone: the greeting steps aside and returns afterwards.
+  function hideHint() { if (hint.hidden) return; clearTimeout(hintTimer); hint.hidden = true; showSuggestions(); }
+  function showHint() { greeting.hidden = true; hint.hidden = false; clearTimeout(hintTimer); hintTimer = setTimeout(hideHint, 3500); input.focus({ preventScroll: true }); }
+  input.addEventListener('input', hideHint);
+  form.addEventListener('submit', function (event) { event.preventDefault(); if (!input.value.trim()) { showHint(); return; } hideHint(); submitQuestion(input.value); });
   window.addEventListener('pagehide', clearSession);
 })();

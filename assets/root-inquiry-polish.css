@@ -29,3 +29,9 @@
 .hcard [data-inquiry-host] #contact .fields{gap:9px}
 .hcard [data-inquiry-host] #contact .choice{padding:9px 12px;font-size:14px;gap:12px}
 .hcard [data-inquiry-host] #contact .btn{padding:11px 20px;font-size:14px}
+/* Fields stay white on the dark surface, so their typed text must stay dark. */
+[data-inquiry-host] #contact input,[data-inquiry-host] #contact textarea{color:#242920;caret-color:#242920}
+/* No outline ring on the text fields (inline or in the dialog); the field
+   border darkens instead. Buttons and choices keep their focus outline. */
+#contact input:focus,#contact input:focus-visible,#contact textarea:focus,#contact textarea:focus-visible,
+[data-inquiry-host] #contact input:focus-visible,[data-inquiry-host] #contact textarea:focus-visible{outline:none;border-color:#1e3b2a}
