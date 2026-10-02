@@ -1,0 +1,14 @@
+{
+  "slug": "consumer-live-source-reconcile-6d8841ac-r4",
+  "result": "applied",
+  "patch_sha256": "f9604df419905ce27c49ff7314dbe809656b46c31a0e68a7e1e8a5bf31b10f9d",
+  "target_branch": "patched/consumer-live-source-reconcile-6d8841ac-r4",
+  "commit": "4ada8baaa8e3c9239eb69d24f95923204592b4c6",
+  "base": "main",
+  "base_sha": "371b8647b3156cffb1ff41d241d3717b0baff318",
+  "files_changed": 28,
+  "force_added": 0,
+  "drop_branch": "patch-drop/consumer-live-source-reconcile-6d8841ac-r4",
+  "run": "https://github.com/spacesOS-com/Valorahq/actions/runs/36970832832",
+  "time": "2026-10-02T05:51:46Z"
+}
