@@ -63,3 +63,15 @@
 #contact .phone-row select:focus,#contact .phone-row select:focus-visible{outline:none;border-color:#1e3b2a}
 .hcard [data-inquiry-host] #contact .phone-row{margin-top:5px;gap:6px}
 .hcard [data-inquiry-host] #contact .phone-row select{font-size:15px;padding:10px 6px;border-radius:10px}
+/* Country-code select and number field share one height. */
+#contact .phone-row{align-items:stretch}
+#contact .phone-row select,#contact .phone-row input,
+.hcard [data-inquiry-host] #contact .phone-row select,.hcard [data-inquiry-host] #contact .phone-row input{box-sizing:border-box;margin:0;height:auto;align-self:stretch}
+#contact .phone-row select,.hcard [data-inquiry-host] #contact .phone-row select{padding-block:0}
+/* Error message: a tinted box that only takes space when there is one,
+   and a matching highlight on the field that needs attention. */
+#contact .err{min-height:0;margin-top:14px;padding:11px 14px 11px 12px;border-left:4px solid #c8402f;border-radius:10px;background:#fbe9e6;color:#8f2218;font-size:14px;font-weight:600;line-height:1.4}
+#contact .err:empty{display:none}
+#contact input[aria-invalid="true"],#contact textarea[aria-invalid="true"]{border-color:#c8402f;box-shadow:0 0 0 3px rgba(200,64,47,.28)}
+[data-inquiry-host] #contact .err{background:#fff1ee;color:#8f2218;border-left-color:#e2523f;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+[data-inquiry-host] #contact input[aria-invalid="true"],[data-inquiry-host] #contact textarea[aria-invalid="true"]{border-color:#ff8f7d;box-shadow:0 0 0 3px rgba(255,143,125,.55)}
