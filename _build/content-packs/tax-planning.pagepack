@@ -1,0 +1,131 @@
+{
+  "status": "draft",
+  "slug": "find-a-financial-advisor/tax-planning",
+  "h1": "Tax planning: put household decisions on a review calendar",
+  "title": "Tax planning: put household decisions on a review calendar",
+  "meta_title": "Tax Planning: Household Decision Calendar | Valora",
+  "meta_description": "Organize household tax decisions around events, evidence and qualified reviewers. Separate withholding, payments and investment choices before acting.",
+  "custom_excerpt": "Organize household tax decisions around events, evidence and qualified reviewers. Separate withholding, payments and investment choices before acting.",
+  "feature_image": {
+    "src": "assets/hero.jpg",
+    "mobile_src": "assets/hero-mobile.jpg",
+    "alt": "Conceptual illustration of documents and a calendar for reviewed financial decisions.",
+    "caption": "Conceptual illustration, not a client record or guaranteed outcome."
+  },
+  "body_html": "<p><strong>Tax planning starts by putting a household's upcoming financial decisions on a calendar, checking the facts that affect them, and assigning the tax and investment work to the right professionals.</strong> A smaller tax bill is not the only objective. You also need enough cash for payments, a plan consistent with your goals, and a record of which assumptions have actually been reviewed.</p>\n<aside class=\"worksheet\"><h2>Key takeaways</h2><ul><li>Withholding, estimated payments and the final tax calculation are related but different jobs.</li><li>A transaction should be reviewed before you commit, because the account, timing, basis and other facts can change its tax treatment.</li><li>A calculator can illustrate a defined federal tax question without calculating your full household liability.</li><li>Write down who owns the tax calculation, who owns the investment decision and what remains unanswered before acting.</li></ul></aside>\n<p>This guide concerns US household planning. It is educational, not personalized tax, legal or investment advice. Valora is not a registered investment adviser and is not arranging advisor matches or introductions at this time.</p>\n<h2 id=\"decision\">What decision are you trying to make before tax season?</h2>\n<p>Start with the event that may change the household's finances, not a list of tax-saving products. That makes the question specific enough to investigate.</p>\n<p>A new job may change withholding. Uneven income may prompt an estimated-payment review. Selling an investment raises questions about basis, holding period and the reason for the sale. A family change may affect filing facts. Those events need different records and different decisions, even when they occur in the same year.</p>\n<p>The IRS's <a href=\"https://www.irs.gov/newsroom/year-round-tax-planning-pointers-for-taxpayers\">year-round planning guidance</a> encourages taxpayers to review filing status, records and withholding instead of waiting until they file. Use that as a starting point for a dated conversation. It does not mean every household should make the same election or transaction.</p>\n<p>Write the decision in one sentence: \"Before changing this, we need to understand these tax and cash-flow consequences.\" Name the action, the planned timing and the person who can supply missing facts. If the event is only a possibility, keep that distinction visible.</p>\n<h2 id=\"calendar\">What belongs on a household tax-decision calendar?</h2>\n<p>Put the event, evidence, responsible reviewer and next action together. A date without a defined task can look organized while leaving the decision untouched.</p>\n<figure><picture><source media=\"(max-width:600px)\" srcset=\"assets/calendar-mobile.svg\"/><img alt=\"A household event connects to evidence, a qualified reviewer and a dated next action.\" src=\"assets/calendar.svg\"/></picture><figcaption>Conceptual calendar: the date belongs to a decision, not a generic tax-saving promise.</figcaption></figure>\n<div class=\"worksheet\"><h3>The household tax-decision calendar</h3><table><thead><tr><th>Event and question</th><th>Evidence to review</th><th>Decision owner</th><th>Next action and limit</th></tr></thead><tbody><tr><td data-label=\"Event and question\">A job or household income change: does withholding need review?</td><td data-label=\"Evidence to review\">Current pay information, relevant household income and last filed return.</td><td data-label=\"Decision owner\">The taxpayer and qualified tax professional, with payroll handling any form update.</td><td data-label=\"Next action and limit\">Use the appropriate current-year process; an estimate is not a filed return.</td></tr><tr><td data-label=\"Event and question\">Income without withholding: what payment review is needed?</td><td data-label=\"Evidence to review\">Income timing, withholding, prior payments and filing facts.</td><td data-label=\"Decision owner\">The tax professional and taxpayer.</td><td data-label=\"Next action and limit\">Confirm federal and state requirements rather than choosing one percentage.</td></tr><tr><td data-label=\"Event and question\">A possible investment sale: what would change?</td><td data-label=\"Evidence to review\">Account type, basis records, holding period and proposed transaction.</td><td data-label=\"Decision owner\">The investment professional for the portfolio decision and tax professional for tax consequences.</td><td data-label=\"Next action and limit\">Review before the transaction; keep projections separate from completed trades.</td></tr><tr><td data-label=\"Event and question\">A family or location change: which filing facts need updating?</td><td data-label=\"Evidence to review\">The event date, relevant records and jurisdictions.</td><td data-label=\"Decision owner\">The taxpayer and tax professional.</td><td data-label=\"Next action and limit\">Identify applicable rules; do not assume last year's facts still apply.</td></tr><tr><td data-label=\"Event and question\">A year-end review: what remains open?</td><td data-label=\"Evidence to review\">Actual records alongside earlier estimates.</td><td data-label=\"Decision owner\">The named reviewer for each item.</td><td data-label=\"Next action and limit\">Record unanswered questions and deadlines from current authoritative sources.</td></tr></tbody></table></div>\n<p>This is an original organizing worksheet, not an IRS form or a legal schedule. It does not supply filing or payment deadlines. Confirm the exact applicable dates with current official guidance and your professional. A proposed transaction date and a tax-payment date can be different entries.</p>\n<p>Keep the worksheet brief enough to use. Its value is the connection between an event and a reviewed action. Do not upload it with confidential financial documents merely to ask a general question.</p>\n<h2 id=\"payments\">How are withholding and estimated payments different from tax liability?</h2>\n<p>They are ways of paying during the year; they do not replace the final calculation of what you owe. A payment review needs the household's actual facts.</p>\n<p>The <a href=\"https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes\">IRS estimated-tax page</a> explains that estimated payments cover taxes on income not subject to withholding. It also notes that uneven income may call for annualizing income and unequal payments to avoid or lower an underpayment penalty. That is a conditional method, not permission to defer payment until a convenient month.</p>\n<p><a href=\"https://www.irs.gov/publications/p505\">Publication 505</a> explains withholding and estimated tax, including the annualized-income installment method. Have the tax professional check which approach applies. Do not multiply one deposit by an assumed tax rate and call the result the household's required payment.</p>\n<p>Record whether an amount is a projection, a payment already made or a confirmed instruction. This matters when several people maintain the calendar. A projected amount copied into the paid column can hide a real missing action.</p>\n<h2 id=\"withholding\">When can the IRS withholding estimator help?</h2>\n<p>The IRS estimator can help eligible users review federal income-tax withholding from pay or pensions. Its stated purpose is narrower than a full financial plan.</p>\n<p>The <a href=\"https://www.irs.gov/individuals/tax-withholding-estimator\">IRS Tax Withholding Estimator page</a> says to check withholding after major changes, including income changes. It explains using results to prepare a Form W-4 or W-4P when appropriate. Read its current instructions and suitability information before using it, especially when the household has more complex facts.</p>\n<p>A change in withholding changes the timing of payments. It does not turn a transaction into a tax-free one or prove that a household's entire tax position is correct. Keep the resulting action with the records used and check again when those facts change.</p>\n<p>You do not need to share account credentials to have this conversation. Agree on the necessary records and a suitable sharing method with the professional doing the work. Valora's inquiry form is not a place to submit a tax return or a payroll file.</p>\n<aside class=\"cta\"><h2>Want help applying this to your own numbers?</h2><p>Tell us what you are trying to figure out. Valora reviews inquiries and emails next steps; we are not arranging advisor matches or introductions. Do not submit confidential financial documents.</p><a data-content-destination=\"inquiry\" data-content-event=\"content_cta_click\" data-content-page=\"tax-planning\" data-content-placement=\"mid\" href=\"/find-your-advisor/\">Talk it through</a></aside>\n<h2 id=\"investment\">What should be reviewed before selling an investment?</h2>\n<p>Review both the investment reason and the tax facts before making the trade. A tax estimate alone cannot decide whether the sale fits your goals.</p>\n<p>The <a href=\"https://www.irs.gov/taxtopics/tc409\">IRS capital-gains and losses topic</a> explains that the difference between adjusted basis and amount realized determines a capital gain or loss, and distinguishes short-term and long-term treatment. Its definitions matter more than the balance displayed in an account.</p>\n<p>Ask whether the basis record is complete, which account holds the asset, what other transactions are relevant and how the timing fits the plan. The tax professional should assess the tax question; the investment professional should explain the portfolio consequences, costs and risks within the agreed scope. Do not treat a favorable tax result as the only benefit that matters.</p>\n<figure><picture><source media=\"(max-width:600px)\" srcset=\"assets/roles-mobile.svg\"/><img alt=\"Tax facts and portfolio goals are reviewed separately before a transaction decision.\" src=\"assets/roles.svg\"/></picture><figcaption>Conceptual coordination: a tax calculation and an investment recommendation answer different questions.</figcaption></figure>\n<p>A fictional household, Morgan and Lee, is considering a sale to fund a planned expense. The account balance tells them how much is held, but it does not answer the realized-gain question. They collect basis information, ask their tax professional about the possible tax effect and ask the investment professional how the sale changes the portfolio. They keep the expense timing visible while resolving those questions.</p>\n<p>This example is invented and contains no recommended trade or tax rate. It shows why the decision needs more than a quoted account value. No result is promised.</p>\n<h2 id=\"calculator\">What can a capital-gains calculator show, and what does it leave out?</h2>\n<p>A narrowly defined calculator can help you examine assumptions, but its exclusions must stay beside the output. Do not mistake a federal illustration for a final household bill.</p>\n<p>The existing <a data-content-event=\"content_internal_link_click\" data-content-page=\"tax-planning\" data-content-placement=\"body\" href=\"/calculators/capital-gains-tax-estimate/\">Valora capital-gains estimator</a> describes estimating federal long-term capital-gains tax by stacking gains on other taxable income. Its current page says it excludes state capital-gains tax and the Net Investment Income Tax. Read those limits before using the output.</p>\n<p>Have the actual input facts reviewed, including what the gain represents and whether the modeled treatment fits. The tool does not determine basis, choose which asset to sell, assess every transaction rule or calculate your final return. This page does not add a new formula or certify the calculator's implementation.</p>\n<p>The IRS estimator addresses withholding; the capital-gains tool addresses a different illustration. One cannot substitute for the other. Using fewer tools with understood boundaries is more useful than collecting outputs whose assumptions conflict.</p>\n<h2 id=\"professional\">How do you divide work between tax and investment professionals?</h2>\n<p>Agree on the work in writing, including which person checks assumptions and which person gives the final instruction. Professional titles do not define the entire engagement.</p>\n<p>The <a href=\"https://www.irs.gov/tax-professionals/understanding-tax-return-preparer-credentials-and-qualifications\">IRS preparer-credentials guidance</a> explains differences among credentials and representation rights. Use it to check the qualifications relevant to the tax work you are requesting, rather than assuming all preparers have identical scope.</p>\n<p><a href=\"https://www.investor.gov/introduction-investing/getting-started/working-investment-professional/investment-advisers\">Investor.gov's adviser guide</a> recommends understanding services, fees and conflicts and reading the agreement and relevant disclosures. Ask whether tax coordination is part of the paid work, what it costs and who remains responsible for the calculation.</p>\n<p>Before hiring, ask: Which facts do you need? Which tasks are included? Who checks state-tax questions? Who tells me when a decision is still unreviewed? How are costs charged if the work changes? A professional may coordinate a conversation without being qualified or engaged to deliver every answer.</p>\n<p>For a business distribution rather than a general household event, use the separate <a data-content-event=\"content_internal_link_click\" data-content-page=\"tax-planning\" data-content-placement=\"body\" href=\"/find-a-financial-advisor/business-owner-wealth-planning/\">retained-business-owner workflow</a>. It deals with whether money can leave the company; this page deals with organizing household tax decisions.</p>\n<h2 id=\"limits\">What should remain an open question?</h2>\n<p>A missing record, uncertain treatment or conflicting calculation should remain unresolved until the appropriate reviewer checks it. The calendar cannot fill those gaps.</p>\n<p>Do not invent a deadline from memory, assume a federal answer covers the state question or borrow a strategy from another household. Tax law, filing facts and the proposed action must be checked together. This guide does not promise a lower bill or identify an optimal transaction for you.</p>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>A useful tax plan makes the next decision visible before it becomes irreversible. Record the event, evidence, reviewer and next action. Keep projections separate from payments and completed transactions, and let the reviewed facts drive the choice.</p>\n",
+  "faqs": [
+    {
+      "q": "Does tax planning always mean lowering my tax bill?",
+      "a": "No. It also includes payment timing, cash needs and decisions consistent with your goals. This guide does not promise a lower bill or identify an optimal transaction."
+    },
+    {
+      "q": "Is withholding the same as final tax liability?",
+      "a": "No. Withholding is a way of paying during the year. The household still needs the actual tax calculation based on its filing facts."
+    },
+    {
+      "q": "Can a capital-gains calculator calculate my whole tax bill?",
+      "a": "No. The linked tool describes a federal long-term capital-gains illustration and excludes state tax and Net Investment Income Tax. It does not determine basis or choose a transaction."
+    },
+    {
+      "q": "Who should review an investment sale?",
+      "a": "Have the tax professional review the tax facts and the investment professional review portfolio consequences within the agreed scope. Assign responsibilities before the transaction."
+    },
+    {
+      "q": "What should I send through the inquiry form?",
+      "a": "Describe the question you want to ask. Do not submit tax returns, payroll records, account credentials or other confidential financial documents through the form."
+    }
+  ],
+  "faq_jsonld": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does tax planning always mean lowering my tax bill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It also includes payment timing, cash needs and decisions consistent with your goals. This guide does not promise a lower bill or identify an optimal transaction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is withholding the same as final tax liability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Withholding is a way of paying during the year. The household still needs the actual tax calculation based on its filing facts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a capital-gains calculator calculate my whole tax bill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The linked tool describes a federal long-term capital-gains illustration and excludes state tax and Net Investment Income Tax. It does not determine basis or choose a transaction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should review an investment sale?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Have the tax professional review the tax facts and the investment professional review portfolio consequences within the agreed scope. Assign responsibilities before the transaction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I send through the inquiry form?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Describe the question you want to ask. Do not submit tax returns, payroll records, account credentials or other confidential financial documents through the form."
+        }
+      }
+    ]
+  },
+  "inline_images": [
+    {
+      "src": "assets/calendar.svg",
+      "mobile_src": "assets/calendar-mobile.svg",
+      "alt": "A household event connects to evidence, a qualified reviewer and a dated next action.",
+      "caption": "Conceptual calendar: the date belongs to a decision, not a generic tax-saving promise."
+    },
+    {
+      "src": "assets/roles.svg",
+      "mobile_src": "assets/roles-mobile.svg",
+      "alt": "Tax facts and portfolio goals are reviewed separately before a transaction decision.",
+      "caption": "Conceptual coordination: a tax calculation and an investment recommendation answer different questions."
+    }
+  ],
+  "key_takeaways": [
+    "Withholding, estimated payments and the final tax calculation are related but different jobs.",
+    "A transaction should be reviewed before you commit, because the account, timing, basis and other facts can change its tax treatment.",
+    "A calculator can illustrate a defined federal tax question without calculating your full household liability.",
+    "Write down who owns the tax calculation, who owns the investment decision and what remains unanswered before acting."
+  ],
+  "toc": true,
+  "release_controls": {
+    "route": "Writer -> parent -> Zara exact content/source/art -> Rohan publication",
+    "state": "No publication/current-shell proof. Local source preview only.",
+    "cta": "Inquiry-only /find-your-advisor/ on consumer page; educational internal links only for two advisor articles",
+    "tracking": "Clean hrefs plus data-content metadata; actual event wiring unverified",
+    "indexing": "Consumer noindex and roster holds preserved; publication is not indexing"
+  },
+  "robots": "noindex,follow",
+  "canonical": "https://www.valorahq.com/find-a-financial-advisor/tax-planning/",
+  "cta": {
+    "heading": "Want help applying this to your own numbers?",
+    "body": "Tell us what you are trying to figure out. Valora reviews inquiries and emails next steps; we are not arranging advisor matches or introductions. Do not submit confidential financial documents.",
+    "button_label": "Talk it through",
+    "href": "/find-your-advisor/",
+    "tracking": {
+      "event": "content_cta_click",
+      "page": "tax-planning",
+      "placement": "end",
+      "destination": "inquiry"
+    }
+  },
+  "calculator": {
+    "href": "/calculators/capital-gains-tax-estimate/",
+    "state": "Existing live relevant tool linked; limited federal illustration, no new formula certification",
+    "integration": "Rohan checks related embedding if required, limits beside tool; no tax-rate data duplicated"
+  }
+}

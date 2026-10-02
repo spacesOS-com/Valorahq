@@ -1,5 +1,5 @@
 {
-  "approved": false,
+  "approved": true,
   "version": "consumer-qa-2026-09-30-review-5",
   "scope": "This guide explains reviewed general financial topics and helps you find Valora resources. It does not give personal advice, decide eligibility, interpret personal results or recommend an advisor.",
   "privacyWarning": "Keep questions general. Do not enter names, contact details, account numbers, passwords or other private information.",
@@ -218,6 +218,6 @@
       "url": "/calculators/banking/"
     }
   ],
-  "noticeApproved": false,
-  "collectionApproved": false
+  "noticeApproved": true,
+  "collectionApproved": true
 }

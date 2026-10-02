@@ -10,7 +10,8 @@
     var url;try{url=new URL(link.getAttribute('href'),location.href);}catch(_){return;}
     if(url.origin!==location.origin || url.search || url.hash)return;
     var page=link.getAttribute('data-content-page'),placement=link.getAttribute('data-content-placement');
-    if(!['selling-a-business','business-owner-wealth-planning'].includes(page) || !['mid','body','end','shell'].includes(placement))return;
+    if(page==='tax-planning'){if(name!=='content_cta_click' || !['mid','end'].includes(placement) || url.pathname!=='/find-your-advisor/' || location.pathname!=='/find-a-financial-advisor/tax-planning/')return;}
+    else if(!['selling-a-business','business-owner-wealth-planning'].includes(page) || !['mid','body','end','shell'].includes(placement))return;
     document.dispatchEvent(new CustomEvent('valora-content-event',{detail:{name:name,page:page,placement:placement,destination:url.pathname}}));
   });
 })();
