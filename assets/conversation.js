@@ -76,7 +76,7 @@
   function refreshFAQs() { faqPopup.replaceChildren(); activePageContext.questions.slice(0, 3).forEach(function(label) { var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.addEventListener('click', function() { faqPopup.hidden = true; submitQuestion(label); }); faqPopup.appendChild(b); }); }
   refreshFAQs();
   form.before(faqPopup);
-  input.addEventListener('focus', function() { greeting.hidden = false; faqPopup.hidden = true; chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
+  input.addEventListener('focus', function() { if (chat.hidden) greeting.hidden = false; faqPopup.hidden = true; chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
   input.addEventListener('input', function() { faqPopup.hidden = input.value.trim().length > 0; });
   function showInitialChoices() {
     if (!pageContext || !Array.isArray(pageContext.questions)) return;
@@ -126,7 +126,7 @@
   wrap.insertBefore(minimize,chat);
   function closeConversation(){clearSession();wrap.insertBefore(greeting,form);chat.hidden=true;minimize.hidden=true;title.hidden=true;syncSpacer();input.focus({preventScroll:true});}
   minimize.addEventListener('click',closeConversation);
-  form.addEventListener('submit',function(){if(input.value.trim()){chat.hidden=false;minimize.hidden=false;title.hidden=false;syncSpacer();}});
+  form.addEventListener('submit',function(){if(input.value.trim()){greeting.hidden=true;chat.hidden=false;minimize.hidden=false;title.hidden=false;syncSpacer();}});
   document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!chat.hidden)closeConversation();});
   host.hidden = false;
 
@@ -191,7 +191,7 @@
   function submitQuestion(value) { var question = value.trim(); if (question) return submitTurn({question: question}, question); }
   async function submitTurn(selection, label) {
     if (busy) return;
-    faqPopup.hidden = true; busy = true; send.disabled = true; input.disabled = true;
+    greeting.hidden = true; faqPopup.hidden = true; busy = true; send.disabled = true; input.disabled = true;
     var originalInput = input.value, currentGeneration = generation;
     status.textContent = 'Finding resources...';
     var turnLine = line(label, 'valora-concierge__question');
