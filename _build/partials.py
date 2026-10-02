@@ -763,6 +763,17 @@ def lead_script_includes():
 
 
 def page(head_html, body_html, active=None, with_gate=False, body_class="page-sub"):
+    from root_inquiry import root_contact_section, ROOT_INQUIRY_STYLE  # lazy import: avoids a circular import
+    head_html = head_html.replace(
+        "</head>",
+        ROOT_INQUIRY_STYLE + '<link rel="stylesheet" href="/assets/root-inquiry-polish.css">'
+        '<link rel="stylesheet" href="/assets/root-inquiry-modal.css"></head>')
+    # The dialog's own form lives at id="contact" (see root_contact_section).
+    # A page's own body can independently have an id="contact" CTA band
+    # (anchor target for "/#contact" links before this existed) -- rename it
+    # so the two don't collide. Same rename conversation_assets.py already
+    # does for the 12 reviewed pages; harmless no-op where there's no match.
+    body_html = body_html.replace('id="contact"', 'id="inquiry-page-cta"')
     return f"""<!DOCTYPE html>
 <html lang="en-US">
 {head_html}
@@ -781,6 +792,10 @@ def page(head_html, body_html, active=None, with_gate=False, body_class="page-su
 <div id="valora-concierge" hidden></div>
 <script src="/assets/concierge.js?v={_asset_ver('concierge.js')}"></script>
 {lead_script_includes()}
+{root_contact_section()}
+<script src="/assets/inquiry-contract-adapter.js?v={_asset_ver('inquiry-contract-adapter.js')}"></script>
+<script src="/assets/root-inquiry-five.js?v={_asset_ver('root-inquiry-five.js')}"></script>
+<script src="/assets/root-inquiry-modal.js?v={_asset_ver('root-inquiry-modal.js')}"></script>
 </body>
 </html>
 """
