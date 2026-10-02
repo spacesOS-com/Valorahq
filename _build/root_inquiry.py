@@ -18,7 +18,7 @@ def inquiry_host(embed=False):
 
 
 def root_contact_section(with_form=True):
-    return '<dialog id="rootInquiryDialog" aria-label="Send Valora an inquiry"><button type="button" class="inquiry-modal-close" aria-label="Close inquiry">Close</button>' + (inquiry_form_section() if with_form else '') + '</dialog>'
+    return '<dialog id="rootInquiryDialog" aria-label="Send Valora an inquiry"><button type="button" class="inquiry-modal-close" aria-label="Close inquiry"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>' + (inquiry_form_section() if with_form else '') + '</dialog>'
 
 def root_hero_card():
     return '<aside class="hcard hcard--inquiry">' + inquiry_host(embed=True) + '</aside>'
