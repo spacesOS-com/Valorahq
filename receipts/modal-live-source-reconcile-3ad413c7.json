@@ -1,0 +1,14 @@
+{
+  "slug": "modal-live-source-reconcile-3ad413c7",
+  "result": "applied",
+  "patch_sha256": "3e7c635cc9f54d10514f79ab587ba82cfaa2e5505af4d3a1eb565ff25063ca21",
+  "target_branch": "patched/modal-live-source-reconcile-3ad413c7",
+  "commit": "8b683cc5110ef05abbcc6667118a307ca9ca5387",
+  "base": "main",
+  "base_sha": "93df805d526f2b4d031f5686967af38366100398",
+  "files_changed": 12,
+  "force_added": 0,
+  "drop_branch": "patch-drop/modal-live-source-reconcile-3ad413c7",
+  "run": "https://github.com/spacesOS-com/Valorahq/actions/runs/36971803511",
+  "time": "2026-10-02T06:04:27Z"
+}
