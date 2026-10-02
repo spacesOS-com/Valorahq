@@ -2394,7 +2394,37 @@ body.embed-mode .to-top{ display:none !important; }
 .advx-ticks li::before{ content:""; position:absolute; left:0; top:2px; width:20px; height:20px; border-radius:50%; background:var(--green); }
 .advx-ticks li::after{ content:""; position:absolute; left:7px; top:6px; width:5px; height:9px; border:solid var(--cream); border-width:0 1.6px 1.6px 0; transform:rotate(45deg); }
 .advx-hero__note{ margin-top:26px; font-size:.84rem; color:var(--muted); max-width:52ch; }
-.advx-hero__form{ border-radius:18px; }
+.advx-hero__title span{ color:var(--green-soft); }
+.advx-pill{ display:inline-block; padding:8px 16px; border-radius:999px; background:#fff; border:1px solid var(--line); box-shadow:0 6px 18px rgba(22,25,15,.06); font-size:.8rem; font-weight:600; color:var(--green); }
+.advx-form{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:clamp(22px,2.4vw,32px); box-shadow:0 30px 64px -34px rgba(22,45,31,.35); }
+.advx-form h2{ font-family:var(--sans); font-weight:600; font-size:1.35rem; letter-spacing:-.015em; }
+.advx-form__sub{ margin-top:6px; font-size:.9rem; line-height:1.5; color:var(--ink-soft); }
+.advx-form form{ display:grid; gap:14px; margin-top:20px; }
+.advx-form form[hidden]{ display:none; }
+.advx-form__row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.advx-form label{ display:block; font-size:.8rem; font-weight:500; color:var(--ink); }
+.advx-form input{ display:block; width:100%; box-sizing:border-box; margin-top:6px; padding:12px 14px; font:inherit; font-size:16px; color:#242920; background:#fff; border:1px solid #cbc8bd; border-radius:12px; }
+.advx-form input::placeholder{ color:#a3a698; }
+.advx-form input:focus{ outline:none; border-color:var(--green); box-shadow:0 0 0 3px rgba(30,59,42,.12); }
+.advx-form input[aria-invalid="true"]{ border-color:#b3261e; }
+.advx-form__field-err{ display:block; margin-top:6px; font-size:.78rem; font-weight:500; line-height:1.35; color:#b3261e; }
+.advx-form__error{ margin:0; padding:10px 14px; border:1px solid #e6b4ad; border-radius:12px; background:#fdf1ef; color:#8f2218; font-size:.82rem; font-weight:500; }
+.advx-form__error:empty{ display:none; }
+.advx-form .advx-btn{ width:100%; justify-content:center; margin-top:4px; }
+.advx-form .advx-btn[disabled]{ opacity:.6; cursor:default; transform:none; }
+.advx-form__fine{ font-size:.74rem; line-height:1.5; color:var(--muted); text-align:center; }
+.advx-form__done{ margin-top:20px; padding:28px 0 12px; text-align:center; }
+.advx-form__done[hidden]{ display:none; }
+.advx-form__done:focus{ outline:none; }
+.advx-form__done h3{ font-family:var(--sans); font-weight:600; font-size:1.3rem; }
+.advx-form__done p{ margin-top:8px; color:var(--ink-soft); }
+.advx-why__grid{ display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(32px,5vw,72px); align-items:center; }
+.advx-stack{ font-family:var(--sans); font-weight:600; font-size:clamp(1.7rem,3.2vw,2.5rem); line-height:1.15; letter-spacing:-.025em; color:var(--green); }
+.advx-why__copy p{ margin-top:20px; font-size:1rem; line-height:1.65; color:var(--ink-soft); max-width:46ch; }
+.advx-why__copy .advx-btn{ margin-top:28px; }
+.advx-cards.advx-cards--two{ grid-template-columns:1fr 1fr; margin-top:0; }
+.advx-cards--two .advx-card{ text-align:left; border:2px solid var(--gold); }
+.advx-cards--two .advx-card h3{ margin-top:0; }
 
 .advx-h2{ font-family:var(--sans); font-weight:600; font-size:clamp(1.7rem,3.2vw,2.5rem); line-height:1.15; letter-spacing:-.025em; text-align:center; color:var(--ink); }
 .advx-lead{ margin:16px auto 0; max-width:60ch; text-align:center; font-size:1rem; line-height:1.65; color:var(--ink-soft); }
@@ -2454,9 +2484,11 @@ body.embed-mode .to-top{ display:none !important; }
 
 @media (max-width:900px){
   .advx-hero__grid{ grid-template-columns:1fr; }
+  .advx-why__grid{ grid-template-columns:1fr; }
   .advx-cards,.advx-steps{ grid-template-columns:1fr; }
   .advx-posts{ grid-template-columns:1fr 1fr; }
   .advx-fit{ grid-template-columns:1fr; }
   .advx-band .container,.advx-cross .container{ flex-direction:column; align-items:flex-start; }
 }
-@media (max-width:620px){ .advx-posts{ grid-template-columns:1fr; } }
+@media (max-width:620px){ .advx-posts,.advx-cards.advx-cards--two{ grid-template-columns:1fr; } }
+@media (max-width:400px){ .advx-form__row{ grid-template-columns:1fr; } }

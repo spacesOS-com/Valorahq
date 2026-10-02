@@ -2,7 +2,9 @@
 the firm's services; AEO, GEO and outbound are the means, not the pitch."""
 from html import escape
 from blog_feed import latest_posts, BLOG_URL
-from root_inquiry import inquiry_host
+from root_inquiry import inquiry_form_section
+from partials import _asset_ver
+import re
 FOR_ADVISORS_FAQ = [
     ('How does Valora help my firm reach new clients?', 'Valora works to put your firm in front of people who are already looking for the kind of advice you give. We do that in two ways: by making your firm easier to find when people ask AI tools and search engines about financial advice, and by reaching out directly to people who fit the clients you serve.'),
     ('What are AEO and GEO?', 'Answer engine optimization (AEO) and generative engine optimization (GEO) are the work of making a firm\'s expertise easy for AI assistants and AI-powered search to find, read and cite. They are tools we use, alongside outbound outreach, to connect your firm with people seeking its services.'),
@@ -41,12 +43,36 @@ _ICON = {
 def _icon(name):
     return f'<span class="advx-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{_ICON[name]}</svg></span>'
 
+def _endpoint():
+    """Same reviewed endpoint as the site-wide inquiry form."""
+    return re.search(r'data-endpoint="([^"]+)"', inquiry_form_section()).group(1)
+
+def _intro_form():
+    return f"""<aside class="advx-form" aria-labelledby="advisorIntroTitle">
+    <h2 id="advisorIntroTitle">Tell us about your firm</h2>
+    <p class="advx-form__sub">See how Valora can put your firm in front of the right people.</p>
+    <form id="advisorIntro" data-endpoint="{_endpoint()}" novalidate>
+      <div class="advx-form__row">
+        <label>First name<input name="first" autocomplete="given-name" required maxlength="60"></label>
+        <label>Last name<input name="last" autocomplete="family-name" required maxlength="60"></label>
+      </div>
+      <label>Work email<input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="name@yourfirm.com"></label>
+      <label>Phone number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20"></label>
+      <label>Firm name<input name="firm" autocomplete="organization" required maxlength="120"></label>
+      <label>Firm website<input name="website" inputmode="url" autocomplete="url" maxlength="160" placeholder="yourfirm.com"></label>
+      <p class="advx-form__error" role="alert"></p>
+      <button type="submit" class="btn btn--dark advx-btn">Get started</button>
+      <p class="advx-form__fine">We review every inquiry and reply by email. Valora does not guarantee clients, revenue or asset growth.</p>
+    </form>
+    <div id="advisorIntroDone" class="advx-form__done" tabindex="-1" hidden><h3>Thank you.</h3><p>We have your details and will reply by email.</p></div>
+  </aside>"""
+
 def for_advisors_body():
     return f"""<section class="advx-hero" id="top"><div class="container advx-hero__grid">
   <div class="advx-hero__copy">
-    <p class="eyebrow reveal">For advisory firms</p>
-    <h1 class="advx-hero__title reveal">Connect with people seeking your firm's services.</h1>
-    <p class="advx-hero__sub reveal">Valora puts your firm in front of people who are already looking for the advice you give.</p>
+    <p class="advx-pill reveal">For advisory firms</p>
+    <h1 class="advx-hero__title reveal">Connect with people <span>seeking your firm's services.</span></h1>
+    <p class="advx-hero__sub reveal">Valora puts your firm in front of people who are already looking for the advice you give, and helps you start the conversation.</p>
     <ul class="advx-ticks reveal">
       <li>Be found when people ask AI tools and search for financial advice</li>
       <li>Reach the people your firm serves best, directly</li>
@@ -54,24 +80,29 @@ def for_advisors_body():
     </ul>
     <p class="advx-hero__note reveal">Results vary by firm, market and competition. Valora does not guarantee clients.</p>
   </div>
-  <aside class="hcard hcard--inquiry advx-hero__form" aria-label="Tell Valora about your firm">{inquiry_host()}</aside>
+  {_intro_form()}
 </div></section>
-<section class="section section--paper advx-why" id="introductions"><div class="container">
-  <h2 class="advx-h2 reveal">Why Valora?</h2>
-  <div class="advx-cards">
-    <div class="advx-card reveal">{_icon("check")}<h3>Right people</h3><p>We focus on people who are already looking for the kind of advice your firm gives.</p></div>
-    <div class="advx-card reveal">{_icon("book")}<h3>Built for advisors</h3><p>Valora works only with advisory firms, so the work fits how advice is found and chosen.</p></div>
-    <div class="advx-card reveal">{_icon("mail")}<h3>Done for you</h3><p>We do the work. Your firm reviews what goes out under its name.</p></div>
+<section class="section section--paper advx-why" id="introductions"><div class="container advx-why__grid">
+  <div class="advx-why__copy">
+    <h2 class="advx-stack reveal">Grow your firm.<br>Be found first.<br>Start more conversations.</h2>
+    <p class="reveal">People looking for a financial advisor now ask AI tools and search before they ask a friend. Valora works to make your firm the one they find, and reaches out to the people who fit you best.</p>
+    <a class="btn btn--dark advx-btn reveal" href="#top">Get started</a>
+  </div>
+  <div class="advx-cards advx-cards--two">
+    <div class="advx-card reveal"><h3>People already looking</h3><p>We focus on people who are actively seeking the kind of advice your firm gives.</p></div>
+    <div class="advx-card reveal"><h3>The clients you want</h3><p>Tell us who you serve and where. The work is aimed at them.</p></div>
+    <div class="advx-card reveal"><h3>Built for advisory firms</h3><p>Valora works only with advisory firms, so the work fits how advice is found and chosen.</p></div>
+    <div class="advx-card reveal"><h3>Done for you</h3><p>We do the work. Your firm reviews what goes out under its name.</p></div>
   </div>
 </div></section>
 <section class="section section--cream advx-how" id="how-it-works"><div class="container">
-  <h2 class="advx-h2 reveal">How it works</h2>
+  <h2 class="advx-h2 reveal">As easy as 1, 2, 3</h2>
   <ol class="advx-steps">
     <li class="reveal"><span class="advx-steps__n">01</span><div><h3>Tell us about your firm</h3><p>Who you serve, where you work and the clients you want more of.</p></div></li>
     <li class="reveal"><span class="advx-steps__n">02</span><div><h3>We get your firm in front of them</h3><p>We make your firm easier to find in AI answers and search, and reach out directly to people who fit.</p></div></li>
     <li class="reveal"><span class="advx-steps__n">03</span><div><h3>You have the conversations</h3><p>People who want to talk come to your firm. You take it from there.</p></div></li>
   </ol>
-  <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="/#contact" data-gate-open>Get started</a></div>
+  <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="#top">Get started</a></div>
 </div></section>
 <section class="section section--paper advx-tools" id="how-we-do-it"><div class="container">
   <h2 class="advx-h2 reveal">How we get you there</h2>
@@ -83,7 +114,7 @@ def for_advisors_body():
   </div>
 </div></section>
 <section class="section section--cream advx-blog" id="insights-for-advisors"><div class="container">
-  <h2 class="advx-h2 reveal">Insights for advisory firms</h2>
+  <h2 class="advx-h2 reveal">Timely articles for your firm</h2>
   <p class="advx-lead reveal">Practical articles on advisory-firm growth, operations and communication. These articles are educational, not a promise of clients, search rankings or business results.</p>
   {_blog_cards()}
   <div class="advx-center reveal"><a class="btn btn--outline advx-btn" href="{BLOG_URL}" target="_blank" rel="noopener">View more articles</a></div>
@@ -105,8 +136,9 @@ def for_advisors_body():
   </div>
 </div></section>
 <section class="section section--green advx-band"><div class="container">
-  <div><h2 class="reveal">Ready to reach more of the right people?</h2><p class="reveal">Tell us about your firm. We review every inquiry and reply by email.</p></div>
-  <a class="btn btn--cream advx-btn reveal" href="/#contact" data-gate-open>Get started</a>
+  <div><h2 class="reveal">Ready to get started?</h2><p class="reveal">Tell us about your firm. We review every inquiry and reply by email.</p></div>
+  <a class="btn btn--cream advx-btn reveal" href="#top">Get started</a>
 </div></section>
 <section class="section section--paper adv-faq advx-faq" id="faq"><div class="container"><h2 class="advx-h2 reveal">Frequently asked questions</h2><div class="faq">{_faq_accordion()}</div></div></section>
-<section class="advx-cross"><div class="container"><div><h2>Not an advisory firm?</h2><p>Read Valora's educational guides on financial planning.</p></div><a class="btn btn--outline advx-btn" href="/guides/">Browse the guides</a></div></section>"""
+<section class="advx-cross"><div class="container"><div><h2>Looking for advice?</h2><p>Read Valora's educational guides on financial planning.</p></div><a class="btn btn--outline advx-btn" href="/guides/">Browse the guides</a></div></section>
+<script defer src="/assets/advisor-intro-form.js?v={_asset_ver("advisor-intro-form.js")}"></script>"""
