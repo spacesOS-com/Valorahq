@@ -114,7 +114,7 @@ def refresh_index():
         "footer": footer().replace(" data-gate-open", ""),
         
     }
-    regions["head"] = regions["head"].replace("</head>", ROOT_INQUIRY_STYLE + '<link rel="stylesheet" href="/assets/root-inquiry-polish.css"></head>')
+    regions["head"] = regions["head"].replace("</head>", ROOT_INQUIRY_STYLE + '<link rel="stylesheet" href="/assets/root-inquiry-polish.css"><link rel="stylesheet" href="/assets/root-inquiry-modal.css"></head>')
     for name, content in regions.items():
         pat = re.compile(r"(<!-- @build:%s -->)(.*?)(<!-- /@build:%s -->)" % (re.escape(name), re.escape(name)), re.S)
         if not pat.search(html):
