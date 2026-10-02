@@ -28,7 +28,6 @@
 .hcard [data-inquiry-host] #contact textarea{height:110px}
 .hcard [data-inquiry-host] #contact .fields{gap:9px}
 .hcard [data-inquiry-host] #contact .choice{padding:9px 12px;font-size:14px;gap:12px}
-.hcard [data-inquiry-host] #contact .btn{padding:11px 20px;font-size:14px}
 /* Fields stay white on the dark surface, so their typed text must stay dark. */
 [data-inquiry-host] #contact input,[data-inquiry-host] #contact textarea{color:#242920;caret-color:#242920}
 /* No outline ring on the text fields (inline or in the dialog); the field
@@ -48,5 +47,12 @@
 .hcard [data-inquiry-host] #contact textarea{height:90px}
 [data-inquiry-host] #contact .root-inquiry{display:flex;flex-direction:column}
 [data-inquiry-host] #contact #flow{flex:1}
-.hcard [data-inquiry-host] #contact .root-inquiry{min-height:565px}
-[data-inquiry-host] #contact .root-inquiry{min-height:675px}
+.hcard [data-inquiry-host] #contact .root-inquiry{min-height:580px}
+[data-inquiry-host] #contact .root-inquiry{min-height:690px}
+/* Form buttons match the site's standard .btn (52px tall pill), and every
+   button in the form is the same width as the others. */
+#contact .inquiry-nav .btn{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:170px;min-height:52px;padding:14px 20px;border:1px solid transparent;border-radius:999px;font:inherit;font-size:.83rem;font-weight:500;letter-spacing:.04em}
+#contact .inquiry-nav .back{border-color:#babfb4}
+[data-inquiry-host] #contact .inquiry-nav .back{border-color:rgba(239,235,224,.4)}
+.hcard [data-inquiry-host] #contact .inquiry-nav{gap:12px}
+.hcard [data-inquiry-host] #contact .inquiry-nav .btn{width:calc(50% - 6px);padding-inline:10px}
