@@ -215,14 +215,17 @@
       a.textContent = item.label || item.title; a.href = item.url; a.rel = 'noopener noreferrer'; row.appendChild(a); links.appendChild(row);
     }); chat.appendChild(links);
     var group = document.createElement('div'); group.className = 'valora-concierge__choices ph-no-capture';
-    data.choices.forEach(function (choice) {
+    // The page's three standard questions are not repeated under every answer: the side panel
+    // already lists them, and in the docked bar they only belong before the first question.
+    var standard = activePageContext.questions || [];
+    data.choices.filter(function (choice) { return standard.indexOf(choice.label) === -1; }).forEach(function (choice) {
       var b = document.createElement('button'); b.type = 'button'; b.textContent = choice.label;
       b.addEventListener('click', function () {
         // Explicit reset clears state. Restart choices must be asked as reviewed labels.
         if (data.kind === 'reset') submitQuestion(choice.label);
         else submitTurn({optionId: choice.optionId}, choice.label);
       }); group.appendChild(b);
-    }); chat.appendChild(group); chat.scrollTop = chat.scrollHeight;
+    }); if (group.childElementCount) chat.appendChild(group); chat.scrollTop = chat.scrollHeight;
   }
   function submitQuestion(value) { var question = value.trim(); if (question) return submitTurn({question: question}, question); }
   async function submitTurn(selection, label) {
