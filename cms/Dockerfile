@@ -8,8 +8,8 @@ COPY assets ./assets
 COPY cms ./cms
 COPY index.html ./index.html
 COPY guides ./guides
-# Generates the stylesheet the article preview uses.
-RUN python3 _build/insights_site.py
+# Builds the site once so the CMS can list every page (from the sitemap) and the article preview has its stylesheet.
+RUN python3 _build/build.py || python3 _build/insights_site.py
 ENV NODE_ENV=production PORT=8000 CMS_STORAGE=github CMS_SITE_ROOT=/app CMS_DB_PATH=/data/cms.sqlite
 VOLUME /data
 EXPOSE 8000

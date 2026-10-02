@@ -7,6 +7,11 @@ const db = require('./db');
 const articles = require('./articles');
 const publisher = require('./publish');
 
+const growth = require('./growth');
+const leads = require('./leads');
+const visibility = require('./visibility');
+const crawlers = require('./crawlers');
+
 const PROTOCOL = '2025-06-18';
 const obj = (properties, required = []) => ({ type: 'object', properties, required, additionalProperties: false });
 const str = (description) => ({ type: 'string', description });
@@ -22,6 +27,7 @@ const ARTICLE_FIELDS = {
   structured_data: { type: 'object', description: 'Extra schema.org JSON-LD object to emit with the page.' },
 };
 const ID = { id: str('Article id.') };
+const BRAND = { type: 'integer', description: 'Brand id; omit for Valora.' };
 
 const TOOLS = [
   { name: 'list_articles', description: 'List articles, newest first. Filter by status, type or calendar day.',
@@ -58,6 +64,29 @@ const TOOLS = [
     run: (u, a) => { if (!['admin', 'qa'].includes(u.role)) throw Object.assign(new Error('This needs the qa or admin role.'), { status: 403 });
       const limit = Math.min(Number(a.limit) || 50, 200);
       return { entries: a.target_id ? db.all('SELECT * FROM audit_log WHERE target_id = ? ORDER BY id DESC LIMIT ?', a.target_id, limit) : db.all('SELECT * FROM audit_log ORDER BY id DESC LIMIT ?', limit) }; } },
+  /* growth: all take an optional brand id (defaults to Valora) */
+  { name: 'list_brands', description: 'Brands tracked in the CMS: Valora and client firms.', inputSchema: obj({}), run: () => ({ brands: growth.listBrands() }) },
+  { name: 'get_overview', description: 'One-screen summary for a brand: searches tracked and missed, pages, leads, AI visibility, AI crawler hits, backlinks.', inputSchema: obj({ brand: BRAND }), run: (u, a) => growth.overview(a.brand) },
+  { name: 'get_opportunities', description: 'Searches the brand is tracking, with monthly volume where known, whether the brand shows in results, and who does.', inputSchema: obj({ brand: BRAND }), run: (u, a) => growth.opportunities(a.brand) },
+  { name: 'add_searches', description: 'Add searches to track. Supply monthly_searches only from a real data source; leave it out if unknown.',
+    inputSchema: obj({ brand: BRAND, keywords: { type: 'array', items: obj({ query: str('The search.'), monthly_searches: { type: 'integer' }, intent: str('researching | comparing | ready to act') }, ['query']) } }, ['keywords']),
+    run: (u, a) => growth.addKeywords(u, a.brand, a.keywords, 'manual') },
+  { name: 'check_search_results', description: 'Look up current search results for tracked searches (needs a search provider key) and record whether the brand shows.', inputSchema: obj({ brand: BRAND, ids: { type: 'array', items: { type: 'integer' } } }),
+    run: (u, a) => growth.checkMany(u, a.brand, a.ids) },
+  { name: 'assign_searches', description: 'Link searches to the article (or external page URL) meant to answer them.', inputSchema: obj({ ids: { type: 'array', items: { type: 'integer' } }, article_id: str('Article id.'), page_url: str('https:// URL of a page outside the CMS.') }, ['ids']),
+    run: (u, a) => growth.assignKeywords(u, a.ids, a) },
+  { name: 'list_pages', description: 'Pages with the searches each one is meant to answer and the monthly searches they add up to.', inputSchema: obj({ brand: BRAND }), run: (u, a) => ({ pages: growth.pages(a.brand) }) },
+  { name: 'list_leads', description: 'Leads for a brand with journey, status and notes. Spam is excluded unless spam is true.', inputSchema: obj({ brand: BRAND, status: str('new | contacted | qualified | won | lost'), spam: { type: 'boolean' } }),
+    run: (u, a) => ({ leads: leads.list(a.brand, { status: a.status, spam: a.spam }) }) },
+  { name: 'update_lead', description: 'Change a lead status, owner or spam flag, and optionally add a note.', inputSchema: obj({ id: { type: 'integer' }, status: str('new | contacted | qualified | won | lost'), assigned_to: { type: 'integer' }, spam: { type: 'boolean' }, note: str('Note to add.') }, ['id']),
+    run: (u, { id, note, ...patch }) => { let lead = leads.update(u, id, patch); if (note) lead = leads.addNote(u, id, note); return { lead }; } },
+  { name: 'get_ai_visibility', description: 'How often AI assistants mention the brand for its tracked prompts, share of voice against competitors, and cited domains.', inputSchema: obj({ brand: BRAND, days: { type: 'integer' } }),
+    run: (u, a) => visibility.report(a.brand, Math.min(Number(a.days) || 30, 180)) },
+  { name: 'add_tracked_prompts', description: 'Add prompts to ask AI assistants on a schedule.', inputSchema: obj({ brand: BRAND, prompts: { type: 'array', items: { type: 'string' } } }, ['prompts']), run: (u, a) => visibility.addPrompts(u, a.brand, a.prompts) },
+  { name: 'run_ai_visibility', description: 'Ask every configured AI engine the tracked prompts now (at most once per engine per day unless force is true).', inputSchema: obj({ brand: BRAND, force: { type: 'boolean' } }), run: (u, a) => visibility.run(u, a.brand, { force: a.force === true }) },
+  { name: 'get_ai_crawler_report', description: 'Which AI crawlers read which pages, from ingested server logs.', inputSchema: obj({ brand: BRAND, days: { type: 'integer' } }), run: (u, a) => crawlers.report(a.brand, Math.min(Number(a.days) || 30, 180)) },
+  { name: 'log_backlink', description: 'Record a backlink prospect or a live link.', inputSchema: obj({ brand: BRAND, source_url: str('Page that links to the site.'), target_url: str('Page it links to.'), anchor: str('Link text.'), status: str('prospect | pitched | live | lost'), notes: str('Notes.') }, ['source_url']),
+    run: (u, a) => ({ backlink: growth.saveBacklink(u, a.brand, a) }) },
 ];
 
 async function handle(req, res, ctx) {

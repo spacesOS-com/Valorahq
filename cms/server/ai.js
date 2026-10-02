@@ -151,10 +151,10 @@ const AUDIENCE = {
   'consumer-page': 'Readers are individuals deciding whether and how to get financial advice. Write an educational guide about the considerations and trade-offs; never tell the reader what they personally should do. Published on valorahq.com under the persona Nina.',
 };
 
-async function draft({ topic, type, notes }, { memory, pages } = {}) {
+async function draft({ topic, type, notes, searches }, { memory, pages } = {}) {
   const input = await callTool({
     system: `${HOUSE_RULES}\n\nYou draft one article that is easy for AI assistants and search engines to read and cite: a direct answer first, question-style headings, concrete specifics, FAQs that stand alone. ${AUDIENCE[type]} Link only to pages listed below, if any. List in review_notes everything QA must verify. The article is saved as a draft and a person reviews it before anything is published.${memoryText(memory)}${sitePagesText(pages)}`,
-    user: `Write the article.\nTopic: ${String(topic).slice(0, 300)}\nNotes from the editor: ${String(notes || 'none').slice(0, 2000)}`,
+    user: `Write the article.\nTopic: ${String(topic).slice(0, 300)}\nNotes from the editor: ${String(notes || 'none').slice(0, 2000)}${(searches || []).length ? `\nThis one page should answer all of these searches, each in its own section or FAQ where it fits naturally:\n- ${searches.join('\n- ')}` : ''}`,
     tool: DRAFT_TOOL, maxTokens: 16000,
   });
   if (!String(input.title || '').trim() || !String(input.body_md || '').trim()) throw fail(502, 'The AI did not return a usable article. Try again.');
@@ -163,6 +163,24 @@ async function draft({ topic, type, notes }, { memory, pages } = {}) {
     meta_title: String(input.meta_title || '').slice(0, 120), meta_description: String(input.meta_description || '').slice(0, 320),
     faqs: (input.faqs || []).map((f) => ({ q: String(f.q || ''), a: String(f.a || '') })), key_takeaways: (input.key_takeaways || []).map(String),
   };
+}
+
+const SUGGEST_TOOL = {
+  name: 'suggest_edits',
+  description: 'Suggest improvements to the page.',
+  input_schema: { type: 'object', required: ['suggestions'], properties: { suggestions: { type: 'array', items: { type: 'object', required: ['label', 'instruction'], properties: {
+    label: { type: 'string', description: 'Three to six words for a button, e.g. "Tighten the opening answer".' },
+    instruction: { type: 'string', description: 'The full instruction an editor would give to make that change.' },
+  } } } } },
+};
+
+/* Three specific things worth changing on this page, each one click away. */
+async function suggest(doc, { memory } = {}) {
+  const input = await callTool({
+    system: `${HOUSE_RULES}\n\nRead the page and propose the three most useful edits: things that are vague, dated, hard for an AI assistant to quote, or out of line with the brand memory. Never suggest adding statistics or claims.${memoryText(memory)}`,
+    user: `PAGE JSON:\n${JSON.stringify(slim(doc), null, 1)}`, tool: SUGGEST_TOOL, maxTokens: 800,
+  });
+  return (input.suggestions || []).slice(0, 3).map((s) => ({ label: String(s.label || '').slice(0, 60), instruction: String(s.instruction || '').slice(0, 600) })).filter((s) => s.label && s.instruction);
 }
 
 const IDEAS_TOOL = {
@@ -228,6 +246,7 @@ function mock(tool, user) {
       body_md: `## What should you consider?\n\n${para.repeat(6)}\n\n## What does it cost?\n\n${para.repeat(6)}\n\n- One point\n- Another point\n\n<script>alert(1)</script> [a link](https://example.com/page)`,
       key_takeaways: ['Mock takeaway one.', 'Mock takeaway two.', 'Mock takeaway three.'], faqs: [{ q: 'Mock question?', a: 'Mock answer.' }], review_notes: ['Mock: verify everything.'] };
   }
+  if (tool === 'suggest_edits') return { suggestions: [{ label: 'Tighten the opening answer', instruction: 'Mock: tighten the opening.' }, { label: 'Add a question about fees', instruction: 'Mock: add a fees FAQ.' }, { label: 'Shorten the search title', instruction: 'Mock: shorten the meta title.' }] };
   if (tool === 'suggest_topics') return { ideas: [{ topic: 'Financial advisor for airline pilots', intent: 'researching', why: 'Mock idea.' }] };
   if (tool === 'report_findings') {
     const high = /guarantee/i.test(user);
@@ -238,4 +257,4 @@ function mock(tool, user) {
   return {};
 }
 
-module.exports = { edit, draft, ideas, check, configured, parsePath, getPath, PRESETS };
+module.exports = { edit, draft, ideas, check, suggest, configured, parsePath, getPath, PRESETS };

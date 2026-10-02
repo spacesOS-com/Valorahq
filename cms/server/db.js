@@ -67,6 +67,45 @@ function open() {
       id INTEGER PRIMARY KEY, article_id TEXT NOT NULL REFERENCES articles(id) ON DELETE CASCADE,
       advisor_id INTEGER NOT NULL REFERENCES advisors(id), status TEXT NOT NULL DEFAULT 'pending',
       note TEXT NOT NULL DEFAULT '', decided_at TEXT);
+    /* ---- growth: brands (Valora itself and client firms), search opportunities, leads, AI visibility ---- */
+    CREATE TABLE IF NOT EXISTS brands (
+      id INTEGER PRIMARY KEY, name TEXT NOT NULL, domains TEXT NOT NULL DEFAULT '[]', aliases TEXT NOT NULL DEFAULT '[]',
+      competitors TEXT NOT NULL DEFAULT '[]', advisor_id INTEGER REFERENCES advisors(id), is_default INTEGER NOT NULL DEFAULT 0,
+      lead_key_hash TEXT NOT NULL DEFAULT '', created_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS keywords (
+      id INTEGER PRIMARY KEY, brand_id INTEGER NOT NULL REFERENCES brands(id) ON DELETE CASCADE, query TEXT NOT NULL COLLATE NOCASE,
+      monthly_searches INTEGER, volume_source TEXT NOT NULL DEFAULT '', intent TEXT NOT NULL DEFAULT '', source TEXT NOT NULL DEFAULT 'manual',
+      visible TEXT NOT NULL DEFAULT 'unknown' CHECK (visible IN ('unknown','no','yes')), position INTEGER,
+      serp TEXT NOT NULL DEFAULT '[]', serp_checked_at TEXT, article_id TEXT REFERENCES articles(id) ON DELETE SET NULL,
+      page_url TEXT NOT NULL DEFAULT '', created_at TEXT NOT NULL, UNIQUE (brand_id, query));
+    CREATE TABLE IF NOT EXISTS leads (
+      id INTEGER PRIMARY KEY, brand_id INTEGER NOT NULL REFERENCES brands(id) ON DELETE CASCADE, received_at TEXT NOT NULL,
+      name TEXT NOT NULL DEFAULT '', email TEXT NOT NULL DEFAULT '', phone TEXT NOT NULL DEFAULT '', company TEXT NOT NULL DEFAULT '',
+      action TEXT NOT NULL DEFAULT 'contact', message TEXT NOT NULL DEFAULT '', source_page TEXT NOT NULL DEFAULT '',
+      journey TEXT NOT NULL DEFAULT '[]', utm TEXT NOT NULL DEFAULT '{}',
+      status TEXT NOT NULL DEFAULT 'new' CHECK (status IN ('new','contacted','qualified','won','lost')),
+      spam INTEGER NOT NULL DEFAULT 0, spam_reason TEXT NOT NULL DEFAULT '', assigned_to INTEGER REFERENCES users(id));
+    CREATE TABLE IF NOT EXISTS lead_notes (
+      id INTEGER PRIMARY KEY, lead_id INTEGER NOT NULL REFERENCES leads(id) ON DELETE CASCADE, author_id INTEGER, author_name TEXT NOT NULL,
+      body TEXT NOT NULL, created_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS prompts (
+      id INTEGER PRIMARY KEY, brand_id INTEGER NOT NULL REFERENCES brands(id) ON DELETE CASCADE, text TEXT NOT NULL,
+      active INTEGER NOT NULL DEFAULT 1, created_at TEXT NOT NULL, UNIQUE (brand_id, text));
+    CREATE TABLE IF NOT EXISTS prompt_runs (
+      id INTEGER PRIMARY KEY, prompt_id INTEGER NOT NULL REFERENCES prompts(id) ON DELETE CASCADE, provider TEXT NOT NULL, model TEXT NOT NULL,
+      ran_at TEXT NOT NULL, day TEXT NOT NULL, answer TEXT NOT NULL DEFAULT '', mentioned INTEGER NOT NULL DEFAULT 0, position INTEGER,
+      competitors TEXT NOT NULL DEFAULT '[]', citations TEXT NOT NULL DEFAULT '[]', error TEXT NOT NULL DEFAULT '');
+    CREATE TABLE IF NOT EXISTS crawler_hits (
+      brand_id INTEGER NOT NULL REFERENCES brands(id) ON DELETE CASCADE, day TEXT NOT NULL, bot TEXT NOT NULL, path TEXT NOT NULL,
+      hits INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (brand_id, day, bot, path));
+    CREATE TABLE IF NOT EXISTS backlinks (
+      id INTEGER PRIMARY KEY, brand_id INTEGER NOT NULL REFERENCES brands(id) ON DELETE CASCADE, source_url TEXT NOT NULL,
+      target_url TEXT NOT NULL DEFAULT '', anchor TEXT NOT NULL DEFAULT '',
+      status TEXT NOT NULL DEFAULT 'prospect' CHECK (status IN ('prospect','pitched','live','lost')),
+      notes TEXT NOT NULL DEFAULT '', live_at TEXT, created_by INTEGER, created_at TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS keywords_brand ON keywords(brand_id);
+    CREATE INDEX IF NOT EXISTS leads_brand ON leads(brand_id, received_at);
+    CREATE INDEX IF NOT EXISTS runs_prompt ON prompt_runs(prompt_id, day);
     CREATE INDEX IF NOT EXISTS articles_status ON articles(status);
     CREATE INDEX IF NOT EXISTS articles_slot ON articles(slot_date);
     CREATE INDEX IF NOT EXISTS audit_at ON audit_log(at);
@@ -87,6 +126,10 @@ function seed() {
   ];
   const ins = db.prepare('INSERT OR IGNORE INTO routes (key,label,type,path_prefix,page_type,position) VALUES (?,?,?,?,?,?)');
   routes.forEach((r, i) => ins.run(...r, i));
+  if (!db.prepare('SELECT COUNT(*) AS n FROM brands').get().n) {
+    db.prepare('INSERT INTO brands (name,domains,aliases,competitors,is_default,created_at) VALUES (?,?,?,?,1,?)')
+      .run('Valora', JSON.stringify(['valorahq.com']), JSON.stringify(['Valora', 'ValoraHQ']), '[]', now());
+  }
 }
 
 const all = (sql, ...args) => open().prepare(sql).all(...args);

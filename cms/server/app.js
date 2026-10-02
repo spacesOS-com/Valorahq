@@ -10,6 +10,9 @@ const content = require('./content');
 const articles = require('./articles');
 const publisher = require('./publish');
 const mcp = require('./mcp');
+const growthRoutes = require('./routes-growth');
+const growth = require('./growth');
+const leads = require('./leads');
 
 const fail = (status, message) => Object.assign(new Error(message), { status });
 const isSecure = (req) => (req.headers['x-forwarded-proto'] || '').split(',')[0] === 'https';
@@ -117,6 +120,18 @@ async function handle(req, res) {
 
     if (seg[0] === 'health') return send(res, 200, { ok: true });
     if (seg[0] === 'mcp') return mcp.handle(req, res, { readBody, send, actions });
+    /* Websites send leads here with the brand's lead key. Browsers on the brand's own domains may call it. */
+    if (seg[0] === 'public' && seg[1] === 'leads') {
+      const origin = req.headers.origin || '';
+      const host = growth.hostOf(origin);
+      const allowed = host && (growth.listBrands().some((b) => b.domains.some((d) => host === d || host.endsWith('.' + d))) || (store.mode() === 'local' && /^(localhost|127\.0\.0\.1)$/.test(host)));
+      const cors = allowed ? { 'Access-Control-Allow-Origin': origin, Vary: 'Origin', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Methods': 'POST, OPTIONS' } : {};
+      if (method === 'OPTIONS') { res.statusCode = allowed ? 204 : 403; for (const [k, v] of Object.entries(cors)) res.setHeader(k, v); return res.end(); }
+      if (method !== 'POST') throw fail(405, 'Send leads with POST.');
+      if (origin && !allowed) throw fail(403, 'This website is not allowed to send leads.');
+      const body = await readBody(req, 64 * 1024);
+      return send(res, 201, leads.ingest(body.lead_key, body), cors);
+    }
     if (seg[0] !== 'v1') throw fail(404, 'Not found. The API lives under /api/cms/v1.');
     const r = seg.slice(1);
 
@@ -152,7 +167,8 @@ async function handle(req, res) {
     const body = method === 'GET' || method === 'DELETE' ? {} : await readBody(req);
 
     if (r[0] === 'me') return send(res, 200, { user, ai: ai.configured(), storage: store.mode(), site_groups: content.GROUPS,
-      routes: db.all('SELECT * FROM routes ORDER BY position'), today: articles.today() });
+      routes: db.all('SELECT * FROM routes ORDER BY position'), today: articles.today(), brands: growth.listBrands(),
+      users: db.all('SELECT id, name FROM users WHERE active = 1 ORDER BY name') });
 
     /* ---- articles ---- */
     if (r[0] === 'articles') {
@@ -200,14 +216,21 @@ async function handle(req, res) {
       if (r[1] === 'draft') {
         if (!articles.TYPES.includes(body.type)) throw fail(400, 'type must be advisor-article or consumer-page.');
         if (!String(body.topic || '').trim()) throw fail(400, 'Enter a topic.');
-        const draft = await ai.draft({ topic: body.topic, type: body.type, notes: body.notes }, await aiContext(true));
+        const targets = (Array.isArray(body.keyword_ids) ? body.keyword_ids : []).slice(0, 40).map((id) => growth.keyword(id));
+        const draft = await ai.draft({ topic: body.topic, type: body.type, notes: body.notes, searches: targets.map((k) => k.query) }, await aiContext(true));
         let slug = articles.slugify(draft.slug || draft.title), n = 2;
         const base = slug;
         while (db.get('SELECT 1 AS x FROM articles WHERE type = ? AND slug = ?', body.type, slug)) slug = `${base}-${n++}`;
         const a = articles.create(user, { ...draft, slug, type: body.type, category: body.category, slot_date: body.slot_date });
+        if (targets.length) growth.assignKeywords(user, targets.map((k) => k.id), { article_id: a.id });
         if (draft.review_notes.length) db.run('UPDATE articles SET review_note = ? WHERE id = ?', 'AI draft. Verify before approving: ' + draft.review_notes.join(' | ').slice(0, 1800), a.id);
         db.audit(user, 'ai.draft', 'article', a.id, { topic: String(body.topic).slice(0, 200) });
         return send(res, 201, { article: articles.get(a.id) });
+      }
+      if (r[1] === 'suggest') {
+        const doc = body.article_id ? aiView(articles.mustGet(body.article_id)) : body.doc;
+        if (content.typeOf(doc) !== 'object') throw fail(400, 'Nothing to review.');
+        return send(res, 200, { suggestions: await ai.suggest(doc, await aiContext(false)) });
       }
       if (r[1] === 'ideas') {
         if (!String(body.seed || '').trim()) throw fail(400, 'Enter an audience or theme.');
@@ -294,6 +317,12 @@ async function handle(req, res) {
       const limit = Math.min(Number(q.limit) || 100, 500);
       const rows = q.target_id ? db.all('SELECT * FROM audit_log WHERE target_id = ? ORDER BY id DESC LIMIT ?', q.target_id, limit) : db.all('SELECT * FROM audit_log ORDER BY id DESC LIMIT ?', limit);
       return send(res, 200, { entries: rows.map((e) => ({ ...e, detail: JSON.parse(e.detail || '{}') })) });
+    }
+    const grown = await growthRoutes.route({ r, method, q, body, user });
+    if (grown !== undefined) {
+      if (grown.raw !== undefined) { res.setHeader('Content-Disposition', `attachment; filename="${grown.filename}"`); return sendRaw(res, 200, grown.type, grown.raw); }
+      const { status, ...rest } = grown;
+      return send(res, status || 200, rest);
     }
     /* Phase 2 hooks: advisors and voice profiles are readable and writable by API; no UI yet. */
     if (r[0] === 'advisors') {

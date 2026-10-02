@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var app = document.getElementById('app');
-  var state = { user: null, ai: false, storage: 'local', groups: [], routes: [], today: '', sitePages: [], view: 'today', current: null, date: '' };
+  var state = { user: null, ai: false, storage: 'local', groups: [], routes: [], today: '', sitePages: [], view: 'overview', current: null, date: '', brands: [], brand: null, users: [], tab: 'edit' };
 
   /* ---------- helpers ---------- */
   function h(tag, attrs, children) {
@@ -313,6 +313,16 @@
     panel.appendChild(h('p', { class: 'ai__hint', text: 'Describe a change. You approve every edit before it is applied, and nothing is published until you publish.' }));
     panel.appendChild(box); panel.appendChild(h('div', {}, [ask]));
     panel.appendChild(h('div', { class: 'change__row wrap' }, [quick('Refresh content', 'refresh'), quick('Suggest internal links', 'links'), quick('Make AI-ready', 'ai_ready')]));
+    var ideasRow = h('div', { class: 'change__row wrap' });
+    var suggestBtn = h('button', { type: 'button', class: 'btn btn--ghost btn--small', text: 'Suggest improvements' });
+    suggestBtn.addEventListener('click', function () {
+      busy(suggestBtn, 'Reading the page…', api('POST', 'ai/suggest', { doc: aiDoc() }).then(function (r) {
+        ideasRow.textContent = '';
+        r.suggestions.forEach(function (sg) { var b = h('button', { type: 'button', class: 'btn btn--ghost btn--small', text: sg.label }); b.addEventListener('click', function () { run(sg.instruction, b); }); ideasRow.appendChild(b); });
+        if (!r.suggestions.length) ideasRow.appendChild(h('span', { class: 'muted', text: 'Nothing to suggest.' }));
+      }).catch(function (e) { toast(e.message); }));
+    });
+    panel.appendChild(h('div', {}, [suggestBtn])); panel.appendChild(ideasRow);
     if (state.current.kind === 'article') {
       var review = h('button', { type: 'button', class: 'btn btn--ghost btn--small', text: 'Compliance check' });
       review.addEventListener('click', function () {
@@ -367,7 +377,7 @@
   }
   function openArticle(id) {
     leave().then(function (ok) { if (!ok) return;
-      api('GET', 'articles/' + id).then(function (r) { setArticle(r); state.view = 'article'; render(); window.scrollTo(0, 0); }).catch(function (e) { toast(e.message); });
+      api('GET', 'articles/' + id).then(function (r) { setArticle(r); state.tab = 'edit'; state.view = 'article'; render(); window.scrollTo(0, 0); }).catch(function (e) { toast(e.message); });
     });
   }
   function reloadArticle() { return api('GET', 'articles/' + state.current.id).then(function (r) { setArticle(r); render(); }); }
@@ -406,7 +416,6 @@
     var bar = h('div', { class: 'bar' }, [h('h1', { text: a.title }), statusPill(s), h('span', { class: 'dirty' })]);
     var save = h('button', { type: 'button', class: 'btn btn--ghost', text: 'Save' });
     save.addEventListener('click', function () { busy(save, 'Saving…', saveArticle().then(function () { toast('Saved.'); }).catch(function (e) { toast(e.message); })); });
-    bar.appendChild(h('a', { class: 'btn btn--ghost btn--small', href: cur.previewUrl, target: '_blank', rel: 'noopener', text: 'Preview' }));
     if (a.live && a.published_url) bar.appendChild(h('a', { class: 'btn btn--ghost btn--small', href: a.published_url, target: '_blank', rel: 'noopener', text: 'Live page' }));
     bar.appendChild(save);
     if (s === 'draft') {
@@ -448,8 +457,24 @@
     var del = null;
     if (!a.live) { del = h('button', { type: 'button', class: 'link danger', text: 'Delete this article' });
       del.addEventListener('click', function () { sure('Delete this article?', 'This cannot be undone.', 'Delete').then(function (ok) { if (ok) api('DELETE', 'articles/' + a.id).then(function () { state.current = null; state.view = 'articles'; render(); }).catch(function (e) { toast(e.message); }); }); }); }
-    var left = h('div', { class: 'stack' }, [notes, h('div', { id: 'fields' }), illustrationCard(), del]);
-    setTimeout(renderFields, 0);
+    var tabs = h('div', { class: 'tabs', role: 'tablist' }, ['edit', 'preview'].map(function (t) {
+      return h('button', { type: 'button', class: state.tab === t ? 'is-on' : '', text: t === 'edit' ? 'Edit' : 'Preview', onclick: function () {
+        if (t === 'preview' && cur.dirty) { saveArticle().then(function () { state.tab = t; render(); }).catch(function (e) { toast(e.message); }); return; }
+        state.tab = t; render();
+      } });
+    }));
+    var left;
+    if (state.tab === 'preview') {
+      var pane = h('div', { class: 'previewpane' }), frame = h('iframe', { src: cur.previewUrl, title: 'Page preview' });
+      var size = function (cls, text) { return h('button', { type: 'button', class: 'link', text: text, onclick: function () { pane.className = 'previewpane' + (cls ? ' ' + cls : ''); } }); };
+      pane.appendChild(h('div', { class: 'previewpane__bar' }, [h('span', { text: (a.type === 'advisor-article' ? 'insights.spacesos.com/' : 'valorahq.com/') + a.slug + '/' }), size('', 'Desktop'), size('is-tablet', 'Tablet'), size('is-mobile', 'Phone'),
+        h('a', { href: cur.previewUrl, target: '_blank', rel: 'noopener', text: 'Open in a new tab' })]));
+      pane.appendChild(h('div', { class: 'previewpane__stage' }, [frame]));
+      left = h('div', { class: 'stack' }, [tabs, notes, pane]);
+    } else {
+      left = h('div', { class: 'stack' }, [h('div', {}, [tabs]), notes, h('div', { id: 'fields' }), illustrationCard(), del]);
+      setTimeout(renderFields, 0);
+    }
     return h('main', { class: 'main' }, [bar, h('div', { class: 'editor' }, [left, aiPanel()])]);
   }
 
@@ -512,8 +537,7 @@
 
   /* ---------- create with AI ---------- */
   function engineView() {
-    var main = h('main', { class: 'main' }, [h('h1', { text: 'Create with AI' }),
-      h('p', { class: 'lead', text: 'Give a topic and the AI writes a full draft, built to be read and cited by AI assistants. Each one is saved as a draft for a writer to check and QA to approve; nothing is published from here.' })]);
+    var main = h('main', { class: 'main' }, [head('Page creation', 'Pages built for *AI and people*', 'Give a topic and the AI writes a full draft, built to be read and cited by AI assistants. Each one is saved as a draft for a writer to check and QA to approve; nothing is published from here.')]);
     if (!state.ai) { main.appendChild(h('p', { class: 'err', text: 'AI is not set up yet. An admin needs to add the API key.' })); return main; }
     var type = h('select', {}, [h('option', { value: 'consumer-page', text: 'Consumer pages (valorahq.com)' }), h('option', { value: 'advisor-article', text: 'Advisor articles (insights.spacesos.com)' })]);
     var category = h('select', {});
@@ -563,7 +587,7 @@
   /* ---------- site pages (existing hand-built pages) ---------- */
   function loadSitePages() { return api('GET', 'site-pages').then(function (r) { state.sitePages = r.pages; }); }
   function sitePagesView() {
-    var main = h('main', { class: 'main' }, [h('h1', { text: 'Site pages' }), h('p', { class: 'lead', text: 'The existing pages of valorahq.com: the advisor landing page, the original guides, the team page and the legal pages. Saving a change publishes it, so only QA and admins can save here.' })]);
+    var main = h('main', { class: 'main' }, [head('Site pages', 'The pages *already on the site*', 'The advisor landing page, the original guides, the team page and the legal pages. Saving a change publishes it, so only QA and admins can save here.')]);
     loadSitePages().then(function () {
       state.groups.forEach(function (g) {
         var pages = state.sitePages.filter(function (p) { return p.group === g.key; }); if (!pages.length) return;
@@ -639,7 +663,7 @@
     });
   }
   function usersView() {
-    var main = h('main', { class: 'main' }, [h('h1', { text: 'People and agent tokens' }), h('p', { class: 'lead', text: 'Writers create and edit drafts. QA is the only role that can approve, and approving publishes. Admins manage people, redirects and routes. An agent token acts as the person it belongs to.' })]);
+    var main = h('main', { class: 'main' }, [head('Team', 'People and *agent tokens*', 'Writers create and edit drafts. QA is the only role that can approve, and approving publishes. Admins manage people, redirects and routes. An agent token acts as the person it belongs to.')]);
     var out = h('div', { class: 'stack' }); main.appendChild(out);
     var load = function () {
       Promise.all([api('GET', 'users'), api('GET', 'tokens')]).then(function (res) {
@@ -679,7 +703,7 @@
     document.body.appendChild(dlg); dlg.showModal(); box.select();
   }
   function redirectsView() {
-    var main = h('main', { class: 'main' }, [h('h1', { text: 'Redirects and routes' }), h('p', { class: 'lead', text: 'A redirect sends visitors and search engines from an old address to a new one. Adding or removing one publishes straight away.' })]);
+    var main = h('main', { class: 'main' }, [head('Site structure', 'Redirects and *routes*', 'A redirect sends visitors and search engines from an old address to a new one. Adding or removing one publishes straight away.')]);
     var out = h('div', { class: 'stack' }); main.appendChild(out);
     var load = function () {
       Promise.all([api('GET', 'redirects'), api('GET', 'routes')]).then(function (res) {
@@ -706,7 +730,7 @@
     return main;
   }
   function auditView() {
-    var main = h('main', { class: 'main' }, [h('h1', { text: 'Audit log' }), h('p', { class: 'lead', text: 'Every action, who did it, when, and whether it came from the editor, the API or an MCP agent.' })]);
+    var main = h('main', { class: 'main' }, [head('Audit log', 'Who did *what, and when*', 'Every action, who did it, when, and whether it came from the editor, the API or an MCP agent.')]);
     api('GET', 'audit?limit=300').then(function (r) {
       main.appendChild(table(['When', 'Who', 'Via', 'Action', 'On', 'Detail'], r.entries.map(function (e) {
         var detail = Object.keys(e.detail).map(function (k) { return k + ': ' + (typeof e.detail[k] === 'string' ? e.detail[k] : JSON.stringify(e.detail[k])); }).join(' · ');
@@ -717,13 +741,318 @@
   }
   function apiView() {
     var o = window.location.origin;
-    return h('main', { class: 'main' }, [h('h1', { text: 'API and MCP for agents' }),
-      h('p', { class: 'lead', text: 'Everything this editor does goes through the admin API, so an agent can do all of it without a browser. An agent uses a token created under People and tokens, and has that person’s role.' }),
+    return h('main', { class: 'main' }, [head('For agents', 'API and *MCP*', 'Everything this editor does goes through the admin API, so an agent can do all of it without a browser. An agent uses a token created under People and tokens, and has that person’s role.'),
       h('div', { class: 'stack narrow' }, [
         h('div', { class: 'card stack' }, [h('h3', { text: 'REST API' }), h('pre', { class: 'code', text: '# create a draft\ncurl -X POST ' + o + '/api/cms/v1/articles \\\n  -H "Authorization: Bearer $VALORA_CMS_TOKEN" -H "Content-Type: application/json" \\\n  -d \'{"type":"consumer-page","title":"Financial advisor for pilots"}\'\n\n# today\'s six slots and the done count\ncurl -H "Authorization: Bearer $VALORA_CMS_TOKEN" ' + o + '/api/cms/v1/calendar' }),
           h('p', { class: 'muted', text: 'The full route list is in cms/README.md in the repository.' })]),
         h('div', { class: 'card stack' }, [h('h3', { text: 'MCP server' }), h('p', { text: 'Streamable HTTP endpoint with the same tools: create, edit, illustrate, submit, approve, schedule, preview, calendar, redirects and audit.' }),
           h('pre', { class: 'code', text: '{\n  "mcpServers": {\n    "valora-cms": {\n      "type": "http",\n      "url": "' + o + '/api/cms/mcp",\n      "headers": { "Authorization": "Bearer ${VALORA_CMS_TOKEN}" }\n    }\n  }\n}' })])])]);
+  }
+
+  /* ---------- growth screens (scoped to the selected brand) ---------- */
+  function bq(path) { return path + (path.indexOf('?') === -1 ? '?' : '&') + 'brand=' + state.brand; }
+  function brandNow() { return state.brands.find(function (b) { return b.id === state.brand; }) || state.brands[0]; }
+  function num(n) { return Number(n || 0).toLocaleString(); }
+  function head(eyebrow, title, lead) {
+    var h1 = h('h1');
+    String(title).split('*').forEach(function (part, i) { h1.appendChild(i % 2 ? h('em', { text: part }) : document.createTextNode(part)); });
+    return h('header', { class: 'head' }, [h('p', { class: 'eyebrow', text: eyebrow }), h1, lead ? h('p', { class: 'lead', text: lead }) : null]);
+  }
+  function stat(value, label, sub, alert) { return h('div', { class: 'stat' + (alert ? ' stat--alert' : '') }, [h('b', { text: value }), h('span', { text: label }), sub ? h('small', { text: sub }) : null]); }
+  function textModal(title, message, placeholder, ok) {
+    return new Promise(function (resolve) {
+      var dlg = h('dialog'), ta = h('textarea', { rows: 8, placeholder: placeholder });
+      var close = function (v) { dlg.close(); dlg.remove(); resolve(v); };
+      var form = h('form', { class: 'dlg' }, [h('h2', { text: title }), message ? h('p', { text: message }) : null, ta,
+        h('div', { class: 'dlg__foot' }, [h('button', { type: 'button', class: 'btn btn--ghost', text: 'Cancel', onclick: function () { close(null); } }), h('button', { type: 'submit', class: 'btn', text: ok || 'Add' })])]);
+      form.addEventListener('submit', function (e) { e.preventDefault(); close(ta.value.trim() || null); });
+      dlg.addEventListener('cancel', function (e) { e.preventDefault(); close(null); });
+      dlg.appendChild(form); document.body.appendChild(dlg); dlg.showModal(); ta.focus();
+    });
+  }
+
+  function overviewView() {
+    var b = brandNow(), main = h('main', { class: 'main' }, [head(b.name, 'How ' + b.name + ' is *being found*', 'Searches, pages, AI answers and leads in one place. Every number here comes from tracked data; anything not measured yet says so.')]);
+    api('GET', bq('overview')).then(function (o) {
+      var s = o.searches, v = o.ai_visibility, l = o.leads;
+      main.appendChild(h('div', { class: 'stats' }, [
+        stat(num(s.open), 'opportunities to get found', s.tracked ? num(s.visible) + ' of ' + num(s.tracked) + ' tracked searches already show ' + b.name : 'No searches tracked yet', s.open > 0),
+        stat(s.volume_known_for ? num(s.missed_searches) : '—', 'searches a month not finding you', s.volume_known_for ? 'Across ' + num(s.volume_known_for) + ' searches with known volume' : 'Add search volumes to see this'),
+        stat(v.rate === null ? '—' : v.rate + '%', 'of AI answers mention ' + b.name, v.runs_30d ? num(v.runs_30d) + ' answers checked in 30 days' : 'No AI answers checked yet'),
+        stat(num(l.last_30d), 'leads in the last 30 days', num(l.new) + ' new · ' + num(l.qualified) + ' qualified · ' + num(l.won) + ' won'),
+        o.pages ? stat(num(o.pages.published), 'pages published from the CMS', num(o.pages.published_30d) + ' in the last 30 days · ' + num(o.pages.in_progress) + ' in progress') : null,
+        stat(num(o.ai_crawler_hits_30d), 'AI crawler visits in 30 days', o.ai_crawler_hits_30d ? '' : 'No server logs ingested yet'),
+        stat(num(o.backlinks.live), 'backlinks live', num(o.backlinks.in_progress) + ' in progress'),
+        l.spam_filtered ? stat(num(l.spam_filtered), 'junk submissions filtered', 'Kept, hidden from the inbox') : null]));
+      main.appendChild(h('div', { class: 'row' }, [h('button', { type: 'button', class: 'btn', text: 'See opportunities', onclick: function () { go('opportunities'); } }),
+        h('button', { type: 'button', class: 'btn btn--ghost', text: 'Open leads', onclick: function () { go('leads'); } }), h('button', { type: 'button', class: 'btn btn--ghost', text: "Today's calendar", onclick: function () { go('today'); } })]));
+    }).catch(function (e) { main.appendChild(h('p', { class: 'err', text: e.message })); });
+    return main;
+  }
+
+  function visPill(k) { return h('span', { class: 'pill pill--' + k.visible, text: k.visible === 'yes' ? 'Showing' + (k.position ? ' #' + k.position : '') : k.visible === 'no' ? 'Not visible yet' : 'Not checked' }); }
+  function opportunitiesView() {
+    var b = brandNow(), main = h('main', { class: 'main' }), body = h('div', { class: 'stack' });
+    var selected = {}, active = null;
+    var load = function () {
+      api('GET', bq('opportunities')).then(function (o) {
+        main.textContent = ''; body.textContent = '';
+        main.appendChild(head('Search opportunities', '*' + num(o.open) + ' opportunit' + (o.open === 1 ? 'y' : 'ies') + '* to get found',
+          o.total ? 'These are searches your future clients make where ' + b.name + ' does not show yet. Write a page that answers them directly.' : 'Add the searches your future clients make. The CMS tracks whether ' + b.name + ' shows for each one and what to write next.'));
+        var add = h('button', { type: 'button', class: 'btn', text: 'Add searches' });
+        add.addEventListener('click', function () {
+          textModal('Add searches', 'One per line. If you know the monthly volume from a keyword tool, add it after a comma.', 'financial advisor for pilots, 320\nhow much does a financial advisor cost', 'Add').then(function (text) {
+            if (text) api('POST', bq('keywords'), { text: text }).then(function (r) { toast(r.added + ' added, ' + r.updated + ' updated.'); load(); }).catch(function (e) { toast(e.message); });
+          });
+        });
+        var check = h('button', { type: 'button', class: 'btn btn--ghost', text: 'Check search results' });
+        check.addEventListener('click', function () { busy(check, 'Checking…', api('POST', bq('keywords/check'), { ids: Object.keys(selected).map(Number) }).then(function (r) { toast(r.error ? r.error : r.checked + ' searches checked.'); load(); }).catch(function (e) { toast(e.message); })); });
+        var vol = h('button', { type: 'button', class: 'btn btn--ghost', text: 'Get monthly volumes' });
+        vol.addEventListener('click', function () { busy(vol, 'Fetching…', api('POST', bq('keywords/volumes'), {}).then(function (r) { toast(r.updated + ' volumes updated.'); load(); }).catch(function (e) { toast(e.message); })); });
+        var write = h('button', { type: 'button', class: 'btn', text: 'Write a page for the selected searches' });
+        write.addEventListener('click', function () {
+          var ids = Object.keys(selected).map(Number); if (!ids.length) { toast('Tick the searches the page should answer first.'); return; }
+          var first = o.keywords.find(function (k) { return k.id === ids[0]; });
+          busy(write, 'Writing…', api('POST', 'ai/draft', { type: 'consumer-page', topic: first.query, keyword_ids: ids }).then(function (r) { openArticle(r.article.id); }).catch(function (e) { toast(e.message); }));
+        });
+        main.appendChild(h('div', { class: 'toolbar' }, [add, check, vol, h('span', { class: 'grow' }), state.ai && b.is_default ? write : null]));
+        if (!o.providers.results || !o.providers.volumes) main.appendChild(h('p', { class: 'note', text: (!o.providers.results ? 'Search results are not connected, so visibility cannot be checked automatically. ' : '') + (!o.providers.volumes ? 'Monthly volumes are not connected; enter them by hand or leave them blank. ' : '') + 'Nothing is estimated.' }));
+        main.appendChild(body);
+        if (!o.total) return;
+        if (o.top.length) {
+          if (!active || !o.top.some(function (k) { return k.id === active; })) active = o.top[0].id;
+          var chips = h('div', { class: 'chips' }), serp = h('div', { class: 'card' });
+          var show = function () {
+            var k = o.top.find(function (x) { return x.id === active; });
+            chips.textContent = '';
+            o.top.forEach(function (x) { chips.appendChild(h('button', { type: 'button', class: 'chip' + (x.id === active ? ' is-on' : ''), text: x.query, onclick: function () { active = x.id; show(); } })); });
+            serp.textContent = '';
+            var left = h('div', {}, [h('div', { class: 'serp__dots' }, [h('i'), h('i'), h('i')]), h('div', { class: 'serp__bar', text: k.query })]);
+            if (!k.serp.length) left.appendChild(h('p', { class: 'muted', text: k.serp_checked_at ? 'No results came back for this search.' : 'Results have not been checked for this search yet.' }));
+            k.serp.slice(0, 5).forEach(function (r) {
+              var own = b.domains.some(function (d) { return r.url.indexOf(d) !== -1; });
+              left.appendChild(h('div', { class: 'result' + (own ? ' is-own' : '') }, [h('small', { text: r.url.replace(/^https?:\/\//, '') }), h('strong', { text: r.title }), h('span', { text: r.snippet })]));
+            });
+            var right = k.visible === 'yes' ? h('div', { class: 'miss miss--ok' }, [h('b', { text: '#' + (k.position || '') }), h('span', { text: b.name + ' shows for this search.' })])
+              : k.monthly_searches === null ? h('div', { class: 'miss miss--idle' }, [h('b', { text: '—' }), h('span', { text: 'Monthly volume not known yet.' })])
+              : h('div', { class: 'miss' + (k.visible === 'unknown' ? ' miss--idle' : '') }, [h('b', { text: num(k.monthly_searches) }), h('span', { text: k.visible === 'no' ? "searches last month didn't find you" : 'searches a month. Visibility not checked yet.' })]);
+            serp.appendChild(h('div', { class: 'serp' }, [left, right]));
+          };
+          show();
+          body.appendChild(h('p', { class: 'colhead', text: 'Top searches not finding ' + b.name }));
+          body.appendChild(chips); body.appendChild(serp);
+        }
+        body.appendChild(h('p', { class: 'colhead', text: 'All tracked searches' }));
+        body.appendChild(table(['', 'Search', 'Monthly searches', 'Status', 'Answered by', ''], o.keywords.map(function (k) {
+          var box = h('input', { type: 'checkbox', 'aria-label': 'Select ' + k.query }); box.checked = Boolean(selected[k.id]);
+          box.addEventListener('change', function () { if (box.checked) selected[k.id] = true; else delete selected[k.id]; });
+          var vcell = h('td', { class: 'num', text: k.monthly_searches === null ? '—' : num(k.monthly_searches) });
+          return h('tr', {}, [td(box), td(k.query), vcell, td(visPill(k)),
+            td(k.article_id ? h('button', { type: 'button', class: 'link', text: 'Open page', onclick: function () { openArticle(k.article_id); } }) : k.page_url ? h('a', { href: k.page_url, target: '_blank', rel: 'noopener', text: 'Live page' }) : h('span', { class: 'muted', text: 'No page yet' })),
+            td(h('button', { type: 'button', class: 'link danger', text: 'Remove', onclick: function () { api('DELETE', 'keywords/' + k.id).then(load).catch(function (e) { toast(e.message); }); } }))]);
+        })));
+      }).catch(function (e) { main.appendChild(h('p', { class: 'err', text: e.message })); });
+    };
+    load();
+    return main;
+  }
+
+  function pagesView() {
+    var b = brandNow(), main = h('main', { class: 'main' }, [head('Pages', "Let's get you on top of *your customer's mind*", 'Every page of the site, and the searches each one is meant to answer.')]);
+    var filter = h('select', { 'aria-label': 'Show' }, [['all', 'All pages'], ['cms', 'Written in the CMS'], ['site-page', 'Editable site pages'], ['code', 'Built in code'], ['stale', 'Due a refresh']].map(function (o) { return h('option', { value: o[0], text: o[1] }); }));
+    var search = h('input', { type: 'text', placeholder: 'Search pages', 'aria-label': 'Search pages' }), out = h('div', { class: 'stack' }), all = [];
+    var KIND = { article: 'CMS page', 'site-page': 'Site page', code: 'Built in code', external: 'External page' };
+    var draw = function () {
+      out.textContent = '';
+      var q = search.value.toLowerCase();
+      var rows = all.filter(function (p) { return (filter.value === 'all' || (filter.value === 'cms' && p.kind === 'article') || filter.value === p.kind || (filter.value === 'stale' && p.stale)) && (!q || (p.title + ' ' + p.url).toLowerCase().indexOf(q) !== -1); });
+      if (!rows.length) out.appendChild(h('p', { class: 'muted', text: 'No pages match.' }));
+      rows.slice(0, 200).forEach(function (p) {
+        var actions = h('div', { class: 'row' });
+        if (p.kind === 'article') actions.appendChild(h('button', { type: 'button', class: 'btn btn--ghost btn--small', text: 'Edit', onclick: function () { openArticle(p.article_id); } }));
+        if (p.kind === 'site-page' && p.site_page) actions.appendChild(h('button', { type: 'button', class: 'btn btn--ghost btn--small', text: 'Edit', onclick: function () { openSitePage(p.site_page.kind, p.site_page.id); } }));
+        if (p.live && p.url) actions.appendChild(h('a', { class: 'btn btn--ghost btn--small', href: p.url, target: '_blank', rel: 'noopener', text: 'Go to live page' }));
+        var row = h('div', { class: 'pagerow' }, [h('div', { class: 'pagerow__top' }, [h('div', { class: 'stack tight' }, [
+          h('div', {}, [h('span', { class: 'pill' + (p.kind === 'code' ? ' pill--code' : ''), text: KIND[p.kind] || p.kind }), p.category ? h('span', { class: 'pill', text: p.category }) : null,
+            p.kind === 'article' ? statusPill(p.status) : h('span', { class: 'pill pill--published', text: 'Published' }), p.stale ? h('span', { class: 'pill pill--warn', text: 'Due a refresh' }) : null]),
+          h('h3', { text: p.title }), p.kind === 'code' ? h('small', { class: 'muted', text: 'Generated by the site build. To change it, edit the code in the repository.' }) : null]), actions])]);
+        if (p.keywords.length) {
+          var known = p.volume_known_for, label = known ? 'Helps you show up for ' + num(p.searches) + '+ searches a month, including:' : 'Answers ' + p.keywords.length + ' tracked search' + (p.keywords.length > 1 ? 'es' : '') + ' (volumes not known yet):';
+          row.appendChild(h('details', {}, [h('summary', { text: label }), h('div', { class: 'chips' }, p.keywords.map(function (k) { return h('span', { class: 'chip chip--static', text: k.query }); }))]));
+        }
+        out.appendChild(row);
+      });
+      if (rows.length > 200) out.appendChild(h('p', { class: 'muted', text: 'Showing the first 200 of ' + rows.length + '. Search to narrow down.' }));
+    };
+    filter.addEventListener('change', draw); search.addEventListener('input', draw);
+    main.appendChild(h('div', { class: 'toolbar' }, [filter, search])); main.appendChild(out);
+    api('GET', bq('pages')).then(function (r) { all = r.pages; if (!all.length) out.appendChild(h('p', { class: 'muted', text: b.is_default ? 'No pages yet.' : 'Link tracked searches to this brand’s pages from Opportunities to see them here.' })); else draw(); }).catch(function (e) { out.appendChild(h('p', { class: 'err', text: e.message })); });
+    return main;
+  }
+
+  var LEAD_STATUS = { 'new': 'New lead', contacted: 'Contacted', qualified: 'Qualified', won: 'Won', lost: 'Lost' };
+  function leadsView() {
+    var b = brandNow(), main = h('main', { class: 'main' }, [head('Leads dashboard', 'Everything you need to *close more deals*', 'Each inquiry, what the person read before sending it, and where it stands.')]);
+    var status = h('select', { 'aria-label': 'Status' }, [h('option', { value: '', text: 'Any status' })].concat(Object.keys(LEAD_STATUS).map(function (k) { return h('option', { value: k, text: LEAD_STATUS[k] }); })));
+    var search = h('input', { type: 'text', placeholder: 'Search name, email or company', 'aria-label': 'Search' });
+    var spam = h('input', { type: 'checkbox', id: 'showspam' }), out = h('div');
+    var exportBtn = h('button', { type: 'button', class: 'btn btn--ghost', text: 'Export' });
+    exportBtn.addEventListener('click', function () {
+      busy(exportBtn, 'Exporting…', fetch('/api/cms/v1/' + bq('leads/export'), { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw new Error('Only QA and admins can export leads.'); return r.blob(); }).then(function (blob) {
+        var a = h('a', { href: URL.createObjectURL(blob), download: 'leads.csv' }); document.body.appendChild(a); a.click(); a.remove();
+      }).catch(function (e) { toast(e.message); }));
+    });
+    var journey = function (l) {
+      var dlg = h('dialog'), steps = h('div', { class: 'journey' });
+      if (!l.journey.length) steps.appendChild(h('p', { class: 'muted', text: 'No page history was sent with this lead.' }));
+      l.journey.forEach(function (st, i) {
+        if (i) steps.appendChild(h('div', { class: 'journey__arrow', text: '↓' }));
+        steps.appendChild(h('div', { class: 'journey__step' }, [h('b', { text: String(i + 1) }), h('div', {}, [h('small', { text: st.at ? fmt(st.at) : '' }), h('div', { text: st.path }), h('em', { text: st.event.replace(/_/g, ' ') })])]));
+      });
+      dlg.appendChild(h('div', { class: 'dlg' }, [h('h2', { text: 'Lead journey: ' + (l.name || l.email) }), l.message ? h('p', { class: 'answer', text: l.message }) : null, steps,
+        h('div', { class: 'dlg__foot' }, [h('button', { type: 'button', class: 'btn', text: 'Close', onclick: function () { dlg.close(); dlg.remove(); } })])]));
+      document.body.appendChild(dlg); dlg.showModal();
+    };
+    var load = function () {
+      api('GET', bq('leads?status=' + status.value + '&q=' + encodeURIComponent(search.value) + (spam.checked ? '&spam=1' : ''))).then(function (r) {
+        out.textContent = '';
+        if (!r.leads.length) { out.appendChild(h('div', { class: 'card stack' }, [h('h3', { text: spam.checked ? 'No filtered submissions.' : 'No leads yet.' }),
+          h('p', { class: 'muted', text: b.has_lead_key ? 'Leads appear here as soon as the website sends them.' : 'This brand’s website is not connected yet. An admin can create its lead key under Brands.' })])); return; }
+        out.appendChild(table(['When', 'Name', 'Action', 'Status', 'Owner', 'Notes', ''], r.leads.map(function (l) {
+          var d = new Date(l.received_at);
+          var st = h('select', { 'aria-label': 'Status' }, Object.keys(LEAD_STATUS).map(function (k) { return h('option', { value: k, text: LEAD_STATUS[k] }); })); st.value = l.status;
+          st.addEventListener('change', function () { api('PATCH', 'leads/' + l.id, { status: st.value }).catch(function (e) { toast(e.message); load(); }); });
+          var owner = h('select', { 'aria-label': 'Owner' }, [h('option', { value: '', text: 'Unassigned' })].concat(state.users.map(function (u) { return h('option', { value: u.id, text: u.name }); }))); owner.value = l.assigned_to || '';
+          owner.addEventListener('change', function () { api('PATCH', 'leads/' + l.id, { assigned_to: owner.value || null }).catch(function (e) { toast(e.message); load(); }); });
+          var last = l.notes[l.notes.length - 1];
+          var note = h('button', { type: 'button', class: 'link', text: last ? last.body : 'Add a note', onclick: function () { ask('Note on ' + (l.name || l.email), 'What happened?').then(function (text) { if (text) api('POST', 'leads/' + l.id + '/notes', { body: text }).then(load).catch(function (e) { toast(e.message); }); }); } });
+          return h('tr', {}, [td(h('div', { class: 'when' }, [d.toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' }), h('small', { text: d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) })])),
+            td(h('div', { class: 'who' }, [h('strong', { text: l.name || '—' }), l.email ? h('span', { text: l.email }) : null, l.phone ? h('span', { text: l.phone }) : null, l.company ? h('span', { text: l.company }) : null, l.spam ? h('span', { class: 'danger', text: l.spam_reason }) : null])),
+            td(l.action.replace(/\b\w/g, function (c) { return c.toUpperCase(); })), td(st), td(owner), td(note),
+            td(h('div', { class: 'stack tight' }, [h('button', { type: 'button', class: 'link', text: 'View journey', onclick: function () { journey(l); } }),
+              h('button', { type: 'button', class: 'link' + (l.spam ? '' : ' danger'), text: l.spam ? 'Not spam' : 'Mark as spam', onclick: function () { api('PATCH', 'leads/' + l.id, { spam: !l.spam }).then(load).catch(function (e) { toast(e.message); }); } })]))]);
+        })));
+      }).catch(function (e) { out.textContent = ''; out.appendChild(h('p', { class: 'err', text: e.message })); });
+    };
+    [status, spam].forEach(function (x) { x.addEventListener('change', load); }); search.addEventListener('input', load);
+    main.appendChild(h('div', { class: 'toolbar' }, [search, status, h('label', { class: 'row small', for: 'showspam' }, [spam, 'Show filtered spam']), h('span', { class: 'grow' }), exportBtn]));
+    main.appendChild(out); load();
+    return main;
+  }
+
+  function barRow(label, value, max, own, suffix) {
+    var fill = h('b'); fill.style.width = (max ? Math.round(100 * value / max) : 0) + '%';
+    return h('div', { class: 'bar2' + (own ? ' is-own' : '') }, [h('span', { text: label }), h('i', {}, [fill]), h('span', { class: 'muted', text: value + (suffix || '') })]);
+  }
+  function visibilityView() {
+    var b = brandNow(), main = h('main', { class: 'main' }, [head('AI visibility', 'What AI assistants say when *buyers ask*', 'The CMS asks each connected AI assistant your tracked prompts once a day and records whether ' + b.name + ' is in the answer, who else is, and what was cited.')]);
+    var body = h('div', { class: 'stack' });
+    var add = h('button', { type: 'button', class: 'btn', text: 'Add prompts' });
+    add.addEventListener('click', function () { textModal('Prompts to track', 'One per line, phrased the way a buyer would ask an AI assistant.', 'Who are good financial advisors for airline pilots?\nHow do I choose a fee-only financial advisor?', 'Add').then(function (text) { if (text) api('POST', bq('visibility/prompts'), { text: text }).then(function (r) { toast(r.added + ' added.'); load(); }).catch(function (e) { toast(e.message); }); }); });
+    var run = h('button', { type: 'button', class: 'btn btn--ghost', text: 'Run now' });
+    run.addEventListener('click', function () { busy(run, 'Asking…', api('POST', bq('visibility/run'), {}).then(function (r) { toast(r.ran + ' answers recorded' + (r.failed ? ', ' + r.failed + ' failed' : '') + '.'); load(); }).catch(function (e) { toast(e.message); })); });
+    main.appendChild(h('div', { class: 'toolbar' }, [add, run])); main.appendChild(body);
+    var load = function () {
+      api('GET', bq('visibility')).then(function (v) {
+        body.textContent = '';
+        if (!v.engines.length) body.appendChild(h('p', { class: 'note', text: 'No AI assistant is connected yet. An admin needs to add an API key for at least one (Claude, ChatGPT, Perplexity or Gemini).' }));
+        body.appendChild(h('div', { class: 'stats' }, [stat(v.rate === null ? '—' : v.rate + '%', 'of answers mention ' + b.name, num(v.runs) + ' answers in ' + v.days + ' days')].concat(v.engines.map(function (e) { return stat(e.rate === null ? '—' : e.rate + '%', e.label, e.runs ? num(e.runs) + ' answers · ' + e.model : 'Not run yet'); }))));
+        if (v.last_error) body.appendChild(h('p', { class: 'note', text: v.failed + ' request(s) failed. Latest error: ' + v.last_error }));
+        if (v.runs) {
+          var maxV = Math.max.apply(null, v.share_of_voice.map(function (x) { return x.mentions; }).concat([1]));
+          body.appendChild(h('div', { class: 'card stack' }, [h('h3', { text: 'Share of voice' }), h('p', { class: 'muted small', text: 'How many answers mention each name. Add competitors under Brands to compare.' })].concat(v.share_of_voice.map(function (x) { return barRow(x.name, x.mentions, maxV, x.own); }))));
+          if (v.cited_domains.length) { var maxC = v.cited_domains[0].count; body.appendChild(h('div', { class: 'card stack' }, [h('h3', { text: 'Sources the answers cite' })].concat(v.cited_domains.slice(0, 10).map(function (x) { return barRow(x.domain, x.count, maxC, x.own); })))); }
+        }
+        body.appendChild(h('p', { class: 'colhead', text: 'Tracked prompts' }));
+        if (!v.prompts.length) body.appendChild(h('p', { class: 'muted', text: 'No prompts yet. Add the questions your buyers ask.' }));
+        v.prompts.forEach(function (p) {
+          var row = h('div', { class: 'pagerow' }, [h('div', { class: 'pagerow__top' }, [h('div', { class: 'stack tight' }, [h('h3', { text: p.text }),
+            h('div', {}, p.latest.length ? p.latest.map(function (l) { return h('span', { class: 'pill pill--' + (l.mentioned ? 'yes' : 'no'), text: l.provider + ': ' + (l.mentioned ? 'mentioned' + (l.position ? ' #' + l.position : '') : 'not mentioned') }); }) : [h('span', { class: 'pill pill--unknown', text: 'Not run yet' })])]),
+            h('button', { type: 'button', class: 'link danger', text: 'Remove', onclick: function () { api('DELETE', 'visibility/prompts/' + p.id).then(load).catch(function (e) { toast(e.message); }); } })])]);
+          if (p.latest.length) row.appendChild(h('details', {}, [h('summary', { text: 'Read the latest answers' })].concat(p.latest.map(function (l) {
+            return h('div', { class: 'stack tight' }, [h('p', { class: 'colhead', text: l.provider + ' · ' + fmt(l.ran_at) }), h('div', { class: 'answer', text: l.answer }), l.competitors.length ? h('p', { class: 'muted small', text: 'Also mentioned: ' + l.competitors.join(', ') }) : null]);
+          }))));
+          body.appendChild(row);
+        });
+      }).catch(function (e) { body.appendChild(h('p', { class: 'err', text: e.message })); });
+    };
+    load();
+    return main;
+  }
+
+  function crawlersView() {
+    var b = brandNow(), main = h('main', { class: 'main' }, [head('AI crawlers', 'Which AI bots are *reading your pages*', 'Counted from the website’s server logs. Only known AI crawlers are counted; nothing about human visitors is stored.')]);
+    var body = h('div', { class: 'stack' }); main.appendChild(body);
+    var load = function () {
+      api('GET', bq('crawlers')).then(function (c) {
+        body.textContent = '';
+        if (!c.total) body.appendChild(h('p', { class: 'note', text: 'No server logs have been ingested for this brand yet.' }));
+        else {
+          body.appendChild(h('div', { class: 'stats' }, [stat(num(c.total), 'AI crawler visits in ' + c.days + ' days'), stat(num(c.bots.length), 'different AI bots'), stat(num(c.pages.length), 'pages read')]));
+          body.appendChild(table(['Bot', 'What it is', 'Visits', 'Pages', 'Last seen'], c.bots.map(function (x) { return h('tr', {}, [td(x.bot), td(x.what), h('td', { class: 'num', text: num(x.hits) }), h('td', { class: 'num', text: num(x.pages) }), td(x.last_seen)]); })));
+          body.appendChild(h('p', { class: 'colhead', text: 'Most-read pages' }));
+          body.appendChild(table(['Page', 'Visits', 'Bots'], c.pages.slice(0, 25).map(function (x) { return h('tr', {}, [td(x.path), h('td', { class: 'num', text: num(x.hits) }), h('td', { class: 'num', text: num(x.bots) })]); })));
+        }
+        if (can('admin')) {
+          var ta = h('textarea', { rows: 6, class: 'mono', placeholder: 'Paste nginx access log lines (combined format)' });
+          var go2 = h('button', { type: 'button', class: 'btn btn--ghost', text: 'Ingest log lines' });
+          go2.addEventListener('click', function () { if (ta.value.trim()) busy(go2, 'Reading…', api('POST', bq('crawlers/ingest'), { log: ta.value }).then(function (r) { toast(r.matched + ' AI crawler visits found in ' + r.lines + ' lines.'); load(); }).catch(function (e) { toast(e.message); })); });
+          body.appendChild(h('div', { class: 'card stack' }, [h('h3', { text: 'Add server logs' }), h('p', { class: 'muted small', text: 'In production a scheduled job posts the logs to the API (see the README). You can also paste lines here.' }), ta, h('div', {}, [go2])]));
+        }
+      }).catch(function (e) { body.appendChild(h('p', { class: 'err', text: e.message })); });
+    };
+    load();
+    return main;
+  }
+
+  function backlinksView() {
+    var main = h('main', { class: 'main' }, [head('Backlinks', 'Authority, *one link at a time*', 'A working log of the sites you are pitching and the links that are live. Nothing here is fetched or verified automatically.')]);
+    var out = h('div'), src = h('input', { type: 'text', placeholder: 'https://site-that-links.com/article' }), target = h('input', { type: 'text', placeholder: 'Page on your site it links to (optional)' });
+    var add = h('button', { type: 'button', class: 'btn', text: 'Add' });
+    var load = function () {
+      api('GET', bq('backlinks')).then(function (r) {
+        out.textContent = '';
+        out.appendChild(r.backlinks.length ? table(['Linking page', 'Links to', 'Status', 'Notes'], r.backlinks.map(function (l) {
+          var st = h('select', { 'aria-label': 'Status' }, ['prospect', 'pitched', 'live', 'lost'].map(function (x) { return h('option', { value: x, text: x.charAt(0).toUpperCase() + x.slice(1) }); })); st.value = l.status;
+          st.addEventListener('change', function () { api('PATCH', 'backlinks/' + l.id, { status: st.value }).catch(function (e) { toast(e.message); load(); }); });
+          return h('tr', {}, [td(h('a', { href: l.source_url, target: '_blank', rel: 'noopener noreferrer', text: l.source_url.replace(/^https?:\/\//, '').slice(0, 60) })), td(l.target_url || '—'), td(st),
+            td(h('button', { type: 'button', class: 'link', text: l.notes || 'Add a note', onclick: function () { ask('Note', 'Contact, date pitched, next step', l.notes).then(function (t) { if (t) api('PATCH', 'backlinks/' + l.id, { notes: t }).then(load).catch(function (e) { toast(e.message); }); }); } }))]);
+        })) : h('p', { class: 'muted', text: 'No backlinks logged yet.' }));
+      }).catch(function (e) { out.appendChild(h('p', { class: 'err', text: e.message })); });
+    };
+    add.addEventListener('click', function () { busy(add, 'Adding…', api('POST', bq('backlinks'), { source_url: src.value, target_url: target.value }).then(function () { src.value = ''; target.value = ''; load(); }).catch(function (e) { toast(e.message); })); });
+    main.appendChild(h('div', { class: 'toolbar' }, [src, target, add])); main.appendChild(out); load();
+    return main;
+  }
+
+  function brandsView() {
+    var main = h('main', { class: 'main' }, [head('Brands', 'Valora and the *firms you work for*', 'Each brand has its own searches, AI prompts, leads, crawler logs and backlinks. Use the switcher at the top of the menu to move between them.')]);
+    var out = h('div', { class: 'stack' }); main.appendChild(out);
+    var compText = function (b) { return b.competitors.map(function (c) { return c.name + (c.domains.length ? ' | ' + c.domains.join(' ') : ''); }).join('\n'); };
+    var parseComp = function (text) { return text.split('\n').map(function (line) { var p = line.split('|'); return { name: (p[0] || '').trim(), domains: (p[1] || '').trim().split(/\s+/).filter(Boolean) }; }).filter(function (c) { return c.name; }); };
+    var refresh = function () { return api('GET', 'brands').then(function (r) { state.brands = r.brands; }); };
+    var form = function (b) {
+      var f = { name: h('input', { type: 'text', value: b ? b.name : '' }), domains: h('input', { type: 'text', value: b ? b.domains.join(', ') : '', placeholder: 'example.com' }),
+        aliases: h('input', { type: 'text', value: b ? b.aliases.join(', ') : '', placeholder: 'Names AI answers might use' }), comp: h('textarea', { rows: 3, placeholder: 'One per line: Name | domain.com' }) };
+      f.comp.value = b ? compText(b) : '';
+      var save = h('button', { type: 'button', class: 'btn', text: b ? 'Save' : 'Add brand', disabled: !can('admin') });
+      save.addEventListener('click', function () {
+        var body = { name: f.name.value, domains: f.domains.value, aliases: f.aliases.value, competitors: parseComp(f.comp.value) };
+        busy(save, 'Saving…', api(b ? 'PATCH' : 'POST', b ? 'brands/' + b.id : 'brands', body).then(refresh).then(function () { toast('Saved.'); render(); }).catch(function (e) { toast(e.message); }));
+      });
+      var key = b && can('admin') ? h('button', { type: 'button', class: 'btn btn--ghost', text: b.has_lead_key ? 'Replace lead key' : 'Create lead key' }) : null;
+      if (key) key.addEventListener('click', function () {
+        (b.has_lead_key ? sure('Replace the lead key?', 'The website stops sending leads until it is updated with the new key.', 'Replace') : Promise.resolve(true)).then(function (ok) {
+          if (ok) api('POST', 'brands/' + b.id + '/lead-key', {}).then(function (r) { showSecret('Lead key for ' + b.name, r.lead_key); return refresh(); }).catch(function (e) { toast(e.message); });
+        });
+      });
+      return h('div', { class: 'card stack narrow' }, [h('h3', { text: b ? b.name + (b.is_default ? ' (this site)' : '') : 'Add a brand' }), h('label', { class: 'field' }, ['Name', f.name]), h('label', { class: 'field' }, ['Website domains', f.domains]),
+        h('label', { class: 'field' }, ['Also known as', f.aliases]), h('label', { class: 'field' }, ['Competitors to compare against', f.comp]), h('div', { class: 'row' }, [save, key]),
+        b ? h('p', { class: 'muted small', text: b.has_lead_key ? 'Website connected for leads.' : 'Website not connected for leads yet.' }) : null]);
+    };
+    state.brands.forEach(function (b) { out.appendChild(form(b)); });
+    if (can('admin')) out.appendChild(form(null));
+    return main;
   }
 
   /* ---------- frame ---------- */
@@ -740,13 +1069,37 @@
     });
     return h('div', { class: 'login' }, [form]);
   }
+  var ICONS = {
+    overview: '<path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/>', opportunities: '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>',
+    pages: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.8 3 2.8 14 0 17M12 3.5c-2.8 3-2.8 14 0 17"/>', leads: '<circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5c.6-3.4 3-5 6-5s5.4 1.6 6 5M16 5.6a3.2 3.2 0 0 1 0 5.8M18 14.8c1.7.6 2.7 2.2 3 4.7"/>',
+    visibility: '<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/>', crawlers: '<rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 8V4.5M9 13h.01M15 13h.01M2.5 13h2.5M19 13h2.5"/>',
+    backlinks: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.700-5.700l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/>', today: '<rect x="3.500" y="5" width="17" height="15.500" rx="2.500"/><path d="M3.500 10h17M8 3v4M16 3v4"/>',
+    articles: '<path d="M6 3.500h9l4 4V20.500H6v-17Z"/><path d="M14.500 3.500V8H19M9 12.500h7M9 16h7"/>', engine: '<path d="m12 3 1.800 5.200L19 10l-5.200 1.800L12 17l-1.800-5.200L5 10l5.200-1.800L12 3ZM18.500 16l.8 2.200 2.200.8-2.200.8-.8 2.200-.8-2.200-2.200-.8 2.200-.8.8-2.200Z"/>',
+    sitepages: '<rect x="3.500" y="4.500" width="17" height="15" rx="2.500"/><path d="M3.500 9h17M7.500 13h5M7.500 16h8"/>', redirects: '<path d="M4 8h12l-3-3M20 16H8l3 3"/>',
+    memory: '<path d="M12 4.500c-3 0-5 2-5 4.500 0 1-.5 1.500-1.200 2.200C5 12 4.500 13 4.500 14c0 2.500 2 4.500 4.500 4.500h6c2.500 0 4.500-2 4.500-4.500 0-1-.5-2-1.300-2.800C17.500 10.500 17 10 17 9c0-2.500-2-4.500-5-4.500Z"/><path d="M12 4.500v14"/>', brands: '<path d="M4 20V9l8-5 8 5v11M9.500 20v-6h5v6"/>',
+    users: '<circle cx="12" cy="8.500" r="3.500"/><path d="M5 20c.7-3.800 3.500-5.500 7-5.500s6.300 1.700 7 5.500"/>', audit: '<path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="8.500"/>', api: '<path d="m8.500 8-4 4 4 4M15.500 8l4 4-4 4M13.500 5l-3 14"/>'
+  };
+  function icon(name) {
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('fill', 'none'); svg.setAttribute('stroke', 'currentColor'); svg.setAttribute('stroke-width', '1.6');
+    svg.setAttribute('stroke-linecap', 'round'); svg.setAttribute('stroke-linejoin', 'round'); svg.setAttribute('aria-hidden', 'true');
+    svg.innerHTML = ICONS[name] || '';
+    return svg;
+  }
   function sidebar() {
     var item = function (text, view, onclick) {
-      return h('button', { type: 'button', class: 'side__item' + (state.view === view ? ' is-active' : ''), onclick: onclick || function () { go(view); } }, [h('span', { text: text })]);
+      return h('button', { type: 'button', class: 'side__item' + (state.view === view ? ' is-active' : ''), onclick: onclick || function () { go(view); } }, [icon(view), h('span', { text: text })]);
     };
-    var side = h('nav', { class: 'side', 'aria-label': 'CMS' }, [h('div', { class: 'side__brand' }, ['Valora ', h('span', { text: 'CMS' })]),
-      h('div', {}, [h('h2', { text: 'Content' }), item('Today', 'today'), item('Articles', 'articles'), item('Create with AI', 'engine'), item('Site pages', 'sitepages')]),
-      h('div', {}, [h('h2', { text: 'Manage' }), item('Redirects and routes', 'redirects'), item('Brand memory', 'memory', openMemory),
+    var logo = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    logo.setAttribute('viewBox', '0 0 32 32'); logo.setAttribute('fill', 'none'); logo.setAttribute('stroke', 'currentColor'); logo.setAttribute('stroke-width', '1.6'); logo.setAttribute('aria-hidden', 'true');
+    logo.innerHTML = '<circle cx="16" cy="16" r="13"/><path d="M8 17c2-6 5-6 7 0s5 6 8 0" stroke-linecap="round"/>';
+    var pick = h('select', { 'aria-label': 'Brand' }, state.brands.map(function (b) { return h('option', { value: b.id, text: b.name }); })); pick.value = state.brand;
+    pick.addEventListener('change', function () { leave().then(function (ok) { if (!ok) { pick.value = state.brand; return; } state.brand = Number(pick.value); state.current = null; if (['article', 'sitepage', 'memory'].indexOf(state.view) !== -1) state.view = 'overview'; render(); }); });
+    var own = brandNow().is_default;
+    var side = h('nav', { class: 'side', 'aria-label': 'CMS' }, [h('div', { class: 'side__brand' }, [logo, 'Valora', h('small', { text: 'CMS' })]), h('div', { class: 'side__switch' }, [pick]),
+      h('div', {}, [h('h2', { text: 'Growth' }), item('Overview', 'overview'), item('Opportunities', 'opportunities'), item('Pages', 'pages'), item('Leads', 'leads'), item('AI visibility', 'visibility'), item('AI crawlers', 'crawlers'), item('Backlinks', 'backlinks')]),
+      own ? h('div', {}, [h('h2', { text: 'Content' }), item('Today', 'today'), item('Articles', 'articles'), item('Create with AI', 'engine'), item('Site pages', 'sitepages')]) : null,
+      h('div', {}, [h('h2', { text: 'Manage' }), item('Brands', 'brands'), own ? item('Redirects and routes', 'redirects') : null, item('Brand memory', 'memory', openMemory),
         can('admin') ? item('People and tokens', 'users') : null, can('admin', 'qa') ? item('Audit log', 'audit') : null, item('API and MCP', 'api')])]);
     side.appendChild(h('div', { class: 'side__foot' }, [h('span', { text: state.user.name + ' · ' + state.user.role }),
       h('button', { type: 'button', class: 'link', text: 'Sign out', onclick: function () { leave().then(function (ok) { if (ok) api('POST', 'logout').then(function () { state.user = null; state.current = null; render(); }); }); } })]));
@@ -755,13 +1108,15 @@
   function render() {
     app.textContent = '';
     if (!state.user) { app.appendChild(loginView()); return; }
-    var views = { today: todayView, articles: articlesView, engine: engineView, sitepages: sitePagesView, redirects: redirectsView, users: usersView, audit: auditView, api: apiView };
-    var main = state.view === 'article' && state.current ? articleView() : state.view === 'sitepage' && state.current ? sitePageView() : state.view === 'memory' && state.current ? memoryView() : (views[state.view] || todayView)();
+    var views = { overview: overviewView, opportunities: opportunitiesView, pages: pagesView, leads: leadsView, visibility: visibilityView, crawlers: crawlersView, backlinks: backlinksView, brands: brandsView,
+      today: todayView, articles: articlesView, engine: engineView, sitepages: sitePagesView, redirects: redirectsView, users: usersView, audit: auditView, api: apiView };
+    var main = state.view === 'article' && state.current ? articleView() : state.view === 'sitepage' && state.current ? sitePageView() : state.view === 'memory' && state.current ? memoryView() : (views[state.view] || overviewView)();
     app.appendChild(h('div', { class: 'shell' }, [sidebar(), main]));
   }
   function boot() {
     return api('GET', 'me').then(function (r) {
-      state.user = r.user; state.ai = r.ai; state.storage = r.storage; state.groups = r.site_groups; state.routes = r.routes; state.today = r.today;
+      state.user = r.user; state.ai = r.ai; state.storage = r.storage; state.groups = r.site_groups; state.routes = r.routes; state.today = r.today; state.brands = r.brands; state.users = r.users;
+      if (!state.brands.some(function (b) { return b.id === state.brand; })) state.brand = (state.brands.find(function (b) { return b.is_default; }) || state.brands[0]).id;
       render();
     }).catch(function () { state.user = null; render(); });
   }

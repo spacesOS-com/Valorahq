@@ -52,5 +52,7 @@ http.createServer((req, res) => {
   res.statusCode = 404; res.end('Not found');
 }).listen(PORT, () => console.log(`Valora CMS on http://localhost:${PORT}/cms/  (storage: ${store.mode()})`));
 
+// AI visibility is measured once a day per engine; the check below is cheap when nothing is due.
+setInterval(() => { require('./server/visibility').runAllDue().catch((e) => console.error('[cms] visibility', e.message)); }, 6 * 3600 * 1000).unref();
 // Scheduled posts go out within a minute of their time.
 setInterval(() => { publisher.runDue().catch((e) => console.error('[cms] scheduler', e.message)); }, 60 * 1000).unref();
