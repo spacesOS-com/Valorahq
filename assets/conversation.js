@@ -68,7 +68,22 @@
   wrap.appendChild(title);  wrap.appendChild(chat);
   var greeting = document.createElement('p');
   greeting.className = 'valora-concierge__greeting';
-  greeting.textContent = "Looks like you're exploring " + (pageContext.title || 'Valora') + '.';
+  // Short topic names for the greeting; falls back to the page title.
+  var topics = {
+    '/financial-advisor-for-business-owners/': 'financial planning for business owners',
+    '/financial-advisor-for-physicians/': 'financial planning for physicians',
+    '/financial-advisor-for-dentists/': 'financial planning for dentists',
+    '/financial-advisor-for-tech-employees/': 'financial planning for tech employees',
+    '/calculators/roth-ira-growth/': 'Roth IRA growth',
+    '/calculators/rsu-withholding-shortfall/': 'RSU withholding',
+    '/calculators/pslf-scenario-explorer/': 'Public Service Loan Forgiveness',
+    '/calculators/retirement/': 'retirement planning',
+    '/calculators/equity-compensation/': 'equity compensation',
+    '/calculators/banking/': 'banking and savings',
+    '/calculators/taxes/': 'taxes',
+    '/calculators/investing/': 'investing'
+  };
+  greeting.textContent = "Looks like you're exploring " + (topics[path] || pageContext.title || 'Valora') + ', feel free to ask me any questions.';
   chat.appendChild(greeting);
   wrap.appendChild(form); wrap.appendChild(status);
   var faqPopup = document.createElement('div'); faqPopup.className = 'valora-conversation__faq valora-concierge__choices'; faqPopup.hidden = true;
