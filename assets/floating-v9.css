@@ -19,6 +19,9 @@
 #valora-floating-conversation .valora-conversation__composer button{font-size:13px;min-height:35px;padding:9px 16px;border-radius:40px}
 #valora-floating-conversation>.valora-concierge__greeting{padding:11px 14px;font-size:12px;border-radius:16px;box-shadow:0 6px 20px #0001}
 #valora-floating-conversation .valora-concierge__chat{max-height:min(200px,30dvh);background:#f8f6f1;border:1px solid var(--line);box-shadow:0 8px 24px #0002;font-size:13px}
+/* No outline box around the textbox; the composer lifts slightly instead. */
+#valora-floating-conversation input:focus,#valora-floating-conversation input:focus-visible{outline:none}
+#valora-floating-conversation .valora-conversation__composer:focus-within{box-shadow:0 10px 30px #0003}
 /* Suggested questions: bubbles between the greeting and the composer. */
 #valora-floating-conversation .valora-conversation__faq{order:1;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 #valora-floating-conversation .valora-conversation__faq button{margin:0;min-height:0;padding:8px 14px;border-radius:18px;font:inherit;font-size:12px;line-height:1.35;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 4px 14px #0001}
