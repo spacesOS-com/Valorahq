@@ -92,12 +92,16 @@
   refreshFAQs();
   form.before(faqPopup);
   // Suggestions: the page's three reviewed questions appear as bubbles above
-  // the composer when the empty textbox is focused or clicked.
-  function showSuggestions() { faqPopup.hidden = busy || input.value.trim().length > 0 || !faqPopup.childElementCount; }
-  input.addEventListener('focus', function() { greeting.hidden = true; showSuggestions(); chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
-  input.addEventListener('click', function() { greeting.hidden = true; showSuggestions(); });
-  // Clicking away: suggestions go; the greeting returns only if nothing was started.
-  document.addEventListener('pointerdown', function(e) { if (wrap.contains(e.target)) return; faqPopup.hidden = true; if (chat.hidden && !input.value.trim()) greeting.hidden = false; });
+  // the composer once three characters are typed, replacing the greeting.
+  function showSuggestions() {
+    var typing = input.value.trim().length >= 3;
+    faqPopup.hidden = busy || !typing || !faqPopup.childElementCount;
+    if (chat.hidden) greeting.hidden = typing;
+  }
+  input.addEventListener('focus', function() { showSuggestions(); chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
+  // Clicking away swaps the suggestions back for the greeting (unless a
+  // conversation is open); the suggestions return on the next keystroke.
+  document.addEventListener('pointerdown', function(e) { if (wrap.contains(e.target)) return; faqPopup.hidden = true; if (chat.hidden) greeting.hidden = false; });
   input.addEventListener('input', showSuggestions);
   function showInitialChoices() {
     if (!pageContext || !Array.isArray(pageContext.questions)) return;
