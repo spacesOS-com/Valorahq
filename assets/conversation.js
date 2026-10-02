@@ -108,7 +108,8 @@
   function showSuggestions() {
     var typing = input.value.trim().length >= 3;
     var side = wrap.classList.contains('is-side');
-    faqPopup.hidden = busy || (!side && !typing) || !faqPopup.childElementCount;
+    // Docked: only before a conversation has started. Side panel: always listed.
+    faqPopup.hidden = busy || (!side && (!typing || !chat.hidden)) || !faqPopup.childElementCount;
     if (chat.hidden) greeting.hidden = typing || (typeof hint !== 'undefined' && hint && !hint.hidden);
   }
   input.addEventListener('focus', function() { showSuggestions(); chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
