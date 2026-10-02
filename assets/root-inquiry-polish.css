@@ -56,3 +56,10 @@
 [data-inquiry-host] #contact .inquiry-nav .back{border-color:rgba(239,235,224,.4)}
 .hcard [data-inquiry-host] #contact .inquiry-nav{gap:12px}
 .hcard [data-inquiry-host] #contact .inquiry-nav .btn{width:calc(50% - 6px);padding-inline:10px}
+/* Phone: country-code select beside the number. */
+#contact .phone-row{display:flex;gap:8px;margin-top:7px}
+#contact .phone-row input{margin-top:0;flex:1;min-width:0}
+#contact .phone-row select{flex:0 0 auto;font:16px Arial,sans-serif;color:#242920;background:#fff;border:1px solid #cbc8bd;border-radius:16px;padding:16px 10px;cursor:pointer}
+#contact .phone-row select:focus,#contact .phone-row select:focus-visible{outline:none;border-color:#1e3b2a}
+.hcard [data-inquiry-host] #contact .phone-row{margin-top:5px;gap:6px}
+.hcard [data-inquiry-host] #contact .phone-row select{font-size:15px;padding:10px 6px;border-radius:10px}
