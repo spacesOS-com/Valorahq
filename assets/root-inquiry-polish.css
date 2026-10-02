@@ -35,3 +35,18 @@
    border darkens instead. Buttons and choices keep their focus outline. */
 #contact input:focus,#contact input:focus-visible,#contact textarea:focus,#contact textarea:focus-visible,
 [data-inquiry-host] #contact input:focus-visible,[data-inquiry-host] #contact textarea:focus-visible{outline:none;border-color:#1e3b2a}
+/* Constant-size inline form: every step fills the same box, with the
+   Back/Continue row pinned to the bottom. Heights are the tallest step
+   (asset range) measured at the narrowest layout. */
+[data-inquiry-host] #contact #flow{display:flex;flex-direction:column}
+[data-inquiry-host] #contact #flow .inquiry-nav{margin-top:auto;padding-top:18px}
+.hcard [data-inquiry-host] #contact .choices{gap:6px}
+.hcard [data-inquiry-host] #contact .choice{padding:7px 10px;font-size:13.5px;border-radius:12px}
+.hcard [data-inquiry-host] #contact .choice b{font-size:11px;padding:3px 7px}
+/* No step counter on the first form; later steps carry an "Optional" label. */
+#contact .progress:empty{display:none}
+.hcard [data-inquiry-host] #contact textarea{height:90px}
+[data-inquiry-host] #contact .root-inquiry{display:flex;flex-direction:column}
+[data-inquiry-host] #contact #flow{flex:1}
+.hcard [data-inquiry-host] #contact .root-inquiry{min-height:565px}
+[data-inquiry-host] #contact .root-inquiry{min-height:675px}
