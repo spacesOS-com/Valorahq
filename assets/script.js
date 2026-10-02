@@ -152,6 +152,7 @@
     var last = 0;
     var toTop = $('#toTop');
     var ctaFloat = $('#ctaFloat');
+    var banner = $('.site-banner');
 
     function onScroll() {
       var y   = window.scrollY || document.documentElement.scrollTop;
@@ -160,6 +161,9 @@
 
       bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
       head.classList.toggle('is-stuck', y > 20);
+      // The header sits below the top banner; follow the banner up as it
+      // scrolls away so no blank strip is left above the header.
+      if (banner) head.style.top = Math.max(0, banner.offsetHeight - y) + 'px';
 
       // hide on scroll down, reveal on scroll up (not while menu is open)
       if (!$('#primaryNav').classList.contains('is-open')) {
