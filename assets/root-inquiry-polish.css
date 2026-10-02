@@ -1,3 +1,31 @@
 /* Root inquiry spacing and mobile overlap only. */
 #contact .choices{margin-bottom:24px}
 @media(max-width:650px){body.root-inquiry-visible .to-top{visibility:hidden;pointer-events:none}}
+
+/* Inline host (hero card, green CTA band): the same form on a dark surface.
+   None of this applies while the dialog has borrowed the form. */
+[data-inquiry-host] #contact{padding:0;background:transparent;color:#efebe0;scroll-margin-top:110px}
+[data-inquiry-host] #contact .root-inquiry{max-width:none;padding:0;margin:0}
+[data-inquiry-host] #contact .screen{grid-template-columns:1fr;gap:16px;min-height:0}
+[data-inquiry-host] #contact h1{font-size:1.7rem;color:inherit;margin-bottom:8px}
+[data-inquiry-host] #contact .progress{color:rgba(239,235,224,.6);margin-bottom:14px}
+[data-inquiry-host] #contact p{color:rgba(239,235,224,.75);font-size:.9rem;margin-bottom:8px}
+[data-inquiry-host] #contact p:empty{display:none}
+[data-inquiry-host] #contact label{color:rgba(239,235,224,.85)}
+[data-inquiry-host] #contact .fields{gap:12px}
+[data-inquiry-host] #contact .choices{gap:8px;margin-bottom:8px}
+[data-inquiry-host] #contact .choice{padding:12px 14px;border-radius:14px}
+[data-inquiry-host] #contact .inquiry-nav{margin-top:18px}
+[data-inquiry-host] #contact .btn{background:#efebe0;color:#1e3b2a}
+[data-inquiry-host] #contact .back{background:transparent;color:#efebe0;border-color:rgba(239,235,224,.4)}
+[data-inquiry-host] #contact .err{color:#e3a493;min-height:0}
+[data-inquiry-host] #contact a{color:inherit;text-decoration:underline}
+[data-inquiry-host] #contact button:focus-visible,[data-inquiry-host] #contact input:focus-visible,[data-inquiry-host] #contact textarea:focus-visible{outline-color:#efebe0}
+.hcard [data-inquiry-host] #contact h1{font-size:1.3rem}
+.hcard [data-inquiry-host] #contact .progress{font-size:11px;margin-bottom:10px}
+.hcard [data-inquiry-host] #contact label{font-size:12px}
+.hcard [data-inquiry-host] #contact input,.hcard [data-inquiry-host] #contact textarea{padding:10px 12px;border-radius:10px;font-size:15px;margin-top:5px}
+.hcard [data-inquiry-host] #contact textarea{height:110px}
+.hcard [data-inquiry-host] #contact .fields{gap:9px}
+.hcard [data-inquiry-host] #contact .choice{padding:9px 12px;font-size:14px;gap:12px}
+.hcard [data-inquiry-host] #contact .btn{padding:11px 20px;font-size:14px}
