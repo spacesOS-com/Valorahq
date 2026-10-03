@@ -290,7 +290,6 @@ NAV_MENUS = [{'name': 'Financial Advice',
              ('Professions - being prepared', '/professions/'),
              ('Asset levels - being prepared', '/asset-types/'),
              ('Advisors by state - being prepared', '/top-financial-advisors/')],
-  'index': ('All guides', '/guides/'),
   'resources': [('All calculators', '/calculators/')]},
  {'name': 'Retirement',
   'live': True,
@@ -315,7 +314,7 @@ NAV_MENUS = [{'name': 'Financial Advice',
                 ('Asset allocation guide', '/calculators/asset-allocation-guide/')]},
  {'name': 'Banking',
   'live': True,
-  'guides': [('Explore financial planning guides', '/guides/')],
+  'guides': [],
   'resources': [('Banking calculators', '/calculators/banking/'),
                 ('Savings and CD growth', '/calculators/savings-cd-growth/'),
                 ('50/30/20 budget', '/calculators/budget-50-30-20/'),
@@ -337,14 +336,14 @@ def _nav_dropdown(menu, index):
     def links(items):
         return "\n".join(f'<li><a href="{escape(url)}">{escape(label)}</a></li>' for label, url in items)
     guide_links = links(menu["guides"])
-    if menu.get("index"):
-        label, url = menu["index"]
-        guide_links += f'<li class="nav-menu__all"><a href="{escape(url)}">{escape(label)}</a></li>'
+    resource_links = links(menu["resources"])
+    resource_links += '<li class="nav-menu__all"><a href="/guides/">All guides</a></li>'
+    resource_links += '<li class="nav-menu__all"><a href="/#insights">Learn</a></li>'
     return f'''<li class="nav-menu">
       <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="{ident}">{escape(menu["name"])} <span aria-hidden="true" class="nav-menu__chevron"></span></button>
       <div class="nav-menu__panel" id="{ident}" hidden>
         <div class="nav-menu__col"><p class="nav-menu__caption">Guides and topics</p><ul>{guide_links}</ul></div>
-        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul>{links(menu["resources"])}</ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul>{resource_links}</ul></div>
       </div>
     </li>'''
 
