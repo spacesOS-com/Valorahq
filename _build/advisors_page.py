@@ -53,20 +53,21 @@ def _intro_form():
     return f"""<aside class="advx-form" aria-labelledby="advisorIntroTitle">
     <h2 id="advisorIntroTitle">{escape(f["heading"])}</h2>
     <p class="advx-form__sub">{escape(f["subheading"])}</p>
-    <form id="advisorIntro" data-endpoint="{_endpoint()}" data-button-label="{escape(f["button_label"])}" novalidate>
+    <form id="advisorIntro" data-endpoint="{_endpoint()}" data-button-label="{escape(f["button_label"])}" class="ph-no-capture" data-ph-no-capture="true">
       <div class="advx-form__row">
-        <label>First name<input name="first" autocomplete="given-name" required maxlength="60"></label>
-        <label>Last name<input name="last" autocomplete="family-name" required maxlength="60"></label>
+        <label>First name<input name="first" class="ph-no-capture" data-ph-no-capture="true" autocomplete="given-name" required maxlength="60"></label>
+        <label>Last name<input name="last" class="ph-no-capture" data-ph-no-capture="true" autocomplete="family-name" required maxlength="60"></label>
       </div>
-      <label>Work email<input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="name@yourfirm.com"></label>
-      <label>Phone number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20"></label>
-      <label>Firm name<input name="firm" autocomplete="organization" required maxlength="120"></label>
-      <label>Firm website<input name="website" inputmode="url" autocomplete="url" maxlength="160" placeholder="yourfirm.com"></label>
+      <label>Work email<input name="email" class="ph-no-capture" data-ph-no-capture="true" type="email" autocomplete="email" required maxlength="200" placeholder="name@yourfirm.com"></label>
+      <label>Phone number<input name="phone" class="ph-no-capture" data-ph-no-capture="true" type="tel" inputmode="tel" autocomplete="tel" maxlength="40"></label>
+      <label>Firm name<input name="firm" class="ph-no-capture" data-ph-no-capture="true" autocomplete="organization" required maxlength="200"></label>
+      <label>Firm website<input name="website" class="ph-no-capture" data-ph-no-capture="true" inputmode="url" autocomplete="url" maxlength="300" placeholder="yourfirm.com"></label>
       <p class="advx-form__error" role="alert"></p>
       <button type="submit" class="btn btn--dark advx-btn">{escape(f["button_label"])}</button>
+      <label class="advx-form__notice"><input name="notice" type="checkbox" required value="advisor-notice-v1" class="ph-no-capture" data-ph-no-capture="true"><span>I agree that Valora may use my name, work email, phone number, firm, website and role to reply to my inquiry, as described in the privacy notice. <a href="/privacy/">Privacy notice</a></span></label>
       <p class="advx-form__fine">{escape(f["fine_print"])}</p>
     </form>
-    <div id="advisorIntroDone" class="advx-form__done" tabindex="-1" hidden><h3>{escape(f["thanks_heading"])}</h3><p>{escape(f["thanks_body"])}</p></div>
+    <div id="advisorIntroDone" class="advx-form__done" tabindex="-1" hidden><h3>{escape(f["thanks_heading"])}</h3><p>{escape(f["thanks_body"])}</p><iframe id="advisorDemoCalendar" title="Book a Valora demo" style="width:100%;height:740px;border:0" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
   </aside>"""
 
 def _li(items):
