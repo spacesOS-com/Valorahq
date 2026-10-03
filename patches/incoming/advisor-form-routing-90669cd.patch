@@ -1,0 +1,130 @@
+From 90669cd7407a44b92051a08788aa08ad8f63c39e Mon Sep 17 00:00:00 2001
+From: Instinct Agent <agent@instinct.com>
+Date: Sat, 3 Oct 2026 13:29:14 +0530
+Subject: [PATCH] Route advisor form separately and embed demo calendar after
+ receipt
+
+---
+ _build/advisors_page.py         | 17 ++++++-----
+ _build/build.py                 |  1 +
+ assets/advisor-form-consent.css |  5 ++++
+ assets/advisor-intro-form.js    | 52 ++-------------------------------
+ 4 files changed, 18 insertions(+), 57 deletions(-)
+ create mode 100644 assets/advisor-form-consent.css
+
+diff --git a/_build/advisors_page.py b/_build/advisors_page.py
+index 791b877..a4c5ba8 100644
+--- a/_build/advisors_page.py
++++ b/_build/advisors_page.py
+@@ -53,20 +53,21 @@ def _intro_form():
+     return f"""<aside class="advx-form" aria-labelledby="advisorIntroTitle">
+     <h2 id="advisorIntroTitle">{escape(f["heading"])}</h2>
+     <p class="advx-form__sub">{escape(f["subheading"])}</p>
+-    <form id="advisorIntro" data-endpoint="{_endpoint()}" data-button-label="{escape(f["button_label"])}" novalidate>
++    <form id="advisorIntro" data-endpoint="{_endpoint()}" data-button-label="{escape(f["button_label"])}" class="ph-no-capture" data-ph-no-capture="true">
+       <div class="advx-form__row">
+-        <label>First name<input name="first" autocomplete="given-name" required maxlength="60"></label>
+-        <label>Last name<input name="last" autocomplete="family-name" required maxlength="60"></label>
++        <label>First name<input name="first" class="ph-no-capture" data-ph-no-capture="true" autocomplete="given-name" required maxlength="60"></label>
++        <label>Last name<input name="last" class="ph-no-capture" data-ph-no-capture="true" autocomplete="family-name" required maxlength="60"></label>
+       </div>
+-      <label>Work email<input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="name@yourfirm.com"></label>
+-      <label>Phone number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20"></label>
+-      <label>Firm name<input name="firm" autocomplete="organization" required maxlength="120"></label>
+-      <label>Firm website<input name="website" inputmode="url" autocomplete="url" maxlength="160" placeholder="yourfirm.com"></label>
++      <label>Work email<input name="email" class="ph-no-capture" data-ph-no-capture="true" type="email" autocomplete="email" required maxlength="200" placeholder="name@yourfirm.com"></label>
++      <label>Phone number<input name="phone" class="ph-no-capture" data-ph-no-capture="true" type="tel" inputmode="tel" autocomplete="tel" maxlength="40"></label>
++      <label>Firm name<input name="firm" class="ph-no-capture" data-ph-no-capture="true" autocomplete="organization" required maxlength="200"></label>
++      <label>Firm website<input name="website" class="ph-no-capture" data-ph-no-capture="true" inputmode="url" autocomplete="url" maxlength="300" placeholder="yourfirm.com"></label>
+       <p class="advx-form__error" role="alert"></p>
+       <button type="submit" class="btn btn--dark advx-btn">{escape(f["button_label"])}</button>
++      <label class="advx-form__notice"><input name="notice" type="checkbox" required value="advisor-notice-v1" class="ph-no-capture" data-ph-no-capture="true"><span>I agree that Valora may use my name, work email, phone number, firm, website and role to reply to my inquiry, as described in the privacy notice. <a href="/privacy/">Privacy notice</a></span></label>
+       <p class="advx-form__fine">{escape(f["fine_print"])}</p>
+     </form>
+-    <div id="advisorIntroDone" class="advx-form__done" tabindex="-1" hidden><h3>{escape(f["thanks_heading"])}</h3><p>{escape(f["thanks_body"])}</p></div>
++    <div id="advisorIntroDone" class="advx-form__done" tabindex="-1" hidden><h3>{escape(f["thanks_heading"])}</h3><p>{escape(f["thanks_body"])}</p><iframe id="advisorDemoCalendar" title="Book a Valora demo" style="width:100%;height:740px;border:0" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+   </aside>"""
+ 
+ def _li(items):
+diff --git a/_build/build.py b/_build/build.py
+index a622583..9a19b94 100644
+--- a/_build/build.py
++++ b/_build/build.py
+@@ -83,6 +83,7 @@ def build_for_advisors():
+                      social_image="/assets/for-advisors-education-social.png",
+                      social_image_alt="Valora educational resources for advisory firms. No advisor matches or introductions at this time."),
+                      for_advisors_body(), active="advisors")
++    html = html.replace("</head>", '<link rel="stylesheet" href="/assets/advisor-form-consent.css">\n</head>')
+     write("/for-advisors/", html)
+ 
+     # keep the old /advisors.html URL alive as a redirect, so existing
+diff --git a/assets/advisor-form-consent.css b/assets/advisor-form-consent.css
+new file mode 100644
+index 0000000..1166049
+--- /dev/null
++++ b/assets/advisor-form-consent.css
+@@ -0,0 +1,5 @@
++
++/* Visible advisor consent, separate from the text fields. */
++.advx-form .advx-form__notice{display:flex;align-items:flex-start;gap:10px;margin:18px 0;font-size:12px;font-weight:400;line-height:1.5}.advx-form .advx-form__notice input{width:18px;height:18px;flex:0 0 18px;padding:0;margin:2px 0 0;appearance:auto;min-height:0}.advx-form__notice a{text-decoration:underline}
++
++@media(min-width:701px){.advx-hero__grid{align-items:start}.advx-hero__copy{padding-top:48px}}
+diff --git a/assets/advisor-intro-form.js b/assets/advisor-intro-form.js
+index f4f3237..0e14c6c 100644
+--- a/assets/advisor-intro-form.js
++++ b/assets/advisor-intro-form.js
+@@ -1,49 +1,3 @@
+-/* Advisor intro form on /for-advisors/. Posts through the same inquiry
+-   contract adapter and endpoint as the site-wide inquiry form; the firm
+-   details travel in the message field. */
+-(function(){'use strict';
+-  var form=document.querySelector('#advisorIntro');
+-  if(!form||!window.ValoraInquiryContractAdapter)return;
+-  var done=document.querySelector('#advisorIntroDone'),error=form.querySelector('.advx-form__error'),button=form.querySelector('button[type=submit]');
+-  var adapter=window.ValoraInquiryContractAdapter.create(async function(payload){
+-    var controller=new AbortController(),timer=setTimeout(function(){controller.abort()},20000);
+-    try{return await fetch(form.dataset.endpoint,{method:'POST',body:new URLSearchParams(payload),signal:controller.signal})}
+-    finally{clearTimeout(timer)}
+-  });
+-  var messages={first:'Enter your first name.',last:'Enter your last name.',email:'Enter a valid work email, for example name@yourfirm.com.',phone:'Enter a valid phone number. Include the country code if outside the US.',firm:'Enter your firm name.',website:'Enter a valid website, for example yourfirm.com.'};
+-  function clear(input){
+-    input.removeAttribute('aria-invalid');input.removeAttribute('aria-describedby');
+-    var old=input.closest('label').querySelector('.advx-form__field-err');if(old)old.remove();
+-  }
+-  function flag(input){
+-    clear(input);
+-    var note=document.createElement('span');note.className='advx-form__field-err';note.id='adv-err-'+input.name;note.setAttribute('role','alert');note.textContent=messages[input.name];
+-    input.setAttribute('aria-invalid','true');input.setAttribute('aria-describedby',note.id);input.closest('label').appendChild(note);
+-  }
+-  form.querySelectorAll('input').forEach(function(input){input.addEventListener('input',function(){clear(input);error.textContent=''})});
+-  form.addEventListener('submit',function(e){
+-    e.preventDefault();
+-    var v={},bad=[],phoneIntl='';
+-    form.querySelectorAll('input').forEach(function(input){
+-      v[input.name]=input.value.trim();
+-      var ok=input.checkValidity()&&(!input.required||v[input.name]);
+-      if(ok&&input.name==='phone'&&v.phone&&window.libphonenumber){
+-        var pn=window.libphonenumber.parsePhoneNumberFromString(v.phone,'US');
+-        ok=!!(pn&&pn.isValid());if(ok)phoneIntl=pn.formatInternational();
+-      }
+-      if(ok&&input.name==='website'&&v.website)ok=/^(https?:\/\/)?[a-z0-9-]+(\.[a-z0-9-]+)+(\/\S*)?$/i.test(v.website);
+-      if(ok)clear(input);else{flag(input);bad.push(input)}
+-    });
+-    if(bad.length){bad[0].focus();return}
+-    button.disabled=true;button.textContent='Sending…';error.textContent='';
+-    adapter.submit({firstName:v.first,lastName:v.last,email:v.email,phone:phoneIntl||v.phone,
+-      motivation:'[Advisor inquiry from /for-advisors/]\nFirm: '+v.firm+(v.website?'\nWebsite: '+v.website:''),
+-      reviewedNoticeAccepted:true}).then(function(result){
+-      if(result.kind==='inquiryAccepted'){
+-        if(window.ValoraLeads)window.ValoraLeads.send({name:v.first+' '+v.last,email:v.email,phone:phoneIntl||v.phone,company:v.firm,action:'advisor inquiry',details:{'Firm website':v.website}});
+-        form.hidden=true;done.hidden=false;done.focus();return}
+-      button.disabled=false;button.textContent=form.dataset.buttonLabel||'Get started';
+-      error.textContent=result.kind==='retryLater'?'Please wait before trying again.':result.kind==='invalid'?'Please check your details before sending.':'We could not confirm this request. Do not submit it again yet.';
+-    });
+-  });
+-})();
++/* Advisor path only. No consumer adapter, CRM call or automatic reply. */
++(function(){'use strict';var form=document.getElementById('advisorIntro');if(!form)return;var error=form.querySelector('.advx-form__error'),done=document.getElementById('advisorIntroDone'),button=form.querySelector('button[type=submit]'),busy=false;
++form.addEventListener('submit',async function(event){event.preventDefault();error.textContent='';if(busy||!form.reportValidity())return;var get=function(n){return form.elements[n] ? form.elements[n].value.trim() : ''},name=get('first')+' '+get('last');if(name.length>120){error.textContent='Please shorten your name to 120 characters.';return}if(!form.elements.notice.checked)return;var payload={type:'advisor',name:name,email:get('email'),phone:get('phone'),firm:get('firm'),website:get('website'),role:get('role'),notice:form.elements.notice.value};var limits={name:120,email:200,phone:40,firm:200,website:300,role:120};for(var key in limits){if(payload[key].length>limits[key]){error.textContent='Please shorten the '+key+' field.';return}}busy=true;button.disabled=true;var controller=new AbortController(),timer=setTimeout(function(){controller.abort()},20000);try{var response=await fetch(form.dataset.endpoint,{method:'POST',body:new URLSearchParams(payload),signal:controller.signal,credentials:'omit'});var data=await response.json();if(!response.ok||data.status!=='success'||data.type!=='advisor')throw new Error('Unconfirmed');form.hidden=true;done.hidden=false;done.focus();var calendar=document.getElementById('advisorDemoCalendar');calendar.src='https://cal.com/bhavyabarot/valora-discovery-conversation?overlayCalendar=true';}catch(_){error.textContent='We could not confirm this inquiry. Please do not submit it again yet.'}finally{clearTimeout(timer);busy=false;button.disabled=false}})})();
+-- 
+2.34.1
