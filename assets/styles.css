@@ -2303,6 +2303,9 @@ body.embed-mode .to-top{ display:none !important; }
 .nav-menu__panel .nav-menu__action:hover{ background:var(--green); color:#fff; text-decoration:none; }
 @media(max-width:900px){
   .nav-menu__toggle{ width:100%; justify-content:space-between; padding:16px 0; font-size:1rem; border-bottom:1px solid var(--line); border-radius:0; }
+  /* Stacked menu: no tinted bar or focus box, just the green label and a heavier rule. */
+  .nav-menu__toggle:hover,.nav-menu__toggle[aria-expanded="true"]{ background:transparent; }
+  .nav-menu__toggle:focus-visible{ outline:0; box-shadow:inset 0 -2px 0 var(--green); }
   .nav-menu__panel{ position:static; width:100%; grid-template-columns:1fr; border:1px solid var(--line); box-shadow:none; margin:10px 0 20px; }
   .nav-menu__col{ padding:20px; }
   .nav-menu__panel a{ padding:0; border:0; font-size:.9rem; }
