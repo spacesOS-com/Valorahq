@@ -2516,3 +2516,6 @@ body.embed-mode .to-top{ display:none !important; }
 @media(max-width:900px){
   .logo__tag{ font-size:.66rem; margin-left:8px; padding-left:8px; }
 }
+
+/* Advisor toggle: fixed line positions for a clean hamburger and close X. */
+.site-header--advisors .nav-toggle{position:relative;display:none}.site-header--advisors .nav-toggle span{position:absolute;left:calc(50% - 8px);top:50%;margin:0}.site-header--advisors .nav-toggle span:nth-child(1){transform:translateY(-5px)}.site-header--advisors .nav-toggle span:nth-child(2){transform:translateY(0)}.site-header--advisors .nav-toggle span:nth-child(3){transform:translateY(5px)}.site-header--advisors .nav-toggle.is-open span:nth-child(1){transform:rotate(45deg)}.site-header--advisors .nav-toggle.is-open span:nth-child(2){opacity:0}.site-header--advisors .nav-toggle.is-open span:nth-child(3){transform:rotate(-45deg)}@media(max-width:900px){.site-header--advisors .nav-toggle{display:block}}
