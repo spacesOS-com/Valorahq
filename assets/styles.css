@@ -2510,12 +2510,9 @@ body.embed-mode .to-top{ display:none !important; }
 
 /* /for-advisors/ has its own menu and footer */
 .logo__tag{ margin-left:10px; padding-left:10px; border-left:1px solid var(--line); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); align-self:center; }
-.nav__list--plain{ gap:clamp(14px,2vw,26px); }
+.nav__list--plain{ gap:clamp(18px,2.6vw,36px); }
 .nav__list--plain a{ font-size:.83rem; }
-.nav__aside a{ color:var(--ink-soft); }
-.nav__aside{ padding-left:clamp(10px,1.4vw,18px); border-left:1px solid var(--line); }
 .footer--advisors .footer__nav-bottom{ border-top:0; margin-top:0; padding-top:clamp(28px,4vw,48px); }
 @media(max-width:900px){
-  .nav__aside{ padding-left:0; border-left:0; }
   .logo__tag{ font-size:.66rem; margin-left:8px; padding-left:8px; }
 }

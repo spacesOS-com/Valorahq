@@ -350,8 +350,9 @@ def _nav_dropdown(menu, index):
 
 # /for-advisors/ speaks to advisory firms, not to people looking for advice, so it carries its own
 # menu and footer: links to its own sections, no consumer directory, and a CTA that goes to its own form.
-ADVISOR_NAV = [("How it works", "#how-it-works"), ("How we get you there", "#how-we-do-it"), ("What to expect", "#projection"),
-               ("Articles", "#insights-for-advisors"), ("FAQ", "#faq")]
+ADVISOR_NAV = [("How it works", "#how-it-works"), ("Articles", "#insights-for-advisors"), ("FAQ", "#faq")]
+# The footer can afford the fuller list.
+ADVISOR_FOOTER_LINKS = [("How it works", "#how-it-works"), ("How we get you there", "#how-we-do-it"), ("What to expect", "#projection"), ("FAQ", "#faq")]
 ADVISOR_BLOG_URL = "https://insights.spacesos.com/"
 
 
@@ -370,7 +371,6 @@ def advisor_header():
     <nav class="nav" id="primaryNav" aria-label="Primary">
       <ul class="nav__list nav__list--plain">
 {items}
-        <li class="nav__aside"><a href="/">For individuals</a></li>
       </ul>
       <div class="nav__cta">
         <a class="btn btn--dark" href="#top">Get started</a>
@@ -385,7 +385,7 @@ def advisor_header():
 
 
 def advisor_footer():
-    page_links = "".join(f'<li><a href="{url}">{escape(label)}</a></li>' for label, url in ADVISOR_NAV if url != "#insights-for-advisors")
+    page_links = "".join(f'<li><a href="{url}">{escape(label)}</a></li>' for label, url in ADVISOR_FOOTER_LINKS)
     return f"""<footer class="footer footer--advisors">
   <div class="container">
     <h2 class="display display--md footer__statement reveal">Be found by the people<br><em>your firm serves best.</em></h2>
