@@ -1,0 +1,5 @@
+
+/* Visible advisor consent, separate from the text fields. */
+.advx-form .advx-form__notice{display:flex;align-items:flex-start;gap:10px;margin:18px 0;font-size:12px;font-weight:400;line-height:1.5}.advx-form .advx-form__notice input{width:18px;height:18px;flex:0 0 18px;padding:0;margin:2px 0 0;appearance:auto;min-height:0}.advx-form__notice a{text-decoration:underline}
+
+@media(min-width:701px){.advx-hero__grid{align-items:start}.advx-hero__copy{padding-top:48px}}

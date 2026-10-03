@@ -83,6 +83,7 @@ def build_for_advisors():
                      social_image="/assets/for-advisors-education-social.png",
                      social_image_alt="Valora educational resources for advisory firms. No advisor matches or introductions at this time."),
                      for_advisors_body(), active="advisors")
+    html = html.replace("</head>", '<link rel="stylesheet" href="/assets/advisor-form-consent.css">\n</head>')
     write("/for-advisors/", html)
 
     # keep the old /advisors.html URL alive as a redirect, so existing
