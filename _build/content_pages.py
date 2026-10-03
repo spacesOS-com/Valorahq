@@ -388,13 +388,44 @@ def _body(pack):
 """
 
 
+def cms_version_meta(doc):
+    """The version tag the CMS reads back to confirm which version is live."""
+    version = str((doc.get("cms") or {}).get("version_hash") or "")
+    return f'<meta name="valora-cms-version" content="{version}">' if re.fullmatch(r"[a-f0-9]{64}", version) else ""
+
+
+def _cms_schema(pack):
+    """Head additions for pages managed in the CMS (they carry a "cms" block): the version tag,
+    and Article JSON-LD for guides (not for legal or team pages)."""
+    cms = pack.get("cms") or {}
+    if not cms:
+        return ""
+    if pack.get("page_type") in ("legal", "team"):
+        return cms_version_meta(pack)
+    from partials import json_ld, SITE_URL
+    data = {"@context": "https://schema.org", "@type": "Article", "headline": pack["h1"],
+            "description": pack["meta_description"], "mainEntityOfPage": f"{SITE_URL}/{pack['slug']}/",
+            "datePublished": cms.get("published_at", ""), "dateModified": cms.get("updated_at", ""),
+            "author": {"@type": "Person", "name": cms.get("author_persona") or BRAND},
+            "publisher": {"@type": "Organization", "name": BRAND}}
+    if cms.get("og_image"):
+        data["image"] = cms["og_image"] if cms["og_image"].startswith("https://") else SITE_URL + cms["og_image"]
+    out = json_ld(data)
+    if isinstance(cms.get("structured_data"), dict) and cms["structured_data"].get("@type"):
+        out += "\n" + json_ld(cms["structured_data"])
+    return out + ("\n" + cms_version_meta(pack) if cms_version_meta(pack) else "")
+
+
 def render(pack):
     faq_pairs = [(f["q"], f["a"]) for f in pack["faqs"]]
+    cms = pack.get("cms") or {}
+    social = {"social_image": cms["og_image"], "social_image_alt": (pack.get("feature_image") or {}).get("alt") or pack["h1"],
+              "social_type": "article"} if cms.get("og_image") else {}
     return page(
         head(pack["meta_title"], pack["meta_description"],
-             path=f"/{pack['slug']}/", schema=faq_schema(faq_pairs) if faq_pairs else "",
+             path=f"/{pack['slug']}/", schema=((faq_schema(faq_pairs) if faq_pairs else "") + _cms_schema(pack)),
              keywords=list(dict.fromkeys((pack.get("keywords") or []) + (pack.get("tags") or []))),
-             noindex=pack.get("_draft", False)),
+             noindex=pack.get("_draft", False), **social),
         _body(pack),
         with_gate=True,
     )
