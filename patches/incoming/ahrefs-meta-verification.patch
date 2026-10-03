@@ -1,0 +1,10 @@
+--- a/index.html
++++ b/index.html
+@@ -6,6 +6,7 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Valora — Your money has a purpose</title>
+ <meta name="description" content="Valora publishes educational information about financial planning and accepts questions. We aren&#x27;t arranging advisor matches or introductions at this time.">
++<meta name='ahrefs-site-verification' content='18af0dae9108882165e72f4f5b41a72c6f6af49b6cccb0b842d6951663e5a5bf'>
+ 
+ <link rel="canonical" href="https://www.valorahq.com">
+ <link rel="alternate" hreflang="en-us" href="https://www.valorahq.com">
