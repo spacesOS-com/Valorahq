@@ -46,11 +46,20 @@
   var sideClose = document.createElement('button'); sideClose.type = 'button'; sideClose.setAttribute('aria-label', 'Close conversation'); sideClose.textContent = '\u00d7';
   sideClose.addEventListener('click', function () { closeConversation(); });
   sideHead.appendChild(sideName); sideHead.appendChild(sideClose);
+  // The side panel starts under the site header so the main menu stays fully visible.
+  function syncSideTop() {
+    if (!wrap.classList.contains('is-side')) return;
+    var head = document.getElementById('siteHeader');
+    var top = head ? Math.max(0, Math.round(head.getBoundingClientRect().bottom)) : 0;
+    wrap.style.setProperty('--valora-side-top', top + 'px');
+  }
+  window.addEventListener('scroll', syncSideTop, {passive: true});
+  window.addEventListener('resize', syncSideTop);
   function enterSide() {
     if (wrap.classList.contains('is-side')) return;
     wrap.classList.add('is-side'); sideHead.hidden = false; chat.hidden = false;
     document.body.setAttribute('data-valora-conversation-side', 'true');
-    syncSpacer();
+    syncSideTop(); syncSpacer();
   }
   var chat = document.createElement('div');
   chat.className = 'valora-concierge__chat';
@@ -107,9 +116,8 @@
   // the composer once three characters are typed, replacing the greeting.
   function showSuggestions() {
     var typing = input.value.trim().length >= 3;
-    var side = wrap.classList.contains('is-side');
-    // Docked: only before a conversation has started. Side panel: always listed.
-    faqPopup.hidden = busy || (!side && (!typing || !chat.hidden)) || !faqPopup.childElementCount;
+    // Suggestions only help before the first question; once a conversation is running they stay hidden.
+    faqPopup.hidden = busy || !typing || !chat.hidden || !faqPopup.childElementCount;
     if (chat.hidden) greeting.hidden = typing || (typeof hint !== 'undefined' && hint && !hint.hidden);
   }
   input.addEventListener('focus', function() { showSuggestions(); chat.querySelectorAll('.valora-conversation__initial-choices').forEach(function(g){g.hidden=true;}); });
@@ -215,14 +223,17 @@
       a.textContent = item.label || item.title; a.href = item.url; a.rel = 'noopener noreferrer'; row.appendChild(a); links.appendChild(row);
     }); chat.appendChild(links);
     var group = document.createElement('div'); group.className = 'valora-concierge__choices ph-no-capture';
-    data.choices.forEach(function (choice) {
+    // The page's three standard questions are not repeated under every answer: the side panel
+    // already lists them, and in the docked bar they only belong before the first question.
+    var standard = activePageContext.questions || [];
+    data.choices.filter(function (choice) { return standard.indexOf(choice.label) === -1; }).forEach(function (choice) {
       var b = document.createElement('button'); b.type = 'button'; b.textContent = choice.label;
       b.addEventListener('click', function () {
         // Explicit reset clears state. Restart choices must be asked as reviewed labels.
         if (data.kind === 'reset') submitQuestion(choice.label);
         else submitTurn({optionId: choice.optionId}, choice.label);
       }); group.appendChild(b);
-    }); chat.appendChild(group); chat.scrollTop = chat.scrollHeight;
+    }); if (group.childElementCount) chat.appendChild(group); chat.scrollTop = chat.scrollHeight;
   }
   function submitQuestion(value) { var question = value.trim(); if (question) return submitTurn({question: question}, question); }
   async function submitTurn(selection, label) {
@@ -255,7 +266,7 @@
       if (status.textContent === 'Finding resources...') status.textContent = '';
     } finally {
       clearTimeout(timeout);
-      if (generation === currentGeneration) { activeController = null; busy = false; send.disabled = false; input.disabled = false; input.focus(); faqPopup.hidden = true; if (wrap.classList.contains('is-side')) showSuggestions(); }
+      if (generation === currentGeneration) { activeController = null; busy = false; send.disabled = false; input.disabled = false; input.focus(); faqPopup.hidden = true; }
     }
   }
   // The browser's native "Please fill out this field" tooltip can't be styled,
