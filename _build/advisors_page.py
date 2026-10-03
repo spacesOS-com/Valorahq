@@ -55,12 +55,12 @@ def _intro_form():
     <p class="advx-form__sub">{escape(f["subheading"])}</p>
     <form id="advisorIntro" data-endpoint="{_endpoint()}" data-button-label="{escape(f["button_label"])}" class="ph-no-capture" data-ph-no-capture="true">
       <div class="advx-form__row">
-        <label>First name<input name="first" class="ph-no-capture" data-ph-no-capture="true" autocomplete="given-name" required maxlength="60"></label>
-        <label>Last name<input name="last" class="ph-no-capture" data-ph-no-capture="true" autocomplete="family-name" required maxlength="60"></label>
+        <label>First name<input name="first" class="ph-no-capture" data-ph-no-capture="true" autocomplete="given-name" required maxlength="60" placeholder="Jane"></label>
+        <label>Last name<input name="last" class="ph-no-capture" data-ph-no-capture="true" autocomplete="family-name" required maxlength="60" placeholder="Smith"></label>
       </div>
       <label>Work email<input name="email" class="ph-no-capture" data-ph-no-capture="true" type="email" autocomplete="email" required maxlength="200" placeholder="name@yourfirm.com"></label>
-      <label>Phone number<input name="phone" class="ph-no-capture" data-ph-no-capture="true" type="tel" inputmode="tel" autocomplete="tel" maxlength="40"></label>
-      <label>Firm name<input name="firm" class="ph-no-capture" data-ph-no-capture="true" autocomplete="organization" required maxlength="200"></label>
+      <label>Phone number<input name="phone" class="ph-no-capture" data-ph-no-capture="true" type="tel" inputmode="tel" autocomplete="tel" maxlength="40" placeholder="(555) 123-4567"></label>
+      <label>Firm name<input name="firm" class="ph-no-capture" data-ph-no-capture="true" autocomplete="organization" required maxlength="200" placeholder="Your firm"></label>
       <label>Firm website<input name="website" class="ph-no-capture" data-ph-no-capture="true" inputmode="url" autocomplete="url" maxlength="300" placeholder="yourfirm.com"></label>
       <p class="advx-form__error" role="alert"></p>
       <button type="submit" class="btn btn--dark advx-btn">{escape(f["button_label"])}</button>
