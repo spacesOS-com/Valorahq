@@ -1,0 +1,14 @@
+{
+  "slug": "advisor-form-routing-90669cd",
+  "result": "applied",
+  "patch_sha256": "a9380d5b08707ba05c04566485fcf1b48d2cf9be87f04b3c52fbb805c046b026",
+  "target_branch": "patched/advisor-form-routing-90669cd",
+  "commit": "98bef0addba4db29ae3e22ede06c86723f75013b",
+  "base": "main",
+  "base_sha": "1ecc22f9d8e04b6908b13161718b043754374089",
+  "files_changed": 4,
+  "force_added": 0,
+  "drop_branch": "patch-drop/advisor-form-routing-90669cd",
+  "run": "https://github.com/spacesOS-com/Valorahq/actions/runs/37128870724",
+  "time": "2026-10-03T14:13:29Z"
+}
