@@ -1,0 +1,14 @@
+{
+  "slug": "advisor-menu-toggle-corrected",
+  "result": "applied",
+  "patch_sha256": "cec78137f3729c313e7728e77cb060d6e519f82cfa8857a00cc538e1fa58b8cf",
+  "target_branch": "patched/advisor-menu-toggle-corrected",
+  "commit": "a8fc3bcf5fdf322bfddcbe29d6bdb53f61bbb55d",
+  "base": "main",
+  "base_sha": "7e89c549a78c49867de3674f710c03eed73d2313",
+  "files_changed": 1,
+  "force_added": 0,
+  "drop_branch": "patch-drop/advisor-menu-toggle-corrected",
+  "run": "https://github.com/spacesOS-com/Valorahq/actions/runs/37140159474",
+  "time": "2026-10-03T17:20:51Z"
+}
