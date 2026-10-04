@@ -1,0 +1,14 @@
+{
+  "slug": "valora-brand-source",
+  "result": "applied",
+  "patch_sha256": "17eb0af3adca2302bfa124c0824932e5d184274c9c01d5dbe71c17cf0a807bf6",
+  "target_branch": "patched/valora-brand-source",
+  "commit": "f08d673629c6e4e5aa68bca19baa9665160e2533",
+  "base": "main",
+  "base_sha": "e52277580eb272b30d5daccd5d0cdf089bf672a8",
+  "files_changed": 2,
+  "force_added": 0,
+  "drop_branch": "patch-drop/valora-brand-source",
+  "run": "https://github.com/spacesOS-com/Valorahq/actions/runs/37179386881",
+  "time": "2026-10-04T05:16:09Z"
+}
