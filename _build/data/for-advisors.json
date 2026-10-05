@@ -95,6 +95,54 @@
       }
     ]
   },
+  "case_study": {
+    "label": "Case study · Wealth management",
+    "heading": "287 leads in one month from AI assistants and content",
+    "body": "Six months into the work, a wealth management firm asked every new lead how they found it. 181 named an AI assistant. 106 named the firm's blog, news and press coverage. AI chat had become its second-largest source of leads, ahead of referrals and paid ads.",
+    "stats": [
+      {
+        "value": "181",
+        "label": "leads from AI chat"
+      },
+      {
+        "value": "106",
+        "label": "leads from blog, news and press"
+      },
+      {
+        "value": "31%",
+        "label": "of all leads that month"
+      }
+    ],
+    "chart_heading": "How new leads said they found the firm, in one month",
+    "sources": [
+      {
+        "label": "Google search",
+        "value": 344,
+        "ours": false
+      },
+      {
+        "label": "AI chat",
+        "value": 181,
+        "ours": true
+      },
+      {
+        "label": "Referral from friends and family",
+        "value": 174,
+        "ours": false
+      },
+      {
+        "label": "Online ads",
+        "value": 111,
+        "ours": false
+      },
+      {
+        "label": "Blog, news and press",
+        "value": 106,
+        "ours": true
+      }
+    ],
+    "note": "About this case study: the firm is a wealth management company run by the same team as Valora. Figures are one month of leads, counted by the source each person named. Results vary by firm, market and competition, and Valora does not guarantee leads."
+  },
   "deliverables": {
     "heading": "What we deliver for your firm",
     "intro": "Alongside the work above, this is what we produce for you.",

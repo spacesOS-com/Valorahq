@@ -83,6 +83,13 @@ def _cards(cards):
 def for_advisors_body():
     d = FOR_ADVISORS
     deliver = d["deliverables"]
+    cs = d["case_study"]
+    top = max(x["value"] for x in cs["sources"])
+    cs_stats = "\n".join(f'      <div><strong>{escape(x["value"])}</strong><span>{escape(x["label"])}</span></div>' for x in cs["stats"])
+    cs_bars = "\n".join(
+        f'      <li class="{"is-ours" if x["ours"] else ""}"><span class="advx-case__name">{escape(x["label"])}</span>'
+        f'<span class="advx-case__bar"><i style="width:{round(100 * x["value"] / top)}%"></i></span><span class="advx-case__n">{x["value"]}</span></li>'
+        for x in cs["sources"])
     hero, why, steps, tools, proj, art, exp, close, cross = (d[k] for k in ("hero", "why", "steps", "tools", "projection", "articles", "expectations", "closing", "cross_link"))
     step_items = "\n".join(
         f'    <li class="reveal"><span class="advx-steps__n">{i:02d}</span><div><h3>{escape(s["heading"])}</h3><p>{escape(s["body"])}</p></div></li>'
@@ -127,14 +134,32 @@ def for_advisors_body():
 {_cards(tools["cards"])}
   </div>
 </div></section>
-<section class="section section--cream advx-tools advx-deliver" id="what-we-deliver"><div class="container">
+<section class="section section--cream advx-case" id="case-study"><div class="container advx-case__grid">
+  <div class="advx-case__copy">
+    <p class="advx-pill reveal">{escape(cs["label"])}</p>
+    <h2 class="advx-h2 reveal">{escape(cs["heading"])}</h2>
+    <p class="advx-lead reveal">{escape(cs["body"])}</p>
+    <div class="advx-case__stats reveal">
+{cs_stats}
+    </div>
+  </div>
+  <div class="advx-case__chart reveal">
+    <h3>{escape(cs["chart_heading"])}</h3>
+    <ul>
+{cs_bars}
+    </ul>
+    <p class="advx-case__key"><i></i> Channels Valora works on</p>
+  </div>
+  <p class="advx-fine advx-case__note reveal">{escape(cs["note"])}</p>
+</div></section>
+<section class="section section--paper advx-tools advx-deliver" id="what-we-deliver"><div class="container">
   <h2 class="advx-h2 reveal">{escape(deliver["heading"])}</h2>
   <p class="advx-lead reveal">{escape(deliver["intro"])}</p>
   <div class="advx-cards advx-cards--left">
 {_cards(deliver["cards"])}
   </div>
 </div></section>
-<section class="section section--paper advx-proj" id="projection"><div class="container">
+<section class="section section--cream advx-proj" id="projection"><div class="container">
   <h2 class="advx-h2 reveal">{escape(proj["heading"])}</h2>
   <p class="advx-lead reveal">{escape(proj["intro"])}</p>
   <div class="advx-proj__flow reveal">
@@ -143,13 +168,13 @@ def for_advisors_body():
   <p class="advx-fine reveal">{escape(proj["fine_print"])}</p>
   <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="#top">{escape(proj["button_label"])}</a></div>
 </div></section>
-<section class="section section--cream advx-blog" id="insights-for-advisors"><div class="container">
+<section class="section section--paper advx-blog" id="insights-for-advisors"><div class="container">
   <h2 class="advx-h2 reveal">{escape(art["heading"])}</h2>
   <p class="advx-lead reveal">{escape(art["intro"])}</p>
   {_blog_cards()}
   <div class="advx-center reveal"><a class="btn btn--outline advx-btn" href="{BLOG_URL}" target="_blank" rel="noopener">{escape(art["button_label"])}</a></div>
 </div></section>
-<section class="section section--paper advx-scope" id="portal"><div class="container">
+<section class="section section--cream advx-scope" id="portal"><div class="container">
   <h2 class="advx-h2 reveal">{escape(exp["heading"])}</h2>
   <p class="advx-lead reveal">{escape(exp["intro"])}</p>
   <div class="advx-fit">
