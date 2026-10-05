@@ -82,6 +82,7 @@ def _cards(cards):
 
 def for_advisors_body():
     d = FOR_ADVISORS
+    deliver = d["deliverables"]
     hero, why, steps, tools, proj, art, exp, close, cross = (d[k] for k in ("hero", "why", "steps", "tools", "projection", "articles", "expectations", "closing", "cross_link"))
     step_items = "\n".join(
         f'    <li class="reveal"><span class="advx-steps__n">{i:02d}</span><div><h3>{escape(s["heading"])}</h3><p>{escape(s["body"])}</p></div></li>'
@@ -126,7 +127,14 @@ def for_advisors_body():
 {_cards(tools["cards"])}
   </div>
 </div></section>
-<section class="section section--cream advx-proj" id="projection"><div class="container">
+<section class="section section--cream advx-tools advx-deliver" id="what-we-deliver"><div class="container">
+  <h2 class="advx-h2 reveal">{escape(deliver["heading"])}</h2>
+  <p class="advx-lead reveal">{escape(deliver["intro"])}</p>
+  <div class="advx-cards advx-cards--left">
+{_cards(deliver["cards"])}
+  </div>
+</div></section>
+<section class="section section--paper advx-proj" id="projection"><div class="container">
   <h2 class="advx-h2 reveal">{escape(proj["heading"])}</h2>
   <p class="advx-lead reveal">{escape(proj["intro"])}</p>
   <div class="advx-proj__flow reveal">
@@ -135,13 +143,13 @@ def for_advisors_body():
   <p class="advx-fine reveal">{escape(proj["fine_print"])}</p>
   <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="#top">{escape(proj["button_label"])}</a></div>
 </div></section>
-<section class="section section--paper advx-blog" id="insights-for-advisors"><div class="container">
+<section class="section section--cream advx-blog" id="insights-for-advisors"><div class="container">
   <h2 class="advx-h2 reveal">{escape(art["heading"])}</h2>
   <p class="advx-lead reveal">{escape(art["intro"])}</p>
   {_blog_cards()}
   <div class="advx-center reveal"><a class="btn btn--outline advx-btn" href="{BLOG_URL}" target="_blank" rel="noopener">{escape(art["button_label"])}</a></div>
 </div></section>
-<section class="section section--cream advx-scope" id="portal"><div class="container">
+<section class="section section--paper advx-scope" id="portal"><div class="container">
   <h2 class="advx-h2 reveal">{escape(exp["heading"])}</h2>
   <p class="advx-lead reveal">{escape(exp["intro"])}</p>
   <div class="advx-fit">

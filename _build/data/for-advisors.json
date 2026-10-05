@@ -95,6 +95,42 @@
       }
     ]
   },
+  "deliverables": {
+    "heading": "What we deliver for your firm",
+    "intro": "Alongside the work above, this is what we produce for you.",
+    "cards": [
+      {
+        "tag": "Spotlight",
+        "heading": "An advisor spotlight article",
+        "body": "A feature article about your firm on valorahq.com, published only with your written approval."
+      },
+      {
+        "tag": "Newsletter",
+        "heading": "A feature in FOUND",
+        "body": "Your firm featured in FOUND, our newsletter."
+      },
+      {
+        "tag": "LinkedIn",
+        "heading": "A LinkedIn post every month",
+        "body": "Ghostwritten for you each month, ready for you to review and post under your own name."
+      },
+      {
+        "tag": "Landing page",
+        "heading": "Your own landing page",
+        "body": "A page built for the niche your firm serves."
+      },
+      {
+        "tag": "Report",
+        "heading": "A quarterly AI visibility report",
+        "body": "Every quarter, a report on how your firm shows up when people ask AI tools and search for financial advice."
+      },
+      {
+        "tag": "Directory",
+        "heading": "A directory listing",
+        "body": "A listing for your firm in the Valora advisor directory, which is being prepared."
+      }
+    ]
+  },
   "projection": {
     "heading": "Know what to expect before you start",
     "intro": "Before any work begins, we build a projection for your firm, so you can see the numbers we are working toward.",
