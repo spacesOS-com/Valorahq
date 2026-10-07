@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the calculator check my Roth IRA contribution eligibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It models a hypothetical amount. Income phaseouts, compensation, filing status, other IRA contributions, and future-year rules are not calculated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it add the contribution after growth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The example assumes each year's contribution arrives at year-end. Contributions made earlier may have more time to grow, so a different contribution schedule would produce another result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same as a Roth conversion calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A conversion moves money from an existing account and can create a tax bill. This estimate models a current Roth IRA balance plus hypothetical new annual contributions, without conversion taxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I tell contributions from modeled growth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Record the starting balance plus every hypothetical annual contribution separately. Subtract that total from the illustrative ending balance to identify modeled growth. The worksheet scenarios make this distinction explicit; neither amount is guaranteed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a zero-return scenario show the worst possible outcome?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It checks that the model returns the starting balance plus contributions when no growth is assumed. Negative returns can produce smaller results, and this constant-rate calculator does not reproduce changing real-world returns."
+      }
+    }
+  ]
+}

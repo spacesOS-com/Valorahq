@@ -1,162 +1,46 @@
-"""For Advisors: landing page. Promise is reaching people who are seeking
-the firm's services; AEO & GEO, outbound and YouTube are the means, not the pitch.
-
-All copy lives in _build/data/for-advisors.json so it can be edited from the
-CMS; this module only lays it out."""
-import json
-import os
-import re
+"""For Advisors: educational content and inquiry route, no matching offering."""
 from html import escape
-from blog_feed import latest_posts, BLOG_URL
-from root_inquiry import inquiry_form_section
-from partials import _asset_ver
-
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "for-advisors.json"), encoding="utf-8") as _f:
-    FOR_ADVISORS = json.load(_f)
-FOR_ADVISORS_FAQ = [(f["q"], f["a"]) for f in FOR_ADVISORS["faqs"]]
+from blog_feed import latest_posts
+FOR_ADVISORS_FAQ = [('Does Valora match advisors with prospective clients?', 'No. Valora publishes educational information and accepts questions. Valora is not arranging advisor matches or introductions at this time.'), ('Does Valora offer exclusive client introductions?', 'No. There is no current client-introduction offering or exclusivity promise. Asking a question does not reserve a prospective client or territory.'), ('Does Valora manage my client relationships or data?', 'This educational page does not establish an advisory agreement, data-ownership terms or a client-management service. Any future service would need its own stated terms. Valora does not provide investment advice.'), ('What can I ask Valora about?', "You can ask about the educational articles or Valora's current work. We review questions and respond by email. An inquiry is not a client introduction, an advisor recommendation or a request to send client records."), ('Does this page offer a paid advisor plan?', "No paid advisor plan, pricing tier or territory is offered on this page. You can ask about Valora's current work without assuming that a proposed service is available.")]
 
 def _faq_accordion():
     return "\n".join(f'<details class="faq__item"><summary>{escape(q)}</summary><p>{escape(a)}</p></details>' for q,a in FOR_ADVISORS_FAQ)
 
-def _thumb(url):
-    """Ghost serves resized webp variants; ask for a card-sized one."""
-    return url.replace("/content/images/", "/content/images/size/w600/format/webp/", 1)
-
 def _blog_cards():
-    cards = []
-    for p in latest_posts(int(FOR_ADVISORS["articles"].get("count", 6))):
-        url, title = escape(p["url"]), escape(p["title"])
-        img = (f'<a class="advx-post__media" href="{url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'
-               f'<img src="{escape(_thumb(p["image"]))}" alt="" loading="lazy" decoding="async" width="600" height="338"></a>') if p.get("image") else ''
-        date = f'<p class="advx-post__date">{escape(p["date"])}</p>' if p.get("date") else ''
-        cards.append(f'<article class="advx-post reveal">{img}<div class="advx-post__body">{date}'
-                     f'<h3><a href="{url}" target="_blank" rel="noopener">{title}</a></h3>'
-                     f'<p>{escape(p["excerpt"])}</p>'
-                     f'<a class="advx-post__link" href="{url}" target="_blank" rel="noopener">Read the article →</a></div></article>')
-    return '<div class="advx-posts">' + "\n".join(cards) + '</div>'
-
-_ICON = {
-    "book": '<path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v15H7.5A2.5 2.5 0 0 0 5 20.5v-15Z"/><path d="M5 20.5A2.5 2.5 0 0 0 7.5 23H19v-5"/>',
-    "mail": '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7.5 8 6 8-6"/>',
-    "check": '<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16 9.8"/>',
-}
-
-def _icon(name):
-    return f'<span class="advx-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{_ICON[name]}</svg></span>'
-
-def _endpoint():
-    """Same reviewed endpoint as the site-wide inquiry form."""
-    return re.search(r'data-endpoint="([^"]+)"', inquiry_form_section()).group(1)
-
-def _intro_form():
-    f = FOR_ADVISORS["form"]
-    return f"""<aside class="advx-form" aria-labelledby="advisorIntroTitle">
-    <h2 id="advisorIntroTitle">{escape(f["heading"])}</h2>
-    <p class="advx-form__sub">{escape(f["subheading"])}</p>
-    <form id="advisorIntro" data-endpoint="{_endpoint()}" data-button-label="{escape(f["button_label"])}" class="ph-no-capture" data-ph-no-capture="true">
-      <div class="advx-form__row">
-        <label>First name<input name="first" class="ph-no-capture" data-ph-no-capture="true" autocomplete="given-name" required maxlength="60" placeholder="Jane"></label>
-        <label>Last name<input name="last" class="ph-no-capture" data-ph-no-capture="true" autocomplete="family-name" required maxlength="60" placeholder="Smith"></label>
-      </div>
-      <label>Work email<input name="email" class="ph-no-capture" data-ph-no-capture="true" type="email" autocomplete="email" required maxlength="200" placeholder="name@yourfirm.com"></label>
-      <label>Phone number<input name="phone" class="ph-no-capture" data-ph-no-capture="true" type="tel" inputmode="tel" autocomplete="tel" maxlength="40" placeholder="(555) 123-4567"></label>
-      <label>Firm name<input name="firm" class="ph-no-capture" data-ph-no-capture="true" autocomplete="organization" required maxlength="200" placeholder="Your firm"></label>
-      <label>Firm website<input name="website" class="ph-no-capture" data-ph-no-capture="true" inputmode="url" autocomplete="url" maxlength="300" placeholder="yourfirm.com"></label>
-      <p class="advx-form__error" role="alert"></p>
-      <button type="submit" class="btn btn--dark advx-btn">{escape(f["button_label"])}</button>
-      <label class="advx-form__notice"><input name="notice" type="checkbox" required value="advisor-notice-v1" class="ph-no-capture" data-ph-no-capture="true"><span>I agree that Valora may use my name, work email, phone number, firm, website and role to reply to my inquiry, as described in the privacy notice. <a href="/privacy/">Privacy notice</a></span></label>
-      <p class="advx-form__fine">{escape(f["fine_print"])}</p>
-    </form>
-    <div id="advisorIntroDone" class="advx-form__done" tabindex="-1" hidden><h3>{escape(f["thanks_heading"])}</h3><p>{escape(f["thanks_body"])}</p><iframe id="advisorDemoCalendar" title="Book a Valora demo" style="width:100%;height:740px;border:0" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-  </aside>"""
-
-def _li(items):
-    return "\n".join(f"      <li>{escape(i)}</li>" for i in items)
-
-def _cards(cards):
-    out = []
-    for c in cards:
-        tag = f'<p class="advx-card__tag">{escape(c["tag"])}</p>' if c.get("tag") else ''
-        out.append(f'    <div class="advx-card reveal">{tag}<h3>{escape(c["heading"])}</h3><p>{escape(c["body"])}</p></div>')
-    return "\n".join(out)
+    return '<div class="adv-blog__grid">'+"\n".join(f'<article class="blogcard reveal"><h3><a href="{escape(p["url"])}" target="_blank" rel="noopener">{escape(p["title"])}</a></h3><p>{escape(p["excerpt"])}</p><a class="blogcard__link" href="{escape(p["url"])}" target="_blank" rel="noopener">Read on the blog →</a></article>' for p in latest_posts(3))+'</div>'
 
 def for_advisors_body():
-    d = FOR_ADVISORS
-    hero, why, steps, tools, proj, art, exp, close, cross = (d[k] for k in ("hero", "why", "steps", "tools", "projection", "articles", "expectations", "closing", "cross_link"))
-    step_items = "\n".join(
-        f'    <li class="reveal"><span class="advx-steps__n">{i:02d}</span><div><h3>{escape(s["heading"])}</h3><p>{escape(s["body"])}</p></div></li>'
-        for i, s in enumerate(steps["items"], 1))
-    stages = '\n    <span class="advx-proj__arrow" aria-hidden="true">&rarr;</span>\n'.join(
-        f'    <div><p class="advx-proj__step">{escape(s["heading"])}</p><p>{escape(s["body"])}</p></div>' for s in proj["stages"])
-    price = (f'    <p class="advx-price reveal">{escape(hero["price_prefix"])} <strong>{escape(hero["price"])}</strong> {escape(hero["price_suffix"])}'
-             f'<span>{escape(hero["price_note"])}</span></p>\n') if hero.get("price") else ''
-    return f"""<section class="advx-hero" id="top"><div class="container advx-hero__grid">
-  <div class="advx-hero__copy">
-    <p class="advx-pill reveal">{escape(hero["label"])}</p>
-    <h1 class="advx-hero__title reveal">{escape(hero["headline"])} <span>{escape(hero["headline_accent"])}</span></h1>
-    <p class="advx-hero__sub reveal">{escape(hero["subheadline"])}</p>
-    <ul class="advx-ticks reveal">
-{_li(hero["bullets"])}
-    </ul>
-{price}    <p class="advx-hero__note reveal">{escape(hero["disclaimer"])}</p>
-  </div>
-  {_intro_form()}
+    return f"""<section class="hero hero--sub" id="top">
+  <div class="hero__grid" aria-hidden="true"><span class="hero__cell hero__cell--gold"></span><span class="hero__cell hero__cell--wide"></span><span class="hero__cell hero__cell--ring"></span><span class="hero__cell hero__cell--green"></span></div>
+  <div class="container hero__inner"><div class="hero__copy">
+    <p class="eyebrow reveal">For advisory firms</p>
+    <h1 class="hero__title reveal">Educational resources.<br><em>Clear expectations.</em></h1>
+    <p class="adv-hero__sub reveal">Read educational articles for advisory firms and ask about Valora's current work. Valora is not arranging advisor matches or introductions at this time.</p>
+    <div class="hero__actions reveal"><a class="btn btn--dark" href="/#contact" data-gate-open>Ask a question</a><a class="btn btn--outline" href="#insights-for-advisors">Read articles</a></div>
+  </div></div>
+</section>
+<section class="section section--paper adv-value" id="introductions"><div class="container">
+  <p class="eyebrow reveal">Current scope</p><h2 class="display display--lg reveal">Education and inquiries,<br><em>not a client-acquisition service.</em></h2>
+  <p class="reveal">Valora publishes educational information about financial planning and advisory-firm work. You can send a question; we review inquiries and respond by email. We do not offer exclusive leads, qualify prospective clients, match investors with advisors or book introductions.</p>
+  <p class="reveal">A question does not create a partnership, reserve a territory or establish an advisory relationship.</p>
 </div></section>
-<section class="section section--paper advx-why" id="introductions"><div class="container advx-why__grid">
-  <div class="advx-why__copy">
-    <h2 class="advx-stack reveal">{"<br>".join(escape(l) for l in why["statement_lines"])}</h2>
-    <p class="reveal">{escape(why["body"])}</p>
-    <a class="btn btn--dark advx-btn reveal" href="#top">{escape(why["button_label"])}</a>
-  </div>
-  <div class="advx-cards advx-cards--two">
-{_cards(why["cards"])}
-  </div>
+<section class="section section--cream" id="portal"><div class="container">
+  <p class="eyebrow reveal">Product expectations</p><h2 class="display display--lg reveal">No portal service<br><em>is offered on this page.</em></h2>
+  <p class="reveal">This page is not an offer of prospect messaging, follow-up reminders, client notes, calendar integrations or digital onboarding. Any future capabilities would need their own description, availability and terms before you could rely on them.</p>
 </div></section>
-<section class="section section--cream advx-how" id="how-it-works"><div class="container">
-  <h2 class="advx-h2 reveal">{escape(steps["heading"])}</h2>
-  <ol class="advx-steps">
-{step_items}
-  </ol>
-  <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="#top">{escape(steps["button_label"])}</a></div>
+<section class="section section--paper" id="directory"><div class="container">
+  <p class="eyebrow reveal">Directory expectations</p><h2 class="display display--lg reveal">No verified listing<br><em>or visibility promise.</em></h2>
+  <p class="reveal">Valora is not offering an approved-advisor directory listing, verification badge, search placement or consultation-booking service here. Educational content is not evidence that a professional has been vetted or is available.</p>
 </div></section>
-<section class="section section--paper advx-tools" id="how-we-do-it"><div class="container">
-  <h2 class="advx-h2 reveal">{escape(tools["heading"])}</h2>
-  <p class="advx-lead reveal">{escape(tools["intro"])}</p>
-  <div class="advx-cards advx-cards--left">
-{_cards(tools["cards"])}
-  </div>
-</div></section>
-<section class="section section--cream advx-proj" id="projection"><div class="container">
-  <h2 class="advx-h2 reveal">{escape(proj["heading"])}</h2>
-  <p class="advx-lead reveal">{escape(proj["intro"])}</p>
-  <div class="advx-proj__flow reveal">
-{stages}
-  </div>
-  <p class="advx-fine reveal">{escape(proj["fine_print"])}</p>
-  <div class="advx-center reveal"><a class="btn btn--dark advx-btn" href="#top">{escape(proj["button_label"])}</a></div>
-</div></section>
-<section class="section section--paper advx-blog" id="insights-for-advisors"><div class="container">
-  <h2 class="advx-h2 reveal">{escape(art["heading"])}</h2>
-  <p class="advx-lead reveal">{escape(art["intro"])}</p>
+<section class="section section--cream adv-blog" id="insights-for-advisors"><div class="container">
+  <div class="adv-blog__head"><p class="eyebrow reveal">From the Valora blog</p><h2 class="display display--lg reveal">Educational articles<br><em>for advisory firms.</em></h2><p class="reveal">Read practical discussions of advisory-firm operations and communication. These articles are educational, not a promise of clients, search rankings or business results.</p></div>
   {_blog_cards()}
-  <div class="advx-center reveal"><a class="btn btn--outline advx-btn" href="{BLOG_URL}" target="_blank" rel="noopener">{escape(art["button_label"])}</a></div>
+  <a class="btn btn--outline adv-blog__more" href="https://blog.valorahq.com/" target="_blank" rel="noopener">View more articles</a>
 </div></section>
-<section class="section section--cream advx-scope" id="portal"><div class="container">
-  <h2 class="advx-h2 reveal">{escape(exp["heading"])}</h2>
-  <p class="advx-lead reveal">{escape(exp["intro"])}</p>
-  <div class="advx-fit">
-    <div class="advx-fit__col advx-fit__col--yes reveal"><h3>{escape(exp["yes_heading"])}</h3><ul>
-{_li(exp["yes_items"])}
-    </ul></div>
-    <div class="advx-fit__col advx-fit__col--no reveal" id="directory"><h3>{escape(exp["no_heading"])}</h3><ul>
-{_li(exp["no_items"])}
-    </ul></div>
-  </div>
+<section class="section section--paper" id="professional-guidance"><div class="container">
+  <p class="eyebrow reveal">Assessing professional help</p><h2 class="display display--lg reveal">Ask about scope,<br><em>fees and conflicts.</em></h2>
+  <p class="reveal">When assessing an advisory service, ask what work is included, who is responsible, how fees are charged and what conflicts may exist. Check a professional's registration and disclosures with the relevant regulator. A designation or a registration alone is not a guarantee of fit or results.</p>
+  <p class="reveal">This is general educational guidance, not a claim that Valora has screened a network or endorsed an advisor.</p>
 </div></section>
-<section class="section section--green advx-band"><div class="container">
-  <div><h2 class="reveal">{escape(close["heading"])}</h2><p class="reveal">{escape(close["body"])}</p></div>
-  <div class="advx-band__cta"><a class="btn btn--cream advx-btn reveal" href="#top">{escape(close["button_label"])}</a><p class="advx-band__price reveal">{"<br>".join(escape(l) for l in close["price_lines"])}</p></div>
-</div></section>
-<section class="section section--paper adv-faq advx-faq" id="faq"><div class="container"><h2 class="advx-h2 reveal">{escape(d["faq_heading"])}</h2><div class="faq">{_faq_accordion()}</div></div></section>
-<section class="advx-cross"><div class="container"><div><h2>{escape(cross["heading"])}</h2><p>{escape(cross["body"])}</p></div><a class="btn btn--outline advx-btn" href="{escape(cross["href"])}">{escape(cross["button_label"])}</a></div></section>
-<script defer src="/assets/advisor-intro-form.js?v={_asset_ver("advisor-intro-form.js")}"></script>"""
+<section class="section section--cream adv-faq" id="faq"><div class="container"><h2 class="display display--lg reveal">Frequently asked questions</h2><div class="faq">{_faq_accordion()}</div></div></section>
+<section class="section section--green adv-ready"><div class="container"><h2 class="display display--lg reveal">Have a question?</h2><p class="reveal">Ask about the educational content or Valora's current work. We review inquiries and respond by email. Valora is not arranging advisor matches or introductions at this time.</p><a class="btn btn--cream" href="/#contact" data-gate-open>Ask a question</a></div></section>"""

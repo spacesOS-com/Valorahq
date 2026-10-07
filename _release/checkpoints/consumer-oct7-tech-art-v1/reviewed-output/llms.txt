@@ -1,0 +1,63 @@
+# Valora
+
+> Valora publishes educational information about financial planning and accepts
+> questions. We are not arranging advisor matches or introductions at this time.
+> Valora does not provide investment advice.
+
+## Pages
+
+- [https://www.valorahq.com/](https://www.valorahq.com/): Educational financial-planning content and an inquiry route; no advisor matches or introductions currently.
+- [https://www.valorahq.com/for-advisors/](https://www.valorahq.com/for-advisors/): For advisors — information for independent advisors interested in Valora; no live advisor directory or matching at this time.
+- [https://www.valorahq.com/find-your-advisor/](https://www.valorahq.com/find-your-advisor/): Tell us what you need: four-question intake; each request is reviewed by hand.
+- [https://www.valorahq.com/guides/](https://www.valorahq.com/guides/): Financial advice guides for tech employees, physicians and business owners.
+- [https://www.valorahq.com/calculators/](https://www.valorahq.com/calculators/): Browse financial calculators by topic.
+- [https://www.valorahq.com/insights/realistic-withdrawal-rate-today/](https://www.valorahq.com/insights/realistic-withdrawal-rate-today/): The 4% rule is a 1990s starting point, not a guarantee. Here's what actually moves the number for a given retirement.
+- [https://www.valorahq.com/insights/family-conversation-before-retirement/](https://www.valorahq.com/insights/family-conversation-before-retirement/): The hardest part of retirement planning usually isn't the math. It's the conversation nobody's scheduled yet.
+- [https://www.valorahq.com/insights/when-roth-conversion-worth-tax-bill/](https://www.valorahq.com/insights/when-roth-conversion-worth-tax-bill/): A Roth conversion means paying tax now, on purpose, to avoid a possibly larger tax bill later. Whether that trade is worth it depends entirely on the specifics.
+- [https://www.valorahq.com/insights/rsus-bonus-not-lottery-ticket/](https://www.valorahq.com/insights/rsus-bonus-not-lottery-ticket/): Restricted stock units are taxed like a cash bonus, not like a windfall — and treating them that way changes what you do next.
+- [https://www.valorahq.com/insights/market-drop-before-retirement/](https://www.valorahq.com/insights/market-drop-before-retirement/): Two retirees with identical average returns over 30 years can end up in very different places, depending only on the order those returns arrive in.
+- [https://www.valorahq.com/insights/beneficiary-forms-override-will/](https://www.valorahq.com/insights/beneficiary-forms-override-will/): For many retirement accounts, life insurance, and bank accounts, the beneficiary form usually decides who gets the money, not the will. Spouse-consent rules, community-property laws, and plan terms can override the form.
+- [https://www.valorahq.com/calculators/retirement-savings-growth/](https://www.valorahq.com/calculators/retirement-savings-growth/): Estimate how a lump sum plus monthly contributions could grow over time, before inflation and fees.
+- [https://www.valorahq.com/calculators/roth-ira-growth/](https://www.valorahq.com/calculators/roth-ira-growth/): Model how a Roth IRA balance and a steady annual contribution might grow at an assumed return.
+- [https://www.valorahq.com/calculators/compound-interest/](https://www.valorahq.com/calculators/compound-interest/): Estimate a starting balance plus monthly additions with a fixed annual rate and monthly compounding.
+- [https://www.valorahq.com/calculators/safe-withdrawal-amount/](https://www.valorahq.com/calculators/safe-withdrawal-amount/): Turn a withdrawal rate and portfolio value into a dollar amount — pair this with our article on what a realistic withdrawal rate looks like today.
+- [https://www.valorahq.com/calculators/roth-conversion-tax-cost/](https://www.valorahq.com/calculators/roth-conversion-tax-cost/): A rough estimate of what converting a given amount would cost at a flat tax rate — pair this with our article on when a Roth conversion is worth it.
+- [https://www.valorahq.com/calculators/how-long-savings-will-last/](https://www.valorahq.com/calculators/how-long-savings-will-last/): Turn a portfolio, a fixed annual withdrawal, and an assumed return into an estimated number of years.
+- [https://www.valorahq.com/calculators/pslf-scenario-explorer/](https://www.valorahq.com/calculators/pslf-scenario-explorer/): Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate.
+- [https://www.valorahq.com/calculators/rsu-withholding-shortfall/](https://www.valorahq.com/calculators/rsu-withholding-shortfall/): Illustrative comparison of RSU vesting withheld at a flat supplemental-wage rate versus a higher marginal rate. A rough illustration only, not an estimate of your actual tax liability.
+- [https://www.valorahq.com/calculators/401k-contribution-limit/](https://www.valorahq.com/calculators/401k-contribution-limit/): Check your 2026 401(k) employee deferral limit by age, and how much contribution room you have left.
+- [https://www.valorahq.com/calculators/rmd-estimate/](https://www.valorahq.com/calculators/rmd-estimate/): Estimate your required minimum distribution using the IRS Uniform Lifetime Table.
+- [https://www.valorahq.com/calculators/capital-gains-tax-estimate/](https://www.valorahq.com/calculators/capital-gains-tax-estimate/): Estimate federal long-term capital gains tax using the real 2026 income brackets — gains stack on top of your other taxable income.
+- [https://www.valorahq.com/calculators/inflation-calculator/](https://www.valorahq.com/calculators/inflation-calculator/): See what a dollar amount today is worth in the future — or was worth in the past — at a given inflation rate.
+- [https://www.valorahq.com/calculators/investment-future-value/](https://www.valorahq.com/calculators/investment-future-value/): Estimate the future value of a lump-sum investment plus optional monthly additions at a given return.
+- [https://www.valorahq.com/calculators/savings-cd-growth/](https://www.valorahq.com/calculators/savings-cd-growth/): Estimate what a savings account or CD balance grows to at a fixed annual rate.
+- [https://www.valorahq.com/calculators/budget-50-30-20/](https://www.valorahq.com/calculators/budget-50-30-20/): Split your take-home pay into needs, wants, and savings using the common 50/30/20 guideline.
+- [https://www.valorahq.com/calculators/social-security-breakeven/](https://www.valorahq.com/calculators/social-security-breakeven/): See the age at which claiming later (70) overtakes claiming early (62) in total lifetime benefits.
+- [https://www.valorahq.com/calculators/delayed-retirement-credit/](https://www.valorahq.com/calculators/delayed-retirement-credit/): See how much your Social Security benefit grows for each year you delay claiming past full retirement age.
+- [https://www.valorahq.com/calculators/iso-exercise-cost/](https://www.valorahq.com/calculators/iso-exercise-cost/): Estimate the cash cost to exercise incentive stock options and the resulting spread (a common AMT trigger).
+- [https://www.valorahq.com/calculators/concentration-diversification-timeline/](https://www.valorahq.com/calculators/concentration-diversification-timeline/): Estimate how long it would take to diversify out of a concentrated position at a fixed dollar amount sold per year.
+- [https://www.valorahq.com/calculators/paycheck-calculator/](https://www.valorahq.com/calculators/paycheck-calculator/): Estimate your take-home pay after federal income tax and FICA (Social Security + Medicare).
+- [https://www.valorahq.com/calculators/income-tax-estimate/](https://www.valorahq.com/calculators/income-tax-estimate/): Estimate your federal income tax using the 2026 IRS tax brackets.
+- [https://www.valorahq.com/calculators/tax-refund-estimate/](https://www.valorahq.com/calculators/tax-refund-estimate/): Compare what you've had withheld against your estimated tax bill to see a rough refund or amount due.
+- [https://www.valorahq.com/calculators/property-tax-estimate/](https://www.valorahq.com/calculators/property-tax-estimate/): Estimate your annual property tax bill from your home's value and your local effective tax rate.
+- [https://www.valorahq.com/calculators/financial-advisor-value/](https://www.valorahq.com/calculators/financial-advisor-value/): Explore a purely hypothetical return uplift and what that kind of difference could mean in dollars over time. An illustration only, not proof or a promise of advisor value.
+- [https://www.valorahq.com/calculators/401k-growth/](https://www.valorahq.com/calculators/401k-growth/): Project your 401(k) balance including your contributions and employer match.
+- [https://www.valorahq.com/calculators/asset-allocation-guide/](https://www.valorahq.com/calculators/asset-allocation-guide/): A common age-based rule of thumb for a starting stock/bond split, adjusted for your risk tolerance.
+- [https://www.valorahq.com/calculators/mortgage-calculator/](https://www.valorahq.com/calculators/mortgage-calculator/): Estimate your monthly mortgage principal & interest payment.
+- [https://www.valorahq.com/calculators/home-affordability/](https://www.valorahq.com/calculators/home-affordability/): Estimate how much home you can afford using a standard 36% debt-to-income guideline.
+- [https://www.valorahq.com/calculators/closing-costs-estimate/](https://www.valorahq.com/calculators/closing-costs-estimate/): Estimate total closing costs and cash needed at signing.
+- [https://www.valorahq.com/calculators/refinance-savings/](https://www.valorahq.com/calculators/refinance-savings/): Compare your current mortgage payment to a refinanced one at a new rate and term.
+- [https://www.valorahq.com/calculators/retirement/](https://www.valorahq.com/calculators/retirement/): Retirement calculators on Valora.
+- [https://www.valorahq.com/calculators/taxes/](https://www.valorahq.com/calculators/taxes/): Taxes calculators on Valora.
+- [https://www.valorahq.com/calculators/social-security/](https://www.valorahq.com/calculators/social-security/): Social Security calculators on Valora.
+- [https://www.valorahq.com/calculators/equity-compensation/](https://www.valorahq.com/calculators/equity-compensation/): Equity Compensation calculators on Valora.
+- [https://www.valorahq.com/calculators/investing/](https://www.valorahq.com/calculators/investing/): Investing calculators on Valora.
+- [https://www.valorahq.com/calculators/banking/](https://www.valorahq.com/calculators/banking/): Banking calculators on Valora.
+- [https://www.valorahq.com/calculators/home-&-mortgage/](https://www.valorahq.com/calculators/home-&-mortgage/): Home & Mortgage calculators on Valora.
+- [https://www.valorahq.com/financial-advisor-for-business-owners/](https://www.valorahq.com/financial-advisor-for-business-owners/): Financial planning for business owners: exit planning, valuation, key-person risk, and building retirement wealth outside the business.
+- [https://www.valorahq.com/financial-advisor-for-physicians/](https://www.valorahq.com/financial-advisor-for-physicians/): Financial planning built for physicians: late-start retirement catch-up, student debt strategy, disability insurance, and practice ownership decisions.
+- [https://www.valorahq.com/financial-advisor-for-tech-employees/](https://www.valorahq.com/financial-advisor-for-tech-employees/): Financial planning for tech employees: RSU taxes, concentrated stock, ESPP, mega backdoor Roth, IPO planning, and layoff-proofing your finances.
+- [https://www.valorahq.com/cookies/](https://www.valorahq.com/cookies/): The cookies and similar technologies valorahq.com uses: PostHog analytics, RB2B business visitor identification, and your choices.
+- [https://www.valorahq.com/privacy/](https://www.valorahq.com/privacy/): What information Valora collects on the Site, how it is used and shared, and how to ask about your data.
+- [https://www.valorahq.com/terms/](https://www.valorahq.com/terms/): The terms that govern your use of valorahq.com: what Valora is, what it is not, liability, and governing law.
+- [https://www.valorahq.com/team/](https://www.valorahq.com/team/): Meet Valora's AI team personas and their current roles. Illustrations are not employee photographs.

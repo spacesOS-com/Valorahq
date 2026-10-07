@@ -37,8 +37,3 @@ _shot*.html
 !/guides/
 /guides/*
 !/guides/index.html
-
-# CMS: generated blog site, nginx redirect map, local database
-/_insights-site/
-/_build/generated/
-/cms-data/

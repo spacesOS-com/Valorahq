@@ -1,0 +1,22 @@
+https://us-east-1.console.aws.amazon.com/systems-manager/run-command/55f94c6f-56bf-4109-827f-67232973feb6/i-078ff3610e7ced691?region=us-east-1
+Response code
+0
+Step name
+aws:runShellScript
+Start time
+Wed, 07 Oct 2026 09:15:32 GMT
+Finish time
+Wed, 07 Oct 2026 09:15:32 GMT
+Output
+The command output displays a maximum of 24,000 characters. You can view the complete command output in either Amazon S3 or CloudWatch Logs, if you specify an S3 bucket or a logs group when you run the command.
+
+a0abcbda2eb8a0a36985474132243726b9fc6c3b98af27680da25322709185ed /tmp/first-meeting-guarded-release.py
+
+PREFLIGHT_OK /opt/valora-www-preview-dentist/releases/consumer-oct7-tech-art-v1 481 baseline unchanged; 1 HTML change + 6 assets; four substitutions reversible
+
+{"changes": {"assets/prepare-first-financial-advisor-meeting/first-meeting-restored-brief-mobile-v1.webp": "899123f94d9bb295478c540363761a5bf071e492f63f326aa3c9d7be42fb345d", "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-brief-v1.webp": "af9fce8ee60e12ec4242be59959200996078a3e932145ff9fc397275efcba5ec", "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-hero-mobile-v1.webp": "7833f1022ba8e0b8627fca1068d8e5341084e1a791a58ff1531458a58b49e2fe", "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-hero-v1.webp": "39603c5c8522b67f3736d2c5ebf6e39ab7247fc9b861df0b49a86e7bea82e576", "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-next-step-mobile-v1.webp": "869e2cba64b15e003a9026a9077776d3e32c413c07b39afa228d5e8197bc6a19", "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-next-step-v1.webp": "41a348b0c924c5bc637da2c70aff66143303bb5ec7cb8438d25afd1390892fd2", "find-a-financial-advisor/prepare-first-financial-advisor-meeting/index.html": "8912741fdf10da79e0f9bc296d9d0d7b2e476bf9290b162692e7191299e12472"}, "new_files": 6, "prior": "/opt/valora-www-preview-dentist/releases/consumer-oct7-tech-art-v1", "release": "/opt/valora-www-preview-dentist/releases/consumer-oct7-first-meeting-art-word-v1", "status": "APPLIED", "target_bytes": 42213, "target_sha256": "8912741fdf10da79e0f9bc296d9d0d7b2e476bf9290b162692e7191299e12472", "total": 487, "unchanged_old_paths": 480}
+
+Copy
+Download
+Error
+
