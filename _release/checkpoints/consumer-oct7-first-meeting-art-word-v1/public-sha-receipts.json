@@ -1,0 +1,58 @@
+[
+  {
+    "path": "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-brief-mobile-v1.webp",
+    "url": "https://www.valorahq.com/assets/prepare-first-financial-advisor-meeting/first-meeting-restored-brief-mobile-v1.webp",
+    "status": 200,
+    "bytes": 33208,
+    "sha256": "899123f94d9bb295478c540363761a5bf071e492f63f326aa3c9d7be42fb345d",
+    "matches": true
+  },
+  {
+    "path": "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-brief-v1.webp",
+    "url": "https://www.valorahq.com/assets/prepare-first-financial-advisor-meeting/first-meeting-restored-brief-v1.webp",
+    "status": 200,
+    "bytes": 96594,
+    "sha256": "af9fce8ee60e12ec4242be59959200996078a3e932145ff9fc397275efcba5ec",
+    "matches": true
+  },
+  {
+    "path": "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-hero-mobile-v1.webp",
+    "url": "https://www.valorahq.com/assets/prepare-first-financial-advisor-meeting/first-meeting-restored-hero-mobile-v1.webp",
+    "status": 200,
+    "bytes": 36550,
+    "sha256": "7833f1022ba8e0b8627fca1068d8e5341084e1a791a58ff1531458a58b49e2fe",
+    "matches": true
+  },
+  {
+    "path": "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-hero-v1.webp",
+    "url": "https://www.valorahq.com/assets/prepare-first-financial-advisor-meeting/first-meeting-restored-hero-v1.webp",
+    "status": 200,
+    "bytes": 149428,
+    "sha256": "39603c5c8522b67f3736d2c5ebf6e39ab7247fc9b861df0b49a86e7bea82e576",
+    "matches": true
+  },
+  {
+    "path": "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-next-step-mobile-v1.webp",
+    "url": "https://www.valorahq.com/assets/prepare-first-financial-advisor-meeting/first-meeting-restored-next-step-mobile-v1.webp",
+    "status": 200,
+    "bytes": 33794,
+    "sha256": "869e2cba64b15e003a9026a9077776d3e32c413c07b39afa228d5e8197bc6a19",
+    "matches": true
+  },
+  {
+    "path": "assets/prepare-first-financial-advisor-meeting/first-meeting-restored-next-step-v1.webp",
+    "url": "https://www.valorahq.com/assets/prepare-first-financial-advisor-meeting/first-meeting-restored-next-step-v1.webp",
+    "status": 200,
+    "bytes": 131208,
+    "sha256": "41a348b0c924c5bc637da2c70aff66143303bb5ec7cb8438d25afd1390892fd2",
+    "matches": true
+  },
+  {
+    "path": "find-a-financial-advisor/prepare-first-financial-advisor-meeting/index.html",
+    "url": "https://www.valorahq.com/find-a-financial-advisor/prepare-first-financial-advisor-meeting/",
+    "status": 200,
+    "bytes": 42213,
+    "sha256": "8912741fdf10da79e0f9bc296d9d0d7b2e476bf9290b162692e7191299e12472",
+    "matches": true
+  }
+]

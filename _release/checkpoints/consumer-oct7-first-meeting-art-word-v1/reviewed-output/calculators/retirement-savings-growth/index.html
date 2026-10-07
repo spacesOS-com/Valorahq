@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retirement savings growth calculator | Valora</title>
+<meta name="description" content="Estimate how a lump sum plus monthly contributions could grow over time, before inflation and fees.">
+
+<link rel="canonical" href="https://www.valorahq.com/calculators/retirement-savings-growth/">
+<link rel="alternate" hreflang="en-us" href="https://www.valorahq.com/calculators/retirement-savings-growth/">
+<link rel="alternate" hreflang="x-default" href="https://www.valorahq.com/calculators/retirement-savings-growth/">
+<meta property="og:locale" content="en_US">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css?v=ee54de8c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e3b2a'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23efebe0' font-family='Georgia'>V</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Valora", "url": "https://www.valorahq.com", "description": "Valora publishes educational information about financial planning and accepts questions. We are not arranging advisor matches or introductions at this time.", "email": "barot@valorahq.com", "areaServed": {"@type": "Country", "name": "United States", "identifier": "US"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the retirement savings growth calculator calculated?", "acceptedAnswer": {"@type": "Answer", "text": "It models a starting balance and equal end-of-month contributions at a constant monthly rate equal to the annual percentage divided by twelve. Years times twelve is rounded to whole months. At zero return, the contribution portion is the monthly amount times the modeled months. It excludes inflation, fees, taxes, withdrawals and changing returns."}}, {"@type": "Question", "name": "Are the scenario return percentages recommended or predicted returns?", "acceptedAnswer": {"@type": "Answer", "text": "No. They are fictional inputs used to demonstrate the served model and isolate one change at a time. They are not forecasts, recommended rates or evidence of what an investment will earn."}}, {"@type": "Question", "name": "How do I separate contributions from modeled growth?", "acceptedAnswer": {"@type": "Answer", "text": "Add the starting balance to the equal monthly contributions over the modeled months. Subtract that combined amount from the illustrative ending value. The difference is modeled growth, not guaranteed interest; the starting balance is not a new contribution made during the period."}}, {"@type": "Question", "name": "Does a zero-return example show the worst possible result?", "acceptedAnswer": {"@type": "Answer", "text": "No. It checks the arithmetic when no growth is assumed. Negative returns can produce lower results, and changing real-world returns are outside this constant-rate model."}}, {"@type": "Question", "name": "Can this calculator tell me when I can retire?", "acceptedAnswer": {"@type": "Answer", "text": "No. It does not compare the result with your actual spending, choose withdrawals, check account rules or model changing returns, taxes, fees and purchasing power. A hypothetical future value is not a retirement decision."}}]}</script>
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="mu yu bu Su init Vu Gu zu Uu Ku il Wu Yu ju rh oh ah uh hh dh capture getExtension Zu pu gh calculateEventProperties ph register register_once register_for_session unregister unregister_for_session Hu mh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync wh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset kh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty yh ih createPersonProfile setInternalOrTestUser bh xu Cu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing th debug nl Os getPageViewId captureTraceFeedback captureTraceMetric Du".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_swhDRhpyNrJXeLkkTpYuH9au4XstiKXqY88XAEmX2Cjk', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+</script><script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("7N850HK1EMN1");</script><style>#contact{scroll-margin-top:90px}#contact .root-inquiry{max-width:1050px}#contact .progress{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:#63705d;margin-bottom:25px}#contact .screen{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;min-height:390px}#contact h1{font:42px/1.12 Georgia,serif;letter-spacing:-.02em;margin:0 0 22px}#contact p{margin:0 0 20px}#contact .fields{display:grid;grid-template-columns:1fr;gap:17px}#contact label{display:block;font-size:14px}#contact input,#contact textarea{font:16px Arial,sans-serif;width:100%;padding:16px;background:white;border:1px solid #cbc8bd;border-radius:16px;margin-top:7px}#contact textarea{height:170px;resize:vertical}#contact .choices{display:grid;gap:12px}#contact .choice{display:flex;gap:18px;align-items:center;text-align:left;border:1px solid transparent;background:#efebe0;color:#242920;padding:17px;border-radius:22px;cursor:pointer;font:16px Arial,sans-serif}#contact .choice b{font-size:13px;background:#f8f6f1;border-radius:6px;padding:5px 9px}#contact .choice[aria-checked=true]{border-color:#1e3b2a;background:#e0e8db}#contact .inquiry-nav{display:flex;justify-content:space-between;gap:20px;margin-top:35px}#contact .btn{padding:14px 24px;border-radius:24px;background:#1e3b2a;color:white;border:0;font:16px Arial,sans-serif;cursor:pointer}#contact .back{background:transparent;color:#1e3b2a;border:1px solid #babfb4}#contact .err{color:#ad2e25;font-size:14px;min-height:22px;margin-top:12px}#contact button:focus-visible,#contact input:focus-visible,#contact textarea:focus-visible{outline:3px solid #3a7057;outline-offset:3px}#contact .privacy,#contact #sendDisclosure{font-size:14px;line-height:1.6;margin-top:20px}#contact [hidden]{display:none!important}@media(max-width:650px){#contact .screen{grid-template-columns:1fr;gap:20px;min-height:0}#contact h1{font-size:33px}#contact .fields{grid-template-columns:1fr}#contact .inquiry-nav{margin-top:25px}#contact .choice{padding:15px}#contact .progress{margin-bottom:18px}}</style><link rel="stylesheet" href="/assets/root-inquiry-polish.css?v=0f4f9d6f"><link rel="stylesheet" href="/assets/root-inquiry-modal.css?v=2fd7ede4"><style>#growth-companion h1,#growth-companion h2,#growth-companion h3{line-height:1.25}#growth-companion h2{margin-top:46px;font:29px/1.25 Georgia,serif}#growth-companion h3{font-size:21px}#growth-companion a{color:#285c49}#growth-companion img{width:100%;height:auto}#growth-companion figure{margin:36px 0}#growth-companion figcaption,#growth-companion .meta{font-size:14px;color:#53665b}#growth-companion .worksheet{background:#f3f5ef;padding:24px;border-radius:12px}#growth-companion .worksheet h2{margin-top:0}#growth-companion .worksheet-row{padding:14px 0;border-bottom:1px solid #cfd7c9}#growth-companion .write-line{font-size:15px;overflow-wrap:anywhere} @media(max-width:600px){#growth-companion h2{font-size:25px}#growth-companion .worksheet{padding:16px}} @media(max-width:600px){#growth-companion .table-scroll table{min-width:0;width:100%;}#growth-companion .table-scroll thead{display:none}#growth-companion .table-scroll table,#growth-companion .table-scroll tbody,#growth-companion .table-scroll tr,#growth-companion .table-scroll td{display:block}#growth-companion .table-scroll tr{border:1px solid #ddd;border-radius:10px;margin:18px 0;padding:10px}#growth-companion .table-scroll td{display:flex;justify-content:space-between;gap:12px;text-align:right}#growth-companion .table-scroll td:before{content:attr(data-label);font-weight:600;text-align:left;max-width:55%}}#growth-companion .table-scroll{overflow-x:auto;max-width:100%}#growth-companion table{border-collapse:collapse;min-width:680px;font-size:15px}#growth-companion td,#growth-companion th{padding:12px;text-align:left;border-bottom:1px solid #ccc}#growth-companion summary{font-weight:600}#growth-companion details p{display:block}</style><style>#growth-companion .content-cta a{display:inline-block;padding:12px 22px;background:#1e3b2a;color:white;border-radius:30px}#growth-companion img{display:block;width:100%;height:auto}</style></head>
+<body class="page-sub">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+    <a class="logo" href="/" aria-label="Valora home">
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/><path d="M6 20.5c4-9 6.5-9 10 0s6 9 10 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo__word">Valora</span>
+    </a>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <ul class="nav__list">
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-0">Financial Advice <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-0" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Guides and topics</p><ul><li><a href="/financial-advisor-for-tech-employees/">Tech employees</a></li>
+<li><a href="/financial-advisor-for-physicians/">Physicians</a></li>
+<li><a href="/find-a-financial-advisor/business-owner/">Business owners</a></li>
+<li><a href="/find-a-financial-advisor/self-employed-consultants/">Self-employed consultants</a></li>
+<li><a href="/find-a-financial-advisor/starting-a-new-job/">Starting a new job</a></li>
+<li><a href="/cities/">Cities - being prepared</a></li>
+<li><a href="/specialties/">Specialties - being prepared</a></li>
+<li><a href="/professions/">Professions - being prepared</a></li>
+<li><a href="/asset-types/">Asset levels - being prepared</a></li>
+<li><a href="/top-financial-advisors/">Advisors by state - being prepared</a></li><li class="nav-menu__all"><a href="/guides/">All guides</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul><li><a href="/calculators/">All calculators</a></li>
+<li><a href="/guides/">All guides</a></li>
+<li><a href="/#insights">Learn</a></li></ul></div>
+      </div>
+    </li>
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-1">Retirement <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-1" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Guides and topics</p><ul><li><a href="/find-a-financial-advisor/retirement-planning/">Retirement planning - being prepared</a></li>
+<li><a href="/find-a-financial-advisor/retired/">Retired - being prepared</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul><li><a href="/calculators/retirement/">Retirement calculators</a></li>
+<li><a href="/calculators/retirement-savings-growth/">Savings growth</a></li>
+<li><a href="/calculators/roth-ira-growth/">Roth IRA growth</a></li>
+<li><a href="/calculators/safe-withdrawal-amount/">Withdrawal amount</a></li>
+<li><a href="/calculators/rmd-estimate/">Required minimum distribution</a></li>
+<li><a href="/calculators/social-security/">Social Security tools</a></li>
+<li><a href="/guides/">All guides</a></li>
+<li><a href="/#insights">Learn</a></li></ul></div>
+      </div>
+    </li>
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-2">Investing <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-2" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Guides and topics</p><ul><li><a href="/find-a-financial-advisor/managing-investments/">Managing investments</a></li>
+<li><a href="/find-a-financial-advisor/business-owner-wealth-planning/">Business owner wealth planning - being prepared</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul><li><a href="/calculators/investing/">Investing calculators</a></li>
+<li><a href="/calculators/compound-interest/">Compound interest</a></li>
+<li><a href="/calculators/investment-future-value/">Investment future value</a></li>
+<li><a href="/calculators/inflation-calculator/">Inflation</a></li>
+<li><a href="/calculators/asset-allocation-guide/">Asset allocation guide</a></li>
+<li><a href="/guides/">All guides</a></li>
+<li><a href="/#insights">Learn</a></li></ul></div>
+      </div>
+    </li>
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-3">Banking <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-3" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Guides and topics</p><ul><li><a href="/find-a-financial-advisor/buying-a-first-home/">Buying a first home</a></li>
+<li><a href="/guides/">Explore financial planning guides</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul><li><a href="/calculators/banking/">Banking calculators</a></li>
+<li><a href="/calculators/savings-cd-growth/">Savings and CD growth</a></li>
+<li><a href="/calculators/budget-50-30-20/">50/30/20 budget</a></li>
+<li><a href="/calculators/mortgage-calculator/">Mortgage calculator</a></li>
+<li><a href="/calculators/home-affordability/">Home affordability</a></li>
+<li><a href="/guides/">All guides</a></li>
+<li><a href="/#insights">Learn</a></li></ul></div>
+      </div>
+    </li>
+<li class="nav-menu">
+      <button type="button" class="nav-menu__toggle" aria-expanded="false" aria-controls="nav-menu-4">Taxes <span aria-hidden="true" class="nav-menu__chevron"></span></button>
+      <div class="nav-menu__panel" id="nav-menu-4" hidden>
+        <div class="nav-menu__col"><p class="nav-menu__caption">Guides and topics</p><ul><li><a href="/find-a-financial-advisor/tax-planning/">Tax planning - being prepared</a></li>
+<li><a href="/find-a-financial-advisor/selling-a-business/">Selling a business - being prepared</a></li>
+<li><a href="/find-a-financial-advisor/recently-sold-a-business/">Recently sold a business</a></li></ul></div>
+        <div class="nav-menu__col nav-menu__col--resources"><p class="nav-menu__caption">Calculators and tools</p><ul><li><a href="/calculators/taxes/">Tax calculators</a></li>
+<li><a href="/calculators/capital-gains-tax-estimate/">Capital gains tax estimator</a></li>
+<li><a href="/calculators/income-tax-estimate/">Federal income tax</a></li>
+<li><a href="/calculators/paycheck-calculator/">Paycheck calculator</a></li>
+<li><a href="/calculators/tax-refund-estimate/">Tax refund estimator</a></li>
+<li><a href="/calculators/roth-conversion-tax-cost/">Roth conversion tax cost</a></li>
+<li><a href="/guides/">All guides</a></li>
+<li><a href="/#insights">Learn</a></li></ul></div>
+      </div>
+    </li>
+      </ul>
+      <div class="nav__cta">
+        <a class="btn btn--dark" href="/#contact" data-gate-open>Ask a question</a>
+      </div>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section section--paper" id="top">
+  <div class="container" style="max-width:680px;">
+    <a href="/#insights" class="btn btn--outline" style="margin-bottom:32px;">&larr; Back</a>
+    <p class="eyebrow reveal">Retirement calculator</p>
+    <h1 class="display display--lg reveal">Retirement savings growth calculator</h1>
+    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Estimate how a lump sum plus monthly contributions could grow over time, before inflation and fees.</p>
+
+    <form id="calcForm" class="form" style="margin-top:36px; grid-template-columns:1fr 1fr;" onsubmit="return false;">
+      
+        <div class="field" data-field>
+          <label for="retirement-savings-growth-cur">Current savings ($)</label>
+          <input id="retirement-savings-growth-cur" name="cur" type="number" inputmode="decimal" placeholder="50000" value="50000">
+        </div>
+
+        <div class="field" data-field>
+          <label for="retirement-savings-growth-mo">Monthly contribution ($)</label>
+          <input id="retirement-savings-growth-mo" name="mo" type="number" inputmode="decimal" placeholder="500" value="500">
+        </div>
+
+        <div class="field" data-field>
+          <label for="retirement-savings-growth-yrs">Years until retirement</label>
+          <input id="retirement-savings-growth-yrs" name="yrs" type="number" inputmode="decimal" placeholder="25" value="25">
+        </div>
+
+        <div class="field" data-field>
+          <label for="retirement-savings-growth-ret">Assumed annual return (%)</label>
+          <input id="retirement-savings-growth-ret" name="ret" type="number" inputmode="decimal" placeholder="6" value="6">
+        </div>
+    </form>
+
+    <div class="calc-result">
+      <p class="calc-result__label">Estimated future value</p>
+      <p class="calc-result__value" id="calcOut">&mdash;</p>
+    </div>
+
+    <p style="margin-top:24px; font-size:.82rem; color:var(--muted); max-width:60ch;">Compound growth: (current savings, grown at your rate) + (monthly contributions, grown month by month). It doesn&#x27;t account for inflation, fees, taxes, or changing returns — a real projection needs those.</p>
+    
+    
+  </div>
+</section>
+
+<script>
+(function () {
+  var f = document.getElementById('calcForm');
+  var out = document.getElementById('calcOut');
+  function calc() {
+    
+          var cur = Number(f.cur.value), mo = Number(f.mo.value);
+          var yrs = Number(f.yrs.value), retPct = Number(f.ret.value);
+          if ([f.cur, f.mo, f.yrs, f.ret].some(function (field) { return field.value.trim() === ''; }) ||
+              ![cur, mo, yrs, retPct].every(Number.isFinite) ||
+              cur < 0 || mo < 0 || yrs < 0 || yrs > 100 || retPct <= -100 || retPct > 100 ||
+              cur > Number.MAX_SAFE_INTEGER || mo > Number.MAX_SAFE_INTEGER) {
+            out.textContent = 'Enter savings and contributions of $0 or more, 0-100 years, and an annual return above -100% and at most 100%.';
+            return;
+          }
+          var n = Math.round(yrs * 12), r = retPct / 1200;
+          var factor = Math.pow(1 + r, n);
+          var fvLump = cur * factor;
+          var fvContrib = r !== 0 ? mo * ((factor - 1) / r) : mo * n;
+          var total = fvLump + fvContrib;
+          out.textContent = '$' + Math.round(total).toLocaleString();
+        
+  }
+  f.addEventListener('input', calc);
+  calc();
+})();
+</script>
+
+<section class="section section--paper" id="growth-companion">
+<div class="container" style="max-width:700px;">
+
+
+<figure class="content-page__hero">
+<picture><source media="(max-width:600px)" srcset="/assets/retirement-savings-growth/hero-mobile.svg"/><img alt="Illustrative folders separate a starting balance, monthly model assumptions and a real retirement decision." loading="lazy" src="/assets/retirement-savings-growth/hero.svg"/></picture>
+<figcaption>Illustrative framework, not an investment outcome.</figcaption>
+</figure>
+<div class="insights-article" style="margin-top:32px;">
+<p>Use this calculator to compare a starting savings balance and equal monthly contributions under a constant return assumption. Save the inputs beside each result and separate money put into the model from modeled growth. The output is a hypothetical future value, not a finding that you can retire or that a contribution is suitable for your household.</p>
+<div class="content-page__takeaways">
+<h2>Key takeaways</h2>
+<ul> <li>Save the starting balance, monthly contribution, period and assumed return beside each result.</li>
+<li>The model compounds monthly and adds equal contributions at month-end.</li>
+<li>Separate the starting balance and contributions from modeled growth.</li>
+<li>Future value does not establish account eligibility, purchasing power or retirement readiness.</li>
+</ul>
+</div>
+<nav aria-label="On this page" class="content-page__toc">
+<h2>On this page</h2>
+<ul> <li><a href="#what-the-current-calculator-actually-computes">What the current calculator actually computes</a></li>
+<li><a href="#use-a-private-assumptions-to-scenarios-worksheet">Use a private assumptions-to-scenarios worksheet</a></li>
+<li><a href="#want-help-applying-this-to-your-own-numbers">Want help applying this to your own numbers?</a></li>
+<li><a href="#compare-illustrative-scenarios-with-one-change-at-a-time">Compare illustrative scenarios with one change at a time</a></li>
+<li><a href="#avoid-changing-every-input-at-once">Avoid changing every input at once</a></li>
+<li><a href="#keep-nominal-dollars-and-purchasing-power-separate">Keep nominal dollars and purchasing power separate</a></li>
+<li><a href="#a-future-value-estimate-is-not-a-retirement-decision">A future-value estimate is not a retirement decision</a></li>
+<li><a href="#turn-an-output-into-a-bounded-professional-question">Turn an output into a bounded professional question</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
+<p>This explanation adds a private assumptions worksheet and a checked one-variable scenario comparison to the existing calculator. It does not recommend an investment, account type, contribution amount or retirement age. Valora is not a registered investment adviser and is not arranging advisor matches or introductions at this time.</p>
+<h2 id="what-the-current-calculator-actually-computes">What the current calculator actually computes</h2>
+<p>The live model converts the assumed annual percentage into a monthly rate by dividing it by twelve. It rounds years times twelve to the nearest whole number of months. For each modeled month, the existing balance grows at that same monthly rate and an equal contribution is added at the end of the month.</p>
+<p>The formula is the future value of the starting balance plus the future value of equal end-of-month contributions. At a zero-return input, the contribution portion is simply the monthly amount times the number of months. This is a timing convention, not a statement about when you actually save or what an investment pays.</p>
+<p>The model uses a constant rate and a constant contribution throughout. Its displayed annual return is not an effective annual yield calculation: monthly compounding of the annual percentage divided by twelve is the implementation. Do not substitute an investment's quoted yield without checking what that quote means and which assumptions you want to compare.</p>
+<p>The <a href="https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator">Investor.gov compound-interest tool</a> also presents initial investment, monthly contributions, estimated interest rate and compounding frequency as separate inputs. It is background for distinguishing those concepts, not evidence that two tools use identical formulas or will give identical outputs. The scenarios below are calculated with Valora's own served formula.</p>
+<section class="worksheet"><figure><picture><source media="(max-width:600px)" srcset="/assets/retirement-savings-growth/diagram-1-mobile.svg"/><img alt="The monthly model grows the existing balance, adds the contribution at month-end and repeats constant inputs." loading="lazy" src="/assets/retirement-savings-growth/diagram-1.svg"/></picture><figcaption>The monthly model grows the existing balance, adds the contribution at month-end and repeats constant inputs. Illustrative framework, not an investment outcome.</figcaption></figure><h2 id="use-a-private-assumptions-to-scenarios-worksheet">Use a private assumptions-to-scenarios worksheet</h2>
+<p>Keep five fields with every comparison. You can write them in a private note without sending balances or statements through a public form. The worksheet makes the result reproducible and leaves real-world account questions outside the arithmetic.</p>
+<article class="worksheet-row"><h3>1. Identify the starting balance and its date</h3>
+<p>Write down the hypothetical starting amount and what you intend it to represent. If it comes from a current record, keep the date beside it. Do not add an uncertain future payment into the starting balance without labeling that change. A scenario starting amount is not a finding about money available for withdrawals.</p>
+</article><article class="worksheet-row"><h3>2. Record the equal monthly contribution assumption</h3>
+<p>Write the amount entered and label it as an assumption. The calculator adds the same amount at each modeled month-end. If your actual contributions vary, stop or arrive at different times, note that mismatch. It does not check what you may contribute to a particular account or whether the amount fits household cash flow.</p>
+</article><article class="worksheet-row"><h3>3. Record the period and the return assumption</h3>
+<p>Save the years entered and the constant annual percentage. The model rounds the period to whole months. An assumed percentage is an input, not a forecast or an endorsed rate. A longer period or a higher return can change the number without answering whether either assumption is reasonable for you.</p>
+</article><article class="worksheet-row"><h3>4. Separate money put in from modeled growth</h3>
+<p>Calculate the starting balance plus the hypothetical monthly contributions over the modeled months. Keep that amount beside the ending value. The difference is modeled growth, which can be negative when the assumptions produce a loss. It is not guaranteed interest or a measure of investment skill.</p>
+</article><article class="worksheet-row"><h3>5. Name the comparison and the missing review</h3>
+<p>Write the one input you changed and why you are comparing it. Then list what is not modeled: taxes, fees, inflation, changing returns, withdrawals, account rules and contribution changes. Record which question needs a separate review before a real decision. A neatly saved output should not erase those exclusions.</p></article>
+</section><aside class="worksheet content-cta"><h2 id="want-help-applying-this-to-your-own-numbers">Want help applying this to your own numbers?</h2><p>Tell us what you are trying to figure out. Valora reviews inquiries and emails next steps; we are not arranging advisor matches or introductions. Do not submit confidential financial documents.</p><a data-content-destination="inquiry" data-content-event="content_cta_click" data-content-page="retirement-savings-growth" data-content-placement="mid" href="/#contact">Talk it through</a></aside><h2 id="compare-illustrative-scenarios-with-one-change-at-a-time">Compare illustrative scenarios with one change at a time</h2>
+<p>These are fictional arithmetic examples, not recommended returns or savings amounts. Each starts with $10,000, uses 20 years or 240 modeled months, adds contributions at month-end and rounds displayed dollars to the nearest whole dollar. There are no withdrawals, fees, taxes or inflation in these examples.</p>
+<div aria-label="Illustrative monthly savings scenarios; scroll horizontally to compare all columns" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Monthly input</th>
+<th>Annual return input</th>
+<th>Starting balance plus contributions</th>
+<th>Ending value</th>
+<th>Modeled growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Scenario">A: baseline assumption</td>
+<td data-label="Monthly input">$500</td>
+<td data-label="Annual return input">6%</td>
+<td data-label="Starting balance plus contributions">$130,000</td>
+<td data-label="Ending value">$264,122</td>
+<td data-label="Modeled growth">$134,122</td>
+</tr>
+<tr>
+<td data-label="Scenario">B: change return only</td>
+<td data-label="Monthly input">$500</td>
+<td data-label="Annual return input">3%</td>
+<td data-label="Starting balance plus contributions">$130,000</td>
+<td data-label="Ending value">$182,359</td>
+<td data-label="Modeled growth">$52,359</td>
+</tr>
+<tr>
+<td data-label="Scenario">C: zero-return arithmetic check</td>
+<td data-label="Monthly input">$500</td>
+<td data-label="Annual return input">0%</td>
+<td data-label="Starting balance plus contributions">$130,000</td>
+<td data-label="Ending value">$130,000</td>
+<td data-label="Modeled growth">$0</td>
+</tr>
+<tr>
+<td data-label="Scenario">D: change contribution only from A</td>
+<td data-label="Monthly input">$300</td>
+<td data-label="Annual return input">6%</td>
+<td data-label="Starting balance plus contributions">$82,000</td>
+<td data-label="Ending value">$171,714</td>
+<td data-label="Modeled growth">$89,714</td>
+</tr>
+</tbody>
+</table></div>
+<p>Compare A with B to isolate the constant-return assumption: the starting balance, contribution and time stay the same. Compare A with D to isolate the equal monthly contribution assumption. The difference between those outputs is a model comparison, not a recommendation to choose a rate or increase saving.</p>
+<p>Scenario C checks that, with no growth, the output equals the starting balance plus contributions. It is not a worst-case scenario. Negative returns can produce lower results, and actual changing returns are outside this constant-rate model.</p>
+<p>The starting balance is included in the "starting balance plus contributions" column, so that column does not mean all the money was newly saved during the 20 years. In A, $120,000 of hypothetical monthly contributions is added to the $10,000 starting amount. The growth column subtracts that combined amount from the unrounded ending value, then rounds for display.</p>
+<h2 id="avoid-changing-every-input-at-once">Avoid changing every input at once</h2>
+<p>If two results differ in balance, contribution, period and return, you cannot tell which change explains the difference without another comparison. Start with a labeled baseline, duplicate its assumptions and change one input. Keep the reason for the comparison beside the saved result.</p>
+<p>This method makes the arithmetic easier to explain. It does not turn the baseline into the right plan. You can explore a different assumption without deciding that it is affordable, permitted by an account or likely to occur. Keep those findings separate.</p>
+<p>If the real question is irregular saving, a period without contributions or withdrawals before the end date, this model does not directly represent that sequence. Do not hide the sequence inside an average monthly number and call the result a cash-flow projection. Ask what additional analysis is needed and label any shortcut you use.</p>
+<figure><picture><source media="(max-width:600px)" srcset="/assets/retirement-savings-growth/diagram-2-mobile.svg"/><img alt="Money put into the model, modeled growth and real-world questions remain separately labeled." loading="lazy" src="/assets/retirement-savings-growth/diagram-2.svg"/></picture><figcaption>Money put into the model, modeled growth and real-world questions remain separately labeled. Illustrative framework, not an investment outcome.</figcaption></figure><h2 id="keep-nominal-dollars-and-purchasing-power-separate">Keep nominal dollars and purchasing power separate</h2>
+<p>The result is a nominal dollar amount under the inputs. Inflation is excluded. A future balance therefore does not, by itself, tell you what that money will buy or what household spending it will support.</p>
+<p>The <a data-content-event="content_internal_link_click" data-content-page="retirement-savings-growth" data-content-placement="body" href="/calculators/inflation-calculator/">inflation calculator</a> is a related existing tool for an inflation-assumption question. It is not automatically integrated with this savings model. Record its inputs separately and do not add or subtract two outputs without explaining the comparison you intend to make.</p>
+<p>Fees and taxes are also excluded from the savings-growth calculation. Do not label the ending value "after-tax retirement income" or assume that a particular account will make it available on the modeled date. The worksheet's missing-review field is there to keep those questions visible.</p>
+<h2 id="a-future-value-estimate-is-not-a-retirement-decision">A future-value estimate is not a retirement decision</h2>
+<p>The calculator does not compare the balance with your actual future spending, choose a withdrawal strategy or model how returns arrive over time. It cannot establish that savings will last or supply a safe retirement date. A large-looking ending value is still only the answer to the inputs you entered.</p>
+<p>For a separate fixed-withdrawal model, the <a data-content-event="content_internal_link_click" data-content-page="retirement-savings-growth" data-content-placement="body" href="/calculators/how-long-savings-will-last/">how long savings will last calculator</a> has a different purpose and its own limits. Its constant-return result is not evidence of lifelong security. The <a data-content-event="content_internal_link_click" data-content-page="retirement-savings-growth" data-content-placement="body" href="/calculators/retirement/">retirement calculator collection</a> helps locate related tools without implying that their outputs form one complete plan.</p>
+<p>If you compare tools, read each tool's assumptions rather than treating the labels as interchangeable. The <a data-content-event="content_internal_link_click" data-content-page="retirement-savings-growth" data-content-placement="body" href="/calculators/compound-interest/">compound-interest calculator</a> addresses a related growth question, but this page's added value is the monthly-contribution worksheet and scenario explanation for this existing retirement-growth model. Choose the tool that matches the question, then keep its assumptions with the result.</p>
+<h2 id="turn-an-output-into-a-bounded-professional-question">Turn an output into a bounded professional question</h2>
+<p>You can bring the saved worksheet to a conversation by saying which assumption you compared and what remains unresolved. Ask how a professional would review household cash flow, account constraints and the factors this model leaves out. Request the written work product, costs, exclusions and follow-up rather than expecting a calculator screenshot to stand in for a plan.</p>
+<p>Keep the question and a list of records separate from confidential documents. Ask how records should be shared securely after independently checking the professional and scope. A Valora inquiry requests information for a response; it does not book an appointment, recommend an investment or arrange an advisor introduction.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Use retirement savings growth as a transparent comparison of a starting balance, equal month-end contributions, time and a constant return assumption. Keep the inputs, money put in and modeled growth together. The comparison can prepare a useful question, but account rules, purchasing power, costs and a retirement decision still need their own review.</p>
+</div>
+</div>
+</section><section class="section section--paper" id="faq">
+<div class="container" style="max-width:700px;">
+<div class="faq">
+<h2 class="faq__title">Common questions</h2>
+<details class="faq__item"><summary>How is the retirement savings growth calculator calculated?</summary><p>It models a starting balance and equal end-of-month contributions at a constant monthly rate equal to the annual percentage divided by twelve. Years times twelve is rounded to whole months. At zero return, the contribution portion is the monthly amount times the modeled months. It excludes inflation, fees, taxes, withdrawals and changing returns.</p></details>
+<details class="faq__item"><summary>Are the scenario return percentages recommended or predicted returns?</summary><p>No. They are fictional inputs used to demonstrate the served model and isolate one change at a time. They are not forecasts, recommended rates or evidence of what an investment will earn.</p></details>
+<details class="faq__item"><summary>How do I separate contributions from modeled growth?</summary><p>Add the starting balance to the equal monthly contributions over the modeled months. Subtract that combined amount from the illustrative ending value. The difference is modeled growth, not guaranteed interest; the starting balance is not a new contribution made during the period.</p></details>
+<details class="faq__item"><summary>Does a zero-return example show the worst possible result?</summary><p>No. It checks the arithmetic when no growth is assumed. Negative returns can produce lower results, and changing real-world returns are outside this constant-rate model.</p></details>
+<details class="faq__item"><summary>Can this calculator tell me when I can retire?</summary><p>No. It does not compare the result with your actual spending, choose withdrawals, check account rules or model changing returns, taxes, fees and purchasing power. A hypothetical future value is not a retirement decision.</p></details>
+</div>
+</div>
+</section><section class="section section--green cta">
+<div class="container" style="max-width:680px; text-align:center;">
+<h2 class="display display--md">Want help applying this to your own numbers?</h2>
+<p style="margin:16px 0 28px;">Tell us what you are trying to figure out. Valora reviews inquiries and emails next steps; we are not arranging advisor matches or introductions. Do not submit confidential financial documents.</p>
+<a class="btn btn--light" data-content-destination="inquiry" data-content-event="content_cta_click" data-content-page="retirement-savings-growth" data-content-placement="end" href="/#contact">Talk it through</a>
+</div>
+</section><section class="section section--green cta" id="inquiry-page-cta">
+  <div class="container cta__grid">
+    <div class="cta__copy">
+      <h2 class="display display--lg reveal">Tell us what you’re trying to figure out.</h2>
+      <p class="reveal">Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.</p>
+    </div>
+
+    <div class="inquiry-host" data-inquiry-host><section class="section section--paper" id="contact"><div class="container root-inquiry"><div class="progress" id="progress"></div><form id="flow" data-endpoint="https://script.google.com/macros/s/AKfycbx4mCwhZBQS-0W-UAybBeIJm67scGp4cpwAR_19l4g-FSa-XacfhNyOAPT0W0CEd0uc/exec" novalidate><div id="screen" class="screen"></div><p id="sendDisclosure" hidden>How we handle your details, including who receives them, is in our <a href="/privacy/">Privacy Policy</a>.</p><div class="err" id="error" role="alert"></div><div class="inquiry-nav"><button type="button" id="back" class="btn back">Back</button><button type="submit" id="next" class="btn">Continue</button></div></form></div></section></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <h2 class="display display--md footer__statement reveal">Independent advice.<br><em>Personal fit.</em></h2>
+
+    <div class="footer__grid">
+      <nav class="footer__col" aria-label="Cities"><h5>Cities</h5><ul><li><a href="/find-a-financial-advisor/new-york/">New York, NY</a></li><li><a href="/find-a-financial-advisor/los-angeles/">Los Angeles, CA</a></li><li><a href="/find-a-financial-advisor/chicago/">Chicago, IL</a></li><li><a href="/find-a-financial-advisor/dallas/">Dallas, TX</a></li><li><a href="/find-a-financial-advisor/houston/">Houston, TX</a></li><li><a href="/cities/">More &rarr;</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Specialties"><h5>Specialties</h5><ul><li><a href="/find-a-financial-advisor/managing-investments/">Managing investments</a></li><li><a href="/find-a-financial-advisor/retirement-planning/">Retirement planning</a></li><li><a href="/find-a-financial-advisor/selling-a-business/">Selling a business</a></li><li><a href="/find-a-financial-advisor/business-owner-wealth-planning/">Business owner wealth planning</a></li><li><a href="/find-a-financial-advisor/tax-planning/">Tax planning</a></li><li><a href="/specialties/">More &rarr;</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Professions"><h5>Professions</h5><ul><li><a href="/find-a-financial-advisor/business-owner/">Business owner</a></li><li><a href="/find-a-financial-advisor/executive-professional/">Executive / professional</a></li><li><a href="/find-a-financial-advisor/retired/">Retired</a></li><li><a href="/find-a-financial-advisor/recently-sold-a-business/">Recently sold a business</a></li><li><a href="/find-a-financial-advisor/recently-received-an-inheritance/">Recently received an inheritance</a></li><li><a href="/professions/">More &rarr;</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Asset types"><h5>Asset Types</h5><ul><li><a href="/find-a-financial-advisor/under-250k/">Under $250K</a></li><li><a href="/find-a-financial-advisor/250k-to-500k/">$250K to $500K</a></li><li><a href="/find-a-financial-advisor/500k-to-1m/">$500K to $1M</a></li><li><a href="/find-a-financial-advisor/1m-to-3m/">$1M to $3M</a></li><li><a href="/find-a-financial-advisor/3m-to-10m/">$3M to $10M</a></li><li><a href="/find-a-financial-advisor/10m-plus/">$10M+</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Advisors by state"><h5>Advisors by state</h5><ul><li><a href="/top-financial-advisors/arizona/">Arizona</a></li><li><a href="/top-financial-advisors/california/">California</a></li><li><a href="/top-financial-advisors/colorado/">Colorado</a></li><li><a href="/top-financial-advisors/district-of-columbia/">District of Columbia</a></li><li><a href="/top-financial-advisors/florida/">Florida</a></li><li><a href="/top-financial-advisors/">More &rarr;</a></li></ul></nav>
+    </div>
+    <div class="footer__nav-bottom">
+      <div class="footer__resource-grid">
+      <div class="footer__brand">
+        <a class="logo logo--light" href="/">
+          <span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/><path d="M6 20.5c4-9 6.5-9 10 0s6 9 10 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          <span class="logo__word">Valora</span>
+        </a>
+        <p>Valora publishes educational information about financial planning and accepts questions.</p>
+        <ul class="footer__contact">
+          <li><a href="mailto:barot@valorahq.com">barot@valorahq.com</a></li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Calculators"><h5>Calculators</h5><ul><li><a href="/calculators/retirement/">Retirement</a></li><li><a href="/calculators/taxes/">Taxes</a></li><li><a href="/calculators/social-security/">Social Security</a></li><li><a href="/calculators/equity-compensation/">Equity Compensation</a></li><li><a href="/calculators/investing/">Investing</a></li><li><a href="/calculators/banking/">Banking</a></li><li><a href="/calculators/home-&-mortgage/">Home &amp; Mortgage</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/#approach">Our approach</a></li><li><a href="/#contact" data-gate-open>Ask a question</a></li><li><a href="/for-advisors/">For advisors</a></li><li><a href="/team/">Team</a></li><li><a href="/#insights">Insights</a></li></ul></nav>
+      <nav class="footer__col" aria-label="For advisors tools"><h5>For Advisors &middot; Tools</h5><ul><li><a href="/for-advisors/">For advisers</a></li><li><a href="/for-advisors/#insights-for-advisors">Articles for advisory firms</a></li><li><a href="/#insights">Insights</a></li><li><a href="/#contact" data-gate-open>Ask a question</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookies/">Cookies</a></li></ul></nav>
+      </div>
+    </div>
+
+    <nav class="footer__featured" aria-label="Directories">
+      <span>Directories</span>
+      <a href="https://dang.ai">Dang.ai</a>
+      <a href="https://aiagentsdirectory.com">AI Agents Directory</a>
+      <a href="https://earlyhunt.com">EarlyHunt</a>
+    </nav>
+
+    <div class="footer__base">
+      <p>© 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Valora publishes educational information about financial planning and accepts questions. Valora does not provide investment, tax, legal, or financial advice. We are not arranging advisor matches or introductions at this time.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><span aria-hidden="true">↑</span></button>
+<div class="gate" id="gate" hidden>
+  <div class="gate__scrim" data-gate-close></div>
+
+  <div class="gate__panel" role="dialog" aria-modal="true" aria-labelledby="gateTitle" aria-describedby="gateSub">
+    <span class="gate__glow" aria-hidden="true"></span>
+
+    <button class="gate__x" type="button" aria-label="Close" data-gate-close>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="gate__inner">
+      <h2 class="gate__title display gate__i" id="gateTitle" style="--i:2">
+        Tell us what you’re trying to figure out.
+      </h2>
+      <p class="gate__sub gate__i" id="gateSub" style="--i:3">
+        Tell us a little about your situation. We’ll review your request and email next steps. We aren’t arranging advisor matches or introductions at this time.
+      </p>
+
+      <form class="gate__form gate__i form--steps" id="gateForm" data-lead="Client" data-done="#gateDone" style="--i:4" novalidate>
+        <div class="form__step" data-step>
+          <p class="form__stepnum">Step 1 of 4</p>
+          <div class="gate__field" data-field>
+          <label>What are you looking for help with?</label>
+          <span class="opt">Select all that apply</span>
+          <div class="check-group" role="group" aria-label="What are you looking for help with?">
+          <label class="check"><input type="checkbox" name="help" value="Managing investments"><span>Managing investments</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Retirement planning"><span>Retirement planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Selling a business"><span>Selling a business</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Business owner wealth planning"><span>Business owner wealth planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Tax planning"><span>Tax planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Estate planning"><span>Estate planning</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Concentrated stock"><span>Concentrated stock</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Inheritance / sudden wealth"><span>Inheritance / sudden wealth</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Cash / liquidity management"><span>Cash / liquidity management</span></label>
+          <label class="check"><input type="checkbox" name="help" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+          <div class="gate__foot">
+            <button class="btn btn--cream gate__submit" type="button" data-step-next>Continue</button>
+            <button class="gate__skip" type="button" data-gate-close>I'm just looking</button>
+          </div>
+        </div>
+        <div class="form__step" data-step hidden>
+          <p class="form__stepnum">Step 2 of 4</p>
+          <div class="gate__field" data-field>
+          <label for="gassets">Approximately how much do you have in investable assets?</label>
+          <select id="gassets" name="assets" required><option value="">Select one</option><option>Under $250K</option><option>$250K to $500K</option><option>$500K to $1M</option><option>$1M to $3M</option><option>$3M to $10M</option><option>$10M+</option></select>
+          <small class="err" data-err="assets"></small>
+        </div>
+          <div class="gate__field" data-field>
+          <label for="gsituation">What best describes your situation?</label>
+          <select id="gsituation" name="situation" required><option value="">Select one</option><option>Business owner</option><option>Executive / professional</option><option>Retired</option><option>Recently sold a business</option><option>Recently received an inheritance</option><option>Entrepreneur / founder</option><option>Other</option></select>
+          <small class="err" data-err="situation"></small>
+        </div>
+          <div class="gate__foot">
+            <button class="gate__skip" type="button" data-step-back>Back</button>
+            <button class="btn btn--cream gate__submit" type="button" data-step-next>Continue</button>
+          </div>
+        </div>
+        <div class="form__step" data-step hidden>
+          <p class="form__stepnum">Step 3 of 4</p>
+          
+        <div class="gate__field" data-field>
+          <label for="gname">Full name</label>
+          <input id="gname" name="name" type="text" required placeholder="Jordan Reyes" autocomplete="name">
+          <small class="err" data-err="name"></small>
+        </div>
+        <div class="gate__field" data-field>
+          <label for="gemail">Email</label>
+          <input id="gemail" name="email" type="email" required placeholder="jordan@email.com" autocomplete="email">
+          <small class="err" data-err="email"></small>
+        </div>
+        <div class="gate__field" data-field>
+          <label for="gphone">Phone number</label>
+          <input id="gphone" name="phone" type="tel" required placeholder="(415) 555-0100" autocomplete="tel" inputmode="tel">
+          <small class="err" data-err="phone"></small>
+        </div>
+          <div class="gate__foot">
+            <button class="gate__skip" type="button" data-step-back>Back</button>
+            <button class="btn btn--cream gate__submit" type="button" data-step-next>Continue</button>
+          </div>
+        </div>
+        <div class="form__step" data-step hidden>
+          <p class="form__stepnum">Step 4 of 4</p>
+          <div class="gate__field" data-field>
+          <label for="gmessage">What would you like help with?</label>
+          <span class="opt">Optional</span>
+          <textarea id="gmessage" name="message" rows="3" placeholder="A sentence is plenty."></textarea>
+        </div>
+          <div class="gate__foot">
+            <button class="gate__skip" type="button" data-step-back>Back</button>
+            <button class="btn btn--cream gate__submit" type="submit">Send my request</button>
+          </div>
+        </div>
+        <p class="gate__fine">We’ll use your answers and contact details to review your request and email next steps. A submission alert also goes to our external agency inbox, brands@grow.surgeaio.com. We are not arranging advisor introductions or sharing your details with an advisor at this time. Read our <a href="/privacy/">Privacy Policy</a> before sending.</p>
+      </form>
+
+      <div class="gate__done" id="gateDone" hidden>
+        <span class="gate__tick" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M8 17l5.5 5.5L24 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3 class="display" data-done-title style="font-size:1.5rem">Thank you.</h3>
+        <p>After you submit, we review your request and email you about next steps. Timing may vary.</p>
+        <button class="btn btn--cream" type="button" data-gate-close>Explore the site</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="valora-concierge" hidden></div>
+<script src="/assets/concierge.js?v=192cd4aa"></script>
+<script src="/assets/vendor/libphonenumber-max-1.13.14.js"></script>
+<script src="/assets/vendor/disposable-email-domains-1.0.62.js"></script>
+<script src="/assets/contact-validation.js?v=056889e3"></script>
+<script src="/assets/script.js?v=08fb86e5"></script>
+<dialog id="rootInquiryDialog" aria-label="Send Valora an inquiry"><button type="button" class="inquiry-modal-close" aria-label="Close inquiry"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></dialog>
+<script src="/assets/inquiry-contract-adapter.js?v=47585c32"></script>
+<script src="/assets/root-inquiry-five.js?v=d6689437"></script>
+<script src="/assets/root-inquiry-modal.js?v=6acf6a62"></script>
+<script src="/assets/retirement-growth-events.js"></script></body>
+</html>

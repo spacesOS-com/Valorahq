@@ -46,20 +46,11 @@
   var sideClose = document.createElement('button'); sideClose.type = 'button'; sideClose.setAttribute('aria-label', 'Close conversation'); sideClose.textContent = '\u00d7';
   sideClose.addEventListener('click', function () { closeConversation(); });
   sideHead.appendChild(sideName); sideHead.appendChild(sideClose);
-  // The side panel starts under the site header so the main menu stays fully visible.
-  function syncSideTop() {
-    if (!wrap.classList.contains('is-side')) return;
-    var head = document.getElementById('siteHeader');
-    var top = head ? Math.max(0, Math.round(head.getBoundingClientRect().bottom)) : 0;
-    wrap.style.setProperty('--valora-side-top', top + 'px');
-  }
-  window.addEventListener('scroll', syncSideTop, {passive: true});
-  window.addEventListener('resize', syncSideTop);
   function enterSide() {
     if (wrap.classList.contains('is-side')) return;
     wrap.classList.add('is-side'); sideHead.hidden = false; chat.hidden = false;
     document.body.setAttribute('data-valora-conversation-side', 'true');
-    syncSideTop(); syncSpacer();
+    syncSpacer();
   }
   var chat = document.createElement('div');
   chat.className = 'valora-concierge__chat';

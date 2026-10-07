@@ -6,7 +6,7 @@
   return {submit:async function(draft){
    if(busy)return {kind:'busy'};
    const first=(draft.firstName||'').trim(),last=(draft.lastName||'').trim(),email=(draft.email||'').trim();
-   if(!first||!last||!email||draft.reviewedNoticeAccepted!==true)return {kind:'invalid'};
+   if(!first||!last||!email)return {kind:'invalid'};
    const message=(draft.motivation||'').trim();if(message.length>1000)return {kind:'invalid'};
    const source=(draft.sourceChoice||'').trim();
    const payload={name:first+' '+last,email:email,phone:(draft.phone||'').trim(),assets:(draft.assetBand||'').trim(),message:message+(source?'\nHow they heard: '+source:'')};

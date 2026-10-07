@@ -285,11 +285,14 @@ NAV_MENUS = [{'name': 'Financial Advice',
   'guides': [('Tech employees', '/financial-advisor-for-tech-employees/'),
              ('Physicians', '/financial-advisor-for-physicians/'),
              ('Business owners', '/find-a-financial-advisor/business-owner/'),
+             ('Self-employed consultants', '/find-a-financial-advisor/self-employed-consultants/'),
+             ('Starting a new job', '/find-a-financial-advisor/starting-a-new-job/'),
              ('Cities - being prepared', '/cities/'),
              ('Specialties - being prepared', '/specialties/'),
              ('Professions - being prepared', '/professions/'),
              ('Asset levels - being prepared', '/asset-types/'),
              ('Advisors by state - being prepared', '/top-financial-advisors/')],
+  'index': ('All guides', '/guides/'),
   'resources': [('All calculators', '/calculators/')]},
  {'name': 'Retirement',
   'live': True,
@@ -303,7 +306,7 @@ NAV_MENUS = [{'name': 'Financial Advice',
                 ('Social Security tools', '/calculators/social-security/')]},
  {'name': 'Investing',
   'live': True,
-  'guides': [('Managing investments - being prepared',
+  'guides': [('Managing investments',
               '/find-a-financial-advisor/managing-investments/'),
              ('Business owner wealth planning - being prepared',
               '/find-a-financial-advisor/business-owner-wealth-planning/')],
@@ -314,7 +317,8 @@ NAV_MENUS = [{'name': 'Financial Advice',
                 ('Asset allocation guide', '/calculators/asset-allocation-guide/')]},
  {'name': 'Banking',
   'live': True,
-  'guides': [],
+  'guides': [('Buying a first home', '/find-a-financial-advisor/buying-a-first-home/'),
+             ('Explore financial planning guides', '/guides/')],
   'resources': [('Banking calculators', '/calculators/banking/'),
                 ('Savings and CD growth', '/calculators/savings-cd-growth/'),
                 ('50/30/20 budget', '/calculators/budget-50-30-20/'),
@@ -323,7 +327,8 @@ NAV_MENUS = [{'name': 'Financial Advice',
  {'name': 'Taxes',
   'live': True,
   'guides': [('Tax planning - being prepared', '/find-a-financial-advisor/tax-planning/'),
-             ('Selling a business - being prepared', '/find-a-financial-advisor/selling-a-business/')],
+             ('Selling a business - being prepared', '/find-a-financial-advisor/selling-a-business/'),
+             ('Recently sold a business', '/find-a-financial-advisor/recently-sold-a-business/')],
   'resources': [('Tax calculators', '/calculators/taxes/'),
                 ('Capital gains tax estimator', '/calculators/capital-gains-tax-estimate/'),
                 ('Federal income tax', '/calculators/income-tax-estimate/'),
@@ -336,7 +341,7 @@ def _nav_dropdown(menu, index):
     def links(items):
         return "\n".join(f'<li><a href="{escape(url)}">{escape(label)}</a></li>' for label, url in items)
     guide_links = links(menu["guides"])
-    resource_links = links(menu["resources"])
+    resource_links = links(menu["resources"] + [("All guides", "/guides/"), ("Learn", "/#insights")])
     resource_links += '<li class="nav-menu__all"><a href="/guides/">All guides</a></li>'
     resource_links += '<li class="nav-menu__all"><a href="/#insights">Learn</a></li>'
     return f'''<li class="nav-menu">
@@ -348,80 +353,7 @@ def _nav_dropdown(menu, index):
     </li>'''
 
 
-# /for-advisors/ speaks to advisory firms, not to people looking for advice, so it carries its own
-# menu and footer: links to its own sections, no consumer directory, and a CTA that goes to its own form.
-ADVISOR_NAV = [("How it works", "#how-it-works"), ("Articles", "#insights-for-advisors"), ("FAQ", "#faq")]
-# The footer can afford the fuller list.
-ADVISOR_FOOTER_LINKS = [("How it works", "#how-it-works"), ("How we get you there", "#how-we-do-it"), ("What to expect", "#projection"), ("FAQ", "#faq")]
-ADVISOR_BLOG_URL = "https://insights.spacesos.com/"
-
-
-def advisor_header():
-    items = "\n".join(f'        <li><a href="{url}">{escape(label)}</a></li>' for label, url in ADVISOR_NAV)
-    return f"""<header class="site-header site-header--advisors" id="siteHeader">
-  <div class="container header__inner">
-    <a class="logo" href="/for-advisors/" aria-label="{BRAND} for advisors">
-      <span class="logo__mark" aria-hidden="true">
-        {LOGO_SVG}
-      </span>
-      <span class="logo__word">{BRAND}</span>
-      <span class="logo__tag">for advisors</span>
-    </a>
-
-    <nav class="nav" id="primaryNav" aria-label="Primary">
-      <ul class="nav__list nav__list--plain">
-{items}
-      </ul>
-      <div class="nav__cta">
-        <a class="btn btn--dark" href="#top">Get started</a>
-      </div>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>"""
-
-
-def advisor_footer():
-    page_links = "".join(f'<li><a href="{url}">{escape(label)}</a></li>' for label, url in ADVISOR_FOOTER_LINKS)
-    return f"""<footer class="footer footer--advisors">
-  <div class="container">
-    <h2 class="display display--md footer__statement reveal">Be found by the people<br><em>your firm serves best.</em></h2>
-
-    <div class="footer__nav-bottom">
-      <div class="footer__resource-grid">
-      <div class="footer__brand">
-        <a class="logo logo--light" href="/for-advisors/">
-          <span class="logo__mark" aria-hidden="true">{LOGO_SVG}</span>
-          <span class="logo__word">{BRAND}</span>
-        </a>
-        <p>Valora works with financial advisory firms on being found by people looking for their services.</p>
-        <ul class="footer__contact">
-          <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-        </ul>
-      </div>
-
-      <nav class="footer__col" aria-label="For advisory firms"><h5>For advisory firms</h5><ul>{page_links}<li><a href="#top">Get started</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Resources"><h5>Resources</h5><ul><li><a href="#insights-for-advisors">Articles for advisory firms</a></li><li><a href="{ADVISOR_BLOG_URL}">Insights blog</a></li><li><a href="#portal">Clear expectations</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Company"><h5>Company</h5><ul><li><a href="/team/">Team</a></li><li><a href="/">Valora for individuals</a></li><li><a href="/guides/">Financial planning guides</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookies/">Cookies</a></li></ul></nav>
-      </div>
-    </div>
-
-    <div class="footer__base">
-      <p>© 2026 SpacesOS Inc. Valora is a SpacesOS Inc. product. Results vary by firm, market and competition. Valora does not provide investment, tax, legal, or financial advice. We are not arranging advisor matches or introductions at this time.</p>
-    </div>
-  </div>
-</footer>
-
-<button class="to-top" id="toTop" aria-label="Back to top"><span aria-hidden="true">↑</span></button>"""
-
-
 def header(active=None, cta=("Ask a question", "/#contact"), banner=False):
-    if active == "advisors":
-        return advisor_header()
     items = "\n".join(_nav_dropdown(menu, i) for i, menu in enumerate(NAV_MENUS) if menu["live"])
     banner_html = ""
     if banner:
@@ -871,7 +803,7 @@ def page(head_html, body_html, active=None, with_gate=False, body_class="page-su
 {body_html}
 </main>
 
-{advisor_footer() if active == 'advisors' else footer()}
+{footer()}
 {gate() if with_gate else ''}
 <div id="valora-concierge" hidden></div>
 <script src="/assets/concierge.js?v={_asset_ver('concierge.js')}"></script>
