@@ -390,7 +390,7 @@
   "find-a-financial-advisor/under-250k/index.html": "624c836f4fe24c718bb63282d04249540038274e61b337276b119c134b1ad072",
   "find-a-financial-advisor/when-to-hire-a-financial-advisor/index.html": "f948b4c645a11e6d32d02a1fe582c784074f981f25d3ca3ff2c4490fb8d51df2",
   "find-your-advisor/index.html": "b2dad0f10c3c274c4d66aba74d67f15da6e274cd11c45902d58c50df99dec93d",
-  "for-advisors/index.html": "27d4c3f5798b5454e95ee402961dbc3a9d26d58454b037a9a6d9bb50af3ae59f",
+  "for-advisors/index.html": "265adb8eaee85a80351371ac9d6f3cfd7f53181a25c08d8cae0176b6311c7e91",
   "guides/index.html": "badd221a3c8ea9f5454259fa5a9e2d82e782265537e57f5cd3efca57977c72b8",
   "index.html": "74aa04100847e9d7aefe89c18b4d7cd8309a0b829551ef8ce7bd7fa8bfd11a02",
   "insights/beneficiary-forms-override-will/index.html": "bf2af7ca47ddb57dc670ef69e703f7f7fcece603bc77c1a26bf5a9d03790601f",
@@ -416,5 +416,6 @@
   "top-financial-advisors/index.html": "fe15bb04d31f19592724358c741dbf74b77cc9fbdb657b9897343861716a197c",
   "assets/root-inquiry-positioning-v3.js": "2ebf07f8b4cfee966b3faf92c3e6fb88bcecf32ed602b3eaabd7533bb7b361b7",
   "assets/advisor-intro-positioning-v3.js": "7ffac77c9f93cadf2a06ee94e4af3c250b7e1c40773e069da6417cd3005c083f",
-  "assets/root-hero-polish-v1.css": "f6582e25c39ce68d75febd0b643d0d7e281b308c2bac3066f75bb0a02e7f638c"
+  "assets/root-hero-polish-v1.css": "f6582e25c39ce68d75febd0b643d0d7e281b308c2bac3066f75bb0a02e7f638c",
+  "assets/advisor-landing-proof-v1.css": "b54ec60024d66e8b2fa70fa32eda2fb09fe45d4191db4d776d2b8b7a57bb8cc7"
 }
