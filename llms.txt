@@ -6,8 +6,8 @@
 
 ## Pages
 
-- [https://www.valorahq.com/](https://www.valorahq.com/): Educational financial-planning content and an inquiry route; no advisor matches or introductions currently.
-- [https://www.valorahq.com/for-advisors/](https://www.valorahq.com/for-advisors/): For advisors — information for independent advisors interested in Valora; no live advisor directory or matching at this time.
+- [https://www.valorahq.com/](https://www.valorahq.com/): Educational guides and calculators for consumers and their AI agents, with educational requests reviewed by email; no personalized advice or advisor matches.
+- [https://www.valorahq.com/for-advisors/](https://www.valorahq.com/for-advisors/): Content prepared for advisory firms each month with written OK; annual advisor-sent message drafts; no consumer lead delivery or advisor matching.
 - [https://www.valorahq.com/find-your-advisor/](https://www.valorahq.com/find-your-advisor/): Tell us what you need: four-question intake; each request is reviewed by hand.
 - [https://www.valorahq.com/guides/](https://www.valorahq.com/guides/): Financial advice guides for tech employees, physicians and business owners.
 - [https://www.valorahq.com/calculators/](https://www.valorahq.com/calculators/): Browse financial calculators by topic.

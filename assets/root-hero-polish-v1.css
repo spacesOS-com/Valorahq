@@ -1,0 +1,5 @@
+/* Homepage hero copy and phone-field layout only. */
+.hero__copy .hero-intake-note{max-width:42ch;margin:20px 0 12px;font-size:.875rem;line-height:1.6;color:#596153}
+.hero__copy .hero-intake-note + a{display:inline-block;color:#1e3b2a;font-size:.875rem;line-height:1.5;text-decoration:underline;text-underline-offset:3px;margin-bottom:12px}
+#contact .phone-row select{flex:0 0 110px;width:110px;min-width:0;max-width:110px;min-height:42px}
+#contact .phone-row input{flex:1 1 0%;width:0;min-width:0;min-height:42px}
