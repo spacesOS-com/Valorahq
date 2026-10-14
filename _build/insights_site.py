@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "_build", "insights-articles")
 OUT = os.path.join(ROOT, "_insights-site")
 SITE = os.environ.get("INSIGHTS_SITE_URL", "https://insights.spacesos.com")
-NAME = "Spaces Insights"
+NAME = "Valora Insights"
 TAGLINE = "Practical articles for independent financial advisors."
 
 CSS = """:root{--green:#1e3b2a;--ink:#16190f;--soft:#3b4034;--muted:#767a6c;--line:rgba(22,25,15,.14);--paper:#f7f5f0;--tint:#dceceb}
@@ -109,7 +109,7 @@ def render_article(doc):
             f'<details><summary>{escape(f["q"])}</summary><p>{escape(f["a"])}</p></details>' for f in doc["faqs"]) + "</section>"
     schema = [{"@context": "https://schema.org", "@type": "Article", "headline": doc["h1"], "description": doc["meta_description"],
                "datePublished": published.isoformat(), "dateModified": cms.get("updated_at") or published.isoformat(),
-               "author": {"@type": "Person", "name": author}, "publisher": {"@type": "Organization", "name": "Spaces"},
+               "author": {"@type": "Person", "name": author}, "publisher": {"@type": "Organization", "name": "Valora"},
                "mainEntityOfPage": url, **({"image": og_image} if og_image else {})}]
     if doc["faqs"]:
         schema.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
