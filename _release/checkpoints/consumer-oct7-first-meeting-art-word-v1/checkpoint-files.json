@@ -460,7 +460,7 @@
   "find-a-financial-advisor/under-250k/index.html": "c0952704e3b3b648fa7d85498e138bea8d6d9bd10dc24d4f5358d4cb0f813bb0",
   "find-a-financial-advisor/when-to-hire-a-financial-advisor/index.html": "3740f7ecc28786294358696a9ed1cdd1de8b1efc594964e4274640c28c3c2e3d",
   "find-your-advisor/index.html": "bd41f8a39e1eb050f2c6cc869be421c45b0bbfc515ce396ccf9b6dd08c543c3a",
-  "for-advisors/index.html": "4474659ec787082c0f22c3eac8c1450b17f096e6192a25be3b1ce810b61cc7d7",
+  "for-advisors/index.html": "982e17991428a80397f384b289fe37f8f29cbd7c2ea77e5fdd781da279af40b4",
   "guides/index.html": "14bb8f8cf44d5644964b143348d1dfcb88c2849d1e661f13a902769bea4142c6",
   "index.html": "010cc4a04df6c20937d96bd3ffb9ff55ca235d32ed696603ea4b10c2d883127f",
   "insights/beneficiary-forms-override-will/index.html": "177b56e7a054ab369f5ee2f766ec30e59dce5b1e0f5d15599bce8736b1559ff2",
@@ -577,5 +577,7 @@
   "find-a-financial-advisor/insured-cash/index.html": "266f9b615a9dd0742c2b7c9552a4e72851ab4cf9a29f01e0bcfaf0e9856770a4",
   "guides/compare-closing-disclosure-to-loan-estimate/index.html": "c066abcb17ae8104d85569998157ac72c0044fb19f82dde176eaf5439d13e051",
   "guides/credit-account-you-did-not-open/index.html": "078ce883ffaeb12cd91e81ed0eda1b2d24d0db22da66bff5da80daa300bcd615",
-  "guides/how-to-read-a-mortgage-loan-estimate/index.html": "34048d6965b08366a571fb69e2852d98cdd941eff2f5dfb825fed1bf85676417"
+  "guides/how-to-read-a-mortgage-loan-estimate/index.html": "34048d6965b08366a571fb69e2852d98cdd941eff2f5dfb825fed1bf85676417",
+  "assets/advisor-landing-proof-v1.css": "b54ec60024d66e8b2fa70fa32eda2fb09fe45d4191db4d776d2b8b7a57bb8cc7",
+  "assets/advisor-latest-articles-v1.js": "8fbcb7cebd91d138718efb02e9c0687faaf0b523a6cb581bca440eb43b18ed2b"
 }

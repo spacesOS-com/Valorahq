@@ -1,0 +1,41 @@
+/* /for-advisors/: case study, "why advisory firms choose Valora" and the comparison table. */
+.advx-case__grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); align-items:center; }
+.advx-case__copy .advx-h2,.advx-case__copy .advx-lead{ text-align:left; margin-left:0; }
+.advx-case__copy .advx-h2{ margin-top:18px; }
+.advx-case__stats{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px; }
+.advx-case__stats strong{ display:block; font-size:clamp(1.7rem,3vw,2.3rem); font-weight:600; letter-spacing:-.03em; color:var(--green); line-height:1.1; }
+.advx-case__stats span{ display:block; margin-top:6px; font-size:.84rem; line-height:1.4; color:var(--ink-soft); }
+.advx-case__chart{ background:#fff; border:1px solid var(--line); border-radius:22px; padding:clamp(22px,3vw,32px); box-shadow:0 14px 40px rgba(22,25,15,.06); }
+.advx-case__chart h3{ font-size:.95rem; font-weight:600; color:var(--ink); margin-bottom:18px; }
+.advx-case__chart ul{ display:grid; gap:14px; }
+.advx-case__chart li{ display:grid; grid-template-columns:minmax(0,1fr) 56px; gap:6px 12px; align-items:center; }
+.advx-case__name{ grid-column:1 / -1; font-size:.86rem; color:var(--ink-soft); }
+.advx-case__bar{ display:block; height:12px; border-radius:999px; background:#eeece4; overflow:hidden; }
+.advx-case__bar i{ display:block; height:100%; border-radius:999px; background:#b9bdb0; }
+.advx-case__n{ font-size:.95rem; font-weight:600; text-align:right; font-variant-numeric:tabular-nums; color:var(--ink); }
+.advx-case__chart li.is-ours .advx-case__bar i{ background:var(--green); }
+.advx-case__chart li.is-ours .advx-case__name{ color:var(--ink); font-weight:600; }
+.advx-case__key{ display:flex; align-items:center; gap:8px; margin-top:18px; font-size:.8rem; color:var(--ink-soft); }
+.advx-case__key i{ width:12px; height:12px; border-radius:999px; background:var(--green); }
+.advx-case__note{ grid-column:1 / -1; margin-top:0; }
+
+.advx-reasons .advx-cards{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+
+.advx-cmp__wrap{ margin-top:clamp(32px,5vw,52px); overflow-x:auto; border:1px solid var(--line); border-radius:22px; background:#fff; box-shadow:0 14px 40px rgba(22,25,15,.06); }
+.advx-cmp{ width:100%; min-width:640px; border-collapse:collapse; font-size:.95rem; }
+.advx-cmp th,.advx-cmp td{ padding:18px 20px; text-align:center; border-bottom:1px solid var(--line); vertical-align:middle; }
+.advx-cmp tbody tr:last-child th,.advx-cmp tbody tr:last-child td{ border-bottom:0; }
+.advx-cmp thead th{ font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; }
+.advx-cmp tbody th{ text-align:left; font-weight:500; color:var(--ink); }
+.advx-cmp .is-us{ background:#eef3ec; color:var(--green); font-weight:600; }
+.advx-cmp thead .is-us{ color:var(--green); font-size:.95rem; letter-spacing:0; text-transform:none; }
+.advx-cmp td{ color:var(--ink-soft); }
+.advx-cmp .yes::before{ content:"✓"; display:inline-block; margin-right:6px; font-weight:700; color:var(--green); }
+.advx-cmp .no::before{ content:"✕"; display:inline-block; margin-right:6px; color:#a2543f; }
+
+@media(max-width:900px){
+  .advx-case__grid{ grid-template-columns:1fr; }
+  .advx-case__stats{ grid-template-columns:1fr 1fr; }
+  .advx-reasons .advx-cards{ grid-template-columns:1fr; }
+}
+.advx-cmp .visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
