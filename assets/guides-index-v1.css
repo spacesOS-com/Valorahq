@@ -1,0 +1,17 @@
+/* /guides/: every published guide, grouped, each with its illustration. */
+.gidx-head{ max-width:760px; }
+.gidx-head p{ margin-top:18px; font-size:1.05rem; line-height:1.65; color:var(--ink-soft); }
+.gidx-group{ margin-top:clamp(40px,6vw,64px); }
+.gidx-group h2{ font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(1.5rem,2.6vw,2rem); color:var(--ink); }
+.gidx-group > p{ margin-top:8px; color:var(--ink-soft); max-width:62ch; line-height:1.6; }
+.gidx-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.4vw,28px); margin-top:24px; }
+.gidx-card{ display:flex; flex-direction:column; background:#fff; border:1px solid var(--line); border-radius:20px; overflow:hidden; color:inherit; text-decoration:none; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.gidx-card:hover{ transform:translateY(-4px); box-shadow:0 18px 44px rgba(22,25,15,.09); border-color:var(--green); }
+.gidx-card__art{ aspect-ratio:16 / 9; background:#F3E8D3; overflow:hidden; }
+.gidx-card__art img{ width:100%; height:100%; object-fit:cover; display:block; }
+.gidx-card__body{ display:flex; flex-direction:column; gap:10px; padding:22px 24px 24px; flex:1; }
+.gidx-card h3{ font-size:1.12rem; font-weight:600; line-height:1.3; color:var(--ink); }
+.gidx-card p{ font-size:.93rem; line-height:1.55; color:var(--ink-soft); }
+.gidx-card span{ margin-top:auto; padding-top:6px; font-size:.9rem; font-weight:600; color:var(--green); }
+.gidx-foot{ margin-top:clamp(40px,6vw,64px); }
+@media(max-width:900px){ .gidx-grid{ grid-template-columns:1fr; } }
