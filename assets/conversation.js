@@ -2,6 +2,8 @@
  * contract, never guessed here. No request is sent when the endpoint is unset. */
 (function () {
   'use strict';
+  // Temporarily hidden site-wide at owner request. Remove this return to restore.
+  return;
   var host = document.getElementById('valora-conversation');
   if (!host) return;
   var path = location.pathname;
