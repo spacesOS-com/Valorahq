@@ -715,14 +715,30 @@
   function prefillLocation() {
     var fields = $$('input[name="location"]').filter(function (el) { return !el.value; });
     if (!fields.length) return;
-    fetch('https://ipapi.co/json/')
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (!d || !d.city || d.error) return;
-        var loc = d.region_code ? d.city + ', ' + d.region_code : d.city;
-        fields.forEach(function (el) { if (!el.value) el.value = loc; });
-      })
-      .catch(function () { /* offline, blocked, or rate-limited — field just stays blank */ });
+    var request;
+    function allowed() {
+      try { return localStorage.getItem('valora_vendor_consent_v1') === 'granted'; }
+      catch (e) { return false; }
+    }
+    function run() {
+      if (!allowed()) return;
+      if (request) request.abort();
+      request = new AbortController();
+      fetch('https://ipapi.co/json/', { signal: request.signal })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d || !d.city || d.error) return;
+          var loc = d.region_code ? d.city + ', ' + d.region_code : d.city;
+          fields.forEach(function (el) { if (!el.value) el.value = loc; });
+        })
+        .catch(function () { /* offline, blocked, aborted, or rate-limited — field stays blank */ });
+    }
+    if (allowed()) run();
+    document.addEventListener('valora:vendor-consent', function (e) {
+      if (!e.detail) return;
+      if (e.detail.state === 'granted') run();
+      else if (request) request.abort();
+    });
   }
 
   /* ---------------------------------------------------------
