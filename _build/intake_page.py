@@ -155,7 +155,8 @@ def build_intake_page(write_fn):
     html = page(
         head("Tell Us What You Need | Valora",
              "Answer four quick questions. We review each request by hand and email you about next steps.",
-             path="/find-your-advisor/", schema=faq_schema(INTAKE_FAQS)),
+             path="/find-your-advisor/", schema=faq_schema(INTAKE_FAQS),
+             eligibility={"cohort": "gated-route", "presentation": "matching", "implies_matching": True}),
         intake_body(),
     )
     write_fn("/find-your-advisor/", html)

@@ -31,7 +31,8 @@ from concierge_page import build_concierge_page
 from conversation_assets import prepare_conversation_surfaces
 from developers_page import build_developers_page
 from navigation_placeholders import build_navigation_placeholders
-from business_owner_page import build_business_owner_page, BUSINESS_OWNER_INDEXABLE, BUSINESS_OWNER_PATH
+from business_owner_page import build_business_owner_page, BUSINESS_OWNER_PATH, business_owner_decision
+from indexing_eligibility import catalog_include, audit_public_tree
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://www.valorahq.com"
@@ -65,7 +66,9 @@ PAGES = [
 ] + [
     (path, desc) for path, desc in us_real_pages()
 ] if DIRECTORY_ENABLED else []) + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
-] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS if not c.get("noindex") and c["slug"] != "roth-ira-growth"
+] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS
+     if catalog_include(f"/calculators/{c['slug']}/", bool(c.get("noindex")), {"cohort": "baseline", "presentation": "calculator"})
+     and c["slug"] != "roth-ira-growth"
 ] + [(f"/calculators/{cat.lower().replace(' ', '-')}/", f"{cat} calculators on Valora.") for cat in CATEGORIES]
 
 
@@ -142,7 +145,8 @@ def build_directory_placeholders():
         body = f'<section class="container" style="padding-block:96px 64px;min-height:45vh"><p class="eyebrow">Being prepared</p><h1>{title}</h1><p>This section is being prepared. Advisor listings are not available here yet.</p><p><a href="/guides/">Read financial planning guides</a> or <a href="/calculators/">explore calculators</a>.</p></section>'
         write(f"/{slug}/", page(head(f"{title} - Being prepared | Valora",
               "This section is being prepared. Advisor listings are not available here yet.",
-              path=f"/{slug}/", noindex=True), body))
+              path=f"/{slug}/", noindex=True,
+              eligibility={"cohort": "draft", "draft": True, "presentation": "placeholder"}), body))
 
 
 def refresh_guides_footer():
@@ -235,11 +239,20 @@ Sitemap: {SITE_URL}/sitemap.xml
 """)
 
 
+def _catalog_pages(pages):
+    """Keep a base-listed page only when the shared eligibility decision agrees."""
+    kept = []
+    for path, desc in pages:
+        if catalog_include(path, False, {"cohort": "baseline", "presentation": "baseline"}):
+            kept.append((path, desc))
+    return kept
+
+
 def build_sitemap():
     import datetime
     today = datetime.date.today().isoformat()
-    sitemap_pages = list(PAGES)
-    if BUSINESS_OWNER_INDEXABLE:
+    sitemap_pages = _catalog_pages(PAGES)
+    if not business_owner_decision():
         sitemap_pages.append((BUSINESS_OWNER_PATH, "Educational guide to choosing financial help for business owners."))
     urls = "\n".join(
         f"""  <url>
@@ -255,7 +268,8 @@ def build_sitemap():
 
 
 def build_llms():
-    lines = "\n".join(f"- [{SITE_URL}{path}]({SITE_URL}{path}): {desc}" for path, desc in PAGES)
+    listed = _catalog_pages(PAGES)
+    lines = "\n".join(f"- [{SITE_URL}{path}]({SITE_URL}{path}): {desc}" for path, desc in listed)
     write("/llms.txt", f"""# {BRAND}
 
 > Valora publishes educational information about financial planning and accepts
@@ -271,7 +285,7 @@ def build_llms():
     # read the whole site without following links. Built from the same
     # source the pages are built from, so it can't drift out of sync.
     sections = []
-    for path, desc in PAGES:
+    for path, desc in listed:
         if path == "/" or path.endswith("/"):
             file_path = os.path.join(ROOT, path.strip("/"), "index.html")
         else:
@@ -322,6 +336,7 @@ if __name__ == "__main__":
     build_robots()
     build_sitemap()
     build_llms()
+    audit_public_tree(ROOT)
     # Freeze already-reviewed custom shells. Source reconciliation must not
     # introduce dynamic-feed or tracker changes into these surfaces.
     # Advisor sales page excluded pending its separate claim/content gate.

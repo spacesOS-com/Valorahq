@@ -10,6 +10,9 @@ is still marked noindex (see partials.head): it stays live and useful for
 a visitor who lands on it, but isn't presented to search engines as if it
 were a genuine local/specialty match. Only pages with a real match are
 indexed and listed in the sitemap (see build.py's PAGES / real_pages()).
+Niche and asset rosters stay noindex: a general roster is not advisor supply.
+An educational guide is a separate renderer and can qualify only through the
+indexing manifest, without implying verified specialists or matching.
 
 Combo pages (city + specialty together) are built only where a real advisor
 actually matches both — not the full city x specialty cross-product, which
@@ -28,7 +31,18 @@ from directory_faqs import DIRECTORY_FAQS
 from directory_profession_guides import PROFESSION_GUIDES
 from directory_specialty_guides import SPECIALTY_GUIDES
 from directory_held_guides import HELD_GUIDES
+from indexing_eligibility import catalog_include
 from partials import faq_schema, faq_block
+
+
+def _directory_eligibility(supply_matched):
+    return {
+        "cohort": "directory-supply",
+        "supply_matched": bool(supply_matched),
+        "presentation": "directory-roster",
+        "implies_verified_specialists": True,
+        "implies_matching": False,
+    }
 
 
 def _advisor_card(a):
@@ -157,8 +171,13 @@ def _specialty_matches(needles):
 
 
 def _write_listing(write_fn, slug, meta_title, meta_desc, eyebrow, title, intro, matches, empty_note, calc_categories=None, faq=None):
+    niche = slug in {n[0] for n in NICHES}
+    # Niches stay noindex even if a roster card exists. Asset and city pages
+    # stay noindex until a real advisor match supplies the page.
+    requested_noindex = niche or not matches
     html = page(
-        head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=(slug in {n[0] for n in NICHES} or not matches),
+        head(meta_title, meta_desc, path=f"/find-a-financial-advisor/{slug}/", noindex=requested_noindex,
+             eligibility=_directory_eligibility(bool(matches) and not niche),
              schema=faq_schema(faq) if faq else ""),
         _listing_body(eyebrow, title, intro, matches, empty_note, calc_categories, faq=faq, guide=_illustrated_guide(slug, PROFESSION_GUIDES.get(slug, SPECIALTY_GUIDES.get(slug, HELD_GUIDES.get(slug, ""))))) + floating_cta(slug),
         with_gate=True,
@@ -175,16 +194,22 @@ def real_pages():
     what to render, so the two can never drift apart."""
     out = []
     for slug, label, needles in SPECIALTIES:
-        if _specialty_matches(needles):
+        matches = bool(_specialty_matches(needles))
+        path = f"/find-a-financial-advisor/{slug}/"
+        if catalog_include(path, not matches, _directory_eligibility(matches)):
             out.append((slug, f"Explore {label.lower()} questions and topic-tagged advisor profiles on Valora; tags do not verify expertise."))
     for slug, city in CITIES:
-        if [a for a in ADVISORS if a["city"] == city]:
+        matches = bool([a for a in ADVISORS if a["city"] == city])
+        path = f"/find-a-financial-advisor/{slug}/"
+        if catalog_include(path, not matches, _directory_eligibility(matches)):
             out.append((slug, f"Financial advisors in {city} on Valora."))
     # Niches remain excluded from the sitemap even if a future fallback roster
     # is populated. A roster card alone does not establish niche-specific fit.
     # Asset types have no tagged matches today either.
     for city_slug, city, spec_slug, label in real_combos():
-        out.append((f"{city_slug}-{spec_slug}", f"{label} advisors in {city} on Valora."))
+        path = f"/find-a-financial-advisor/{city_slug}-{spec_slug}/"
+        if catalog_include(path, False, _directory_eligibility(True)):
+            out.append((f"{city_slug}-{spec_slug}", f"{label} advisors in {city} on Valora."))
     return out
 
 
@@ -269,6 +294,8 @@ def build_directory_pages(write_fn):
             head(f"{label} Advisors in {city} | {BRAND}",
                  f"Independent, fiduciary {label.lower()} advisors on Valora based in {city}.",
                  path=f"/find-a-financial-advisor/{combo_slug}/",
+                 noindex=False,
+                 eligibility=_directory_eligibility(True),
                  schema=faq_schema(DIRECTORY_FAQS[f"{city_slug}-{spec_slug}"]) if f"{city_slug}-{spec_slug}" in DIRECTORY_FAQS else ""),
             _listing_body(f"{city} · {label}", f"{label} advisors in {city}",
                           f"Independent advisors on Valora who specialize in {label.lower()} and are based in {city}.",

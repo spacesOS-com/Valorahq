@@ -11,4 +11,5 @@ def build_navigation_placeholders(write_fn, site_root):
         if target.exists() and "<!-- valora-navigation-placeholder -->" not in target.read_text(encoding="utf-8"):
             continue
         body = f'<!-- valora-navigation-placeholder --><section class="section section--paper"><div class="container" style="max-width:700px"><h1>{escape(label)}</h1><p>This page is being prepared.</p></div></section>'
-        write_fn(path, page(head(f"{label} | Valora", "This page is being prepared.", path=path, noindex=True), body))
+        write_fn(path, page(head(f"{label} | Valora", "This page is being prepared.", path=path, noindex=True,
+                                  eligibility={"cohort": "draft", "draft": True, "presentation": "placeholder"}), body))

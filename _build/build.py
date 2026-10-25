@@ -13,6 +13,13 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
 
 def verify():
+    sys.path.insert(0, str(ROOT / '_build'))
+    from indexing_eligibility import ManifestError, audit_public_tree
+    try:
+        audit_public_tree(ROOT)
+    except ManifestError as exc:
+        print(json.dumps({'status': 'FAIL', 'indexing_eligibility': str(exc)}))
+        return False
     manifest = json.loads((CHECKPOINT / 'checkpoint-files.json').read_text())
     bad = [p for p, sha in manifest.items() if digest(ROOT / p) != sha]
     public = json.loads((CHECKPOINT / 'public-output.json').read_text())
