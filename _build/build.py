@@ -7,7 +7,7 @@ manifest revision, not an automatic restore or acceptance flag.
 from pathlib import Path
 import argparse, hashlib, json, shutil, subprocess, tempfile, sys
 ROOT = Path(__file__).resolve().parent.parent
-CHECKPOINT = ROOT / '_release/checkpoints/consumer-oct7-first-meeting-art-word-v1'
+CHECKPOINT = ROOT / '_release/checkpoints/consumer-oct25-vendor-consent-v1'
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None

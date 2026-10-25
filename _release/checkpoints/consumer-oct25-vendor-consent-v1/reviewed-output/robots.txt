@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /insights/ghost/
+Disallow: /insights/email/
+Disallow: /insights/members/
+
+Sitemap: https://www.valorahq.com/sitemap.xml

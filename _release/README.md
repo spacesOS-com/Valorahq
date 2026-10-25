@@ -49,8 +49,14 @@ Original tech-art-v1 provenance remains unchanged. Full host487 apply/readback r
 Zara live pixel verification remains tracked separately. Expected page hash after four substitutions:
 8912741fdf10da79e0f9bc296d9d0d7b2e476bf9290b162692e7191299e12472.
 Six new assets belong under assets/prepare-first-financial-advisor-meeting/.
-Active validator points to the revised seven-path checkpoint.
+That checkpoint remains the reviewed record of the seven-path promotion.
 No inspection/preview HTML is deployment source.
+
+## Active validator
+
+`python3 _build/build.py` validates `_release/checkpoints/consumer-oct25-vendor-consent-v1`.
+
+`consumer-oct7-first-meeting-art-word-v1` and `consumer-oct7-tech-art-v1` stay the previously reviewed bytes, including their `reviewed-output/` trees and manifests. `_build/live-reviewed/` stays the frozen generator input. The October 25 checkpoint records the working-tree hashes for the vendor-consent scope, including `reviewed-output/` copies of the quarantined drift paths. October 7 host receipts stay in the previous checkpoint only. The new directory follows the guarded-promotion shape: a new checkpoint, prior reviewed bytes left in place.
 
 The first-meeting pagepack/original authoring archive was not recovered.
 Current HTML and SVG bytes are release provenance, not authoring provenance.
