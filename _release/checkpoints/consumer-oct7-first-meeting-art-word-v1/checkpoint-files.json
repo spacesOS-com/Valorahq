@@ -2,6 +2,7 @@
   ".github/workflows/claude.yml": "122d821c5d11a4cdf8b4f020f27063e0a938aab2e82689b976afd3eaa8689bbf",
   ".gitignore": "35d0dbbc4072521859fa32721933a99b9d3ea252d5527c1c6816299d6786b587",
   "_build/advisor-v33-copy.md": "b53552fe4e6f31c80c6b2631755e58293c41a4b9c3ffa4524131f18ea9e266e7",
+  "_build/advisor-insights-move.md": "47ae617bc1a4ff7681ba2ed9934110cbfae4cf38b40e2cb6908e29d3fd5f07f7",
   "_build/advisor_insight_routes.json": "8a6adc14992749f053f34e7b1d89534d4a07e51e9be1006a163286679d491ee3",
   "_build/advisor_pages.py": "2633e389010a36df5fa0542c02e03a9c032cafe5d0b31e827f3b9865081c8007",
   "_build/advisors_page.py": "17a1aad039d838de2b644d58559ceb14a02a0a395c5633f620f8f9cf13f38cf5",
