@@ -18,7 +18,8 @@ from html import escape
 
 from partials import page, head, BRAND, contact_section, DIRECTORY_CITIES
 from advisor_pages import ADVISORS
-from directory_pages import _advisor_card
+from directory_pages import _advisor_card, _directory_eligibility
+from indexing_eligibility import catalog_include
 
 STATE_NAMES = {
     "NY": "New York", "CA": "California", "IL": "Illinois", "TX": "Texas",
@@ -131,7 +132,8 @@ def build_us_directory(write_fn):
                       page(head(f"Top Financial Advisors in {label} | {BRAND}",
                                 f"Independent, fiduciary financial advisors in {label} on Valora.",
                                 path=f"/top-financial-advisors/{state_slug}/{city_slug}/",
-                                noindex=not matches),
+                                noindex=not matches,
+                                eligibility=_directory_eligibility(bool(matches))),
                            city_body))
 
 
@@ -146,7 +148,8 @@ def real_pages():
     out = []
     for abbr, state_name, state_slug, cities in _by_state():
         for city_slug, label in cities:
-            if [a for a in ADVISORS if a["city"] == label]:
-                out.append((f"/top-financial-advisors/{state_slug}/{city_slug}/",
-                             f"Top financial advisors in {label} on Valora."))
+            matched = bool([a for a in ADVISORS if a["city"] == label])
+            path = f"/top-financial-advisors/{state_slug}/{city_slug}/"
+            if matched and catalog_include(path, False, _directory_eligibility(True)):
+                out.append((path, f"Top financial advisors in {label} on Valora."))
     return out

@@ -249,7 +249,12 @@ POSTHOG_SNIPPET = r"""<script>
 </script>"""
 
 
-def head(title, description, path="/", schema="", noindex=False, keywords=None, social_image=None, social_image_alt=None, social_type="website"):
+def head(title, description, path="/", schema="", noindex=False, keywords=None, social_image=None, social_image_alt=None, social_type="website", eligibility=None):
+    # eligibility=False skips the manifest so a caller can hash a provisional
+    # render. The default consults the same decision the sitemap uses.
+    if eligibility is not False:
+        from indexing_eligibility import get_manifest, resolved_noindex
+        noindex = resolved_noindex(path, noindex, eligibility, get_manifest())
     canonical = SITE_URL + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex,follow">\n' if noindex else ""
     social = ""

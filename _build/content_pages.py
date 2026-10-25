@@ -23,8 +23,20 @@ import json
 import os
 import re
 
+from indexing_eligibility import catalog_include
 from partials import page, head, faq_schema, faq_block, contact_section, escape, BRAND
 from calculator_pages import CALCULATORS
+
+
+def _content_eligibility(pack):
+    draft = bool(pack.get("_draft"))
+    return {
+        "cohort": "draft" if draft else "baseline",
+        "draft": draft,
+        "presentation": "content-page",
+        "implies_verified_specialists": False,
+        "implies_matching": False,
+    }
 
 PACK_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "content-packs")
 
@@ -425,7 +437,7 @@ def render(pack):
         head(pack["meta_title"], pack["meta_description"],
              path=f"/{pack['slug']}/", schema=((faq_schema(faq_pairs) if faq_pairs else "") + _cms_schema(pack)),
              keywords=list(dict.fromkeys((pack.get("keywords") or []) + (pack.get("tags") or []))),
-             noindex=pack.get("_draft", False), **social),
+             noindex=pack.get("_draft", False), eligibility=_content_eligibility(pack), **social),
         _body(pack),
         with_gate=True,
     )
@@ -436,6 +448,7 @@ def build_content_pages(write_fn):
     built = []
     for pack in load_packs():
         write_fn(f"/{pack['slug']}/", render(pack))
-        if not pack.get("_draft", False):
-            built.append((f"/{pack['slug']}/", pack["meta_description"]))
+        path = f"/{pack['slug']}/"
+        if catalog_include(path, pack.get("_draft", False), _content_eligibility(pack)):
+            built.append((path, pack["meta_description"]))
     return built

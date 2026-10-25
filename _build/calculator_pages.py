@@ -1053,7 +1053,8 @@ def build_calculator_pages(write_fn):
         schema = faq_schema([(f"How is the {c['title'].lower()} calculated?", c["note"])])
         html = page(
             head(f"{c['title']} | {BRAND}", c["summary"], path=f"/calculators/{c['slug']}/", schema=schema,
-                 noindex=c.get("noindex", False)),
+                 noindex=c.get("noindex", False),
+                 eligibility={"cohort": "baseline", "presentation": "calculator"}),
             _calc_body(c),
             with_gate=True,
         )

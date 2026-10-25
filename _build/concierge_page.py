@@ -16,6 +16,7 @@ def build_concierge_page(write_fn):
 </section>
 """
     write_fn('/concierge/', page(
-        head(f"Ask Valora | {BRAND}", "Valora's AI guide is not available to chat yet. You can send a question for a person to review.", path='/concierge/', noindex=True),
+        head(f"Ask Valora | {BRAND}", "Valora's AI guide is not available to chat yet. You can send a question for a person to review.", path='/concierge/', noindex=True,
+             eligibility={"cohort": "gated-route", "presentation": "gated-route", "implies_matching": False}),
         body,
     ))
