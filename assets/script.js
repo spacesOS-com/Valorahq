@@ -488,7 +488,7 @@
      field wrappers marked [data-field] get .has-error.
      --------------------------------------------------------- */
   var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx4mCwhZBQS-0W-UAybBeIJm67scGp4cpwAR_19l4g-FSa-XacfhNyOAPT0W0CEd0uc/exec';
-  var LEAD_FAIL = 'We could not confirm that request. Please email barot@valorahq.com and mention that you tried the form. Do not submit it again yet.';
+  var LEAD_FAIL = 'We could not confirm that request. Please try the inquiry form again later. Do not submit it again yet.';
 
   var LEAD_MSGS = {
     name:     'Please enter your name.',

@@ -11,7 +11,7 @@ the reader to talk with an advisor about their own situation.
 """
 from html import escape
 
-from partials import page, head, BRAND, SITE_URL, contact_section, EMAIL, article_schema
+from partials import page, head, BRAND, SITE_URL, contact_section, article_schema
 
 AUTHOR = "Bhavya Barot"
 PUBLISHED = "2026-09-28"
@@ -56,6 +56,7 @@ ARTICLES = [
     },
     {
         "slug": "family-conversation-before-retirement",
+        "meta_title": "Family conversations before retirement | Valora",
         "category": "Family",
         "read": "5 min read",
         "image": "https://images.unsplash.com/photo-1758691031787-90867cb6fb2c?auto=format&fit=crop&w=1600&q=80",
@@ -194,7 +195,7 @@ ARTICLES = [
         "read": "4 min read",
         "image": None,
         "title": "Beneficiary forms quietly override your will",
-        "summary": "For many retirement accounts, life insurance, and bank accounts, the beneficiary form usually decides who gets the money, not the will. Spouse-consent rules, community-property laws, and plan terms can override the form.",
+        "summary": "Some accounts pay the person named on a beneficiary form instead of following your will. What to check, with FINRA, IRS and National Institute on Aging sources.",
         "body": [
             "A will governs the distribution of assets that go through probate. Many common assets, "
             "though, pass directly to whoever is named on a beneficiary designation form, regardless of "
@@ -248,6 +249,17 @@ def _article_body(a):
 """
 
 
+def _document_title(article):
+    """Keep the visible H1, but the <title> stays within 65 characters."""
+    if article.get("meta_title"):
+        return article["meta_title"]
+    full = f"{article['title']} | {BRAND} Insights"
+    if len(full) <= 65:
+        return full
+    short = f"{article['title']} | {BRAND}"
+    return short if len(short) <= 65 else full
+
+
 def build_insights_pages(write_fn):
     for a in ARTICLES:
         url = f"{SITE_URL}/insights/{a['slug']}/"
@@ -260,10 +272,11 @@ def build_insights_pages(write_fn):
             image=a["image"],
         )
         html = page(
-            head(f"{a['title']} | {BRAND} Insights",
+            head(_document_title(a),
                  a["summary"],
                  path=f"/insights/{a['slug']}/",
-                 schema=schema),
+                 schema=schema,
+                 social_type="article"),
             _article_body(a),
             with_gate=True,
         )
