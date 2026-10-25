@@ -17,7 +17,8 @@ at this site's current size would mean dozens of near-identical empty
 pages, exactly the kind of thin/duplicate content that hurts SEO instead of
 helping it.
 """
-from html import escape
+from html import escape, unescape
+import os
 import re
 
 from partials import (page, head, BRAND, contact_section, floating_cta,
@@ -376,3 +377,85 @@ def build_professions_index(write_fn):
 def build_asset_types_index(write_fn):
     """/asset-types/ — asset-range pages only."""
     _single_column_index(write_fn, "asset-types", "Asset Range", ASSET_TYPES)
+
+
+def _advisor_child_label(html, slug):
+    """Card label and blurb taken from the child page's own title and description."""
+    title = re.search(r"<title>(.*?)</title>", html, re.I | re.S)
+    label = unescape(re.sub(r"\s+", " ", title.group(1))).strip() if title else slug
+    label = re.sub(r"\s*\|\s*Valora\s*$", "", label).strip() or slug
+    desc = re.search(r'<meta[^>]*name="description"[^>]*content="([^"]*)"', html, re.I)
+    if not desc:
+        desc = re.search(r'<meta[^>]*content="([^"]*)"[^>]*name="description"', html, re.I)
+    blurb = unescape(desc.group(1)).strip() if desc else ""
+    return label, blurb
+
+
+def build_find_advisor_hub(write_fn, root):
+    """Index for /find-a-financial-advisor/, linking every child page that exists."""
+    from partials import (DIRECTORY_CITIES, DIRECTORY_SPECIALTIES, DIRECTORY_NICHES,
+                          DIRECTORY_ASSET_TYPES)
+    base = os.path.join(root, "find-a-financial-advisor")
+    pages = []
+    if os.path.isdir(base):
+        for name in sorted(os.listdir(base)):
+            index = os.path.join(base, name, "index.html")
+            if not os.path.isfile(index):
+                continue
+            with open(index, encoding="utf-8") as handle:
+                html = handle.read()
+            label, blurb = _advisor_child_label(html, name)
+            pages.append({"slug": name, "label": label, "blurb": blurb})
+    groups = [
+        ("Guides", set()),
+        ("Planning topics", {slug for slug, _label, _tags in DIRECTORY_SPECIALTIES}),
+        ("Professions", {slug for slug, _label in DIRECTORY_NICHES}),
+        ("Cities", {slug for slug, _label in DIRECTORY_CITIES}),
+        ("Asset ranges", {slug for slug, _label in DIRECTORY_ASSET_TYPES}),
+    ]
+    assigned = set()
+    sections = []
+    # Guides are whatever is not one of the directory buckets, so a new child
+    # page shows up here without a second registry edit.
+    known = set().union(*(slugs for _name, slugs in groups[1:]))
+    grouped = {"Guides": [p for p in pages if p["slug"] not in known]}
+    assigned.update(p["slug"] for p in grouped["Guides"])
+    for name, slugs in groups[1:]:
+        grouped[name] = [p for p in pages if p["slug"] in slugs]
+        assigned.update(p["slug"] for p in grouped[name])
+    missing = [p["slug"] for p in pages if p["slug"] not in assigned]
+    if missing:
+        raise SystemExit("advisor hub missed child pages: " + ", ".join(missing))
+    for name, _slugs in groups:
+        items = sorted(grouped[name], key=lambda p: p["label"].lower())
+        if not items:
+            continue
+        cards = "\n".join(
+            f"""      <a class="blogcard reveal" href="/find-a-financial-advisor/{escape(p['slug'])}/">
+        <h3>{escape(p['label'])}</h3>
+        <p>{escape(p['blurb'])}</p>
+        <span class="blogcard__link">Read guide &rarr;</span>
+      </a>""" for p in items
+        )
+        sections.append(
+            f"<section><h2>{escape(name)}</h2>"
+            f'<div class="adv-blog__grid" style="margin-top:24px;">\n{cards}\n    </div></section>'
+        )
+    body = f"""
+<section class="section section--paper" id="top">
+  <div class="container">
+    <p class="eyebrow reveal">Guides</p>
+    <h1 class="display display--lg reveal">Find a financial advisor</h1>
+    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:62ch;">Educational guides on situations, professions, and planning topics. Valora publishes information and accepts questions. We are not arranging advisor matches or introductions at this time.</p>
+    {''.join(sections)}
+  </div>
+</section>
+{contact_section()}
+"""
+    write_fn("/find-a-financial-advisor/", page(
+        head("Find a Financial Advisor | Valora",
+             "Educational guides for finding and talking with a financial advisor, by city, profession, planning topic, and situation.",
+             path="/find-a-financial-advisor/",
+             social_image="/assets/home-paper-conversation.webp",
+             social_image_alt="Two people at a kitchen table reviewing papers together."),
+        body, with_gate=True))

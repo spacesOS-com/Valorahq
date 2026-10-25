@@ -268,3 +268,35 @@ def build_insights_pages(write_fn):
             with_gate=True,
         )
         write_fn(f"/insights/{a['slug']}/", html)
+    build_insights_index(write_fn)
+
+
+def build_insights_index(write_fn):
+    """Hub for /insights/. Article pages already exist; this index did not."""
+    cards = "\n".join(
+        f"""      <a class="blogcard reveal" href="/insights/{escape(a['slug'])}/">
+        <h3>{escape(a['title'])}</h3>
+        <p>{escape(a['summary'])}</p>
+        <span class="blogcard__link">Read article &rarr;</span>
+      </a>""" for a in ARTICLES
+    )
+    body = f"""
+<section class="section section--paper" id="top">
+  <div class="container">
+    <p class="eyebrow reveal">Insights</p>
+    <h1 class="display display--lg reveal">Financial planning insights</h1>
+    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Educational articles on retirement income, Roth conversions, equity compensation, and beneficiary paperwork. Not personalized advice.</p>
+    <div class="adv-blog__grid" style="margin-top:36px;">
+{cards}
+    </div>
+  </div>
+</section>
+{contact_section()}
+"""
+    write_fn("/insights/", page(
+        head("Financial Planning Insights | Valora",
+             "Educational articles on retirement income, Roth conversions, RSUs, and beneficiary forms.",
+             path="/insights/",
+             social_image="/assets/home-paper-investing.webp",
+             social_image_alt="Illustrated still life of a plant, coins, and a small house."),
+        body, with_gate=True))
