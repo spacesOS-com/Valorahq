@@ -53,7 +53,7 @@ PAGES = [
     ("/find-your-advisor/", "Tell us what you need: four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
     ("/calculators/", "Browse financial calculators by topic."),
-    ("/insights/", "Educational articles on retirement income, Roth conversions, RSUs, and beneficiary forms."),
+    ("/insights/", "Articles for households on retirement income, Roth conversions, RSUs, and beneficiary forms. Educational, not personalized advice."),
     ("/find-a-financial-advisor/", "Educational guides for finding and talking with a financial advisor."),
 ] + ([
     ("/cities/", "Browse financial advisors by city."),
@@ -229,9 +229,12 @@ def build_redirects():
 def build_robots():
     write("/robots.txt", f"""User-agent: *
 Allow: /
-Disallow: /cms/
-Disallow: /api/
-Disallow: /_insights-site/
+Disallow: /insights/ghost/
+Disallow: /insights/email/
+Disallow: /insights/members/
+Disallow: /for-advisors/insights/ghost/
+Disallow: /for-advisors/insights/email/
+Disallow: /for-advisors/insights/members/
 
 Sitemap: {SITE_URL}/sitemap.xml
 """)
@@ -319,19 +322,71 @@ def _existing_sitemap_paths():
     return paths
 
 
+def build_home_mortgage_redirect():
+    """Keep the old ampersand path from 404ing on a static file host.
+
+    nginx (or Traefik in front of it) should 301 this path. The HTML file is
+    the fallback the static tree can express on its own: canonical points at
+    the new URL and browsers follow the refresh. It is not listed in the sitemap.
+    """
+    target = SITE_URL + NEW_MORTGAGE_PATH
+    write(OLD_MORTGAGE_PATH, f"""<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={xml_escape(target)}">
+<link rel="canonical" href="{xml_escape(target)}">
+<meta name="robots" content="noindex,follow">
+<title>Redirecting… | {BRAND}</title></head>
+<body><p>This page has moved to <a href="{xml_escape(target)}">{xml_escape(target)}</a>.</p></body></html>
+""")
+
+
+def advisor_insight_routes():
+    """Ghost and duplicate routes from the founder inventory.
+
+    The advisor posts are not files in this repo. Their sitemap entries omit
+    lastmod: inventing a date would not match a page this git tree has never stored.
+    """
+    src = os.path.join(ROOT, "_build", "advisor_insight_routes.json")
+    with open(src, encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def _blocked_insight_paths(routes):
+    """Old /insights/ URLs that must not stay in the sitemap once they move or redirect."""
+    blocked = {item["from"] for item in routes["advisor_posts"]}
+    blocked.add(routes["advisor_index"]["from"])
+    blocked.add(routes["chatgpt_page"]["from"])
+    blocked.update(item["from"] for item in routes["duplicate_redirects"])
+    return blocked
+
+
+def ghost_sitemap_paths(routes):
+    """Public URLs Ghost will serve after the subdirectory move. No lastmod."""
+    paths = [routes["advisor_index"]["to"]]
+    paths.extend(item["to"] for item in routes["advisor_posts"])
+    paths.append(routes["chatgpt_page"]["to"])
+    if len(paths) != len(set(paths)):
+        raise SystemExit("duplicate Ghost sitemap path")
+    return paths
+
+
 def sitemap_paths():
     """URLs already published, plus registry paths that exist on disk.
 
     Hand-added sitemap entries are kept when their page file is still there.
     The ampersand mortgage path is rewritten to the clean slug. Required hubs
     are added only when that page exists, so the file never lists a 404.
+    Advisor /insights/ URLs from the inventory are dropped; their new Ghost
+    addresses are appended without lastmod.
     """
+    routes = advisor_insight_routes()
+    blocked = _blocked_insight_paths(routes)
     ordered = []
     seen = set()
 
     def add(path, required=False):
         path = _normalize_sitemap_path(path)
-        if path in seen:
+        if path in seen or path in blocked:
             return
         if not _page_exists(path):
             if required:
@@ -351,38 +406,32 @@ def sitemap_paths():
     return ordered
 
 
-def build_home_mortgage_redirect():
-    """Keep the old ampersand path from 404ing on a static file host.
-
-    nginx (or Traefik in front of it) should 301 this path. The HTML file is
-    the fallback the static tree can express on its own: canonical points at
-    the new URL and browsers follow the refresh. It is not listed in the sitemap.
-    """
-    target = SITE_URL + NEW_MORTGAGE_PATH
-    write(OLD_MORTGAGE_PATH, f"""<!DOCTYPE html>
-<html lang="en-US"><head><meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url={xml_escape(target)}">
-<link rel="canonical" href="{xml_escape(target)}">
-<meta name="robots" content="noindex,follow">
-<title>Redirecting… | {BRAND}</title></head>
-<body><p>This page has moved to <a href="{xml_escape(target)}">{xml_escape(target)}</a>.</p></body></html>
-""")
-
-
 def build_sitemap():
+    routes = advisor_insight_routes()
     paths = sitemap_paths()
-    for path in paths:
+    ghost_paths = ghost_sitemap_paths(routes)
+    for path in list(paths) + ghost_paths:
         if "&" in path:
             raise SystemExit(f"sitemap path still contains an ampersand: {path}")
-    urls = "\n".join(
+    kept = set(routes["consumer_keep"])
+    for slug in kept:
+        if f"/insights/{slug}/" not in paths:
+            raise SystemExit(f"consumer insight dropped from sitemap: {slug}")
+    file_urls = "\n".join(
         f"""  <url>
     <loc>{xml_escape(SITE_URL + path)}</loc>
     <lastmod>{page_lastmod(path)}</lastmod>
   </url>""" for path in paths
     )
+    ghost_urls = "\n".join(
+        f"""  <url>
+    <loc>{xml_escape(SITE_URL + path)}</loc>
+  </url>""" for path in ghost_paths
+    )
     write("/sitemap.xml", f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{urls}
+{file_urls}
+{ghost_urls}
 </urlset>
 """)
 

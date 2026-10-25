@@ -3,5 +3,8 @@ Allow: /
 Disallow: /insights/ghost/
 Disallow: /insights/email/
 Disallow: /insights/members/
+Disallow: /for-advisors/insights/ghost/
+Disallow: /for-advisors/insights/email/
+Disallow: /for-advisors/insights/members/
 
 Sitemap: https://www.valorahq.com/sitemap.xml

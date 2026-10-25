@@ -233,7 +233,7 @@ def _article_body(a):
     return f"""
 <section class="section section--paper" id="top">
   <div class="container" style="max-width:700px;">
-    <a href="/#insights" class="btn btn--outline" style="margin-bottom:32px;">&larr; All insights</a>
+    <a href="/insights/" class="btn btn--outline" style="margin-bottom:32px;">&larr; All insights</a>
     <p class="post__meta">{escape(a['category'])} &middot; {escape(a['read'])}</p>
     <h1 class="display display--lg" style="margin-top:8px;">{escape(a['title'])}</h1>
     <p style="margin:16px 0 32px; color:var(--muted); font-size:.86rem;">By {escape(AUTHOR)} &middot; {PUBLISHED}</p>
@@ -283,9 +283,9 @@ def build_insights_index(write_fn):
     body = f"""
 <section class="section section--paper" id="top">
   <div class="container">
-    <p class="eyebrow reveal">Insights</p>
-    <h1 class="display display--lg reveal">Financial planning insights</h1>
-    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Educational articles on retirement income, Roth conversions, equity compensation, and beneficiary paperwork. Not personalized advice.</p>
+    <p class="eyebrow reveal">For households</p>
+    <h1 class="display display--lg reveal">Financial insights for households</h1>
+    <p class="reveal" style="margin-top:14px; color:var(--ink-soft); max-width:56ch;">Articles for households on retirement income, Roth conversions, RSUs, and beneficiary forms. Educational, not personalized advice.</p>
     <div class="adv-blog__grid" style="margin-top:36px;">
 {cards}
     </div>
@@ -294,8 +294,8 @@ def build_insights_index(write_fn):
 {contact_section()}
 """
     write_fn("/insights/", page(
-        head("Financial Planning Insights | Valora",
-             "Educational articles on retirement income, Roth conversions, RSUs, and beneficiary forms.",
+        head("Financial insights for households | Valora",
+             "Articles for households on retirement income, Roth conversions, RSUs, and beneficiary forms. Educational, not personalized advice.",
              path="/insights/",
              social_image="/assets/home-paper-investing.webp",
              social_image_alt="Illustrated still life of a plant, coins, and a small house."),

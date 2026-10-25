@@ -1,0 +1,373 @@
+{
+  "description": "Derived from the founder inventory. Advisor posts are Ghost content, not files in this repo. lastmod is omitted for these URLs because this repo has no git history for them.",
+  "ghost_url": "https://www.valorahq.com/for-advisors/insights",
+  "consumer_keep": [
+    "beneficiary-forms-override-will",
+    "family-conversation-before-retirement",
+    "market-drop-before-retirement",
+    "realistic-withdrawal-rate-today",
+    "rsus-bonus-not-lottery-ticket",
+    "when-roth-conversion-worth-tax-bill"
+  ],
+  "advisor_posts": [
+    {
+      "slug": "ai-search-is-eating-the-referral-game-heres-what-advisors-do-in-the-next-12-months",
+      "from": "/insights/ai-search-is-eating-the-referral-game-heres-what-advisors-do-in-the-next-12-months/",
+      "to": "/for-advisors/insights/ai-search-is-eating-the-referral-game-heres-what-advisors-do-in-the-next-12-months/"
+    },
+    {
+      "slug": "geo-vs-seo-advisory-firm-website",
+      "from": "/insights/geo-vs-seo-advisory-firm-website/",
+      "to": "/for-advisors/insights/geo-vs-seo-advisory-firm-website/"
+    },
+    {
+      "slug": "how-can-an-advisory-firm-check-what-ai-answers-say-about-it-a-20-question-starter-panel",
+      "from": "/insights/how-can-an-advisory-firm-check-what-ai-answers-say-about-it-a-20-question-starter-panel/",
+      "to": "/for-advisors/insights/how-can-an-advisory-firm-check-what-ai-answers-say-about-it-a-20-question-starter-panel/"
+    },
+    {
+      "slug": "how-can-an-ria-check-whether-its-important-pages-are-indexable",
+      "from": "/insights/how-can-an-ria-check-whether-its-important-pages-are-indexable/",
+      "to": "/for-advisors/insights/how-can-an-ria-check-whether-its-important-pages-are-indexable/"
+    },
+    {
+      "slug": "how-can-an-ria-get-clients-from-chatgpt-and-ai-search",
+      "from": "/insights/how-can-an-ria-get-clients-from-chatgpt-and-ai-search/",
+      "to": "/for-advisors/insights/how-can-an-ria-get-clients-from-chatgpt-and-ai-search/"
+    },
+    {
+      "slug": "how-can-an-ria-measure-referral-source-quality",
+      "from": "/insights/how-can-an-ria-measure-referral-source-quality/",
+      "to": "/for-advisors/insights/how-can-an-ria-measure-referral-source-quality/"
+    },
+    {
+      "slug": "how-should-a-financial-advisor-add-ai-discovery-measurement-to-a-marketing-plan",
+      "from": "/insights/how-should-a-financial-advisor-add-ai-discovery-measurement-to-a-marketing-plan/",
+      "to": "/for-advisors/insights/how-should-a-financial-advisor-add-ai-discovery-measurement-to-a-marketing-plan/"
+    },
+    {
+      "slug": "how-should-a-financial-advisor-choose-a-niche",
+      "from": "/insights/how-should-a-financial-advisor-choose-a-niche/",
+      "to": "/for-advisors/insights/how-should-a-financial-advisor-choose-a-niche/"
+    },
+    {
+      "slug": "how-should-a-small-advisory-firm-budget-and-test-video-marketing",
+      "from": "/insights/how-should-a-small-advisory-firm-budget-and-test-video-marketing/",
+      "to": "/for-advisors/insights/how-should-a-small-advisory-firm-budget-and-test-video-marketing/"
+    },
+    {
+      "slug": "how-should-an-advisor-handle-a-prospect-checking-an-explanation-with-chatgpt",
+      "from": "/insights/how-should-an-advisor-handle-a-prospect-checking-an-explanation-with-chatgpt/",
+      "to": "/for-advisors/insights/how-should-an-advisor-handle-a-prospect-checking-an-explanation-with-chatgpt/"
+    },
+    {
+      "slug": "how-should-an-advisory-firm-correct-wrong-names-addresses-and-services-in-ai-answers",
+      "from": "/insights/how-should-an-advisory-firm-correct-wrong-names-addresses-and-services-in-ai-answers/",
+      "to": "/for-advisors/insights/how-should-an-advisory-firm-correct-wrong-names-addresses-and-services-in-ai-answers/"
+    },
+    {
+      "slug": "how-should-an-advisory-firm-make-a-chart-understandable-without-relying-on-the-image",
+      "from": "/insights/how-should-an-advisory-firm-make-a-chart-understandable-without-relying-on-the-image/",
+      "to": "/for-advisors/insights/how-should-an-advisory-firm-make-a-chart-understandable-without-relying-on-the-image/"
+    },
+    {
+      "slug": "how-should-an-ria-build-a-website-claim-review-ledger",
+      "from": "/insights/how-should-an-ria-build-a-website-claim-review-ledger/",
+      "to": "/for-advisors/insights/how-should-an-ria-build-a-website-claim-review-ledger/"
+    },
+    {
+      "slug": "how-should-an-ria-choose-its-first-ai-search-content-topic-without-a-huge-prompt-dataset",
+      "from": "/insights/how-should-an-ria-choose-its-first-ai-search-content-topic-without-a-huge-prompt-dataset/",
+      "to": "/for-advisors/insights/how-should-an-ria-choose-its-first-ai-search-content-topic-without-a-huge-prompt-dataset/"
+    },
+    {
+      "slug": "how-should-an-ria-choose-which-public-documents-belong-in-an-answer-engine",
+      "from": "/insights/how-should-an-ria-choose-which-public-documents-belong-in-an-answer-engine/",
+      "to": "/for-advisors/insights/how-should-an-ria-choose-which-public-documents-belong-in-an-answer-engine/"
+    },
+    {
+      "slug": "how-should-an-ria-explain-fees-before-a-first-call",
+      "from": "/insights/how-should-an-ria-explain-fees-before-a-first-call/",
+      "to": "/for-advisors/insights/how-should-an-ria-explain-fees-before-a-first-call/"
+    },
+    {
+      "slug": "how-should-an-ria-turn-a-client-service-model-into-a-written-service-calendar",
+      "from": "/insights/how-should-an-ria-turn-a-client-service-model-into-a-written-service-calendar/",
+      "to": "/for-advisors/insights/how-should-an-ria-turn-a-client-service-model-into-a-written-service-calendar/"
+    },
+    {
+      "slug": "how-should-an-ria-turn-a-linkedin-explanation-into-a-source-backed-answer-on-its-website",
+      "from": "/insights/how-should-an-ria-turn-a-linkedin-explanation-into-a-source-backed-answer-on-its-website/",
+      "to": "/for-advisors/insights/how-should-an-ria-turn-a-linkedin-explanation-into-a-source-backed-answer-on-its-website/"
+    },
+    {
+      "slug": "how-should-an-ria-turn-recurring-prospect-questions-into-an-ai-search-answer-backlog",
+      "from": "/insights/how-should-an-ria-turn-recurring-prospect-questions-into-an-ai-search-answer-backlog/",
+      "to": "/for-advisors/insights/how-should-an-ria-turn-recurring-prospect-questions-into-an-ai-search-answer-backlog/"
+    },
+    {
+      "slug": "how-should-an-ria-write-a-value-proposition-a-prospect-can-test",
+      "from": "/insights/how-should-an-ria-write-a-value-proposition-a-prospect-can-test/",
+      "to": "/for-advisors/insights/how-should-an-ria-write-a-value-proposition-a-prospect-can-test/"
+    },
+    {
+      "slug": "how-to-evaluate-an-advisor-marketing-firm",
+      "from": "/insights/how-to-evaluate-an-advisor-marketing-firm/",
+      "to": "/for-advisors/insights/how-to-evaluate-an-advisor-marketing-firm/"
+    },
+    {
+      "slug": "how-to-find-high-intent-leads-before-your-competitors",
+      "from": "/insights/how-to-find-high-intent-leads-before-your-competitors/",
+      "to": "/for-advisors/insights/how-to-find-high-intent-leads-before-your-competitors/"
+    },
+    {
+      "slug": "how-to-generate-more-linkedin-leads-using-your-existing-network",
+      "from": "/insights/how-to-generate-more-linkedin-leads-using-your-existing-network/",
+      "to": "/for-advisors/insights/how-to-generate-more-linkedin-leads-using-your-existing-network/"
+    },
+    {
+      "slug": "how-to-get-your-firm-recommended-by-chatgpt-and-perplexity",
+      "from": "/insights/how-to-get-your-firm-recommended-by-chatgpt-and-perplexity/",
+      "to": "/for-advisors/insights/how-to-get-your-firm-recommended-by-chatgpt-and-perplexity/"
+    },
+    {
+      "slug": "how-to-warm-up-linkedin-prospects-before-your-first-message",
+      "from": "/insights/how-to-warm-up-linkedin-prospects-before-your-first-message/",
+      "to": "/for-advisors/insights/how-to-warm-up-linkedin-prospects-before-your-first-message/"
+    },
+    {
+      "slug": "lead-generation-strategies-for-financial-advisors",
+      "from": "/insights/lead-generation-strategies-for-financial-advisors/",
+      "to": "/for-advisors/insights/lead-generation-strategies-for-financial-advisors/"
+    },
+    {
+      "slug": "should-an-ria-gate-an-educational-checklist-or-leave-it-public",
+      "from": "/insights/should-an-ria-gate-an-educational-checklist-or-leave-it-public/",
+      "to": "/for-advisors/insights/should-an-ria-gate-an-educational-checklist-or-leave-it-public/"
+    },
+    {
+      "slug": "smartasset-alternatives",
+      "from": "/insights/smartasset-alternatives/",
+      "to": "/for-advisors/insights/smartasset-alternatives/"
+    },
+    {
+      "slug": "viral-coach-alternatives",
+      "from": "/insights/viral-coach-alternatives/",
+      "to": "/for-advisors/insights/viral-coach-alternatives/"
+    },
+    {
+      "slug": "what-counts-as-a-qualified-inbound-inquiry-for-a-small-ria",
+      "from": "/insights/what-counts-as-a-qualified-inbound-inquiry-for-a-small-ria/",
+      "to": "/for-advisors/insights/what-counts-as-a-qualified-inbound-inquiry-for-a-small-ria/"
+    },
+    {
+      "slug": "what-should-a-financial-advisor-put-on-an-about-page",
+      "from": "/insights/what-should-a-financial-advisor-put-on-an-about-page/",
+      "to": "/for-advisors/insights/what-should-a-financial-advisor-put-on-an-about-page/"
+    },
+    {
+      "slug": "what-should-a-solo-ria-automate-first",
+      "from": "/insights/what-should-a-solo-ria-automate-first/",
+      "to": "/for-advisors/insights/what-should-a-solo-ria-automate-first/"
+    },
+    {
+      "slug": "what-should-a-solo-ria-include-in-a-business-continuity-handoff",
+      "from": "/insights/what-should-a-solo-ria-include-in-a-business-continuity-handoff/",
+      "to": "/for-advisors/insights/what-should-a-solo-ria-include-in-a-business-continuity-handoff/"
+    },
+    {
+      "slug": "what-should-a-solo-ria-publish-each-week-to-build-trust",
+      "from": "/insights/what-should-a-solo-ria-publish-each-week-to-build-trust/",
+      "to": "/for-advisors/insights/what-should-a-solo-ria-publish-each-week-to-build-trust/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-carry-over-when-moving-its-newsletter-to-a-new-sending-platform",
+      "from": "/insights/what-should-an-advisory-firm-carry-over-when-moving-its-newsletter-to-a-new-sending-platform/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-carry-over-when-moving-its-newsletter-to-a-new-sending-platform/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-check-before-publishing-a-transcript-of-an-educational-video",
+      "from": "/insights/what-should-an-advisory-firm-check-before-publishing-a-transcript-of-an-educational-video/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-check-before-publishing-a-transcript-of-an-educational-video/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-check-before-turning-a-full-planning-explanation-into-a-one-page-client-summary",
+      "from": "/insights/what-should-an-advisory-firm-check-before-turning-a-full-planning-explanation-into-a-one-page-client-summary/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-check-before-turning-a-full-planning-explanation-into-a-one-page-client-summary/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-check-before-using-a-connected-account-dashboard",
+      "from": "/insights/what-should-an-advisory-firm-check-before-using-a-connected-account-dashboard/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-check-before-using-a-connected-account-dashboard/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-check-for-keyboard-navigation-on-its-website",
+      "from": "/insights/what-should-an-advisory-firm-check-for-keyboard-navigation-on-its-website/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-check-for-keyboard-navigation-on-its-website/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-check-when-the-same-guide-exists-as-a-webpage-and-a-pdf",
+      "from": "/insights/what-should-an-advisory-firm-check-when-the-same-guide-exists-as-a-webpage-and-a-pdf/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-check-when-the-same-guide-exists-as-a-webpage-and-a-pdf/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-preserve-before-transferring-a-clients-cost-basis-records",
+      "from": "/insights/what-should-an-advisory-firm-preserve-before-transferring-a-clients-cost-basis-records/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-preserve-before-transferring-a-clients-cost-basis-records/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-record-when-a-subscriber-replies-to-a-newsletter",
+      "from": "/insights/what-should-an-advisory-firm-record-when-a-subscriber-replies-to-a-newsletter/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-record-when-a-subscriber-replies-to-a-newsletter/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-test-in-a-crm-export-before-switching-tools",
+      "from": "/insights/what-should-an-advisory-firm-test-in-a-crm-export-before-switching-tools/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-test-in-a-crm-export-before-switching-tools/"
+    },
+    {
+      "slug": "what-should-an-advisory-firm-test-in-a-newsletters-unsubscribe-path-before-sending",
+      "from": "/insights/what-should-an-advisory-firm-test-in-a-newsletters-unsubscribe-path-before-sending/",
+      "to": "/for-advisors/insights/what-should-an-advisory-firm-test-in-a-newsletters-unsubscribe-path-before-sending/"
+    },
+    {
+      "slug": "what-should-an-ria-check-before-using-a-client-testimonial",
+      "from": "/insights/what-should-an-ria-check-before-using-a-client-testimonial/",
+      "to": "/for-advisors/insights/what-should-an-ria-check-before-using-a-client-testimonial/"
+    },
+    {
+      "slug": "what-should-an-ria-record-when-a-client-complaint-reaches-the-wrong-person",
+      "from": "/insights/what-should-an-ria-record-when-a-client-complaint-reaches-the-wrong-person/",
+      "to": "/for-advisors/insights/what-should-an-ria-record-when-a-client-complaint-reaches-the-wrong-person/"
+    },
+    {
+      "slug": "what-should-an-ria-request-before-a-first-prospect-call",
+      "from": "/insights/what-should-an-ria-request-before-a-first-prospect-call/",
+      "to": "/for-advisors/insights/what-should-an-ria-request-before-a-first-prospect-call/"
+    },
+    {
+      "slug": "what-should-an-ria-verify-before-putting-localbusiness-markup-on-its-website",
+      "from": "/insights/what-should-an-ria-verify-before-putting-localbusiness-markup-on-its-website/",
+      "to": "/for-advisors/insights/what-should-an-ria-verify-before-putting-localbusiness-markup-on-its-website/"
+    },
+    {
+      "slug": "when-does-an-ria-need-a-service-page-instead-of-another-blog-post",
+      "from": "/insights/when-does-an-ria-need-a-service-page-instead-of-another-blog-post/",
+      "to": "/for-advisors/insights/when-does-an-ria-need-a-service-page-instead-of-another-blog-post/"
+    },
+    {
+      "slug": "when-should-an-ria-update-merge-or-retire-an-old-article",
+      "from": "/insights/when-should-an-ria-update-merge-or-retire-an-old-article/",
+      "to": "/for-advisors/insights/when-should-an-ria-update-merge-or-retire-an-old-article/"
+    },
+    {
+      "slug": "when-should-an-ria-use-a-niche-landing-page-instead-of-a-location-page",
+      "from": "/insights/when-should-an-ria-use-a-niche-landing-page-instead-of-a-location-page/",
+      "to": "/for-advisors/insights/when-should-an-ria-use-a-niche-landing-page-instead-of-a-location-page/"
+    },
+    {
+      "slug": "which-ai-crawlers-should-an-ria-allow-for-search-and-which-controls-cover-model-training",
+      "from": "/insights/which-ai-crawlers-should-an-ria-allow-for-search-and-which-controls-cover-model-training/",
+      "to": "/for-advisors/insights/which-ai-crawlers-should-an-ria-allow-for-search-and-which-controls-cover-model-training/"
+    },
+    {
+      "slug": "your-first-ten-clients-as-a-solo-ria-where-they-actually-come-from",
+      "from": "/insights/your-first-ten-clients-as-a-solo-ria-where-they-actually-come-from/",
+      "to": "/for-advisors/insights/your-first-ten-clients-as-a-solo-ria-where-they-actually-come-from/"
+    }
+  ],
+  "advisor_index": {
+    "slug": "advisor-resources",
+    "from": "/insights/advisor-resources/",
+    "to": "/for-advisors/insights/",
+    "served_by": "ghost"
+  },
+  "chatgpt_page": {
+    "slug": "can-chatgpt-find-your-firm",
+    "from": "/insights/can-chatgpt-find-your-firm/",
+    "to": "/for-advisors/can-chatgpt-find-your-firm/",
+    "served_by": "ghost"
+  },
+  "duplicate_redirects": [
+    {
+      "slug": "401k-rollover",
+      "from": "/insights/401k-rollover/",
+      "to": "/find-a-financial-advisor/401k-rollover/"
+    },
+    {
+      "slug": "budgeting-cash-flow",
+      "from": "/insights/budgeting-cash-flow/",
+      "to": "/find-a-financial-advisor/budgeting-cash-flow/"
+    },
+    {
+      "slug": "charitable-giving",
+      "from": "/insights/charitable-giving/",
+      "to": "/find-a-financial-advisor/charitable-giving/"
+    },
+    {
+      "slug": "equity-compensation",
+      "from": "/insights/equity-compensation/",
+      "to": "/find-a-financial-advisor/equity-compensation/"
+    },
+    {
+      "slug": "job-loss",
+      "from": "/insights/job-loss/",
+      "to": "/find-a-financial-advisor/job-loss/"
+    },
+    {
+      "slug": "long-term-care",
+      "from": "/insights/long-term-care/",
+      "to": "/find-a-financial-advisor/long-term-care/"
+    },
+    {
+      "slug": "marriage",
+      "from": "/insights/marriage/",
+      "to": "/find-a-financial-advisor/marriage/"
+    },
+    {
+      "slug": "new-baby",
+      "from": "/insights/new-baby/",
+      "to": "/find-a-financial-advisor/new-baby/"
+    },
+    {
+      "slug": "pension-annuity",
+      "from": "/insights/pension-annuity/",
+      "to": "/find-a-financial-advisor/pension-annuity/"
+    },
+    {
+      "slug": "relocating-states",
+      "from": "/insights/relocating-states/",
+      "to": "/find-a-financial-advisor/relocating-states/"
+    },
+    {
+      "slug": "roth-conversion",
+      "from": "/insights/roth-conversion/",
+      "to": "/find-a-financial-advisor/roth-conversion/"
+    },
+    {
+      "slug": "self-employed-retirement-plans",
+      "from": "/insights/self-employed-retirement-plans/",
+      "to": "/find-a-financial-advisor/self-employed-retirement-plans/"
+    },
+    {
+      "slug": "what-records-should-i-find-if-an-inherited-traditional-ira-may-have-nondeductible-contributions",
+      "from": "/insights/what-records-should-i-find-if-an-inherited-traditional-ira-may-have-nondeductible-contributions/",
+      "to": "/find-a-financial-advisor/what-records-should-i-find-if-an-inherited-traditional-ira-may-have-nondeductible-contributions/"
+    },
+    {
+      "slug": "what-should-a-nonspouse-beneficiary-check-before-moving-an-inherited-traditional-ira",
+      "from": "/insights/what-should-a-nonspouse-beneficiary-check-before-moving-an-inherited-traditional-ira/",
+      "to": "/find-a-financial-advisor/what-should-a-nonspouse-beneficiary-check-before-moving-an-inherited-traditional-ira/"
+    },
+    {
+      "slug": "what-should-i-record-when-i-revoke-an-automatic-bank-payment-authorization",
+      "from": "/insights/what-should-i-record-when-i-revoke-an-automatic-bank-payment-authorization/",
+      "to": "/find-a-financial-advisor/what-should-i-record-when-i-revoke-an-automatic-bank-payment-authorization/"
+    },
+    {
+      "slug": "year-end-tax",
+      "from": "/insights/year-end-tax/",
+      "to": "/find-a-financial-advisor/year-end-tax/"
+    }
+  ]
+}
