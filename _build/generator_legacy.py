@@ -19,10 +19,10 @@ from partials import (BRAND, head, page, header, footer, gate, hero_card, contac
                        faq_schema, client_faq_section, CLIENT_FAQ, SCRIPT_VER, lead_script_includes, _asset_ver)
 from advisors_page import for_advisors_body, FOR_ADVISORS_FAQ
 from advisor_pages import ADVISORS
-from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
+from directory_pages import build_directory_pages, build_cities_index, build_specialties_index, build_professions_index, build_asset_types_index, build_find_advisor_hub, SPECIALTIES, CITIES, NICHES, ASSET_TYPES, real_pages, real_combos
 from us_directory_pages import build_us_directory, real_pages as us_real_pages, all_states as us_all_states
 from insights_pages import build_insights_pages, ARTICLES
-from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES
+from calculator_pages import build_calculator_pages, CALCULATORS, CATEGORIES, _category_slug
 from root_inquiry import root_contact_section, root_hero_card, ROOT_INQUIRY_STYLE
 from content_pages import build_content_pages, cms_version_meta
 from insights_site import build_insights_site
@@ -53,6 +53,8 @@ PAGES = [
     ("/find-your-advisor/", "Tell us what you need: four-question intake; each request is reviewed by hand."),
     ("/guides/", "Financial advice guides for tech employees, physicians and business owners."),
     ("/calculators/", "Browse financial calculators by topic."),
+    ("/insights/", "Educational articles on retirement income, Roth conversions, RSUs, and beneficiary forms."),
+    ("/find-a-financial-advisor/", "Educational guides for finding and talking with a financial advisor."),
 ] + ([
     ("/cities/", "Browse financial advisors by city."),
     ("/specialties/", "Browse financial advisors by specialty."),
@@ -65,8 +67,8 @@ PAGES = [
 ] + [
     (path, desc) for path, desc in us_real_pages()
 ] if DIRECTORY_ENABLED else []) + [(f"/insights/{a['slug']}/", a["summary"]) for a in ARTICLES
-] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS if not c.get("noindex") and c["slug"] != "roth-ira-growth"
-] + [(f"/calculators/{cat.lower().replace(' ', '-')}/", f"{cat} calculators on Valora.") for cat in CATEGORIES]
+] + [(f"/calculators/{c['slug']}/", c["summary"]) for c in CALCULATORS if not c.get("noindex")
+] + [(f"/calculators/{_category_slug(cat)}/", f"{cat} calculators on Valora.") for cat in CATEGORIES]
 
 
 def write(path, html):
@@ -235,17 +237,148 @@ Sitemap: {SITE_URL}/sitemap.xml
 """)
 
 
-def build_sitemap():
+OLD_MORTGAGE_PATH = "/calculators/home-&-mortgage/"
+NEW_MORTGAGE_PATH = "/calculators/home-and-mortgage/"
+# Pages the registry must keep even when an older sitemap snapshot omitted them.
+SITEMAP_REQUIRED = (
+    "/calculators/roth-ira-growth/",
+    "/insights/",
+    "/find-a-financial-advisor/",
+    NEW_MORTGAGE_PATH,
+)
+
+
+def _normalize_sitemap_path(path):
+    """The category used to live at a path containing '&'. Publish the clean slug."""
+    if path == OLD_MORTGAGE_PATH:
+        return NEW_MORTGAGE_PATH
+    return path
+
+
+def _page_rel(path):
+    if path == "/":
+        return "index.html"
+    rel = path.strip("/")
+    return rel + "/index.html" if path.endswith("/") else rel
+
+
+def _page_exists(path):
+    return os.path.isfile(os.path.join(ROOT, _page_rel(path)))
+
+
+def page_lastmod(path):
+    """YYYY-MM-DD of the served page file's last git commit.
+
+    Production publishes the committed HTML, so the page file's git history is
+    the last time that URL's bytes changed. A dirty or untracked file (this
+    build edited it) uses today's UTC date, which matches the commit that
+    records the edit when the sitemap is committed the same day. The date does
+    not follow the sitemap rebuild itself.
+    """
     import datetime
-    today = datetime.date.today().isoformat()
-    sitemap_pages = list(PAGES)
+    import subprocess
+    rel = _page_rel(path)
+    if not _page_exists(path):
+        raise SystemExit(f"sitemap page missing: {path}")
+    today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    # git log still reports a deleted path. A page that is not in the index
+    # is being added in this revision, even when its directory is gitignored.
+    tracked = subprocess.run(
+        ["git", "ls-files", "--", rel],
+        cwd=ROOT, capture_output=True, text=True,
+    ).stdout.strip()
+    if not tracked:
+        return today
+    dirty = subprocess.run(
+        ["git", "status", "--porcelain", "--", rel],
+        cwd=ROOT, capture_output=True, text=True,
+    ).stdout.strip()
+    if dirty:
+        return today
+    log = subprocess.run(
+        ["git", "log", "-1", "--format=%cs", "--", rel],
+        cwd=ROOT, capture_output=True, text=True,
+    )
+    return (log.stdout or "").strip() or today
+
+
+def _existing_sitemap_paths():
+    import xml.etree.ElementTree as ET
+    src = os.path.join(ROOT, "sitemap.xml")
+    if not os.path.isfile(src):
+        return []
+    root = ET.parse(src).getroot()
+    ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    paths = []
+    for loc in root.findall("sm:url/sm:loc", ns):
+        url = (loc.text or "").strip()
+        path = url[len(SITE_URL):] if url.startswith(SITE_URL) else url
+        if not path.startswith("/"):
+            path = "/" + path
+        paths.append(_normalize_sitemap_path(path))
+    return paths
+
+
+def sitemap_paths():
+    """URLs already published, plus registry paths that exist on disk.
+
+    Hand-added sitemap entries are kept when their page file is still there.
+    The ampersand mortgage path is rewritten to the clean slug. Required hubs
+    are added only when that page exists, so the file never lists a 404.
+    """
+    ordered = []
+    seen = set()
+
+    def add(path, required=False):
+        path = _normalize_sitemap_path(path)
+        if path in seen:
+            return
+        if not _page_exists(path):
+            if required:
+                raise SystemExit(f"refusing to list {path}: no page file")
+            return
+        seen.add(path)
+        ordered.append(path)
+
+    for path in _existing_sitemap_paths():
+        add(path)
+    for path, _desc in PAGES:
+        add(path)
     if BUSINESS_OWNER_INDEXABLE:
-        sitemap_pages.append((BUSINESS_OWNER_PATH, "Educational guide to choosing financial help for business owners."))
+        add(BUSINESS_OWNER_PATH)
+    for path in SITEMAP_REQUIRED:
+        add(path, required=True)
+    return ordered
+
+
+def build_home_mortgage_redirect():
+    """Keep the old ampersand path from 404ing on a static file host.
+
+    nginx (or Traefik in front of it) should 301 this path. The HTML file is
+    the fallback the static tree can express on its own: canonical points at
+    the new URL and browsers follow the refresh. It is not listed in the sitemap.
+    """
+    target = SITE_URL + NEW_MORTGAGE_PATH
+    write(OLD_MORTGAGE_PATH, f"""<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={xml_escape(target)}">
+<link rel="canonical" href="{xml_escape(target)}">
+<meta name="robots" content="noindex,follow">
+<title>Redirecting… | {BRAND}</title></head>
+<body><p>This page has moved to <a href="{xml_escape(target)}">{xml_escape(target)}</a>.</p></body></html>
+""")
+
+
+def build_sitemap():
+    paths = sitemap_paths()
+    for path in paths:
+        if "&" in path:
+            raise SystemExit(f"sitemap path still contains an ampersand: {path}")
     urls = "\n".join(
         f"""  <url>
     <loc>{xml_escape(SITE_URL + path)}</loc>
-    <lastmod>{today}</lastmod>
-  </url>""" for path, _ in sitemap_pages
+    <lastmod>{page_lastmod(path)}</lastmod>
+  </url>""" for path in paths
     )
     write("/sitemap.xml", f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -316,6 +449,8 @@ if __name__ == "__main__":
     build_developers_page(write)
     build_business_owner_page(write)
     build_navigation_placeholders(write, ROOT)
+    build_find_advisor_hub(write, ROOT)
+    build_home_mortgage_redirect()
     refresh_guides_footer()
     refresh_guides_gate()
     refresh_index()

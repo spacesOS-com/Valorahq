@@ -7,6 +7,7 @@ personalized advice. Every page states its formula in plain language and
 carries the same "educational estimate, not advice" framing as the rest of
 the site. Grouped into categories (Retirement, Taxes, ...) for the footer.
 """
+import re
 from html import escape
 
 from partials import page, head, BRAND, contact_section, faq_schema
@@ -993,7 +994,14 @@ def _calc_body(c):
 
 
 def _category_slug(category):
-    return category.lower().replace(" ", "-")
+    """Path slug for a calculator category.
+
+    Ampersands are written out as "and" so the directory name is a normal URL
+    path. "Home & Mortgage" is /calculators/home-and-mortgage/, not a path
+    that has to be XML-escaped as home-&amp;-mortgage.
+    """
+    slug = category.lower().replace("&", " and ")
+    return re.sub(r"[^a-z0-9]+", "-", slug).strip("-")
 
 
 def _category_body(category, calcs):
