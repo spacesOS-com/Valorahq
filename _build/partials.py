@@ -31,9 +31,13 @@ SCRIPT_VER = _asset_ver("script.js")
 
 BRAND = "Valora"
 SITE_URL = "https://www.valorahq.com"
-EMAIL = "barot@valorahq.com"
+# Do not publish a personal inbox in HTML, JSON-LD, llms text, or error copy.
+# Public contact is the on-site inquiry form.
 PHONE_DISPLAY = ""  # removed: unverified number (founder, Sep 28) - do not re-add without a confirmed line
 PHONE_TEL = ""
+# Homepage hero illustration (1600x900). Used when a page has no own social image.
+DEFAULT_SOCIAL_IMAGE = "/assets/home-paper-conversation.webp"
+DEFAULT_SOCIAL_ALT = "Paper-cut chairs and a notebook illustrate preparing questions for a conversation."
 
 # the original "What are you solving for?" options
 GOAL_OPTIONS = ["Retirement income", "Equity compensation", "Selling a business",
@@ -176,13 +180,124 @@ def organization_schema():
         "url": SITE_URL,
         "description": "Valora publishes educational information about financial planning and accepts "
                         "questions. We are not arranging advisor matches or introductions at this time.",
-        "email": EMAIL,
         "areaServed": {
             "@type": "Country",
             "name": "United States",
             "identifier": "US",
         },
     })
+
+
+def web_application_schema(name, description, url):
+    """Calculator tool. Free in the browser, so offers.price is 0."""
+    return json_ld({
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": name,
+        "description": description,
+        "url": url,
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    })
+
+
+_CRUMB_LABELS = {
+    "calculators": "Calculators",
+    "guides": "Guides",
+    "insights": "Insights",
+    "find-a-financial-advisor": "Find a financial advisor",
+    "find-your-advisor": "Find your advisor",
+    "for-advisors": "For advisors",
+    "top-financial-advisors": "Advisors by state",
+    "financial-advisor-for-tech-employees": "Financial advisor for tech employees",
+    "financial-advisor-for-physicians": "Financial advisor for physicians",
+    "financial-advisor-for-business-owners": "Financial advisor for business owners",
+    "financial-advisor-for-dentists": "Financial advisor for dentists",
+    "asset-types": "Asset types",
+    "team": "Team",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "developers": "Developers",
+    "concierge": "Concierge",
+    "cities": "Cities",
+    "specialties": "Specialties",
+    "professions": "Professions",
+}
+_CRUMB_ACRONYMS = {
+    "rsu": "RSU", "rmd": "RMD", "cd": "CD", "ira": "IRA", "apy": "APY",
+    "pslf": "PSLF", "qsbs": "QSBS", "iso": "ISO",
+}
+
+
+def _humanize_segment(segment):
+    if segment in _CRUMB_LABELS:
+        return _CRUMB_LABELS[segment]
+    words = segment.replace("&", " & ").replace("-", " ").split()
+    out = []
+    for word in words:
+        key = word.lower()
+        if key in _CRUMB_ACRONYMS:
+            out.append(_CRUMB_ACRONYMS[key])
+        elif word == "&":
+            out.append("&")
+        else:
+            out.append(word[:1].upper() + word[1:])
+    return " ".join(out) or segment
+
+
+def breadcrumb_schema(path):
+    """BreadcrumbList from the URL path. Home is always the first crumb."""
+    parts = [part for part in path.split("/") if part and part != "index.html"]
+    items = [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL + "/",
+    }]
+    acc = ""
+    for index, part in enumerate(parts, start=2):
+        acc += "/" + part
+        items.append({
+            "@type": "ListItem",
+            "position": index,
+            "name": _humanize_segment(part),
+            "item": SITE_URL + acc + "/",
+        })
+    return json_ld({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": items,
+    })
+
+
+def _absolute_url(path_or_url):
+    if path_or_url.startswith("https://") or path_or_url.startswith("http://"):
+        return path_or_url
+    if not path_or_url.startswith("/"):
+        path_or_url = "/" + path_or_url
+    return SITE_URL + path_or_url
+
+
+def social_meta(title, description, canonical, social_image=None, social_image_alt=None, social_type="website"):
+    """Open Graph and Twitter card tags. Every page gets an image."""
+    image = _absolute_url(social_image or DEFAULT_SOCIAL_IMAGE)
+    alt = social_image_alt or DEFAULT_SOCIAL_ALT
+    values = [
+        ("property", "og:title", title),
+        ("property", "og:description", description),
+        ("property", "og:url", canonical),
+        ("property", "og:type", social_type),
+        ("property", "og:image", image),
+        ("property", "og:image:alt", alt),
+        ("name", "twitter:card", "summary_large_image"),
+        ("name", "twitter:title", title),
+        ("name", "twitter:description", description),
+        ("name", "twitter:image", image),
+        ("name", "twitter:image:alt", alt),
+    ]
+    return "\n".join(f'<meta {kind}="{key}" content="{escape(value)}">' for kind, key, value in values)
 
 
 def article_schema(headline, description, url, date_published, author_name, image=None):
@@ -252,11 +367,8 @@ POSTHOG_SNIPPET = r"""<script>
 def head(title, description, path="/", schema="", noindex=False, keywords=None, social_image=None, social_image_alt=None, social_type="website"):
     canonical = SITE_URL + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex,follow">\n' if noindex else ""
-    social = ""
-    if social_image and social_image_alt:
-        image = social_image if social_image.startswith("https://") else SITE_URL + social_image
-        values = [("property", "og:title", title), ("property", "og:description", description), ("property", "og:url", canonical), ("property", "og:type", social_type), ("property", "og:image", image), ("property", "og:image:alt", social_image_alt), ("name", "twitter:card", "summary_large_image"), ("name", "twitter:title", title), ("name", "twitter:description", description), ("name", "twitter:image", image), ("name", "twitter:image:alt", social_image_alt)]
-        social = "\n".join(f'<meta {kind}="{key}" content="{escape(value)}">' for kind, key, value in values)
+    social = social_meta(title, description, canonical, social_image, social_image_alt, social_type)
+    crumbs = "" if schema and "BreadcrumbList" in schema else breadcrumb_schema(path)
     return f"""<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -275,6 +387,7 @@ def head(title, description, path="/", schema="", noindex=False, keywords=None, 
 <link rel="icon" href="{FAVICON}">
 {organization_schema()}
 {schema}
+{crumbs}
 """ + POSTHOG_SNIPPET + RB2B_SNIPPET + f"""</head>"""
 
 
@@ -415,7 +528,7 @@ def footer():
         </a>
         <p>Valora publishes educational information about financial planning and accepts questions.</p>
         <ul class="footer__contact">
-          <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
+          <li><a href="/#contact" data-gate-open>Ask a question</a></li>
         </ul>
       </div>
 

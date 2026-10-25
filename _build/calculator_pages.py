@@ -9,7 +9,7 @@ the site. Grouped into categories (Retirement, Taxes, ...) for the footer.
 """
 from html import escape
 
-from partials import page, head, BRAND, contact_section, faq_schema
+from partials import page, head, BRAND, SITE_URL, contact_section, faq_schema, web_application_schema
 
 CALCULATORS = [
     {
@@ -188,7 +188,7 @@ CALCULATORS = [
         "slug": "pslf-scenario-explorer",
         "category": "Banking",
         "title": "PSLF scenario explorer",
-        "summary": "Compare two rough scenarios side by side - continuing toward PSLF versus paying the loan down - with every assumption visible. Illustrative only; not a forgiveness estimate.",
+        "summary": "Compare continuing toward PSLF with paying the loan down, side by side, with every assumption visible. Illustrative only, not a forgiveness estimate.",
         "note": "Illustrative single-loan math: run it per loan, or use a weighted-average rate knowing that is itself an approximation. "
                 "We do not compute income-driven payments - income, family size, plan rules and recertification all move them. "
                 "Enter the monthly payment and the qualifying-payment count from your servicer. The 120 counted payments cannot be "
@@ -255,7 +255,7 @@ CALCULATORS = [
         "eyebrow": "QSBS issue spotter",
         "noindex": True,
         "title": "QSBS issue spotter",
-        "summary": "A rules-based screen that lists the qualified small business stock questions worth reviewing with your CPA. Its only output, on every path, is a list of review items - it never decides eligibility and never computes an exclusion.",
+        "summary": "A screen of qualified small business stock questions to review with your CPA. It lists review items only and never decides eligibility or an exclusion.",
         "note": "This screen lists review items only. QSBS qualification is fact-specific across the corporation's history, "
                 "the stock's issuance and transfers, the holder, and the applicable gain limits - including state-tax treatment, "
                 "which differs. It cannot be determined by a questionnaire. Review the full picture with your CPA and tax counsel. "
@@ -321,7 +321,7 @@ CALCULATORS = [
         "slug": "rsu-withholding-shortfall",
         "category": "Taxes",
         "title": "RSU withholding shortfall calculator",
-        "summary": "Illustrative comparison of RSU vesting withheld at a flat supplemental-wage rate versus a higher marginal rate. A rough illustration only, not an estimate of your actual tax liability.",
+        "summary": "Compare RSU vesting withheld at a flat supplemental-wage rate with a higher marginal rate. A rough illustration, not an estimate of your actual tax.",
         "note": "Most U.S. employers withhold RSU vesting income at the flat 22% federal supplemental-wage rate, "
                 "regardless of your actual bracket. This compares that to your marginal rate as a rough estimate — "
                 "your real liability depends on your full tax picture. See “Your RSUs are a bonus, not a lottery "
@@ -748,7 +748,7 @@ CALCULATORS = [
         "slug": "financial-advisor-value",
         "category": "Retirement",
         "title": "Financial advisor value calculator",
-        "summary": "Explore a purely hypothetical return uplift and what that kind of difference could mean in dollars over time. An illustration only, not proof or a promise of advisor value.",
+        "summary": "Explore a hypothetical return uplift and what it could mean in dollars over time. An illustration only, not proof or a promise of advisor value.",
         "note": "Research such as Vanguard's “Advisor's Alpha” studies suggests professional guidance "
                 "(rebalancing, tax-aware withdrawals, behavioral coaching) can add measurable value over time, but "
                 "the amount varies enormously by household and isn't guaranteed — so this uses your own "
@@ -1051,6 +1051,8 @@ def build_calculator_pages(write_fn):
         _hub_body(), with_gate=True))
     for c in CALCULATORS:
         schema = faq_schema([(f"How is the {c['title'].lower()} calculated?", c["note"])])
+        schema += "\n" + web_application_schema(
+            c["title"], c["summary"], f"{SITE_URL}/calculators/{c['slug']}/")
         html = page(
             head(f"{c['title']} | {BRAND}", c["summary"], path=f"/calculators/{c['slug']}/", schema=schema,
                  noindex=c.get("noindex", False)),
@@ -1062,10 +1064,11 @@ def build_calculator_pages(write_fn):
     for category in CATEGORIES:
         slug = _category_slug(category)
         calcs = [c for c in CALCULATORS if c["category"] == category]
+        cat_title = f"{category} Calculators | {BRAND}"
+        cat_desc = f"Free {category.lower()} calculators from Valora — simple, transparent estimates."
         html = page(
-            head(f"{category} Calculators | {BRAND}",
-                 f"Free {category.lower()} calculators from Valora — simple, transparent estimates.",
-                 path=f"/calculators/{slug}/"),
+            head(cat_title, cat_desc, path=f"/calculators/{slug}/",
+                 schema=web_application_schema(f"{category} calculators", cat_desc, f"{SITE_URL}/calculators/{slug}/")),
             _category_body(category, calcs),
             with_gate=True,
         )
