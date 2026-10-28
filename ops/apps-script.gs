@@ -104,6 +104,16 @@ function handleForm(e) {
       console.error('Notion sync failed: ' + nErr);
     }
 
+    // Valora app pipeline (best-effort, off until VALORA_INTAKE_URL and
+    // VALORA_INTAKE_SECRET are set in Script Properties; failure never blocks
+    // the lead). The Sheet, Notion and emails above stay as they are.
+    try {
+      forwardToApp_({ name: name, email: email, phone: phone, solving_for: solving, help_with: help,
+        investable_assets: assets, situation: situation, location: location, message: message, timing: timing });
+    } catch (fErr) {
+      console.error('App intake failed: ' + fErr);
+    }
+
     return json({ status: 'success', message: 'Lead captured' });
 
   } catch (err) {
@@ -158,6 +168,33 @@ function domainAcceptsMail_(email) {
     console.error('MX lookup failed: ' + err);
     return null;
   }
+}
+
+/**
+ * Sends the lead to the Valora app's website-lead intake. One retry with the
+ * same Idempotency-Key, so a retried request is stored once. Empty fields
+ * are left out (the intake rejects nothing else).
+ */
+function forwardToApp_(lead) {
+  var props = PropertiesService.getScriptProperties();
+  var url = props.getProperty('VALORA_INTAKE_URL');
+  var secret = props.getProperty('VALORA_INTAKE_SECRET');
+  if (!url || !secret || url.indexOf('https://') !== 0) return;
+  var body = {};
+  Object.keys(lead).forEach(function (k) { if (lead[k]) body[k] = lead[k]; });
+  var options = {
+    method: 'post',
+    contentType: 'application/json',
+    headers: { 'X-Valora-Intake-Secret': secret, 'Idempotency-Key': 'site-' + Utilities.getUuid() },
+    payload: JSON.stringify(body),
+    muteHttpExceptions: true
+  };
+  for (var attempt = 0; attempt < 2; attempt++) {
+    var code = UrlFetchApp.fetch(url, options).getResponseCode();
+    if (code === 200 || code === 201) return;
+    if (code < 500) { console.error('App intake refused the lead: HTTP ' + code); return; }
+  }
+  console.error('App intake unavailable after a retry');
 }
 
 function getSheet() {
