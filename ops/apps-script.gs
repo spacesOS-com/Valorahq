@@ -18,7 +18,10 @@ var SHEET_NAME = '';
 var NOTIFY_TO  = 'barot@valorahq.com,brands@grow.surgeaio.com';
 var HEADERS    = ['Name', 'Email', 'Phone Number', 'Solving For',
                   'Looking For Help With', 'Investable Assets', 'Situation',
-                  'Location', 'Message', 'Timing'];
+                  'Location', 'Message', 'Timing', 'Confirmation'];
+// Hidden field added to every lead form by assets/script.js. People never
+// fill it; bots that fill every field do. Must match HONEYPOT there.
+var HONEYPOT   = 'vl_contact_hp';
 
 function doGet(e)  { return handleForm(e); }
 function doPost(e) { return handleForm(e); }
@@ -26,6 +29,13 @@ function doPost(e) { return handleForm(e); }
 function handleForm(e) {
   try {
     var params = (e && e.parameter) ? e.parameter : {};
+
+    // Honeypot filled: answer exactly like a real success so the bot learns
+    // nothing, but store nothing and send no email.
+    if (str(params[HONEYPOT])) {
+      console.log('Honeypot submission dropped');
+      return json({ status: 'success', message: 'Lead captured' });
+    }
 
     var name      = str(params.name);
     var email     = str(params.email);
@@ -42,13 +52,22 @@ function handleForm(e) {
       return json({ status: 'error', message: 'Missing required fields' });
     }
 
+    // No mail server for the domain (e.g. asdasd@ads.com): the confirmation
+    // would only bounce and hurt our sender reputation, so skip it. The lead
+    // is still recorded. If the lookup itself fails we send as before.
+    var canReceive = domainAcceptsMail_(email);
+    var confirmation = canReceive === false ? 'Suppressed: no mail server for the domain' : 'Sent';
+
     var sheet = getSheet();
     if (sheet.getLastRow() === 0) {
       sheet.appendRow(HEADERS);
       sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
       sheet.setFrozenRows(1);
+    } else if (!str(sheet.getRange(1, HEADERS.length).getValue())) {
+      // Sheets created before the Confirmation column: add its header.
+      sheet.getRange(1, HEADERS.length).setValue(HEADERS[HEADERS.length - 1]).setFontWeight('bold');
     }
-    sheet.appendRow([name, email, phone, solving, help, assets, situation, location, message, timing]);
+    sheet.appendRow([name, email, phone, solving, help, assets, situation, location, message, timing, confirmation]);
     SpreadsheetApp.flush();
 
     var timestamp = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'dd/MM/yyyy HH:mm:ss');
@@ -64,13 +83,14 @@ function handleForm(e) {
     if (location)  lines.push('Location: ' + location);
     if (timing)    lines.push('Timing: ' + timing);
     lines.push('Message: ' + (message || '-'));
+    lines.push('Confirmation email: ' + confirmation);
     lines.push('Time: ' + timestamp);
     GmailApp.sendEmail(NOTIFY_TO, 'Valora New Organic Lead - ' + name, lines.join('\n'));
 
     // Auto-confirmation to the lead (Marcus-approved verbatim body; from the
     // script owner's Gmail = barot@valorahq.com). No timing promises here -
     // the two-business-day line stays in the FAQ until the flow is verified.
-    GmailApp.sendEmail(
+    if (canReceive !== false) GmailApp.sendEmail(
       email,
       'We received your Valora request',
       'Hi ' + name.split(' ')[0] + ',\n\n' +
@@ -115,6 +135,29 @@ function writeNotionRow_(name, email, phone, solving, timing, message) {
     payload: JSON.stringify(payload),
     muteHttpExceptions: true
   });
+}
+
+/**
+ * Whether the email's domain has a mail server (MX record), via Google's
+ * public DNS-over-HTTPS. true: MX found. false: the domain does not exist or
+ * has no MX. null: the lookup failed, so the caller does not guess.
+ */
+function domainAcceptsMail_(email) {
+  var domain = String(email).split('@').pop().trim().toLowerCase();
+  if (!domain || domain.indexOf('.') === -1) return false;
+  try {
+    var res = UrlFetchApp.fetch('https://dns.google/resolve?name=' + encodeURIComponent(domain) + '&type=MX', { muteHttpExceptions: true });
+    if (res.getResponseCode() !== 200) return null;
+    var body = JSON.parse(res.getContentText());
+    if (body.Status === 3) return false; // NXDOMAIN: the domain does not exist
+    if (body.Status !== 0) return null;  // SERVFAIL and friends: unknown
+    var mx = (body.Answer || []).filter(function (a) { return a.type === 15; });
+    // A "null MX" (RFC 7505, exchange ".") means the domain accepts no mail.
+    return mx.some(function (a) { return !/^0\s+\.$/.test(String(a.data).trim()); });
+  } catch (err) {
+    console.error('MX lookup failed: ' + err);
+    return null;
+  }
 }
 
 function getSheet() {

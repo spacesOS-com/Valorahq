@@ -572,7 +572,31 @@
       });
   }
 
+  // Honeypot: a field people never see or fill (off-screen, hidden from
+  // screen readers, out of the tab order). Bots that fill every field give
+  // themselves away. The Apps Script drops such submissions too; the name
+  // must match HONEYPOT in ops/apps-script.gs.
+  var HONEYPOT = 'vl_contact_hp';
+
+  function addHoneypot(f) {
+    if (f.elements[HONEYPOT]) return;
+    var wrap = document.createElement('div');
+    wrap.setAttribute('aria-hidden', 'true');
+    wrap.style.cssText = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';
+    var label = document.createElement('label');
+    label.textContent = 'Leave this empty';
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.name = HONEYPOT;
+    input.tabIndex = -1;
+    input.autocomplete = 'off';
+    label.appendChild(input);
+    wrap.appendChild(label);
+    f.appendChild(wrap);
+  }
+
   function leadForm(f) {
+    addHoneypot(f);
     var submit = $('button[type="submit"]', f);
     var label  = submit ? submit.textContent : '';
     var host   = f.closest('.hcard, .gate');
@@ -627,6 +651,8 @@
       if (!validateLead(f)) return;
 
       var v = collectLead(f);
+      // Honeypot filled: look like a normal success, send nothing.
+      if (v[HONEYPOT]) { showDone(v); return; }
       if (submit) { submit.disabled = true; submit.textContent = 'Sending…'; }
       if (fine) { fine.textContent = fineText; fine.classList.remove('is-error'); }
 
